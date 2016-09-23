@@ -10,22 +10,61 @@
 		BCD505FA1D921F8C000FB2C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD505F91D921F8C000FB2C0 /* main.m */; };
 		BCD505FD1D921F8C000FB2C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD505FC1D921F8C000FB2C0 /* AppDelegate.m */; };
 		BCD506001D921F8C000FB2C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD505FF1D921F8C000FB2C0 /* ViewController.m */; };
-		BCD506031D921F8C000FB2C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD506011D921F8C000FB2C0 /* Main.storyboard */; };
 		BCD506051D921F8C000FB2C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD506041D921F8C000FB2C0 /* Assets.xcassets */; };
 		BCD506081D921F8C000FB2C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD506061D921F8C000FB2C0 /* LaunchScreen.storyboard */; };
+		BCD506111D92202D000FB2C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD5060F1D92202D000FB2C0 /* Main.storyboard */; };
+		BCD506181D92231E000FB2C0 /* NNBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD506171D92231E000FB2C0 /* NNBaseVC.m */; };
+		BCD5061E1D92241A000FB2C0 /* NNTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5061D1D92241A000FB2C0 /* NNTabbarVC.m */; };
+		BCD5062B1D92252A000FB2C0 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5062A1D92252A000FB2C0 /* UIColor+Helper.m */; };
+		BCD506371D923003000FB2C0 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD506361D923003000FB2C0 /* UIViewExt.m */; };
+		BCD506531D9231D0000FB2C0 /* NNHomePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5063B1D9231D0000FB2C0 /* NNHomePageVC.m */; };
+		BCD506541D9231D0000FB2C0 /* NNFocusView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5063F1D9231D0000FB2C0 /* NNFocusView.m */; };
+		BCD506551D9231D0000FB2C0 /* NNFocusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD506401D9231D0000FB2C0 /* NNFocusView.xib */; };
+		BCD506561D9231D0000FB2C0 /* NNMeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD506441D9231D0000FB2C0 /* NNMeVC.m */; };
+		BCD506571D9231D0000FB2C0 /* NNServerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5064A1D9231D0000FB2C0 /* NNServerVC.m */; };
+		BCD506581D9231D0000FB2C0 /* NNTreeHoleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD506501D9231D0000FB2C0 /* NNTreeHoleVC.m */; };
+		BCD5065B1D9232BB000FB2C0 /* NNEmotionalItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5065A1D9232BB000FB2C0 /* NNEmotionalItemView.m */; };
+		BCD5065D1D9232D0000FB2C0 /* NNEmotionalItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD5065C1D9232D0000FB2C0 /* NNEmotionalItemView.xib */; };
+		C572126AF56E095F0A988671 /* Pods_NuanNuan_OC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00BA27114ACC2597EA70FB0 /* Pods_NuanNuan_OC.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		66B26D2343572DEE1D34D017 /* Pods-NuanNuan_OC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NuanNuan_OC.release.xcconfig"; path = "Pods/Target Support Files/Pods-NuanNuan_OC/Pods-NuanNuan_OC.release.xcconfig"; sourceTree = "<group>"; };
+		A5862B2D06A1F1160A26CF88 /* Pods-NuanNuan_OC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NuanNuan_OC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NuanNuan_OC/Pods-NuanNuan_OC.debug.xcconfig"; sourceTree = "<group>"; };
 		BCD505F51D921F8C000FB2C0 /* NuanNuan_OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NuanNuan_OC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD505F91D921F8C000FB2C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCD505FB1D921F8C000FB2C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BCD505FC1D921F8C000FB2C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BCD505FE1D921F8C000FB2C0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		BCD505FF1D921F8C000FB2C0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		BCD506021D921F8C000FB2C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCD506041D921F8C000FB2C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCD506071D921F8C000FB2C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCD506091D921F8C000FB2C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCD506101D92202D000FB2C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BCD506161D92231E000FB2C0 /* NNBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNBaseVC.h; sourceTree = "<group>"; };
+		BCD506171D92231E000FB2C0 /* NNBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNBaseVC.m; sourceTree = "<group>"; };
+		BCD5061C1D92241A000FB2C0 /* NNTabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNTabbarVC.h; sourceTree = "<group>"; };
+		BCD5061D1D92241A000FB2C0 /* NNTabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNTabbarVC.m; sourceTree = "<group>"; };
+		BCD506291D92252A000FB2C0 /* UIColor+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Helper.h"; sourceTree = "<group>"; };
+		BCD5062A1D92252A000FB2C0 /* UIColor+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Helper.m"; sourceTree = "<group>"; };
+		BCD506311D922EC9000FB2C0 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		BCD506351D923003000FB2C0 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
+		BCD506361D923003000FB2C0 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
+		BCD5063A1D9231D0000FB2C0 /* NNHomePageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNHomePageVC.h; sourceTree = "<group>"; };
+		BCD5063B1D9231D0000FB2C0 /* NNHomePageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNHomePageVC.m; sourceTree = "<group>"; };
+		BCD5063E1D9231D0000FB2C0 /* NNFocusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNFocusView.h; sourceTree = "<group>"; };
+		BCD5063F1D9231D0000FB2C0 /* NNFocusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNFocusView.m; sourceTree = "<group>"; };
+		BCD506401D9231D0000FB2C0 /* NNFocusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNFocusView.xib; sourceTree = "<group>"; };
+		BCD506431D9231D0000FB2C0 /* NNMeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNMeVC.h; sourceTree = "<group>"; };
+		BCD506441D9231D0000FB2C0 /* NNMeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMeVC.m; sourceTree = "<group>"; };
+		BCD506491D9231D0000FB2C0 /* NNServerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNServerVC.h; sourceTree = "<group>"; };
+		BCD5064A1D9231D0000FB2C0 /* NNServerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNServerVC.m; sourceTree = "<group>"; };
+		BCD5064F1D9231D0000FB2C0 /* NNTreeHoleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNTreeHoleVC.h; sourceTree = "<group>"; };
+		BCD506501D9231D0000FB2C0 /* NNTreeHoleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNTreeHoleVC.m; sourceTree = "<group>"; };
+		BCD506591D9232BB000FB2C0 /* NNEmotionalItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEmotionalItemView.h; sourceTree = "<group>"; };
+		BCD5065A1D9232BB000FB2C0 /* NNEmotionalItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNEmotionalItemView.m; sourceTree = "<group>"; };
+		BCD5065C1D9232D0000FB2C0 /* NNEmotionalItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNEmotionalItemView.xib; sourceTree = "<group>"; };
+		D00BA27114ACC2597EA70FB0 /* Pods_NuanNuan_OC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NuanNuan_OC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +72,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C572126AF56E095F0A988671 /* Pods_NuanNuan_OC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46181F34288A2280817BAC77 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A5862B2D06A1F1160A26CF88 /* Pods-NuanNuan_OC.debug.xcconfig */,
+				66B26D2343572DEE1D34D017 /* Pods-NuanNuan_OC.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8C4779A78E1CD8D255BD524C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D00BA27114ACC2597EA70FB0 /* Pods_NuanNuan_OC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BCD505EC1D921F8C000FB2C0 = {
 			isa = PBXGroup;
 			children = (
 				BCD505F71D921F8C000FB2C0 /* NuanNuan_OC */,
 				BCD505F61D921F8C000FB2C0 /* Products */,
+				46181F34288A2280817BAC77 /* Pods */,
+				8C4779A78E1CD8D255BD524C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,7 +121,10 @@
 				BCD505FC1D921F8C000FB2C0 /* AppDelegate.m */,
 				BCD505FE1D921F8C000FB2C0 /* ViewController.h */,
 				BCD505FF1D921F8C000FB2C0 /* ViewController.m */,
-				BCD506011D921F8C000FB2C0 /* Main.storyboard */,
+				BCD506121D9222E5000FB2C0 /* Server */,
+				BCD506131D9222E5000FB2C0 /* Util */,
+				BCD506141D9222E5000FB2C0 /* ViewController */,
+				BCD5060F1D92202D000FB2C0 /* Main.storyboard */,
 				BCD506041D921F8C000FB2C0 /* Assets.xcassets */,
 				BCD506061D921F8C000FB2C0 /* LaunchScreen.storyboard */,
 				BCD506091D921F8C000FB2C0 /* Info.plist */,
@@ -79,6 +141,194 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BCD506121D9222E5000FB2C0 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		BCD506131D9222E5000FB2C0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				BCD506351D923003000FB2C0 /* UIViewExt.h */,
+				BCD506361D923003000FB2C0 /* UIViewExt.m */,
+				BCD506281D92252A000FB2C0 /* UIColor */,
+				BCD506311D922EC9000FB2C0 /* Define.h */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		BCD506141D9222E5000FB2C0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BCD506381D9231D0000FB2C0 /* HomePage */,
+				BCD506411D9231D0000FB2C0 /* Me */,
+				BCD506471D9231D0000FB2C0 /* Server */,
+				BCD5064D1D9231D0000FB2C0 /* TreeHoel */,
+				BCD506151D9222E5000FB2C0 /* Base */,
+				BCD5061C1D92241A000FB2C0 /* NNTabbarVC.h */,
+				BCD5061D1D92241A000FB2C0 /* NNTabbarVC.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		BCD506151D9222E5000FB2C0 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BCD506161D92231E000FB2C0 /* NNBaseVC.h */,
+				BCD506171D92231E000FB2C0 /* NNBaseVC.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		BCD506281D92252A000FB2C0 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				BCD506291D92252A000FB2C0 /* UIColor+Helper.h */,
+				BCD5062A1D92252A000FB2C0 /* UIColor+Helper.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		BCD506381D9231D0000FB2C0 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				BCD506391D9231D0000FB2C0 /* Controller */,
+				BCD5063C1D9231D0000FB2C0 /* Model */,
+				BCD5063D1D9231D0000FB2C0 /* View */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		BCD506391D9231D0000FB2C0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BCD5063A1D9231D0000FB2C0 /* NNHomePageVC.h */,
+				BCD5063B1D9231D0000FB2C0 /* NNHomePageVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BCD5063C1D9231D0000FB2C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BCD5063D1D9231D0000FB2C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCD5063E1D9231D0000FB2C0 /* NNFocusView.h */,
+				BCD5063F1D9231D0000FB2C0 /* NNFocusView.m */,
+				BCD506401D9231D0000FB2C0 /* NNFocusView.xib */,
+				BCD506591D9232BB000FB2C0 /* NNEmotionalItemView.h */,
+				BCD5065A1D9232BB000FB2C0 /* NNEmotionalItemView.m */,
+				BCD5065C1D9232D0000FB2C0 /* NNEmotionalItemView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BCD506411D9231D0000FB2C0 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				BCD506421D9231D0000FB2C0 /* Controller */,
+				BCD506451D9231D0000FB2C0 /* Model */,
+				BCD506461D9231D0000FB2C0 /* View */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		BCD506421D9231D0000FB2C0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BCD506431D9231D0000FB2C0 /* NNMeVC.h */,
+				BCD506441D9231D0000FB2C0 /* NNMeVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BCD506451D9231D0000FB2C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BCD506461D9231D0000FB2C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BCD506471D9231D0000FB2C0 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				BCD506481D9231D0000FB2C0 /* Controller */,
+				BCD5064B1D9231D0000FB2C0 /* Model */,
+				BCD5064C1D9231D0000FB2C0 /* View */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		BCD506481D9231D0000FB2C0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BCD506491D9231D0000FB2C0 /* NNServerVC.h */,
+				BCD5064A1D9231D0000FB2C0 /* NNServerVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BCD5064B1D9231D0000FB2C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BCD5064C1D9231D0000FB2C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BCD5064D1D9231D0000FB2C0 /* TreeHoel */ = {
+			isa = PBXGroup;
+			children = (
+				BCD5064E1D9231D0000FB2C0 /* Controller */,
+				BCD506511D9231D0000FB2C0 /* Model */,
+				BCD506521D9231D0000FB2C0 /* View */,
+			);
+			path = TreeHoel;
+			sourceTree = "<group>";
+		};
+		BCD5064E1D9231D0000FB2C0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BCD5064F1D9231D0000FB2C0 /* NNTreeHoleVC.h */,
+				BCD506501D9231D0000FB2C0 /* NNTreeHoleVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BCD506511D9231D0000FB2C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BCD506521D9231D0000FB2C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +336,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCD5060C1D921F8C000FB2C0 /* Build configuration list for PBXNativeTarget "NuanNuan_OC" */;
 			buildPhases = (
+				02EE2D856D6D829E92E0B7D4 /* Check Pods Manifest.lock */,
 				BCD505F11D921F8C000FB2C0 /* Sources */,
 				BCD505F21D921F8C000FB2C0 /* Frameworks */,
 				BCD505F31D921F8C000FB2C0 /* Resources */,
+				5A4E045B425913D898A1551F /* Embed Pods Frameworks */,
+				BDBA649BF6ACB622AB5FD26C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -105,6 +358,7 @@
 		BCD505ED1D921F8C000FB2C0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = NN;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = NuanNuan;
 				TargetAttributes = {
@@ -136,42 +390,102 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCD5065D1D9232D0000FB2C0 /* NNEmotionalItemView.xib in Resources */,
+				BCD506111D92202D000FB2C0 /* Main.storyboard in Resources */,
+				BCD506551D9231D0000FB2C0 /* NNFocusView.xib in Resources */,
 				BCD506081D921F8C000FB2C0 /* LaunchScreen.storyboard in Resources */,
 				BCD506051D921F8C000FB2C0 /* Assets.xcassets in Resources */,
-				BCD506031D921F8C000FB2C0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02EE2D856D6D829E92E0B7D4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5A4E045B425913D898A1551F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NuanNuan_OC/Pods-NuanNuan_OC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDBA649BF6ACB622AB5FD26C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NuanNuan_OC/Pods-NuanNuan_OC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BCD505F11D921F8C000FB2C0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCD5062B1D92252A000FB2C0 /* UIColor+Helper.m in Sources */,
+				BCD5061E1D92241A000FB2C0 /* NNTabbarVC.m in Sources */,
 				BCD506001D921F8C000FB2C0 /* ViewController.m in Sources */,
+				BCD5065B1D9232BB000FB2C0 /* NNEmotionalItemView.m in Sources */,
+				BCD506181D92231E000FB2C0 /* NNBaseVC.m in Sources */,
+				BCD506531D9231D0000FB2C0 /* NNHomePageVC.m in Sources */,
 				BCD505FD1D921F8C000FB2C0 /* AppDelegate.m in Sources */,
 				BCD505FA1D921F8C000FB2C0 /* main.m in Sources */,
+				BCD506571D9231D0000FB2C0 /* NNServerVC.m in Sources */,
+				BCD506371D923003000FB2C0 /* UIViewExt.m in Sources */,
+				BCD506561D9231D0000FB2C0 /* NNMeVC.m in Sources */,
+				BCD506581D9231D0000FB2C0 /* NNTreeHoleVC.m in Sources */,
+				BCD506541D9231D0000FB2C0 /* NNFocusView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BCD506011D921F8C000FB2C0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BCD506021D921F8C000FB2C0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BCD506061D921F8C000FB2C0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BCD506071D921F8C000FB2C0 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BCD5060F1D92202D000FB2C0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCD506101D92202D000FB2C0 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -261,6 +575,7 @@
 		};
 		BCD5060D1D921F8C000FB2C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5862B2D06A1F1160A26CF88 /* Pods-NuanNuan_OC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NuanNuan_OC/Info.plist;
@@ -272,6 +587,7 @@
 		};
 		BCD5060E1D921F8C000FB2C0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66B26D2343572DEE1D34D017 /* Pods-NuanNuan_OC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NuanNuan_OC/Info.plist;
@@ -300,6 +616,7 @@
 				BCD5060E1D921F8C000FB2C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
