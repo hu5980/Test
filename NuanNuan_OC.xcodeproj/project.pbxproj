@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC247E9B1DAA19B100AB5C84 /* NNEmotionallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC247E991DAA19B100AB5C84 /* NNEmotionallCell.m */; };
+		BC247E9C1DAA19B100AB5C84 /* NNEmotionallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC247E9A1DAA19B100AB5C84 /* NNEmotionallCell.xib */; };
+		BC247E9F1DAA277800AB5C84 /* NNMeTableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC247E9E1DAA277800AB5C84 /* NNMeTableHeadView.m */; };
+		BC247EA11DAA278600AB5C84 /* NNMeTableHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC247EA01DAA278600AB5C84 /* NNMeTableHeadView.xib */; };
+		BC247EA51DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC247EA31DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m */; };
+		BC247EA61DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC247EA41DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib */; };
+		BC247EAA1DAA35D600AB5C84 /* NNMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC247EA81DAA35D600AB5C84 /* NNMineCell.m */; };
+		BC247EAB1DAA35D600AB5C84 /* NNMineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC247EA91DAA35D600AB5C84 /* NNMineCell.xib */; };
 		BCD505FA1D921F8C000FB2C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD505F91D921F8C000FB2C0 /* main.m */; };
 		BCD505FD1D921F8C000FB2C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD505FC1D921F8C000FB2C0 /* AppDelegate.m */; };
 		BCD506001D921F8C000FB2C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD505FF1D921F8C000FB2C0 /* ViewController.m */; };
@@ -31,6 +39,18 @@
 /* Begin PBXFileReference section */
 		66B26D2343572DEE1D34D017 /* Pods-NuanNuan_OC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NuanNuan_OC.release.xcconfig"; path = "Pods/Target Support Files/Pods-NuanNuan_OC/Pods-NuanNuan_OC.release.xcconfig"; sourceTree = "<group>"; };
 		A5862B2D06A1F1160A26CF88 /* Pods-NuanNuan_OC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NuanNuan_OC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NuanNuan_OC/Pods-NuanNuan_OC.debug.xcconfig"; sourceTree = "<group>"; };
+		BC247E981DAA19B100AB5C84 /* NNEmotionallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEmotionallCell.h; sourceTree = "<group>"; };
+		BC247E991DAA19B100AB5C84 /* NNEmotionallCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNEmotionallCell.m; sourceTree = "<group>"; };
+		BC247E9A1DAA19B100AB5C84 /* NNEmotionallCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNEmotionallCell.xib; sourceTree = "<group>"; };
+		BC247E9D1DAA277800AB5C84 /* NNMeTableHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNMeTableHeadView.h; sourceTree = "<group>"; };
+		BC247E9E1DAA277800AB5C84 /* NNMeTableHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMeTableHeadView.m; sourceTree = "<group>"; };
+		BC247EA01DAA278600AB5C84 /* NNMeTableHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNMeTableHeadView.xib; sourceTree = "<group>"; };
+		BC247EA21DAA316200AB5C84 /* NNMineEmotionalMangmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNMineEmotionalMangmentCell.h; sourceTree = "<group>"; };
+		BC247EA31DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMineEmotionalMangmentCell.m; sourceTree = "<group>"; };
+		BC247EA41DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNMineEmotionalMangmentCell.xib; sourceTree = "<group>"; };
+		BC247EA71DAA35D600AB5C84 /* NNMineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNMineCell.h; sourceTree = "<group>"; };
+		BC247EA81DAA35D600AB5C84 /* NNMineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMineCell.m; sourceTree = "<group>"; };
+		BC247EA91DAA35D600AB5C84 /* NNMineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNMineCell.xib; sourceTree = "<group>"; };
 		BCD505F51D921F8C000FB2C0 /* NuanNuan_OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NuanNuan_OC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD505F91D921F8C000FB2C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCD505FB1D921F8C000FB2C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -226,6 +246,9 @@
 				BCD506591D9232BB000FB2C0 /* NNEmotionalItemView.h */,
 				BCD5065A1D9232BB000FB2C0 /* NNEmotionalItemView.m */,
 				BCD5065C1D9232D0000FB2C0 /* NNEmotionalItemView.xib */,
+				BC247E981DAA19B100AB5C84 /* NNEmotionallCell.h */,
+				BC247E991DAA19B100AB5C84 /* NNEmotionallCell.m */,
+				BC247E9A1DAA19B100AB5C84 /* NNEmotionallCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -259,6 +282,15 @@
 		BCD506461D9231D0000FB2C0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BC247E9D1DAA277800AB5C84 /* NNMeTableHeadView.h */,
+				BC247E9E1DAA277800AB5C84 /* NNMeTableHeadView.m */,
+				BC247EA01DAA278600AB5C84 /* NNMeTableHeadView.xib */,
+				BC247EA21DAA316200AB5C84 /* NNMineEmotionalMangmentCell.h */,
+				BC247EA31DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m */,
+				BC247EA41DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib */,
+				BC247EA71DAA35D600AB5C84 /* NNMineCell.h */,
+				BC247EA81DAA35D600AB5C84 /* NNMineCell.m */,
+				BC247EA91DAA35D600AB5C84 /* NNMineCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -393,10 +425,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCD5065D1D9232D0000FB2C0 /* NNEmotionalItemView.xib in Resources */,
+				BC247EAB1DAA35D600AB5C84 /* NNMineCell.xib in Resources */,
 				BCD506111D92202D000FB2C0 /* Main.storyboard in Resources */,
 				BCD506551D9231D0000FB2C0 /* NNFocusView.xib in Resources */,
 				BCD506081D921F8C000FB2C0 /* LaunchScreen.storyboard in Resources */,
+				BC247EA61DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib in Resources */,
+				BC247EA11DAA278600AB5C84 /* NNMeTableHeadView.xib in Resources */,
 				BCD506051D921F8C000FB2C0 /* Assets.xcassets in Resources */,
+				BC247E9C1DAA19B100AB5C84 /* NNEmotionallCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,8 +502,12 @@
 				BCD506571D9231D0000FB2C0 /* NNServerVC.m in Sources */,
 				BCD506371D923003000FB2C0 /* UIViewExt.m in Sources */,
 				BCD506561D9231D0000FB2C0 /* NNMeVC.m in Sources */,
+				BC247EAA1DAA35D600AB5C84 /* NNMineCell.m in Sources */,
 				BCD506581D9231D0000FB2C0 /* NNTreeHoleVC.m in Sources */,
+				BC247EA51DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m in Sources */,
 				BCD506541D9231D0000FB2C0 /* NNFocusView.m in Sources */,
+				BC247E9B1DAA19B100AB5C84 /* NNEmotionallCell.m in Sources */,
+				BC247E9F1DAA277800AB5C84 /* NNMeTableHeadView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

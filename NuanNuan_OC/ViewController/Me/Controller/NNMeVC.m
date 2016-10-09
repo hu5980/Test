@@ -9,6 +9,7 @@
 #import "NNMeVC.h"
 
 @interface NNMeVC ()
+@property (weak, nonatomic) IBOutlet UITableView *meTableView;
 
 @end
 

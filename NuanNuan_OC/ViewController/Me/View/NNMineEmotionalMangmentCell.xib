@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="NNMineEmotionalMangmentCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="59"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paB-58-g5L">
+                        <state key="normal" image="400_03"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83H-85-INY">
+                        <state key="normal" image="400_07"/>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNt-PD-kZb">
+                        <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="0.5" id="Rqc-7W-5Qx"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUq-T6-4fd">
+                        <state key="normal" image="400_09"/>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LYK-xE-SHQ">
+                        <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="0.5" id="zjJ-xm-1ie"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOj-hc-PbA">
+                        <state key="normal" image="400_05"/>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aau-Cy-bpg">
+                        <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="0.5" id="Mpl-Mg-tz3"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="PNt-PD-kZb" firstAttribute="leading" secondItem="83H-85-INY" secondAttribute="trailing" constant="-0.5" id="1BU-2l-N9M"/>
+                    <constraint firstAttribute="bottom" secondItem="hUq-T6-4fd" secondAttribute="bottom" id="2A9-Ux-p2B"/>
+                    <constraint firstAttribute="bottom" secondItem="PNt-PD-kZb" secondAttribute="bottom" constant="-1" id="2cW-ua-YkH"/>
+                    <constraint firstItem="PNt-PD-kZb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="3be-bY-ybd"/>
+                    <constraint firstItem="aau-Cy-bpg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4Ol-NO-Qyt"/>
+                    <constraint firstItem="ZOj-hc-PbA" firstAttribute="width" secondItem="83H-85-INY" secondAttribute="width" id="4nt-s3-GlU"/>
+                    <constraint firstAttribute="bottom" secondItem="aau-Cy-bpg" secondAttribute="bottom" constant="-1" id="4qT-Qy-rEO"/>
+                    <constraint firstItem="LYK-xE-SHQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="538-xf-Gn4"/>
+                    <constraint firstItem="paB-58-g5L" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="5oC-mK-b0B"/>
+                    <constraint firstItem="ZOj-hc-PbA" firstAttribute="leading" secondItem="paB-58-g5L" secondAttribute="trailing" id="7ZJ-OS-NKE"/>
+                    <constraint firstItem="83H-85-INY" firstAttribute="width" secondItem="hUq-T6-4fd" secondAttribute="width" id="7j9-1j-kKv"/>
+                    <constraint firstAttribute="bottom" secondItem="paB-58-g5L" secondAttribute="bottom" id="9fF-cv-vvj"/>
+                    <constraint firstItem="aau-Cy-bpg" firstAttribute="leading" secondItem="ZOj-hc-PbA" secondAttribute="trailing" constant="-0.5" id="Cbv-DE-PVQ"/>
+                    <constraint firstItem="paB-58-g5L" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Dnr-15-rtF"/>
+                    <constraint firstItem="hUq-T6-4fd" firstAttribute="leading" secondItem="83H-85-INY" secondAttribute="trailing" id="HYh-Wb-smh"/>
+                    <constraint firstAttribute="bottom" secondItem="LYK-xE-SHQ" secondAttribute="bottom" constant="-1" id="QWn-10-Ewb"/>
+                    <constraint firstItem="LYK-xE-SHQ" firstAttribute="leading" secondItem="paB-58-g5L" secondAttribute="trailing" constant="-0.5" id="THR-XP-xeD"/>
+                    <constraint firstAttribute="bottom" secondItem="83H-85-INY" secondAttribute="bottom" id="aFo-cE-v1P"/>
+                    <constraint firstAttribute="trailing" secondItem="hUq-T6-4fd" secondAttribute="trailing" id="eBe-c5-V6S"/>
+                    <constraint firstItem="paB-58-g5L" firstAttribute="width" secondItem="ZOj-hc-PbA" secondAttribute="width" id="iLm-3x-9DP"/>
+                    <constraint firstAttribute="bottom" secondItem="ZOj-hc-PbA" secondAttribute="bottom" id="jsh-gQ-PCc"/>
+                    <constraint firstItem="ZOj-hc-PbA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="nVM-Cc-ZXg"/>
+                    <constraint firstItem="83H-85-INY" firstAttribute="leading" secondItem="ZOj-hc-PbA" secondAttribute="trailing" id="u4t-cb-gve"/>
+                    <constraint firstItem="hUq-T6-4fd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vJc-ct-c8E"/>
+                    <constraint firstItem="83H-85-INY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="wn6-bJ-cgv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="mineCommentButton" destination="ZOj-hc-PbA" id="ZjZ-0f-ink"/>
+                <outlet property="mineLikeButton" destination="83H-85-INY" id="d2f-J7-Zds"/>
+                <outlet property="minePraiseButton" destination="paB-58-g5L" id="sb9-L2-PXD"/>
+                <outlet property="mineShareButton" destination="hUq-T6-4fd" id="r70-6v-1WW"/>
+            </connections>
+            <point key="canvasLocation" x="-98" y="46"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="400_03" width="20" height="20"/>
+        <image name="400_05" width="20" height="20"/>
+        <image name="400_07" width="20" height="20"/>
+        <image name="400_09" width="20" height="20"/>
+    </resources>
+</document>
