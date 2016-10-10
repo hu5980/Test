@@ -186,7 +186,6 @@
 				BCD506411D9231D0000FB2C0 /* Me */,
 				BCD506471D9231D0000FB2C0 /* Server */,
 				BCD5064D1D9231D0000FB2C0 /* TreeHoel */,
-				BCD506151D9222E5000FB2C0 /* Base */,
 				BCD5061C1D92241A000FB2C0 /* NNTabbarVC.h */,
 				BCD5061D1D92241A000FB2C0 /* NNTabbarVC.m */,
 			);
@@ -199,7 +198,8 @@
 				BCD506161D92231E000FB2C0 /* NNBaseVC.h */,
 				BCD506171D92231E000FB2C0 /* NNBaseVC.m */,
 			);
-			path = Base;
+			name = Base;
+			path = ../Base;
 			sourceTree = "<group>";
 		};
 		BCD506281D92252A000FB2C0 /* UIColor */ = {
@@ -298,6 +298,7 @@
 		BCD506471D9231D0000FB2C0 /* Server */ = {
 			isa = PBXGroup;
 			children = (
+				BCD506151D9222E5000FB2C0 /* Base */,
 				BCD506481D9231D0000FB2C0 /* Controller */,
 				BCD5064B1D9231D0000FB2C0 /* Model */,
 				BCD5064C1D9231D0000FB2C0 /* View */,

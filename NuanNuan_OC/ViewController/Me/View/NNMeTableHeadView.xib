@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,13 +12,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gyt-fI-XuE">
-                    <color key="backgroundColor" red="0.31369020130000003" green="0.28158614380000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="Gyt-fI-XuE" secondAttribute="height" multiplier="375:164" id="6Kf-5A-rjH"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhe-te-A8A">
                     <color key="backgroundColor" red="1" green="0.7725490196" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -29,29 +21,23 @@
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJ1-sv-3Ct">
                     <constraints>
-                        <constraint firstAttribute="height" constant="12" id="nV5-zU-3RT"/>
+                        <constraint firstAttribute="height" constant="12" id="STO-4E-8ey"/>
+                        <constraint firstAttribute="width" constant="247" id="bBA-w0-pNr"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="deviceRGB"/>
+                    <color key="textColor" red="0.16078431369999999" green="0.80000000000000004" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.16078431369999999" green="0.80000000000000004" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Gyt-fI-XuE" secondAttribute="bottom" id="0YO-Gv-bhC"/>
-                <constraint firstItem="Gyt-fI-XuE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="61h-4D-ENL"/>
-                <constraint firstAttribute="trailing" secondItem="Gyt-fI-XuE" secondAttribute="trailing" id="G8E-nY-J9f"/>
-                <constraint firstItem="Dhe-te-A8A" firstAttribute="centerX" secondItem="sJ1-sv-3Ct" secondAttribute="centerX" id="Gg7-eq-F7j"/>
-                <constraint firstItem="sJ1-sv-3Ct" firstAttribute="top" secondItem="Dhe-te-A8A" secondAttribute="bottom" constant="10" id="Osh-9r-c5A"/>
+                <constraint firstItem="sJ1-sv-3Ct" firstAttribute="centerX" secondItem="Dhe-te-A8A" secondAttribute="centerX" id="OfV-We-XhE"/>
+                <constraint firstItem="sJ1-sv-3Ct" firstAttribute="top" secondItem="Dhe-te-A8A" secondAttribute="bottom" constant="10" id="Vvq-jO-HvU"/>
                 <constraint firstItem="Dhe-te-A8A" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="64" id="Xjj-ep-sCO"/>
-                <constraint firstAttribute="bottom" secondItem="sJ1-sv-3Ct" secondAttribute="bottom" constant="18" id="Zpr-MH-iLg"/>
-                <constraint firstItem="sJ1-sv-3Ct" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="64" id="e31-Wm-8CE"/>
-                <constraint firstAttribute="trailing" secondItem="sJ1-sv-3Ct" secondAttribute="trailing" constant="64" id="fI6-di-kfz"/>
-                <constraint firstItem="Gyt-fI-XuE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hyb-Qg-EsC"/>
+                <constraint firstItem="Dhe-te-A8A" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ben-h0-5mL"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="backgroundButton" destination="Gyt-fI-XuE" id="SZW-AS-LFq"/>
                 <outlet property="headImageButton" destination="Dhe-te-A8A" id="cBV-gZ-UOl"/>
                 <outlet property="nikeNameLabel" destination="sJ1-sv-3Ct" id="KCw-qe-WhW"/>
             </connections>

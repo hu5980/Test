@@ -16,4 +16,12 @@
 #define NNAppWidth                      [[UIScreen mainScreen] bounds].size.width
 #define NNAppHeight                     [[UIScreen mainScreen] bounds].size.height
 
+#ifdef DEBUG
+#import <Foundation/Foundation.h>
+#define NNLog(...) NSLog(__VA_ARGS__)
+#else
+#define NNLog(...)
+#endif
+
+
 #endif /* Define_h */

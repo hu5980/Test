@@ -7,6 +7,9 @@
 //
 
 #import "NNMeVC.h"
+#import "NNMeTableHeadView.h"
+#import "NNMineEmotionalMangmentCell.h"
+#import "NNEmotionallCell.h"
 
 @interface NNMeVC ()
 @property (weak, nonatomic) IBOutlet UITableView *meTableView;
@@ -17,7 +20,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initView];
     // Do any additional setup after loading the view.
+}
+
+
+- (void)initView {
+    NNMeTableHeadView *headerView = [[NSBundle mainBundle] loadNibNamed:@"NNMeTableHeadView" owner:self options:nil][0];
+    headerView.frame = CGRectMake(0, 0, NNAppWidth, NNAppWidth *164 / 375);
+    [headerView.backgroundButton setBackgroundColor:[UIColor redColor]];
+    _meTableView.tableHeaderView = headerView;
+    _meTableView.backgroundColor = [UIColor yellowColor];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,6 +10,7 @@
 
 @interface NNHomePageVC ()
 
+
 @property (weak, nonatomic) IBOutlet UITableView *homePageTableView;
 @end
 
@@ -17,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
 }
 
