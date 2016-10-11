@@ -196,8 +196,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q2T-9R-InC">
-                                <frame key="frameInset" minX="220" minY="53" width="161" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q2T-9R-InC">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="161" id="qbC-qi-cws"/>
                                     <constraint firstAttribute="height" constant="30" id="s6T-44-pfE"/>
@@ -205,8 +204,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="geJ-wC-ulB">
-                                <frame key="frameInset" minX="220" minY="139" width="161" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="geJ-wC-ulB">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="161" id="aM5-pZ-rs4"/>
                                     <constraint firstAttribute="height" constant="30" id="bsX-X2-uVc"/>
@@ -250,10 +248,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="3Gh-gQ-Ote" firstAttribute="top" secondItem="o4X-2H-tGl" secondAttribute="bottom" constant="-49" id="JDZ-pw-ibg"/>
+                            <constraint firstItem="3Gh-gQ-Ote" firstAttribute="top" secondItem="o4X-2H-tGl" secondAttribute="bottom" constant="-39" id="JDZ-pw-ibg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="o4X-2H-tGl" secondAttribute="trailing" constant="-16" id="WyQ-dQ-C4k"/>
                             <constraint firstItem="o4X-2H-tGl" firstAttribute="leading" secondItem="Grn-R0-9Vn" secondAttribute="leadingMargin" constant="-16" id="cBy-Wp-GIA"/>
-                            <constraint firstItem="o4X-2H-tGl" firstAttribute="top" secondItem="Nza-kJ-RTJ" secondAttribute="bottom" constant="-64" id="jbw-Te-DBx"/>
+                            <constraint firstItem="o4X-2H-tGl" firstAttribute="top" secondItem="Nza-kJ-RTJ" secondAttribute="bottom" constant="-44" id="jbw-Te-DBx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Sih-Ez-aVh"/>
@@ -263,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGd-to-B9O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1349.5999999999999" y="-1020.5397301349326"/>
+            <point key="canvasLocation" x="-1350" y="-1021.4788732394367"/>
         </scene>
     </scenes>
     <resources>

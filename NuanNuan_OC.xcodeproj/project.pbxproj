@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		BC247E9B1DAA19B100AB5C84 /* NNEmotionallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC247E991DAA19B100AB5C84 /* NNEmotionallCell.m */; };
 		BC247E9C1DAA19B100AB5C84 /* NNEmotionallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC247E9A1DAA19B100AB5C84 /* NNEmotionallCell.xib */; };
-		BC247E9F1DAA277800AB5C84 /* NNMeTableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC247E9E1DAA277800AB5C84 /* NNMeTableHeadView.m */; };
-		BC247EA11DAA278600AB5C84 /* NNMeTableHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC247EA01DAA278600AB5C84 /* NNMeTableHeadView.xib */; };
 		BC247EA51DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC247EA31DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m */; };
 		BC247EA61DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC247EA41DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib */; };
 		BC247EAA1DAA35D600AB5C84 /* NNMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC247EA81DAA35D600AB5C84 /* NNMineCell.m */; };
@@ -26,13 +24,17 @@
 		BCD5062B1D92252A000FB2C0 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5062A1D92252A000FB2C0 /* UIColor+Helper.m */; };
 		BCD506371D923003000FB2C0 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD506361D923003000FB2C0 /* UIViewExt.m */; };
 		BCD506531D9231D0000FB2C0 /* NNHomePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5063B1D9231D0000FB2C0 /* NNHomePageVC.m */; };
-		BCD506541D9231D0000FB2C0 /* NNFocusView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5063F1D9231D0000FB2C0 /* NNFocusView.m */; };
-		BCD506551D9231D0000FB2C0 /* NNFocusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD506401D9231D0000FB2C0 /* NNFocusView.xib */; };
 		BCD506561D9231D0000FB2C0 /* NNMeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD506441D9231D0000FB2C0 /* NNMeVC.m */; };
 		BCD506571D9231D0000FB2C0 /* NNServerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5064A1D9231D0000FB2C0 /* NNServerVC.m */; };
 		BCD506581D9231D0000FB2C0 /* NNTreeHoleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD506501D9231D0000FB2C0 /* NNTreeHoleVC.m */; };
 		BCD5065B1D9232BB000FB2C0 /* NNEmotionalItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5065A1D9232BB000FB2C0 /* NNEmotionalItemView.m */; };
 		BCD5065D1D9232D0000FB2C0 /* NNEmotionalItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD5065C1D9232D0000FB2C0 /* NNEmotionalItemView.xib */; };
+		BCD9AE691DACBCB6008DB98E /* NNSuccessCaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE671DACBCB6008DB98E /* NNSuccessCaseVC.m */; };
+		BCD9AE6A1DACBCB6008DB98E /* NNSuccessCaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE681DACBCB6008DB98E /* NNSuccessCaseVC.xib */; };
+		BCD9AE6E1DACC668008DB98E /* NNEmotionallItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE6C1DACC668008DB98E /* NNEmotionallItemCell.m */; };
+		BCD9AE6F1DACC668008DB98E /* NNEmotionallItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE6D1DACC668008DB98E /* NNEmotionallItemCell.xib */; };
+		BCD9AE721DACCFF0008DB98E /* NNRingImageViewView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE711DACCFF0008DB98E /* NNRingImageViewView.m */; };
+		BCD9AE781DACD323008DB98E /* NNRingImageViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE771DACD323008DB98E /* NNRingImageViewView.xib */; };
 		C572126AF56E095F0A988671 /* Pods_NuanNuan_OC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00BA27114ACC2597EA70FB0 /* Pods_NuanNuan_OC.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,9 +44,6 @@
 		BC247E981DAA19B100AB5C84 /* NNEmotionallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEmotionallCell.h; sourceTree = "<group>"; };
 		BC247E991DAA19B100AB5C84 /* NNEmotionallCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNEmotionallCell.m; sourceTree = "<group>"; };
 		BC247E9A1DAA19B100AB5C84 /* NNEmotionallCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNEmotionallCell.xib; sourceTree = "<group>"; };
-		BC247E9D1DAA277800AB5C84 /* NNMeTableHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNMeTableHeadView.h; sourceTree = "<group>"; };
-		BC247E9E1DAA277800AB5C84 /* NNMeTableHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMeTableHeadView.m; sourceTree = "<group>"; };
-		BC247EA01DAA278600AB5C84 /* NNMeTableHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNMeTableHeadView.xib; sourceTree = "<group>"; };
 		BC247EA21DAA316200AB5C84 /* NNMineEmotionalMangmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNMineEmotionalMangmentCell.h; sourceTree = "<group>"; };
 		BC247EA31DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMineEmotionalMangmentCell.m; sourceTree = "<group>"; };
 		BC247EA41DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNMineEmotionalMangmentCell.xib; sourceTree = "<group>"; };
@@ -72,9 +71,6 @@
 		BCD506361D923003000FB2C0 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		BCD5063A1D9231D0000FB2C0 /* NNHomePageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNHomePageVC.h; sourceTree = "<group>"; };
 		BCD5063B1D9231D0000FB2C0 /* NNHomePageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNHomePageVC.m; sourceTree = "<group>"; };
-		BCD5063E1D9231D0000FB2C0 /* NNFocusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNFocusView.h; sourceTree = "<group>"; };
-		BCD5063F1D9231D0000FB2C0 /* NNFocusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNFocusView.m; sourceTree = "<group>"; };
-		BCD506401D9231D0000FB2C0 /* NNFocusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNFocusView.xib; sourceTree = "<group>"; };
 		BCD506431D9231D0000FB2C0 /* NNMeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNMeVC.h; sourceTree = "<group>"; };
 		BCD506441D9231D0000FB2C0 /* NNMeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMeVC.m; sourceTree = "<group>"; };
 		BCD506491D9231D0000FB2C0 /* NNServerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNServerVC.h; sourceTree = "<group>"; };
@@ -84,6 +80,15 @@
 		BCD506591D9232BB000FB2C0 /* NNEmotionalItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEmotionalItemView.h; sourceTree = "<group>"; };
 		BCD5065A1D9232BB000FB2C0 /* NNEmotionalItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNEmotionalItemView.m; sourceTree = "<group>"; };
 		BCD5065C1D9232D0000FB2C0 /* NNEmotionalItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNEmotionalItemView.xib; sourceTree = "<group>"; };
+		BCD9AE661DACBCB6008DB98E /* NNSuccessCaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSuccessCaseVC.h; sourceTree = "<group>"; };
+		BCD9AE671DACBCB6008DB98E /* NNSuccessCaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNSuccessCaseVC.m; sourceTree = "<group>"; };
+		BCD9AE681DACBCB6008DB98E /* NNSuccessCaseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNSuccessCaseVC.xib; sourceTree = "<group>"; };
+		BCD9AE6B1DACC668008DB98E /* NNEmotionallItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEmotionallItemCell.h; sourceTree = "<group>"; };
+		BCD9AE6C1DACC668008DB98E /* NNEmotionallItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNEmotionallItemCell.m; sourceTree = "<group>"; };
+		BCD9AE6D1DACC668008DB98E /* NNEmotionallItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNEmotionallItemCell.xib; sourceTree = "<group>"; };
+		BCD9AE701DACCFF0008DB98E /* NNRingImageViewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNRingImageViewView.h; sourceTree = "<group>"; };
+		BCD9AE711DACCFF0008DB98E /* NNRingImageViewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNRingImageViewView.m; sourceTree = "<group>"; };
+		BCD9AE771DACD323008DB98E /* NNRingImageViewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNRingImageViewView.xib; sourceTree = "<group>"; };
 		D00BA27114ACC2597EA70FB0 /* Pods_NuanNuan_OC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NuanNuan_OC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -226,6 +231,9 @@
 			children = (
 				BCD5063A1D9231D0000FB2C0 /* NNHomePageVC.h */,
 				BCD5063B1D9231D0000FB2C0 /* NNHomePageVC.m */,
+				BCD9AE661DACBCB6008DB98E /* NNSuccessCaseVC.h */,
+				BCD9AE671DACBCB6008DB98E /* NNSuccessCaseVC.m */,
+				BCD9AE681DACBCB6008DB98E /* NNSuccessCaseVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -240,15 +248,18 @@
 		BCD5063D1D9231D0000FB2C0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BCD5063E1D9231D0000FB2C0 /* NNFocusView.h */,
-				BCD5063F1D9231D0000FB2C0 /* NNFocusView.m */,
-				BCD506401D9231D0000FB2C0 /* NNFocusView.xib */,
 				BCD506591D9232BB000FB2C0 /* NNEmotionalItemView.h */,
 				BCD5065A1D9232BB000FB2C0 /* NNEmotionalItemView.m */,
 				BCD5065C1D9232D0000FB2C0 /* NNEmotionalItemView.xib */,
 				BC247E981DAA19B100AB5C84 /* NNEmotionallCell.h */,
 				BC247E991DAA19B100AB5C84 /* NNEmotionallCell.m */,
 				BC247E9A1DAA19B100AB5C84 /* NNEmotionallCell.xib */,
+				BCD9AE6B1DACC668008DB98E /* NNEmotionallItemCell.h */,
+				BCD9AE6C1DACC668008DB98E /* NNEmotionallItemCell.m */,
+				BCD9AE6D1DACC668008DB98E /* NNEmotionallItemCell.xib */,
+				BCD9AE701DACCFF0008DB98E /* NNRingImageViewView.h */,
+				BCD9AE711DACCFF0008DB98E /* NNRingImageViewView.m */,
+				BCD9AE771DACD323008DB98E /* NNRingImageViewView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -282,9 +293,6 @@
 		BCD506461D9231D0000FB2C0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BC247E9D1DAA277800AB5C84 /* NNMeTableHeadView.h */,
-				BC247E9E1DAA277800AB5C84 /* NNMeTableHeadView.m */,
-				BC247EA01DAA278600AB5C84 /* NNMeTableHeadView.xib */,
 				BC247EA21DAA316200AB5C84 /* NNMineEmotionalMangmentCell.h */,
 				BC247EA31DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m */,
 				BC247EA41DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib */,
@@ -427,11 +435,12 @@
 			files = (
 				BCD5065D1D9232D0000FB2C0 /* NNEmotionalItemView.xib in Resources */,
 				BC247EAB1DAA35D600AB5C84 /* NNMineCell.xib in Resources */,
+				BCD9AE6A1DACBCB6008DB98E /* NNSuccessCaseVC.xib in Resources */,
 				BCD506111D92202D000FB2C0 /* Main.storyboard in Resources */,
-				BCD506551D9231D0000FB2C0 /* NNFocusView.xib in Resources */,
 				BCD506081D921F8C000FB2C0 /* LaunchScreen.storyboard in Resources */,
+				BCD9AE781DACD323008DB98E /* NNRingImageViewView.xib in Resources */,
+				BCD9AE6F1DACC668008DB98E /* NNEmotionallItemCell.xib in Resources */,
 				BC247EA61DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib in Resources */,
-				BC247EA11DAA278600AB5C84 /* NNMeTableHeadView.xib in Resources */,
 				BCD506051D921F8C000FB2C0 /* Assets.xcassets in Resources */,
 				BC247E9C1DAA19B100AB5C84 /* NNEmotionallCell.xib in Resources */,
 			);
@@ -496,19 +505,20 @@
 				BCD5061E1D92241A000FB2C0 /* NNTabbarVC.m in Sources */,
 				BCD506001D921F8C000FB2C0 /* ViewController.m in Sources */,
 				BCD5065B1D9232BB000FB2C0 /* NNEmotionalItemView.m in Sources */,
+				BCD9AE6E1DACC668008DB98E /* NNEmotionallItemCell.m in Sources */,
 				BCD506181D92231E000FB2C0 /* NNBaseVC.m in Sources */,
 				BCD506531D9231D0000FB2C0 /* NNHomePageVC.m in Sources */,
 				BCD505FD1D921F8C000FB2C0 /* AppDelegate.m in Sources */,
 				BCD505FA1D921F8C000FB2C0 /* main.m in Sources */,
+				BCD9AE691DACBCB6008DB98E /* NNSuccessCaseVC.m in Sources */,
 				BCD506571D9231D0000FB2C0 /* NNServerVC.m in Sources */,
 				BCD506371D923003000FB2C0 /* UIViewExt.m in Sources */,
 				BCD506561D9231D0000FB2C0 /* NNMeVC.m in Sources */,
 				BC247EAA1DAA35D600AB5C84 /* NNMineCell.m in Sources */,
 				BCD506581D9231D0000FB2C0 /* NNTreeHoleVC.m in Sources */,
 				BC247EA51DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m in Sources */,
-				BCD506541D9231D0000FB2C0 /* NNFocusView.m in Sources */,
 				BC247E9B1DAA19B100AB5C84 /* NNEmotionallCell.m in Sources */,
-				BC247E9F1DAA277800AB5C84 /* NNMeTableHeadView.m in Sources */,
+				BCD9AE721DACCFF0008DB98E /* NNRingImageViewView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

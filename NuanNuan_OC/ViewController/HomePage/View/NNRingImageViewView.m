@@ -1,14 +1,14 @@
 //
-//  NNMeTableHeadView.m
+//  NNRingImageViewView.m
 //  NuanNuan_OC
 //
-//  Created by 忘、 on 16/10/9.
+//  Created by 忘、 on 16/10/11.
 //  Copyright © 2016年 NuanNuan. All rights reserved.
 //
 
-#import "NNMeTableHeadView.h"
+#import "NNRingImageViewView.h"
 
-@implementation NNMeTableHeadView
+@implementation NNRingImageViewView
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -17,5 +17,8 @@
     // Drawing code
 }
 */
+- (void)initView {
+    
+}
 
 @end

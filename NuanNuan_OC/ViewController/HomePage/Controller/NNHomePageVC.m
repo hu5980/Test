@@ -7,9 +7,12 @@
 //
 
 #import "NNHomePageVC.h"
+#import "NNRingImageViewView.h"
 
 @interface NNHomePageVC ()
-
+{
+    NNRingImageViewView *headerView;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *homePageTableView;
 @end
@@ -18,8 +21,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initData];
+    [self initUI];
     
     // Do any additional setup after loading the view.
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    headerView.frame = CGRectMake(0, 0, NNAppWidth, NNAppWidth * 164 / 375 );
+}
+
+- (void)initUI {
+    headerView = LOAD_VIEW_FROM_BUNDLE(@"NNRingImageViewView");
+    _homePageTableView.tableHeaderView = headerView;
+    
+    _homePageTableView.backgroundColor = NN_BACKGROUND_COLOR;
+ 
+    
+}
+
+- (void)initData {
+
 }
 
 - (void)didReceiveMemoryWarning {
