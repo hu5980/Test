@@ -14,7 +14,8 @@ typedef void(^selectRingImageBlock)();
 
 @property (weak, nonatomic) IBOutlet UIScrollView *ringScrollView;
 
+@property (nonatomic,copy) selectRingImageBlock ringBlock;
 
-- (void)initView;
+- (void)initViewWithRingArray:(NSArray *)array;
 
 @end

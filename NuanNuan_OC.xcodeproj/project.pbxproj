@@ -27,14 +27,18 @@
 		BCD506561D9231D0000FB2C0 /* NNMeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD506441D9231D0000FB2C0 /* NNMeVC.m */; };
 		BCD506571D9231D0000FB2C0 /* NNServerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5064A1D9231D0000FB2C0 /* NNServerVC.m */; };
 		BCD506581D9231D0000FB2C0 /* NNTreeHoleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD506501D9231D0000FB2C0 /* NNTreeHoleVC.m */; };
-		BCD5065B1D9232BB000FB2C0 /* NNEmotionalItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5065A1D9232BB000FB2C0 /* NNEmotionalItemView.m */; };
-		BCD5065D1D9232D0000FB2C0 /* NNEmotionalItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD5065C1D9232D0000FB2C0 /* NNEmotionalItemView.xib */; };
 		BCD9AE691DACBCB6008DB98E /* NNSuccessCaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE671DACBCB6008DB98E /* NNSuccessCaseVC.m */; };
 		BCD9AE6A1DACBCB6008DB98E /* NNSuccessCaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE681DACBCB6008DB98E /* NNSuccessCaseVC.xib */; };
 		BCD9AE6E1DACC668008DB98E /* NNEmotionallItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE6C1DACC668008DB98E /* NNEmotionallItemCell.m */; };
 		BCD9AE6F1DACC668008DB98E /* NNEmotionallItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE6D1DACC668008DB98E /* NNEmotionallItemCell.xib */; };
 		BCD9AE721DACCFF0008DB98E /* NNRingImageViewView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE711DACCFF0008DB98E /* NNRingImageViewView.m */; };
 		BCD9AE781DACD323008DB98E /* NNRingImageViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE771DACD323008DB98E /* NNRingImageViewView.xib */; };
+		BCD9AE7C1DACE424008DB98E /* NNEmotionalItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE7A1DACE424008DB98E /* NNEmotionalItemCell.m */; };
+		BCD9AE7D1DACE424008DB98E /* NNEmotionalItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE7B1DACE424008DB98E /* NNEmotionalItemCell.xib */; };
+		BCD9AE801DACED54008DB98E /* NNCustomNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE7F1DACED54008DB98E /* NNCustomNavigationView.m */; };
+		BCD9AE821DACED5F008DB98E /* NNCustomNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE811DACED5F008DB98E /* NNCustomNavigationView.xib */; };
+		BCD9AE861DACF16D008DB98E /* NNTreeHoelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE841DACF16D008DB98E /* NNTreeHoelCell.m */; };
+		BCD9AE871DACF16D008DB98E /* NNTreeHoelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE851DACF16D008DB98E /* NNTreeHoelCell.xib */; };
 		C572126AF56E095F0A988671 /* Pods_NuanNuan_OC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00BA27114ACC2597EA70FB0 /* Pods_NuanNuan_OC.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,9 +81,6 @@
 		BCD5064A1D9231D0000FB2C0 /* NNServerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNServerVC.m; sourceTree = "<group>"; };
 		BCD5064F1D9231D0000FB2C0 /* NNTreeHoleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNTreeHoleVC.h; sourceTree = "<group>"; };
 		BCD506501D9231D0000FB2C0 /* NNTreeHoleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNTreeHoleVC.m; sourceTree = "<group>"; };
-		BCD506591D9232BB000FB2C0 /* NNEmotionalItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEmotionalItemView.h; sourceTree = "<group>"; };
-		BCD5065A1D9232BB000FB2C0 /* NNEmotionalItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNEmotionalItemView.m; sourceTree = "<group>"; };
-		BCD5065C1D9232D0000FB2C0 /* NNEmotionalItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNEmotionalItemView.xib; sourceTree = "<group>"; };
 		BCD9AE661DACBCB6008DB98E /* NNSuccessCaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSuccessCaseVC.h; sourceTree = "<group>"; };
 		BCD9AE671DACBCB6008DB98E /* NNSuccessCaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNSuccessCaseVC.m; sourceTree = "<group>"; };
 		BCD9AE681DACBCB6008DB98E /* NNSuccessCaseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNSuccessCaseVC.xib; sourceTree = "<group>"; };
@@ -89,6 +90,15 @@
 		BCD9AE701DACCFF0008DB98E /* NNRingImageViewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNRingImageViewView.h; sourceTree = "<group>"; };
 		BCD9AE711DACCFF0008DB98E /* NNRingImageViewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNRingImageViewView.m; sourceTree = "<group>"; };
 		BCD9AE771DACD323008DB98E /* NNRingImageViewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNRingImageViewView.xib; sourceTree = "<group>"; };
+		BCD9AE791DACE424008DB98E /* NNEmotionalItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEmotionalItemCell.h; sourceTree = "<group>"; };
+		BCD9AE7A1DACE424008DB98E /* NNEmotionalItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNEmotionalItemCell.m; sourceTree = "<group>"; };
+		BCD9AE7B1DACE424008DB98E /* NNEmotionalItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNEmotionalItemCell.xib; sourceTree = "<group>"; };
+		BCD9AE7E1DACED54008DB98E /* NNCustomNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNCustomNavigationView.h; sourceTree = "<group>"; };
+		BCD9AE7F1DACED54008DB98E /* NNCustomNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNCustomNavigationView.m; sourceTree = "<group>"; };
+		BCD9AE811DACED5F008DB98E /* NNCustomNavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNCustomNavigationView.xib; sourceTree = "<group>"; };
+		BCD9AE831DACF16D008DB98E /* NNTreeHoelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNTreeHoelCell.h; sourceTree = "<group>"; };
+		BCD9AE841DACF16D008DB98E /* NNTreeHoelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNTreeHoelCell.m; sourceTree = "<group>"; };
+		BCD9AE851DACF16D008DB98E /* NNTreeHoelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNTreeHoelCell.xib; sourceTree = "<group>"; };
 		D00BA27114ACC2597EA70FB0 /* Pods_NuanNuan_OC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NuanNuan_OC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -248,9 +258,9 @@
 		BCD5063D1D9231D0000FB2C0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BCD506591D9232BB000FB2C0 /* NNEmotionalItemView.h */,
-				BCD5065A1D9232BB000FB2C0 /* NNEmotionalItemView.m */,
-				BCD5065C1D9232D0000FB2C0 /* NNEmotionalItemView.xib */,
+				BCD9AE791DACE424008DB98E /* NNEmotionalItemCell.h */,
+				BCD9AE7A1DACE424008DB98E /* NNEmotionalItemCell.m */,
+				BCD9AE7B1DACE424008DB98E /* NNEmotionalItemCell.xib */,
 				BC247E981DAA19B100AB5C84 /* NNEmotionallCell.h */,
 				BC247E991DAA19B100AB5C84 /* NNEmotionallCell.m */,
 				BC247E9A1DAA19B100AB5C84 /* NNEmotionallCell.xib */,
@@ -366,6 +376,12 @@
 		BCD506521D9231D0000FB2C0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BCD9AE7E1DACED54008DB98E /* NNCustomNavigationView.h */,
+				BCD9AE7F1DACED54008DB98E /* NNCustomNavigationView.m */,
+				BCD9AE811DACED5F008DB98E /* NNCustomNavigationView.xib */,
+				BCD9AE831DACF16D008DB98E /* NNTreeHoelCell.h */,
+				BCD9AE841DACF16D008DB98E /* NNTreeHoelCell.m */,
+				BCD9AE851DACF16D008DB98E /* NNTreeHoelCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -433,16 +449,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCD5065D1D9232D0000FB2C0 /* NNEmotionalItemView.xib in Resources */,
 				BC247EAB1DAA35D600AB5C84 /* NNMineCell.xib in Resources */,
+				BCD9AE7D1DACE424008DB98E /* NNEmotionalItemCell.xib in Resources */,
 				BCD9AE6A1DACBCB6008DB98E /* NNSuccessCaseVC.xib in Resources */,
 				BCD506111D92202D000FB2C0 /* Main.storyboard in Resources */,
+				BCD9AE821DACED5F008DB98E /* NNCustomNavigationView.xib in Resources */,
 				BCD506081D921F8C000FB2C0 /* LaunchScreen.storyboard in Resources */,
 				BCD9AE781DACD323008DB98E /* NNRingImageViewView.xib in Resources */,
 				BCD9AE6F1DACC668008DB98E /* NNEmotionallItemCell.xib in Resources */,
 				BC247EA61DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib in Resources */,
 				BCD506051D921F8C000FB2C0 /* Assets.xcassets in Resources */,
 				BC247E9C1DAA19B100AB5C84 /* NNEmotionallCell.xib in Resources */,
+				BCD9AE871DACF16D008DB98E /* NNTreeHoelCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,15 +522,17 @@
 				BCD5062B1D92252A000FB2C0 /* UIColor+Helper.m in Sources */,
 				BCD5061E1D92241A000FB2C0 /* NNTabbarVC.m in Sources */,
 				BCD506001D921F8C000FB2C0 /* ViewController.m in Sources */,
-				BCD5065B1D9232BB000FB2C0 /* NNEmotionalItemView.m in Sources */,
+				BCD9AE861DACF16D008DB98E /* NNTreeHoelCell.m in Sources */,
 				BCD9AE6E1DACC668008DB98E /* NNEmotionallItemCell.m in Sources */,
 				BCD506181D92231E000FB2C0 /* NNBaseVC.m in Sources */,
 				BCD506531D9231D0000FB2C0 /* NNHomePageVC.m in Sources */,
+				BCD9AE801DACED54008DB98E /* NNCustomNavigationView.m in Sources */,
 				BCD505FD1D921F8C000FB2C0 /* AppDelegate.m in Sources */,
 				BCD505FA1D921F8C000FB2C0 /* main.m in Sources */,
 				BCD9AE691DACBCB6008DB98E /* NNSuccessCaseVC.m in Sources */,
 				BCD506571D9231D0000FB2C0 /* NNServerVC.m in Sources */,
 				BCD506371D923003000FB2C0 /* UIViewExt.m in Sources */,
+				BCD9AE7C1DACE424008DB98E /* NNEmotionalItemCell.m in Sources */,
 				BCD506561D9231D0000FB2C0 /* NNMeVC.m in Sources */,
 				BC247EAA1DAA35D600AB5C84 /* NNMineCell.m in Sources */,
 				BCD506581D9231D0000FB2C0 /* NNTreeHoleVC.m in Sources */,

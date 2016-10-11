@@ -12,7 +12,9 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tEl-oD-BUf"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tEl-oD-BUf">
+                    <color key="backgroundColor" red="0.16078431369999999" green="0.80000000000000004" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                </scrollView>
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="tEl-oD-BUf" secondAttribute="bottom" id="IpM-2m-yVE"/>

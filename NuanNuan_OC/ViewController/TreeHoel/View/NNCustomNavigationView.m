@@ -1,14 +1,14 @@
 //
-//  NNEmotionalItemView.m
+//  NNCustomNavigationView.m
 //  NuanNuan_OC
 //
-//  Created by 忘、 on 16/9/21.
+//  Created by 忘、 on 16/10/11.
 //  Copyright © 2016年 NuanNuan. All rights reserved.
 //
 
-#import "NNEmotionalItemView.h"
+#import "NNCustomNavigationView.h"
 
-@implementation NNEmotionalItemView
+@implementation NNCustomNavigationView
 
 /*
 // Only override drawRect: if you perform custom drawing.

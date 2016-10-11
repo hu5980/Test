@@ -7,7 +7,7 @@
 //
 
 #import "NNRingImageViewView.h"
-
+#import "Define.h"
 @implementation NNRingImageViewView
 
 /*
@@ -17,8 +17,19 @@
     // Drawing code
 }
 */
-- (void)initView {
-    
+- (void)initViewWithRingArray:(NSArray *)array {
+    for (int i = 0; i < array.count; i++) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.tag = 100+i;
+        [button addTarget:self action:@selector(selectRingImage:) forControlEvents:UIControlEventTouchUpInside];
+        button.frame = CGRectMake(NNAppWidth * i, 0, NNAppWidth, NNAppWidth * 164 / 375);
+        
+        [_ringScrollView addSubview:button];
+    }
+}
+
+- (void)selectRingImage:(UIButton *)button {
+    _ringBlock();
 }
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "NNTreeHoleVC.h"
-
+#import "NNCustomNavigationView.h"
 @interface NNTreeHoleVC ()
 
 @end
@@ -16,7 +16,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initUI];
+    [self initData];
     // Do any additional setup after loading the view.
+}
+
+- (void)initUI {
+    
+    [self.navigationController setNavigationBarHidden:NO];
+    
+    NNCustomNavigationView *view = LOAD_VIEW_FROM_BUNDLE(@"NNCustomNavigationView");
+    view.backgroundColor = [UIColor clearColor];
+    self.navigationItem.titleView = view;
+    
+}
+
+- (void)initData {
+    
 }
 
 - (void)didReceiveMemoryWarning {

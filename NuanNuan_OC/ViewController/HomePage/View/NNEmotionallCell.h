@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^emotionSuccessCaseBlock)();
+
 @interface NNEmotionallCell : UITableViewCell
+
 
 @property (weak, nonatomic) IBOutlet UILabel *emotionTitleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *moreEmotionButton;
+
+@property (copy,nonatomic) emotionSuccessCaseBlock scuucessCaseBlock;
 
 @end

@@ -8,8 +8,9 @@
 
 #import "NNHomePageVC.h"
 #import "NNRingImageViewView.h"
+#import "NNEmotionalItemCell.h"
 
-@interface NNHomePageVC ()
+@interface NNHomePageVC () <UITableViewDelegate,UITableViewDataSource>
 {
     NNRingImageViewView *headerView;
 }
@@ -37,12 +38,58 @@
     _homePageTableView.tableHeaderView = headerView;
     
     _homePageTableView.backgroundColor = NN_BACKGROUND_COLOR;
+    _homePageTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _homePageTableView.delegate = self;
+    _homePageTableView.dataSource = self;
  
-    
+    [_homePageTableView registerNib:[UINib nibWithNibName:@"NNEmotionallCell" bundle:nil] forCellReuseIdentifier:@"emotionAllCell"];
+    [_homePageTableView registerNib:[UINib nibWithNibName:@"NNEmotionalItemCell" bundle:nil] forCellReuseIdentifier:@"emotionalItemCell"];
 }
 
 - (void)initData {
 
+}
+
+#pragma --mark UItableViewDataSource UItableViewDelegate
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (section == 0) {
+        return 1;
+    }
+    return 3;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        return 108;
+    }else {
+        return NNAppWidth *252 /375;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *  cell;
+    if (indexPath.section == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"emotionalItemCell"];
+    }else{
+        cell = [tableView dequeueReusableCellWithIdentifier:@"emotionAllCell"];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, 10)];
+    view.backgroundColor = [UIColor clearColor];
+    return view;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 10;
 }
 
 - (void)didReceiveMemoryWarning {
