@@ -39,6 +39,16 @@
 		BCD9AE821DACED5F008DB98E /* NNCustomNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE811DACED5F008DB98E /* NNCustomNavigationView.xib */; };
 		BCD9AE861DACF16D008DB98E /* NNTreeHoelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE841DACF16D008DB98E /* NNTreeHoelCell.m */; };
 		BCD9AE871DACF16D008DB98E /* NNTreeHoelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE851DACF16D008DB98E /* NNTreeHoelCell.xib */; };
+		BCD9AE8B1DADE582008DB98E /* NNPsychologicalTeacherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE891DADE582008DB98E /* NNPsychologicalTeacherVC.m */; };
+		BCD9AE8C1DADE582008DB98E /* NNPsychologicalTeacherVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE8A1DADE582008DB98E /* NNPsychologicalTeacherVC.xib */; };
+		BCD9AE8F1DADE5EB008DB98E /* NNPsychologicalTeacherHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE8E1DADE5EB008DB98E /* NNPsychologicalTeacherHeaderView.m */; };
+		BCD9AE911DADE5F6008DB98E /* NNPsychologicalTeacherHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE901DADE5F6008DB98E /* NNPsychologicalTeacherHeaderView.xib */; };
+		BCD9AE951DAE0941008DB98E /* NNQuestionAndAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE931DAE0941008DB98E /* NNQuestionAndAnswerCell.m */; };
+		BCD9AE961DAE0941008DB98E /* NNQuestionAndAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE941DAE0941008DB98E /* NNQuestionAndAnswerCell.xib */; };
+		BCD9AE9B1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE991DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.m */; };
+		BCD9AE9C1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE9A1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.xib */; };
+		BCD9AEA01DAE21D1008DB98E /* NNNeterReply.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE9E1DAE21D1008DB98E /* NNNeterReply.m */; };
+		BCD9AEA11DAE21D1008DB98E /* NNNeterReply.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE9F1DAE21D1008DB98E /* NNNeterReply.xib */; };
 		C572126AF56E095F0A988671 /* Pods_NuanNuan_OC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00BA27114ACC2597EA70FB0 /* Pods_NuanNuan_OC.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +109,21 @@
 		BCD9AE831DACF16D008DB98E /* NNTreeHoelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNTreeHoelCell.h; sourceTree = "<group>"; };
 		BCD9AE841DACF16D008DB98E /* NNTreeHoelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNTreeHoelCell.m; sourceTree = "<group>"; };
 		BCD9AE851DACF16D008DB98E /* NNTreeHoelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNTreeHoelCell.xib; sourceTree = "<group>"; };
+		BCD9AE881DADE582008DB98E /* NNPsychologicalTeacherVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNPsychologicalTeacherVC.h; sourceTree = "<group>"; };
+		BCD9AE891DADE582008DB98E /* NNPsychologicalTeacherVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNPsychologicalTeacherVC.m; sourceTree = "<group>"; };
+		BCD9AE8A1DADE582008DB98E /* NNPsychologicalTeacherVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNPsychologicalTeacherVC.xib; sourceTree = "<group>"; };
+		BCD9AE8D1DADE5EB008DB98E /* NNPsychologicalTeacherHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNPsychologicalTeacherHeaderView.h; sourceTree = "<group>"; };
+		BCD9AE8E1DADE5EB008DB98E /* NNPsychologicalTeacherHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNPsychologicalTeacherHeaderView.m; sourceTree = "<group>"; };
+		BCD9AE901DADE5F6008DB98E /* NNPsychologicalTeacherHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNPsychologicalTeacherHeaderView.xib; sourceTree = "<group>"; };
+		BCD9AE921DAE0941008DB98E /* NNQuestionAndAnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNQuestionAndAnswerCell.h; sourceTree = "<group>"; };
+		BCD9AE931DAE0941008DB98E /* NNQuestionAndAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNQuestionAndAnswerCell.m; sourceTree = "<group>"; };
+		BCD9AE941DAE0941008DB98E /* NNQuestionAndAnswerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNQuestionAndAnswerCell.xib; sourceTree = "<group>"; };
+		BCD9AE981DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNQuestionAndAnswerDetailVC.h; sourceTree = "<group>"; };
+		BCD9AE991DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNQuestionAndAnswerDetailVC.m; sourceTree = "<group>"; };
+		BCD9AE9A1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNQuestionAndAnswerDetailVC.xib; sourceTree = "<group>"; };
+		BCD9AE9D1DAE21D1008DB98E /* NNNeterReply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNeterReply.h; sourceTree = "<group>"; };
+		BCD9AE9E1DAE21D1008DB98E /* NNNeterReply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNeterReply.m; sourceTree = "<group>"; };
+		BCD9AE9F1DAE21D1008DB98E /* NNNeterReply.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNNeterReply.xib; sourceTree = "<group>"; };
 		D00BA27114ACC2597EA70FB0 /* Pods_NuanNuan_OC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NuanNuan_OC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -362,6 +387,12 @@
 			children = (
 				BCD5064F1D9231D0000FB2C0 /* NNTreeHoleVC.h */,
 				BCD506501D9231D0000FB2C0 /* NNTreeHoleVC.m */,
+				BCD9AE881DADE582008DB98E /* NNPsychologicalTeacherVC.h */,
+				BCD9AE891DADE582008DB98E /* NNPsychologicalTeacherVC.m */,
+				BCD9AE8A1DADE582008DB98E /* NNPsychologicalTeacherVC.xib */,
+				BCD9AE981DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.h */,
+				BCD9AE991DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.m */,
+				BCD9AE9A1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -382,6 +413,15 @@
 				BCD9AE831DACF16D008DB98E /* NNTreeHoelCell.h */,
 				BCD9AE841DACF16D008DB98E /* NNTreeHoelCell.m */,
 				BCD9AE851DACF16D008DB98E /* NNTreeHoelCell.xib */,
+				BCD9AE8D1DADE5EB008DB98E /* NNPsychologicalTeacherHeaderView.h */,
+				BCD9AE8E1DADE5EB008DB98E /* NNPsychologicalTeacherHeaderView.m */,
+				BCD9AE901DADE5F6008DB98E /* NNPsychologicalTeacherHeaderView.xib */,
+				BCD9AE921DAE0941008DB98E /* NNQuestionAndAnswerCell.h */,
+				BCD9AE931DAE0941008DB98E /* NNQuestionAndAnswerCell.m */,
+				BCD9AE941DAE0941008DB98E /* NNQuestionAndAnswerCell.xib */,
+				BCD9AE9D1DAE21D1008DB98E /* NNNeterReply.h */,
+				BCD9AE9E1DAE21D1008DB98E /* NNNeterReply.m */,
+				BCD9AE9F1DAE21D1008DB98E /* NNNeterReply.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -452,15 +492,20 @@
 				BC247EAB1DAA35D600AB5C84 /* NNMineCell.xib in Resources */,
 				BCD9AE7D1DACE424008DB98E /* NNEmotionalItemCell.xib in Resources */,
 				BCD9AE6A1DACBCB6008DB98E /* NNSuccessCaseVC.xib in Resources */,
+				BCD9AE9C1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.xib in Resources */,
 				BCD506111D92202D000FB2C0 /* Main.storyboard in Resources */,
+				BCD9AE911DADE5F6008DB98E /* NNPsychologicalTeacherHeaderView.xib in Resources */,
+				BCD9AE8C1DADE582008DB98E /* NNPsychologicalTeacherVC.xib in Resources */,
 				BCD9AE821DACED5F008DB98E /* NNCustomNavigationView.xib in Resources */,
 				BCD506081D921F8C000FB2C0 /* LaunchScreen.storyboard in Resources */,
 				BCD9AE781DACD323008DB98E /* NNRingImageViewView.xib in Resources */,
 				BCD9AE6F1DACC668008DB98E /* NNEmotionallItemCell.xib in Resources */,
 				BC247EA61DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib in Resources */,
+				BCD9AE961DAE0941008DB98E /* NNQuestionAndAnswerCell.xib in Resources */,
 				BCD506051D921F8C000FB2C0 /* Assets.xcassets in Resources */,
 				BC247E9C1DAA19B100AB5C84 /* NNEmotionallCell.xib in Resources */,
 				BCD9AE871DACF16D008DB98E /* NNTreeHoelCell.xib in Resources */,
+				BCD9AEA11DAE21D1008DB98E /* NNNeterReply.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +567,8 @@
 				BCD5062B1D92252A000FB2C0 /* UIColor+Helper.m in Sources */,
 				BCD5061E1D92241A000FB2C0 /* NNTabbarVC.m in Sources */,
 				BCD506001D921F8C000FB2C0 /* ViewController.m in Sources */,
+				BCD9AE9B1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.m in Sources */,
+				BCD9AE8B1DADE582008DB98E /* NNPsychologicalTeacherVC.m in Sources */,
 				BCD9AE861DACF16D008DB98E /* NNTreeHoelCell.m in Sources */,
 				BCD9AE6E1DACC668008DB98E /* NNEmotionallItemCell.m in Sources */,
 				BCD506181D92231E000FB2C0 /* NNBaseVC.m in Sources */,
@@ -536,7 +583,10 @@
 				BCD506561D9231D0000FB2C0 /* NNMeVC.m in Sources */,
 				BC247EAA1DAA35D600AB5C84 /* NNMineCell.m in Sources */,
 				BCD506581D9231D0000FB2C0 /* NNTreeHoleVC.m in Sources */,
+				BCD9AE8F1DADE5EB008DB98E /* NNPsychologicalTeacherHeaderView.m in Sources */,
+				BCD9AE951DAE0941008DB98E /* NNQuestionAndAnswerCell.m in Sources */,
 				BC247EA51DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m in Sources */,
+				BCD9AEA01DAE21D1008DB98E /* NNNeterReply.m in Sources */,
 				BC247E9B1DAA19B100AB5C84 /* NNEmotionallCell.m in Sources */,
 				BCD9AE721DACCFF0008DB98E /* NNRingImageViewView.m in Sources */,
 			);
