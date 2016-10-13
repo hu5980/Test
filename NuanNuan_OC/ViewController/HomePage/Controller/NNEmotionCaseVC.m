@@ -6,13 +6,18 @@
 //  Copyright © 2016年 NuanNuan. All rights reserved.
 //
 
-#import "NNSuccessCaseVC.h"
+#import "NNEmotionCaseVC.h"
 
-@interface NNSuccessCaseVC ()
+@interface NNEmotionCaseVC ()
 
 @end
 
-@implementation NNSuccessCaseVC
+@implementation NNEmotionCaseVC
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,12 +28,15 @@
 
 - (void)createEmotionalTypeUI {
     NSArray *array = @[@"婚姻修复",@"夫妻感情",@"婆媳相处"];
+    _emotionalTypeScrollView.contentSize = CGSizeMake((NNAppWidth/3)*array.count, 32);
     for (int i = 0; i< array.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(i*(NNAppWidth/3), 0, NNAppWidth/3, 32);
+        button.frame = CGRectMake(i*(NNAppWidth/3), -64, NNAppWidth/3, 32);
         [button setTitleColor:[UIColor colorFromHexString:@"333333"] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor colorFromHexString:@"FF8833"] forState:UIControlStateSelected];
         button.tag = 100 + i;
+        button.titleLabel.font = [UIFont systemFontOfSize:14];
+        
         [button setTitle:[array objectAtIndex:i] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(changeEmotionalType:) forControlEvents:UIControlEventTouchUpInside];
         [_emotionalTypeScrollView addSubview:button];
@@ -39,7 +47,20 @@
 #pragma --mark Action 
 
 - (void)changeEmotionalType :(UIButton *)button {
-
+    switch (button.tag) {
+        case 100:
+            
+            break;
+        case 101:
+            
+            break;
+        case 102:
+            
+            break;
+            
+        default:
+            break;
+    }
 }
 
 

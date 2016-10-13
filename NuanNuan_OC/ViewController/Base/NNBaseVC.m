@@ -14,14 +14,21 @@
 
 @implementation NNBaseVC
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     if (self.tabBarController != nil ) {
         [self.navigationController setNavigationBarHidden:YES];
     }else{
         [self.navigationController setNavigationBarHidden:NO];
     }
+    
+    self.automaticallyAdjustsScrollViewInsets = YES;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+   
     // Do any additional setup after loading the view.
 }
 

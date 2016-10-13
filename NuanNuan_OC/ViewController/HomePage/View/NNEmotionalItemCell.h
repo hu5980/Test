@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NNEnumDefine.h" 
+
+typedef void(^emotionBlock)(EmotionType type);
 
 @interface NNEmotionalItemCell : UITableViewCell
+
+@property (nonatomic,copy) emotionBlock eblock;
 
 @end

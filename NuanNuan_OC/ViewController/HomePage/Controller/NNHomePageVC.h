@@ -7,7 +7,6 @@
 //
 
 #import "NNBaseVC.h"
-
 @interface NNHomePageVC : NNBaseVC
 
 @end

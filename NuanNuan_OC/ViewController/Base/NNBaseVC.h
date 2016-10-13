@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Define.h"
-
+#import "NNEnumDefine.h"
 @interface NNBaseVC : UIViewController
 
 @end

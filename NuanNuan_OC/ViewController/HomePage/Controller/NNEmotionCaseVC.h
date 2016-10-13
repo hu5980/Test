@@ -8,7 +8,7 @@
 
 #import "NNBaseVC.h"
 
-@interface NNSuccessCaseVC : NNBaseVC
+@interface NNEmotionCaseVC : NNBaseVC
 
 @property (weak, nonatomic) IBOutlet UIScrollView *emotionalTypeScrollView;
 

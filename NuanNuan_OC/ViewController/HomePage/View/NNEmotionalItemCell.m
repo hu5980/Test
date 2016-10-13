@@ -20,5 +20,14 @@
 
     // Configure the view for the selected state
 }
+- (IBAction)marriageAndFamilyAction:(UIButton *)sender {
+    _eblock(marriageAndFamily);
+}
 
+- (IBAction)EmotionalSaveAction:(UIButton *)sender {
+    _eblock(emotionalSave);
+}
+- (IBAction)selfImprovementAction:(id)sender {
+    _eblock(selfImprovement);
+}
 @end

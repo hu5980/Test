@@ -9,6 +9,7 @@
 #import "NNHomePageVC.h"
 #import "NNRingImageViewView.h"
 #import "NNEmotionalItemCell.h"
+#import "NNEmotionCaseVC.h"
 
 @interface NNHomePageVC () <UITableViewDelegate,UITableViewDataSource>
 {
@@ -75,6 +76,28 @@
     UITableViewCell *  cell;
     if (indexPath.section == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"emotionalItemCell"];
+        NNEmotionalItemCell *emotionItemCell = (NNEmotionalItemCell *)cell;
+        emotionItemCell.eblock = ^(EmotionType type){
+            switch (type) {
+                case marriageAndFamily:
+                {
+                    NNLog(@"婚姻家庭");
+                    NNEmotionCaseVC *emotionCaseVC = [[NNEmotionCaseVC alloc] initWithNibName:@"NNEmotionCaseVC" bundle:nil];
+                    emotionCaseVC.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:emotionCaseVC animated:YES];
+                }
+                    break;
+                
+                case emotionalSave:
+                    NNLog(@"情感挽回");
+                    break;
+                case selfImprovement:
+                    NNLog(@"自我提升");
+                    break;
+                default:
+                    break;
+            }
+        };
     }else{
         cell = [tableView dequeueReusableCellWithIdentifier:@"emotionAllCell"];
     }

@@ -31,6 +31,9 @@
                             <constraint firstAttribute="width" constant="48" id="rYH-7H-rSC"/>
                         </constraints>
                         <state key="normal" image="100_11"/>
+                        <connections>
+                            <action selector="selfImprovementAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Byu-ll-FDU"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8w3-fB-jdi">
                         <constraints>
@@ -38,6 +41,9 @@
                             <constraint firstAttribute="height" constant="48" id="h00-xv-B33"/>
                         </constraints>
                         <state key="normal" image="100_09"/>
+                        <connections>
+                            <action selector="EmotionalSaveAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="G7I-hd-tMu"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自我提升" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4b7-hq-18E">
                         <constraints>
@@ -54,6 +60,9 @@
                             <constraint firstAttribute="height" constant="48" id="IF9-gW-Vt5"/>
                         </constraints>
                         <state key="normal" image="100_07"/>
+                        <connections>
+                            <action selector="marriageAndFamilyAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nTm-9o-ZnM"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="婚姻家庭" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JD3-AJ-jor">
                         <constraints>
