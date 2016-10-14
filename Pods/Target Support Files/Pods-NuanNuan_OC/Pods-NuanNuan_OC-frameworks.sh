@@ -91,6 +91,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-NuanNuan_OC/Result.framework"
   install_framework "Pods-NuanNuan_OC/SDWebImage.framework"
   install_framework "Pods-NuanNuan_OC/UIActivityIndicator_for_SDWebImage.framework"
+  install_framework "Pods-NuanNuan_OC/UITableView_FDTemplateLayoutCell.framework"
   install_framework "Pods-NuanNuan_OC/YYKit.framework"
   install_framework "Pods-NuanNuan_OC/YZHeaderScaleImage.framework"
 fi
@@ -102,6 +103,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-NuanNuan_OC/Result.framework"
   install_framework "Pods-NuanNuan_OC/SDWebImage.framework"
   install_framework "Pods-NuanNuan_OC/UIActivityIndicator_for_SDWebImage.framework"
+  install_framework "Pods-NuanNuan_OC/UITableView_FDTemplateLayoutCell.framework"
   install_framework "Pods-NuanNuan_OC/YYKit.framework"
   install_framework "Pods-NuanNuan_OC/YZHeaderScaleImage.framework"
 fi

@@ -11,4 +11,10 @@
 #import "NNEnumDefine.h"
 @interface NNBaseVC : UIViewController
 
+@property (nonatomic,strong) NSString *title;
+
+- (void)setNavigationBackButton:(BOOL ) showOrHidden;
+
+
+
 @end

@@ -11,6 +11,7 @@ PODS:
   - SDWebImage/Core (3.7.6)
   - UIActivityIndicator-for-SDWebImage (1.2):
     - SDWebImage (~> 3.7)
+  - UITableView+FDTemplateLayoutCell (1.4)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - Reveal-iOS-SDK (~> 1.6.2)
   - SDWebImage (~> 3.7.1)
   - UIActivityIndicator-for-SDWebImage
+  - UITableView+FDTemplateLayoutCell (~> 1.4)
   - YYKit
   - YZHeaderScaleImage (~> 1.0.1)
 
@@ -36,6 +38,7 @@ SPEC CHECKSUMS:
   Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   UIActivityIndicator-for-SDWebImage: 7bf7ebbf0ed1747dedc0d6e949c4603a6d0f9e0c
+  UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   YZHeaderScaleImage: 1ca4ed11644a4ccad7c4370de2fcbc8f6e145793
 

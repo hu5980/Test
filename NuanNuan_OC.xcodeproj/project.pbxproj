@@ -702,6 +702,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A5862B2D06A1F1160A26CF88 /* Pods-NuanNuan_OC.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GZG7SDL9U6;
 				INFOPLIST_FILE = NuanNuan_OC/Info.plist;
@@ -716,6 +717,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 66B26D2343572DEE1D34D017 /* Pods-NuanNuan_OC.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GZG7SDL9U6;
 				INFOPLIST_FILE = NuanNuan_OC/Info.plist;

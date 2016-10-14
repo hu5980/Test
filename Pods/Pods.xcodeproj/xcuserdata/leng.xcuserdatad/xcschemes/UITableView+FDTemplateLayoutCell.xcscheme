@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '52201D323E55B438EBF50C08'
-               BlueprintName = 'ReactiveCocoa'
+               BlueprintIdentifier = '5709081645BF8A345276EBEA'
+               BlueprintName = 'UITableView+FDTemplateLayoutCell'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'ReactiveCocoa.framework'>
+               BuildableName = 'UITableView_FDTemplateLayoutCell.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

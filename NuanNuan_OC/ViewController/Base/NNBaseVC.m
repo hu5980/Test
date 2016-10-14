@@ -9,7 +9,9 @@
 #import "NNBaseVC.h"
 
 @interface NNBaseVC ()
-
+{
+    UIBarButtonItem *leftItem;
+}
 @end
 
 @implementation NNBaseVC
@@ -28,8 +30,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
    
     // Do any additional setup after loading the view.
+}
+
+- (void)setNavigationBackButton:(BOOL ) showOrHidden; {
+    if (leftItem == nil) {
+        leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"101_03"] style:UIBarButtonItemStylePlain target:self action:@selector(popVC)];
+        leftItem.tintColor = [UIColor colorFromHexString:@"#ff9933"];
+    }
+    if (showOrHidden) {
+        self.navigationItem.leftBarButtonItem = leftItem;
+    }else{
+        self.navigationItem.leftBarButtonItem = nil;
+    }
+}
+
+- (void)setTitle:(NSString *)title{
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    titleLabel.textColor = [UIColor colorFromHexString:@"#ff9933"];
+    titleLabel.font = [UIFont systemFontOfSize:17.f];
+    titleLabel.text =title;
+    [titleLabel sizeToFit];
+    self.navigationItem.titleView = titleLabel;
+}
+
+- (void)popVC {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

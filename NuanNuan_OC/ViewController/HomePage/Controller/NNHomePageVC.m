@@ -77,26 +77,27 @@
     if (indexPath.section == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"emotionalItemCell"];
         NNEmotionalItemCell *emotionItemCell = (NNEmotionalItemCell *)cell;
+        NNEmotionCaseVC *emotionCaseVC = [[NNEmotionCaseVC alloc] initWithNibName:@"NNEmotionCaseVC" bundle:nil];
+        emotionCaseVC.hidesBottomBarWhenPushed = YES;
+
         emotionItemCell.eblock = ^(EmotionType type){
             switch (type) {
                 case marriageAndFamily:
-                {
-                    NNLog(@"婚姻家庭");
-                    NNEmotionCaseVC *emotionCaseVC = [[NNEmotionCaseVC alloc] initWithNibName:@"NNEmotionCaseVC" bundle:nil];
-                    emotionCaseVC.hidesBottomBarWhenPushed = YES;
-                    [self.navigationController pushViewController:emotionCaseVC animated:YES];
-                }
+                    emotionCaseVC.navigationTitle = @"婚姻家庭";
+                    emotionCaseVC.caseTypeArray = @[@"婚姻修复",@"夫妻感情",@"婆媳相处"];
                     break;
-                
                 case emotionalSave:
-                    NNLog(@"情感挽回");
+                    emotionCaseVC.navigationTitle = @"情感挽回";
+                    emotionCaseVC.caseTypeArray = @[@"婚姻修复",@"夫妻感情",@"婆媳相处"];
                     break;
                 case selfImprovement:
-                    NNLog(@"自我提升");
+                    emotionCaseVC.navigationTitle = @"自我提升";
+                    emotionCaseVC.caseTypeArray = @[@"婚姻修复",@"夫妻感情",@"婆媳相处"];
                     break;
                 default:
                     break;
             }
+            [self.navigationController pushViewController:emotionCaseVC animated:YES];
         };
     }else{
         cell = [tableView dequeueReusableCellWithIdentifier:@"emotionAllCell"];

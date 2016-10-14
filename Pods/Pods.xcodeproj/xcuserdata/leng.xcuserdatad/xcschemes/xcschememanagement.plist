@@ -44,6 +44,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UITableView+FDTemplateLayoutCell.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>YYKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,22 +67,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2B3152C8D8A35122B0C57C1FAA9EEBDE</key>
+		<key>34DD22C2D1D53CA029E9C46B40AFC113</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3F6AC8AFF421610E518837C7284B45F6</key>
+		<key>418E789E0E48AFA76E3D0C3FAED4ABD9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>461056A9E24F0B66CE1E19BC32CA52B7</key>
+		<key>429FBF256A1B4A36637014AA07BC4917</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4C7EFBE96C2A0B0174EC8D42CE0EE183</key>
+		<key>5FED104A867BA86C6295710706A340AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>664318D905A8AB11FAC2378F535639B6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7482B9BD50FD0EA8D0A6DF14671A187B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>93BBB6E0F7975A8379E7004C3D8962C4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,22 +107,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AE5CBBABA3AC6AE8F6374F40DA0CCCF3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DB6ACB126E80BB9C5A762CE2DF3C90A9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>DBA6001481CEA0EBA031CC5C94508FAA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F0FCCB5FC8838665B686B35923897DE6</key>
+		<key>E08325CF3019858277B1582051CF9FC2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

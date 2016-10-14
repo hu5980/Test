@@ -21,6 +21,11 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+}
+
 - (void)initUI {
     
     [self.navigationController setNavigationBarHidden:NO];
