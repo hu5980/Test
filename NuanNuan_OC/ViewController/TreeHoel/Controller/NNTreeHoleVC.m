@@ -21,19 +21,16 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)viewDidLayoutSubviews{
+- (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
 }
 
 - (void)initUI {
-    
     [self.navigationController setNavigationBarHidden:NO];
-    
     NNCustomNavigationView *view = LOAD_VIEW_FROM_BUNDLE(@"NNCustomNavigationView");
     view.backgroundColor = [UIColor clearColor];
     self.navigationItem.titleView = view;
-    
 }
 
 - (void)initData {

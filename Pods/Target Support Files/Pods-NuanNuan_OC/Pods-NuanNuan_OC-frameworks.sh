@@ -84,6 +84,7 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-NuanNuan_OC/AFNetworking.framework"
   install_framework "Pods-NuanNuan_OC/MBProgressHUD.framework"
   install_framework "Pods-NuanNuan_OC/MJRefresh.framework"
   install_framework "Pods-NuanNuan_OC/Masonry.framework"
@@ -96,6 +97,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-NuanNuan_OC/YZHeaderScaleImage.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-NuanNuan_OC/AFNetworking.framework"
   install_framework "Pods-NuanNuan_OC/MBProgressHUD.framework"
   install_framework "Pods-NuanNuan_OC/MJRefresh.framework"
   install_framework "Pods-NuanNuan_OC/Masonry.framework"

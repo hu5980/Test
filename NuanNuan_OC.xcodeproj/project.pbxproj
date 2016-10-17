@@ -13,6 +13,7 @@
 		BC247EA61DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC247EA41DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib */; };
 		BC247EAA1DAA35D600AB5C84 /* NNMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC247EA81DAA35D600AB5C84 /* NNMineCell.m */; };
 		BC247EAB1DAA35D600AB5C84 /* NNMineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC247EA91DAA35D600AB5C84 /* NNMineCell.xib */; };
+		BC7A672A1DB4C3C000C3B3D9 /* NNNetRequestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7A67291DB4C3C000C3B3D9 /* NNNetRequestClass.m */; };
 		BCD505FA1D921F8C000FB2C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD505F91D921F8C000FB2C0 /* main.m */; };
 		BCD505FD1D921F8C000FB2C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD505FC1D921F8C000FB2C0 /* AppDelegate.m */; };
 		BCD506001D921F8C000FB2C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD505FF1D921F8C000FB2C0 /* ViewController.m */; };
@@ -64,7 +65,10 @@
 		BC247EA71DAA35D600AB5C84 /* NNMineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNMineCell.h; sourceTree = "<group>"; };
 		BC247EA81DAA35D600AB5C84 /* NNMineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMineCell.m; sourceTree = "<group>"; };
 		BC247EA91DAA35D600AB5C84 /* NNMineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNMineCell.xib; sourceTree = "<group>"; };
-		BCC897A81DAF6D3C008716FD /* NNEnumDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNEnumDefine.h; sourceTree = "<group>"; };
+		BC7A67261DB4C34700C3B3D9 /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		BC7A67271DB4C34700C3B3D9 /* NNEnumDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEnumDefine.h; sourceTree = "<group>"; };
+		BC7A67281DB4C3C000C3B3D9 /* NNNetRequestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNetRequestClass.h; sourceTree = "<group>"; };
+		BC7A67291DB4C3C000C3B3D9 /* NNNetRequestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNetRequestClass.m; sourceTree = "<group>"; };
 		BCD505F51D921F8C000FB2C0 /* NuanNuan_OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NuanNuan_OC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD505F91D921F8C000FB2C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCD505FB1D921F8C000FB2C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -81,7 +85,6 @@
 		BCD5061D1D92241A000FB2C0 /* NNTabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNTabbarVC.m; sourceTree = "<group>"; };
 		BCD506291D92252A000FB2C0 /* UIColor+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Helper.h"; sourceTree = "<group>"; };
 		BCD5062A1D92252A000FB2C0 /* UIColor+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Helper.m"; sourceTree = "<group>"; };
-		BCD506311D922EC9000FB2C0 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
 		BCD506351D923003000FB2C0 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		BCD506361D923003000FB2C0 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		BCD5063A1D9231D0000FB2C0 /* NNHomePageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNHomePageVC.h; sourceTree = "<group>"; };
@@ -157,6 +160,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BC7A67251DB4C33B00C3B3D9 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				BC7A67261DB4C34700C3B3D9 /* Define.h */,
+				BC7A67271DB4C34700C3B3D9 /* NNEnumDefine.h */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		BCD505EC1D921F8C000FB2C0 = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +194,7 @@
 				BCD505FC1D921F8C000FB2C0 /* AppDelegate.m */,
 				BCD505FE1D921F8C000FB2C0 /* ViewController.h */,
 				BCD505FF1D921F8C000FB2C0 /* ViewController.m */,
+				BC7A67251DB4C33B00C3B3D9 /* Config */,
 				BCD506121D9222E5000FB2C0 /* Server */,
 				BCD506131D9222E5000FB2C0 /* Util */,
 				BCD506141D9222E5000FB2C0 /* ViewController */,
@@ -205,6 +218,8 @@
 		BCD506121D9222E5000FB2C0 /* Server */ = {
 			isa = PBXGroup;
 			children = (
+				BC7A67281DB4C3C000C3B3D9 /* NNNetRequestClass.h */,
+				BC7A67291DB4C3C000C3B3D9 /* NNNetRequestClass.m */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -215,8 +230,6 @@
 				BCD506351D923003000FB2C0 /* UIViewExt.h */,
 				BCD506361D923003000FB2C0 /* UIViewExt.m */,
 				BCD506281D92252A000FB2C0 /* UIColor */,
-				BCD506311D922EC9000FB2C0 /* Define.h */,
-				BCC897A81DAF6D3C008716FD /* NNEnumDefine.h */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -582,6 +595,7 @@
 				BCD506571D9231D0000FB2C0 /* NNServerVC.m in Sources */,
 				BCD506371D923003000FB2C0 /* UIViewExt.m in Sources */,
 				BCD9AE7C1DACE424008DB98E /* NNEmotionalItemCell.m in Sources */,
+				BC7A672A1DB4C3C000C3B3D9 /* NNNetRequestClass.m in Sources */,
 				BCD506561D9231D0000FB2C0 /* NNMeVC.m in Sources */,
 				BC247EAA1DAA35D600AB5C84 /* NNMineCell.m in Sources */,
 				BCD506581D9231D0000FB2C0 /* NNTreeHoleVC.m in Sources */,
