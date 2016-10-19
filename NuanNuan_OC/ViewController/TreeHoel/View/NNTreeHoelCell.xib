@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,8 +17,14 @@
                 <frame key="frameInset" width="375" height="247"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3s2-bI-Z8k"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3s2-bI-Z8k">
+                        <color key="backgroundColor" red="0.16078431369999999" green="0.80000000000000004" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="3s2-bI-Z8k" secondAttribute="height" multiplier="375:148" id="qSc-Yq-WPr"/>
+                        </constraints>
+                    </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="guC-y2-8wR">
+                        <color key="backgroundColor" red="1" green="0.7725490196" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="4xx-0O-3rt"/>
                             <constraint firstAttribute="width" constant="40" id="SDk-Hn-2Rv"/>
@@ -86,6 +93,14 @@
                     <constraint firstItem="cTL-Qa-5jw" firstAttribute="leading" secondItem="guC-y2-8wR" secondAttribute="trailing" constant="10" id="xDj-u0-k5e"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="backgroundImageView" destination="3s2-bI-Z8k" id="2Nu-F5-chp"/>
+                <outlet property="expertIntroductionLabel" destination="0Vi-MS-Cu9" id="O42-nS-b9o"/>
+                <outlet property="iconImageView" destination="guC-y2-8wR" id="VTx-LI-3uI"/>
+                <outlet property="ninkNameLabel" destination="cTL-Qa-5jw" id="gWI-FV-r3y"/>
+                <outlet property="questionNumLabel" destination="FKy-FT-Usm" id="cmB-ie-6hU"/>
+                <outlet property="specialityLabel" destination="5bc-c1-R45" id="MrM-4f-QaV"/>
+            </connections>
             <point key="canvasLocation" x="24.5" y="52"/>
         </tableViewCell>
     </objects>

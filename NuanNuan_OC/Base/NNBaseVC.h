@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "Define.h"
 #import "NNEnumDefine.h"
+#import "UITableView+FDTemplateLayoutCell.h"
+#import "Masonry.h"
 @interface NNBaseVC : UIViewController
 
-@property (nonatomic,strong) NSString *title;
+@property (nonatomic,strong) NSString *navTitle;
 
 - (void)setNavigationBackButton:(BOOL ) showOrHidden;
 

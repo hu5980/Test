@@ -14,13 +14,16 @@
 		BC247EAA1DAA35D600AB5C84 /* NNMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC247EA81DAA35D600AB5C84 /* NNMineCell.m */; };
 		BC247EAB1DAA35D600AB5C84 /* NNMineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC247EA91DAA35D600AB5C84 /* NNMineCell.xib */; };
 		BC7A672A1DB4C3C000C3B3D9 /* NNNetRequestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7A67291DB4C3C000C3B3D9 /* NNNetRequestClass.m */; };
+		BCB6EFD91DB60A6000BEFD37 /* NNBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB6EFD81DB60A6000BEFD37 /* NNBaseVC.m */; };
+		BCB6EFDC1DB60DE000BEFD37 /* NNBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB6EFDB1DB60DE000BEFD37 /* NNBaseViewModel.m */; };
+		BCB6EFE01DB62B0000BEFD37 /* NNSuccessCaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB6EFDF1DB62B0000BEFD37 /* NNSuccessCaseModel.m */; };
+		BCB6EFE31DB62F3600BEFD37 /* NNHomepageSuccessCaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB6EFE21DB62F3600BEFD37 /* NNHomepageSuccessCaseModel.m */; };
 		BCD505FA1D921F8C000FB2C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD505F91D921F8C000FB2C0 /* main.m */; };
 		BCD505FD1D921F8C000FB2C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD505FC1D921F8C000FB2C0 /* AppDelegate.m */; };
 		BCD506001D921F8C000FB2C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD505FF1D921F8C000FB2C0 /* ViewController.m */; };
 		BCD506051D921F8C000FB2C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD506041D921F8C000FB2C0 /* Assets.xcassets */; };
 		BCD506081D921F8C000FB2C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD506061D921F8C000FB2C0 /* LaunchScreen.storyboard */; };
 		BCD506111D92202D000FB2C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD5060F1D92202D000FB2C0 /* Main.storyboard */; };
-		BCD506181D92231E000FB2C0 /* NNBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD506171D92231E000FB2C0 /* NNBaseVC.m */; };
 		BCD5061E1D92241A000FB2C0 /* NNTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5061D1D92241A000FB2C0 /* NNTabbarVC.m */; };
 		BCD5062B1D92252A000FB2C0 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5062A1D92252A000FB2C0 /* UIColor+Helper.m */; };
 		BCD506371D923003000FB2C0 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD506361D923003000FB2C0 /* UIViewExt.m */; };
@@ -69,6 +72,14 @@
 		BC7A67271DB4C34700C3B3D9 /* NNEnumDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEnumDefine.h; sourceTree = "<group>"; };
 		BC7A67281DB4C3C000C3B3D9 /* NNNetRequestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNetRequestClass.h; sourceTree = "<group>"; };
 		BC7A67291DB4C3C000C3B3D9 /* NNNetRequestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNetRequestClass.m; sourceTree = "<group>"; };
+		BCB6EFD71DB60A6000BEFD37 /* NNBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNBaseVC.h; sourceTree = "<group>"; };
+		BCB6EFD81DB60A6000BEFD37 /* NNBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNBaseVC.m; sourceTree = "<group>"; };
+		BCB6EFDA1DB60DE000BEFD37 /* NNBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNBaseViewModel.h; sourceTree = "<group>"; };
+		BCB6EFDB1DB60DE000BEFD37 /* NNBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNBaseViewModel.m; sourceTree = "<group>"; };
+		BCB6EFDE1DB62B0000BEFD37 /* NNSuccessCaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSuccessCaseModel.h; sourceTree = "<group>"; };
+		BCB6EFDF1DB62B0000BEFD37 /* NNSuccessCaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNSuccessCaseModel.m; sourceTree = "<group>"; };
+		BCB6EFE11DB62F3600BEFD37 /* NNHomepageSuccessCaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNHomepageSuccessCaseModel.h; sourceTree = "<group>"; };
+		BCB6EFE21DB62F3600BEFD37 /* NNHomepageSuccessCaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNHomepageSuccessCaseModel.m; sourceTree = "<group>"; };
 		BCD505F51D921F8C000FB2C0 /* NuanNuan_OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NuanNuan_OC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD505F91D921F8C000FB2C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCD505FB1D921F8C000FB2C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -79,8 +90,6 @@
 		BCD506071D921F8C000FB2C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCD506091D921F8C000FB2C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCD506101D92202D000FB2C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BCD506161D92231E000FB2C0 /* NNBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNBaseVC.h; sourceTree = "<group>"; };
-		BCD506171D92231E000FB2C0 /* NNBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNBaseVC.m; sourceTree = "<group>"; };
 		BCD5061C1D92241A000FB2C0 /* NNTabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNTabbarVC.h; sourceTree = "<group>"; };
 		BCD5061D1D92241A000FB2C0 /* NNTabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNTabbarVC.m; sourceTree = "<group>"; };
 		BCD506291D92252A000FB2C0 /* UIColor+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Helper.h"; sourceTree = "<group>"; };
@@ -169,6 +178,31 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		BC98F0781DB767D900DC95C5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BCB6EFD61DB60A6000BEFD37 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BCB6EFD71DB60A6000BEFD37 /* NNBaseVC.h */,
+				BCB6EFD81DB60A6000BEFD37 /* NNBaseVC.m */,
+				BCB6EFDA1DB60DE000BEFD37 /* NNBaseViewModel.h */,
+				BCB6EFDB1DB60DE000BEFD37 /* NNBaseViewModel.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		BCB6EFDD1DB62ADE00BEFD37 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		BCD505EC1D921F8C000FB2C0 = {
 			isa = PBXGroup;
 			children = (
@@ -194,8 +228,9 @@
 				BCD505FC1D921F8C000FB2C0 /* AppDelegate.m */,
 				BCD505FE1D921F8C000FB2C0 /* ViewController.h */,
 				BCD505FF1D921F8C000FB2C0 /* ViewController.m */,
+				BCB6EFD61DB60A6000BEFD37 /* Base */,
 				BC7A67251DB4C33B00C3B3D9 /* Config */,
-				BCD506121D9222E5000FB2C0 /* Server */,
+				BCD506121D9222E5000FB2C0 /* NetWorkRequest */,
 				BCD506131D9222E5000FB2C0 /* Util */,
 				BCD506141D9222E5000FB2C0 /* ViewController */,
 				BCD5060F1D92202D000FB2C0 /* Main.storyboard */,
@@ -215,12 +250,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BCD506121D9222E5000FB2C0 /* Server */ = {
+		BCD506121D9222E5000FB2C0 /* NetWorkRequest */ = {
 			isa = PBXGroup;
 			children = (
 				BC7A67281DB4C3C000C3B3D9 /* NNNetRequestClass.h */,
 				BC7A67291DB4C3C000C3B3D9 /* NNNetRequestClass.m */,
 			);
+			name = NetWorkRequest;
 			path = Server;
 			sourceTree = "<group>";
 		};
@@ -247,16 +283,6 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		BCD506151D9222E5000FB2C0 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				BCD506161D92231E000FB2C0 /* NNBaseVC.h */,
-				BCD506171D92231E000FB2C0 /* NNBaseVC.m */,
-			);
-			name = Base;
-			path = ../Base;
-			sourceTree = "<group>";
-		};
 		BCD506281D92252A000FB2C0 /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +295,7 @@
 		BCD506381D9231D0000FB2C0 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				BCB6EFDD1DB62ADE00BEFD37 /* ViewModel */,
 				BCD506391D9231D0000FB2C0 /* Controller */,
 				BCD5063C1D9231D0000FB2C0 /* Model */,
 				BCD5063D1D9231D0000FB2C0 /* View */,
@@ -291,6 +318,10 @@
 		BCD5063C1D9231D0000FB2C0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BCB6EFDE1DB62B0000BEFD37 /* NNSuccessCaseModel.h */,
+				BCB6EFDF1DB62B0000BEFD37 /* NNSuccessCaseModel.m */,
+				BCB6EFE11DB62F3600BEFD37 /* NNHomepageSuccessCaseModel.h */,
+				BCB6EFE21DB62F3600BEFD37 /* NNHomepageSuccessCaseModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -356,7 +387,6 @@
 		BCD506471D9231D0000FB2C0 /* Server */ = {
 			isa = PBXGroup;
 			children = (
-				BCD506151D9222E5000FB2C0 /* Base */,
 				BCD506481D9231D0000FB2C0 /* Controller */,
 				BCD5064B1D9231D0000FB2C0 /* Model */,
 				BCD5064C1D9231D0000FB2C0 /* View */,
@@ -390,6 +420,7 @@
 		BCD5064D1D9231D0000FB2C0 /* TreeHoel */ = {
 			isa = PBXGroup;
 			children = (
+				BC98F0781DB767D900DC95C5 /* ViewModel */,
 				BCD5064E1D9231D0000FB2C0 /* Controller */,
 				BCD506511D9231D0000FB2C0 /* Model */,
 				BCD506521D9231D0000FB2C0 /* View */,
@@ -582,25 +613,28 @@
 				BCD5062B1D92252A000FB2C0 /* UIColor+Helper.m in Sources */,
 				BCD5061E1D92241A000FB2C0 /* NNTabbarVC.m in Sources */,
 				BCD506001D921F8C000FB2C0 /* ViewController.m in Sources */,
+				BCB6EFDC1DB60DE000BEFD37 /* NNBaseViewModel.m in Sources */,
 				BCD9AE9B1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.m in Sources */,
 				BCD9AE8B1DADE582008DB98E /* NNPsychologicalTeacherVC.m in Sources */,
 				BCD9AE861DACF16D008DB98E /* NNTreeHoelCell.m in Sources */,
 				BCD9AE6E1DACC668008DB98E /* NNEmotionallItemCell.m in Sources */,
-				BCD506181D92231E000FB2C0 /* NNBaseVC.m in Sources */,
 				BCD506531D9231D0000FB2C0 /* NNHomePageVC.m in Sources */,
 				BCD9AE801DACED54008DB98E /* NNCustomNavigationView.m in Sources */,
 				BCD505FD1D921F8C000FB2C0 /* AppDelegate.m in Sources */,
 				BCD505FA1D921F8C000FB2C0 /* main.m in Sources */,
 				BCD9AE691DACBCB6008DB98E /* NNEmotionCaseVC.m in Sources */,
 				BCD506571D9231D0000FB2C0 /* NNServerVC.m in Sources */,
+				BCB6EFD91DB60A6000BEFD37 /* NNBaseVC.m in Sources */,
 				BCD506371D923003000FB2C0 /* UIViewExt.m in Sources */,
 				BCD9AE7C1DACE424008DB98E /* NNEmotionalItemCell.m in Sources */,
 				BC7A672A1DB4C3C000C3B3D9 /* NNNetRequestClass.m in Sources */,
 				BCD506561D9231D0000FB2C0 /* NNMeVC.m in Sources */,
 				BC247EAA1DAA35D600AB5C84 /* NNMineCell.m in Sources */,
+				BCB6EFE01DB62B0000BEFD37 /* NNSuccessCaseModel.m in Sources */,
 				BCD506581D9231D0000FB2C0 /* NNTreeHoleVC.m in Sources */,
 				BCD9AE8F1DADE5EB008DB98E /* NNPsychologicalTeacherHeaderView.m in Sources */,
 				BCD9AE951DAE0941008DB98E /* NNQuestionAndAnswerCell.m in Sources */,
+				BCB6EFE31DB62F3600BEFD37 /* NNHomepageSuccessCaseModel.m in Sources */,
 				BC247EA51DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m in Sources */,
 				BCD9AEA01DAE21D1008DB98E /* NNNeterReply.m in Sources */,
 				BC247E9B1DAA19B100AB5C84 /* NNEmotionallCell.m in Sources */,

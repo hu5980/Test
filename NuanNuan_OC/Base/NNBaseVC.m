@@ -23,7 +23,7 @@
     }else{
         [self.navigationController setNavigationBarHidden:NO];
     }
-    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.automaticallyAdjustsScrollViewInsets = YES;
 }
 
@@ -47,11 +47,13 @@
     }
 }
 
-- (void)setTitle:(NSString *)title{
+
+
+- (void)setNavTitle:(NSString *)navTitle{
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     titleLabel.textColor = [UIColor colorFromHexString:@"#ff9933"];
     titleLabel.font = [UIFont systemFontOfSize:17.f];
-    titleLabel.text =title;
+    titleLabel.text =navTitle;
     [titleLabel sizeToFit];
     self.navigationItem.titleView = titleLabel;
 }

@@ -7,16 +7,43 @@
 //
 
 #import "NNQuestionAndAnswerDetailVC.h"
+#import "NNPsychologicalTeacherHeaderView.h"
+@interface NNQuestionAndAnswerDetailVC () {
+    NNPsychologicalTeacherHeaderView *headerView;
+}
 
-@interface NNQuestionAndAnswerDetailVC ()
+@property (weak, nonatomic) IBOutlet UITableView *questionAndAnswerTableView;
 
 @end
 
 @implementation NNQuestionAndAnswerDetailVC
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self initUI];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    CGSize size = [headerView systemLayoutSizeFittingSize:UILayoutFittingExpandedSize];
+    NNLog(@"%f,%f",size.width,size.height);
+    headerView.size = size;
+}
+
+- (void)initUI {
+    
+    headerView = LOAD_VIEW_FROM_BUNDLE(@"NNPsychologicalTeacherHeaderView");
+    _questionAndAnswerTableView.tableHeaderView = headerView;
+    
+    __weak NNQuestionAndAnswerDetailVC *weakSelf = self;
+    headerView.popblock = ^(){
+        [weakSelf.navigationController popViewControllerAnimated:YES];
+    };
+    
 }
 
 - (void)didReceiveMemoryWarning {

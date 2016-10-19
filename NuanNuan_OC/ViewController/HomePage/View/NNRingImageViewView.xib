@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,13 +15,17 @@
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tEl-oD-BUf">
                     <color key="backgroundColor" red="0.16078431369999999" green="0.80000000000000004" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="tEl-oD-BUf" secondAttribute="height" multiplier="375:164" id="4fW-VH-H9k"/>
+                    </constraints>
                 </scrollView>
             </subviews>
+            <color key="backgroundColor" red="0.98039221759999995" green="0.33333334329999997" blue="0.15294118230000001" alpha="1" colorSpace="deviceRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="tEl-oD-BUf" secondAttribute="bottom" id="IpM-2m-yVE"/>
-                <constraint firstItem="tEl-oD-BUf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="QId-tr-fER"/>
-                <constraint firstItem="tEl-oD-BUf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ieT-oq-5m5"/>
-                <constraint firstAttribute="trailing" secondItem="tEl-oD-BUf" secondAttribute="trailing" id="rc6-az-ezO"/>
+                <constraint firstItem="tEl-oD-BUf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3X7-Pq-jwO"/>
+                <constraint firstAttribute="bottom" secondItem="tEl-oD-BUf" secondAttribute="bottom" id="5UL-jH-WNs"/>
+                <constraint firstItem="tEl-oD-BUf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BCf-rY-bhh"/>
+                <constraint firstAttribute="trailing" secondItem="tEl-oD-BUf" secondAttribute="trailing" id="xXw-Ht-ldE"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

@@ -18,4 +18,14 @@
 }
 */
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    _headimageView.layer.masksToBounds = YES;
+    _headimageView.layer.cornerRadius = 20;
+}
+
+- (IBAction)popAction:(UIButton *)sender {
+    _popblock();
+}
+
 @end

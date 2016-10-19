@@ -17,5 +17,11 @@
     // Drawing code
 }
 */
+- (IBAction)emotionAskAction:(UIButton *)sender {
+    _selectBlock(sender);
+}
+- (IBAction)teasingTreeHole:(UIButton *)sender {
+    _selectBlock(sender);
+}
 
 @end

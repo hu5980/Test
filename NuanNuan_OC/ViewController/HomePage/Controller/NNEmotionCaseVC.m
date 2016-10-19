@@ -8,7 +8,7 @@
 
 #import "NNEmotionCaseVC.h"
 #import "NNEmotionallItemCell.h"
-#import "UITableView+FDTemplateLayoutCell.h"
+
 @interface NNEmotionCaseVC ()<UITableViewDataSource,UITableViewDelegate> {
     UIButton *defaultSelectButton;
 }
@@ -27,7 +27,7 @@
     [self setNavigationBackButton:YES];
     [self createEmotionalTypeUI];
     
-    self.title = _navigationTitle;
+    self.navTitle = _navigationTitle;
     
     _emotionalTableView.delegate = self;
     _emotionalTableView.dataSource = self;
@@ -93,7 +93,7 @@
     CGFloat height = [tableView fd_heightForCellWithIdentifier:@"NNEmotionallItemCell" cacheByIndexPath:indexPath configuration:^(id cell) {
       
     }];
-    return height > 44 ? height :44  ;
+    return height   ;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^popBlock)();
+
 @interface NNPsychologicalTeacherHeaderView : UIView
+@property (copy, nonatomic) popBlock popblock;
 @property (weak, nonatomic) IBOutlet UIButton *popButton;
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;

@@ -31,7 +31,17 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    headerView.frame = CGRectMake(0, 0, NNAppWidth, NNAppWidth * 164 / 375 );
+    [headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@0);
+        make.left.equalTo(@0);
+        make.right.equalTo(@0);
+        make.bottom.equalTo(@0);
+        make.width.equalTo([NSNumber numberWithFloat:NNAppWidth]);
+    }];
+   
+    CGSize size = [headerView systemLayoutSizeFittingSize:UILayoutFittingExpandedSize];
+   
+    headerView.frame = CGRectMake(0, 0, size.width, size.height);
 }
 
 - (void)initUI {
