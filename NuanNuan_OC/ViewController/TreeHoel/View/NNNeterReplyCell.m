@@ -6,9 +6,9 @@
 //  Copyright © 2016年 NuanNuan. All rights reserved.
 //
 
-#import "NNNeterReply.h"
+#import "NNNeterReplyCell.h"
 
-@implementation NNNeterReply
+@implementation NNNeterReplyCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

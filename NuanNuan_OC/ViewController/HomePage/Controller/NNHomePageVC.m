@@ -10,10 +10,12 @@
 #import "NNRingImageViewView.h"
 #import "NNEmotionalItemCell.h"
 #import "NNEmotionCaseVC.h"
+#import "NNEmotionallCell.h"
 
 @interface NNHomePageVC () <UITableViewDelegate,UITableViewDataSource>
 {
     NNRingImageViewView *headerView;
+    NSArray *titleArray ;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *homePageTableView;
@@ -31,17 +33,15 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    [headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [headerView.ringScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@0);
         make.left.equalTo(@0);
         make.right.equalTo(@0);
         make.bottom.equalTo(@0);
         make.width.equalTo([NSNumber numberWithFloat:NNAppWidth]);
     }];
-   
     CGSize size = [headerView systemLayoutSizeFittingSize:UILayoutFittingExpandedSize];
-   
-    headerView.frame = CGRectMake(0, 0, size.width, size.height);
+    headerView.size = size;
 }
 
 - (void)initUI {
@@ -58,7 +58,7 @@
 }
 
 - (void)initData {
-
+    titleArray = @[@"成功故事 （婚恋）",@"成功故事 （挽回）"];
 }
 
 #pragma --mark UItableViewDataSource UItableViewDelegate
@@ -71,7 +71,7 @@
     if (section == 0) {
         return 1;
     }
-    return 3;
+    return 2;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -89,7 +89,8 @@
         NNEmotionalItemCell *emotionItemCell = (NNEmotionalItemCell *)cell;
         NNEmotionCaseVC *emotionCaseVC = [[NNEmotionCaseVC alloc] initWithNibName:@"NNEmotionCaseVC" bundle:nil];
         emotionCaseVC.hidesBottomBarWhenPushed = YES;
-
+        
+    
         emotionItemCell.eblock = ^(EmotionType type){
             switch (type) {
                 case marriageAndFamily:
@@ -98,11 +99,11 @@
                     break;
                 case emotionalSave:
                     emotionCaseVC.navigationTitle = @"情感挽回";
-                    emotionCaseVC.caseTypeArray = @[@"婚姻修复",@"夫妻感情",@"婆媳相处"];
+                    emotionCaseVC.caseTypeArray = @[@"暗恋",@"失恋",@"复杂恋情"];
                     break;
                 case selfImprovement:
                     emotionCaseVC.navigationTitle = @"自我提升";
-                    emotionCaseVC.caseTypeArray = @[@"婚姻修复",@"夫妻感情",@"婆媳相处"];
+                    emotionCaseVC.caseTypeArray = @[@"爱情探索",@"人际关系",@"人生信条"];
                     break;
                 default:
                     break;
@@ -110,13 +111,21 @@
             [self.navigationController pushViewController:emotionCaseVC animated:YES];
         };
     }else{
-        cell = [tableView dequeueReusableCellWithIdentifier:@"emotionAllCell"];
+        NNEmotionallCell *emotionAllcell = (NNEmotionallCell *)[tableView dequeueReusableCellWithIdentifier:@"emotionAllCell"];
+        emotionAllcell.successCaseBlock = ^(){
+            NNEmotionCaseVC *emotionCaseVC = [[NNEmotionCaseVC alloc] initWithNibName:@"NNEmotionCaseVC" bundle:nil];
+            emotionCaseVC.hidesBottomBarWhenPushed = YES;
+            emotionCaseVC.navigationTitle = [titleArray objectAtIndex:indexPath.row];
+            [self.navigationController pushViewController:emotionCaseVC animated:YES];
+        };
+        emotionAllcell.emotionTitleLabel.text = [titleArray objectAtIndex:indexPath.row];
+        cell = emotionAllcell;
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, 10)];
     view.backgroundColor = [UIColor clearColor];
     return view;

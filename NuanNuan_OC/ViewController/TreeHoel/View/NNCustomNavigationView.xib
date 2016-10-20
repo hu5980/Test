@@ -63,8 +63,8 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="emotionAskButton" destination="kiL-jE-zPo" id="gtO-aa-nNI"/>
-                <outlet property="teasingTreeHoleButton" destination="Hyx-ex-Had" id="OR2-PC-1w3"/>
+                <outlet property="index1Button" destination="kiL-jE-zPo" id="tGX-wB-kJB"/>
+                <outlet property="index2Button" destination="Hyx-ex-Had" id="Xla-Xf-ywF"/>
             </connections>
             <point key="canvasLocation" x="24" y="53"/>
         </view>

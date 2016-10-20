@@ -16,6 +16,6 @@ typedef void(^emotionSuccessCaseBlock)();
 @property (weak, nonatomic) IBOutlet UILabel *emotionTitleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *moreEmotionButton;
 
-@property (copy,nonatomic) emotionSuccessCaseBlock scuucessCaseBlock;
+@property (copy,nonatomic) emotionSuccessCaseBlock successCaseBlock;
 
 @end

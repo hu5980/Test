@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *emotionalTableView;
 
 @property (strong,nonatomic) NSString *navigationTitle;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollViewConstraint;
 
 @property (strong,nonatomic) NSArray *caseTypeArray;
 @end

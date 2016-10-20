@@ -28,10 +28,16 @@
     [self createEmotionalTypeUI];
     
     self.navTitle = _navigationTitle;
-    
+ 
     _emotionalTableView.delegate = self;
     _emotionalTableView.dataSource = self;
+    _emotionalTableView.backgroundColor = NN_BACKGROUND_COLOR;
     [_emotionalTableView registerNib:[UINib nibWithNibName:@"NNEmotionallItemCell" bundle:nil] forCellReuseIdentifier:@"NNEmotionallItemCell"];
+    
+    if(_caseTypeArray.count == 0){
+        _scrollViewConstraint.constant = 0;
+    }
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -39,7 +45,7 @@
     _emotionalTypeScrollView.contentSize = CGSizeMake((NNAppWidth/3)*_caseTypeArray.count, 32);
     for (int i = 0; i< _caseTypeArray.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(i*(NNAppWidth/3), -64, NNAppWidth/3, 32);
+        button.frame = CGRectMake(i*(NNAppWidth/3), 0, NNAppWidth/3, 32);
         [button setTitleColor:[UIColor colorFromHexString:@"333333"] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor colorFromHexString:@"FF8833"] forState:UIControlStateSelected];
          [button setTitleColor:[UIColor colorFromHexString:@"FF8833"] forState:UIControlStateHighlighted];
@@ -89,11 +95,21 @@
     return 1;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 10;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     CGFloat height = [tableView fd_heightForCellWithIdentifier:@"NNEmotionallItemCell" cacheByIndexPath:indexPath configuration:^(id cell) {
       
     }];
     return height   ;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, 10)];
+    view.backgroundColor = [UIColor clearColor];
+    return view;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

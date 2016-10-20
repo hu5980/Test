@@ -44,7 +44,7 @@
     _meTableView.backgroundColor = NN_BACKGROUND_COLOR;
     _meTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    
+    [_meTableView registerNib:[UINib nibWithNibName:@"NNMineEmotionalMangmentCell" bundle:nil] forCellReuseIdentifier:@"NNMineEmotionalMangmentCell"];
 }
 
 - (UIView *)createTableHeaderView {
@@ -97,7 +97,10 @@
 #pragma --Mark  UItableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
+    if(section == 0){
+        return 1;
+    }
+    else if(section == 1) {
         return 3;
     }else{
         return 2;
@@ -105,8 +108,16 @@
         
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        return 60;
+    }else{
+        return 44;
+    }
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -116,6 +127,10 @@
         cell = [[NSBundle mainBundle] loadNibNamed:@"NNMineCell" owner:self options:nil][0];
     }
     if (indexPath.section == 0) {
+        NNMineEmotionalMangmentCell *emotionalMangmentCell = [tableView dequeueReusableCellWithIdentifier:@"NNMineEmotionalMangmentCell"];
+        
+        return emotionalMangmentCell;
+    }else if (indexPath.section == 1) {
         cell.iconImageView.image = [UIImage imageNamed:[imageArray objectAtIndex:indexPath.row]];
         cell.mineTitleLabel.text = [titleArray objectAtIndex:indexPath.row];
     }else {

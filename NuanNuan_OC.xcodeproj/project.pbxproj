@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC09AFEA1DB8AC9400BC4D1B /* NNServerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC09AFE81DB8AC9400BC4D1B /* NNServerListCell.m */; };
+		BC09AFEB1DB8AC9400BC4D1B /* NNServerListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC09AFE91DB8AC9400BC4D1B /* NNServerListCell.xib */; };
 		BC247E9B1DAA19B100AB5C84 /* NNEmotionallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC247E991DAA19B100AB5C84 /* NNEmotionallCell.m */; };
 		BC247E9C1DAA19B100AB5C84 /* NNEmotionallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC247E9A1DAA19B100AB5C84 /* NNEmotionallCell.xib */; };
 		BC247EA51DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC247EA31DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m */; };
@@ -51,14 +53,17 @@
 		BCD9AE961DAE0941008DB98E /* NNQuestionAndAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE941DAE0941008DB98E /* NNQuestionAndAnswerCell.xib */; };
 		BCD9AE9B1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE991DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.m */; };
 		BCD9AE9C1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE9A1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.xib */; };
-		BCD9AEA01DAE21D1008DB98E /* NNNeterReply.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE9E1DAE21D1008DB98E /* NNNeterReply.m */; };
-		BCD9AEA11DAE21D1008DB98E /* NNNeterReply.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE9F1DAE21D1008DB98E /* NNNeterReply.xib */; };
-		C572126AF56E095F0A988671 /* Pods_NuanNuan_OC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00BA27114ACC2597EA70FB0 /* Pods_NuanNuan_OC.framework */; };
+		BCD9AEA01DAE21D1008DB98E /* NNNeterReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE9E1DAE21D1008DB98E /* NNNeterReplyCell.m */; };
+		BCD9AEA11DAE21D1008DB98E /* NNNeterReplyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE9F1DAE21D1008DB98E /* NNNeterReplyCell.xib */; };
+		C572126AF56E095F0A988671 /* Pods_NuanNuan_OC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00BA27114ACC2597EA70FB0 /* Pods_NuanNuan_OC.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		66B26D2343572DEE1D34D017 /* Pods-NuanNuan_OC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NuanNuan_OC.release.xcconfig"; path = "Pods/Target Support Files/Pods-NuanNuan_OC/Pods-NuanNuan_OC.release.xcconfig"; sourceTree = "<group>"; };
 		A5862B2D06A1F1160A26CF88 /* Pods-NuanNuan_OC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NuanNuan_OC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NuanNuan_OC/Pods-NuanNuan_OC.debug.xcconfig"; sourceTree = "<group>"; };
+		BC09AFE71DB8AC9400BC4D1B /* NNServerListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNServerListCell.h; sourceTree = "<group>"; };
+		BC09AFE81DB8AC9400BC4D1B /* NNServerListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNServerListCell.m; sourceTree = "<group>"; };
+		BC09AFE91DB8AC9400BC4D1B /* NNServerListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNServerListCell.xib; sourceTree = "<group>"; };
 		BC247E981DAA19B100AB5C84 /* NNEmotionallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEmotionallCell.h; sourceTree = "<group>"; };
 		BC247E991DAA19B100AB5C84 /* NNEmotionallCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNEmotionallCell.m; sourceTree = "<group>"; };
 		BC247E9A1DAA19B100AB5C84 /* NNEmotionallCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNEmotionallCell.xib; sourceTree = "<group>"; };
@@ -134,9 +139,9 @@
 		BCD9AE981DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNQuestionAndAnswerDetailVC.h; sourceTree = "<group>"; };
 		BCD9AE991DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNQuestionAndAnswerDetailVC.m; sourceTree = "<group>"; };
 		BCD9AE9A1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNQuestionAndAnswerDetailVC.xib; sourceTree = "<group>"; };
-		BCD9AE9D1DAE21D1008DB98E /* NNNeterReply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNeterReply.h; sourceTree = "<group>"; };
-		BCD9AE9E1DAE21D1008DB98E /* NNNeterReply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNeterReply.m; sourceTree = "<group>"; };
-		BCD9AE9F1DAE21D1008DB98E /* NNNeterReply.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNNeterReply.xib; sourceTree = "<group>"; };
+		BCD9AE9D1DAE21D1008DB98E /* NNNeterReplyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNeterReplyCell.h; sourceTree = "<group>"; };
+		BCD9AE9E1DAE21D1008DB98E /* NNNeterReplyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNeterReplyCell.m; sourceTree = "<group>"; };
+		BCD9AE9F1DAE21D1008DB98E /* NNNeterReplyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNNeterReplyCell.xib; sourceTree = "<group>"; };
 		D00BA27114ACC2597EA70FB0 /* Pods_NuanNuan_OC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NuanNuan_OC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -413,6 +418,9 @@
 		BCD5064C1D9231D0000FB2C0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BC09AFE71DB8AC9400BC4D1B /* NNServerListCell.h */,
+				BC09AFE81DB8AC9400BC4D1B /* NNServerListCell.m */,
+				BC09AFE91DB8AC9400BC4D1B /* NNServerListCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -465,9 +473,9 @@
 				BCD9AE921DAE0941008DB98E /* NNQuestionAndAnswerCell.h */,
 				BCD9AE931DAE0941008DB98E /* NNQuestionAndAnswerCell.m */,
 				BCD9AE941DAE0941008DB98E /* NNQuestionAndAnswerCell.xib */,
-				BCD9AE9D1DAE21D1008DB98E /* NNNeterReply.h */,
-				BCD9AE9E1DAE21D1008DB98E /* NNNeterReply.m */,
-				BCD9AE9F1DAE21D1008DB98E /* NNNeterReply.xib */,
+				BCD9AE9D1DAE21D1008DB98E /* NNNeterReplyCell.h */,
+				BCD9AE9E1DAE21D1008DB98E /* NNNeterReplyCell.m */,
+				BCD9AE9F1DAE21D1008DB98E /* NNNeterReplyCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -539,6 +547,7 @@
 				BCD9AE7D1DACE424008DB98E /* NNEmotionalItemCell.xib in Resources */,
 				BCD9AE6A1DACBCB6008DB98E /* NNEmotionCaseVC.xib in Resources */,
 				BCD9AE9C1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.xib in Resources */,
+				BC09AFEB1DB8AC9400BC4D1B /* NNServerListCell.xib in Resources */,
 				BCD506111D92202D000FB2C0 /* Main.storyboard in Resources */,
 				BCD9AE911DADE5F6008DB98E /* NNPsychologicalTeacherHeaderView.xib in Resources */,
 				BCD9AE8C1DADE582008DB98E /* NNPsychologicalTeacherVC.xib in Resources */,
@@ -551,7 +560,7 @@
 				BCD506051D921F8C000FB2C0 /* Assets.xcassets in Resources */,
 				BC247E9C1DAA19B100AB5C84 /* NNEmotionallCell.xib in Resources */,
 				BCD9AE871DACF16D008DB98E /* NNTreeHoelCell.xib in Resources */,
-				BCD9AEA11DAE21D1008DB98E /* NNNeterReply.xib in Resources */,
+				BCD9AEA11DAE21D1008DB98E /* NNNeterReplyCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +623,7 @@
 				BCD5061E1D92241A000FB2C0 /* NNTabbarVC.m in Sources */,
 				BCD506001D921F8C000FB2C0 /* ViewController.m in Sources */,
 				BCB6EFDC1DB60DE000BEFD37 /* NNBaseViewModel.m in Sources */,
+				BC09AFEA1DB8AC9400BC4D1B /* NNServerListCell.m in Sources */,
 				BCD9AE9B1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.m in Sources */,
 				BCD9AE8B1DADE582008DB98E /* NNPsychologicalTeacherVC.m in Sources */,
 				BCD9AE861DACF16D008DB98E /* NNTreeHoelCell.m in Sources */,
@@ -636,7 +646,7 @@
 				BCD9AE951DAE0941008DB98E /* NNQuestionAndAnswerCell.m in Sources */,
 				BCB6EFE31DB62F3600BEFD37 /* NNHomepageSuccessCaseModel.m in Sources */,
 				BC247EA51DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m in Sources */,
-				BCD9AEA01DAE21D1008DB98E /* NNNeterReply.m in Sources */,
+				BCD9AEA01DAE21D1008DB98E /* NNNeterReplyCell.m in Sources */,
 				BC247E9B1DAA19B100AB5C84 /* NNEmotionallCell.m in Sources */,
 				BCD9AE721DACCFF0008DB98E /* NNRingImageViewView.m in Sources */,
 			);
@@ -750,7 +760,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A5862B2D06A1F1160A26CF88 /* Pods-NuanNuan_OC.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GZG7SDL9U6;
 				INFOPLIST_FILE = NuanNuan_OC/Info.plist;
@@ -765,7 +775,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 66B26D2343572DEE1D34D017 /* Pods-NuanNuan_OC.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GZG7SDL9U6;
 				INFOPLIST_FILE = NuanNuan_OC/Info.plist;

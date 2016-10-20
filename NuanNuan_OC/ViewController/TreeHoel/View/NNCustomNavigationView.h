@@ -12,7 +12,7 @@ typedef void(^selectTreeTypeBlock)(UIButton *button);
 
 @interface NNCustomNavigationView : UIView
 @property (copy, nonatomic) selectTreeTypeBlock selectBlock;
-@property (weak, nonatomic) IBOutlet UIButton *emotionAskButton;
-@property (weak, nonatomic) IBOutlet UIButton *teasingTreeHoleButton;
+@property (weak, nonatomic) IBOutlet UIButton *index1Button;
+@property (weak, nonatomic) IBOutlet UIButton *index2Button;
 
 @end

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NNNeterReply : UITableViewCell
+@interface NNNeterReplyCell : UITableViewCell
 
 @end

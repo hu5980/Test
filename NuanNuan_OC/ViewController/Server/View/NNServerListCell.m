@@ -1,17 +1,18 @@
 //
-//  NNEmotionallCell.m
+//  NNServerListCell.m
 //  NuanNuan_OC
 //
-//  Created by 忘、 on 16/10/9.
+//  Created by 忘、 on 16/10/20.
 //  Copyright © 2016年 NuanNuan. All rights reserved.
 //
 
-#import "NNEmotionallCell.h"
+#import "NNServerListCell.h"
 
-@implementation NNEmotionallCell
+@implementation NNServerListCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    _apaleView.backgroundColor =  [[UIColor blackColor] colorWithAlphaComponent:0.3];;
     // Initialization code
 }
 
@@ -19,9 +20,6 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
-}
-- (IBAction)moreCaseAction:(UIButton *)sender {
-    _successCaseBlock();
 }
 
 @end

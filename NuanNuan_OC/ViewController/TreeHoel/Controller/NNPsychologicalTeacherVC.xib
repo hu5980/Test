@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NNPsychologicalTeacherVC">
             <connections>
+                <outlet property="PsychologicalTeacherTableView" destination="Wf0-qL-xIe" id="1jK-jd-bdz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

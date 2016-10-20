@@ -10,6 +10,7 @@
 #import "NNCustomNavigationView.h"
 #import "NNTreeHoelCell.h"
 #import "NNQuestionAndAnswerDetailVC.h"
+#import "NNPsychologicalTeacherVC.h"
 
 @interface NNTreeHoleVC ()<UITableViewDelegate,UITableViewDataSource> {
     UIButton *defaultSelectButton;
@@ -41,7 +42,8 @@
     [self.navigationController setNavigationBarHidden:NO];
     NNCustomNavigationView *view = LOAD_VIEW_FROM_BUNDLE(@"NNCustomNavigationView");
     view.backgroundColor = [UIColor clearColor];
-    defaultSelectButton = view.emotionAskButton;
+    
+    defaultSelectButton = view.index1Button;
     view.selectBlock = ^(UIButton *button) {
         if (defaultSelectButton.tag != button.tag ) {
             defaultSelectButton.selected = NO;
@@ -102,9 +104,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NNQuestionAndAnswerDetailVC *detailVC = [[NNQuestionAndAnswerDetailVC alloc] initWithNibName:@"NNQuestionAndAnswerDetailVC" bundle:nil];
-    detailVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController: detailVC animated:YES];
+    NNPsychologicalTeacherVC *teacherVC = [[NNPsychologicalTeacherVC alloc] initWithNibName:@"NNPsychologicalTeacherVC" bundle:nil];
+    teacherVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController: teacherVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
