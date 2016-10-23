@@ -1,14 +1,14 @@
 //
-//  NNEmotionallCell.m
+//  NNSpitslotCell.m
 //  NuanNuan_OC
 //
-//  Created by 忘、 on 16/10/9.
+//  Created by 胡光耀 on 16/10/22.
 //  Copyright © 2016年 NuanNuan. All rights reserved.
 //
 
-#import "NNEmotionallCell.h"
+#import "NNSpitslotCell.h"
 
-@implementation NNEmotionallCell
+@implementation NNSpitslotCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -20,12 +20,11 @@
 
     // Configure the view for the selected state
 }
-- (IBAction)moreCaseAction:(UIButton *)sender {
-    _successCasemoreBlock();
+- (IBAction)praiseSpitslotAction:(UIButton *)sender {
+    _block(sender.tag);
 }
-
-- (IBAction)selcetSuccessCase:(UIButton *)sender {
-    _successCaseBlock();
+- (IBAction)commentSpitslotAction:(UIButton *)sender {
+    _block(sender.tag);
 }
 
 @end

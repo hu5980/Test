@@ -20,12 +20,13 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
+    [self createEmotionalTypeUI];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavigationBackButton:YES];
-    [self createEmotionalTypeUI];
+   
     
     self.navTitle = _navigationTitle;
  
@@ -43,6 +44,9 @@
 
 - (void)createEmotionalTypeUI {
     _emotionalTypeScrollView.contentSize = CGSizeMake((NNAppWidth/3)*_caseTypeArray.count, 32);
+    for (UIView *view in _emotionalTypeScrollView.subviews) {
+        [view removeFromSuperview];
+    }
     for (int i = 0; i< _caseTypeArray.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(i*(NNAppWidth/3), 0, NNAppWidth/3, 32);

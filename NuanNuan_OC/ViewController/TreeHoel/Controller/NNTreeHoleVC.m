@@ -11,9 +11,14 @@
 #import "NNTreeHoelCell.h"
 #import "NNQuestionAndAnswerDetailVC.h"
 #import "NNPsychologicalTeacherVC.h"
+#import "NNSpitslotCell.h"
+#import "NNImageBroswerView.h"
+#import "NNSpitslotDetailVC.h"
 
 @interface NNTreeHoleVC ()<UITableViewDelegate,UITableViewDataSource> {
     UIButton *defaultSelectButton;
+    
+    NSArray *array;
 }
 @property (weak, nonatomic) IBOutlet UITableView *treeHoelTableView;
 
@@ -54,6 +59,8 @@
             }else{
                 NNLog(@"吐槽树洞");
             }
+            
+            [_treeHoelTableView reloadData];
         }
     };
     self.navigationItem.titleView = view;
@@ -62,10 +69,11 @@
     _treeHoelTableView.delegate = self;
     _treeHoelTableView.dataSource = self;
     [_treeHoelTableView registerNib:[UINib nibWithNibName:@"NNTreeHoelCell" bundle:nil] forCellReuseIdentifier:@"NNTreeHoelCell"];
+    [_treeHoelTableView registerNib:[UINib nibWithNibName:@"NNSpitslotCell" bundle:nil] forCellReuseIdentifier:@"NNSpitslotCell"];
 }
 
 - (void)initData {
-    
+    array = @[@"图片地址"];
 }
 
 #pragma --mark  UItableViewDelegate UItableViewDatasource
@@ -79,17 +87,56 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NNTreeHoelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNTreeHoelCell"];
-    return cell;
+    if (defaultSelectButton.tag == 200) {
+        NNTreeHoelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNTreeHoelCell"];
+        return cell;
+    }else{
+        NNSpitslotCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNSpitslotCell"];
+     
+        cell.contentLabel.text = @"我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊";
+        NNImageBroswerView *broswerImageView = [[NNImageBroswerView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, 0) ImageUrls:array SpaceWithImage:10 SpaceWithSideOfSuperView:15 NumberImageOfLine:3];
+        cell.broswerViewConstraint.constant = broswerImageView.broswerViewHeight;
+        [cell.broswerView addSubview:broswerImageView];
+        broswerImageView.block = ^(NSInteger tag){
+            NNLog(@"%ld",(long)tag);
+        };
+        
+        cell.block = ^(NSInteger tag){
+            switch (tag) {
+                case 100:
+                    NNLog(@"评论");
+                    break;
+                case 101:
+                    NNLog(@"点赞");
+                    break;
+                default:
+                    break;
+            }
+        };
+
+        return cell;
+    }
 }
 
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat height = [tableView fd_heightForCellWithIdentifier:@"NNTreeHoelCell" cacheByIndexPath:indexPath configuration:^(id cell) {
-        
-    }];
-    return height   ;
+    CGFloat height;
+    if (defaultSelectButton.tag == 200) {
+        height = [tableView fd_heightForCellWithIdentifier:@"NNTreeHoelCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+            
+        }];
+    }else{
+        height = [tableView fd_heightForCellWithIdentifier:@"NNSpitslotCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+            NNSpitslotCell *spitslotCell = cell;
+            spitslotCell.contentLabel.text = @"我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊";
+            NNImageBroswerView *broswerImageView = [[NNImageBroswerView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, 0) ImageUrls:array SpaceWithImage:10 SpaceWithSideOfSuperView:15 NumberImageOfLine:3];
+            spitslotCell.broswerViewConstraint.constant = broswerImageView.broswerViewHeight;
+            
+        }];
+    }
+    
+    return height;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -104,9 +151,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NNPsychologicalTeacherVC *teacherVC = [[NNPsychologicalTeacherVC alloc] initWithNibName:@"NNPsychologicalTeacherVC" bundle:nil];
-    teacherVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController: teacherVC animated:YES];
+    if (defaultSelectButton.tag == 200) {
+        NNPsychologicalTeacherVC *teacherVC = [[NNPsychologicalTeacherVC alloc] initWithNibName:@"NNPsychologicalTeacherVC" bundle:nil];
+        teacherVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController: teacherVC animated:YES];
+    }else{
+        NNSpitslotDetailVC *spitslotDetailVC = [[NNSpitslotDetailVC alloc] initWithNibName:@"NNSpitslotDetailVC" bundle:nil];
+        spitslotDetailVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:spitslotDetailVC animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

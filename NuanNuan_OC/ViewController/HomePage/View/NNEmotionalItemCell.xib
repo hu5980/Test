@@ -16,7 +16,7 @@
                 <frame key="frameInset" width="375" height="107"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="情感挽回" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vn-uF-8PQ">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="恋爱困扰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vn-uF-8PQ">
                         <constraints>
                             <constraint firstAttribute="height" constant="12" id="Xij-z2-LWa"/>
                             <constraint firstAttribute="width" constant="72" id="iUt-yK-HHI"/>
@@ -45,7 +45,7 @@
                             <action selector="EmotionalSaveAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="G7I-hd-tMu"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自我提升" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4b7-hq-18E">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="心灵提升" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4b7-hq-18E">
                         <constraints>
                             <constraint firstAttribute="width" constant="72" id="UJK-bc-CjA"/>
                             <constraint firstAttribute="height" constant="12" id="pMX-Lx-gWB"/>

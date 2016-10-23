@@ -8,6 +8,7 @@
 
 #import "NNRingImageViewView.h"
 #import "Define.h"
+#import "Masonry.h"
 @implementation NNRingImageViewView
 
 /*
@@ -17,7 +18,7 @@
     // Drawing code
 }
 */
-- (void)initViewWithRingArray:(NSArray *)array {
+- (void)createRingImageviewWithRingArray:(NSArray *)array {
     for (int i = 0; i < array.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.tag = 100+i;
@@ -26,6 +27,21 @@
         
         [_ringScrollView addSubview:button];
     }
+    
+    UIPageControl *pageControl = [[UIPageControl alloc] init ] ;
+     [_ringScrollView addSubview:pageControl];
+    pageControl.currentPageIndicatorTintColor = [UIColor colorFromHexString:@"#999999"];
+    pageControl.tintColor = [UIColor whiteColor];
+    [pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(_ringScrollView.mas_centerX);
+        make.bottom.equalTo(_ringScrollView.mas_bottom).with.offset(-10);
+        make.width.equalTo(@100);
+        make.height.equalTo(@40);
+        
+    }];
+    
+   
+    
 }
 
 - (void)selectRingImage:(UIButton *)button {

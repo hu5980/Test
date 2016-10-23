@@ -16,6 +16,6 @@ typedef void(^selectRingImageBlock)();
 
 @property (nonatomic,copy) selectRingImageBlock ringBlock;
 
-- (void)initViewWithRingArray:(NSArray *)array;
+- (void)createRingImageviewWithRingArray:(NSArray *)array;
 
 @end

@@ -46,6 +46,10 @@
 
 - (void)initUI {
     headerView = LOAD_VIEW_FROM_BUNDLE(@"NNRingImageViewView");
+    [headerView createRingImageviewWithRingArray:titleArray];
+    headerView.ringBlock = ^(){
+        NNLog(@"点击滚动图片");
+    };
     _homePageTableView.tableHeaderView = headerView;
     
     _homePageTableView.backgroundColor = NN_BACKGROUND_COLOR;
@@ -58,7 +62,7 @@
 }
 
 - (void)initData {
-    titleArray = @[@"成功故事 （婚恋）",@"成功故事 （挽回）"];
+    titleArray = @[@"成功故事・婚恋",@"成功故事・挽回",@"成功故事・提升"];
 }
 
 #pragma --mark UItableViewDataSource UItableViewDelegate
@@ -71,7 +75,7 @@
     if (section == 0) {
         return 1;
     }
-    return 2;
+    return titleArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -95,7 +99,7 @@
             switch (type) {
                 case marriageAndFamily:
                     emotionCaseVC.navigationTitle = @"婚姻家庭";
-                    emotionCaseVC.caseTypeArray = @[@"婚姻修复",@"夫妻感情",@"婆媳相处"];
+                    emotionCaseVC.caseTypeArray = @[@"婆媳关系",@"夫妻心事",@"家庭琐事",@"婚外恋"];
                     break;
                 case emotionalSave:
                     emotionCaseVC.navigationTitle = @"情感挽回";
@@ -103,7 +107,7 @@
                     break;
                 case selfImprovement:
                     emotionCaseVC.navigationTitle = @"自我提升";
-                    emotionCaseVC.caseTypeArray = @[@"爱情探索",@"人际关系",@"人生信条"];
+                    emotionCaseVC.caseTypeArray = @[@"爱情探索",@"人际关系",@"人生信念"];
                     break;
                 default:
                     break;
@@ -112,11 +116,14 @@
         };
     }else{
         NNEmotionallCell *emotionAllcell = (NNEmotionallCell *)[tableView dequeueReusableCellWithIdentifier:@"emotionAllCell"];
-        emotionAllcell.successCaseBlock = ^(){
+        emotionAllcell.successCasemoreBlock = ^(){
             NNEmotionCaseVC *emotionCaseVC = [[NNEmotionCaseVC alloc] initWithNibName:@"NNEmotionCaseVC" bundle:nil];
             emotionCaseVC.hidesBottomBarWhenPushed = YES;
             emotionCaseVC.navigationTitle = [titleArray objectAtIndex:indexPath.row];
             [self.navigationController pushViewController:emotionCaseVC animated:YES];
+        };
+        emotionAllcell.successCaseBlock = ^(){
+            NNLog(@"成功故事");
         };
         emotionAllcell.emotionTitleLabel.text = [titleArray objectAtIndex:indexPath.row];
         cell = emotionAllcell;
