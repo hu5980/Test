@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0D331E0E1DBBCA87002B0DCD /* NNSpitslotDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D331E0C1DBBCA87002B0DCD /* NNSpitslotDetailVC.m */; };
 		0D331E0F1DBBCA87002B0DCD /* NNSpitslotDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D331E0D1DBBCA87002B0DCD /* NNSpitslotDetailVC.xib */; };
+		0D331E121DBD071F002B0DCD /* NNAskingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D331E111DBD071F002B0DCD /* NNAskingView.m */; };
+		0D331E141DBD0732002B0DCD /* NNAskingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D331E131DBD0732002B0DCD /* NNAskingView.xib */; };
+		0D331E171DBD09EF002B0DCD /* NNReplyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D331E161DBD09EF002B0DCD /* NNReplyView.m */; };
+		0D331E191DBD09FB002B0DCD /* NNReplyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D331E181DBD09FB002B0DCD /* NNReplyView.xib */; };
 		0DDAEE791DBB9F87008478DC /* NNImageBroswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAEE781DBB9F87008478DC /* NNImageBroswerView.m */; };
 		0DDAEE7D1DBBB030008478DC /* NNSpitslotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAEE7B1DBBB030008478DC /* NNSpitslotCell.m */; };
 		0DDAEE7E1DBBB030008478DC /* NNSpitslotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DDAEE7C1DBBB030008478DC /* NNSpitslotCell.xib */; };
@@ -66,6 +70,12 @@
 		0D331E0B1DBBCA87002B0DCD /* NNSpitslotDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSpitslotDetailVC.h; sourceTree = "<group>"; };
 		0D331E0C1DBBCA87002B0DCD /* NNSpitslotDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNSpitslotDetailVC.m; sourceTree = "<group>"; };
 		0D331E0D1DBBCA87002B0DCD /* NNSpitslotDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNSpitslotDetailVC.xib; sourceTree = "<group>"; };
+		0D331E101DBD071F002B0DCD /* NNAskingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNAskingView.h; sourceTree = "<group>"; };
+		0D331E111DBD071F002B0DCD /* NNAskingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNAskingView.m; sourceTree = "<group>"; };
+		0D331E131DBD0732002B0DCD /* NNAskingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNAskingView.xib; sourceTree = "<group>"; };
+		0D331E151DBD09EF002B0DCD /* NNReplyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNReplyView.h; sourceTree = "<group>"; };
+		0D331E161DBD09EF002B0DCD /* NNReplyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNReplyView.m; sourceTree = "<group>"; };
+		0D331E181DBD09FB002B0DCD /* NNReplyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNReplyView.xib; sourceTree = "<group>"; };
 		0DDAEE771DBB9F87008478DC /* NNImageBroswerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNImageBroswerView.h; sourceTree = "<group>"; };
 		0DDAEE781DBB9F87008478DC /* NNImageBroswerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNImageBroswerView.m; sourceTree = "<group>"; };
 		0DDAEE7A1DBBB030008478DC /* NNSpitslotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSpitslotCell.h; sourceTree = "<group>"; };
@@ -492,6 +502,12 @@
 				0DDAEE7A1DBBB030008478DC /* NNSpitslotCell.h */,
 				0DDAEE7B1DBBB030008478DC /* NNSpitslotCell.m */,
 				0DDAEE7C1DBBB030008478DC /* NNSpitslotCell.xib */,
+				0D331E101DBD071F002B0DCD /* NNAskingView.h */,
+				0D331E111DBD071F002B0DCD /* NNAskingView.m */,
+				0D331E131DBD0732002B0DCD /* NNAskingView.xib */,
+				0D331E151DBD09EF002B0DCD /* NNReplyView.h */,
+				0D331E161DBD09EF002B0DCD /* NNReplyView.m */,
+				0D331E181DBD09FB002B0DCD /* NNReplyView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -574,11 +590,13 @@
 				BCD9AE781DACD323008DB98E /* NNRingImageViewView.xib in Resources */,
 				BCD9AE6F1DACC668008DB98E /* NNEmotionallItemCell.xib in Resources */,
 				BC247EA61DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib in Resources */,
+				0D331E191DBD09FB002B0DCD /* NNReplyView.xib in Resources */,
 				BCD9AE961DAE0941008DB98E /* NNQuestionAndAnswerCell.xib in Resources */,
 				BCD506051D921F8C000FB2C0 /* Assets.xcassets in Resources */,
 				BC247E9C1DAA19B100AB5C84 /* NNEmotionallCell.xib in Resources */,
 				BCD9AE871DACF16D008DB98E /* NNTreeHoelCell.xib in Resources */,
 				BCD9AEA11DAE21D1008DB98E /* NNNeterReplyCell.xib in Resources */,
+				0D331E141DBD0732002B0DCD /* NNAskingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,6 +665,7 @@
 				0DDAEE7D1DBBB030008478DC /* NNSpitslotCell.m in Sources */,
 				BCD9AE6E1DACC668008DB98E /* NNEmotionallItemCell.m in Sources */,
 				BCD506531D9231D0000FB2C0 /* NNHomePageVC.m in Sources */,
+				0D331E121DBD071F002B0DCD /* NNAskingView.m in Sources */,
 				BCD9AE801DACED54008DB98E /* NNCustomNavigationView.m in Sources */,
 				BCD505FD1D921F8C000FB2C0 /* AppDelegate.m in Sources */,
 				BCD505FA1D921F8C000FB2C0 /* main.m in Sources */,
@@ -669,6 +688,7 @@
 				BCD9AEA01DAE21D1008DB98E /* NNNeterReplyCell.m in Sources */,
 				BC247E9B1DAA19B100AB5C84 /* NNEmotionallCell.m in Sources */,
 				BCD9AE721DACCFF0008DB98E /* NNRingImageViewView.m in Sources */,
+				0D331E171DBD09EF002B0DCD /* NNReplyView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
