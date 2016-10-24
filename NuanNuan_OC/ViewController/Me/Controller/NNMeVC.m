@@ -10,8 +10,13 @@
 #import "NNMineEmotionalMangmentCell.h"
 #import "NNMineCell.h"
 #import "Masonry.h"
-
-
+#import "NNMineCommentVC.h"
+#import "NNMinePraisedVC.h"
+#import "NNMineLikeVC.h"
+#import "NNMineOrderVC.h"
+#import "NNMineFeedbackVC.h"
+#import "NNMineSetVC.h"
+#import "NNMineNoticeVC.h"
 @interface NNMeVC ()<UITableViewDelegate,UITableViewDataSource> {
     NSArray *imageArray;
     NSArray *titleArray;
@@ -128,7 +133,39 @@
     }
     if (indexPath.section == 0) {
         NNMineEmotionalMangmentCell *emotionalMangmentCell = [tableView dequeueReusableCellWithIdentifier:@"NNMineEmotionalMangmentCell"];
-        
+        emotionalMangmentCell.block = ^(NSInteger tag){
+            switch (tag) {
+                case 100:
+                {
+                    NNMinePraisedVC *praisedVC = [[NNMinePraisedVC alloc] initWithNibName:@"NNMinePraisedVC" bundle:nil];
+                    praisedVC.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:praisedVC animated:YES];
+                }
+                    break;
+                case 101:
+                {
+                    NNMineCommentVC *commentVC = [[NNMineCommentVC alloc] initWithNibName:@"NNMineCommentVC" bundle:nil];
+                     commentVC.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:commentVC animated:YES];
+                }
+                    
+                    break;
+                case 102:
+                {
+                    NNMineLikeVC *likeVC = [[NNMineLikeVC alloc] initWithNibName:@"NNMineLikeVC" bundle:nil];
+                    likeVC.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:likeVC animated:YES];
+                }
+                    
+                    break;
+                case 103:
+                    
+                    break;
+                    
+                default:
+                    break;
+            }
+        };
         return emotionalMangmentCell;
     }else if (indexPath.section == 1) {
         cell.iconImageView.image = [UIImage imageNamed:[imageArray objectAtIndex:indexPath.row]];
@@ -155,6 +192,33 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 1) {
+        if (indexPath.row == 0) {
+            NNMineOrderVC *orderVC = [[NNMineOrderVC alloc] initWithNibName:@"NNMineOrderVC" bundle:nil];
+            orderVC.hidesBottomBarWhenPushed = YES;
+
+            [self.navigationController pushViewController:orderVC animated:YES];
+        }else if (indexPath.row == 1){
+           
+        }else if (indexPath.row == 2){
+            NNMineNoticeVC *noticeVC = [[NNMineNoticeVC alloc] initWithNibName:@"NNMineNoticeVC" bundle:nil];
+            noticeVC.hidesBottomBarWhenPushed = YES;
+
+            [self.navigationController pushViewController:noticeVC animated:YES];
+
+        }
+    }else if (indexPath.section == 2){
+        if (indexPath.row == 0) {
+            NNMineFeedbackVC *feedbackVC = [[NNMineFeedbackVC alloc] initWithNibName:@"NNMineFeedbackVC" bundle:nil];
+            feedbackVC.hidesBottomBarWhenPushed = YES;
+
+            [self.navigationController pushViewController:feedbackVC animated:YES];
+        }else if (indexPath.row == 1){
+            NNMineSetVC *setVC = [[NNMineSetVC alloc] initWithNibName:@"NNMineSetVC" bundle:nil];
+            setVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:setVC animated:YES];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {

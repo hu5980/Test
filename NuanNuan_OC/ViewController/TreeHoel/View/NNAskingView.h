@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^askingActionBlock)(NSInteger tag);
+
 @interface NNAskingView : UIView
 
+@property (weak, nonatomic) IBOutlet UILabel *placeHolderLabel;
+
+@property (weak, nonatomic) IBOutlet UITextView *askingTextView;
+
+@property (copy ,nonatomic) askingActionBlock block;
+
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 @end

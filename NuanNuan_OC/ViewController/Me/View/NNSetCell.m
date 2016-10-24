@@ -1,14 +1,14 @@
 //
-//  NNMineEmotionalMangmentCell.m
+//  NNSetCell.m
 //  NuanNuan_OC
 //
-//  Created by 忘、 on 16/10/9.
+//  Created by 忘、 on 16/10/24.
 //  Copyright © 2016年 NuanNuan. All rights reserved.
 //
 
-#import "NNMineEmotionalMangmentCell.h"
+#import "NNSetCell.h"
 
-@implementation NNMineEmotionalMangmentCell
+@implementation NNSetCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -17,10 +17,8 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+
     // Configure the view for the selected state
-}
-- (IBAction)selectAction:(UIButton *)sender {
-    _block(sender.tag);
 }
 
 @end

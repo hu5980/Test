@@ -17,6 +17,8 @@
 
 - (void)setNavigationBackButton:(BOOL ) showOrHidden;
 
+- (void)keyboardWillShow:(NSNotification*)notification;
 
+- (void)keyboardWillHide:(NSNotification*)notification;
 
 @end

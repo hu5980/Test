@@ -17,5 +17,11 @@
     // Drawing code
 }
 */
+- (IBAction)cancelAction:(UIButton *)sender {
+    _block(sender.tag);
+}
 
+- (IBAction)askingAction:(UIButton *)sender {
+    _block(sender.tag);
+}
 @end

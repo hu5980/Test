@@ -11,9 +11,14 @@
 #import "NNQuestionAndAnswerCell.h"
 #import "NNQuestionAndAnswerDetailVC.h"
 #import "NNReplyView.h"
-@interface NNPsychologicalTeacherVC ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate> {
+#import "NNAskingView.h"
+
+@interface NNPsychologicalTeacherVC ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UITextViewDelegate> {
     NNPsychologicalTeacherHeaderView *headerView;
     UIButton *defaultSelectButton;
+    NNAskingView *askingView;
+    UIButton *backgroundButton;
+    NNReplyView *replyView ;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *psychologicalTeacherTableView;
@@ -40,6 +45,7 @@
 
 
 - (void)initUI {
+    
     headerView = LOAD_VIEW_FROM_BUNDLE(@"NNPsychologicalTeacherHeaderView");
     _psychologicalTeacherTableView.tableHeaderView = headerView;
     _psychologicalTeacherTableView.backgroundColor = NN_BACKGROUND_COLOR;
@@ -52,17 +58,40 @@
         [weakSelf.navigationController popViewControllerAnimated:YES];
     };
     
-    NNReplyView *replyView = LOAD_VIEW_FROM_BUNDLE(@"NNReplyView");
-   
+    replyView = LOAD_VIEW_FROM_BUNDLE(@"NNReplyView");
+    [self.view addSubview:replyView];
     [replyView mas_makeConstraints:^(MASConstraintMaker *make) {
-        //make.width.mas_equalTo(@(NNAppWidth));
-        make.left.mas_equalTo(@0);
-       // make.bottom.equalTo(self.view.mas_bottom).with.offset(-40);
+        make.left.equalTo(@0);
+        make.width.equalTo(@(NNAppWidth));
+        make.bottom.equalTo(self.view.mas_bottom).with.offset(0.0f);
+        make.height.equalTo(@40);
     }];
     replyView.replytextField.delegate = self;
-    replyView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:replyView];
     
+    backgroundButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    backgroundButton.frame = CGRectMake(0, 0, NNAppWidth, NNAppHeight);
+    backgroundButton.backgroundColor = [UIColor blackColor];
+    backgroundButton.alpha = 0.3;
+    backgroundButton.hidden = YES;
+    [backgroundButton addTarget:self action:@selector(registKeyboard) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:backgroundButton];
+
+    
+    __weak NNReplyView *weakReplyView = replyView;
+     __weak NNAskingView *weakAskingView = askingView;
+    askingView = LOAD_VIEW_FROM_BUNDLE(@"NNAskingView");
+    askingView.frame = CGRectMake(0, NNAppHeight, NNAppWidth, 130);
+    askingView.askingTextView.delegate = self;
+    askingView.block =  ^(NSInteger tag){
+        if(tag == 100){
+            [weakReplyView.replytextField resignFirstResponder];
+            [weakAskingView.askingTextView resignFirstResponder];
+        }else{
+        
+        }
+    };
+    [self.view addSubview:askingView];
+   
     
 }
 
@@ -77,6 +106,51 @@
         
     }
 }
+
+- (void)registKeyboard {
+    [replyView.replytextField resignFirstResponder];
+    [askingView.askingTextView resignFirstResponder];
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification{
+    
+    backgroundButton.hidden = NO;
+
+    //键盘高度
+    CGRect keyBoardFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    CGFloat animationDuration =  [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    
+    [UIView animateWithDuration:animationDuration animations:^{
+        askingView.frame = CGRectMake(0, keyBoardFrame.origin.y - 130, NNAppWidth, 130);
+    }];
+    
+    
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification{
+    backgroundButton.hidden = YES;
+    CGFloat animationDuration =  [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    [UIView animateWithDuration:animationDuration animations:^{
+        askingView.frame = CGRectMake(0, NNAppHeight, NNAppWidth, 130);
+    }];
+}
+
+#pragma --mark Delegate
+
+- (void)textViewDidBeginEditing:(UITextView *)textView{
+    askingView.placeHolderLabel.hidden = YES;
+}
+
+- (void)textViewDidChange:(UITextView *)textView{
+    if (textView.text.length == 0) {
+        askingView.placeHolderLabel.hidden = NO;
+    }else{
+        askingView.placeHolderLabel.hidden = YES;
+    }
+}
+
+
 
 #pragma --mark UItableViewDelegate   UItableViewDatasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

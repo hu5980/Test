@@ -10,8 +10,14 @@
 #import "NNSpitslotCell.h"
 #import "NNImageBroswerView.h"
 #import "NNNeterReplyCell.h"
-@interface NNSpitslotDetailVC () <UITableViewDelegate,UITableViewDataSource> {
+#import "NNReplyView.h"
+#import "NNAskingView.h"
+
+@interface NNSpitslotDetailVC () <UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,UITextFieldDelegate> {
     NSArray *array;
+    NNAskingView *askingView;
+    UIButton *backgroundButton;
+    NNReplyView *replyView ;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *spitslotTableView;
@@ -40,13 +46,94 @@
     _spitslotTableView.backgroundColor = NN_BACKGROUND_COLOR;
     [_spitslotTableView registerNib:[UINib nibWithNibName:@"NNNeterReplyCell" bundle:nil] forCellReuseIdentifier:@"NNNeterReplyCell"];
     [_spitslotTableView registerNib:[UINib nibWithNibName:@"NNSpitslotCell" bundle:nil] forCellReuseIdentifier:@"NNSpitslotCell"];
+    
+    replyView = LOAD_VIEW_FROM_BUNDLE(@"NNReplyView");
+    [self.view addSubview:replyView];
+    replyView.replytextField.placeholder = @"我也说两句";
+    [replyView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(@0);
+        make.width.equalTo(@(NNAppWidth));
+        make.bottom.equalTo(self.view.mas_bottom).with.offset(0.0f);
+        make.height.equalTo(@40);
+    }];
+    replyView.replytextField.delegate = self;
+    
+    backgroundButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    backgroundButton.frame = CGRectMake(0, 0, NNAppWidth, NNAppHeight);
+    backgroundButton.backgroundColor = [UIColor blackColor];
+    backgroundButton.alpha = 0.3;
+    backgroundButton.hidden = YES;
+    [backgroundButton addTarget:self action:@selector(registKeyboard) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:backgroundButton];
+    
+    
+    __weak NNReplyView *weakReplyView = replyView;
+    __weak NNAskingView *weakAskingView = askingView;
+    askingView = LOAD_VIEW_FROM_BUNDLE(@"NNAskingView");
+    askingView.frame = CGRectMake(0, NNAppHeight, NNAppWidth, 130);
+    askingView.typeLabel.text = @"说点什么吧";
+    askingView.askingTextView.delegate = self;
+    askingView.placeHolderLabel.text = @"请输入您想说的话";
+    askingView.block =  ^(NSInteger tag){
+        if(tag == 100){
+            [weakReplyView.replytextField resignFirstResponder];
+            [weakAskingView.askingTextView resignFirstResponder];
+        }else{
+            
+        }
+    };
+    [self.view addSubview:askingView];
+
 }
 
 - (void)initData {
     array = @[@"http1",@"http2",@"http1",@"http2"];
 }
 
+#pragma --mark  Action
 
+- (void)registKeyboard {
+    [replyView.replytextField resignFirstResponder];
+    [askingView.askingTextView resignFirstResponder];
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification{
+    
+    backgroundButton.hidden = NO;
+    
+    //键盘高度
+    CGRect keyBoardFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    CGFloat animationDuration =  [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    
+    [UIView animateWithDuration:animationDuration animations:^{
+        askingView.frame = CGRectMake(0, keyBoardFrame.origin.y - 130 - 64, NNAppWidth, 130);
+    }];
+    
+    
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification{
+    backgroundButton.hidden = YES;
+    CGFloat animationDuration =  [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    [UIView animateWithDuration:animationDuration animations:^{
+        askingView.frame = CGRectMake(0, NNAppHeight, NNAppWidth, 130);
+    }];
+}
+
+#pragma --mark Delegate
+
+- (void)textViewDidBeginEditing:(UITextView *)textView{
+    askingView.placeHolderLabel.hidden = YES;
+}
+
+- (void)textViewDidChange:(UITextView *)textView{
+    if (textView.text.length == 0) {
+        askingView.placeHolderLabel.hidden = NO;
+    }else{
+        askingView.placeHolderLabel.hidden = YES;
+    }
+}
 #pragma --mark UITableViewDelagate UItableViewDarasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
@@ -94,8 +181,7 @@
     }else{
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, 30)];
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 100, 30)];
-        [view addSubview:label];
-        label.text = @"网友评论";
+        [view addSubview:label];                                              label.text = @"网友评论";
         label.font = [UIFont systemFontOfSize:14.f];
         label.textColor = [UIColor colorFromHexString:@"#ff8833"];
         view.backgroundColor = NN_BACKGROUND_COLOR;

@@ -14,10 +14,15 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWu-Go-DvC">
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="202_22" translatesAutoresizingMaskIntoConstraints="NO" id="WtL-M2-sEU"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="202_22" translatesAutoresizingMaskIntoConstraints="NO" id="WtL-M2-sEU">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="1i4-Fv-qCe"/>
+                                <constraint firstAttribute="width" constant="18" id="XJD-pM-Xa2"/>
+                            </constraints>
+                        </imageView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="我也要提问" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DuI-6i-dkh">
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="cyG-Q3-C1m"/>
+                                <constraint firstAttribute="height" constant="30" id="8eg-vw-4Yu"/>
                             </constraints>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -26,23 +31,22 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="DuI-6i-dkh" firstAttribute="top" secondItem="lWu-Go-DvC" secondAttribute="top" id="8wb-nZ-9na"/>
-                        <constraint firstAttribute="bottom" secondItem="DuI-6i-dkh" secondAttribute="bottom" id="M0C-Ts-0w0"/>
-                        <constraint firstAttribute="bottom" secondItem="WtL-M2-sEU" secondAttribute="bottom" constant="6" id="R4X-Sn-0xL"/>
-                        <constraint firstItem="WtL-M2-sEU" firstAttribute="top" secondItem="lWu-Go-DvC" secondAttribute="top" constant="6" id="Tpw-YE-mf0"/>
-                        <constraint firstItem="WtL-M2-sEU" firstAttribute="leading" secondItem="lWu-Go-DvC" secondAttribute="leading" constant="15" id="cDU-ym-g3M"/>
-                        <constraint firstAttribute="height" constant="30" id="cMY-I1-BgR"/>
-                        <constraint firstItem="DuI-6i-dkh" firstAttribute="leading" secondItem="WtL-M2-sEU" secondAttribute="trailing" constant="3" id="dHS-ty-7F6"/>
-                        <constraint firstAttribute="trailing" secondItem="DuI-6i-dkh" secondAttribute="trailing" constant="14" id="fDv-10-XVC"/>
+                        <constraint firstItem="DuI-6i-dkh" firstAttribute="leading" secondItem="WtL-M2-sEU" secondAttribute="trailing" constant="3" id="BPC-BN-jl0"/>
+                        <constraint firstAttribute="trailing" secondItem="DuI-6i-dkh" secondAttribute="trailing" constant="14" id="HOV-mq-PDk"/>
+                        <constraint firstAttribute="bottom" secondItem="WtL-M2-sEU" secondAttribute="bottom" constant="6" id="Q8y-Cj-N5W"/>
+                        <constraint firstItem="WtL-M2-sEU" firstAttribute="leading" secondItem="lWu-Go-DvC" secondAttribute="leading" constant="15" id="Zdc-gg-kvp"/>
+                        <constraint firstItem="WtL-M2-sEU" firstAttribute="top" secondItem="lWu-Go-DvC" secondAttribute="top" constant="6" id="fnQ-gV-QiX"/>
+                        <constraint firstItem="DuI-6i-dkh" firstAttribute="top" secondItem="lWu-Go-DvC" secondAttribute="top" id="lJi-RS-22G"/>
+                        <constraint firstAttribute="bottom" secondItem="DuI-6i-dkh" secondAttribute="bottom" id="y5k-JA-cFc"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="lWu-Go-DvC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="8YP-pw-vJc"/>
-                <constraint firstAttribute="trailing" secondItem="lWu-Go-DvC" secondAttribute="trailing" constant="15" id="8Zg-k1-ZNe"/>
-                <constraint firstAttribute="bottom" secondItem="lWu-Go-DvC" secondAttribute="bottom" constant="5" id="95r-5K-Dku"/>
-                <constraint firstItem="lWu-Go-DvC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="K97-Ls-gob"/>
+                <constraint firstAttribute="bottom" secondItem="lWu-Go-DvC" secondAttribute="bottom" constant="5" id="Zjv-ob-yG0"/>
+                <constraint firstItem="lWu-Go-DvC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="eDx-dJ-Pst"/>
+                <constraint firstAttribute="trailing" secondItem="lWu-Go-DvC" secondAttribute="trailing" constant="15" id="tPr-3k-FSQ"/>
+                <constraint firstItem="lWu-Go-DvC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="zaK-kb-cxn"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

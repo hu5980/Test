@@ -21,7 +21,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 - (void)viewDidLoad {
@@ -48,6 +48,7 @@
                 NNLog(@"夏日特惠");
             }
         }
+        [_serverListTableView reloadData];
     };
     self.navigationItem.titleView = view;
     
@@ -60,7 +61,11 @@
 #pragma --mark UITableViewdelegate UItableViewdatasource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 5;
+    if (defaultSelectButton.tag == 200) {
+        return 1;
+    }else{
+        return 4;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -86,6 +91,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NNServerListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNServerListCell"];
+    
+    if (defaultSelectButton.tag == 200) {
+        cell.apaleView.hidden = YES;
+    }else{
+        cell.apaleView.hidden = NO;
+    }
     
     return cell;
 }

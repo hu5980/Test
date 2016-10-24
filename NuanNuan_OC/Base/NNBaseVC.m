@@ -30,7 +30,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //注册键盘出现的通知
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+     
+                                             selector:@selector(keyboardWillShow:)
+     
+                                                 name:UIKeyboardWillShowNotification object:nil];
+    
+    //注册键盘消失的通知
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+     
+                                             selector:@selector(keyboardWillHide:)
+     
+                                                 name:UIKeyboardWillHideNotification object:nil];
    
     // Do any additional setup after loading the view.
 }
@@ -47,7 +61,11 @@
     }
 }
 
+- (void)keyboardWillShow:(NSNotification*)notification{
+}
 
+- (void)keyboardWillHide:(NSNotification*)notification{
+}
 
 - (void)setNavTitle:(NSString *)navTitle{
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -60,6 +78,10 @@
 
 - (void)popVC {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)dealloc {
+     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {

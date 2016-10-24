@@ -15,11 +15,17 @@
                 <frame key="frameInset" width="320" height="59"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paB-58-g5L">
+                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paB-58-g5L">
                         <state key="normal" image="400_03"/>
+                        <connections>
+                            <action selector="selectAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hgP-pS-HSN"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83H-85-INY">
+                    <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83H-85-INY">
                         <state key="normal" image="400_07"/>
+                        <connections>
+                            <action selector="selectAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="BsX-6c-bzQ"/>
+                        </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNt-PD-kZb">
                         <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -27,8 +33,11 @@
                             <constraint firstAttribute="width" constant="0.5" id="Rqc-7W-5Qx"/>
                         </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUq-T6-4fd">
+                    <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUq-T6-4fd">
                         <state key="normal" image="400_09"/>
+                        <connections>
+                            <action selector="selectAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5b0-F9-djc"/>
+                        </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LYK-xE-SHQ">
                         <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -36,8 +45,11 @@
                             <constraint firstAttribute="width" constant="0.5" id="zjJ-xm-1ie"/>
                         </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOj-hc-PbA">
+                    <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOj-hc-PbA">
                         <state key="normal" image="400_05"/>
+                        <connections>
+                            <action selector="selectAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="O3L-9N-f4K"/>
+                        </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aau-Cy-bpg">
                         <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -84,9 +96,9 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="400_03" width="20" height="20"/>
-        <image name="400_05" width="20" height="20"/>
-        <image name="400_07" width="20" height="20"/>
-        <image name="400_09" width="20" height="20"/>
+        <image name="400_03" width="80" height="52"/>
+        <image name="400_05" width="80" height="52"/>
+        <image name="400_07" width="80" height="52"/>
+        <image name="400_09" width="80" height="52"/>
     </resources>
 </document>

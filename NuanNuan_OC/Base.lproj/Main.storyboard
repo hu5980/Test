@@ -215,52 +215,6 @@
             </objects>
             <point key="canvasLocation" x="-3375" y="134"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NuanNuan_OC" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q2T-9R-InC">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="161" id="qbC-qi-cws"/>
-                                    <constraint firstAttribute="height" constant="30" id="s6T-44-pfE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="geJ-wC-ulB">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="161" id="aM5-pZ-rs4"/>
-                                    <constraint firstAttribute="height" constant="30" id="bsX-X2-uVc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="geJ-wC-ulB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9pN-5W-GdK"/>
-                            <constraint firstItem="q2T-9R-InC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="33" id="Al3-iL-x9G"/>
-                            <constraint firstItem="geJ-wC-ulB" firstAttribute="top" secondItem="q2T-9R-InC" secondAttribute="bottom" constant="56" id="jxT-Er-ryG"/>
-                            <constraint firstItem="q2T-9R-InC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oQt-bQ-kC8"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="passWordTextField" destination="geJ-wC-ulB" id="h8g-fa-J0T"/>
-                        <outlet property="userNameTextField" destination="q2T-9R-InC" id="FnO-eQ-7Uj"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1289" y="-128"/>
-        </scene>
         <!--Home PageVC-->
         <scene sceneID="u4k-d9-sib">
             <objects>
