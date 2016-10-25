@@ -39,5 +39,11 @@ typedef void (^ProgressBlock)(id Progress);
 
 
 #define NN_BACKGROUND_COLOR [UIColor colorFromHexString:@"#F4F4F4"]
+#define NN_MAIN_COLOR [UIColor colorFromHexString:@"#FF8833"]
+#define NN_TEXT666666_COLOR [UIColor colorFromHexString:@"#666666"]
+#define NN_TEXT333333_COLOR [UIColor colorFromHexString:@"#333333"]
+#define NN_TEXT999999_COLOR [UIColor colorFromHexString:@"#999999"]
+#define NN_ASSIST_LINE_COLOR [UIColor colorFromHexString:@"#E0E0E0"]
+
 
 #endif /* Define_h */

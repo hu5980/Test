@@ -8,6 +8,7 @@
 
 #import "NNMineSetVC.h"
 #import "NNSetCell.h"
+#import "NNLoginAndRegisterVC.h"
 @interface NNMineSetVC ()<UITableViewDelegate,UITableViewDataSource> {
     NSArray *titleArray;
 }
@@ -80,14 +81,22 @@
         label.textColor = [UIColor colorFromHexString:@"#ff9933"];
         label.font = [UIFont systemFontOfSize:14.f];
         label.text = @"退出帐号";
+        label.textAlignment = NSTextAlignmentCenter;
         [cell.contentView addSubview:label];
         return cell;
     }
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.section == 0) {
+        
+    }else{
+        NNLoginAndRegisterVC *loginOrRegisterVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];
+        
+        [self.navigationController presentViewController:loginOrRegisterVC animated:YES completion:nil];
+    }
 }
 
 

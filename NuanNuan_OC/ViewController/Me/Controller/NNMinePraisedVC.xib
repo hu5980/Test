@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NNMinePraisedVC">
             <connections>
+                <outlet property="defaultButton" destination="kK5-6I-Usb" id="l1z-B9-F0M"/>
                 <outlet property="praisedTableView" destination="yxF-Z7-hxH" id="Z1I-HV-yS8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,12 +21,54 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yxF-Z7-hxH">
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <button opaque="NO" tag="100" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kK5-6I-Usb">
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="问吧">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="1" green="0.53333333333333333" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" red="1" green="0.53333333333333333" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="selectTypeAction:" destination="-1" eventType="touchUpInside" id="aTA-O3-Rok"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4U-Hi-dzG">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="bZv-ek-6jg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="树洞">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="1" green="0.53333333333333333" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" red="1" green="0.53333333333333333" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="selectTypeAction:" destination="-1" eventType="touchUpInside" id="T9F-Ne-ShF"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="yxF-Z7-hxH" firstAttribute="top" secondItem="V4U-Hi-dzG" secondAttribute="bottom" id="3TL-gU-BrI"/>
+                <constraint firstItem="kK5-6I-Usb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3dt-fc-hrw"/>
+                <constraint firstItem="kK5-6I-Usb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8LF-gQ-5bP"/>
+                <constraint firstItem="V4U-Hi-dzG" firstAttribute="height" secondItem="kK5-6I-Usb" secondAttribute="height" id="9c9-wX-yxK"/>
                 <constraint firstItem="yxF-Z7-hxH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="E0a-DX-aqB"/>
+                <constraint firstItem="yxF-Z7-hxH" firstAttribute="top" secondItem="kK5-6I-Usb" secondAttribute="bottom" id="LA1-ei-VEt"/>
+                <constraint firstAttribute="trailing" secondItem="V4U-Hi-dzG" secondAttribute="trailing" id="Qok-WJ-tKw"/>
                 <constraint firstAttribute="bottom" secondItem="yxF-Z7-hxH" secondAttribute="bottom" id="QvY-nt-iqV"/>
-                <constraint firstItem="yxF-Z7-hxH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bUK-d8-bhT"/>
+                <constraint firstItem="V4U-Hi-dzG" firstAttribute="width" secondItem="kK5-6I-Usb" secondAttribute="width" id="S9d-YS-QeC"/>
+                <constraint firstItem="V4U-Hi-dzG" firstAttribute="leading" secondItem="kK5-6I-Usb" secondAttribute="trailing" id="a77-Da-Xwl"/>
+                <constraint firstItem="yxF-Z7-hxH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="bUK-d8-bhT"/>
+                <constraint firstItem="V4U-Hi-dzG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iYM-Cd-bGJ"/>
                 <constraint firstAttribute="trailing" secondItem="yxF-Z7-hxH" secondAttribute="trailing" id="mva-ht-S4b"/>
             </constraints>
         </view>

@@ -7,8 +7,8 @@
 //
 
 #import "NNMineLikeVC.h"
-
-@interface NNMineLikeVC ()
+#import "NNEmotionallItemCell.h"
+@interface NNMineLikeVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *likeTableView;
 
 @end
@@ -31,6 +31,49 @@
     self.navTitle = @"我的喜欢";
     [self setNavigationBackButton:YES];
     
+    _likeTableView.delegate = self;
+    _likeTableView.dataSource = self;
+    _likeTableView.backgroundColor = NN_BACKGROUND_COLOR;
+    [_likeTableView registerNib:[UINib nibWithNibName:@"NNEmotionallItemCell" bundle:nil] forCellReuseIdentifier:@"NNEmotionallItemCell"];
+}
+
+#pragma --mark Delegate
+#pragma --mark UItableViewdelegate UItableViewdatasource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 10;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 10;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    CGFloat height = [tableView fd_heightForCellWithIdentifier:@"NNEmotionallItemCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+        
+    }];
+    return height   ;
+
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, 10)];
+    view.backgroundColor = [UIColor clearColor];
+    return  view;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NNEmotionallItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNEmotionallItemCell"];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
 }
 
 - (void)didReceiveMemoryWarning {

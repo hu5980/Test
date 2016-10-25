@@ -24,6 +24,8 @@
 		BC247EA61DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC247EA41DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib */; };
 		BC247EAA1DAA35D600AB5C84 /* NNMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC247EA81DAA35D600AB5C84 /* NNMineCell.m */; };
 		BC247EAB1DAA35D600AB5C84 /* NNMineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC247EA91DAA35D600AB5C84 /* NNMineCell.xib */; };
+		BC328EEA1DBF2F5E000AF40B /* NNLoginAndRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC328EE81DBF2F5E000AF40B /* NNLoginAndRegisterVC.m */; };
+		BC328EEB1DBF2F5E000AF40B /* NNLoginAndRegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC328EE91DBF2F5E000AF40B /* NNLoginAndRegisterVC.xib */; };
 		BC58BA671DBDE99500F3BF0D /* NNMinePraisedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC58BA651DBDE99500F3BF0D /* NNMinePraisedVC.m */; };
 		BC58BA681DBDE99500F3BF0D /* NNMinePraisedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC58BA661DBDE99500F3BF0D /* NNMinePraisedVC.xib */; };
 		BC58BA6C1DBDE9A800F3BF0D /* NNMineCommentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC58BA6A1DBDE9A800F3BF0D /* NNMineCommentVC.m */; };
@@ -111,6 +113,9 @@
 		BC247EA71DAA35D600AB5C84 /* NNMineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNMineCell.h; sourceTree = "<group>"; };
 		BC247EA81DAA35D600AB5C84 /* NNMineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMineCell.m; sourceTree = "<group>"; };
 		BC247EA91DAA35D600AB5C84 /* NNMineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNMineCell.xib; sourceTree = "<group>"; };
+		BC328EE71DBF2F5E000AF40B /* NNLoginAndRegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNLoginAndRegisterVC.h; sourceTree = "<group>"; };
+		BC328EE81DBF2F5E000AF40B /* NNLoginAndRegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNLoginAndRegisterVC.m; sourceTree = "<group>"; };
+		BC328EE91DBF2F5E000AF40B /* NNLoginAndRegisterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNLoginAndRegisterVC.xib; sourceTree = "<group>"; };
 		BC58BA641DBDE99500F3BF0D /* NNMinePraisedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNMinePraisedVC.h; sourceTree = "<group>"; };
 		BC58BA651DBDE99500F3BF0D /* NNMinePraisedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMinePraisedVC.m; sourceTree = "<group>"; };
 		BC58BA661DBDE99500F3BF0D /* NNMinePraisedVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNMinePraisedVC.xib; sourceTree = "<group>"; };
@@ -234,6 +239,48 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BC328EE21DBF2F0F000AF40B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BC328EE31DBF2F44000AF40B /* Controller */,
+				BC328EE41DBF2F44000AF40B /* Model */,
+				BC328EE51DBF2F44000AF40B /* View */,
+				BC328EE61DBF2F44000AF40B /* ViewModel */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		BC328EE31DBF2F44000AF40B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC328EE71DBF2F5E000AF40B /* NNLoginAndRegisterVC.h */,
+				BC328EE81DBF2F5E000AF40B /* NNLoginAndRegisterVC.m */,
+				BC328EE91DBF2F5E000AF40B /* NNLoginAndRegisterVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC328EE41DBF2F44000AF40B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC328EE51DBF2F44000AF40B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC328EE61DBF2F44000AF40B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		BC7A67251DB4C33B00C3B3D9 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +383,7 @@
 		BCD506141D9222E5000FB2C0 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BC328EE21DBF2F0F000AF40B /* Login */,
 				BCD506381D9231D0000FB2C0 /* HomePage */,
 				BCD506411D9231D0000FB2C0 /* Me */,
 				BCD506471D9231D0000FB2C0 /* Server */,
@@ -647,6 +695,7 @@
 				BC09AFEB1DB8AC9400BC4D1B /* NNServerListCell.xib in Resources */,
 				BCD506111D92202D000FB2C0 /* Main.storyboard in Resources */,
 				0DDAEE7E1DBBB030008478DC /* NNSpitslotCell.xib in Resources */,
+				BC328EEB1DBF2F5E000AF40B /* NNLoginAndRegisterVC.xib in Resources */,
 				BC58BA7C1DBDEF9300F3BF0D /* NNMineNoticeVC.xib in Resources */,
 				BC58BA721DBDEDFA00F3BF0D /* NNMineLikeVC.xib in Resources */,
 				BCD9AE911DADE5F6008DB98E /* NNPsychologicalTeacherHeaderView.xib in Resources */,
@@ -745,6 +794,7 @@
 				BCD9AE691DACBCB6008DB98E /* NNEmotionCaseVC.m in Sources */,
 				BCD506571D9231D0000FB2C0 /* NNServerVC.m in Sources */,
 				BC58BA7B1DBDEF9300F3BF0D /* NNMineNoticeVC.m in Sources */,
+				BC328EEA1DBF2F5E000AF40B /* NNLoginAndRegisterVC.m in Sources */,
 				BCB6EFD91DB60A6000BEFD37 /* NNBaseVC.m in Sources */,
 				BCD506371D923003000FB2C0 /* UIViewExt.m in Sources */,
 				BCD9AE7C1DACE424008DB98E /* NNEmotionalItemCell.m in Sources */,
