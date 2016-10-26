@@ -98,7 +98,7 @@
                 <outlet property="expertIntroductionLabel" destination="0Vi-MS-Cu9" id="O42-nS-b9o"/>
                 <outlet property="iconImageView" destination="guC-y2-8wR" id="VTx-LI-3uI"/>
                 <outlet property="ninkNameLabel" destination="cTL-Qa-5jw" id="gWI-FV-r3y"/>
-                <outlet property="questionNumLabel" destination="FKy-FT-Usm" id="cmB-ie-6hU"/>
+                <outlet property="questionNumLabel" destination="jNo-hM-ClC" id="EgE-96-GDI"/>
                 <outlet property="specialityLabel" destination="5bc-c1-R45" id="MrM-4f-QaV"/>
             </connections>
             <point key="canvasLocation" x="24.5" y="52"/>

@@ -7,7 +7,7 @@
 //
 
 #import "NNBaseViewModel.h"
-#import "NNNetRequestClass.h"
+
 @implementation NNBaseViewModel
 
 #pragma 获取网络可到达状态

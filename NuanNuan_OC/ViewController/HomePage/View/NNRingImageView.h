@@ -1,5 +1,5 @@
 //
-//  NNRingImageViewView.h
+//  NNRingImageView.h
 //  NuanNuan_OC
 //
 //  Created by 忘、 on 16/10/11.
@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NNRingImageModel.h"
 
-typedef void(^selectRingImageBlock)();
+typedef void(^selectRingImageBlock)(NNRingImageModel *model);
 
-@interface NNRingImageViewView : UIView
+@interface NNRingImageView : UIView <UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *ringScrollView;
 

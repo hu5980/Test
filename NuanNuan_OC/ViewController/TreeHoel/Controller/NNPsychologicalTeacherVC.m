@@ -47,6 +47,12 @@
 - (void)initUI {
     
     headerView = LOAD_VIEW_FROM_BUNDLE(@"NNPsychologicalTeacherHeaderView");
+    [headerView.backgroundImageView setImageWithURL:[NSURL URLWithString:_model.backgroundImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+    [headerView.headimageView setImageWithURL:[NSURL URLWithString:_model.teacherHeadUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+    headerView.nickNamelabel.text = _model.teacherNickName;
+    headerView.studyTypeLabel.text = _model.teacherTypeName;
+    headerView.teacherDescribeLabel.text = _model.teacherDescription;
+    
     _psychologicalTeacherTableView.tableHeaderView = headerView;
     _psychologicalTeacherTableView.backgroundColor = NN_BACKGROUND_COLOR;
     _psychologicalTeacherTableView.delegate = self;

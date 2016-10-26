@@ -11,6 +11,10 @@
 #import "NNEnumDefine.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "Masonry.h"
+#import "UIImageView+AFNetworking.h"
+#import "UIButton+AFNetworking.h"
+#import "UIImage+AFNetworking.h"
+
 @interface NNBaseVC : UIViewController
 
 @property (nonatomic,strong) NSString *navTitle;

@@ -7,7 +7,7 @@
 //
 
 #import "NNBaseVC.h"
-
+#import "NNEmotionTeacherModel.h"
 @interface NNPsychologicalTeacherVC : NNBaseVC
-
+@property (nonatomic,strong) NNEmotionTeacherModel *model;
 @end

@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *ninkNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *specialityLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *questionNumLabel;
+@property (weak, nonatomic) IBOutlet UILabel *questionNumLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *expertIntroductionLabel;
 @end

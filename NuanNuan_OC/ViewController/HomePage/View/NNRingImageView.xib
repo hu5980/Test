@@ -9,26 +9,30 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NNRingImageViewView">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NNRingImageView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tEl-oD-BUf">
-                    <color key="backgroundColor" red="0.16078431369999999" green="0.80000000000000004" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEl-oD-BUf">
                     <constraints>
                         <constraint firstAttribute="width" secondItem="tEl-oD-BUf" secondAttribute="height" multiplier="375:164" id="4fW-VH-H9k"/>
                     </constraints>
                 </scrollView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="fvC-KC-4gf"/>
             </subviews>
-            <color key="backgroundColor" red="0.98039221759999995" green="0.33333334329999997" blue="0.15294118230000001" alpha="1" colorSpace="deviceRGB"/>
             <constraints>
                 <constraint firstItem="tEl-oD-BUf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3X7-Pq-jwO"/>
                 <constraint firstAttribute="bottom" secondItem="tEl-oD-BUf" secondAttribute="bottom" id="5UL-jH-WNs"/>
                 <constraint firstItem="tEl-oD-BUf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BCf-rY-bhh"/>
+                <constraint firstAttribute="bottom" secondItem="fvC-KC-4gf" secondAttribute="bottom" constant="2" id="HIb-vi-7hN"/>
+                <constraint firstItem="fvC-KC-4gf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="c3g-jJ-Vqr"/>
+                <constraint firstAttribute="trailing" secondItem="fvC-KC-4gf" secondAttribute="trailing" constant="70" id="iGT-5e-0xf"/>
+                <constraint firstItem="fvC-KC-4gf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="70" id="x3f-d1-pWD"/>
                 <constraint firstAttribute="trailing" secondItem="tEl-oD-BUf" secondAttribute="trailing" id="xXw-Ht-ldE"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="pageControl" destination="fvC-KC-4gf" id="Mla-aX-49v"/>
                 <outlet property="ringScrollView" destination="tEl-oD-BUf" id="aQh-Tb-FIV"/>
             </connections>
             <point key="canvasLocation" x="24.5" y="52"/>

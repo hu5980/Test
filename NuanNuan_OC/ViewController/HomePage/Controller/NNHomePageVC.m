@@ -7,14 +7,16 @@
 //
 
 #import "NNHomePageVC.h"
-#import "NNRingImageViewView.h"
+#import "NNRingImageView.h"
 #import "NNEmotionalItemCell.h"
 #import "NNEmotionCaseVC.h"
 #import "NNEmotionallCell.h"
-
+#import "NNRingImageViewModel.h"
+#import "NNRingImageModel.h"
+#import "NNArticleDetailVC.h"
 @interface NNHomePageVC () <UITableViewDelegate,UITableViewDataSource>
 {
-    NNRingImageViewView *headerView;
+    NNRingImageView *headerView;
     NSArray *titleArray ;
 }
 
@@ -31,6 +33,21 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    NNRingImageViewModel *ringFocusViewModel = [[NNRingImageViewModel alloc] init];
+    [ringFocusViewModel setBlockWithReturnBlock:^(id returnValue) {
+         [headerView createRingImageviewWithRingArray:returnValue];
+    } WithErrorBlock:^(id errorCode) {
+        
+    } WithFailureBlock:^(id failureBlock) {
+        
+    }];
+    
+    [ringFocusViewModel getRingFocueAreaContent];
+}
+
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     [headerView.ringScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -45,10 +62,15 @@
 }
 
 - (void)initUI {
-    headerView = LOAD_VIEW_FROM_BUNDLE(@"NNRingImageViewView");
-    [headerView createRingImageviewWithRingArray:titleArray];
-    headerView.ringBlock = ^(){
-        NNLog(@"点击滚动图片");
+    headerView = LOAD_VIEW_FROM_BUNDLE(@"NNRingImageView");
+   
+    __weak NNHomePageVC *weakSelf = self;
+    headerView.ringBlock = ^(NNRingImageModel *model){
+        NNLog(@"点击滚动图片  %@",model);
+        NNArticleDetailVC *articleVC = [[NNArticleDetailVC alloc] init];
+        articleVC.articleID = model.ringId;
+        articleVC.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:articleVC animated:YES];
     };
     _homePageTableView.tableHeaderView = headerView;
     

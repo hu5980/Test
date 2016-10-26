@@ -41,7 +41,7 @@
                 withReturnValueBlock:(ReturnValueBlock) returnBlock
                   withErrorCodeBlock:(ErrorCodeBlock) errorBlock
                     withFailureBlock:(FailureBlock)failureBlock
-                        withPergress:(ProgressBlock) progressBlock
+                        withProgress:(ProgressBlock) progressBlock
 {
     AFHTTPSessionManager *sessionManager = [[AFHTTPSessionManager alloc] init];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
@@ -64,7 +64,7 @@
                 withReturnValueBlock:(ReturnValueBlock) returnBlock
                   withErrorCodeBlock:(ErrorCodeBlock) errorBlock
                     withFailureBlock:(FailureBlock)failureBlock
-                        withPergress:(ProgressBlock) progressBlock
+                        withProgress:(ProgressBlock) progressBlock
 {
     AFHTTPSessionManager *sessionManager = [[AFHTTPSessionManager alloc] init];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];

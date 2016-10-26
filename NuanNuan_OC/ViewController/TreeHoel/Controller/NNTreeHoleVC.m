@@ -14,10 +14,13 @@
 #import "NNSpitslotCell.h"
 #import "NNImageBroswerView.h"
 #import "NNSpitslotDetailVC.h"
+#import "NNEmotionTeacherModel.h"
+#import "NNEmotionTeacherViewModel.h"
+
 
 @interface NNTreeHoleVC ()<UITableViewDelegate,UITableViewDataSource> {
     UIButton *defaultSelectButton;
-    
+    NSArray *teacherModelArrays;
     NSArray *array;
 }
 @property (weak, nonatomic) IBOutlet UITableView *treeHoelTableView;
@@ -74,11 +77,26 @@
 
 - (void)initData {
     array = @[@"图片地址"];
+    
+    NNEmotionTeacherViewModel  *emotionTeacherViewModel =  [[NNEmotionTeacherViewModel alloc] init];
+    [emotionTeacherViewModel setBlockWithReturnBlock:^(id returnValue) {
+        teacherModelArrays = returnValue;
+        [_treeHoelTableView reloadData];
+    } WithErrorBlock:^(id errorCode) {
+        
+    } WithFailureBlock:^(id failureBlock) {
+        
+    }];
+    
+    [emotionTeacherViewModel getEmotionTeacherListContentWithLastTeacherID:@"0" andUpdatePageNum:@"10"];
 }
 
 #pragma --mark  UItableViewDelegate UItableViewDatasource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if (defaultSelectButton.tag == 200) {
+        return teacherModelArrays.count;
+    }
     return 10;
 }
 
@@ -89,6 +107,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (defaultSelectButton.tag == 200) {
         NNTreeHoelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNTreeHoelCell"];
+        NNEmotionTeacherModel *model = [teacherModelArrays objectAtIndex:indexPath.section];
+        [cell.backgroundImageView setImageWithURL:[NSURL URLWithString:model.backgroundImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+        [cell.iconImageView setImageWithURL:[NSURL URLWithString:model.teacherHeadUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+        cell.ninkNameLabel.text = model.teacherNickName;
+        cell.specialityLabel.text = model.teacherTypeName;
+        cell.questionNumLabel.text = [NSString stringWithFormat:@"%@提问",model.teacherQuestionNum];
+        cell.expertIntroductionLabel.text = model.teacherDescription;
         return cell;
     }else{
         NNSpitslotCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNSpitslotCell"];
@@ -153,6 +178,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (defaultSelectButton.tag == 200) {
         NNPsychologicalTeacherVC *teacherVC = [[NNPsychologicalTeacherVC alloc] initWithNibName:@"NNPsychologicalTeacherVC" bundle:nil];
+        teacherVC.model = [teacherModelArrays objectAtIndex:indexPath.section];
         teacherVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController: teacherVC animated:YES];
     }else{

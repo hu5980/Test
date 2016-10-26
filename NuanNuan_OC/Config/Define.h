@@ -14,7 +14,7 @@
 //定义返回请求数据的block类型
 typedef void (^ReturnValueBlock) (id returnValue);
 typedef void (^ErrorCodeBlock) (id errorCode);
-typedef void (^FailureBlock)();
+typedef void (^FailureBlock)(id failureBlock);
 typedef void (^NetWorkBlock)(BOOL netConnetState);
 typedef void (^ProgressBlock)(id Progress);
 

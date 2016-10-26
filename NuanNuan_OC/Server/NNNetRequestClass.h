@@ -35,7 +35,7 @@
                  withReturnValueBlock:(ReturnValueBlock) returnBlock
                    withErrorCodeBlock:(ErrorCodeBlock) errorBlock
                      withFailureBlock:(FailureBlock)failureBlock
-                         withPergress:(ProgressBlock) progressBlock;
+                         withProgress:(ProgressBlock) progressBlock;
 
 
 
@@ -54,6 +54,6 @@
                 withReturnValueBlock:(ReturnValueBlock) returnBlock
                   withErrorCodeBlock:(ErrorCodeBlock) errorBlock
                     withFailureBlock:(FailureBlock)failureBlock
-                        withPergress:(ProgressBlock) progressBlock;
+                        withProgress:(ProgressBlock) progressBlock;
 
 @end
