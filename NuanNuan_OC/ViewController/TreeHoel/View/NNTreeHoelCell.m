@@ -7,6 +7,9 @@
 //
 
 #import "NNTreeHoelCell.h"
+#import "UIImageView+AFNetworking.h"
+#import "UIButton+AFNetworking.h"
+#import "UIImage+AFNetworking.h"
 
 @implementation NNTreeHoelCell
 
@@ -15,6 +18,15 @@
     _iconImageView.layer.masksToBounds = YES;
     _iconImageView.layer.cornerRadius = 20;
     // Initialization code
+}
+
+- (void)setModel:(NNEmotionTeacherModel *)model{
+    [self.backgroundImageView setImageWithURL:[NSURL URLWithString:model.backgroundImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+    [self.iconImageView setImageWithURL:[NSURL URLWithString:model.teacherHeadUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+    self.ninkNameLabel.text = model.teacherNickName;
+    self.specialityLabel.text = model.teacherTypeName;
+    self.questionNumLabel.text = [NSString stringWithFormat:@"%@提问",model.teacherQuestionNum];
+    self.expertIntroductionLabel.text = model.teacherDescription;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

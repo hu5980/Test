@@ -116,7 +116,6 @@
         NNEmotionCaseVC *emotionCaseVC = [[NNEmotionCaseVC alloc] initWithNibName:@"NNEmotionCaseVC" bundle:nil];
         emotionCaseVC.hidesBottomBarWhenPushed = YES;
         
-    
         emotionItemCell.eblock = ^(EmotionType type){
             switch (type) {
                 case marriageAndFamily:

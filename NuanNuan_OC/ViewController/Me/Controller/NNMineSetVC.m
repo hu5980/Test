@@ -9,6 +9,7 @@
 #import "NNMineSetVC.h"
 #import "NNSetCell.h"
 #import "NNLoginAndRegisterVC.h"
+#import "NNUserAgreementVC.h"
 @interface NNMineSetVC ()<UITableViewDelegate,UITableViewDataSource> {
     NSArray *titleArray;
 }
@@ -36,6 +37,7 @@
     
     _setTableView.delegate = self;
     _setTableView.backgroundColor = NN_BACKGROUND_COLOR;
+    _setTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _setTableView.dataSource = self;
     _setTableView.rowHeight = 44.f;
     [_setTableView registerNib:[UINib nibWithNibName:@"NNSetCell" bundle:nil] forCellReuseIdentifier:@"NNSetCell"];
@@ -91,7 +93,14 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            
+        }else if (indexPath.row == 1){
+            NNUserAgreementVC *agreementVC = [[NNUserAgreementVC alloc] initWithNibName:@"NNUserAgreementVC" bundle:nil];
+            [self.navigationController pushViewController:agreementVC animated:YES];
+        }else if (indexPath.row == 2){
         
+        }
     }else{
         NNLoginAndRegisterVC *loginOrRegisterVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];
         

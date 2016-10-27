@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NNEmotionTeacherModel.h"
 
 @interface NNTreeHoelCell : UITableViewCell
+
+@property(strong,nonatomic)  NNEmotionTeacherModel *model;
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;

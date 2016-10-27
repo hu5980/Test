@@ -27,16 +27,25 @@
                             <constraint firstAttribute="width" constant="169" id="Buf-yB-7pZ"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2L-Dd-NiI">
+                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="mNI-2N-1Dz"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="2bF-Cj-GU6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ANh-Kc-wZv"/>
                     <constraint firstAttribute="bottomMargin" secondItem="aJ0-Cb-Aod" secondAttribute="bottom" constant="2" id="Hy4-pB-YEz"/>
+                    <constraint firstItem="E2L-Dd-NiI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="SK2-qG-Td3"/>
+                    <constraint firstAttribute="bottom" secondItem="E2L-Dd-NiI" secondAttribute="bottom" constant="-1" id="crU-kp-Xv2"/>
                     <constraint firstAttribute="trailingMargin" secondItem="2bF-Cj-GU6" secondAttribute="trailing" constant="7" id="e4v-2Z-8aD"/>
                     <constraint firstItem="aJ0-Cb-Aod" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="pPF-zY-b2T"/>
                     <constraint firstItem="aJ0-Cb-Aod" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="tdE-KP-zLt"/>
+                    <constraint firstAttribute="trailing" secondItem="E2L-Dd-NiI" secondAttribute="trailing" id="zey-p1-Jkf"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

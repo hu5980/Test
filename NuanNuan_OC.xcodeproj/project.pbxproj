@@ -43,6 +43,8 @@
 		BC58BA8A1DBDF29000F3BF0D /* NNSetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC58BA881DBDF29000F3BF0D /* NNSetCell.m */; };
 		BC58BA8B1DBDF29000F3BF0D /* NNSetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC58BA891DBDF29000F3BF0D /* NNSetCell.xib */; };
 		BC7A672A1DB4C3C000C3B3D9 /* NNNetRequestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7A67291DB4C3C000C3B3D9 /* NNNetRequestClass.m */; };
+		BC8169621DC1D4B000949273 /* NNUserAgreementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8169601DC1D4B000949273 /* NNUserAgreementVC.m */; };
+		BC8169631DC1D4B000949273 /* NNUserAgreementVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8169611DC1D4B000949273 /* NNUserAgreementVC.xib */; };
 		BC8C61D81DC045D500094F94 /* NNRingImageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8C61D71DC045D500094F94 /* NNRingImageViewModel.m */; };
 		BC8C61DB1DC049ED00094F94 /* NNBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8C61DA1DC049ED00094F94 /* NNBaseModel.m */; };
 		BC8C61DE1DC04A2C00094F94 /* NNRingImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8C61DD1DC04A2C00094F94 /* NNRingImageModel.m */; };
@@ -150,6 +152,9 @@
 		BC7A67271DB4C34700C3B3D9 /* NNEnumDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEnumDefine.h; sourceTree = "<group>"; };
 		BC7A67281DB4C3C000C3B3D9 /* NNNetRequestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNetRequestClass.h; sourceTree = "<group>"; };
 		BC7A67291DB4C3C000C3B3D9 /* NNNetRequestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNetRequestClass.m; sourceTree = "<group>"; };
+		BC81695F1DC1D4B000949273 /* NNUserAgreementVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNUserAgreementVC.h; sourceTree = "<group>"; };
+		BC8169601DC1D4B000949273 /* NNUserAgreementVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNUserAgreementVC.m; sourceTree = "<group>"; };
+		BC8169611DC1D4B000949273 /* NNUserAgreementVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNUserAgreementVC.xib; sourceTree = "<group>"; };
 		BC8C61D61DC045D500094F94 /* NNRingImageViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNRingImageViewModel.h; sourceTree = "<group>"; };
 		BC8C61D71DC045D500094F94 /* NNRingImageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNRingImageViewModel.m; sourceTree = "<group>"; };
 		BC8C61D91DC049ED00094F94 /* NNBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNBaseModel.h; sourceTree = "<group>"; };
@@ -511,6 +516,9 @@
 				BC58BA821DBDEFC300F3BF0D /* NNMineSetVC.h */,
 				BC58BA831DBDEFC300F3BF0D /* NNMineSetVC.m */,
 				BC58BA841DBDEFC300F3BF0D /* NNMineSetVC.xib */,
+				BC81695F1DC1D4B000949273 /* NNUserAgreementVC.h */,
+				BC8169601DC1D4B000949273 /* NNUserAgreementVC.m */,
+				BC8169611DC1D4B000949273 /* NNUserAgreementVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -689,7 +697,7 @@
 				TargetAttributes = {
 					BCD505F41D921F8C000FB2C0 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = WJR5NAA722;
+						DevelopmentTeam = GZG7SDL9U6;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -735,6 +743,7 @@
 				BC58BA681DBDE99500F3BF0D /* NNMinePraisedVC.xib in Resources */,
 				BCD9AE781DACD323008DB98E /* NNRingImageView.xib in Resources */,
 				BCD9AE6F1DACC668008DB98E /* NNEmotionallItemCell.xib in Resources */,
+				BC8169631DC1D4B000949273 /* NNUserAgreementVC.xib in Resources */,
 				BC58BA861DBDEFC300F3BF0D /* NNMineSetVC.xib in Resources */,
 				BC247EA61DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib in Resources */,
 				0D331E191DBD09FB002B0DCD /* NNReplyView.xib in Resources */,
@@ -846,6 +855,7 @@
 				BC58BA6C1DBDE9A800F3BF0D /* NNMineCommentVC.m in Sources */,
 				BCB6EFE31DB62F3600BEFD37 /* NNHomepageSuccessCaseModel.m in Sources */,
 				BC58BA761DBDEF7C00F3BF0D /* NNMineOrderVC.m in Sources */,
+				BC8169621DC1D4B000949273 /* NNUserAgreementVC.m in Sources */,
 				BC247EA51DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m in Sources */,
 				BCD9AEA01DAE21D1008DB98E /* NNNeterReplyCell.m in Sources */,
 				BC8C61DE1DC04A2C00094F94 /* NNRingImageModel.m in Sources */,
@@ -968,10 +978,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WJR5NAA722;
+				DEVELOPMENT_TEAM = GZG7SDL9U6;
 				INFOPLIST_FILE = NuanNuan_OC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xikang.ss;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.neusoft.NuanNuan-OC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 			};
@@ -983,10 +993,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WJR5NAA722;
+				DEVELOPMENT_TEAM = GZG7SDL9U6;
 				INFOPLIST_FILE = NuanNuan_OC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xikang.ss;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.neusoft.NuanNuan-OC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 			};

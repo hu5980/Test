@@ -83,15 +83,12 @@
     [self.view addSubview:backgroundButton];
 
     
-    __weak NNReplyView *weakReplyView = replyView;
-     __weak NNAskingView *weakAskingView = askingView;
     askingView = LOAD_VIEW_FROM_BUNDLE(@"NNAskingView");
     askingView.frame = CGRectMake(0, NNAppHeight, NNAppWidth, 130);
     askingView.askingTextView.delegate = self;
     askingView.block =  ^(NSInteger tag){
         if(tag == 100){
-            [weakReplyView.replytextField resignFirstResponder];
-            [weakAskingView.askingTextView resignFirstResponder];
+            [weakSelf registKeyboard];
         }else{
         
         }

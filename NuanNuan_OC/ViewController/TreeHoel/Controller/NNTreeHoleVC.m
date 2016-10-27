@@ -108,12 +108,7 @@
     if (defaultSelectButton.tag == 200) {
         NNTreeHoelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNTreeHoelCell"];
         NNEmotionTeacherModel *model = [teacherModelArrays objectAtIndex:indexPath.section];
-        [cell.backgroundImageView setImageWithURL:[NSURL URLWithString:model.backgroundImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
-        [cell.iconImageView setImageWithURL:[NSURL URLWithString:model.teacherHeadUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
-        cell.ninkNameLabel.text = model.teacherNickName;
-        cell.specialityLabel.text = model.teacherTypeName;
-        cell.questionNumLabel.text = [NSString stringWithFormat:@"%@提问",model.teacherQuestionNum];
-        cell.expertIntroductionLabel.text = model.teacherDescription;
+        cell.model = model;
         return cell;
     }else{
         NNSpitslotCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNSpitslotCell"];
