@@ -254,8 +254,6 @@
             make.centerY.mas_equalTo(buttonLineView.mas_centerY);
             make.width.mas_equalTo(@30);
         }];
-        
-        
         return view;
     }else{
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, 10)];

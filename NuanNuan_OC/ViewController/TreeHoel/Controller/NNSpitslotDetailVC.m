@@ -66,9 +66,7 @@
     [backgroundButton addTarget:self action:@selector(registKeyboard) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backgroundButton];
     
-    
-    __weak NNReplyView *weakReplyView = replyView;
-    __weak NNAskingView *weakAskingView = askingView;
+    __weak NNSpitslotDetailVC *weakSelf = self;
     askingView = LOAD_VIEW_FROM_BUNDLE(@"NNAskingView");
     askingView.frame = CGRectMake(0, NNAppHeight, NNAppWidth, 130);
     askingView.typeLabel.text = @"说点什么吧";
@@ -76,8 +74,7 @@
     askingView.placeHolderLabel.text = @"请输入您想说的话";
     askingView.block =  ^(NSInteger tag){
         if(tag == 100){
-            [weakReplyView.replytextField resignFirstResponder];
-            [weakAskingView.askingTextView resignFirstResponder];
+            [weakSelf registKeyboard];
         }else{
             
         }

@@ -10,6 +10,7 @@
 #import "Define.h"
 #import "Masonry.h"
 #import "UIButton+AFNetworking.h"
+#import "ReactiveCocoa.h"
 
 @implementation NNRingImageView {
     NSArray *modelArrays;
@@ -32,15 +33,18 @@
         [button setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:model.imageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
         [_ringScrollView addSubview:button];
     }
-    _ringScrollView.delegate = self;
     _ringScrollView.contentSize = CGSizeMake(array.count * NNAppWidth, NNAppWidth * 164 / 375);
+    
+    // 用RAC中的RACObserve 对_ringScrollView 中的contentOffset 进行观察
+    // subscribeNext 参考http://www.jianshu.com/p/4fee21fb05b3
+    [RACObserve(_ringScrollView, contentSize) subscribeNext:^(id x) {
+         _pageControl.currentPage =  _ringScrollView.contentOffset.x / NNAppWidth ;
+    }];
+    
     _pageControl.numberOfPages = array.count;
     [_pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    _pageControl.currentPage =  scrollView.contentOffset.x / NNAppWidth ;
-}
 
 - (void)changePage:(UIPageControl *)pageControl {
     _ringScrollView.contentOffset = CGPointMake(pageControl.currentPage * NNAppWidth, 0);

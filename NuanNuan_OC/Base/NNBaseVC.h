@@ -14,6 +14,8 @@
 #import "UIImageView+AFNetworking.h"
 #import "UIButton+AFNetworking.h"
 #import "UIImage+AFNetworking.h"
+#import "ReactiveCocoa.h"
+
 
 @interface NNBaseVC : UIViewController
 
