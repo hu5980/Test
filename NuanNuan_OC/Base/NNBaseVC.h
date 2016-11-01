@@ -15,7 +15,7 @@
 #import "UIButton+AFNetworking.h"
 #import "UIImage+AFNetworking.h"
 #import "ReactiveCocoa.h"
-
+#import "MJRefresh.h"
 
 @interface NNBaseVC : UIViewController
 

@@ -7,6 +7,8 @@
 //
 
 #import "NNEmotionallItemCell.h"
+#import "UIImageView+WebCache.h"
+
 
 @implementation NNEmotionallItemCell
 
@@ -17,8 +19,18 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    _bgView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.85];
     // Configure the view for the selected state
+}
+
+- (void)setModel:(NNSuccessCaseModel *)model {
+    [_backgroundImageView sd_setImageWithURL:[NSURL URLWithString:model.caseImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageRefreshCached | SDWebImageContinueInBackground];
+    
+    _emotionTitleLabel.text = model.caseTitle;
+    _readNumLabel.text = [NSString stringWithFormat:@"%ld",model.caseClickNum];
+    _likeNumLabel.text = [NSString stringWithFormat:@"%ld",model.caseGoodsNum];
+    
+
 }
 
 @end

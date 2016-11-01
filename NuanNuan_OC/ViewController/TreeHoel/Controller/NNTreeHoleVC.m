@@ -20,8 +20,9 @@
 
 @interface NNTreeHoleVC ()<UITableViewDelegate,UITableViewDataSource> {
     UIButton *defaultSelectButton;
-    NSArray *teacherModelArrays;
+    NSMutableArray *teacherModelArrays;
     NSArray *array;
+    MJRefreshFooter *footer;
 }
 @property (weak, nonatomic) IBOutlet UITableView *treeHoelTableView;
 
@@ -57,6 +58,7 @@
             defaultSelectButton.selected = NO;
             defaultSelectButton = button;
             defaultSelectButton.selected = YES;
+            [teacherModelArrays removeAllObjects];
             if (button.tag == 200) {
                 NNLog(@"情感问吧");
             }else{
@@ -67,7 +69,16 @@
         }
     };
     self.navigationItem.titleView = view;
-    
+    __weak NNTreeHoleVC *weakSelf = self;
+    footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        if (defaultSelectButton.tag == 200) {
+            [weakSelf reflashTeachData];
+        }else{
+        
+        }
+    }];
+
+    _treeHoelTableView.mj_footer = footer;
     _treeHoelTableView.backgroundColor = NN_BACKGROUND_COLOR;
     _treeHoelTableView.delegate = self;
     _treeHoelTableView.dataSource = self;
@@ -77,19 +88,26 @@
 
 - (void)initData {
     array = @[@"图片地址"];
-    
+    teacherModelArrays= [NSMutableArray array];
+    [self reflashTeachData];
+  }
+
+- (void)reflashTeachData {
     NNEmotionTeacherViewModel  *emotionTeacherViewModel =  [[NNEmotionTeacherViewModel alloc] init];
     [emotionTeacherViewModel setBlockWithReturnBlock:^(id returnValue) {
-        teacherModelArrays = returnValue;
+        [teacherModelArrays addObjectsFromArray:returnValue];
         [_treeHoelTableView reloadData];
+        [footer endRefreshing];
     } WithErrorBlock:^(id errorCode) {
         
     } WithFailureBlock:^(id failureBlock) {
         
     }];
-    
-    [emotionTeacherViewModel getEmotionTeacherListContentWithLastTeacherID:@"0" andUpdatePageNum:@"10"];
+    NNEmotionTeacherModel *lastModel = [teacherModelArrays lastObject];
+    [emotionTeacherViewModel getEmotionTeacherListContentWithLastTeacherID:lastModel.teacherID andUpdatePageNum:@"10"];
+
 }
+
 
 #pragma --mark  UItableViewDelegate UItableViewDatasource
 

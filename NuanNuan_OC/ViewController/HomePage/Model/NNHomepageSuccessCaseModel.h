@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "NNSuccessCaseModel.h"
 @interface NNHomepageSuccessCaseModel : NSObject
 
-@property (nonatomic,strong) NSArray *loveStoryArray;
+@property (nonatomic,strong) NSArray <NNSuccessCaseModel *> *loveStoryArray;
 
-@property (nonatomic,strong) NSArray *redeemStoryArray;
+@property (nonatomic,strong) NSArray <NNSuccessCaseModel *> *redeemStoryArray;
+
+@property (nonatomic,strong) NSArray <NNSuccessCaseModel *> *improvementArray;
 
 @end

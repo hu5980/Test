@@ -8,9 +8,18 @@
 
 #import "NNEmotionCaseVC.h"
 #import "NNEmotionallItemCell.h"
+#import "NNMoreSuccessCaseViewModel.h"
+
+#import "NNSuccessCaseModel.h"
+#import "NNArticleDetailVC.h"
 
 @interface NNEmotionCaseVC ()<UITableViewDataSource,UITableViewDelegate> {
     UIButton *defaultSelectButton;
+    NSInteger selectType;
+    
+    NSMutableArray *caseArray;
+    
+    MJRefreshFooter *footer;
 }
 
 @end
@@ -30,6 +39,13 @@
     
     self.navTitle = _navigationTitle;
  
+    self.view.backgroundColor = NN_BACKGROUND_COLOR;
+    footer =  [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [self refreshData];
+    }];
+   
+    _emotionalTableView.mj_footer =  footer;
+    _emotionalTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _emotionalTableView.delegate = self;
     _emotionalTableView.dataSource = self;
     _emotionalTableView.backgroundColor = NN_BACKGROUND_COLOR;
@@ -38,6 +54,8 @@
     if(_caseTypeArray.count == 0){
         _scrollViewConstraint.constant = 0;
     }
+    
+    [self initData];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -67,32 +85,49 @@
 }
 
 
+- (void)initData {
+    selectType = _defaultType;
+    caseArray = [NSMutableArray array];
+    [self refreshData];
+}
+
+
+- (void)refreshData {
+    NNMoreSuccessCaseViewModel *caseModel = [[NNMoreSuccessCaseViewModel alloc] init];
+    NNSuccessCaseModel *model = [caseArray lastObject];
+    [caseModel setBlockWithReturnBlock:^(id returnValue) {
+        [caseArray addObjectsFromArray:returnValue];
+        [_emotionalTableView reloadData];
+        [footer endRefreshing];
+    } WithErrorBlock:^(id errorCode) {
+        NSLog(@"%@",errorCode);
+    } WithFailureBlock:^(id failureBlock) {
+        
+    }];
+    [caseModel getMoreSuccessCaseWithPageNum:10 andCaseType:selectType andCaseID:model.caseAdID];
+}
+
+
 #pragma --mark Action 
 
 - (void)changeEmotionalType :(UIButton *)button {
+    [caseArray removeAllObjects];
     defaultSelectButton.selected = NO;
     defaultSelectButton = button;
     defaultSelectButton.selected = YES;
-    switch (button.tag) {
-        case 100:
-            
-            break;
-        case 101:
-            
-            break;
-        case 102:
-            
-            break;
-            
-        default:
-            break;
-    }
+    selectType = button.tag - 100 + _defaultType;
+    
+    [self refreshData];
+}
+
+- (void)likeArticle :(UIButton *)button {
+
 }
 
 #pragma --mark UITableViewDelegate UITableViewDatasource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 10;
+    return caseArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -118,12 +153,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NNEmotionallItemCell *cell =  [tableView dequeueReusableCellWithIdentifier:@"NNEmotionallItemCell"];
-    
+    [cell.likeButton addTarget:self action:@selector(likeArticle:) forControlEvents:UIControlEventTouchUpInside];
+    cell.model = [caseArray objectAtIndex:indexPath.section];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NNArticleDetailVC *articleVC = [[NNArticleDetailVC alloc] init];
+    NNSuccessCaseModel *model = [caseArray objectAtIndex:indexPath.section];
+    articleVC.articleID = model.caseAdID;
+    [self.navigationController pushViewController:articleVC animated:YES];
 }
 
 

@@ -11,8 +11,14 @@
 @implementation NNEmotionTeacherViewModel
 
 - (void)getEmotionTeacherListContentWithLastTeacherID:(NSString *)teacherID andUpdatePageNum:(NSString *)pageNum {
+    NSDictionary *parames;
+    if (teacherID == nil) {
+        parames = @{@"last_id":@"0",@"pnum":pageNum};
+    }else{
+        parames = @{@"last_id":teacherID,@"pnum":pageNum};
+    }
     
-    NSDictionary *parames = @{@"last_id":teacherID,@"pnum":pageNum};
+    
     
     [NNNetRequestClass NetRequestGETWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_teacher&a=getTeacherList",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
         NNLog(@"%@",returnValue);
@@ -42,6 +48,7 @@
         model.teacherQuestionNum = [listArray[i] objectForKey:@"t_question_num"] ;
         model.teacherTypeName = [listArray[i] objectForKey:@"qc_name"] ;
         model.teacherNickName =  [listArray[i] objectForKey:@"t_nickname"] ;
+        model.teacherQualifications =  [listArray[i] objectForKey:@"t_qualifications"] ;
         [mutableArrays addObject:model];
     }
     self.returnBlock(mutableArrays);

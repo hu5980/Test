@@ -52,7 +52,7 @@
     headerView.nickNamelabel.text = _model.teacherNickName;
     headerView.studyTypeLabel.text = _model.teacherTypeName;
     headerView.teacherDescribeLabel.text = _model.teacherDescription;
-    
+    headerView.teacherIntroduceLabel.text = _model.teacherQualifications;
     _psychologicalTeacherTableView.tableHeaderView = headerView;
     _psychologicalTeacherTableView.backgroundColor = NN_BACKGROUND_COLOR;
     _psychologicalTeacherTableView.delegate = self;
@@ -82,7 +82,6 @@
     [backgroundButton addTarget:self action:@selector(registKeyboard) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backgroundButton];
 
-    
     askingView = LOAD_VIEW_FROM_BUNDLE(@"NNAskingView");
     askingView.frame = CGRectMake(0, NNAppHeight, NNAppWidth, 130);
     askingView.askingTextView.delegate = self;

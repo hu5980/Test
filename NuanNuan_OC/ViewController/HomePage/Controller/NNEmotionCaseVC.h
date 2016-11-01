@@ -18,4 +18,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollViewConstraint;
 
 @property (strong,nonatomic) NSArray *caseTypeArray;
+
+@property (nonatomic,assign) NSInteger defaultType;
 @end

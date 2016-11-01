@@ -14,10 +14,13 @@
 #import "NNRingImageViewModel.h"
 #import "NNRingImageModel.h"
 #import "NNArticleDetailVC.h"
+#import "NNHomepageSuccessCaseViewModel.h"
+#import "NNHomepageSuccessCaseModel.h"
 @interface NNHomePageVC () <UITableViewDelegate,UITableViewDataSource>
 {
     NNRingImageView *headerView;
     NSArray *titleArray ;
+    NNHomepageSuccessCaseModel *successCasemodel;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *homePageTableView;
@@ -27,9 +30,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initData];
-    [self initUI];
     
+    [self initUI];
+    [self initData];
     // Do any additional setup after loading the view.
 }
 
@@ -85,6 +88,19 @@
 
 - (void)initData {
     titleArray = @[@"成功故事・婚恋",@"成功故事・挽回",@"成功故事・提升"];
+    
+    NNHomepageSuccessCaseViewModel *successCaseViewModel = [[NNHomepageSuccessCaseViewModel alloc] init];
+ 
+    [successCaseViewModel setBlockWithReturnBlock:^(id returnValue) {
+        successCasemodel = returnValue;
+        [_homePageTableView reloadData];
+    } WithErrorBlock:^(id errorCode) {
+        
+    } WithFailureBlock:^(id failureBlock) {
+        
+    }];
+    
+    [successCaseViewModel getHomepageSuccessCase];
 }
 
 #pragma --mark UItableViewDataSource UItableViewDelegate
@@ -120,14 +136,17 @@
             switch (type) {
                 case marriageAndFamily:
                     emotionCaseVC.navigationTitle = @"婚姻家庭";
+                    emotionCaseVC.defaultType = 1;
                     emotionCaseVC.caseTypeArray = @[@"婆媳关系",@"夫妻心事",@"家庭琐事",@"婚外恋"];
                     break;
                 case emotionalSave:
                     emotionCaseVC.navigationTitle = @"情感挽回";
+                    emotionCaseVC.defaultType = 5;
                     emotionCaseVC.caseTypeArray = @[@"暗恋",@"失恋",@"复杂恋情"];
                     break;
                 case selfImprovement:
                     emotionCaseVC.navigationTitle = @"自我提升";
+                     emotionCaseVC.defaultType = 8;
                     emotionCaseVC.caseTypeArray = @[@"爱情探索",@"人际关系",@"人生信念"];
                     break;
                 default:
@@ -137,16 +156,43 @@
         };
     }else{
         NNEmotionallCell *emotionAllcell = (NNEmotionallCell *)[tableView dequeueReusableCellWithIdentifier:@"emotionAllCell"];
-        emotionAllcell.successCasemoreBlock = ^(){
+        emotionAllcell.successCasemoreBlock = ^(NSInteger type){
             NNEmotionCaseVC *emotionCaseVC = [[NNEmotionCaseVC alloc] initWithNibName:@"NNEmotionCaseVC" bundle:nil];
             emotionCaseVC.hidesBottomBarWhenPushed = YES;
+            emotionCaseVC.defaultType = type;
             emotionCaseVC.navigationTitle = [titleArray objectAtIndex:indexPath.row];
             [self.navigationController pushViewController:emotionCaseVC animated:YES];
         };
-        emotionAllcell.successCaseBlock = ^(){
+        __weak NNHomePageVC *weakSelf = self;
+        emotionAllcell.successCaseBlock = ^(NNSuccessCaseModel *model){
             NNLog(@"成功故事");
+            
+            NNArticleDetailVC *articleVC = [[NNArticleDetailVC alloc] init];
+            articleVC.articleID = model.caseAdID;
+            
+            articleVC.hidesBottomBarWhenPushed = YES;
+            [weakSelf.navigationController pushViewController:articleVC animated:YES];
+
         };
         emotionAllcell.emotionTitleLabel.text = [titleArray objectAtIndex:indexPath.row];
+        
+        switch (indexPath.row) {
+            case 0:
+                emotionAllcell.successCaseModelArray = successCasemodel.loveStoryArray ;
+                emotionAllcell.type = 11;
+                break;
+            case 1:
+                 emotionAllcell.successCaseModelArray = successCasemodel.redeemStoryArray ;
+                emotionAllcell.type = 12;
+                break;
+            case 2:
+                 emotionAllcell.successCaseModelArray = successCasemodel.improvementArray ;
+                emotionAllcell.type = 13;
+                break;
+                
+            default:
+                break;
+        }
         cell = emotionAllcell;
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

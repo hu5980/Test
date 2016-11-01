@@ -48,8 +48,8 @@
     [sessionManager GET:requestURLString parameters:returnBlock progress:^(NSProgress * _Nonnull downloadProgress) {
          progressBlock(downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if ([responseObject objectForKey:@"errorCode"]) {
-            errorBlock([responseObject objectForKey:@"errorCode"]);
+        if ([[responseObject objectForKey:@"result"] isEqualToString:@"fail"]) {
+            errorBlock([responseObject objectForKey:@"msg"]);
         }else{
             returnBlock(responseObject);
         }

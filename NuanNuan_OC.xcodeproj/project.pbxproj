@@ -49,6 +49,9 @@
 		BC8C61DB1DC049ED00094F94 /* NNBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8C61DA1DC049ED00094F94 /* NNBaseModel.m */; };
 		BC8C61DE1DC04A2C00094F94 /* NNRingImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8C61DD1DC04A2C00094F94 /* NNRingImageModel.m */; };
 		BC8C61E21DC081CD00094F94 /* NNArticleDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8C61E01DC081CD00094F94 /* NNArticleDetailVC.m */; };
+		BCA60E1F1DC714D800DB84A0 /* NNHomepageSuccessCaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA60E1E1DC714D800DB84A0 /* NNHomepageSuccessCaseViewModel.m */; };
+		BCA60E221DC7439A00DB84A0 /* NNMoreSuccessCaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA60E211DC7439A00DB84A0 /* NNMoreSuccessCaseViewModel.m */; };
+		BCA60E251DC8912500DB84A0 /* NNLoginAndRegisterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA60E241DC8912500DB84A0 /* NNLoginAndRegisterViewModel.m */; };
 		BCB6EFD91DB60A6000BEFD37 /* NNBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB6EFD81DB60A6000BEFD37 /* NNBaseVC.m */; };
 		BCB6EFDC1DB60DE000BEFD37 /* NNBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB6EFDB1DB60DE000BEFD37 /* NNBaseViewModel.m */; };
 		BCB6EFE01DB62B0000BEFD37 /* NNSuccessCaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB6EFDF1DB62B0000BEFD37 /* NNSuccessCaseModel.m */; };
@@ -163,6 +166,12 @@
 		BC8C61DD1DC04A2C00094F94 /* NNRingImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNRingImageModel.m; sourceTree = "<group>"; };
 		BC8C61DF1DC081CD00094F94 /* NNArticleDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNArticleDetailVC.h; sourceTree = "<group>"; };
 		BC8C61E01DC081CD00094F94 /* NNArticleDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNArticleDetailVC.m; sourceTree = "<group>"; };
+		BCA60E1D1DC714D800DB84A0 /* NNHomepageSuccessCaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNHomepageSuccessCaseViewModel.h; sourceTree = "<group>"; };
+		BCA60E1E1DC714D800DB84A0 /* NNHomepageSuccessCaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNHomepageSuccessCaseViewModel.m; sourceTree = "<group>"; };
+		BCA60E201DC7439A00DB84A0 /* NNMoreSuccessCaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNMoreSuccessCaseViewModel.h; sourceTree = "<group>"; };
+		BCA60E211DC7439A00DB84A0 /* NNMoreSuccessCaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMoreSuccessCaseViewModel.m; sourceTree = "<group>"; };
+		BCA60E231DC8912500DB84A0 /* NNLoginAndRegisterViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNLoginAndRegisterViewModel.h; sourceTree = "<group>"; };
+		BCA60E241DC8912500DB84A0 /* NNLoginAndRegisterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNLoginAndRegisterViewModel.m; sourceTree = "<group>"; };
 		BCB6EFD71DB60A6000BEFD37 /* NNBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNBaseVC.h; sourceTree = "<group>"; };
 		BCB6EFD81DB60A6000BEFD37 /* NNBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNBaseVC.m; sourceTree = "<group>"; };
 		BCB6EFDA1DB60DE000BEFD37 /* NNBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNBaseViewModel.h; sourceTree = "<group>"; };
@@ -300,6 +309,8 @@
 		BC328EE61DBF2F44000AF40B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				BCA60E231DC8912500DB84A0 /* NNLoginAndRegisterViewModel.h */,
+				BCA60E241DC8912500DB84A0 /* NNLoginAndRegisterViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -318,6 +329,10 @@
 			children = (
 				BC8C61D61DC045D500094F94 /* NNRingImageViewModel.h */,
 				BC8C61D71DC045D500094F94 /* NNRingImageViewModel.m */,
+				BCA60E1D1DC714D800DB84A0 /* NNHomepageSuccessCaseViewModel.h */,
+				BCA60E1E1DC714D800DB84A0 /* NNHomepageSuccessCaseViewModel.m */,
+				BCA60E201DC7439A00DB84A0 /* NNMoreSuccessCaseViewModel.h */,
+				BCA60E211DC7439A00DB84A0 /* NNMoreSuccessCaseViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -842,6 +857,7 @@
 				0DDAEE791DBB9F87008478DC /* NNImageBroswerView.m in Sources */,
 				BC58BA8A1DBDF29000F3BF0D /* NNSetCell.m in Sources */,
 				BC7A672A1DB4C3C000C3B3D9 /* NNNetRequestClass.m in Sources */,
+				BCA60E221DC7439A00DB84A0 /* NNMoreSuccessCaseViewModel.m in Sources */,
 				BCD506561D9231D0000FB2C0 /* NNMeVC.m in Sources */,
 				BC247EAA1DAA35D600AB5C84 /* NNMineCell.m in Sources */,
 				BCB6EFE01DB62B0000BEFD37 /* NNSuccessCaseModel.m in Sources */,
@@ -855,9 +871,11 @@
 				BC58BA6C1DBDE9A800F3BF0D /* NNMineCommentVC.m in Sources */,
 				BCB6EFE31DB62F3600BEFD37 /* NNHomepageSuccessCaseModel.m in Sources */,
 				BC58BA761DBDEF7C00F3BF0D /* NNMineOrderVC.m in Sources */,
+				BCA60E1F1DC714D800DB84A0 /* NNHomepageSuccessCaseViewModel.m in Sources */,
 				BC8169621DC1D4B000949273 /* NNUserAgreementVC.m in Sources */,
 				BC247EA51DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m in Sources */,
 				BCD9AEA01DAE21D1008DB98E /* NNNeterReplyCell.m in Sources */,
+				BCA60E251DC8912500DB84A0 /* NNLoginAndRegisterViewModel.m in Sources */,
 				BC8C61DE1DC04A2C00094F94 /* NNRingImageModel.m in Sources */,
 				BC247E9B1DAA19B100AB5C84 /* NNEmotionallCell.m in Sources */,
 				BCD9AE721DACCFF0008DB98E /* NNRingImageView.m in Sources */,

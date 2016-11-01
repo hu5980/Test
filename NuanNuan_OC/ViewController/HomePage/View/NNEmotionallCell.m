@@ -7,7 +7,8 @@
 //
 
 #import "NNEmotionallCell.h"
-
+#import "NNSuccessCaseModel.h"
+#import "UIButton+AFNetworking.h"
 @implementation NNEmotionallCell
 
 - (void)awakeFromNib {
@@ -21,11 +22,31 @@
     // Configure the view for the selected state
 }
 - (IBAction)moreCaseAction:(UIButton *)sender {
-    _successCasemoreBlock();
+    _successCasemoreBlock(_type);
 }
 
 - (IBAction)selcetSuccessCase:(UIButton *)sender {
-    _successCaseBlock();
+    _successCaseBlock([_successCaseModelArray objectAtIndex:sender.tag - 100]);
+}
+
+- (void)setSuccessCaseModelArray:(NSArray *)successCaseModelArray {
+    
+    if(successCaseModelArray.count )
+    {
+        _successCaseModelArray = successCaseModelArray;
+        _titleLabel1.text = ((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:0]).caseTitle;
+        [_bgButton1  setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:0]).caseImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+        
+     //   _titleLabel2.text = ((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:1]).caseTitle;
+    //    [_bgButton2  setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:1]).caseImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+        
+    //    _titleLabel3.text = ((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:2])./caseTitle;
+    //    [_bgButton3  setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:2]).caseImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+        
+   //     _titleLabel4.text = ((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:3]).caseTitle;
+    //    [_bgButton4  setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:3]).caseImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+    }
+
 }
 
 @end

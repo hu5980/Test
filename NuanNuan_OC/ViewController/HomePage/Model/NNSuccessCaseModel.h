@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface NNSuccessCaseModel : NSObject
-@property (nonatomic,strong) NSString *focusTitle;
-@property (nonatomic,strong) NSString *focusImageUrl;
-@property (nonatomic,strong) NSString *focusName;
-@property (nonatomic,assign) NSInteger focusAdID;
-@property (nonatomic,assign) NSInteger focusClickNum;
-@property (nonatomic,assign) NSInteger focusGoodsNum;
-@property (nonatomic,assign) NSInteger focusCreateTime;
+@property (nonatomic,strong) NSString *caseTitle;
+@property (nonatomic,strong) NSString *caseImageUrl;
+@property (nonatomic,strong) NSString *caseName;
+@property (nonatomic,assign) NSInteger caseAdID;
+@property (nonatomic,assign) NSInteger caseClickNum;
+@property (nonatomic,assign) NSInteger caseGoodsNum;
+@property (nonatomic,assign) NSInteger caseCreateTime;
 @end
