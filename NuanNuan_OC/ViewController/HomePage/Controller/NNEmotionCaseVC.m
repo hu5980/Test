@@ -9,9 +9,11 @@
 #import "NNEmotionCaseVC.h"
 #import "NNEmotionallItemCell.h"
 #import "NNMoreSuccessCaseViewModel.h"
-
+#import "NNPariseViewModel.h"
 #import "NNSuccessCaseModel.h"
 #import "NNArticleDetailVC.h"
+#import "NNPariseViewModel.h"
+#import "NNUnPariseViewModel.h"
 
 @interface NNEmotionCaseVC ()<UITableViewDataSource,UITableViewDelegate> {
     UIButton *defaultSelectButton;
@@ -120,9 +122,7 @@
     [self refreshData];
 }
 
-- (void)likeArticle :(UIButton *)button {
 
-}
 
 #pragma --mark UITableViewDelegate UITableViewDatasource
 
@@ -153,7 +153,39 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NNEmotionallItemCell *cell =  [tableView dequeueReusableCellWithIdentifier:@"NNEmotionallItemCell"];
-    [cell.likeButton addTarget:self action:@selector(likeArticle:) forControlEvents:UIControlEventTouchUpInside];
+    __weak NNEmotionallItemCell *weakCell = cell;
+    cell.block = ^(NNSuccessCaseModel *model) {
+        NNPariseViewModel  *viewModel = [[NNPariseViewModel alloc] init];
+        [viewModel setBlockWithReturnBlock:^(id returnValue) {
+            if([returnValue isEqualToString:@"success"]){
+                weakCell.likeButton.selected = YES;
+                weakCell.likeNumLabel.text = [NSString stringWithFormat:@"%ld",[weakCell.likeNumLabel.text integerValue] + 1];
+            }
+        } WithErrorBlock:^(id errorCode) {
+            
+        } WithFailureBlock:^(id failureBlock) {
+            
+        }];
+        
+        NNUnPariseViewModel *unViewModel = [[NNUnPariseViewModel alloc] init];
+        [unViewModel setBlockWithReturnBlock:^(id returnValue) {
+            if([returnValue isEqualToString:@"success"]){
+                weakCell.likeButton.selected = NO;
+                weakCell.likeNumLabel.text = [NSString stringWithFormat:@"%ld",[weakCell.likeNumLabel.text integerValue] - 1];
+            }
+        } WithErrorBlock:^(id errorCode) {
+            
+        } WithFailureBlock:^(id failureBlock) {
+            
+        }];
+        
+        
+        if (weakCell.selected) {
+             [unViewModel unParisdArticleWithToken:TEST_TOKEN andArticleType:[NSString stringWithFormat:@"%ld",_defaultType] andArticleID:[NSString stringWithFormat:@"%ld",model.caseAdID]];
+        }else{
+            [viewModel parisdArticleWithToken:TEST_TOKEN andArticleType:[NSString stringWithFormat:@"%ld",_defaultType] andArticleID:[NSString stringWithFormat:@"%ld",model.caseAdID]];
+        }
+    };
     cell.model = [caseArray objectAtIndex:indexPath.section];
     return cell;
 }

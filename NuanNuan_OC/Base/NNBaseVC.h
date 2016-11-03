@@ -16,7 +16,7 @@
 #import "UIImage+AFNetworking.h"
 #import "ReactiveCocoa.h"
 #import "MJRefresh.h"
-
+#import "NNProgressHUD.h"
 @interface NNBaseVC : UIViewController
 
 @property (nonatomic,strong) NSString *navTitle;

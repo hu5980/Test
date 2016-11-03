@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "NNSuccessCaseModel.h"
 
+typedef void(^praisedArticleBlock)(NNSuccessCaseModel *model);
+
 @interface NNEmotionallItemCell : UITableViewCell
 
 @property (strong, nonatomic) NNSuccessCaseModel *model;
@@ -19,5 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *likeNumLabel;
 @property (weak, nonatomic) IBOutlet UIView *bgView;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
+
+@property (copy,nonatomic) praisedArticleBlock block;
 
 @end

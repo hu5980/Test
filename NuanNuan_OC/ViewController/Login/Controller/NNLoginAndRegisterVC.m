@@ -7,7 +7,8 @@
 //
 
 #import "NNLoginAndRegisterVC.h"
-
+#import "NNLoginViewModel.h"
+#import "NNRegistionViewModel.h"
 @interface NNLoginAndRegisterVC (){
     UIButton *defaultButton;
 }
@@ -23,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UIView *loginSelectView;
 @property (weak, nonatomic) IBOutlet UIView *registerSelectView;
 @property (weak, nonatomic) IBOutlet UIButton *loginOrRegisterButton;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
 @end
 
 @implementation NNLoginAndRegisterVC
@@ -37,11 +40,11 @@
     _registerSelectView.hidden = YES;
     _registerView.hidden = YES;
     _loginOrRegisterButtonConstraint.constant = 126;
-    
+    _loginPassWordTextField.secureTextEntry = YES;
     _registerView.layer.masksToBounds = YES;
     _registerView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
     _registerView.layer.cornerRadius = 5;
-    
+    _registerPassWordTextField.secureTextEntry = YES;
     _loginView.layer.masksToBounds = YES;
     _loginView.layer.cornerRadius = 5;
     _loginView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
@@ -52,6 +55,7 @@
     _loginOrRegisterButton.layer.masksToBounds = YES;
     _loginOrRegisterButton.layer.cornerRadius = 5;
 
+    defaultButton = _loginButton;
 }
 
 - (IBAction)sendCaptchAction:(id)sender {
@@ -81,14 +85,62 @@
     }
 }
 - (IBAction)loginOrRegisterAction:(UIButton *)sender {
-    
+    __weak  NNLoginAndRegisterVC *weakSelf = self;
     if (defaultButton.tag == 100) {
         NNLog(@"登录");
+        
+        if (_loginUserNameTextField.text.length == 0) {
+           [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"请输入用户名"];
+            return;
+        }
+        
+        if (_loginPassWordTextField.text.length ==0) {
+            [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"请输入登录密码"];
+             return;
+        }
+      
+        NNLoginViewModel *loginViewModel = [[NNLoginViewModel alloc] init];
+        
+        [loginViewModel setBlockWithReturnBlock:^(id returnValue) {
+            [weakSelf dismissViewControllerAnimated:YES completion:nil];
+        } WithErrorBlock:^(id errorCode) {
+            
+        } WithFailureBlock:^(id failureBlock) {
+            
+        }];
+        [loginViewModel loginWithUserName:_loginUserNameTextField.text andpassword:_loginPassWordTextField.text andLoginType:1];
+        
     }else{
-        NNLog(@"注册");
+        
+        if (_registerUserNameTextField.text.length == 0) {
+            [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"请输入用户名"];
+        }
+        
+        if (_registerCaptchatextField.text.length == 0) {
+            [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"请输入验证码"];
+        }
+        
+        if (_registerPassWordTextField.text.length ==0) {
+             [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"请输入注册密码"];
+        }
+        
+        NNRegistionViewModel *registerViewModel = [[NNRegistionViewModel alloc] init];
+        
+        
+        [registerViewModel setBlockWithReturnBlock:^(id returnValue) {
+            [weakSelf dismissViewControllerAnimated:YES completion:nil];
+        } WithErrorBlock:^(id errorCode) {
+            
+        } WithFailureBlock:^(id failureBlock) {
+            
+        }];
+        
+        [registerViewModel registerUserWithUsername:_registerUserNameTextField.text andverify:_registerCaptchatextField.text andPassword:_registerPassWordTextField.text];
+        
+        
     }
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+  
 }
 
 - (void)didReceiveMemoryWarning {

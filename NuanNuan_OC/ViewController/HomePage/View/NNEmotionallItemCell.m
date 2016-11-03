@@ -24,6 +24,9 @@
 }
 
 - (void)setModel:(NNSuccessCaseModel *)model {
+    if (_model == nil) {
+         _model = model;
+    }
     [_backgroundImageView sd_setImageWithURL:[NSURL URLWithString:model.caseImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageRefreshCached | SDWebImageContinueInBackground];
     
     _emotionTitleLabel.text = model.caseTitle;
@@ -33,4 +36,7 @@
 
 }
 
+- (IBAction)likeAction:(UIButton *)sender {
+    _block(_model);
+}
 @end

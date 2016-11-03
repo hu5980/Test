@@ -9,12 +9,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NNLoginAndRegisterVC">
             <connections>
                 <outlet property="captchButton" destination="APc-Md-O0p" id="chx-uV-bD5"/>
+                <outlet property="loginButton" destination="NAh-zw-LyL" id="0YE-n2-Tvm"/>
                 <outlet property="loginOrRegisterButton" destination="iz5-zs-Fgv" id="nbQ-tG-EYn"/>
                 <outlet property="loginOrRegisterButtonConstraint" destination="MBA-tZ-z0Y" id="F3l-bB-rwZ"/>
                 <outlet property="loginPassWordTextField" destination="QGH-vz-L1U" id="QxB-r2-gpq"/>
                 <outlet property="loginSelectView" destination="Z74-VT-S0e" id="TUx-jv-D59"/>
                 <outlet property="loginUserNameTextField" destination="1p1-72-lyi" id="Ckt-Sd-HE1"/>
                 <outlet property="loginView" destination="cJY-uA-IRP" id="uxO-du-9dw"/>
+                <outlet property="registerButton" destination="vK3-I6-dN0" id="t4m-4X-wes"/>
                 <outlet property="registerCaptchatextField" destination="EHi-bN-bhA" id="FEX-DA-Wg1"/>
                 <outlet property="registerPassWordTextField" destination="B4L-fu-AF9" id="QF1-UW-0p7"/>
                 <outlet property="registerSelectView" destination="Jqu-2z-llU" id="wWC-tV-Tg8"/>
@@ -69,13 +71,13 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EHi-bN-bhA">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ddd" placeholder="验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EHi-bN-bhA">
                             <constraints>
                                 <constraint firstAttribute="height" constant="43" id="Eou-X8-cJC"/>
                             </constraints>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B4L-fu-AF9">
                             <constraints>
