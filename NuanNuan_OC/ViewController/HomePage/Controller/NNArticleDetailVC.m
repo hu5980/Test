@@ -8,6 +8,8 @@
 
 #import "NNArticleDetailVC.h"
 #import <WebKit/WebKit.h>
+#import "NNPariseViewModel.h"
+#import "NNUnPariseViewModel.h"
 
 @interface NNArticleDetailVC () {
     UIView *customView;
@@ -69,7 +71,32 @@
 }
 
 - (void)likeAction:(UIButton *)button {
+    NNPariseViewModel  *viewModel = [[NNPariseViewModel alloc] init];
+    [viewModel setBlockWithReturnBlock:^(id returnValue) {
+        if([returnValue isEqualToString:@"success"]){
+            button.selected = YES;
+        }
+    } WithErrorBlock:^(id errorCode) {
+        
+    } WithFailureBlock:^(id failureBlock) {
+        
+    }];
     
+    NNUnPariseViewModel *unViewModel = [[NNUnPariseViewModel alloc] init];
+    [unViewModel setBlockWithReturnBlock:^(id returnValue) {
+        if([returnValue isEqualToString:@"success"]){
+            button.selected = NO;
+        }
+    } WithErrorBlock:^(id errorCode) {
+    } WithFailureBlock:^(id failureBlock) {
+    }];
+    
+    
+    if (button.selected) {
+        [unViewModel unParisdArticleWithToken:TEST_TOKEN andArticleType:[NSString stringWithFormat:@"%ld",_defaultType] andArticleID:[NSString stringWithFormat:@"%ld",_articleID]];
+    }else{
+        [viewModel parisdArticleWithToken:TEST_TOKEN andArticleType:[NSString stringWithFormat:@"%ld",_defaultType] andArticleID:[NSString stringWithFormat:@"%ld",_articleID]];
+    }
 }
 
 - (void)shareAction:(UIButton *)button {

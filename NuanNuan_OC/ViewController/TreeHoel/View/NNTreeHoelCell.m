@@ -17,6 +17,7 @@
     [super awakeFromNib];
     _iconImageView.layer.masksToBounds = YES;
     _iconImageView.layer.cornerRadius = 20;
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     // Initialization code
 }
 

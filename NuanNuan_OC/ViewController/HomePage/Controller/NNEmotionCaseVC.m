@@ -154,6 +154,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NNEmotionallItemCell *cell =  [tableView dequeueReusableCellWithIdentifier:@"NNEmotionallItemCell"];
     __weak NNEmotionallItemCell *weakCell = cell;
+    cell.likeButton.selected = YES;
     cell.block = ^(NNSuccessCaseModel *model) {
         NNPariseViewModel  *viewModel = [[NNPariseViewModel alloc] init];
         [viewModel setBlockWithReturnBlock:^(id returnValue) {
@@ -180,7 +181,7 @@
         }];
         
         
-        if (weakCell.selected) {
+        if (weakCell.likeButton.selected) {
              [unViewModel unParisdArticleWithToken:TEST_TOKEN andArticleType:[NSString stringWithFormat:@"%ld",_defaultType] andArticleID:[NSString stringWithFormat:@"%ld",model.caseAdID]];
         }else{
             [viewModel parisdArticleWithToken:TEST_TOKEN andArticleType:[NSString stringWithFormat:@"%ld",_defaultType] andArticleID:[NSString stringWithFormat:@"%ld",model.caseAdID]];
@@ -195,6 +196,7 @@
     NNArticleDetailVC *articleVC = [[NNArticleDetailVC alloc] init];
     NNSuccessCaseModel *model = [caseArray objectAtIndex:indexPath.section];
     articleVC.articleID = model.caseAdID;
+    articleVC.defaultType = _defaultType;
     [self.navigationController pushViewController:articleVC animated:YES];
 }
 

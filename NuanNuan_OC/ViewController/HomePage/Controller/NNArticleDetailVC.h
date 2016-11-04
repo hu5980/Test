@@ -12,4 +12,6 @@
 
 @property (assign) NSInteger articleID;
 
+@property (assign) NSInteger defaultType;
+
 @end

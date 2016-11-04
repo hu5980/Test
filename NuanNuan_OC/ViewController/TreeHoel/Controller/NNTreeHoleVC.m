@@ -51,7 +51,7 @@
     [self.navigationController setNavigationBarHidden:NO];
     NNCustomNavigationView *view = LOAD_VIEW_FROM_BUNDLE(@"NNCustomNavigationView");
     view.backgroundColor = [UIColor clearColor];
-    
+    __weak NNTreeHoleVC *weakSelf = self;
     defaultSelectButton = view.index1Button;
     view.selectBlock = ^(UIButton *button) {
         if (defaultSelectButton.tag != button.tag ) {
@@ -61,6 +61,7 @@
             [teacherModelArrays removeAllObjects];
             if (button.tag == 200) {
                 NNLog(@"情感问吧");
+                [weakSelf reflashTeachData];
             }else{
                 NNLog(@"吐槽树洞");
             }
@@ -69,7 +70,7 @@
         }
     };
     self.navigationItem.titleView = view;
-    __weak NNTreeHoleVC *weakSelf = self;
+  
     footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         if (defaultSelectButton.tag == 200) {
             [weakSelf reflashTeachData];
@@ -82,6 +83,7 @@
     _treeHoelTableView.backgroundColor = NN_BACKGROUND_COLOR;
     _treeHoelTableView.delegate = self;
     _treeHoelTableView.dataSource = self;
+    _treeHoelTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_treeHoelTableView registerNib:[UINib nibWithNibName:@"NNTreeHoelCell" bundle:nil] forCellReuseIdentifier:@"NNTreeHoelCell"];
     [_treeHoelTableView registerNib:[UINib nibWithNibName:@"NNSpitslotCell" bundle:nil] forCellReuseIdentifier:@"NNSpitslotCell"];
 }
@@ -126,6 +128,7 @@
     if (defaultSelectButton.tag == 200) {
         NNTreeHoelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNTreeHoelCell"];
         NNEmotionTeacherModel *model = [teacherModelArrays objectAtIndex:indexPath.section];
+        
         cell.model = model;
         return cell;
     }else{

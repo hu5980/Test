@@ -12,7 +12,8 @@
 #import "NNQuestionAndAnswerDetailVC.h"
 #import "NNReplyView.h"
 #import "NNAskingView.h"
-
+#import "NNAskingViewModel.h"
+#import "NNProgressHUD.h"
 @interface NNPsychologicalTeacherVC ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UITextViewDelegate> {
     NNPsychologicalTeacherHeaderView *headerView;
     UIButton *defaultSelectButton;
@@ -85,11 +86,27 @@
     askingView = LOAD_VIEW_FROM_BUNDLE(@"NNAskingView");
     askingView.frame = CGRectMake(0, NNAppHeight, NNAppWidth, 130);
     askingView.askingTextView.delegate = self;
+    
+    __weak NNAskingView *weakAskingView = askingView;
+    __weak NNEmotionTeacherModel *weakModel = _model;
     askingView.block =  ^(NSInteger tag){
+        
         if(tag == 100){
             [weakSelf registKeyboard];
         }else{
-        
+            NNAskingViewModel *askingViewModel = [[NNAskingViewModel alloc] init];
+            [askingViewModel setBlockWithReturnBlock:^(id returnValue) {
+                if ([returnValue  isEqualToString:@"success"]) {
+                    [weakSelf registKeyboard];
+                }else{
+                    [NNProgressHUD showHudAotoHideAddToView:weakSelf.view withMessage:@"提问失败"];
+                }
+            } WithErrorBlock:^(id errorCode) {
+                
+            } WithFailureBlock:^(id failureBlock) {
+                
+            }];
+            [askingViewModel askingQuestionWithToken:TEST_TOKEN andTeacherID:weakModel.teacherID andQuestionType:@"1" andQuestionContent:weakAskingView.askingTextView.text];
         }
     };
     [self.view addSubview:askingView];
@@ -110,6 +127,8 @@
 }
 
 - (void)registKeyboard {
+    replyView.replytextField.text = nil;
+    askingView.askingTextView.text = nil;
     [replyView.replytextField resignFirstResponder];
     [askingView.askingTextView resignFirstResponder];
 }
