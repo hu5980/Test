@@ -30,30 +30,36 @@
     if (arrays.count == 0) {
         _broswerViewHeight = 0;
         return;
-    }else {
+    }else if (arrays.count > 9){
+        NNLog(@"错误信息");
+    }
+    else {
         
         for (UIView *view in self.subviews) {
             [view removeFromSuperview];
         }
-        
         CGFloat imageWidth = (NNAppWidth - (number - 1) * imageSpace - 30  ) / number;
-        
         for (int i = 0; i < arrays.count; i++) {
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
             [button setImageForState:UIControlStateNormal withURL:[NSURL URLWithString:[arrays objectAtIndex:i]] placeholderImage:nil];
             [button addTarget:self action:@selector(clickImageButton:) forControlEvents:UIControlEventTouchUpInside];
             button.frame = CGRectMake(i%number*(imageSpace + imageWidth) + 15 , i/number *(imageWidth + imageSpace) + 10, imageWidth, imageWidth);
             button.tag = 1000 + i;
-            button.backgroundColor = [UIColor redColor];
+          //  button.backgroundColor = [UIColor redColor];
             [self addSubview:button];
         }
-        _broswerViewHeight = (arrays.count/number + 1) *(imageWidth + imageSpace) ;
+        if (arrays.count%number == 0) {
+             _broswerViewHeight = (arrays.count/number ) *(imageWidth + imageSpace) ;
+        }else{
+             _broswerViewHeight = (arrays.count/number + 1) *(imageWidth + imageSpace) ;
+        }
+       
         self.frame = CGRectMake(0,0,NNAppWidth, _broswerViewHeight);
     }
 }
 
 - (void)clickImageButton:(UIButton *)button {
-    _block(button.tag);
+  //  _block(button.tag);
 }
 
 @end

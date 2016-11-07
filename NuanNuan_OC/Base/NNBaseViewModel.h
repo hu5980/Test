@@ -35,4 +35,6 @@
                  WithErrorBlock: (ErrorCodeBlock) errorBlock
                WithFailureBlock: (FailureBlock) failureBlock;
 
+-(void)fetchValueSuccessWithDic: (NSDictionary *) returnValue;
+
 @end

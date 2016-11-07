@@ -16,11 +16,12 @@
 #import "NNSpitslotDetailVC.h"
 #import "NNEmotionTeacherModel.h"
 #import "NNEmotionTeacherViewModel.h"
-
-
+#import "NNTreeHoelViewModel.h"
+#import "NNTreeHoelModel.h"
 @interface NNTreeHoleVC ()<UITableViewDelegate,UITableViewDataSource> {
     UIButton *defaultSelectButton;
     NSMutableArray *teacherModelArrays;
+    NSMutableArray *treeHoelModelArrays;
     NSArray *array;
     MJRefreshFooter *footer;
 }
@@ -60,10 +61,11 @@
             defaultSelectButton.selected = YES;
             [teacherModelArrays removeAllObjects];
             if (button.tag == 200) {
-                NNLog(@"情感问吧");
+              
                 [weakSelf reflashTeachData];
             }else{
-                NNLog(@"吐槽树洞");
+              
+                [weakSelf reflashTreeHoelData];
             }
             
             [_treeHoelTableView reloadData];
@@ -75,7 +77,7 @@
         if (defaultSelectButton.tag == 200) {
             [weakSelf reflashTeachData];
         }else{
-        
+            [weakSelf reflashTreeHoelData];
         }
     }];
 
@@ -91,6 +93,7 @@
 - (void)initData {
     array = @[@"图片地址"];
     teacherModelArrays= [NSMutableArray array];
+    treeHoelModelArrays =[NSMutableArray array];
     [self reflashTeachData];
   }
 
@@ -110,14 +113,32 @@
 
 }
 
+- (void)reflashTreeHoelData {
+    NNTreeHoelViewModel *modelView = [[NNTreeHoelViewModel alloc] init];
+    [modelView setBlockWithReturnBlock:^(id returnValue) {
+        [treeHoelModelArrays addObjectsFromArray:returnValue];
+        [_treeHoelTableView reloadData];
+        [footer endRefreshing];
+
+    } WithErrorBlock:^(id errorCode) {
+        
+    } WithFailureBlock:^(id failureBlock) {
+        
+    }];
+    NNTreeHoelModel *model = [treeHoelModelArrays lastObject];
+    [modelView getTreeHoelListContentWithToken:TEST_TOKEN andLastTreeHoelId:model.thID
+                          andUpdatePageNum:@"10"];
+}
+
 
 #pragma --mark  UItableViewDelegate UItableViewDatasource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if (defaultSelectButton.tag == 200) {
         return teacherModelArrays.count;
+    }else{
+        return treeHoelModelArrays.count;
     }
-    return 10;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -133,14 +154,11 @@
         return cell;
     }else{
         NNSpitslotCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNSpitslotCell"];
+        cell.model = [treeHoelModelArrays objectAtIndex:indexPath.section];
      
-        cell.contentLabel.text = @"我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊";
-        NNImageBroswerView *broswerImageView = [[NNImageBroswerView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, 0) ImageUrls:array SpaceWithImage:10 SpaceWithSideOfSuperView:15 NumberImageOfLine:3];
-        cell.broswerViewConstraint.constant = broswerImageView.broswerViewHeight;
-        [cell.broswerView addSubview:broswerImageView];
-        broswerImageView.block = ^(NSInteger tag){
-            NNLog(@"%ld",(long)tag);
-        };
+//        broswerImageView.block = ^(NSInteger tag){
+//            NNLog(@"%ld",(long)tag);
+//        };
         
         cell.block = ^(NSInteger tag){
             switch (tag) {
@@ -170,10 +188,8 @@
     }else{
         height = [tableView fd_heightForCellWithIdentifier:@"NNSpitslotCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             NNSpitslotCell *spitslotCell = cell;
-            spitslotCell.contentLabel.text = @"我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊";
-            NNImageBroswerView *broswerImageView = [[NNImageBroswerView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, 0) ImageUrls:array SpaceWithImage:10 SpaceWithSideOfSuperView:15 NumberImageOfLine:3];
-            spitslotCell.broswerViewConstraint.constant = broswerImageView.broswerViewHeight;
-            
+            NSLog(@"section = %ld",indexPath.section);
+             spitslotCell.model = [treeHoelModelArrays objectAtIndex:indexPath.section];
         }];
     }
     

@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "NNTreeHoelModel.h"
 typedef void(^spitslotActionBlock)(NSInteger tag);
 
 @interface NNSpitslotCell : UITableViewCell
 
-
+@property (strong, nonatomic) NNTreeHoelModel *model;
 @property (strong, nonatomic) IBOutlet UIImageView *headImageView;
 
 @property (strong, nonatomic) IBOutlet UILabel *nickNameLabel;
@@ -25,4 +25,6 @@ typedef void(^spitslotActionBlock)(NSInteger tag);
 @property (strong, nonatomic) IBOutlet UILabel *bePraisedLabel;
 
 @property (copy , nonatomic) spitslotActionBlock block;
+
+
 @end

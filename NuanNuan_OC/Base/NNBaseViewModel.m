@@ -27,4 +27,8 @@
     _failureBlock = failureBlock;
 }
 
+-(void)fetchValueSuccessWithDic: (NSDictionary *) returnValue {
+    
+}
+
 @end
