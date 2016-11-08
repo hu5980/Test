@@ -10,6 +10,8 @@
 #import "NNTreeHoelModel.h"
 typedef void(^spitslotActionBlock)(NSInteger tag);
 
+typedef void(^selectImageIndexPath)(NSInteger indexPath);
+
 @interface NNSpitslotCell : UITableViewCell
 
 @property (strong, nonatomic) NNTreeHoelModel *model;
@@ -25,6 +27,8 @@ typedef void(^spitslotActionBlock)(NSInteger tag);
 @property (strong, nonatomic) IBOutlet UILabel *bePraisedLabel;
 
 @property (copy , nonatomic) spitslotActionBlock block;
+
+@property (copy , nonatomic) selectImageIndexPath selectImageBlock;
 
 
 @end

@@ -12,6 +12,7 @@
 #import "NNNeterReplyCell.h"
 #import "NNReplyView.h"
 #import "NNAskingView.h"
+#import "MWPhotoBrowser.h"
 
 @interface NNSpitslotDetailVC () <UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,UITextFieldDelegate> {
     NSArray *array;
@@ -186,8 +187,28 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         NNSpitslotCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNSpitslotCell"];
+     
+        __weak NNSpitslotDetailVC *weakSelf = self;
+        cell.selectImageBlock = ^(NSInteger selectIndex){
+            
+            NSMutableArray *phonoArrays = [NSMutableArray arrayWithCapacity:_model.picArrays.count];
+            
+            for (int i  = 0 ; i < _model.picArrays.count; i++) {
+                [phonoArrays addObject:[MWPhoto photoWithURL:[NSURL URLWithString:[_model.picArrays objectAtIndex:i]]]];
+            }
+            
+            MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithPhotos:phonoArrays];
+            browser.displayActionButton = NO;
+            browser.displayNavArrows = YES;
+            browser.displaySelectionButtons = NO;
+            browser.alwaysShowControls = NO;
+            browser.zoomPhotosToFill = YES;
+            browser.enableSwipeToDismiss = NO;
+            [browser setCurrentPhotoIndex:selectIndex];
+            [weakSelf.navigationController pushViewController:browser animated:YES];
+        };
         cell.model = _model;
-       
+        
         cell.block = ^(NSInteger tag){
             switch (tag) {
                 case 100:

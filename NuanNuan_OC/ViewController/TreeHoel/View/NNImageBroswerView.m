@@ -59,7 +59,7 @@
 }
 
 - (void)clickImageButton:(UIButton *)button {
-  //  _block(button.tag);
+    _block(button.tag - 1000);
 }
 
 @end

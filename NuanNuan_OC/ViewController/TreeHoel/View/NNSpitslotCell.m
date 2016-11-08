@@ -31,6 +31,11 @@
     NNImageBroswerView *broswerImageView = [[NNImageBroswerView alloc] initWithFrame:CGRectMake(0, 0,NNAppWidth, 0) ImageUrls:model.picArrays SpaceWithImage:10 SpaceWithSideOfSuperView:15 NumberImageOfLine:3];
     self.broswerViewConstraint.constant = broswerImageView.broswerViewHeight;
     
+    __weak selectImageIndexPath weakSelectImageBlock = _selectImageBlock;
+    broswerImageView.block = ^(NSInteger indexPath){
+        weakSelectImageBlock(indexPath);
+    };
+    
     for (UIView *view in self.broswerView.subviews) {
         [view removeFromSuperview];
     }

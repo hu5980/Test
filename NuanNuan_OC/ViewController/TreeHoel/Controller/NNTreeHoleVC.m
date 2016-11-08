@@ -18,12 +18,16 @@
 #import "NNEmotionTeacherViewModel.h"
 #import "NNTreeHoelViewModel.h"
 #import "NNTreeHoelModel.h"
-@interface NNTreeHoleVC ()<UITableViewDelegate,UITableViewDataSource> {
+#import "MWPhotoBrowser.h"
+
+@interface NNTreeHoleVC ()<UITableViewDelegate,UITableViewDataSource,MWPhotoBrowserDelegate> {
     UIButton *defaultSelectButton;
     NSMutableArray *teacherModelArrays;
     NSMutableArray *treeHoelModelArrays;
     NSArray *array;
     MJRefreshFooter *footer;
+    
+    NSMutableArray *phonoArrays;
 }
 @property (weak, nonatomic) IBOutlet UITableView *treeHoelTableView;
 
@@ -154,11 +158,29 @@
         return cell;
     }else{
         NNSpitslotCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNSpitslotCell"];
-        cell.model = [treeHoelModelArrays objectAtIndex:indexPath.section];
-     
-//        broswerImageView.block = ^(NSInteger tag){
-//            NNLog(@"%ld",(long)tag);
-//        };
+        NNTreeHoelModel *model = [treeHoelModelArrays objectAtIndex:indexPath.section];
+        
+        __weak NNTreeHoleVC *weakSelf = self;
+        cell.selectImageBlock = ^(NSInteger selectIndex){
+            
+            phonoArrays = [NSMutableArray arrayWithCapacity:model.picArrays.count];
+            
+            for (int i  = 0 ; i < model.picArrays.count; i++) {
+                [phonoArrays addObject:[MWPhoto photoWithURL:[NSURL URLWithString:[model.picArrays objectAtIndex:i]]]];
+            }
+            
+            MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithPhotos:phonoArrays];
+            browser.displayActionButton = NO;
+            browser.displayNavArrows = YES;
+            browser.displaySelectionButtons = NO;
+            browser.alwaysShowControls = NO;
+            browser.zoomPhotosToFill = YES;
+            browser.enableSwipeToDismiss = NO;
+            [browser setCurrentPhotoIndex:selectIndex];
+            [weakSelf.navigationController pushViewController:browser animated:YES];
+        };
+        cell.model = model;
+
         
         cell.block = ^(NSInteger tag){
             switch (tag) {
