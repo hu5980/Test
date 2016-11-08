@@ -149,10 +149,7 @@
     if (indexPath.section == 0) {
         height = [tableView fd_heightForCellWithIdentifier:@"NNSpitslotCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             NNSpitslotCell *spitslotCell = cell;
-            spitslotCell.contentLabel.text = @"我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊";
-            NNImageBroswerView *broswerImageView = [[NNImageBroswerView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, 0) ImageUrls:nil SpaceWithImage:10 SpaceWithSideOfSuperView:15 NumberImageOfLine:3];
-            spitslotCell.broswerViewConstraint.constant = broswerImageView.broswerViewHeight;
-            
+            spitslotCell.model = _model;
         }];
         
     }else{
@@ -189,15 +186,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         NNSpitslotCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNSpitslotCell"];
-        
-        cell.contentLabel.text = @"我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊";
-        NNImageBroswerView *broswerImageView = [[NNImageBroswerView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, 0) ImageUrls:nil SpaceWithImage:10 SpaceWithSideOfSuperView:15 NumberImageOfLine:3];
-        cell.broswerViewConstraint.constant = broswerImageView.broswerViewHeight;
-        [cell.broswerView addSubview:broswerImageView];
-        broswerImageView.block = ^(NSInteger tag){
-            NNLog(@"%ld",(long)tag);
-        };
-        
+        cell.model = _model;
+       
         cell.block = ^(NSInteger tag){
             switch (tag) {
                 case 100:

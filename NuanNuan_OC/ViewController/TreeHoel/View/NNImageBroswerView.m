@@ -41,7 +41,7 @@
         CGFloat imageWidth = (NNAppWidth - (number - 1) * imageSpace - 30  ) / number;
         for (int i = 0; i < arrays.count; i++) {
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-            [button setImageForState:UIControlStateNormal withURL:[NSURL URLWithString:[arrays objectAtIndex:i]] placeholderImage:nil];
+            [button setImageForState:UIControlStateNormal withURL:[NSURL URLWithString:[arrays objectAtIndex:i]] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
             [button addTarget:self action:@selector(clickImageButton:) forControlEvents:UIControlEventTouchUpInside];
             button.frame = CGRectMake(i%number*(imageSpace + imageWidth) + 15 , i/number *(imageWidth + imageSpace) + 10, imageWidth, imageWidth);
             button.tag = 1000 + i;

@@ -9,12 +9,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DACircularProgress.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MWPhotoBrowser-MWPhotoBrowser.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MWPhotoBrowser.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -67,7 +82,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0B21B98240C0CE05143F7294A10A3B50</key>
+		<key>125190B59FC91C56649D5CFA74260A44</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>14E6E2E2484806AB62B60CA2EAD41F9B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,37 +97,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>2659FF58D567B8DC223494B4F3ECA3C9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>29DD99664D189A7CA206368F493B1E0B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>57EDF7BDDEA2397A512720FD35FCA733</key>
+		<key>4425297F8A007C92F0A50C48C9C14CDB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7362AB40DFC92E6F26AAD2B8217BC938</key>
+		<key>6461FF73E606AC17ECB9C28944E4F30F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7EC1A068F5CE0DFC53F5AC67CB31D38C</key>
+		<key>6F26540E863A3952A6EF01640167FB45</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8365DAF58F584F2B3A1E91A9C07AB021</key>
+		<key>80F6210DBA06055884DABCE8EAA63F79</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>84BA6AD446E4569F07246935EB7A73BF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9A26EEE446177D4EC47AC061C57D237F</key>
+		<key>94624EC6C9739263AA965CFE2D8933F5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,12 +137,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DBA6001481CEA0EBA031CC5C94508FAA</key>
+		<key>AF20E5E48AEE678210701AEBA7D8FC56</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FBC6E524B0907EF7130A50B052B67B74</key>
+		<key>BE7A5E8E0FDE9CA58316BC4D6568818D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F72B4B258E98A03CF174FF20748C6549</key>
 		<dict>
 			<key>primary</key>
 			<true/>

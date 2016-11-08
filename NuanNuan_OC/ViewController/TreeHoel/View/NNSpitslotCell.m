@@ -10,6 +10,7 @@
 #import "NNImageBroswerView.h"
 #import "Define.h"
 #import "UIImageView+WebCache.h"
+#import "NNTimeUtil.h"
 
 @implementation NNSpitslotCell
 
@@ -21,6 +22,10 @@
 - (void)setModel:(NNTreeHoelModel *)model {
 
     _model = model;
+    self.timelabel.text = [NNTimeUtil timeDealWithFormat:@"yyyy-MM-dd dd:mm" andTime:model.createTime];
+    self.nickNameLabel.text = _model.userNikeName;
+    self.commentLabel.text = _model.thCommentNum;
+    self.bePraisedLabel.text = _model.thGoodsNum;
     [self.headImageView sd_setImageWithURL:[NSURL URLWithString:model.userHeadUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageRefreshCached];
     self.contentLabel.text = model.thContent;
     NNImageBroswerView *broswerImageView = [[NNImageBroswerView alloc] initWithFrame:CGRectMake(0, 0,NNAppWidth, 0) ImageUrls:model.picArrays SpaceWithImage:10 SpaceWithSideOfSuperView:15 NumberImageOfLine:3];

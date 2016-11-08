@@ -216,6 +216,7 @@
     }else{
         NNSpitslotDetailVC *spitslotDetailVC = [[NNSpitslotDetailVC alloc] initWithNibName:@"NNSpitslotDetailVC" bundle:nil];
         spitslotDetailVC.hidesBottomBarWhenPushed = YES;
+        spitslotDetailVC.model = [treeHoelModelArrays objectAtIndex:indexPath.section];
         [self.navigationController pushViewController:spitslotDetailVC animated:YES];
     }
 }

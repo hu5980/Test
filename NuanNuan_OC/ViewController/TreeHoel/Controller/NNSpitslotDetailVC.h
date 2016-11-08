@@ -7,7 +7,9 @@
 //
 
 #import "NNBaseVC.h"
-
+#import "NNTreeHoelModel.h"
 @interface NNSpitslotDetailVC : NNBaseVC
+
+@property (nonatomic,strong) NNTreeHoelModel *model;
 
 @end

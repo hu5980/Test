@@ -12,10 +12,9 @@
 
 + (void) showHudAotoHideAddToView:(UIView *)view withMessage:(NSString *)meaasge {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    hud.label.text = meaasge;
+    hud.labelText = meaasge;
     hud.mode = MBProgressHUDModeText;
-    [hud hideAnimated:YES afterDelay:2];
-
+    [hud hide:YES afterDelay:2];
 }
 
 @end

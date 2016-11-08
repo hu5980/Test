@@ -43,9 +43,13 @@
                     withFailureBlock:(FailureBlock)failureBlock
                         withProgress:(ProgressBlock) progressBlock
 {
+    NSMutableDictionary *mutableParameter  = [NSMutableDictionary dictionaryWithDictionary:parameter];
+    NSString *ver = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    [mutableParameter setObject:ver forKey:@"ver"];
+    [mutableParameter setObject:@"appstore" forKey:@"channel"];
     AFHTTPSessionManager *sessionManager = [[AFHTTPSessionManager alloc] init];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [sessionManager GET:requestURLString parameters:returnBlock progress:^(NSProgress * _Nonnull downloadProgress) {
+    [sessionManager GET:requestURLString parameters:mutableParameter progress:^(NSProgress * _Nonnull downloadProgress) {
          progressBlock(downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([[responseObject objectForKey:@"result"] isEqualToString:@"fail"]) {
@@ -66,9 +70,13 @@
                     withFailureBlock:(FailureBlock)failureBlock
                         withProgress:(ProgressBlock) progressBlock
 {
+    NSMutableDictionary *mutableParameter  = [NSMutableDictionary dictionaryWithDictionary:parameter];
+    NSString *ver = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    [mutableParameter setObject:ver forKey:@"ver"];
+    [mutableParameter setObject:@"appstore" forKey:@"channel"];
     AFHTTPSessionManager *sessionManager = [[AFHTTPSessionManager alloc] init];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [sessionManager POST:requestURLString parameters:parameter progress:^(NSProgress * _Nonnull uploadProgress) {
+    [sessionManager POST:requestURLString parameters:mutableParameter progress:^(NSProgress * _Nonnull uploadProgress) {
         progressBlock(uploadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject objectForKey:@"errorCode"]) {
@@ -80,7 +88,5 @@
         failureBlock(error);
     }];
 }
-
-
 
 @end
