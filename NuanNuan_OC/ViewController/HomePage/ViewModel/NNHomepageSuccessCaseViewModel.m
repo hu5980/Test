@@ -12,7 +12,7 @@
 @implementation NNHomepageSuccessCaseViewModel
 
 - (void) getHomepageSuccessCase {
-    [NNNetRequestClass NetRequestGETWithRequestURL:[NSString stringWithFormat:@"%@/%@",NNBaseUrl,@"?c=api_article&a=getSuccessArticleList"]
+    [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/%@",NNBaseUrl,@"?c=api_article&a=getSuccessArticleList"]
                                      withParameter:nil
                               withReturnValueBlock:^(id returnValue) {
                                   NNLog(@"%@",returnValue);

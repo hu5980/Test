@@ -12,7 +12,7 @@
 
 
 - (void) getRingFocueAreaContent {
-    [NNNetRequestClass NetRequestGETWithRequestURL:[NSString stringWithFormat:@"%@/%@",NNBaseUrl,@"?c=api_article&a=getAllfocus"] withParameter:nil withReturnValueBlock:^(id returnValue) {
+    [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/%@",NNBaseUrl,@"?c=api_article&a=getAllfocus"] withParameter:nil withReturnValueBlock:^(id returnValue) {
         [self fetchValueSuccessWithDic:returnValue];
         
     } withErrorCodeBlock:^(id errorCode) {

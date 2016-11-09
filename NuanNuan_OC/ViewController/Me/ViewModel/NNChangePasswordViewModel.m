@@ -12,7 +12,7 @@
 
 - (void)changePasswordWithtToken:(NSString *)token andCode:(NSString *)code andPassword:(NSString *)newPassword andTel:(NSString *)tel {
     NSDictionary *parames = @{@"token":token,@"tel":tel,@"code":code,@"password":newPassword};
-    [NNNetRequestClass NetRequestGETWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_member&a=changePw",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
+    [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_member&a=changePw",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
         self.returnBlock([returnValue objectForKey:@"result"]);
     } withErrorCodeBlock:^(id errorCode) {
         self.errorBlock(errorCode);

@@ -14,12 +14,16 @@
 #import "NNAskingView.h"
 #import "NNAskingViewModel.h"
 #import "NNProgressHUD.h"
+#import "NNQuestionAndAnswerViewModel.h"
+
 @interface NNPsychologicalTeacherVC ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UITextViewDelegate> {
     NNPsychologicalTeacherHeaderView *headerView;
     UIButton *defaultSelectButton;
     NNAskingView *askingView;
     UIButton *backgroundButton;
     NNReplyView *replyView ;
+    
+    NSMutableArray *questionAndAnswerMutableArray;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *psychologicalTeacherTableView;
@@ -40,6 +44,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initData];
     [self initUI];
     // Do any additional setup after loading the view from its nib.
 }
@@ -112,6 +117,26 @@
     [self.view addSubview:askingView];
    
     
+}
+
+- (void)initData {
+    questionAndAnswerMutableArray = [NSMutableArray array];
+    [self reflashQuestionAndAnswerData];
+}
+
+- (void)reflashQuestionAndAnswerData {
+    NNQuestionAndAnswerViewModel *viewModel = [[NNQuestionAndAnswerViewModel alloc] init];
+    viewModel.teacherModel = _model;
+    
+    [viewModel setBlockWithReturnBlock:^(id returnValue) {
+        
+    } WithErrorBlock:^(id errorCode) {
+        
+    } WithFailureBlock:^(id failureBlock) {
+        
+    }];
+    
+    [viewModel getQuestionAndAnswerWithType:@"1" andToken:TEST_TOKEN andTeacherID:_model.teacherID andLastQuestionAndAnswerID:@"" andPageNum:@"10"];
 }
 
 #pragma --mark  Action

@@ -20,7 +20,7 @@
     
     
     
-    [NNNetRequestClass NetRequestGETWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_teacher&a=getTeacherList",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
+    [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_teacher&a=getTeacherList",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
         NNLog(@"%@",returnValue);
         [self fetchValueSuccessWithDic:returnValue];
     } withErrorCodeBlock:^(id errorCode) {

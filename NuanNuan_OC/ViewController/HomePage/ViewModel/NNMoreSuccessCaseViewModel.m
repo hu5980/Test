@@ -50,7 +50,7 @@
 
 - (void)likeTheArticleWithUser:(NSString *)token andType:(NSInteger) type andCaseID:(NSInteger) caseID{
     NSDictionary *params = @{@"token":token,@"type":[NSNumber numberWithInteger:type],@"id":[NSNumber numberWithInteger:caseID]};
-    [NNNetRequestClass NetRequestGETWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_good&a=addGood",NNBaseUrl] withParameter:params withReturnValueBlock:^(id returnValue) {
+    [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_good&a=addGood",NNBaseUrl] withParameter:params withReturnValueBlock:^(id returnValue) {
         
     } withErrorCodeBlock:^(id errorCode) {
         

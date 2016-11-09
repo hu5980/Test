@@ -13,7 +13,7 @@
 - (void)loginWithUserName:(NSString *)userName andpassword:(NSString *)password andLoginType:(NSInteger)type{
     NSDictionary *parames = @{@"username":userName,@"password":password,@"type":[NSNumber numberWithInteger:type]};
     
-    [NNNetRequestClass NetRequestGETWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_user&a=login",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
+    [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_user&a=login",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
         NSLog(@"%@",returnValue);
         self.returnBlock(returnValue);
     } withErrorCodeBlock:^(id errorCode) {

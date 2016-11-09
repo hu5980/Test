@@ -29,6 +29,9 @@
 		BC4C8E3A1DD06F3900544A83 /* NNTreeHoelViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4C8E391DD06F3900544A83 /* NNTreeHoelViewModel.m */; };
 		BC4C8E3D1DD0713F00544A83 /* NNTreeHoelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4C8E3C1DD0713F00544A83 /* NNTreeHoelModel.m */; };
 		BC4C8E401DD1A15D00544A83 /* NNTimeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4C8E3F1DD1A15D00544A83 /* NNTimeUtil.m */; };
+		BC4C8E431DD3056800544A83 /* NNQuestionAndAnswerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4C8E421DD3056800544A83 /* NNQuestionAndAnswerViewModel.m */; };
+		BC4C8E461DD308DB00544A83 /* NNQuestionAndAnswerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4C8E451DD308DB00544A83 /* NNQuestionAndAnswerModel.m */; };
+		BC4C8E491DD30AC500544A83 /* NNQuestionAndAnswerSignalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4C8E481DD30AC500544A83 /* NNQuestionAndAnswerSignalModel.m */; };
 		BC58BA671DBDE99500F3BF0D /* NNMinePraisedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC58BA651DBDE99500F3BF0D /* NNMinePraisedVC.m */; };
 		BC58BA681DBDE99500F3BF0D /* NNMinePraisedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC58BA661DBDE99500F3BF0D /* NNMinePraisedVC.xib */; };
 		BC58BA6C1DBDE9A800F3BF0D /* NNMineCommentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC58BA6A1DBDE9A800F3BF0D /* NNMineCommentVC.m */; };
@@ -147,6 +150,12 @@
 		BC4C8E3C1DD0713F00544A83 /* NNTreeHoelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNTreeHoelModel.m; sourceTree = "<group>"; };
 		BC4C8E3E1DD1A15D00544A83 /* NNTimeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNTimeUtil.h; sourceTree = "<group>"; };
 		BC4C8E3F1DD1A15D00544A83 /* NNTimeUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNTimeUtil.m; sourceTree = "<group>"; };
+		BC4C8E411DD3056800544A83 /* NNQuestionAndAnswerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNQuestionAndAnswerViewModel.h; sourceTree = "<group>"; };
+		BC4C8E421DD3056800544A83 /* NNQuestionAndAnswerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNQuestionAndAnswerViewModel.m; sourceTree = "<group>"; };
+		BC4C8E441DD308DB00544A83 /* NNQuestionAndAnswerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNQuestionAndAnswerModel.h; sourceTree = "<group>"; };
+		BC4C8E451DD308DB00544A83 /* NNQuestionAndAnswerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNQuestionAndAnswerModel.m; sourceTree = "<group>"; };
+		BC4C8E471DD30AC500544A83 /* NNQuestionAndAnswerSignalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNQuestionAndAnswerSignalModel.h; sourceTree = "<group>"; };
+		BC4C8E481DD30AC500544A83 /* NNQuestionAndAnswerSignalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNQuestionAndAnswerSignalModel.m; sourceTree = "<group>"; };
 		BC58BA641DBDE99500F3BF0D /* NNMinePraisedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNMinePraisedVC.h; sourceTree = "<group>"; };
 		BC58BA651DBDE99500F3BF0D /* NNMinePraisedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMinePraisedVC.m; sourceTree = "<group>"; };
 		BC58BA661DBDE99500F3BF0D /* NNMinePraisedVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNMinePraisedVC.xib; sourceTree = "<group>"; };
@@ -748,6 +757,8 @@
 				BCBAD87B1DCC8B9300BEDF18 /* NNAskingViewModel.m */,
 				BC4C8E381DD06F3900544A83 /* NNTreeHoelViewModel.h */,
 				BC4C8E391DD06F3900544A83 /* NNTreeHoelViewModel.m */,
+				BC4C8E411DD3056800544A83 /* NNQuestionAndAnswerViewModel.h */,
+				BC4C8E421DD3056800544A83 /* NNQuestionAndAnswerViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -759,6 +770,10 @@
 				BCF178BD1DC0ABED00A6DC4B /* NNEmotionTeacherModel.m */,
 				BC4C8E3B1DD0713F00544A83 /* NNTreeHoelModel.h */,
 				BC4C8E3C1DD0713F00544A83 /* NNTreeHoelModel.m */,
+				BC4C8E441DD308DB00544A83 /* NNQuestionAndAnswerModel.h */,
+				BC4C8E451DD308DB00544A83 /* NNQuestionAndAnswerModel.m */,
+				BC4C8E471DD30AC500544A83 /* NNQuestionAndAnswerSignalModel.h */,
+				BC4C8E481DD30AC500544A83 /* NNQuestionAndAnswerSignalModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -948,6 +963,7 @@
 				0DDAEE791DBB9F87008478DC /* NNImageBroswerView.m in Sources */,
 				BC58BA8A1DBDF29000F3BF0D /* NNSetCell.m in Sources */,
 				BC7A672A1DB4C3C000C3B3D9 /* NNNetRequestClass.m in Sources */,
+				BC4C8E431DD3056800544A83 /* NNQuestionAndAnswerViewModel.m in Sources */,
 				BC4C8E3D1DD0713F00544A83 /* NNTreeHoelModel.m in Sources */,
 				BC852E791DCAE9FC00ADE5C9 /* NNProgressHUD.m in Sources */,
 				BCA60E221DC7439A00DB84A0 /* NNMoreSuccessCaseViewModel.m in Sources */,
@@ -972,8 +988,10 @@
 				BC852E8A1DCB1BBE00ADE5C9 /* NNPariseViewModel.m in Sources */,
 				BCBAD87C1DCC8B9300BEDF18 /* NNAskingViewModel.m in Sources */,
 				BC852E811DCB16C900ADE5C9 /* NNuploadUserHeadImageViewModel.m in Sources */,
+				BC4C8E461DD308DB00544A83 /* NNQuestionAndAnswerModel.m in Sources */,
 				BC247EA51DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m in Sources */,
 				BCD9AEA01DAE21D1008DB98E /* NNNeterReplyCell.m in Sources */,
+				BC4C8E491DD30AC500544A83 /* NNQuestionAndAnswerSignalModel.m in Sources */,
 				BCA60E251DC8912500DB84A0 /* NNUserInfoViewModel.m in Sources */,
 				BC8C61DE1DC04A2C00094F94 /* NNRingImageModel.m in Sources */,
 				BC247E9B1DAA19B100AB5C84 /* NNEmotionallCell.m in Sources */,
