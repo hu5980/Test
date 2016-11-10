@@ -31,7 +31,6 @@
 		BC4C8E401DD1A15D00544A83 /* NNTimeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4C8E3F1DD1A15D00544A83 /* NNTimeUtil.m */; };
 		BC4C8E431DD3056800544A83 /* NNQuestionAndAnswerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4C8E421DD3056800544A83 /* NNQuestionAndAnswerViewModel.m */; };
 		BC4C8E461DD308DB00544A83 /* NNQuestionAndAnswerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4C8E451DD308DB00544A83 /* NNQuestionAndAnswerModel.m */; };
-		BC4C8E491DD30AC500544A83 /* NNQuestionAndAnswerSignalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4C8E481DD30AC500544A83 /* NNQuestionAndAnswerSignalModel.m */; };
 		BC58BA671DBDE99500F3BF0D /* NNMinePraisedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC58BA651DBDE99500F3BF0D /* NNMinePraisedVC.m */; };
 		BC58BA681DBDE99500F3BF0D /* NNMinePraisedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC58BA661DBDE99500F3BF0D /* NNMinePraisedVC.xib */; };
 		BC58BA6C1DBDE9A800F3BF0D /* NNMineCommentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC58BA6A1DBDE9A800F3BF0D /* NNMineCommentVC.m */; };
@@ -154,8 +153,6 @@
 		BC4C8E421DD3056800544A83 /* NNQuestionAndAnswerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNQuestionAndAnswerViewModel.m; sourceTree = "<group>"; };
 		BC4C8E441DD308DB00544A83 /* NNQuestionAndAnswerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNQuestionAndAnswerModel.h; sourceTree = "<group>"; };
 		BC4C8E451DD308DB00544A83 /* NNQuestionAndAnswerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNQuestionAndAnswerModel.m; sourceTree = "<group>"; };
-		BC4C8E471DD30AC500544A83 /* NNQuestionAndAnswerSignalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNQuestionAndAnswerSignalModel.h; sourceTree = "<group>"; };
-		BC4C8E481DD30AC500544A83 /* NNQuestionAndAnswerSignalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNQuestionAndAnswerSignalModel.m; sourceTree = "<group>"; };
 		BC58BA641DBDE99500F3BF0D /* NNMinePraisedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNMinePraisedVC.h; sourceTree = "<group>"; };
 		BC58BA651DBDE99500F3BF0D /* NNMinePraisedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMinePraisedVC.m; sourceTree = "<group>"; };
 		BC58BA661DBDE99500F3BF0D /* NNMinePraisedVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNMinePraisedVC.xib; sourceTree = "<group>"; };
@@ -772,8 +769,6 @@
 				BC4C8E3C1DD0713F00544A83 /* NNTreeHoelModel.m */,
 				BC4C8E441DD308DB00544A83 /* NNQuestionAndAnswerModel.h */,
 				BC4C8E451DD308DB00544A83 /* NNQuestionAndAnswerModel.m */,
-				BC4C8E471DD30AC500544A83 /* NNQuestionAndAnswerSignalModel.h */,
-				BC4C8E481DD30AC500544A83 /* NNQuestionAndAnswerSignalModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -991,7 +986,6 @@
 				BC4C8E461DD308DB00544A83 /* NNQuestionAndAnswerModel.m in Sources */,
 				BC247EA51DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m in Sources */,
 				BCD9AEA01DAE21D1008DB98E /* NNNeterReplyCell.m in Sources */,
-				BC4C8E491DD30AC500544A83 /* NNQuestionAndAnswerSignalModel.m in Sources */,
 				BCA60E251DC8912500DB84A0 /* NNUserInfoViewModel.m in Sources */,
 				BC8C61DE1DC04A2C00094F94 /* NNRingImageModel.m in Sources */,
 				BC247E9B1DAA19B100AB5C84 /* NNEmotionallCell.m in Sources */,

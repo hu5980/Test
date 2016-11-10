@@ -22,8 +22,9 @@
     NNAskingView *askingView;
     UIButton *backgroundButton;
     NNReplyView *replyView ;
-    
+    NSString  *defaultType;
     NSMutableArray *questionAndAnswerMutableArray;
+    MJRefreshBackNormalFooter *footer;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *psychologicalTeacherTableView;
@@ -65,6 +66,12 @@
     _psychologicalTeacherTableView.dataSource = self;
     _psychologicalTeacherTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_psychologicalTeacherTableView registerNib:[UINib nibWithNibName:@"NNQuestionAndAnswerCell" bundle:nil] forCellReuseIdentifier:@"NNQuestionAndAnswerCell"];
+    footer =  [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [self reflashQuestionAndAnswerData];
+    }];
+    
+    _psychologicalTeacherTableView.mj_footer =  footer;
+  
     __weak NNPsychologicalTeacherVC *weakSelf = self;
     headerView.popblock = ^(){
         [weakSelf.navigationController popViewControllerAnimated:YES];
@@ -120,6 +127,7 @@
 }
 
 - (void)initData {
+    defaultType = @"new";
     questionAndAnswerMutableArray = [NSMutableArray array];
     [self reflashQuestionAndAnswerData];
 }
@@ -129,14 +137,23 @@
     viewModel.teacherModel = _model;
     
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
-        
+        [questionAndAnswerMutableArray addObjectsFromArray:returnValue];
+        [footer endRefreshing];
+        [_psychologicalTeacherTableView reloadData];
     } WithErrorBlock:^(id errorCode) {
         
     } WithFailureBlock:^(id failureBlock) {
         
     }];
     
-    [viewModel getQuestionAndAnswerWithType:@"1" andToken:TEST_TOKEN andTeacherID:_model.teacherID andLastQuestionAndAnswerID:@"" andPageNum:@"10"];
+    NNQuestionAndAnswerModel *model = [questionAndAnswerMutableArray lastObject];
+    NSString *lastID ;
+    if ([defaultType isEqualToString:@"new"]) {
+        lastID = model.questionId;
+    }else{
+        lastID = [NSString stringWithFormat:@"%ld",(long)model.questionCreateTime];
+    }
+    [viewModel getQuestionAndAnswerWithType:defaultType andToken:TEST_TOKEN andTeacherID:_model.teacherID andLastQuestionAndAnswerID:lastID andPageNum:@"10"];
 }
 
 #pragma --mark  Action
@@ -144,11 +161,14 @@
     defaultSelectButton.selected = NO;
     defaultSelectButton = button;
     defaultSelectButton.selected = YES;
+    [questionAndAnswerMutableArray removeAllObjects];
     if (button.tag == 200) {
-        
+        defaultType = @"new";
     }else{
-        
+        defaultType = @"hot";
     }
+    
+    [self reflashQuestionAndAnswerData];
 }
 
 - (void)registKeyboard {
@@ -200,7 +220,7 @@
 
 #pragma --mark UItableViewDelegate   UItableViewDatasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 10;
+    return questionAndAnswerMutableArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -223,7 +243,7 @@
         UILabel *questionLabel = [[UILabel alloc] init];
         [view addSubview:questionLabel];
         questionLabel.font = [UIFont systemFontOfSize:12];
-        questionLabel.text = @"1000提问";
+        questionLabel.text = [NSString stringWithFormat:@"%@提问",_model.teacherQuestionNum];
         questionLabel.textColor = [UIColor colorFromHexString:@"#999999"];
         [questionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(@15);
@@ -245,7 +265,7 @@
         UILabel *replyLabel = [[UILabel alloc] init];
         [view addSubview:replyLabel];
         replyLabel.font = [UIFont systemFontOfSize:12];
-        replyLabel.text = @"1000回复";
+        replyLabel.text = [NSString stringWithFormat:@"%@回复",_model.teacherAnswerNum];
         replyLabel.textColor = [UIColor colorFromHexString:@"#999999"];
         [replyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(lineView.mas_right).with.offset(5);
@@ -283,7 +303,10 @@
         [view addSubview:hotButton];
         hotButton.selected = YES;
         hotButton.tag = 200;
-        defaultSelectButton = hotButton;
+        if (defaultSelectButton == nil) {
+            defaultSelectButton = hotButton;
+        }
+        
         [hotButton addTarget:self action:@selector(changeNewestAndhottestQuestionAction:) forControlEvents:UIControlEventTouchUpInside];
         [hotButton setTitle:@"最热" forState:UIControlStateNormal];
         [hotButton setTitleColor:[UIColor colorFromHexString:@"#666666"] forState:UIControlStateNormal];
@@ -297,6 +320,15 @@
             make.centerY.mas_equalTo(buttonLineView.mas_centerY);
             make.width.mas_equalTo(@30);
         }];
+        
+        if (defaultSelectButton.tag == 200) {
+            hotButton.selected = YES;
+            newButton.selected = NO;
+        }else{
+            newButton.selected = YES;
+            hotButton.selected = NO;
+        }
+        
         return view;
     }else{
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, 10)];
@@ -308,6 +340,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NNQuestionAndAnswerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNQuestionAndAnswerCell"];
 
+    cell.likeBlock = ^(){
+    
+    };
+    
+    cell.commentBlock = ^(){
+        NNQuestionAndAnswerDetailVC *detailVC = [[NNQuestionAndAnswerDetailVC alloc] initWithNibName:@"NNQuestionAndAnswerDetailVC" bundle:nil];
+        detailVC.signModel = [questionAndAnswerMutableArray objectAtIndex:indexPath.section];
+        detailVC.isComment = YES;
+        [self.navigationController pushViewController:detailVC animated:YES];
+
+    };
+    cell.model = [questionAndAnswerMutableArray objectAtIndex:indexPath.section];
     return cell;
 }
 
@@ -321,6 +365,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NNQuestionAndAnswerDetailVC *detailVC = [[NNQuestionAndAnswerDetailVC alloc] initWithNibName:@"NNQuestionAndAnswerDetailVC" bundle:nil];
+    detailVC.signModel = [questionAndAnswerMutableArray objectAtIndex:indexPath.section];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 

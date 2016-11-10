@@ -8,7 +8,7 @@
 
 #import "NNQuestionAndAnswerViewModel.h"
 #import "NNQuestionAndAnswerModel.h"
-#import "NNQuestionAndAnswerSignalModel.h"
+
 @implementation NNQuestionAndAnswerViewModel
 - (void) getQuestionAndAnswerWithType:(NSString *) type andToken:(NSString *)token andTeacherID:(NSString *)tid andLastQuestionAndAnswerID:(NSString *) lastID andPageNum:(NSString *)pageNum {
     if (lastID == nil) {
@@ -19,6 +19,7 @@
     
     [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_question&a=getQuestionList",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
         NNLog(@"%@",returnValue);
+        [self fetchValueSuccessWithDic:returnValue];
     } withErrorCodeBlock:^(id errorCode) {
         
     } withFailureBlock:^(id failureBlock) {
@@ -29,13 +30,13 @@
 }
 
 - (void)fetchValueSuccessWithDic:(NSDictionary *)returnValue {
-    NNQuestionAndAnswerModel *model = [[NNQuestionAndAnswerModel alloc] init];
+    
  
     NSArray *questionAndAnswerArray = [returnValue objectForKey:@"data"];
     NSMutableArray *questionAndAnswerListArray = [NSMutableArray arrayWithCapacity:questionAndAnswerArray.count];
     for (int i  = 0; i < questionAndAnswerArray.count; i++) {
         NSDictionary *questionAndAnswerDic = [questionAndAnswerArray objectAtIndex:i];
-        NNQuestionAndAnswerSignalModel *signalModel = [[NNQuestionAndAnswerSignalModel alloc] init];
+        NNQuestionAndAnswerModel *signalModel = [[NNQuestionAndAnswerModel alloc] init];
         signalModel.teacherModel = _teacherModel;
         signalModel.questionId = [questionAndAnswerDic objectForKey:@"q_id"];
         signalModel.questionContent = [questionAndAnswerDic objectForKey:@"q_content"];
@@ -46,10 +47,11 @@
         signalModel.quentionType = [questionAndAnswerDic objectForKey:@"qc_name"];
         signalModel.questionHeadUrl = [questionAndAnswerDic objectForKey:@"user_head"];
         signalModel.questionNickName = [questionAndAnswerDic objectForKey:@"user_nickname"];
+        signalModel.isGood = [[questionAndAnswerDic objectForKey:@"has_good"] boolValue];
         [questionAndAnswerListArray addObject:signalModel];
     }
-    model.questionAndAnswerListArray = questionAndAnswerListArray;
-    self.returnBlock(model);
+   
+    self.returnBlock(questionAndAnswerListArray);
 }
 
 @end

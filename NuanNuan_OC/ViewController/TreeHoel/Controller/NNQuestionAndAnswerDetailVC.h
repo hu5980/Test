@@ -7,9 +7,11 @@
 //
 
 #import "NNBaseVC.h"
-#import "NNQuestionAndAnswerSignalModel.h"
+#import "NNQuestionAndAnswerModel.h"
 @interface NNQuestionAndAnswerDetailVC : NNBaseVC
 
-@property (nonatomic,strong) NNQuestionAndAnswerSignalModel *signModel;
+@property (nonatomic,strong) NNQuestionAndAnswerModel *signModel;
+
+@property (nonatomic,assign) BOOL isComment;
 
 @end

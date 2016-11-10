@@ -18,4 +18,5 @@
 @property (nonatomic,strong) NSString *teacherQuestionNum;
 @property (nonatomic,strong) NSString *teacherTypeName;
 @property (nonatomic,strong) NSString *teacherQualifications;
+@property (nonatomic,strong) NSString *teacherAnswerNum;
 @end

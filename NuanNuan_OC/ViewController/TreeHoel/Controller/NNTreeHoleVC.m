@@ -185,7 +185,13 @@
         cell.block = ^(NSInteger tag){
             switch (tag) {
                 case 100:
-                    NNLog(@"评论");
+                {
+                    NNSpitslotDetailVC *spitslotDetailVC = [[NNSpitslotDetailVC alloc] initWithNibName:@"NNSpitslotDetailVC" bundle:nil];
+                    spitslotDetailVC.hidesBottomBarWhenPushed = YES;
+                    spitslotDetailVC.model = [treeHoelModelArrays objectAtIndex:indexPath.section];
+                    spitslotDetailVC.isComment = YES;
+                    [self.navigationController pushViewController:spitslotDetailVC animated:YES];
+                }
                     break;
                 case 101:
                     NNLog(@"点赞");

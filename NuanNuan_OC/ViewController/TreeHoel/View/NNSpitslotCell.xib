@@ -17,7 +17,6 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pw0-mX-zo3">
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="32" id="0Sb-MZ-9XG"/>
                             <constraint firstAttribute="height" constant="32" id="evx-NJ-e4Y"/>
@@ -124,6 +123,7 @@
                 <outlet property="commentLabel" destination="xnJ-y4-DwM" id="lyG-1Z-S3V"/>
                 <outlet property="contentLabel" destination="rg5-Yf-grI" id="qcF-LB-465"/>
                 <outlet property="headImageView" destination="Pw0-mX-zo3" id="JNk-BD-iBF"/>
+                <outlet property="likeButton" destination="7OX-tT-Oll" id="IuB-RL-tKE"/>
                 <outlet property="nickNameLabel" destination="CwV-fM-pKh" id="0AZ-3k-NhZ"/>
                 <outlet property="timelabel" destination="5hb-ki-toz" id="wWT-bU-EcX"/>
             </connections>

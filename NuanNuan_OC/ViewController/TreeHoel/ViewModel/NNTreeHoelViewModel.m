@@ -34,6 +34,7 @@
     for (int i = 0 ; i < treeHoelArray.count; i++) {
         NSDictionary *treeHoelDic = [treeHoelArray objectAtIndex:i];
         NNTreeHoelModel *model = [[NNTreeHoelModel alloc] init];
+        model.isGood = [[treeHoelDic objectForKey:@"has_good"] boolValue];
         model.thID =[treeHoelDic objectForKey:@"th_id"];
         model.uid = [treeHoelDic objectForKey:@"uid"];
         model.thContent = [treeHoelDic objectForKey:@"th_content"];

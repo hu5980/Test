@@ -22,4 +22,6 @@
 @property (nonatomic,assign) NSInteger createTime;
 @property (nonatomic,assign) NSInteger modifyTime;
 @property (nonatomic,strong) NSArray *picArrays;
+
+@property (nonatomic,assign) BOOL isGood;
 @end

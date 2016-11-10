@@ -8,12 +8,21 @@
 
 #import "NNBaseModel.h"
 #import "NNEmotionTeacherModel.h"
-#import "NNQuestionAndAnswerSignalModel.h"
+
 
 @interface NNQuestionAndAnswerModel : NNBaseModel
 
-@property (nonatomic,strong) NSString *questionNum;
-@property (nonatomic,strong) NSString *answerNum;
-@property (nonatomic,strong) NSMutableArray <NNQuestionAndAnswerSignalModel *> *questionAndAnswerListArray;
+@property (nonatomic,strong) NNEmotionTeacherModel *teacherModel;
+@property (nonatomic,strong) NSString *questionId;
+@property (nonatomic,strong) NSString *questionContent;
+@property (nonatomic,strong) NSString *questionCommentNum;
+@property (nonatomic,strong) NSString *questionGoodsNum;
+@property (nonatomic,strong) NSString *quentionType;
+@property (nonatomic,strong) NSString *questionHeadUrl;
+@property (nonatomic,strong) NSString *questionNickName;
+@property (nonatomic,strong) NSString *questionAnswer;
+@property (nonatomic,assign) NSInteger questionCreateTime;
+
+@property (nonatomic,assign) BOOL isGood;
 
 @end

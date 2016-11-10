@@ -82,6 +82,9 @@
     };
     [self.view addSubview:askingView];
 
+    if (_isComment) {
+        [replyView.replytextField becomeFirstResponder];
+    }
 }
 
 - (void)initData {

@@ -30,5 +30,6 @@ typedef void(^selectImageIndexPath)(NSInteger indexPath);
 
 @property (copy , nonatomic) selectImageIndexPath selectImageBlock;
 
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
 
 @end

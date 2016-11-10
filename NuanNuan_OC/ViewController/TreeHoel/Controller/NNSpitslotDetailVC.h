@@ -12,4 +12,6 @@
 
 @property (nonatomic,strong) NNTreeHoelModel *model;
 
+@property (assign,nonatomic) BOOL isComment;
+
 @end

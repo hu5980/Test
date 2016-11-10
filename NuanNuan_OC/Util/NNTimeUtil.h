@@ -12,4 +12,6 @@
 
 + (NSString *)timeDealWithFormat:(NSString *)format andTime:(NSInteger)time;
 
++ (NSString *)timeDealWithTimeFromNow:(NSInteger )time;
+
 @end

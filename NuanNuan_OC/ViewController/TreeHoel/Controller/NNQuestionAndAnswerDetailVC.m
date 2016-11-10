@@ -80,6 +80,10 @@
         }
     };
     [self.view addSubview:askingView];
+    
+    if (_isComment) {
+        [replyView.replytextField becomeFirstResponder];
+    }
 
 }
 
@@ -180,7 +184,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath .section == 0) {
         NNQuestionAndAnswerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNQuestionAndAnswerCell"];
-        
+        cell.likeBlock = ^(){
+            
+        };
+        cell.commentBlock = ^(){
+            [replyView.replytextField becomeFirstResponder];
+        };
+        cell.model = _signModel;
         return cell;
     }else{
         NNNeterReplyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNNeterReplyCell"];

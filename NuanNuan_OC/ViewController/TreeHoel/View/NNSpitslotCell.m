@@ -39,7 +39,7 @@
     for (UIView *view in self.broswerView.subviews) {
         [view removeFromSuperview];
     }
-    
+    self.likeButton.selected = model.isGood;
     [self.broswerView addSubview:broswerImageView];
 }
 

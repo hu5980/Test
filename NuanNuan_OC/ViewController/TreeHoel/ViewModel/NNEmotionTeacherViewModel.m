@@ -49,6 +49,7 @@
         model.teacherTypeName = [listArray[i] objectForKey:@"qc_name"] ;
         model.teacherNickName =  [listArray[i] objectForKey:@"t_nickname"] ;
         model.teacherQualifications =  [listArray[i] objectForKey:@"t_qualifications"] ;
+        model.teacherAnswerNum = [listArray[i] objectForKey:@"q_answer_num"];
         [mutableArrays addObject:model];
     }
     self.returnBlock(mutableArrays);
