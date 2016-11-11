@@ -47,7 +47,7 @@
     
 }
 - (IBAction)likeAction:(UIButton *)sender {
-    _likeBlock();
+    _likeBlock(sender);
 }
 
 - (IBAction)commentAction:(UIButton *)sender {

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NNTreeHoelModel.h"
-typedef void(^spitslotActionBlock)(NSInteger tag);
+typedef void(^spitslotActionBlock)(UIButton *button);
 
 typedef void(^selectImageIndexPath)(NSInteger indexPath);
 

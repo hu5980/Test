@@ -77,6 +77,8 @@
                             <constraint firstAttribute="width" constant="26" id="z3K-js-woU"/>
                         </constraints>
                         <state key="normal" image="202_17"/>
+                        <state key="selected" image="202_17_p"/>
+                        <state key="highlighted" image="202_17_p"/>
                         <connections>
                             <action selector="praiseSpitslotAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="mii-hX-xwg"/>
                         </connections>
@@ -133,5 +135,6 @@
     <resources>
         <image name="202_14" width="13" height="12"/>
         <image name="202_17" width="13" height="12"/>
+        <image name="202_17_p" width="13" height="12"/>
     </resources>
 </document>

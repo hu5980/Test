@@ -13,12 +13,18 @@
 #import "NNReplyView.h"
 #import "NNAskingView.h"
 #import "MWPhotoBrowser.h"
+#import "NNReplyViewModel.h"
+#import "NNCommentViewModel.h"
+#import "NNCommentModel.h"
+#import "NNUnPariseViewModel.h"
+#import "NNPariseViewModel.h"
 
 @interface NNSpitslotDetailVC () <UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,UITextFieldDelegate> {
-    NSArray *array;
     NNAskingView *askingView;
     UIButton *backgroundButton;
     NNReplyView *replyView ;
+    NSMutableArray *commentMutableArray;
+     MJRefreshBackNormalFooter *footer;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *spitslotTableView;
@@ -43,10 +49,17 @@
     [self setNavigationBackButton:YES];
     
     _spitslotTableView.delegate = self;
+    _spitslotTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _spitslotTableView.dataSource = self;
     _spitslotTableView.backgroundColor = NN_BACKGROUND_COLOR;
     [_spitslotTableView registerNib:[UINib nibWithNibName:@"NNNeterReplyCell" bundle:nil] forCellReuseIdentifier:@"NNNeterReplyCell"];
     [_spitslotTableView registerNib:[UINib nibWithNibName:@"NNSpitslotCell" bundle:nil] forCellReuseIdentifier:@"NNSpitslotCell"];
+    
+    footer =  [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [self reflashCommentData:NO];
+    }];
+    
+    _spitslotTableView.mj_footer =  footer;
     
     replyView = LOAD_VIEW_FROM_BUNDLE(@"NNReplyView");
     [self.view addSubview:replyView];
@@ -77,7 +90,7 @@
         if(tag == 100){
             [weakSelf registKeyboard];
         }else{
-            
+            [weakSelf replyComment];
         }
     };
     [self.view addSubview:askingView];
@@ -88,8 +101,58 @@
 }
 
 - (void)initData {
-    array = @[@"http1",@"http2",@"http1",@"http2"];
+    commentMutableArray = [NSMutableArray array] ;
+    [self reflashCommentData:NO];
 }
+
+- (void)reflashCommentData:(BOOL) isDowm {
+    
+    
+    NNCommentViewModel *viewModel = [[NNCommentViewModel alloc] init];
+    
+    [viewModel setBlockWithReturnBlock:^(id returnValue) {
+        if (isDowm) {
+            NSMutableArray *array = [NSMutableArray arrayWithArray:returnValue];
+            [array addObjectsFromArray:commentMutableArray];
+            commentMutableArray = array;
+        }else{
+            [commentMutableArray addObjectsFromArray:returnValue];
+        }
+        
+        [footer endRefreshing];
+        [_spitslotTableView reloadData];
+    } WithErrorBlock:^(id errorCode) {
+        
+    } WithFailureBlock:^(id failureBlock) {
+        
+    }];
+    
+    NNCommentModel *lastModel = [commentMutableArray lastObject];
+    NNCommentModel *firstModel = [commentMutableArray firstObject];
+    if (isDowm) {
+        [viewModel getCommentWithToken:TEST_TOKEN andCommentType:@"2" andID:_model.thID andLastID:firstModel.commentID andPageNum:@"10" andIsDownReflash:@"1" ];
+    }else{
+        [viewModel getCommentWithToken:TEST_TOKEN andCommentType:@"2" andID:_model.thID andLastID:lastModel.commentID andPageNum:@"10" andIsDownReflash:@"0" ];
+    }
+}
+
+- (void)replyComment {
+    NNReplyViewModel *viewModel = [[NNReplyViewModel alloc] init];
+    __weak NNSpitslotDetailVC *weakSelf = self;
+    [viewModel setBlockWithReturnBlock:^(id returnValue) {
+        if ([returnValue isEqualToString:@"success"]) {
+            [weakSelf registKeyboard];
+            [weakSelf reflashCommentData:YES];
+        }
+    } WithErrorBlock:^(id errorCode) {
+        
+    } WithFailureBlock:^(id failureBlock) {
+        
+    }];
+    
+    [viewModel replyAnswerOrTreeHoelWithToken:TEST_TOKEN andReplyType:@"2" andTargetID:_model.thID andConnent: askingView.askingTextView.text];
+}
+
 
 #pragma --mark  Action
 
@@ -111,6 +174,8 @@
         askingView.frame = CGRectMake(0, keyBoardFrame.origin.y - 130 - 64, NNAppWidth, 130);
     }];
     
+    [askingView.askingTextView becomeFirstResponder];
+    [replyView.replytextField resignFirstResponder];
     
 }
 
@@ -120,6 +185,8 @@
     [UIView animateWithDuration:animationDuration animations:^{
         askingView.frame = CGRectMake(0, NNAppHeight, NNAppWidth, 130);
     }];
+    askingView.askingTextView.text = nil;
+    replyView.replytextField.text = nil;
 }
 
 #pragma --mark Delegate
@@ -144,7 +211,7 @@
     if (section == 0) {
         return 1;
     }else{
-        return 10;
+        return commentMutableArray.count;
     }
 }
 
@@ -190,8 +257,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         NNSpitslotCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNSpitslotCell"];
-     
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         __weak NNSpitslotDetailVC *weakSelf = self;
+         __weak NNSpitslotCell *weakCell = cell;
         cell.selectImageBlock = ^(NSInteger selectIndex){
             
             NSMutableArray *phonoArrays = [NSMutableArray arrayWithCapacity:_model.picArrays.count];
@@ -212,13 +280,46 @@
         };
         cell.model = _model;
         
-        cell.block = ^(NSInteger tag){
-            switch (tag) {
+        cell.block = ^(UIButton *button){
+            switch (button.tag) {
                 case 100:
                     NNLog(@"评论");
+                    [replyView.replytextField becomeFirstResponder];
                     break;
                 case 101:
-                    NNLog(@"点赞");
+                {
+                    NNPariseViewModel  *viewModel = [[NNPariseViewModel alloc] init];
+                    [viewModel setBlockWithReturnBlock:^(id returnValue) {
+                        if([returnValue isEqualToString:@"success"]){
+                            button.selected = YES;
+                            weakCell.bePraisedLabel.text = [NSString stringWithFormat:@"%ld",[cell.bePraisedLabel.text integerValue] + 1];
+                        }
+                    } WithErrorBlock:^(id errorCode) {
+                        
+                    } WithFailureBlock:^(id failureBlock) {
+                        
+                    }];
+                    
+                    NNUnPariseViewModel *unViewModel = [[NNUnPariseViewModel alloc] init];
+                    [unViewModel setBlockWithReturnBlock:^(id returnValue) {
+                        if([returnValue isEqualToString:@"success"]){
+                            button.selected = NO;
+                            weakCell.bePraisedLabel.text = [NSString stringWithFormat:@"%ld",[cell.bePraisedLabel.text integerValue] - 1];
+                        }
+                    } WithErrorBlock:^(id errorCode) {
+                    } WithFailureBlock:^(id failureBlock) {
+                    }];
+                    
+                    
+                    
+                    if (button.selected) {
+                        [unViewModel unParisdArticleWithToken:TEST_TOKEN andArticleType:@"2" andArticleID:_model.thID];
+                    }else{
+                        [viewModel parisdArticleWithToken:TEST_TOKEN andArticleType:@"2" andArticleID:_model.thID];
+                    }
+                    
+
+                }
                     break;
                 default:
                     break;
@@ -228,7 +329,37 @@
         return cell;
     }else{
         NNNeterReplyCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"NNNeterReplyCell"];
-        
+        cell.model = [commentMutableArray objectAtIndex:indexPath.row];
+        __weak NNNeterReplyCell*weakCell = cell;
+        cell.likeCommentBlock = ^(UIButton * button ){
+            NNPariseViewModel  *viewModel = [[NNPariseViewModel alloc] init];
+            [viewModel setBlockWithReturnBlock:^(id returnValue) {
+                if([returnValue isEqualToString:@"success"]){
+                    button.selected = YES;
+                    weakCell.likeNumLabel.text = [NSString stringWithFormat:@"%ld",[cell.likeNumLabel.text integerValue] + 1];
+                }
+            } WithErrorBlock:^(id errorCode) {
+                
+            } WithFailureBlock:^(id failureBlock) {
+                
+            }];
+            
+            NNUnPariseViewModel *unViewModel = [[NNUnPariseViewModel alloc] init];
+            [unViewModel setBlockWithReturnBlock:^(id returnValue) {
+                if([returnValue isEqualToString:@"success"]){
+                    button.selected = NO;
+                    weakCell.likeNumLabel.text = [NSString stringWithFormat:@"%ld",[cell.likeNumLabel.text integerValue] - 1];
+                }
+            } WithErrorBlock:^(id errorCode) {
+            } WithFailureBlock:^(id failureBlock) {
+            }];
+            if (button.selected) {
+                [unViewModel unParisdArticleWithToken:TEST_TOKEN andArticleType:@"4" andArticleID:_model.thID];
+            }else{
+                [viewModel parisdArticleWithToken:TEST_TOKEN andArticleType:@"4" andArticleID:_model.thID];
+            }
+
+        };
         return cell;
     }
 }

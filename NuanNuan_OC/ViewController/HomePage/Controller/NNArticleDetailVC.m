@@ -38,7 +38,6 @@
     customView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:customView];
     
-    
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     backButton.frame = CGRectMake(15, 26, 32, 32);
     [backButton setBackgroundImage:[UIImage imageNamed:@"103_03"] forState:UIControlStateNormal];
@@ -62,10 +61,20 @@
     [shareButton addTarget:self action:@selector(shareAction:) forControlEvents:UIControlEventTouchUpInside];
     [customView addSubview:shareButton];
     
-    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.backgroundColor = NN_MAIN_COLOR;
+    button.frame = CGRectMake(0, NNAppHeight - 40, NNAppWidth, 40);
+    [button setTitle:@"我要预约" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(makeAnAppointment:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
 }
 
 #pragma --mark Action 
+
+- (void)makeAnAppointment:(UIButton *)button {
+
+}
+
 - (void)popAction:(UIButton *)button {
     [self.navigationController popViewControllerAnimated:YES];
 }

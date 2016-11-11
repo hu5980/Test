@@ -124,8 +124,8 @@
             NNLog(@"%ld",(long)tag);
         };
         
-        cell.block = ^(NSInteger tag){
-            switch (tag) {
+        cell.block = ^(UIButton *button){
+            switch (button.tag) {
                 case 100:
                     NNLog(@"评论");
                     break;

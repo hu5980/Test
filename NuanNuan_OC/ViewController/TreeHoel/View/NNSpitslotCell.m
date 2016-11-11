@@ -49,10 +49,10 @@
     // Configure the view for the selected state
 }
 - (IBAction)praiseSpitslotAction:(UIButton *)sender {
-    _block(sender.tag);
+    _block(sender);
 }
 - (IBAction)commentSpitslotAction:(UIButton *)sender {
-    _block(sender.tag);
+    _block(sender);
 }
 
 @end

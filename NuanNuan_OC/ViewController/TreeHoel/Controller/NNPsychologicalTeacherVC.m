@@ -15,7 +15,8 @@
 #import "NNAskingViewModel.h"
 #import "NNProgressHUD.h"
 #import "NNQuestionAndAnswerViewModel.h"
-
+#import "NNPariseViewModel.h"
+#import "NNUnPariseViewModel.h"
 @interface NNPsychologicalTeacherVC ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UITextViewDelegate> {
     NNPsychologicalTeacherHeaderView *headerView;
     UIButton *defaultSelectButton;
@@ -110,6 +111,7 @@
             [askingViewModel setBlockWithReturnBlock:^(id returnValue) {
                 if ([returnValue  isEqualToString:@"success"]) {
                     [weakSelf registKeyboard];
+                    [NNProgressHUD showHudAotoHideAddToView:weakSelf.view withMessage:@"提问成功，将在回复后显示"];
                 }else{
                     [NNProgressHUD showHudAotoHideAddToView:weakSelf.view withMessage:@"提问失败"];
                 }
@@ -191,6 +193,8 @@
         askingView.frame = CGRectMake(0, keyBoardFrame.origin.y - 130, NNAppWidth, 130);
     }];
     
+    [askingView.askingTextView becomeFirstResponder];
+    [replyView.replytextField resignFirstResponder];
     
 }
 
@@ -200,6 +204,9 @@
     [UIView animateWithDuration:animationDuration animations:^{
         askingView.frame = CGRectMake(0, NNAppHeight, NNAppWidth, 130);
     }];
+    
+    askingView.askingTextView.text = nil;
+    replyView.replytextField.text = nil;
 }
 
 #pragma --mark Delegate
@@ -340,8 +347,38 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NNQuestionAndAnswerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNQuestionAndAnswerCell"];
 
-    cell.likeBlock = ^(){
-    
+    __weak NNQuestionAndAnswerCell *weakCell = cell;
+    cell.likeBlock = ^(UIButton *button){
+        NNPariseViewModel  *viewModel = [[NNPariseViewModel alloc] init];
+        [viewModel setBlockWithReturnBlock:^(id returnValue) {
+            if([returnValue isEqualToString:@"success"]){
+                button.selected = YES;
+                weakCell.likeNumLabel.text = [NSString stringWithFormat:@"%ld",[cell.likeNumLabel.text integerValue] + 1];
+            }
+        } WithErrorBlock:^(id errorCode) {
+            
+        } WithFailureBlock:^(id failureBlock) {
+            
+        }];
+        
+        NNUnPariseViewModel *unViewModel = [[NNUnPariseViewModel alloc] init];
+        [unViewModel setBlockWithReturnBlock:^(id returnValue) {
+            if([returnValue isEqualToString:@"success"]){
+                button.selected = NO;
+                weakCell.likeNumLabel.text = [NSString stringWithFormat:@"%ld",[cell.likeNumLabel.text integerValue] - 1];
+            }
+        } WithErrorBlock:^(id errorCode) {
+        } WithFailureBlock:^(id failureBlock) {
+        }];
+        
+        NNQuestionAndAnswerModel *signModel = [questionAndAnswerMutableArray objectAtIndex:indexPath.section];
+        
+        if (button.selected) {
+            [unViewModel unParisdArticleWithToken:TEST_TOKEN andArticleType:@"1" andArticleID:signModel.questionId];
+        }else{
+            [viewModel parisdArticleWithToken:TEST_TOKEN andArticleType:@"1" andArticleID:signModel.questionId];
+        }
+
     };
     
     cell.commentBlock = ^(){

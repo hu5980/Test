@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NNQuestionAndAnswerModel.h"
 
-typedef void(^likeTheAnswerBlock)();
+typedef void(^likeTheAnswerBlock)(UIButton *button);
 
 typedef void(^commentBlock)();
 

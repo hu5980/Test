@@ -19,6 +19,8 @@
 #import "NNTreeHoelViewModel.h"
 #import "NNTreeHoelModel.h"
 #import "MWPhotoBrowser.h"
+#import "NNPariseViewModel.h"
+#import "NNUnPariseViewModel.h"
 
 @interface NNTreeHoleVC ()<UITableViewDelegate,UITableViewDataSource,MWPhotoBrowserDelegate> {
     UIButton *defaultSelectButton;
@@ -159,7 +161,7 @@
     }else{
         NNSpitslotCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNSpitslotCell"];
         NNTreeHoelModel *model = [treeHoelModelArrays objectAtIndex:indexPath.section];
-        
+        __weak NNSpitslotCell *weakCell = cell;
         __weak NNTreeHoleVC *weakSelf = self;
         cell.selectImageBlock = ^(NSInteger selectIndex){
             
@@ -182,8 +184,8 @@
         cell.model = model;
 
         
-        cell.block = ^(NSInteger tag){
-            switch (tag) {
+        cell.block = ^(UIButton * button){
+            switch (button.tag) {
                 case 100:
                 {
                     NNSpitslotDetailVC *spitslotDetailVC = [[NNSpitslotDetailVC alloc] initWithNibName:@"NNSpitslotDetailVC" bundle:nil];
@@ -194,7 +196,38 @@
                 }
                     break;
                 case 101:
-                    NNLog(@"点赞");
+                {
+                    NNPariseViewModel  *viewModel = [[NNPariseViewModel alloc] init];
+                    [viewModel setBlockWithReturnBlock:^(id returnValue) {
+                        if([returnValue isEqualToString:@"success"]){
+                            button.selected = YES;
+                            weakCell.bePraisedLabel.text = [NSString stringWithFormat:@"%ld",[cell.bePraisedLabel.text integerValue] + 1];
+                        }
+                    } WithErrorBlock:^(id errorCode) {
+                        
+                    } WithFailureBlock:^(id failureBlock) {
+                        
+                    }];
+                    
+                    NNUnPariseViewModel *unViewModel = [[NNUnPariseViewModel alloc] init];
+                    [unViewModel setBlockWithReturnBlock:^(id returnValue) {
+                        if([returnValue isEqualToString:@"success"]){
+                            button.selected = NO;
+                            weakCell.bePraisedLabel.text = [NSString stringWithFormat:@"%ld",[cell.bePraisedLabel.text integerValue] - 1];
+                        }
+                    } WithErrorBlock:^(id errorCode) {
+                    } WithFailureBlock:^(id failureBlock) {
+                    }];
+                    
+                   
+                    
+                    if (button.selected) {
+                        [unViewModel unParisdArticleWithToken:TEST_TOKEN andArticleType:@"2" andArticleID:model.thID];
+                    }else{
+                        [viewModel parisdArticleWithToken:TEST_TOKEN andArticleType:@"2" andArticleID:model.thID];
+                    }
+
+                }
                     break;
                 default:
                     break;

@@ -7,7 +7,8 @@
 //
 
 #import "NNNeterReplyCell.h"
-
+#import "UIImageView+WebCache.h"
+#import "NNTimeUtil.h"
 @implementation NNNeterReplyCell
 
 - (void)awakeFromNib {
@@ -19,6 +20,19 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setModel:(NNCommentModel *)model {
+    _model = model;
+    [self.userHeadImageView sd_setImageWithURL:[NSURL URLWithString:model.commentHeaderUrl] placeholderImage:[UIImage imageNamed:@""]];
+    self.nickNameLabel.text = model.commentNickName;
+    self.commentContentLabel.text = model.commentContent;
+    self.commentTImeLabel.text = [NNTimeUtil timeDealWithFormat:@"yyyy-MM-dd HH:mm:ss" andTime:model.commentCreateTime];
+    self.likeNumLabel.text = model.commentGoodsNum;
+}
+
+- (IBAction)likeButtonAction:(UIButton *)sender {
+    _likeCommentBlock(sender);
 }
 
 @end

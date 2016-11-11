@@ -18,6 +18,8 @@
 		0DDAEE7E1DBBB030008478DC /* NNSpitslotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DDAEE7C1DBBB030008478DC /* NNSpitslotCell.xib */; };
 		BC09AFEA1DB8AC9400BC4D1B /* NNServerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC09AFE81DB8AC9400BC4D1B /* NNServerListCell.m */; };
 		BC09AFEB1DB8AC9400BC4D1B /* NNServerListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC09AFE91DB8AC9400BC4D1B /* NNServerListCell.xib */; };
+		BC17E9361DD598AA0054FBE2 /* NNCommentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC17E9351DD598AA0054FBE2 /* NNCommentViewModel.m */; };
+		BC17E9391DD599B60054FBE2 /* NNCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC17E9381DD599B60054FBE2 /* NNCommentModel.m */; };
 		BC247E9B1DAA19B100AB5C84 /* NNEmotionallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC247E991DAA19B100AB5C84 /* NNEmotionallCell.m */; };
 		BC247E9C1DAA19B100AB5C84 /* NNEmotionallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC247E9A1DAA19B100AB5C84 /* NNEmotionallCell.xib */; };
 		BC247EA51DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC247EA31DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m */; };
@@ -131,6 +133,10 @@
 		BC09AFE71DB8AC9400BC4D1B /* NNServerListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNServerListCell.h; sourceTree = "<group>"; };
 		BC09AFE81DB8AC9400BC4D1B /* NNServerListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNServerListCell.m; sourceTree = "<group>"; };
 		BC09AFE91DB8AC9400BC4D1B /* NNServerListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNServerListCell.xib; sourceTree = "<group>"; };
+		BC17E9341DD598AA0054FBE2 /* NNCommentViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNCommentViewModel.h; sourceTree = "<group>"; };
+		BC17E9351DD598AA0054FBE2 /* NNCommentViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNCommentViewModel.m; sourceTree = "<group>"; };
+		BC17E9371DD599B60054FBE2 /* NNCommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNCommentModel.h; sourceTree = "<group>"; };
+		BC17E9381DD599B60054FBE2 /* NNCommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNCommentModel.m; sourceTree = "<group>"; };
 		BC247E981DAA19B100AB5C84 /* NNEmotionallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEmotionallCell.h; sourceTree = "<group>"; };
 		BC247E991DAA19B100AB5C84 /* NNEmotionallCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNEmotionallCell.m; sourceTree = "<group>"; };
 		BC247E9A1DAA19B100AB5C84 /* NNEmotionallCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNEmotionallCell.xib; sourceTree = "<group>"; };
@@ -756,6 +762,8 @@
 				BC4C8E391DD06F3900544A83 /* NNTreeHoelViewModel.m */,
 				BC4C8E411DD3056800544A83 /* NNQuestionAndAnswerViewModel.h */,
 				BC4C8E421DD3056800544A83 /* NNQuestionAndAnswerViewModel.m */,
+				BC17E9341DD598AA0054FBE2 /* NNCommentViewModel.h */,
+				BC17E9351DD598AA0054FBE2 /* NNCommentViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -769,6 +777,8 @@
 				BC4C8E3C1DD0713F00544A83 /* NNTreeHoelModel.m */,
 				BC4C8E441DD308DB00544A83 /* NNQuestionAndAnswerModel.h */,
 				BC4C8E451DD308DB00544A83 /* NNQuestionAndAnswerModel.m */,
+				BC17E9371DD599B60054FBE2 /* NNCommentModel.h */,
+				BC17E9381DD599B60054FBE2 /* NNCommentModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -958,6 +968,7 @@
 				0DDAEE791DBB9F87008478DC /* NNImageBroswerView.m in Sources */,
 				BC58BA8A1DBDF29000F3BF0D /* NNSetCell.m in Sources */,
 				BC7A672A1DB4C3C000C3B3D9 /* NNNetRequestClass.m in Sources */,
+				BC17E9361DD598AA0054FBE2 /* NNCommentViewModel.m in Sources */,
 				BC4C8E431DD3056800544A83 /* NNQuestionAndAnswerViewModel.m in Sources */,
 				BC4C8E3D1DD0713F00544A83 /* NNTreeHoelModel.m in Sources */,
 				BC852E791DCAE9FC00ADE5C9 /* NNProgressHUD.m in Sources */,
@@ -974,6 +985,7 @@
 				BC58BA671DBDE99500F3BF0D /* NNMinePraisedVC.m in Sources */,
 				BC8C61DB1DC049ED00094F94 /* NNBaseModel.m in Sources */,
 				BCD9AE951DAE0941008DB98E /* NNQuestionAndAnswerCell.m in Sources */,
+				BC17E9391DD599B60054FBE2 /* NNCommentModel.m in Sources */,
 				BC58BA6C1DBDE9A800F3BF0D /* NNMineCommentVC.m in Sources */,
 				BCB6EFE31DB62F3600BEFD37 /* NNHomepageSuccessCaseModel.m in Sources */,
 				BC852E8D1DCB3DED00ADE5C9 /* NNUnPariseViewModel.m in Sources */,
@@ -1124,7 +1136,7 @@
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Sina",
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/WeChat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.neusoft.NuanNuan-OC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xikang.ss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 			};
@@ -1152,7 +1164,7 @@
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Sina",
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/WeChat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.neusoft.NuanNuan-OC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xikang.ss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 			};
