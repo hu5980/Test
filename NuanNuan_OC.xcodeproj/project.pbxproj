@@ -28,6 +28,8 @@
 		BC247EAB1DAA35D600AB5C84 /* NNMineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC247EA91DAA35D600AB5C84 /* NNMineCell.xib */; };
 		BC328EEA1DBF2F5E000AF40B /* NNLoginAndRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC328EE81DBF2F5E000AF40B /* NNLoginAndRegisterVC.m */; };
 		BC328EEB1DBF2F5E000AF40B /* NNLoginAndRegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC328EE91DBF2F5E000AF40B /* NNLoginAndRegisterVC.xib */; };
+		BC3BFA331DD9B73300F73DEF /* NNQuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3BFA311DD9B73300F73DEF /* NNQuestionCell.m */; };
+		BC3BFA341DD9B73300F73DEF /* NNQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3BFA321DD9B73300F73DEF /* NNQuestionCell.xib */; };
 		BC4C8E3A1DD06F3900544A83 /* NNTreeHoelViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4C8E391DD06F3900544A83 /* NNTreeHoelViewModel.m */; };
 		BC4C8E3D1DD0713F00544A83 /* NNTreeHoelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4C8E3C1DD0713F00544A83 /* NNTreeHoelModel.m */; };
 		BC4C8E401DD1A15D00544A83 /* NNTimeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4C8E3F1DD1A15D00544A83 /* NNTimeUtil.m */; };
@@ -59,6 +61,14 @@
 		BC852E871DCB19B500ADE5C9 /* NNchangeUserInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC852E861DCB19B500ADE5C9 /* NNchangeUserInfoViewModel.m */; };
 		BC852E8A1DCB1BBE00ADE5C9 /* NNPariseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC852E891DCB1BBE00ADE5C9 /* NNPariseViewModel.m */; };
 		BC852E8D1DCB3DED00ADE5C9 /* NNUnPariseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC852E8C1DCB3DED00ADE5C9 /* NNUnPariseViewModel.m */; };
+		BC8627661DD99D3F00162082 /* NNAppointmentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8627641DD99D3F00162082 /* NNAppointmentVC.m */; };
+		BC8627671DD99D3F00162082 /* NNAppointmentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8627651DD99D3F00162082 /* NNAppointmentVC.xib */; };
+		BC86276B1DD99EE100162082 /* NNQuestionerInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8627691DD99EE100162082 /* NNQuestionerInfoCell.m */; };
+		BC86276C1DD99EE100162082 /* NNQuestionerInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC86276A1DD99EE100162082 /* NNQuestionerInfoCell.xib */; };
+		BC8627701DD9A03400162082 /* NNQuestionerChooseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC86276E1DD9A03400162082 /* NNQuestionerChooseCell.m */; };
+		BC8627711DD9A03400162082 /* NNQuestionerChooseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC86276F1DD9A03400162082 /* NNQuestionerChooseCell.xib */; };
+		BC8627741DD9A07C00162082 /* NNChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8627731DD9A07C00162082 /* NNChooseView.m */; };
+		BC8627791DD9A0C500162082 /* NNChooseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8627781DD9A0C500162082 /* NNChooseButton.m */; };
 		BC8C61D81DC045D500094F94 /* NNRingImageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8C61D71DC045D500094F94 /* NNRingImageViewModel.m */; };
 		BC8C61DB1DC049ED00094F94 /* NNBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8C61DA1DC049ED00094F94 /* NNBaseModel.m */; };
 		BC8C61DE1DC04A2C00094F94 /* NNRingImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8C61DD1DC04A2C00094F94 /* NNRingImageModel.m */; };
@@ -149,6 +159,9 @@
 		BC328EE71DBF2F5E000AF40B /* NNLoginAndRegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNLoginAndRegisterVC.h; sourceTree = "<group>"; };
 		BC328EE81DBF2F5E000AF40B /* NNLoginAndRegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNLoginAndRegisterVC.m; sourceTree = "<group>"; };
 		BC328EE91DBF2F5E000AF40B /* NNLoginAndRegisterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNLoginAndRegisterVC.xib; sourceTree = "<group>"; };
+		BC3BFA301DD9B73300F73DEF /* NNQuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNQuestionCell.h; sourceTree = "<group>"; };
+		BC3BFA311DD9B73300F73DEF /* NNQuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNQuestionCell.m; sourceTree = "<group>"; };
+		BC3BFA321DD9B73300F73DEF /* NNQuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNQuestionCell.xib; sourceTree = "<group>"; };
 		BC4C8E381DD06F3900544A83 /* NNTreeHoelViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNTreeHoelViewModel.h; sourceTree = "<group>"; };
 		BC4C8E391DD06F3900544A83 /* NNTreeHoelViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNTreeHoelViewModel.m; sourceTree = "<group>"; };
 		BC4C8E3B1DD0713F00544A83 /* NNTreeHoelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNTreeHoelModel.h; sourceTree = "<group>"; };
@@ -204,6 +217,19 @@
 		BC852E891DCB1BBE00ADE5C9 /* NNPariseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNPariseViewModel.m; sourceTree = "<group>"; };
 		BC852E8B1DCB3DED00ADE5C9 /* NNUnPariseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNUnPariseViewModel.h; sourceTree = "<group>"; };
 		BC852E8C1DCB3DED00ADE5C9 /* NNUnPariseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNUnPariseViewModel.m; sourceTree = "<group>"; };
+		BC8627631DD99D3F00162082 /* NNAppointmentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNAppointmentVC.h; sourceTree = "<group>"; };
+		BC8627641DD99D3F00162082 /* NNAppointmentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNAppointmentVC.m; sourceTree = "<group>"; };
+		BC8627651DD99D3F00162082 /* NNAppointmentVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNAppointmentVC.xib; sourceTree = "<group>"; };
+		BC8627681DD99EE100162082 /* NNQuestionerInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNQuestionerInfoCell.h; sourceTree = "<group>"; };
+		BC8627691DD99EE100162082 /* NNQuestionerInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNQuestionerInfoCell.m; sourceTree = "<group>"; };
+		BC86276A1DD99EE100162082 /* NNQuestionerInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNQuestionerInfoCell.xib; sourceTree = "<group>"; };
+		BC86276D1DD9A03400162082 /* NNQuestionerChooseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNQuestionerChooseCell.h; sourceTree = "<group>"; };
+		BC86276E1DD9A03400162082 /* NNQuestionerChooseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNQuestionerChooseCell.m; sourceTree = "<group>"; };
+		BC86276F1DD9A03400162082 /* NNQuestionerChooseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNQuestionerChooseCell.xib; sourceTree = "<group>"; };
+		BC8627721DD9A07C00162082 /* NNChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNChooseView.h; sourceTree = "<group>"; };
+		BC8627731DD9A07C00162082 /* NNChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNChooseView.m; sourceTree = "<group>"; };
+		BC8627771DD9A0C500162082 /* NNChooseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNChooseButton.h; sourceTree = "<group>"; };
+		BC8627781DD9A0C500162082 /* NNChooseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNChooseButton.m; sourceTree = "<group>"; };
 		BC8C61D61DC045D500094F94 /* NNRingImageViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNRingImageViewModel.h; sourceTree = "<group>"; };
 		BC8C61D71DC045D500094F94 /* NNRingImageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNRingImageViewModel.m; sourceTree = "<group>"; };
 		BC8C61D91DC049ED00094F94 /* NNBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNBaseModel.h; sourceTree = "<group>"; };
@@ -551,6 +577,9 @@
 				BCD9AE681DACBCB6008DB98E /* NNEmotionCaseVC.xib */,
 				BC8C61DF1DC081CD00094F94 /* NNArticleDetailVC.h */,
 				BC8C61E01DC081CD00094F94 /* NNArticleDetailVC.m */,
+				BC8627631DD99D3F00162082 /* NNAppointmentVC.h */,
+				BC8627641DD99D3F00162082 /* NNAppointmentVC.m */,
+				BC8627651DD99D3F00162082 /* NNAppointmentVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -583,6 +612,19 @@
 				BCD9AE701DACCFF0008DB98E /* NNRingImageView.h */,
 				BCD9AE711DACCFF0008DB98E /* NNRingImageView.m */,
 				BCD9AE771DACD323008DB98E /* NNRingImageView.xib */,
+				BC8627681DD99EE100162082 /* NNQuestionerInfoCell.h */,
+				BC8627691DD99EE100162082 /* NNQuestionerInfoCell.m */,
+				BC86276A1DD99EE100162082 /* NNQuestionerInfoCell.xib */,
+				BC86276D1DD9A03400162082 /* NNQuestionerChooseCell.h */,
+				BC86276E1DD9A03400162082 /* NNQuestionerChooseCell.m */,
+				BC86276F1DD9A03400162082 /* NNQuestionerChooseCell.xib */,
+				BC8627721DD9A07C00162082 /* NNChooseView.h */,
+				BC8627731DD9A07C00162082 /* NNChooseView.m */,
+				BC8627771DD9A0C500162082 /* NNChooseButton.h */,
+				BC8627781DD9A0C500162082 /* NNChooseButton.m */,
+				BC3BFA301DD9B73300F73DEF /* NNQuestionCell.h */,
+				BC3BFA311DD9B73300F73DEF /* NNQuestionCell.m */,
+				BC3BFA321DD9B73300F73DEF /* NNQuestionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -849,11 +891,13 @@
 				BC247EAB1DAA35D600AB5C84 /* NNMineCell.xib in Resources */,
 				0D331E0F1DBBCA87002B0DCD /* NNSpitslotDetailVC.xib in Resources */,
 				BCD9AE7D1DACE424008DB98E /* NNEmotionalItemCell.xib in Resources */,
+				BC8627711DD9A03400162082 /* NNQuestionerChooseCell.xib in Resources */,
 				BCD9AE6A1DACBCB6008DB98E /* NNEmotionCaseVC.xib in Resources */,
 				BCD9AE9C1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.xib in Resources */,
 				BC09AFEB1DB8AC9400BC4D1B /* NNServerListCell.xib in Resources */,
 				BCD506111D92202D000FB2C0 /* Main.storyboard in Resources */,
 				0DDAEE7E1DBBB030008478DC /* NNSpitslotCell.xib in Resources */,
+				BC86276C1DD99EE100162082 /* NNQuestionerInfoCell.xib in Resources */,
 				BC328EEB1DBF2F5E000AF40B /* NNLoginAndRegisterVC.xib in Resources */,
 				BC58BA7C1DBDEF9300F3BF0D /* NNMineNoticeVC.xib in Resources */,
 				BC58BA721DBDEDFA00F3BF0D /* NNMineLikeVC.xib in Resources */,
@@ -867,9 +911,11 @@
 				BC8169631DC1D4B000949273 /* NNUserAgreementVC.xib in Resources */,
 				BC58BA861DBDEFC300F3BF0D /* NNMineSetVC.xib in Resources */,
 				BC247EA61DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib in Resources */,
+				BC8627671DD99D3F00162082 /* NNAppointmentVC.xib in Resources */,
 				0D331E191DBD09FB002B0DCD /* NNReplyView.xib in Resources */,
 				BC58BA811DBDEFB400F3BF0D /* NNMineFeedbackVC.xib in Resources */,
 				BCD9AE961DAE0941008DB98E /* NNQuestionAndAnswerCell.xib in Resources */,
+				BC3BFA341DD9B73300F73DEF /* NNQuestionCell.xib in Resources */,
 				BCD506051D921F8C000FB2C0 /* Assets.xcassets in Resources */,
 				BC247E9C1DAA19B100AB5C84 /* NNEmotionallCell.xib in Resources */,
 				BCD9AE871DACF16D008DB98E /* NNTreeHoelCell.xib in Resources */,
@@ -943,7 +989,9 @@
 				BC852E841DCB185800ADE5C9 /* NNChangePasswordViewModel.m in Sources */,
 				BC09AFEA1DB8AC9400BC4D1B /* NNServerListCell.m in Sources */,
 				BCD9AE9B1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.m in Sources */,
+				BC3BFA331DD9B73300F73DEF /* NNQuestionCell.m in Sources */,
 				BC4C8E401DD1A15D00544A83 /* NNTimeUtil.m in Sources */,
+				BC8627661DD99D3F00162082 /* NNAppointmentVC.m in Sources */,
 				BC852E871DCB19B500ADE5C9 /* NNchangeUserInfoViewModel.m in Sources */,
 				BCD9AE8B1DADE582008DB98E /* NNPsychologicalTeacherVC.m in Sources */,
 				BC8CF9DA1DC9E00700DFF6EA /* NNRegistionViewModel.m in Sources */,
@@ -955,13 +1003,16 @@
 				0D331E121DBD071F002B0DCD /* NNAskingView.m in Sources */,
 				BCD9AE801DACED54008DB98E /* NNCustomNavigationView.m in Sources */,
 				BCD505FD1D921F8C000FB2C0 /* AppDelegate.m in Sources */,
+				BC8627791DD9A0C500162082 /* NNChooseButton.m in Sources */,
 				BCD505FA1D921F8C000FB2C0 /* main.m in Sources */,
+				BC8627701DD9A03400162082 /* NNQuestionerChooseCell.m in Sources */,
 				BCD9AE691DACBCB6008DB98E /* NNEmotionCaseVC.m in Sources */,
 				BCD506571D9231D0000FB2C0 /* NNServerVC.m in Sources */,
 				BC58BA7B1DBDEF9300F3BF0D /* NNMineNoticeVC.m in Sources */,
 				BC328EEA1DBF2F5E000AF40B /* NNLoginAndRegisterVC.m in Sources */,
 				BC852E7C1DCB128300ADE5C9 /* NNUserInfoModel.m in Sources */,
 				BCB6EFD91DB60A6000BEFD37 /* NNBaseVC.m in Sources */,
+				BC8627741DD9A07C00162082 /* NNChooseView.m in Sources */,
 				BCF178BB1DC0ABD900A6DC4B /* NNEmotionTeacherViewModel.m in Sources */,
 				BCD506371D923003000FB2C0 /* UIViewExt.m in Sources */,
 				BCD9AE7C1DACE424008DB98E /* NNEmotionalItemCell.m in Sources */,
@@ -982,6 +1033,7 @@
 				BC58BA801DBDEFB400F3BF0D /* NNMineFeedbackVC.m in Sources */,
 				BCD9AE8F1DADE5EB008DB98E /* NNPsychologicalTeacherHeaderView.m in Sources */,
 				0D331E0E1DBBCA87002B0DCD /* NNSpitslotDetailVC.m in Sources */,
+				BC86276B1DD99EE100162082 /* NNQuestionerInfoCell.m in Sources */,
 				BC58BA671DBDE99500F3BF0D /* NNMinePraisedVC.m in Sources */,
 				BC8C61DB1DC049ED00094F94 /* NNBaseModel.m in Sources */,
 				BCD9AE951DAE0941008DB98E /* NNQuestionAndAnswerCell.m in Sources */,
@@ -1136,7 +1188,7 @@
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Sina",
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/WeChat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xikang.ss;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.neusoft.NuanNuan-OC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 			};
@@ -1164,7 +1216,7 @@
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Sina",
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/WeChat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xikang.ss;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.neusoft.NuanNuan-OC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 			};

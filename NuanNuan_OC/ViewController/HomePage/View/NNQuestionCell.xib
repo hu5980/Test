@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="105" id="KGk-i7-Jjw" customClass="NNQuestionCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="问题描述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxd-hE-pWx">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="43" id="ojj-ng-rAO"/>
+                            <constraint firstAttribute="width" constant="90" id="tVh-ia-2T5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVC-re-49o">
+                        <attributedString key="attributedText">
+                            <fragment content="请尽可能详细地描述您的问题，心理状态，以便得到专家正确的指导和建议。描述只能">
+                                <attributes>
+                                    <color key="NSColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content="30">
+                                <attributes>
+                                    <color key="NSColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" metaFont="system" size="14"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content="个字内">
+                                <attributes>
+                                    <color key="NSColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XDS-ph-P7w">
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxA-Rv-WWJ">
+                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="l0M-1u-yb1"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="sxA-Rv-WWJ" secondAttribute="trailing" id="5kT-i0-NwQ"/>
+                    <constraint firstItem="PVC-re-49o" firstAttribute="leading" secondItem="fxd-hE-pWx" secondAttribute="trailing" id="LaH-cd-3y7"/>
+                    <constraint firstItem="fxd-hE-pWx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PPB-7U-Y0c"/>
+                    <constraint firstAttribute="trailing" secondItem="XDS-ph-P7w" secondAttribute="trailing" constant="15" id="Sns-u3-qxt"/>
+                    <constraint firstAttribute="trailing" secondItem="PVC-re-49o" secondAttribute="trailing" constant="15" id="UcD-fo-y6s"/>
+                    <constraint firstItem="fxd-hE-pWx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="XEB-xY-H3k"/>
+                    <constraint firstItem="sxA-Rv-WWJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="XWR-Xu-pB4"/>
+                    <constraint firstAttribute="bottom" secondItem="sxA-Rv-WWJ" secondAttribute="bottom" id="ZXI-Rh-7aN"/>
+                    <constraint firstItem="XDS-ph-P7w" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hgS-HN-whm"/>
+                    <constraint firstItem="PVC-re-49o" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tqt-Hf-urp"/>
+                    <constraint firstAttribute="bottom" secondItem="XDS-ph-P7w" secondAttribute="bottom" id="uKu-uE-fao"/>
+                    <constraint firstAttribute="bottom" secondItem="PVC-re-49o" secondAttribute="bottom" id="uUp-nW-FBY"/>
+                    <constraint firstItem="XDS-ph-P7w" firstAttribute="leading" secondItem="fxd-hE-pWx" secondAttribute="trailing" id="utE-eJ-Lyl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="placelabel" destination="PVC-re-49o" id="otK-4X-Y3I"/>
+                <outlet property="questionTextView" destination="XDS-ph-P7w" id="bUy-UN-sRG"/>
+            </connections>
+            <point key="canvasLocation" x="97" y="120"/>
+        </tableViewCell>
+    </objects>
+</document>

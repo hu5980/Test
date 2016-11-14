@@ -10,6 +10,7 @@
 #import <WebKit/WebKit.h>
 #import "NNPariseViewModel.h"
 #import "NNUnPariseViewModel.h"
+#import "NNAppointmentVC.h"
 
 @interface NNArticleDetailVC () {
     UIView *customView;
@@ -64,6 +65,7 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.backgroundColor = NN_MAIN_COLOR;
     button.frame = CGRectMake(0, NNAppHeight - 40, NNAppWidth, 40);
+    button.titleLabel.font = [UIFont systemFontOfSize:16.f];
     [button setTitle:@"我要预约" forState:UIControlStateNormal];
     [button addTarget:self action:@selector(makeAnAppointment:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
@@ -72,7 +74,9 @@
 #pragma --mark Action 
 
 - (void)makeAnAppointment:(UIButton *)button {
-
+    NNAppointmentVC *appointmentVC = [[NNAppointmentVC alloc] initWithNibName:@"NNAppointmentVC" bundle:nil];
+    
+    [self.navigationController pushViewController:appointmentVC animated:YES];
 }
 
 - (void)popAction:(UIButton *)button {
