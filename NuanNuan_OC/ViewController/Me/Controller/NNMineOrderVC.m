@@ -7,9 +7,15 @@
 //
 
 #import "NNMineOrderVC.h"
-
-@interface NNMineOrderVC ()
-
+#import "NNOrderModel.h"
+#import "NNOrderViewModel.h"
+#import "NNOrderCell.h"
+@interface NNMineOrderVC ()<UITableViewDelegate,UITableViewDataSource>
+{
+    NSMutableArray * orderArray;
+    MJRefreshFooter *footer;
+}
+@property (weak, nonatomic) IBOutlet UITableView *orderTableView;
 @end
 
 @implementation NNMineOrderVC
@@ -21,14 +27,79 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self createUI];
+    [self initData];
+    [self initUI];
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)createUI {
+- (void)initUI {
     self.navTitle = @"我的预约";
     [self setNavigationBackButton:YES];
+    _orderTableView.delegate = self;
+    _orderTableView.dataSource = self;
+    footer =  [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [self refreshData];
+    }];
     
+    _orderTableView.mj_footer = footer;
+
+    [_orderTableView registerNib:[UINib nibWithNibName:@"NNOrderCell" bundle:nil] forCellReuseIdentifier:@"NNOrderCell"];
+}
+
+- (void)initData {
+    orderArray = [NSMutableArray array];
+    [self refreshData];
+}
+
+
+- (void)refreshData {
+    NNOrderViewModel *viewModel = [[NNOrderViewModel alloc] init];
+    [viewModel setBlockWithReturnBlock:^(id returnValue) {
+        [footer endRefreshing];
+        [orderArray addObjectsFromArray:returnValue];
+        [_orderTableView reloadData];
+    } WithErrorBlock:^(id errorCode) {
+        
+    } WithFailureBlock:^(id failureBlock) {
+        
+    }];
+    
+    NNOrderModel *model = [orderArray lastObject];
+    [viewModel getMineOrderInfoWithToken:TEST_TOKEN andOrderID:model.orderID andPageNum:@"10"];
+}
+
+#pragma --mark UItableViewDataSource UItableViewdelegate
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return orderArray.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    CGFloat height = [tableView fd_heightForCellWithIdentifier:@"NNOrderCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+        
+    }];
+    
+    return height;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 10;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, 10)];
+    view.backgroundColor = [UIColor clearColor];
+    return view;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NNOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNOrderCell"];
+    
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning {

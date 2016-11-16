@@ -12,7 +12,7 @@
 #import "NNImageBroswerView.h"
 @interface NNMinePraisedVC ()<UITableViewDataSource,UITableViewDelegate>{
 
-    
+    MJRefreshFooter *footer;
     NSArray *imageArrays;
 }
 @property (weak, nonatomic) IBOutlet UIButton *defaultButton;
@@ -40,12 +40,20 @@
     _praisedTableView.delegate = self;
     _praisedTableView.dataSource = self;
     _praisedTableView.backgroundColor = NN_BACKGROUND_COLOR;
+    footer =  [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [self refreshData];
+    }];
+    _praisedTableView.mj_footer = footer;
     [_praisedTableView registerNib:[UINib nibWithNibName:@"NNQuestionAndAnswerCell" bundle:nil] forCellReuseIdentifier:@"NNQuestionAndAnswerCell"];
     [_praisedTableView registerNib:[UINib nibWithNibName:@"NNSpitslotCell" bundle:nil] forCellReuseIdentifier:@"NNSpitslotCell"];
 }
 
 - (void)initData {
     imageArrays = @[@"1",@"2"];
+}
+
+- (void)refreshData {
+    
 }
 
 #pragma --mark Action

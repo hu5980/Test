@@ -30,6 +30,10 @@
 		BC328EEB1DBF2F5E000AF40B /* NNLoginAndRegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC328EE91DBF2F5E000AF40B /* NNLoginAndRegisterVC.xib */; };
 		BC3BFA331DD9B73300F73DEF /* NNQuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3BFA311DD9B73300F73DEF /* NNQuestionCell.m */; };
 		BC3BFA341DD9B73300F73DEF /* NNQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3BFA321DD9B73300F73DEF /* NNQuestionCell.xib */; };
+		BC3BFA381DDAA96400F73DEF /* NNOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3BFA361DDAA96400F73DEF /* NNOrderCell.m */; };
+		BC3BFA391DDAA96400F73DEF /* NNOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3BFA371DDAA96400F73DEF /* NNOrderCell.xib */; };
+		BC3BFA3C1DDADE7300F73DEF /* NNOrderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3BFA3B1DDADE7300F73DEF /* NNOrderViewModel.m */; };
+		BC3BFA3F1DDAE47000F73DEF /* NNOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3BFA3E1DDAE47000F73DEF /* NNOrderModel.m */; };
 		BC4C8E3A1DD06F3900544A83 /* NNTreeHoelViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4C8E391DD06F3900544A83 /* NNTreeHoelViewModel.m */; };
 		BC4C8E3D1DD0713F00544A83 /* NNTreeHoelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4C8E3C1DD0713F00544A83 /* NNTreeHoelModel.m */; };
 		BC4C8E401DD1A15D00544A83 /* NNTimeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4C8E3F1DD1A15D00544A83 /* NNTimeUtil.m */; };
@@ -162,6 +166,13 @@
 		BC3BFA301DD9B73300F73DEF /* NNQuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNQuestionCell.h; sourceTree = "<group>"; };
 		BC3BFA311DD9B73300F73DEF /* NNQuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNQuestionCell.m; sourceTree = "<group>"; };
 		BC3BFA321DD9B73300F73DEF /* NNQuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNQuestionCell.xib; sourceTree = "<group>"; };
+		BC3BFA351DDAA96400F73DEF /* NNOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNOrderCell.h; sourceTree = "<group>"; };
+		BC3BFA361DDAA96400F73DEF /* NNOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNOrderCell.m; sourceTree = "<group>"; };
+		BC3BFA371DDAA96400F73DEF /* NNOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNOrderCell.xib; sourceTree = "<group>"; };
+		BC3BFA3A1DDADE7300F73DEF /* NNOrderViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNOrderViewModel.h; sourceTree = "<group>"; };
+		BC3BFA3B1DDADE7300F73DEF /* NNOrderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNOrderViewModel.m; sourceTree = "<group>"; };
+		BC3BFA3D1DDAE47000F73DEF /* NNOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNOrderModel.h; sourceTree = "<group>"; };
+		BC3BFA3E1DDAE47000F73DEF /* NNOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNOrderModel.m; sourceTree = "<group>"; };
 		BC4C8E381DD06F3900544A83 /* NNTreeHoelViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNTreeHoelViewModel.h; sourceTree = "<group>"; };
 		BC4C8E391DD06F3900544A83 /* NNTreeHoelViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNTreeHoelViewModel.m; sourceTree = "<group>"; };
 		BC4C8E3B1DD0713F00544A83 /* NNTreeHoelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNTreeHoelModel.h; sourceTree = "<group>"; };
@@ -413,6 +424,8 @@
 		BC852E7D1DCB167800ADE5C9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BC3BFA3D1DDAE47000F73DEF /* NNOrderModel.h */,
+				BC3BFA3E1DDAE47000F73DEF /* NNOrderModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -426,6 +439,8 @@
 				BC852E831DCB185800ADE5C9 /* NNChangePasswordViewModel.m */,
 				BC852E851DCB19B500ADE5C9 /* NNchangeUserInfoViewModel.h */,
 				BC852E861DCB19B500ADE5C9 /* NNchangeUserInfoViewModel.m */,
+				BC3BFA3A1DDADE7300F73DEF /* NNOrderViewModel.h */,
+				BC3BFA3B1DDADE7300F73DEF /* NNOrderViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -685,6 +700,9 @@
 				BC58BA871DBDF29000F3BF0D /* NNSetCell.h */,
 				BC58BA881DBDF29000F3BF0D /* NNSetCell.m */,
 				BC58BA891DBDF29000F3BF0D /* NNSetCell.xib */,
+				BC3BFA351DDAA96400F73DEF /* NNOrderCell.h */,
+				BC3BFA361DDAA96400F73DEF /* NNOrderCell.m */,
+				BC3BFA371DDAA96400F73DEF /* NNOrderCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -902,6 +920,7 @@
 				BC58BA7C1DBDEF9300F3BF0D /* NNMineNoticeVC.xib in Resources */,
 				BC58BA721DBDEDFA00F3BF0D /* NNMineLikeVC.xib in Resources */,
 				BCD9AE911DADE5F6008DB98E /* NNPsychologicalTeacherHeaderView.xib in Resources */,
+				BC3BFA391DDAA96400F73DEF /* NNOrderCell.xib in Resources */,
 				BCD9AE8C1DADE582008DB98E /* NNPsychologicalTeacherVC.xib in Resources */,
 				BCD9AE821DACED5F008DB98E /* NNCustomNavigationView.xib in Resources */,
 				BCD506081D921F8C000FB2C0 /* LaunchScreen.storyboard in Resources */,
@@ -984,6 +1003,7 @@
 			files = (
 				BC8C61D81DC045D500094F94 /* NNRingImageViewModel.m in Sources */,
 				BCD5062B1D92252A000FB2C0 /* UIColor+Helper.m in Sources */,
+				BC3BFA3F1DDAE47000F73DEF /* NNOrderModel.m in Sources */,
 				BCD5061E1D92241A000FB2C0 /* NNTabbarVC.m in Sources */,
 				BCB6EFDC1DB60DE000BEFD37 /* NNBaseViewModel.m in Sources */,
 				BC852E841DCB185800ADE5C9 /* NNChangePasswordViewModel.m in Sources */,
@@ -992,6 +1012,7 @@
 				BC3BFA331DD9B73300F73DEF /* NNQuestionCell.m in Sources */,
 				BC4C8E401DD1A15D00544A83 /* NNTimeUtil.m in Sources */,
 				BC8627661DD99D3F00162082 /* NNAppointmentVC.m in Sources */,
+				BC3BFA3C1DDADE7300F73DEF /* NNOrderViewModel.m in Sources */,
 				BC852E871DCB19B500ADE5C9 /* NNchangeUserInfoViewModel.m in Sources */,
 				BCD9AE8B1DADE582008DB98E /* NNPsychologicalTeacherVC.m in Sources */,
 				BC8CF9DA1DC9E00700DFF6EA /* NNRegistionViewModel.m in Sources */,
@@ -1058,6 +1079,7 @@
 				BC8CF9D71DC9DFEF00DFF6EA /* NNLoginViewModel.m in Sources */,
 				0D331E171DBD09EF002B0DCD /* NNReplyView.m in Sources */,
 				BCF178BE1DC0ABED00A6DC4B /* NNEmotionTeacherModel.m in Sources */,
+				BC3BFA381DDAA96400F73DEF /* NNOrderCell.m in Sources */,
 				BC8C61E21DC081CD00094F94 /* NNArticleDetailVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
