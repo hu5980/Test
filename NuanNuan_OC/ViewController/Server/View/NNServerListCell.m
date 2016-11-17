@@ -7,6 +7,7 @@
 //
 
 #import "NNServerListCell.h"
+#import "UIImageView+WebCache.h"
 
 @implementation NNServerListCell
 
@@ -20,6 +21,13 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setCaseMode:(NNSuccessCaseModel *)caseMode {
+    _caseMode = caseMode;
+    [_backgroundImageView sd_setImageWithURL:[NSURL URLWithString:caseMode.caseImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+    _packageNameLabel.text = [NSString stringWithFormat:@"-%@-",caseMode.caseName];
+    _packageDescributeLabel.text = caseMode.caseTitle;
 }
 
 @end

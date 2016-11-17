@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="148"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="375" height="147"/>
+                <frame key="frameInset" width="375" height="148"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bjz-38-sgW">
@@ -25,7 +25,7 @@
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pPV-Si-rb4">
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="－白领套餐－" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3y-36-6rK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="－白领套餐－" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3y-36-6rK">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="KTX-aq-FQC"/>
                                     <constraint firstAttribute="width" constant="94" id="QAK-21-zej"/>
@@ -69,6 +69,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="apaleView" destination="pPV-Si-rb4" id="jnv-J7-xKj"/>
+                <outlet property="backgroundImageView" destination="Bjz-38-sgW" id="4jp-rN-y6D"/>
                 <outlet property="packageDescributeLabel" destination="0Qw-du-rUb" id="f9w-sO-MBD"/>
                 <outlet property="packageNameLabel" destination="k3y-36-6rK" id="fSF-fA-uG2"/>
             </connections>

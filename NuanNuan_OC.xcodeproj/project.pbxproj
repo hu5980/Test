@@ -122,6 +122,8 @@
 		BCD9AE9C1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE9A1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.xib */; };
 		BCD9AEA01DAE21D1008DB98E /* NNNeterReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE9E1DAE21D1008DB98E /* NNNeterReplyCell.m */; };
 		BCD9AEA11DAE21D1008DB98E /* NNNeterReplyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE9F1DAE21D1008DB98E /* NNNeterReplyCell.xib */; };
+		BCE6A05E1DDC3A9000A02E50 /* NNMinePraisedViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE6A05D1DDC3A9000A02E50 /* NNMinePraisedViewModel.m */; };
+		BCE6A0641DDD7C7C00A02E50 /* NNUserHeaderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE6A0631DDD7C7C00A02E50 /* NNUserHeaderViewModel.m */; };
 		BCF178BB1DC0ABD900A6DC4B /* NNEmotionTeacherViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF178BA1DC0ABD900A6DC4B /* NNEmotionTeacherViewModel.m */; };
 		BCF178BE1DC0ABED00A6DC4B /* NNEmotionTeacherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF178BD1DC0ABED00A6DC4B /* NNEmotionTeacherModel.m */; };
 		C572126AF56E095F0A988671 /* Pods_NuanNuan_OC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00BA27114ACC2597EA70FB0 /* Pods_NuanNuan_OC.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -326,6 +328,10 @@
 		BCD9AE9D1DAE21D1008DB98E /* NNNeterReplyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNeterReplyCell.h; sourceTree = "<group>"; };
 		BCD9AE9E1DAE21D1008DB98E /* NNNeterReplyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNeterReplyCell.m; sourceTree = "<group>"; };
 		BCD9AE9F1DAE21D1008DB98E /* NNNeterReplyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNNeterReplyCell.xib; sourceTree = "<group>"; };
+		BCE6A05C1DDC3A9000A02E50 /* NNMinePraisedViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNMinePraisedViewModel.h; sourceTree = "<group>"; };
+		BCE6A05D1DDC3A9000A02E50 /* NNMinePraisedViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMinePraisedViewModel.m; sourceTree = "<group>"; };
+		BCE6A0621DDD7C7C00A02E50 /* NNUserHeaderViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNUserHeaderViewModel.h; sourceTree = "<group>"; };
+		BCE6A0631DDD7C7C00A02E50 /* NNUserHeaderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNUserHeaderViewModel.m; sourceTree = "<group>"; };
 		BCF178B91DC0ABD900A6DC4B /* NNEmotionTeacherViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEmotionTeacherViewModel.h; sourceTree = "<group>"; };
 		BCF178BA1DC0ABD900A6DC4B /* NNEmotionTeacherViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNEmotionTeacherViewModel.m; sourceTree = "<group>"; };
 		BCF178BC1DC0ABED00A6DC4B /* NNEmotionTeacherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEmotionTeacherModel.h; sourceTree = "<group>"; };
@@ -441,6 +447,10 @@
 				BC852E861DCB19B500ADE5C9 /* NNchangeUserInfoViewModel.m */,
 				BC3BFA3A1DDADE7300F73DEF /* NNOrderViewModel.h */,
 				BC3BFA3B1DDADE7300F73DEF /* NNOrderViewModel.m */,
+				BCE6A05C1DDC3A9000A02E50 /* NNMinePraisedViewModel.h */,
+				BCE6A05D1DDC3A9000A02E50 /* NNMinePraisedViewModel.m */,
+				BCE6A0621DDD7C7C00A02E50 /* NNUserHeaderViewModel.h */,
+				BCE6A0631DDD7C7C00A02E50 /* NNUserHeaderViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1027,6 +1037,7 @@
 				BC8627791DD9A0C500162082 /* NNChooseButton.m in Sources */,
 				BCD505FA1D921F8C000FB2C0 /* main.m in Sources */,
 				BC8627701DD9A03400162082 /* NNQuestionerChooseCell.m in Sources */,
+				BCE6A05E1DDC3A9000A02E50 /* NNMinePraisedViewModel.m in Sources */,
 				BCD9AE691DACBCB6008DB98E /* NNEmotionCaseVC.m in Sources */,
 				BCD506571D9231D0000FB2C0 /* NNServerVC.m in Sources */,
 				BC58BA7B1DBDEF9300F3BF0D /* NNMineNoticeVC.m in Sources */,
@@ -1050,6 +1061,7 @@
 				BC247EAA1DAA35D600AB5C84 /* NNMineCell.m in Sources */,
 				BCB6EFE01DB62B0000BEFD37 /* NNSuccessCaseModel.m in Sources */,
 				BCD506581D9231D0000FB2C0 /* NNTreeHoleVC.m in Sources */,
+				BCE6A0641DDD7C7C00A02E50 /* NNUserHeaderViewModel.m in Sources */,
 				BC4C8E3A1DD06F3900544A83 /* NNTreeHoelViewModel.m in Sources */,
 				BC58BA801DBDEFB400F3BF0D /* NNMineFeedbackVC.m in Sources */,
 				BCD9AE8F1DADE5EB008DB98E /* NNPsychologicalTeacherHeaderView.m in Sources */,
@@ -1210,7 +1222,7 @@
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Sina",
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/WeChat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.neusoft.NuanNuan-OC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nuannuan.NuanNuan-OC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 			};
@@ -1238,7 +1250,7 @@
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Sina",
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/WeChat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.neusoft.NuanNuan-OC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nuannuan.NuanNuan-OC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 			};

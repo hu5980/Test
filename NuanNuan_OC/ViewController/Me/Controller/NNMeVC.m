@@ -17,7 +17,9 @@
 #import "NNMineFeedbackVC.h"
 #import "NNMineSetVC.h"
 #import "NNMineNoticeVC.h"
-@interface NNMeVC ()<UITableViewDelegate,UITableViewDataSource> {
+#import "NNUserHeaderViewModel.h"
+
+@interface NNMeVC ()<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate> {
     NSArray *imageArray;
     NSArray *titleArray;
     
@@ -69,6 +71,7 @@
     headerButton.layer.masksToBounds = YES;
     headerButton.layer.cornerRadius = 30;
     headerButton.backgroundColor = [UIColor yellowColor];
+    [headerButton addTarget:self action:@selector(changeHeadAction:) forControlEvents:UIControlEventTouchUpInside];
     [backgroundButton addSubview:headerButton];
     [headerButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(@60);
@@ -98,9 +101,66 @@
     imageArray = @[@"400_16",@"400_23",@"400_27",@"400_29",@"400_31"];
 }
 
+- (void)changeHeadAction:(UIButton *)button {
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"选取照片" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        picker.delegate = self;
+        picker.allowsEditing = YES;
+        
+        [self presentViewController:picker animated:YES completion:nil];
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        picker.delegate = self;
+        picker.allowsEditing = YES;
+        [self presentViewController:picker animated:YES completion:nil];
+        
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (UIImage *)makeImageWithImage:(UIImage *)imageOld scaledToSize:(CGSize)newSize
+{
+    UIGraphicsBeginImageContext(newSize);
+    [imageOld drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
+#pragma  --mark  UIImagePickerControllerDelegate
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [picker dismissViewControllerAnimated:YES completion:^{
+        UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+        UIImage *temp = [self makeImageWithImage:image scaledToSize:CGSizeMake(720, 720)];
+      
+        
+     
+        NNUserHeaderViewModel *viewModel = [[NNUserHeaderViewModel alloc] init];
+        
+        [viewModel setBlockWithReturnBlock:^(id returnValue) {
+            
+        } WithErrorBlock:^(id errorCode) {
+            
+        } WithFailureBlock:^(id failureBlock) {
+            
+        }];
+        [viewModel upLoadHeaderImageViewWithToken:TEST_TOKEN andImage:temp];
+    }];
+}
+
 
 #pragma --Mark  UItableViewDelegate
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if(section == 0){
         return 1;

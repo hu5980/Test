@@ -16,6 +16,7 @@
 #import "NNArticleDetailVC.h"
 #import "NNHomepageSuccessCaseViewModel.h"
 #import "NNHomepageSuccessCaseModel.h"
+
 @interface NNHomePageVC () <UITableViewDelegate,UITableViewDataSource>
 {
     NNRingImageView *headerView;
@@ -88,9 +89,7 @@
 
 - (void)initData {
     titleArray = @[@"成功故事・婚恋",@"成功故事・挽回",@"成功故事・提升"];
-    
     NNHomepageSuccessCaseViewModel *successCaseViewModel = [[NNHomepageSuccessCaseViewModel alloc] init];
- 
     [successCaseViewModel setBlockWithReturnBlock:^(id returnValue) {
         successCasemodel = returnValue;
         [_homePageTableView reloadData];

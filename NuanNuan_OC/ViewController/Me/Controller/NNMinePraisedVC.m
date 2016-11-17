@@ -10,10 +10,18 @@
 #import "NNQuestionAndAnswerCell.h"
 #import "NNSpitslotCell.h"
 #import "NNImageBroswerView.h"
+#import "NNMinePraisedViewModel.h"
+#import "NNQuestionAndAnswerModel.h"
+#import "NNTreeHoelModel.h"
+#import "MWPhotoBrowser.h"
+
 @interface NNMinePraisedVC ()<UITableViewDataSource,UITableViewDelegate>{
 
     MJRefreshFooter *footer;
     NSArray *imageArrays;
+    NSString *defaultType;
+    NSMutableArray *praisedArray;
+      NSMutableArray *phonoArrays;
 }
 @property (weak, nonatomic) IBOutlet UIButton *defaultButton;
 
@@ -50,10 +58,33 @@
 
 - (void)initData {
     imageArrays = @[@"1",@"2"];
+    defaultType = @"1";
+    praisedArray = [NSMutableArray array];
+    
+    [self refreshData];
 }
 
 - (void)refreshData {
+    NNMinePraisedViewModel *viewModel = [[NNMinePraisedViewModel alloc] init];
+    [viewModel setBlockWithReturnBlock:^(id returnValue) {
+        [praisedArray addObjectsFromArray:returnValue];
+        [footer endRefreshing];
+        [_praisedTableView reloadData];
+    } WithErrorBlock:^(id errorCode) {
+        
+    } WithFailureBlock:^(id failureBlock) {
+        
+    }];
+   
+    if ([defaultType isEqualToString:@"1"]) {
+        NNQuestionAndAnswerModel *model = [praisedArray lastObject];
+         [viewModel getMinePraisedContentWithToken:TEST_TOKEN andPraisedType:defaultType andPraisedId:model.questionId andpageNum:@"10"];
+    }else{
+        NNTreeHoelModel *model = [praisedArray lastObject];
+        [viewModel getMinePraisedContentWithToken:TEST_TOKEN andPraisedType:defaultType andPraisedId:model.thID andpageNum:@"10"];
+    }
     
+   
 }
 
 #pragma --mark Action
@@ -61,23 +92,21 @@
     _defaultButton.selected = NO;
     _defaultButton = sender;
     _defaultButton.selected = YES;
+    [praisedArray removeAllObjects];
     if (sender.tag == 100) {
-        
+        defaultType = @"1";
     }else{
-        
+        defaultType = @"2";
     }
-    [_praisedTableView reloadData];
+    [self refreshData];
+    //[_praisedTableView reloadData];
 }
 
 
 #pragma --mark Delegate
 #pragma --mark UITableViewDelegate UItableViewDatasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    if (_defaultButton.tag == 100) {
-        return 1;
-    }else{
-        return 3;
-    }
+    return praisedArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -98,9 +127,7 @@
     }else{
         height = [tableView fd_heightForCellWithIdentifier:@"NNSpitslotCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             NNSpitslotCell *spitslotCell = cell;
-            spitslotCell.contentLabel.text = @"我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊";
-            NNImageBroswerView *broswerImageView = [[NNImageBroswerView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, 0) ImageUrls:imageArrays SpaceWithImage:10 SpaceWithSideOfSuperView:15 NumberImageOfLine:3];
-            spitslotCell.broswerViewConstraint.constant = broswerImageView.broswerViewHeight;
+            spitslotCell.model = [praisedArray objectAtIndex:indexPath.section];
             
         }];
 
@@ -119,18 +146,43 @@
   
     if (_defaultButton.tag == 100) {
         NNQuestionAndAnswerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNQuestionAndAnswerCell"];
+        cell.model = [praisedArray objectAtIndex:indexPath.section];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.likeBlock = ^(UIButton *button) {
         
+        };
+        
+        cell.commentBlock = ^ {
+        
+        };
         return cell;
     }else{
         NNSpitslotCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNSpitslotCell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        cell.contentLabel.text = @"我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊我要是开始 测试了啊";
-        NNImageBroswerView *broswerImageView = [[NNImageBroswerView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, 0) ImageUrls:imageArrays SpaceWithImage:10 SpaceWithSideOfSuperView:15 NumberImageOfLine:3];
-        cell.broswerViewConstraint.constant = broswerImageView.broswerViewHeight;
-        [cell.broswerView addSubview:broswerImageView];
-        broswerImageView.block = ^(NSInteger tag){
-            NNLog(@"%ld",(long)tag);
+        NNTreeHoelModel *model =  [praisedArray objectAtIndex:indexPath.section];
+        
+        __weak NNSpitslotCell *weakCell = cell;
+        __weak NNMinePraisedVC *weakSelf = self;
+        cell.selectImageBlock = ^(NSInteger selectIndex){
+            
+            phonoArrays = [NSMutableArray arrayWithCapacity:model.picArrays.count];
+            
+            for (int i  = 0 ; i < model.picArrays.count; i++) {
+                [phonoArrays addObject:[MWPhoto photoWithURL:[NSURL URLWithString:[model.picArrays objectAtIndex:i]]]];
+            }
+            
+            MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithPhotos:phonoArrays];
+            browser.displayActionButton = NO;
+            browser.displayNavArrows = YES;
+            browser.displaySelectionButtons = NO;
+            browser.alwaysShowControls = NO;
+            browser.zoomPhotosToFill = YES;
+            browser.enableSwipeToDismiss = NO;
+            [browser setCurrentPhotoIndex:selectIndex];
+            [weakSelf.navigationController pushViewController:browser animated:YES];
         };
+        cell.model = model;
         
         cell.block = ^(UIButton *button){
             switch (button.tag) {

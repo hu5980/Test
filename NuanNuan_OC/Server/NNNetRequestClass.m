@@ -76,6 +76,7 @@
     [mutableParameter setObject:@"appstore" forKey:@"channel"];
     AFHTTPSessionManager *sessionManager = [[AFHTTPSessionManager alloc] init];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+  
     [sessionManager POST:requestURLString parameters:mutableParameter progress:^(NSProgress * _Nonnull uploadProgress) {
         progressBlock(uploadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

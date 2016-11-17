@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "NNSuccessCaseModel.h"
 @interface NNServerListCell : UITableViewCell
+
+@property (nonatomic,strong) NNSuccessCaseModel *caseMode;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+
 @property (weak, nonatomic) IBOutlet UIView *apaleView;
 @property (weak, nonatomic) IBOutlet UILabel *packageNameLabel;
 

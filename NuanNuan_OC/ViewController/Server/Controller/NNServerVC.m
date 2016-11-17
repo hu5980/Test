@@ -9,9 +9,15 @@
 #import "NNServerVC.h"
 #import "NNCustomNavigationView.h"
 #import "NNServerListCell.h"
+#import "NNMoreSuccessCaseViewModel.h"
+#import "NNSuccessCaseModel.h"
+#import "NNArticleDetailVC.h"
 
 @interface NNServerVC () <UITableViewDelegate,UITableViewDataSource> {
     UIButton *defaultSelectButton;
+    MJRefreshFooter *footer;
+    NSInteger defaultType;
+    NSMutableArray *serverArray;
 }
 @property (weak, nonatomic) IBOutlet UITableView *serverListTableView;
 
@@ -26,6 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initData];
     [self initUI];
     // Do any additional setup after loading the view.
 }
@@ -43,29 +50,52 @@
             defaultSelectButton = button;
             defaultSelectButton.selected = YES;
             if (button.tag == 200) {
-                NNLog(@"私人定制");
+                defaultType = 14;
             }else{
-                NNLog(@"夏日特惠");
+                defaultType = 15;
             }
+            [serverArray removeAllObjects];
+            [self refreshData];
         }
         [_serverListTableView reloadData];
     };
     self.navigationItem.titleView = view;
-    
+    footer =  [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [self refreshData];
+    }];
+    _serverListTableView.mj_footer = footer;
     _serverListTableView.dataSource = self;
+    _serverListTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _serverListTableView.delegate = self;
     _serverListTableView.backgroundColor = NN_BACKGROUND_COLOR;
     [_serverListTableView registerNib:[UINib nibWithNibName:@"NNServerListCell" bundle:nil] forCellReuseIdentifier:@"NNServerListCell"];
 }
 
+- (void)initData {
+    defaultType = 14;
+    serverArray = [NSMutableArray array];
+    [self refreshData];
+}
+
+- (void)refreshData {
+    NNMoreSuccessCaseViewModel *viewModel = [[NNMoreSuccessCaseViewModel alloc] init];
+    [viewModel setBlockWithReturnBlock:^(id returnValue) {
+        [serverArray addObjectsFromArray:returnValue];
+        [_serverListTableView reloadData];
+        [footer endRefreshing];
+    } WithErrorBlock:^(id errorCode) {
+        
+    } WithFailureBlock:^(id failureBlock) {
+        
+    }];
+    NNSuccessCaseModel *model = [serverArray lastObject];
+    [viewModel getMoreSuccessCaseWithPageNum:10 andCaseType:defaultType andCaseID:model.caseAdID];
+}
+
 #pragma --mark UITableViewdelegate UItableViewdatasource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    if (defaultSelectButton.tag == 200) {
-        return 1;
-    }else{
-        return 4;
-    }
+    return serverArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -86,12 +116,13 @@
     CGFloat height = [tableView fd_heightForCellWithIdentifier:@"NNServerListCell" cacheByIndexPath:indexPath configuration:^(id cell) {
         
     }];
-    return height   ;
+    return height;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NNServerListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNServerListCell"];
-    
+    cell.caseMode = [serverArray objectAtIndex:indexPath.section];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (defaultSelectButton.tag == 200) {
         cell.apaleView.hidden = YES;
     }else{
@@ -103,6 +134,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NNArticleDetailVC *articleVC = [[NNArticleDetailVC alloc] init];
+    NNSuccessCaseModel *model = [serverArray objectAtIndex:indexPath.section];
+    articleVC.articleID = model.caseAdID;
+    articleVC.defaultType = defaultType;
+    articleVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:articleVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
