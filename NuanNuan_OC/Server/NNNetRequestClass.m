@@ -80,14 +80,41 @@
     [sessionManager POST:requestURLString parameters:mutableParameter progress:^(NSProgress * _Nonnull uploadProgress) {
         progressBlock(uploadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if ([responseObject objectForKey:@"errorCode"]) {
-            errorBlock([responseObject objectForKey:@"errorCode"]);
+        if ([[responseObject objectForKey:@"result"] isEqualToString:@"fail"]) {
+            errorBlock([responseObject objectForKey:@"msg"]);
         }else{
             returnBlock(responseObject);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failureBlock(error);
     }];
+}
+
++ (void) NetRequestPOSTFileWithRequestURL:(NSString *) requestURLString
+                        withParameter:(NSDictionary *)parameter
+                             withFileData:(NSData *)data
+                             withFileName:(NSString *)fileName
+                 withReturnValueBlock:(ReturnValueBlock) returnBlock
+                   withErrorCodeBlock:(ErrorCodeBlock) errorBlock
+                     withFailureBlock:(FailureBlock)failureBlock
+                             withProgress:(ProgressBlock) progressBlock {
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    [manager POST:requestURLString parameters:parameter constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        [formData appendPartWithFileData:data name:@"head" fileName:fileName mimeType:@"image/jpg"];
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        progressBlock(uploadProgress);
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([[responseObject objectForKey:@"result"] isEqualToString:@"fail"]) {
+            errorBlock([responseObject objectForKey:@"msg"]);
+        }else{
+            returnBlock(responseObject);
+        }
+
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+         failureBlock(error);
+    }];
+
 }
 
 @end

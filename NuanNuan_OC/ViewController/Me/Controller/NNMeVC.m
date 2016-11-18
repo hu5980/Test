@@ -149,7 +149,7 @@
         NNUserHeaderViewModel *viewModel = [[NNUserHeaderViewModel alloc] init];
         
         [viewModel setBlockWithReturnBlock:^(id returnValue) {
-            
+            [headerButton setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:returnValue] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
         } WithErrorBlock:^(id errorCode) {
             
         } WithFailureBlock:^(id failureBlock) {

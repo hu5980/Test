@@ -8,6 +8,7 @@
 
 #import "NNChooseView.h"
 #import "Define.h"
+#import "NNAppointmentModel.h"
 @implementation NNChooseView{
     CGRect rect;
 }
@@ -35,7 +36,14 @@
     for (int i = 0; i < _chooseArray.count; i++) {
         NNChooseButton *chooseButton = [[NNChooseButton alloc] initChooseButtonWithFrame:CGRectMake(i%2 *width/2, i/2 * 44 , width / 2, 44)];
         chooseButton.tag = 100+i;
-        chooseButton.chooseTitleLabel.text = [_chooseArray objectAtIndex:i];
+        if ([[_chooseArray objectAtIndex:i] isKindOfClass:[NNAppointmentModel class]]) {
+            NNAppointmentModel *model = [_chooseArray objectAtIndex:i];
+            chooseButton.chooseTitleLabel.text = model.appointmentTitle;
+            chooseButton.tag = [model.appointmentID integerValue];
+        }else{
+            chooseButton.chooseTitleLabel.text = [_chooseArray objectAtIndex:i];
+            chooseButton.tag = i + 1;
+        }
       
         [chooseButton addTarget:self action:@selector(chooseAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:chooseButton];

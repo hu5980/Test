@@ -37,7 +37,7 @@
     
     _setTableView.delegate = self;
     _setTableView.backgroundColor = NN_BACKGROUND_COLOR;
-    _setTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+   // _setTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _setTableView.dataSource = self;
     _setTableView.rowHeight = 44.f;
     [_setTableView registerNib:[UINib nibWithNibName:@"NNSetCell" bundle:nil] forCellReuseIdentifier:@"NNSetCell"];

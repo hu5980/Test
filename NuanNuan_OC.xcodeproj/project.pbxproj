@@ -124,6 +124,9 @@
 		BCD9AEA11DAE21D1008DB98E /* NNNeterReplyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE9F1DAE21D1008DB98E /* NNNeterReplyCell.xib */; };
 		BCE6A05E1DDC3A9000A02E50 /* NNMinePraisedViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE6A05D1DDC3A9000A02E50 /* NNMinePraisedViewModel.m */; };
 		BCE6A0641DDD7C7C00A02E50 /* NNUserHeaderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE6A0631DDD7C7C00A02E50 /* NNUserHeaderViewModel.m */; };
+		BCE6A0671DDEA87A00A02E50 /* NNAppointmentTypeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE6A0661DDEA87A00A02E50 /* NNAppointmentTypeViewModel.m */; };
+		BCE6A06A1DDEA89D00A02E50 /* NNAppointmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE6A0691DDEA89D00A02E50 /* NNAppointmentModel.m */; };
+		BCE6A06D1DDED76F00A02E50 /* NNAppointmentQuestionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE6A06C1DDED76F00A02E50 /* NNAppointmentQuestionViewModel.m */; };
 		BCF178BB1DC0ABD900A6DC4B /* NNEmotionTeacherViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF178BA1DC0ABD900A6DC4B /* NNEmotionTeacherViewModel.m */; };
 		BCF178BE1DC0ABED00A6DC4B /* NNEmotionTeacherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF178BD1DC0ABED00A6DC4B /* NNEmotionTeacherModel.m */; };
 		C572126AF56E095F0A988671 /* Pods_NuanNuan_OC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00BA27114ACC2597EA70FB0 /* Pods_NuanNuan_OC.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -332,6 +335,12 @@
 		BCE6A05D1DDC3A9000A02E50 /* NNMinePraisedViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMinePraisedViewModel.m; sourceTree = "<group>"; };
 		BCE6A0621DDD7C7C00A02E50 /* NNUserHeaderViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNUserHeaderViewModel.h; sourceTree = "<group>"; };
 		BCE6A0631DDD7C7C00A02E50 /* NNUserHeaderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNUserHeaderViewModel.m; sourceTree = "<group>"; };
+		BCE6A0651DDEA87A00A02E50 /* NNAppointmentTypeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNAppointmentTypeViewModel.h; sourceTree = "<group>"; };
+		BCE6A0661DDEA87A00A02E50 /* NNAppointmentTypeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNAppointmentTypeViewModel.m; sourceTree = "<group>"; };
+		BCE6A0681DDEA89D00A02E50 /* NNAppointmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNAppointmentModel.h; sourceTree = "<group>"; };
+		BCE6A0691DDEA89D00A02E50 /* NNAppointmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNAppointmentModel.m; sourceTree = "<group>"; };
+		BCE6A06B1DDED76F00A02E50 /* NNAppointmentQuestionViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNAppointmentQuestionViewModel.h; sourceTree = "<group>"; };
+		BCE6A06C1DDED76F00A02E50 /* NNAppointmentQuestionViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNAppointmentQuestionViewModel.m; sourceTree = "<group>"; };
 		BCF178B91DC0ABD900A6DC4B /* NNEmotionTeacherViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEmotionTeacherViewModel.h; sourceTree = "<group>"; };
 		BCF178BA1DC0ABD900A6DC4B /* NNEmotionTeacherViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNEmotionTeacherViewModel.m; sourceTree = "<group>"; };
 		BCF178BC1DC0ABED00A6DC4B /* NNEmotionTeacherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEmotionTeacherModel.h; sourceTree = "<group>"; };
@@ -464,6 +473,10 @@
 				BCA60E1E1DC714D800DB84A0 /* NNHomepageSuccessCaseViewModel.m */,
 				BCA60E201DC7439A00DB84A0 /* NNMoreSuccessCaseViewModel.h */,
 				BCA60E211DC7439A00DB84A0 /* NNMoreSuccessCaseViewModel.m */,
+				BCE6A0651DDEA87A00A02E50 /* NNAppointmentTypeViewModel.h */,
+				BCE6A0661DDEA87A00A02E50 /* NNAppointmentTypeViewModel.m */,
+				BCE6A06B1DDED76F00A02E50 /* NNAppointmentQuestionViewModel.h */,
+				BCE6A06C1DDED76F00A02E50 /* NNAppointmentQuestionViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -618,6 +631,8 @@
 				BCB6EFE21DB62F3600BEFD37 /* NNHomepageSuccessCaseModel.m */,
 				BC8C61DC1DC04A2C00094F94 /* NNRingImageModel.h */,
 				BC8C61DD1DC04A2C00094F94 /* NNRingImageModel.m */,
+				BCE6A0681DDEA89D00A02E50 /* NNAppointmentModel.h */,
+				BCE6A0691DDEA89D00A02E50 /* NNAppointmentModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1052,6 +1067,7 @@
 				BC58BA8A1DBDF29000F3BF0D /* NNSetCell.m in Sources */,
 				BC7A672A1DB4C3C000C3B3D9 /* NNNetRequestClass.m in Sources */,
 				BC17E9361DD598AA0054FBE2 /* NNCommentViewModel.m in Sources */,
+				BCE6A06D1DDED76F00A02E50 /* NNAppointmentQuestionViewModel.m in Sources */,
 				BC4C8E431DD3056800544A83 /* NNQuestionAndAnswerViewModel.m in Sources */,
 				BC4C8E3D1DD0713F00544A83 /* NNTreeHoelModel.m in Sources */,
 				BC852E791DCAE9FC00ADE5C9 /* NNProgressHUD.m in Sources */,
@@ -1070,6 +1086,7 @@
 				BC58BA671DBDE99500F3BF0D /* NNMinePraisedVC.m in Sources */,
 				BC8C61DB1DC049ED00094F94 /* NNBaseModel.m in Sources */,
 				BCD9AE951DAE0941008DB98E /* NNQuestionAndAnswerCell.m in Sources */,
+				BCE6A0671DDEA87A00A02E50 /* NNAppointmentTypeViewModel.m in Sources */,
 				BC17E9391DD599B60054FBE2 /* NNCommentModel.m in Sources */,
 				BC58BA6C1DBDE9A800F3BF0D /* NNMineCommentVC.m in Sources */,
 				BCB6EFE31DB62F3600BEFD37 /* NNHomepageSuccessCaseModel.m in Sources */,
@@ -1085,6 +1102,7 @@
 				BCD9AEA01DAE21D1008DB98E /* NNNeterReplyCell.m in Sources */,
 				BCA60E251DC8912500DB84A0 /* NNUserInfoViewModel.m in Sources */,
 				BC8C61DE1DC04A2C00094F94 /* NNRingImageModel.m in Sources */,
+				BCE6A06A1DDEA89D00A02E50 /* NNAppointmentModel.m in Sources */,
 				BC247E9B1DAA19B100AB5C84 /* NNEmotionallCell.m in Sources */,
 				BCD9AE721DACCFF0008DB98E /* NNRingImageView.m in Sources */,
 				BC58BA851DBDEFC300F3BF0D /* NNMineSetVC.m in Sources */,

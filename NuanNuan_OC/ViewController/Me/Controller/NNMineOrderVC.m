@@ -12,7 +12,7 @@
 #import "NNOrderCell.h"
 @interface NNMineOrderVC ()<UITableViewDelegate,UITableViewDataSource>
 {
-    NSMutableArray * orderArray;
+    NSMutableArray  <NNOrderModel *> *orderArray;
     MJRefreshFooter *footer;
 }
 @property (weak, nonatomic) IBOutlet UITableView *orderTableView;
@@ -37,6 +37,7 @@
     [self setNavigationBackButton:YES];
     _orderTableView.delegate = self;
     _orderTableView.dataSource = self;
+    _orderTableView.backgroundColor = NN_BACKGROUND_COLOR;
     footer =  [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [self refreshData];
     }];
@@ -98,7 +99,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NNOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNOrderCell"];
-    
+    cell.model = [orderArray objectAtIndex:indexPath.section];
     return cell;
 }
 

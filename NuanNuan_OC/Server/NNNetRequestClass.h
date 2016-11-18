@@ -56,4 +56,15 @@
                     withFailureBlock:(FailureBlock)failureBlock
                         withProgress:(ProgressBlock) progressBlock;
 
+
+
++ (void) NetRequestPOSTFileWithRequestURL:(NSString *) requestURLString
+                            withParameter:(NSDictionary *)parameter
+                             withFileData:(NSData *)data
+                             withFileName:(NSString *)fileName
+                     withReturnValueBlock:(ReturnValueBlock) returnBlock
+                       withErrorCodeBlock:(ErrorCodeBlock) errorBlock
+                         withFailureBlock:(FailureBlock)failureBlock
+                             withProgress:(ProgressBlock) progressBlock;
+
 @end

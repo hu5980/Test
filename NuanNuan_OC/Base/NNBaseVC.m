@@ -62,9 +62,14 @@
 }
 
 - (void)keyboardWillShow:(NSNotification*)notification{
+       
+    
 }
 
 - (void)keyboardWillHide:(NSNotification*)notification{
+    
+   
+    
 }
 
 - (void)setNavTitle:(NSString *)navTitle{

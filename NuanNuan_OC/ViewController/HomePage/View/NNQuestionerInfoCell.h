@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NNQuestionerInfoCell : UITableViewCell
+@interface NNQuestionerInfoCell : UITableViewCell 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 
