@@ -10,6 +10,8 @@
 #import "NNLoginViewModel.h"
 #import "NNRegistionViewModel.h"
 #import "NNUserInfoModel.h"
+#import "NNForgetPasswordVC.h"
+#import <UMSocialCore/UMSocialCore.h>
 @interface NNLoginAndRegisterVC (){
     UIButton *defaultButton;
 }
@@ -27,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginOrRegisterButton;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
+@property (strong, nonatomic) IBOutlet UIButton *forgetPasswordButton;
 @end
 
 @implementation NNLoginAndRegisterVC
@@ -56,6 +59,18 @@
 
     defaultButton = _loginButton;
 }
+- (IBAction)thirdlyLoginAction:(UIButton *)sender {
+    switch (sender.tag) {
+        case 500:
+            [self getUserInfoFromQQ];
+            break;
+            
+        default:
+            break;
+    }
+    
+    
+}
 
 - (IBAction)sendCaptchAction:(id)sender {
    
@@ -71,10 +86,11 @@
         _loginOrRegisterButtonConstraint.constant = 126;
         _loginView.hidden = NO;
         _loginSelectView.hidden = NO;
-        
+        _forgetPasswordButton.hidden = NO;
         [_loginOrRegisterButton setTitle:@"登录" forState:UIControlStateNormal];
         
     }else{
+        _forgetPasswordButton.hidden = YES;
         _registerSelectView.hidden = NO;
         _registerView.hidden = NO;
         _loginOrRegisterButtonConstraint.constant = 170;
@@ -102,7 +118,7 @@
         [loginViewModel setBlockWithReturnBlock:^(id returnValue) {
             [[NSUserDefaults standardUserDefaults] setObject:returnValue forKey:@"userInfo"];
             [[NSUserDefaults standardUserDefaults] synchronize];
-            [weakSelf dismissViewControllerAnimated:YES completion:nil];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
         } WithErrorBlock:^(id errorCode) {
             
         } WithFailureBlock:^(id failureBlock) {
@@ -141,6 +157,92 @@
     }
     
   
+}
+
+
+
+- (IBAction)forgetPasswordAction:(UIButton *)sender {
+    NNForgetPasswordVC *forgetVC = [[NNForgetPasswordVC alloc] init];
+    
+    [self.navigationController pushViewController:forgetVC animated:YES];
+    
+}
+
+
+- (void)getUserInfoFromWechat
+{
+    [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_WechatSession currentViewController:nil completion:^(id result, NSError *error) {
+        if (error) {
+            
+        } else {
+            UMSocialUserInfoResponse *resp = result;
+            
+            // 授权信息
+            NSLog(@"Wechat uid: %@", resp.uid);
+            NSLog(@"Wechat openid: %@", resp.openid);
+            NSLog(@"Wechat accessToken: %@", resp.accessToken);
+            NSLog(@"Wechat refreshToken: %@", resp.refreshToken);
+            NSLog(@"Wechat expiration: %@", resp.expiration);
+            
+            // 用户信息
+            NSLog(@"Wechat name: %@", resp.name);
+            NSLog(@"Wechat iconurl: %@", resp.iconurl);
+            NSLog(@"Wechat gender: %@", resp.gender);
+            
+            // 第三方平台SDK源数据
+            NSLog(@"Wechat originalResponse: %@", resp.originalResponse);
+        }
+    }];
+}
+
+- (void)getUserInfoFromSina
+{
+    [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_Sina currentViewController:nil completion:^(id result, NSError *error) {
+        if (error) {
+            
+        } else {
+            UMSocialUserInfoResponse *resp = result;
+            
+            // 授权信息
+            NSLog(@"Sina uid: %@", resp.uid);
+            NSLog(@"Sina accessToken: %@", resp.accessToken);
+            NSLog(@"Sina refreshToken: %@", resp.refreshToken);
+            NSLog(@"Sina expiration: %@", resp.expiration);
+            
+            // 用户信息
+            NSLog(@"Sina name: %@", resp.name);
+            NSLog(@"Sina iconurl: %@", resp.iconurl);
+            NSLog(@"Sina gender: %@", resp.gender);
+            
+            // 第三方平台SDK源数据
+            NSLog(@"Sina originalResponse: %@", resp.originalResponse);
+        }
+    }];
+}
+
+- (void)getUserInfoFromQQ
+{
+    [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_QQ currentViewController:nil completion:^(id result, NSError *error) {
+        if (error) {
+            
+        } else {
+            UMSocialUserInfoResponse *resp = result;
+            
+            // 授权信息
+            NSLog(@"QQ uid: %@", resp.uid);
+            NSLog(@"QQ openid: %@", resp.openid);
+            NSLog(@"QQ accessToken: %@", resp.accessToken);
+            NSLog(@"QQ expiration: %@", resp.expiration);
+            
+            // 用户信息
+            NSLog(@"QQ name: %@", resp.name);
+            NSLog(@"QQ iconurl: %@", resp.iconurl);
+            NSLog(@"QQ gender: %@", resp.gender);
+            
+            // 第三方平台SDK源数据
+            NSLog(@"QQ originalResponse: %@", resp.originalResponse);
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

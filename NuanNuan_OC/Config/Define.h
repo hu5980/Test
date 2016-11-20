@@ -45,5 +45,22 @@ typedef void (^ProgressBlock)(id Progress);
 #define NN_TEXT999999_COLOR [UIColor colorFromHexString:@"#999999"]
 #define NN_ASSIST_LINE_COLOR [UIColor colorFromHexString:@"#E0E0E0"]
 
+
+#define NNHOMEPAGEURL  @"www.baidu.com"
+
+//用的 熙康的数据  到时候再换
+#define UMKEY @"5109fd2552701553b3000029"
+#define WEIXIN_APPKEY @"wxb6b66842d5cb4870"
+#define WEIXIN_SECRET @"50e5b278f303938db2b7b1196aedb5f3"
+#define QQ_APPKEY @"100735359"
+#define QQ_APPSECRET  @"1a0b23a764c82f6add6a77347e1d39ba"
+#define WEIBO_APPKEY @"3921700954"
+#define WEIBO_APPSECRET @"04b48b094faeb16683c32669824ebdad"
+
+#define msgAppKey   @"7a1f10938d60"
+#define msgAppSecret    @"b42e890fa5487379ca087c6673c26b1a"
+
+
+
 #define TEST_TOKEN  [[NSUserDefaults standardUserDefaults] objectForKey:@"token"]
 #endif /* Define_h */

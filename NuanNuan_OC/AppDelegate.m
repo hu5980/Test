@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <UMSocialCore/UMSocialCore.h>
+#import "Define.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +19,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self registerTirdlyAppKey];
+    
     return YES;
+}
+
+
+- (void)registerTirdlyAppKey {
+    [[UMSocialManager defaultManager] openLog:YES];
+    [[UMSocialManager defaultManager] setUmSocialAppkey:UMKEY];
+    
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WEIXIN_APPKEY appSecret:WEIXIN_SECRET redirectURL:NNHOMEPAGEURL];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:QQ_APPKEY appSecret:QQ_APPSECRET redirectURL:NNHOMEPAGEURL];
+    
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:WEIBO_APPKEY appSecret:WEIBO_APPSECRET redirectURL:NNHOMEPAGEURL];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

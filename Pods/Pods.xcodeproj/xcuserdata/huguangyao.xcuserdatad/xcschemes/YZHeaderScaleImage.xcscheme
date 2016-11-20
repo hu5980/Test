@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C0E47F1FF5FE824E0D89FB79C32CF582'
+               BlueprintIdentifier = '4E15412DA0E527D0E56FFEDA4CBB04BE'
                BlueprintName = 'YZHeaderScaleImage'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'YZHeaderScaleImage.framework'>

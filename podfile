@@ -19,6 +19,7 @@ target 'NuanNuan_OC' do
   	pod 'UIActivityIndicator-for-SDWebImage'
   	pod 'Reveal-iOS-SDK', '~> 1.6.2'
   	pod 'YYKit'
+	pod 'ReactiveCocoa', :podspec => 'https://gist.githubusercontent.com/andrewschreiber/4fd444c08e8c8e876f06bb3a8ae45f2e/raw/72798f6fd81a124b0eaac52c6484725fbe9f5330/ReactiveCocoa.podspec.json'
 ##	pod 'ReactiveCocoa', '~> 4.2.2'  	
   	pod 'MJRefresh', '~> 3.1.12'
   	pod 'YZHeaderScaleImage', '~> 1.0.1'

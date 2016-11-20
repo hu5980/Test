@@ -104,7 +104,8 @@
     }else{
         NNLoginAndRegisterVC *loginOrRegisterVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];
         
-        [self.navigationController presentViewController:loginOrRegisterVC animated:YES completion:nil];
+        [self.navigationController pushViewController:loginOrRegisterVC animated:YES];
+      
     }
 }
 

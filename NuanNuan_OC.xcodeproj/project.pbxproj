@@ -16,6 +16,8 @@
 		0D331E191DBD09FB002B0DCD /* NNReplyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D331E181DBD09FB002B0DCD /* NNReplyView.xib */; };
 		0DA029931DE08C8C00862E7C /* NNTreeHoelSendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA029911DE08C8C00862E7C /* NNTreeHoelSendVC.m */; };
 		0DA029941DE08C8C00862E7C /* NNTreeHoelSendVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA029921DE08C8C00862E7C /* NNTreeHoelSendVC.xib */; };
+		0DBB28FB1DE1A3C0008A0F32 /* NNForgetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB28F91DE1A3C0008A0F32 /* NNForgetPasswordVC.m */; };
+		0DBB28FC1DE1A3C0008A0F32 /* NNForgetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBB28FA1DE1A3C0008A0F32 /* NNForgetPasswordVC.xib */; };
 		0DDAEE791DBB9F87008478DC /* NNImageBroswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAEE781DBB9F87008478DC /* NNImageBroswerView.m */; };
 		0DDAEE7D1DBBB030008478DC /* NNSpitslotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAEE7B1DBBB030008478DC /* NNSpitslotCell.m */; };
 		0DDAEE7E1DBBB030008478DC /* NNSpitslotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DDAEE7C1DBBB030008478DC /* NNSpitslotCell.xib */; };
@@ -151,6 +153,9 @@
 		0DA029911DE08C8C00862E7C /* NNTreeHoelSendVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNTreeHoelSendVC.m; sourceTree = "<group>"; };
 		0DA029921DE08C8C00862E7C /* NNTreeHoelSendVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNTreeHoelSendVC.xib; sourceTree = "<group>"; };
 		0DB68B1A1DE16D6E00FBD4B0 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "../../../Library/Developer/Xcode/DerivedData/NuanNuan_OC-efbaiqmbhwqxdqhavhghvzdgmimd/Build/Products/Debug-iphonesimulator/ReactiveCocoa/ReactiveCocoa.framework"; sourceTree = "<group>"; };
+		0DBB28F81DE1A3C0008A0F32 /* NNForgetPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNForgetPasswordVC.h; sourceTree = "<group>"; };
+		0DBB28F91DE1A3C0008A0F32 /* NNForgetPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNForgetPasswordVC.m; sourceTree = "<group>"; };
+		0DBB28FA1DE1A3C0008A0F32 /* NNForgetPasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNForgetPasswordVC.xib; sourceTree = "<group>"; };
 		0DDAEE771DBB9F87008478DC /* NNImageBroswerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNImageBroswerView.h; sourceTree = "<group>"; };
 		0DDAEE781DBB9F87008478DC /* NNImageBroswerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNImageBroswerView.m; sourceTree = "<group>"; };
 		0DDAEE7A1DBBB030008478DC /* NNSpitslotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSpitslotCell.h; sourceTree = "<group>"; };
@@ -386,6 +391,9 @@
 				BC328EE71DBF2F5E000AF40B /* NNLoginAndRegisterVC.h */,
 				BC328EE81DBF2F5E000AF40B /* NNLoginAndRegisterVC.m */,
 				BC328EE91DBF2F5E000AF40B /* NNLoginAndRegisterVC.xib */,
+				0DBB28F81DE1A3C0008A0F32 /* NNForgetPasswordVC.h */,
+				0DBB28F91DE1A3C0008A0F32 /* NNForgetPasswordVC.m */,
+				0DBB28FA1DE1A3C0008A0F32 /* NNForgetPasswordVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -918,7 +926,7 @@
 				TargetAttributes = {
 					BCD505F41D921F8C000FB2C0 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = GZG7SDL9U6;
+						DevelopmentTeam = DDSZZTF2EY;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -975,6 +983,7 @@
 				0D331E191DBD09FB002B0DCD /* NNReplyView.xib in Resources */,
 				BC58BA811DBDEFB400F3BF0D /* NNMineFeedbackVC.xib in Resources */,
 				BCD9AE961DAE0941008DB98E /* NNQuestionAndAnswerCell.xib in Resources */,
+				0DBB28FC1DE1A3C0008A0F32 /* NNForgetPasswordVC.xib in Resources */,
 				BC3BFA341DD9B73300F73DEF /* NNQuestionCell.xib in Resources */,
 				BCD506051D921F8C000FB2C0 /* Assets.xcassets in Resources */,
 				BC247E9C1DAA19B100AB5C84 /* NNEmotionallCell.xib in Resources */,
@@ -1104,6 +1113,7 @@
 				BCD9AE951DAE0941008DB98E /* NNQuestionAndAnswerCell.m in Sources */,
 				BCE6A0671DDEA87A00A02E50 /* NNAppointmentTypeViewModel.m in Sources */,
 				BC17E9391DD599B60054FBE2 /* NNCommentModel.m in Sources */,
+				0DBB28FB1DE1A3C0008A0F32 /* NNForgetPasswordVC.m in Sources */,
 				BC58BA6C1DBDE9A800F3BF0D /* NNMineCommentVC.m in Sources */,
 				BCB6EFE31DB62F3600BEFD37 /* NNHomepageSuccessCaseModel.m in Sources */,
 				0DA029931DE08C8C00862E7C /* NNTreeHoelSendVC.m in Sources */,
@@ -1242,23 +1252,20 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GZG7SDL9U6;
+				DEVELOPMENT_TEAM = DDSZZTF2EY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/QQ",
-					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/UMSocialSDK",
+					"\"$(SRCROOT)/Pods/UMengUShare/UShareSDK\"/**",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Reveal-iOS-SDK\"",
 				);
 				INFOPLIST_FILE = NuanNuan_OC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Douban",
-					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/QQ",
-					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Renren",
-					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Sina",
-					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/WeChat",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xikang.ss;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ssss.sss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 			};
@@ -1270,23 +1277,21 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GZG7SDL9U6;
+				DEVELOPMENT_TEAM = DDSZZTF2EY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/QQ",
-					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/UMSocialSDK",
+					"\"$(SRCROOT)/Pods/UMengUShare/UShareSDK\"/**",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Result\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Reveal-iOS-SDK\"",
 				);
 				INFOPLIST_FILE = NuanNuan_OC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Douban",
-					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/QQ",
-					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Renren",
-					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Sina",
-					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/WeChat",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xikang.ss;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ssss.sss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 			};
