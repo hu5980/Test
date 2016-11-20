@@ -18,7 +18,7 @@
 #import "NNMineSetVC.h"
 #import "NNMineNoticeVC.h"
 #import "NNUserHeaderViewModel.h"
-
+#import "NNUserInfoModel.h"
 @interface NNMeVC ()<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate> {
     NSArray *imageArray;
     NSArray *titleArray;
@@ -26,6 +26,8 @@
     UILabel *ninkNameLabel;
     UIButton *headerButton;
     UIButton *backgroundButton;
+    
+    NNUserInfoModel *userInfoModel;
 }
 @property (weak, nonatomic) IBOutlet UITableView *meTableView;
 
@@ -33,9 +35,15 @@
 
 @implementation NNMeVC
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self initdata];
+    [self reflashDataToHeadview];
+   
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initdata];
     [self initView];
     // Do any additional setup after loading the view.
 }
@@ -57,7 +65,7 @@
 - (UIView *)createTableHeaderView {
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, NNAppWidth *164 / 375)];
     backgroundButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    backgroundButton.backgroundColor = [UIColor redColor];
+    [backgroundButton setBackgroundImage:[UIImage imageNamed:@"400_01"] forState:UIControlStateNormal];
     [headerView addSubview:backgroundButton];
     
     [backgroundButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -70,7 +78,7 @@
     headerButton = [UIButton buttonWithType:UIButtonTypeCustom];
     headerButton.layer.masksToBounds = YES;
     headerButton.layer.cornerRadius = 30;
-    headerButton.backgroundColor = [UIColor yellowColor];
+   
     [headerButton addTarget:self action:@selector(changeHeadAction:) forControlEvents:UIControlEventTouchUpInside];
     [backgroundButton addSubview:headerButton];
     [headerButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -83,6 +91,7 @@
     ninkNameLabel = [[UILabel alloc] init];
     ninkNameLabel.textColor = [UIColor colorFromHexString:@"#333333"];
     ninkNameLabel.font = [UIFont systemFontOfSize:14.f];
+    ninkNameLabel.textAlignment = NSTextAlignmentCenter;
     [backgroundButton addSubview:ninkNameLabel];
     [ninkNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(@150);
@@ -91,7 +100,7 @@
         make.height.equalTo(@20);
     }];
     
-    ninkNameLabel.backgroundColor = [UIColor whiteColor];
+    ninkNameLabel.backgroundColor = [UIColor clearColor];
     
     return headerView;
 }
@@ -99,6 +108,36 @@
 - (void)initdata {
     titleArray = @[@"我的预约",@"我的问吧",@"我的消息",@"意见反馈",@"设置"];
     imageArray = @[@"400_16",@"400_23",@"400_27",@"400_29",@"400_31"];
+    NSDictionary *returnValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
+    [self dealUserInfo:returnValue];
+}
+
+- (void)dealUserInfo:(NSDictionary *)returnValue {
+    
+    NSDictionary *info = [[returnValue objectForKey:@"data"] objectForKey:@"info"];
+        
+    NSString *token = [[returnValue objectForKey:@"data"] objectForKey:@"token"];
+    [[NSUserDefaults standardUserDefaults] setObject:token forKey:@"token"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+        
+    userInfoModel = [[NNUserInfoModel alloc ] init];
+    userInfoModel.channel = [[info objectForKey:@"channel"] integerValue];
+    userInfoModel.creatTime = [[info objectForKey:@"create_time"] integerValue];
+    userInfoModel.userDescription = [info objectForKey:@"description"];
+    userInfoModel.headImageUrl = [info objectForKey:@"head"];
+    userInfoModel.modifyTime = [[info objectForKey:@"modify_time"] integerValue];
+    userInfoModel.nickName = [info objectForKey:@"nickname"];
+    userInfoModel.sex = [[info objectForKey:@"sex"] integerValue] == 1 ? @"男":@"女" ;
+    userInfoModel.telphone = [info objectForKey:@"tel"];
+    userInfoModel.uid = [info objectForKey:@"uid"] ;
+    userInfoModel.usable = [info objectForKey:@"usable"];
+    
+}
+
+- (void)reflashDataToHeadview {
+
+     [headerButton setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:userInfoModel.headImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+      ninkNameLabel.text = userInfoModel.nickName;
 }
 
 - (void)changeHeadAction:(UIButton *)button {

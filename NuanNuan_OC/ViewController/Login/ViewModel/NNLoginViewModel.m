@@ -7,7 +7,7 @@
 //
 
 #import "NNLoginViewModel.h"
-
+#import "NNUserInfoModel.h"
 @implementation NNLoginViewModel
 
 - (void)loginWithUserName:(NSString *)userName andpassword:(NSString *)password andLoginType:(NSInteger)type{
@@ -16,6 +16,10 @@
     [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_user&a=login",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
         NSLog(@"%@",returnValue);
         self.returnBlock(returnValue);
+
+    
+    
+       
     } withErrorCodeBlock:^(id errorCode) {
         self.errorBlock(errorCode);
     } withFailureBlock:^(id failureBlock) {
@@ -24,5 +28,6 @@
         
     }];
 }
+
 
 @end

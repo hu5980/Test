@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface NNUserInfoModel : NSObject
-@property (nonatomic,assign) NSInteger uid;
+@property (nonatomic,strong) NSString *uid;
 @property (nonatomic,strong) NSString *headImageUrl;
 @property (nonatomic,strong) NSString *nickName;
-@property (nonatomic,assign) NSInteger sex;
+@property (nonatomic,strong) NSString *sex;
 @property (nonatomic,strong) NSString *telphone;
 @property (nonatomic,strong) NSString * usable;
 @property (nonatomic,strong) NSString *userDescription;

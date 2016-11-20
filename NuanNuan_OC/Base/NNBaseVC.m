@@ -11,6 +11,7 @@
 @interface NNBaseVC ()
 {
     UIBarButtonItem *leftItem;
+    UIBarButtonItem *rightItem;
 }
 @end
 
@@ -59,6 +60,21 @@
     }else{
         self.navigationItem.leftBarButtonItem = nil;
     }
+}
+
+
+- (void)setNavigationRightItem:(NSString *)title {
+    if (rightItem == nil) {
+        rightItem = [[UIBarButtonItem alloc] initWithTitle: title style:UIBarButtonItemStylePlain target:self action:@selector(rightItemAction:)];
+        [rightItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14],NSFontAttributeName, nil] forState:UIControlStateNormal ];
+        rightItem.tintColor = [UIColor colorFromHexString:@"#ff9933"];
+    }
+
+    self.navigationItem.rightBarButtonItem = rightItem;
+}
+
+- (void)rightItemAction:(UIBarButtonItem *) item {
+
 }
 
 - (void)keyboardWillShow:(NSNotification*)notification{

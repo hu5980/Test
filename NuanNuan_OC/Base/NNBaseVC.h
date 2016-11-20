@@ -14,7 +14,8 @@
 #import "UIImageView+AFNetworking.h"
 #import "UIButton+AFNetworking.h"
 #import "UIImage+AFNetworking.h"
-#import "ReactiveCocoa.h"
+//#import "ReactiveCocoa.h"
+
 #import "MJRefresh.h"
 #import "NNProgressHUD.h"
 #import "NNTimeUtil.h"
@@ -23,6 +24,10 @@
 @property (nonatomic,strong) NSString *navTitle;
 
 - (void)setNavigationBackButton:(BOOL ) showOrHidden;
+
+- (void)setNavigationRightItem:(NSString *)title;
+
+- (void)rightItemAction:(UIBarButtonItem *) item;
 
 - (void)keyboardWillShow:(NSNotification*)notification;
 

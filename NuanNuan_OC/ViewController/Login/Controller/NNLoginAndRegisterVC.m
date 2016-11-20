@@ -9,6 +9,7 @@
 #import "NNLoginAndRegisterVC.h"
 #import "NNLoginViewModel.h"
 #import "NNRegistionViewModel.h"
+#import "NNUserInfoModel.h"
 @interface NNLoginAndRegisterVC (){
     UIButton *defaultButton;
 }
@@ -48,10 +49,8 @@
     _loginView.layer.masksToBounds = YES;
     _loginView.layer.cornerRadius = 5;
     _loginView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
-    
     _captchButton.layer.masksToBounds = YES;
     _captchButton.layer.cornerRadius = 5;
-    
     _loginOrRegisterButton.layer.masksToBounds = YES;
     _loginOrRegisterButton.layer.cornerRadius = 5;
 
@@ -100,8 +99,9 @@
         }
       
         NNLoginViewModel *loginViewModel = [[NNLoginViewModel alloc] init];
-        
         [loginViewModel setBlockWithReturnBlock:^(id returnValue) {
+            [[NSUserDefaults standardUserDefaults] setObject:returnValue forKey:@"userInfo"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
             [weakSelf dismissViewControllerAnimated:YES completion:nil];
         } WithErrorBlock:^(id errorCode) {
             

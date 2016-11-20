@@ -21,6 +21,7 @@
 #import "MWPhotoBrowser.h"
 #import "NNPariseViewModel.h"
 #import "NNUnPariseViewModel.h"
+#import "NNTreeHoelSendVC.h"
 
 @interface NNTreeHoleVC ()<UITableViewDelegate,UITableViewDataSource,MWPhotoBrowserDelegate> {
     UIButton *defaultSelectButton;
@@ -30,6 +31,8 @@
     MJRefreshFooter *footer;
     
     NSMutableArray *phonoArrays;
+    
+    UIButton *treeHoleButton;
 }
 @property (weak, nonatomic) IBOutlet UITableView *treeHoelTableView;
 
@@ -67,10 +70,10 @@
             defaultSelectButton.selected = YES;
             [teacherModelArrays removeAllObjects];
             if (button.tag == 200) {
-              
+               treeHoleButton.hidden = YES;
                 [weakSelf reflashTeachData];
             }else{
-              
+               treeHoleButton.hidden = NO;
                 [weakSelf reflashTreeHoelData];
             }
             
@@ -94,6 +97,13 @@
     _treeHoelTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_treeHoelTableView registerNib:[UINib nibWithNibName:@"NNTreeHoelCell" bundle:nil] forCellReuseIdentifier:@"NNTreeHoelCell"];
     [_treeHoelTableView registerNib:[UINib nibWithNibName:@"NNSpitslotCell" bundle:nil] forCellReuseIdentifier:@"NNSpitslotCell"];
+    
+    treeHoleButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [treeHoleButton setBackgroundImage:[UIImage imageNamed:@"210_01"] forState:UIControlStateNormal];
+    treeHoleButton .frame = CGRectMake(NNAppWidth - 15 - 54, NNAppHeight - 49 - 15 - 54 - 64, 54, 54);
+    [treeHoleButton addTarget:self action:@selector(sendTreeHoleAction:) forControlEvents:UIControlEventTouchUpInside];
+    treeHoleButton.hidden = YES;
+    [self.view addSubview:treeHoleButton];
 }
 
 - (void)initData {
@@ -136,6 +146,11 @@
                           andUpdatePageNum:@"10"];
 }
 
+- (void)sendTreeHoleAction:(UIButton *)button {
+    NNTreeHoelSendVC *sendVC = [[NNTreeHoelSendVC alloc] init];
+    sendVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:sendVC animated:YES];
+}
 
 #pragma --mark  UItableViewDelegate UItableViewDatasource
 
