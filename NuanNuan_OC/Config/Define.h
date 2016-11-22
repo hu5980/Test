@@ -46,14 +46,17 @@ typedef void (^ProgressBlock)(id Progress);
 #define NN_ASSIST_LINE_COLOR [UIColor colorFromHexString:@"#E0E0E0"]
 
 
-#define NNHOMEPAGEURL  @"www.baidu.com"
+#define NNHOMEPAGEURL  @"http://mobile.umeng.com/social"
 
 //用的 熙康的数据  到时候再换
-#define UMKEY @"5109fd2552701553b3000029"
-#define WEIXIN_APPKEY @"wxb6b66842d5cb4870"
-#define WEIXIN_SECRET @"50e5b278f303938db2b7b1196aedb5f3"
+#define UMKEY @"57b432afe0f55a9832001a0a"
+
+#define WEIXIN_APPKEY @"wxdc1e388c3822c80b"
+#define WEIXIN_SECRET @"3baf1193c85774b3fd9d18447d76cab0"
+
 #define QQ_APPKEY @"100735359"
 #define QQ_APPSECRET  @"1a0b23a764c82f6add6a77347e1d39ba"
+
 #define WEIBO_APPKEY @"3921700954"
 #define WEIBO_APPSECRET @"04b48b094faeb16683c32669824ebdad"
 

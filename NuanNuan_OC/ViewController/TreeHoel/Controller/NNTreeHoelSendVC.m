@@ -27,14 +27,23 @@
 }
 
 - (void)initUI {
+    self.view.backgroundColor = NN_BACKGROUND_COLOR;
     [self setNavigationBackButton:YES];
     self.navTitle = @"发表树洞";
     [self setNavigationRightItem:@"发送"];
-    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.backgroundColor = [UIColor clearColor];
+    [button setBackgroundImage:[UIImage imageNamed:@"addimage"] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(addImageAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_imageView addSubview:button];
 }
 
 
 #pragma --mark Action
+- (void)addImageAction:(UIButton *)button {
+
+}
+
 - (void)rightItemAction:(UIBarButtonItem *)item {
 
 }

@@ -59,17 +59,21 @@
 
     defaultButton = _loginButton;
 }
+
 - (IBAction)thirdlyLoginAction:(UIButton *)sender {
     switch (sender.tag) {
         case 500:
+            [self getUserInfoFromWechat];
+            break;
+        case 501:
             [self getUserInfoFromQQ];
             break;
-            
+        case 502:
+            [self getUserInfoFromSina];
+            break;
         default:
             break;
     }
-    
-    
 }
 
 - (IBAction)sendCaptchAction:(id)sender {
@@ -173,7 +177,7 @@
 {
     [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_WechatSession currentViewController:nil completion:^(id result, NSError *error) {
         if (error) {
-            
+            NSLog(@"WeChat Error = %@",error);
         } else {
             UMSocialUserInfoResponse *resp = result;
             
@@ -199,7 +203,7 @@
 {
     [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_Sina currentViewController:nil completion:^(id result, NSError *error) {
         if (error) {
-            
+            NSLog(@"sina Error = %@",error.description);
         } else {
             UMSocialUserInfoResponse *resp = result;
             
@@ -224,7 +228,7 @@
 {
     [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_QQ currentViewController:nil completion:^(id result, NSError *error) {
         if (error) {
-            
+            NSLog(@"QQ Error = %@",error);
         } else {
             UMSocialUserInfoResponse *resp = result;
             
