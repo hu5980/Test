@@ -13,7 +13,7 @@
 - (void)upLoadHeaderImageViewWithToken:(NSString *)token andImage:(UIImage *)imagedata {
     NSDictionary *parames = @{@"token":token};
     NSData *data = UIImageJPEGRepresentation(imagedata, 0.5);
-    [NNNetRequestClass NetRequestPOSTFileWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_member&a=updateHead",NNBaseUrl] withParameter:parames withFileData: data withFileName:@"headimage.png" withReturnValueBlock:^(id returnValue) {
+    [NNNetRequestClass NetRequestPOSTFileWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_member&a=updateHead",NNBaseUrl] withParameter:parames withName:@"head" withFileData: data withFileName:@"head" withReturnValueBlock:^(id returnValue) {
         NSLog(@"%@",returnValue);
         
         self.returnBlock([[returnValue objectForKey:@"data"] objectForKey:@"head"]);

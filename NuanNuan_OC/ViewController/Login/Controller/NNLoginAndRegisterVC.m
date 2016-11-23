@@ -107,7 +107,7 @@
     __weak  NNLoginAndRegisterVC *weakSelf = self;
     if (defaultButton.tag == 100) {
         NNLog(@"登录");
-        
+        [[NNProgressHUD instance] showHudToView:self.view withMessage:@"登录中...."];
         if (_loginUserNameTextField.text.length == 0) {
            [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"请输入用户名"];
             return;
@@ -120,11 +120,12 @@
       
         NNLoginViewModel *loginViewModel = [[NNLoginViewModel alloc] init];
         [loginViewModel setBlockWithReturnBlock:^(id returnValue) {
+            [[NNProgressHUD instance] hideHud];
             [[NSUserDefaults standardUserDefaults] setObject:returnValue forKey:@"userInfo"];
             [[NSUserDefaults standardUserDefaults] synchronize];
             [weakSelf.navigationController popViewControllerAnimated:YES];
         } WithErrorBlock:^(id errorCode) {
-            
+            [[NNProgressHUD instance] showHudToView:self.view withMessage:errorCode];
         } WithFailureBlock:^(id failureBlock) {
             
         }];

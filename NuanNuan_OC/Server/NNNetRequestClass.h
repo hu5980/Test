@@ -60,6 +60,7 @@
 
 + (void) NetRequestPOSTFileWithRequestURL:(NSString *) requestURLString
                             withParameter:(NSDictionary *)parameter
+                                 withName:(NSString *)name
                              withFileData:(NSData *)data
                              withFileName:(NSString *)fileName
                      withReturnValueBlock:(ReturnValueBlock) returnBlock

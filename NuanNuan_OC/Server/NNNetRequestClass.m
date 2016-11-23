@@ -92,6 +92,7 @@
 
 + (void) NetRequestPOSTFileWithRequestURL:(NSString *) requestURLString
                         withParameter:(NSDictionary *)parameter
+                                 withName:(NSString *)name
                              withFileData:(NSData *)data
                              withFileName:(NSString *)fileName
                  withReturnValueBlock:(ReturnValueBlock) returnBlock
@@ -101,7 +102,7 @@
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [manager POST:requestURLString parameters:parameter constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        [formData appendPartWithFileData:data name:@"head" fileName:fileName mimeType:@"image/jpg"];
+        [formData appendPartWithFileData:data name:name fileName:fileName mimeType:@"image/jpg"];
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         progressBlock(uploadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

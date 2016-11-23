@@ -184,7 +184,6 @@
         UIImage *temp = [self makeImageWithImage:image scaledToSize:CGSizeMake(720, 720)];
       
         
-     
         NNUserHeaderViewModel *viewModel = [[NNUserHeaderViewModel alloc] init];
         
         [viewModel setBlockWithReturnBlock:^(id returnValue) {

@@ -44,7 +44,6 @@
         NSMutableArray *picMutableArrays = [NSMutableArray array];
         for (int j= 0; j < picArrays.count; j++) {
             [picMutableArrays addObject:[NSString stringWithFormat:@"%@/%@",basePathUrl,[picArrays objectAtIndex:j]]];
-            
         }
         
         NSLog(@"=====%@",picMutableArrays);

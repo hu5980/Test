@@ -187,7 +187,7 @@
             }
             
             MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithPhotos:phonoArrays];
-            browser.displayActionButton = NO;
+            browser.displayActionButton = YES;
             browser.displayNavArrows = YES;
             browser.displaySelectionButtons = NO;
             browser.alwaysShowControls = NO;

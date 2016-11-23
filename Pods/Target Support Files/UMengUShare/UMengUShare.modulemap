@@ -1,0 +1,6 @@
+framework module UMengUShare {
+  umbrella header "UMengUShare-umbrella.h"
+
+  export *
+  module * { export * }
+}

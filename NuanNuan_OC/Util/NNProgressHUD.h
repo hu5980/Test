@@ -10,6 +10,16 @@
 #import "MBProgressHUD.h"
 @interface NNProgressHUD : NSObject
 
+@property (readonly) MBProgressHUD *progressHud;
+
++ (instancetype)instance;
+
 + (void)showHudAotoHideAddToView:(UIView *)view withMessage:(NSString *)meaasge;
+
+- (void)showHudToView:(UIView *)view withMessage:(NSString *)meaasge;
+
+- (void)showHudToView:(UIView *)view;
+
+- (void)hideHud;
 
 @end
