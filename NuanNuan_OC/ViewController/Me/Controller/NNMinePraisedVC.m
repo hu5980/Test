@@ -21,7 +21,7 @@
     NSArray *imageArrays;
     NSString *defaultType;
     NSMutableArray *praisedArray;
-      NSMutableArray *phonoArrays;
+    NSMutableArray *phonoArrays;
 }
 @property (weak, nonatomic) IBOutlet UIButton *defaultButton;
 

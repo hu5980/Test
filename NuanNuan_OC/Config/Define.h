@@ -30,9 +30,11 @@ typedef void (^ProgressBlock)(id Progress);
 //加载.xib
 #define LOAD_VIEW_FROM_BUNDLE(x) [[NSBundle mainBundle] loadNibNamed:x owner:self options:nil][0]
 
+#define DEBUG    1
+
 #ifdef DEBUG
 #import <Foundation/Foundation.h>
-#define NNLog(...) NSLog(__VA_ARGS__)
+#define NNLog(...)  NSLog(__VA_ARGS__)
 #else
 #define NNLog(...)
 #endif
