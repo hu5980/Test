@@ -49,6 +49,7 @@
 
 - (void)initData {
     orderArray = [NSMutableArray array];
+    [[NNProgressHUD instance] showHudToView:self.view withMessage:@"加载中..."];
     [self refreshData];
 }
 
@@ -56,13 +57,15 @@
 - (void)refreshData {
     NNOrderViewModel *viewModel = [[NNOrderViewModel alloc] init];
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
+        [[NNProgressHUD instance] hideHud];
         [footer endRefreshing];
         [orderArray addObjectsFromArray:returnValue];
         [_orderTableView reloadData];
     } WithErrorBlock:^(id errorCode) {
-        
+         [[NNProgressHUD instance] hideHud];
+         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
     } WithFailureBlock:^(id failureBlock) {
-        
+         [[NNProgressHUD instance] hideHud];
     }];
     
     NNOrderModel *model = [orderArray lastObject];

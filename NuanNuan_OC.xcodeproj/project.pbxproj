@@ -18,6 +18,9 @@
 		0DA029941DE08C8C00862E7C /* NNTreeHoelSendVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA029921DE08C8C00862E7C /* NNTreeHoelSendVC.xib */; };
 		0DBB28FB1DE1A3C0008A0F32 /* NNForgetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB28F91DE1A3C0008A0F32 /* NNForgetPasswordVC.m */; };
 		0DBB28FC1DE1A3C0008A0F32 /* NNForgetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBB28FA1DE1A3C0008A0F32 /* NNForgetPasswordVC.xib */; };
+		0DBB28FF1DE5DED0008A0F32 /* NNMineCommentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB28FE1DE5DED0008A0F32 /* NNMineCommentViewModel.m */; };
+		0DBB29021DE5E5CB008A0F32 /* NNQuestionAndAnswerCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB29011DE5E5CB008A0F32 /* NNQuestionAndAnswerCommentModel.m */; };
+		0DBB29051DE5E5F8008A0F32 /* NNSpitslotCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB29041DE5E5F8008A0F32 /* NNSpitslotCommentModel.m */; };
 		0DDAEE791DBB9F87008478DC /* NNImageBroswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAEE781DBB9F87008478DC /* NNImageBroswerView.m */; };
 		0DDAEE7D1DBBB030008478DC /* NNSpitslotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAEE7B1DBBB030008478DC /* NNSpitslotCell.m */; };
 		0DDAEE7E1DBBB030008478DC /* NNSpitslotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DDAEE7C1DBBB030008478DC /* NNSpitslotCell.xib */; };
@@ -178,6 +181,12 @@
 		0DBB28F81DE1A3C0008A0F32 /* NNForgetPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNForgetPasswordVC.h; sourceTree = "<group>"; };
 		0DBB28F91DE1A3C0008A0F32 /* NNForgetPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNForgetPasswordVC.m; sourceTree = "<group>"; };
 		0DBB28FA1DE1A3C0008A0F32 /* NNForgetPasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNForgetPasswordVC.xib; sourceTree = "<group>"; };
+		0DBB28FD1DE5DED0008A0F32 /* NNMineCommentViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNMineCommentViewModel.h; sourceTree = "<group>"; };
+		0DBB28FE1DE5DED0008A0F32 /* NNMineCommentViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMineCommentViewModel.m; sourceTree = "<group>"; };
+		0DBB29001DE5E5CB008A0F32 /* NNQuestionAndAnswerCommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNQuestionAndAnswerCommentModel.h; sourceTree = "<group>"; };
+		0DBB29011DE5E5CB008A0F32 /* NNQuestionAndAnswerCommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNQuestionAndAnswerCommentModel.m; sourceTree = "<group>"; };
+		0DBB29031DE5E5F8008A0F32 /* NNSpitslotCommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSpitslotCommentModel.h; sourceTree = "<group>"; };
+		0DBB29041DE5E5F8008A0F32 /* NNSpitslotCommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNSpitslotCommentModel.m; sourceTree = "<group>"; };
 		0DDAEE771DBB9F87008478DC /* NNImageBroswerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNImageBroswerView.h; sourceTree = "<group>"; };
 		0DDAEE781DBB9F87008478DC /* NNImageBroswerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNImageBroswerView.m; sourceTree = "<group>"; };
 		0DDAEE7A1DBBB030008478DC /* NNSpitslotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSpitslotCell.h; sourceTree = "<group>"; };
@@ -509,6 +518,10 @@
 			children = (
 				BC3BFA3D1DDAE47000F73DEF /* NNOrderModel.h */,
 				BC3BFA3E1DDAE47000F73DEF /* NNOrderModel.m */,
+				0DBB29001DE5E5CB008A0F32 /* NNQuestionAndAnswerCommentModel.h */,
+				0DBB29011DE5E5CB008A0F32 /* NNQuestionAndAnswerCommentModel.m */,
+				0DBB29031DE5E5F8008A0F32 /* NNSpitslotCommentModel.h */,
+				0DBB29041DE5E5F8008A0F32 /* NNSpitslotCommentModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -528,6 +541,8 @@
 				BCE6A05D1DDC3A9000A02E50 /* NNMinePraisedViewModel.m */,
 				BCE6A0621DDD7C7C00A02E50 /* NNUserHeaderViewModel.h */,
 				BCE6A0631DDD7C7C00A02E50 /* NNUserHeaderViewModel.m */,
+				0DBB28FD1DE5DED0008A0F32 /* NNMineCommentViewModel.h */,
+				0DBB28FE1DE5DED0008A0F32 /* NNMineCommentViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1233,6 +1248,8 @@
 				BCEDDBFD1DE52C5A00187317 /* MLSelectPhotoPickerFooterCollectionReusableView.m in Sources */,
 				BCEDDBFC1DE52C5A00187317 /* MLSelectPhotoPickerCollectionViewCell.m in Sources */,
 				BC58BA711DBDEDFA00F3BF0D /* NNMineLikeVC.m in Sources */,
+				0DBB28FF1DE5DED0008A0F32 /* NNMineCommentViewModel.m in Sources */,
+				0DBB29051DE5E5F8008A0F32 /* NNSpitslotCommentModel.m in Sources */,
 				BCD9AE861DACF16D008DB98E /* NNTreeHoelCell.m in Sources */,
 				0DDAEE7D1DBBB030008478DC /* NNSpitslotCell.m in Sources */,
 				BCD9AE6E1DACC668008DB98E /* NNEmotionallItemCell.m in Sources */,
@@ -1290,6 +1307,7 @@
 				BC58BA671DBDE99500F3BF0D /* NNMinePraisedVC.m in Sources */,
 				BC8C61DB1DC049ED00094F94 /* NNBaseModel.m in Sources */,
 				BCD9AE951DAE0941008DB98E /* NNQuestionAndAnswerCell.m in Sources */,
+				0DBB29021DE5E5CB008A0F32 /* NNQuestionAndAnswerCommentModel.m in Sources */,
 				BCE6A0671DDEA87A00A02E50 /* NNAppointmentTypeViewModel.m in Sources */,
 				BC17E9391DD599B60054FBE2 /* NNCommentModel.m in Sources */,
 				0DBB28FB1DE1A3C0008A0F32 /* NNForgetPasswordVC.m in Sources */,

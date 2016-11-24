@@ -230,6 +230,9 @@
     CGFloat height ;
     if (indexPath.section == 0) {
         height = [tableView fd_heightForCellWithIdentifier:@"NNQuestionAndAnswerCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+            NNQuestionAndAnswerCell *questionAndAnswerCell =  cell;
+            questionAndAnswerCell.commentConstraint.constant = 0;
+
         }];
     }else{
          height = [tableView fd_heightForCellWithIdentifier:@"NNNeterReplyCell" cacheByIndexPath:indexPath configuration:^(id cell) {
@@ -257,6 +260,7 @@
     if (indexPath .section == 0) {
         NNQuestionAndAnswerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNQuestionAndAnswerCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.commentConstraint.constant = 0;
         __weak NNQuestionAndAnswerCell *weakCell = cell;
         cell.likeBlock = ^(UIButton *button){
             NNPariseViewModel  *viewModel = [[NNPariseViewModel alloc] init];

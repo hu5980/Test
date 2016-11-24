@@ -23,7 +23,7 @@
     NSArray *imageArrays;
     NSString *defaultType;
     NSMutableArray *praisedArray;
-      NSMutableArray *phonoArrays;
+    NSMutableArray *phonoArrays;
 }
 @property (weak, nonatomic) IBOutlet UIButton *defaultButton;
 
@@ -62,20 +62,22 @@
     imageArrays = @[@"1",@"2"];
     defaultType = @"1";
     praisedArray = [NSMutableArray array];
-    
+    [[NNProgressHUD instance] showHudToView:self.view withMessage:@"加载中..."];
     [self refreshData];
 }
 
 - (void)refreshData {
     NNMinePraisedViewModel *viewModel = [[NNMinePraisedViewModel alloc] init];
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
+        [[NNProgressHUD instance] hideHud];
         [praisedArray addObjectsFromArray:returnValue];
         [footer endRefreshing];
         [_praisedTableView reloadData];
     } WithErrorBlock:^(id errorCode) {
-        
+         [[NNProgressHUD instance] hideHud];
+         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
     } WithFailureBlock:^(id failureBlock) {
-        
+         [[NNProgressHUD instance] hideHud];
     }];
    
     if ([defaultType isEqualToString:@"1"]) {
@@ -100,7 +102,9 @@
     }else{
         defaultType = @"2";
     }
+    [[NNProgressHUD instance] showHudToView:self.view withMessage:@"加载中..."];
     [self refreshData];
+    
     //[_praisedTableView reloadData];
 }
 
@@ -123,14 +127,16 @@
     CGFloat height;
     if (_defaultButton.tag == 100) {
         height = [tableView fd_heightForCellWithIdentifier:@"NNQuestionAndAnswerCell" cacheByIndexPath:indexPath configuration:^(id cell) {
-            
+            NNQuestionAndAnswerCell *questionAndAnswerCell =  cell;
+            questionAndAnswerCell.commentConstraint.constant = 0;
         }];
         
     }else{
         height = [tableView fd_heightForCellWithIdentifier:@"NNSpitslotCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             NNSpitslotCell *spitslotCell = cell;
+            spitslotCell.commentConstraint.constant = 0;
             spitslotCell.model = [praisedArray objectAtIndex:indexPath.section];
-            
+           
         }];
 
     }
@@ -154,17 +160,14 @@
         
         };
         
-        cell.commentBlock = ^ {
+        cell.commentBlock = ^{
         
         };
         return cell;
     }else{
         NNSpitslotCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNSpitslotCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
         NNTreeHoelModel *model =  [praisedArray objectAtIndex:indexPath.section];
-        
-        __weak NNSpitslotCell *weakCell = cell;
         __weak NNMinePraisedVC *weakSelf = self;
         cell.selectImageBlock = ^(NSInteger selectIndex){
             

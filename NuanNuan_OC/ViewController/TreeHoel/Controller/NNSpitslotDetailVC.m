@@ -221,6 +221,7 @@
         height = [tableView fd_heightForCellWithIdentifier:@"NNSpitslotCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             NNSpitslotCell *spitslotCell = cell;
             spitslotCell.model = _model;
+            spitslotCell.commentConstraint.constant = 0;
         }];
         
     }else{

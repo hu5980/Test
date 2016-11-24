@@ -346,7 +346,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NNQuestionAndAnswerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNQuestionAndAnswerCell"];
-
+    cell.commentConstraint.constant = 0;
     __weak NNQuestionAndAnswerCell *weakCell = cell;
     cell.likeBlock = ^(UIButton *button){
         NNPariseViewModel  *viewModel = [[NNPariseViewModel alloc] init];
@@ -394,7 +394,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = [tableView fd_heightForCellWithIdentifier:@"NNQuestionAndAnswerCell" cacheByIndexPath:indexPath configuration:^(id cell) {
-        
+        NNQuestionAndAnswerCell *questionAndAnswerCell =  cell;
+        questionAndAnswerCell.commentConstraint.constant = 0;
+
     }];
     return height;
 }

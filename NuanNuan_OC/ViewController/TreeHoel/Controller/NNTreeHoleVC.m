@@ -266,6 +266,7 @@
             NNSpitslotCell *spitslotCell = cell;
             NSLog(@"section = %ld",indexPath.section);
              spitslotCell.model = [treeHoelModelArrays objectAtIndex:indexPath.section];
+            spitslotCell.commentConstraint.constant = 0;
         }];
     }
     

@@ -125,7 +125,7 @@
             [[NSUserDefaults standardUserDefaults] synchronize];
             [weakSelf.navigationController popViewControllerAnimated:YES];
         } WithErrorBlock:^(id errorCode) {
-            [[NNProgressHUD instance] showHudToView:self.view withMessage:errorCode];
+            [NNProgressHUD  showHudAotoHideAddToView:self.view withMessage:errorCode];
         } WithFailureBlock:^(id failureBlock) {
             
         }];
@@ -155,16 +155,11 @@
         } WithFailureBlock:^(id failureBlock) {
             
         }];
-        
         [registerViewModel registerUserWithUsername:_registerUserNameTextField.text andverify:_registerCaptchatextField.text andPassword:_registerPassWordTextField.text];
-        
-        
     }
     
   
 }
-
-
 
 - (IBAction)forgetPasswordAction:(UIButton *)sender {
     NNForgetPasswordVC *forgetVC = [[NNForgetPasswordVC alloc] init];
