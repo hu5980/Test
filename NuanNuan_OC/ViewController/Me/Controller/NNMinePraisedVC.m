@@ -14,6 +14,8 @@
 #import "NNQuestionAndAnswerModel.h"
 #import "NNTreeHoelModel.h"
 #import "MWPhotoBrowser.h"
+#import "NNQuestionAndAnswerDetailVC.h"
+#import "NNSpitslotDetailVC.h"
 
 @interface NNMinePraisedVC ()<UITableViewDataSource,UITableViewDelegate>{
 
@@ -203,7 +205,19 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (_defaultButton.tag == 100) {
+        NNQuestionAndAnswerDetailVC *detailVC = [[NNQuestionAndAnswerDetailVC alloc] initWithNibName:@"NNQuestionAndAnswerDetailVC" bundle:nil];
+        detailVC.signModel = [praisedArray objectAtIndex:indexPath.section];
+        [self.navigationController pushViewController:detailVC animated:YES];
+    }else{
+        NNSpitslotDetailVC *spitslotDetailVC = [[NNSpitslotDetailVC alloc] initWithNibName:@"NNSpitslotDetailVC" bundle:nil];
+        spitslotDetailVC.model = [praisedArray objectAtIndex:indexPath.section];
+        [self.navigationController pushViewController:spitslotDetailVC animated:YES];
+    }
+ 
 
+    
 }
 
 
