@@ -8,7 +8,15 @@
 
 #import "NNMineLikeVC.h"
 #import "NNEmotionallItemCell.h"
-@interface NNMineLikeVC ()<UITableViewDelegate,UITableViewDataSource>
+#import "NNMinePraisedViewModel.h"
+#import "NNSuccessCaseModel.h"
+#import "NNArticleDetailVC.h"
+
+@interface NNMineLikeVC ()<UITableViewDelegate,UITableViewDataSource> {
+    NSMutableArray *praisedArray;
+    MJRefreshFooter *footer;
+}
+
 @property (weak, nonatomic) IBOutlet UITableView *likeTableView;
 
 @end
@@ -23,6 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavigationBackButton:YES];
+    [self initData];
     [self createUI];
     // Do any additional setup after loading the view from its nib.
 }
@@ -35,12 +44,47 @@
     _likeTableView.dataSource = self;
     _likeTableView.backgroundColor = NN_BACKGROUND_COLOR;
     [_likeTableView registerNib:[UINib nibWithNibName:@"NNEmotionallItemCell" bundle:nil] forCellReuseIdentifier:@"NNEmotionallItemCell"];
+    
+    footer =  [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [self refreshData];
+    }];
+    _likeTableView.mj_footer = footer;
+
+}
+
+- (void)initData {
+
+    praisedArray = [NSMutableArray array];
+    [[NNProgressHUD instance] showHudToView:self.view withMessage:@"加载中..."];
+    [self refreshData];
+}
+
+- (void)refreshData {
+    NNMinePraisedViewModel *viewModel = [[NNMinePraisedViewModel alloc] init];
+    [viewModel setBlockWithReturnBlock:^(id returnValue) {
+        [[NNProgressHUD instance] hideHud];
+        [praisedArray addObjectsFromArray:returnValue];
+        [footer endRefreshing];
+        [_likeTableView reloadData];
+    } WithErrorBlock:^(id errorCode) {
+        [[NNProgressHUD instance] hideHud];
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
+    } WithFailureBlock:^(id failureBlock) {
+        [[NNProgressHUD instance] hideHud];
+    }];
+    
+
+    NNSuccessCaseModel *model = [praisedArray lastObject];
+    [viewModel getMinePraisedContentWithToken:TEST_TOKEN andPraisedType:@"3" andPraisedId:[NSString stringWithFormat:@"%ld",(long)model.caseAdID] andpageNum:@"10"];
+    
+    
+    
 }
 
 #pragma --mark Delegate
 #pragma --mark UItableViewdelegate UItableViewdatasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 10;
+    return praisedArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -67,12 +111,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NNEmotionallItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNEmotionallItemCell"];
-    
+    cell.model = [praisedArray objectAtIndex:indexPath.section];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    NNSuccessCaseModel *model = [praisedArray objectAtIndex:indexPath.section];
+    NNArticleDetailVC *articleVC = [[NNArticleDetailVC alloc] init];
+    articleVC.artileTitle = model.caseTitle;
+    articleVC.imageUrl = model.caseImageUrl;
+    articleVC.articleID = model.caseAdID;
+    articleVC.defaultType = 3;
+    articleVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:articleVC animated:YES];
+
 
 }
 

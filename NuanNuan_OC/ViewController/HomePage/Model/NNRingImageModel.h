@@ -16,5 +16,5 @@
 @property (assign) NSInteger ringId;
 @property (nonatomic,strong) NSString *title;
 @property (assign) NSInteger createTime;
-
+@property (nonatomic,strong) NSString *isShowAppointment;
 @end

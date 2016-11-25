@@ -22,7 +22,7 @@
     } withProgress:^(id Progress) {
       
     }];
-  }
+}
 
 -(void)fetchValueSuccessWithDic: (NSDictionary *) returnValue {
     NSMutableArray *array = [NSMutableArray array];
@@ -37,6 +37,7 @@
         model.ringId = [[ringArrays[i] objectForKey:@"a_id"] integerValue];
         model.title = [ringArrays[i] objectForKey:@"a_title"];
         model.createTime = [[ringArrays[i] objectForKey:@"create_time"] integerValue];
+        model.isShowAppointment  =[ringArrays[i] objectForKey:@"a_can_booking"];
         [array addObject:model];
     }
     self.returnBlock(array);

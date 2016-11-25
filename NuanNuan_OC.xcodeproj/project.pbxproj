@@ -158,6 +158,8 @@
 		BCEDDBFF1DE52C5A00187317 /* MLSelectPhoto.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BCEDDBEB1DE52C5A00187317 /* MLSelectPhoto.bundle */; };
 		BCEDDC021DE5842400187317 /* NNAddTreeHoelImageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEDDC011DE5842400187317 /* NNAddTreeHoelImageViewModel.m */; };
 		BCEDDC051DE5843700187317 /* NNSendTreeHoelViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEDDC041DE5843700187317 /* NNSendTreeHoelViewModel.m */; };
+		BCEDDC081DE8062200187317 /* NNArticleIsLikeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEDDC071DE8062200187317 /* NNArticleIsLikeViewModel.m */; };
+		BCEDDC181DE83DD900187317 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEDDC171DE83DD900187317 /* libsqlite3.tbd */; };
 		BCF178BB1DC0ABD900A6DC4B /* NNEmotionTeacherViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF178BA1DC0ABD900A6DC4B /* NNEmotionTeacherViewModel.m */; };
 		BCF178BE1DC0ABED00A6DC4B /* NNEmotionTeacherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF178BD1DC0ABED00A6DC4B /* NNEmotionTeacherModel.m */; };
 /* End PBXBuildFile section */
@@ -386,7 +388,6 @@
 		BCE6A0691DDEA89D00A02E50 /* NNAppointmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNAppointmentModel.m; sourceTree = "<group>"; };
 		BCE6A06B1DDED76F00A02E50 /* NNAppointmentQuestionViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNAppointmentQuestionViewModel.h; sourceTree = "<group>"; };
 		BCE6A06C1DDED76F00A02E50 /* NNAppointmentQuestionViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNAppointmentQuestionViewModel.m; sourceTree = "<group>"; };
-		BCE6A06E1DE2A30F00A02E50 /* libSocialQQ.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSocialQQ.a; path = Pods/UMengUShare/UShareSDK/SocialLibraries/QQ/libSocialQQ.a; sourceTree = "<group>"; };
 		BCEDDBC01DE52C5A00187317 /* UIImage+MLTint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MLTint.h"; sourceTree = "<group>"; };
 		BCEDDBC11DE52C5A00187317 /* UIImage+MLTint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MLTint.m"; sourceTree = "<group>"; };
 		BCEDDBC21DE52C5A00187317 /* UIView+MLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MLExtension.h"; sourceTree = "<group>"; };
@@ -432,6 +433,11 @@
 		BCEDDC011DE5842400187317 /* NNAddTreeHoelImageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNAddTreeHoelImageViewModel.m; sourceTree = "<group>"; };
 		BCEDDC031DE5843700187317 /* NNSendTreeHoelViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSendTreeHoelViewModel.h; sourceTree = "<group>"; };
 		BCEDDC041DE5843700187317 /* NNSendTreeHoelViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNSendTreeHoelViewModel.m; sourceTree = "<group>"; };
+		BCEDDC061DE8062200187317 /* NNArticleIsLikeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNArticleIsLikeViewModel.h; sourceTree = "<group>"; };
+		BCEDDC071DE8062200187317 /* NNArticleIsLikeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNArticleIsLikeViewModel.m; sourceTree = "<group>"; };
+		BCEDDC091DE8286E00187317 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		BCEDDC0B1DE8287B00187317 /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
+		BCEDDC171DE83DD900187317 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		BCF178B91DC0ABD900A6DC4B /* NNEmotionTeacherViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEmotionTeacherViewModel.h; sourceTree = "<group>"; };
 		BCF178BA1DC0ABD900A6DC4B /* NNEmotionTeacherViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNEmotionTeacherViewModel.m; sourceTree = "<group>"; };
 		BCF178BC1DC0ABED00A6DC4B /* NNEmotionTeacherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEmotionTeacherModel.h; sourceTree = "<group>"; };
@@ -444,6 +450,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCEDDC181DE83DD900187317 /* libsqlite3.tbd in Frameworks */,
 				5157E0A13BD1F3B2CCF4B3A1 /* Pods_NuanNuan_OC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,6 +567,8 @@
 				BCE6A0661DDEA87A00A02E50 /* NNAppointmentTypeViewModel.m */,
 				BCE6A06B1DDED76F00A02E50 /* NNAppointmentQuestionViewModel.h */,
 				BCE6A06C1DDED76F00A02E50 /* NNAppointmentQuestionViewModel.m */,
+				BCEDDC061DE8062200187317 /* NNArticleIsLikeViewModel.h */,
+				BCEDDC071DE8062200187317 /* NNArticleIsLikeViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -580,6 +589,7 @@
 		BCBAD82F1DCC805700BEDF18 /* Libiary */ = {
 			isa = PBXGroup;
 			children = (
+				BCEDDC0D1DE83D7700187317 /* UMSocial */,
 				BCEDDBBD1DE52C5A00187317 /* MLSelectPhoto */,
 			);
 			path = Libiary;
@@ -1007,6 +1017,85 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		BCEDDC0D1DE83D7700187317 /* UMSocial */ = {
+			isa = PBXGroup;
+			children = (
+				BCEDDC0E1DE83D7700187317 /* SocialLibraries */,
+				BCEDDC141DE83D7700187317 /* UMSocialSDK */,
+				BCEDDC151DE83D7700187317 /* UMSocialUI */,
+			);
+			path = UMSocial;
+			sourceTree = "<group>";
+		};
+		BCEDDC0E1DE83D7700187317 /* SocialLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				BCEDDC0F1DE83D7700187317 /* Douban */,
+				BCEDDC101DE83D7700187317 /* QQ */,
+				BCEDDC111DE83D7700187317 /* Renren */,
+				BCEDDC121DE83D7700187317 /* Sina */,
+				BCEDDC131DE83D7700187317 /* WeChat */,
+			);
+			path = SocialLibraries;
+			sourceTree = "<group>";
+		};
+		BCEDDC0F1DE83D7700187317 /* Douban */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Douban;
+			sourceTree = "<group>";
+		};
+		BCEDDC101DE83D7700187317 /* QQ */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = QQ;
+			sourceTree = "<group>";
+		};
+		BCEDDC111DE83D7700187317 /* Renren */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Renren;
+			sourceTree = "<group>";
+		};
+		BCEDDC121DE83D7700187317 /* Sina */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sina;
+			sourceTree = "<group>";
+		};
+		BCEDDC131DE83D7700187317 /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WeChat;
+			sourceTree = "<group>";
+		};
+		BCEDDC141DE83D7700187317 /* UMSocialSDK */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UMSocialSDK;
+			sourceTree = "<group>";
+		};
+		BCEDDC151DE83D7700187317 /* UMSocialUI */ = {
+			isa = PBXGroup;
+			children = (
+				BCEDDC161DE83D7700187317 /* Resource */,
+			);
+			path = UMSocialUI;
+			sourceTree = "<group>";
+		};
+		BCEDDC161DE83D7700187317 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		BCF178B71DC0AA2E00A6DC4B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1052,7 +1141,9 @@
 		C8B1F2727F206124CA4830FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BCE6A06E1DE2A30F00A02E50 /* libSocialQQ.a */,
+				BCEDDC171DE83DD900187317 /* libsqlite3.tbd */,
+				BCEDDC0B1DE8287B00187317 /* libz.1.1.3.tbd */,
+				BCEDDC091DE8286E00187317 /* libstdc++.6.0.9.tbd */,
 				0DB68B1A1DE16D6E00FBD4B0 /* ReactiveCocoa.framework */,
 				12B5080D9CD53F9220CB3548 /* Pods_NuanNuan_OC.framework */,
 			);
@@ -1302,6 +1393,7 @@
 				BC58BA801DBDEFB400F3BF0D /* NNMineFeedbackVC.m in Sources */,
 				BCD9AE8F1DADE5EB008DB98E /* NNPsychologicalTeacherHeaderView.m in Sources */,
 				BCEDDBED1DE52C5A00187317 /* UIView+MLExtension.m in Sources */,
+				BCEDDC081DE8062200187317 /* NNArticleIsLikeViewModel.m in Sources */,
 				0D331E0E1DBBCA87002B0DCD /* NNSpitslotDetailVC.m in Sources */,
 				BC86276B1DD99EE100162082 /* NNQuestionerInfoCell.m in Sources */,
 				BC58BA671DBDE99500F3BF0D /* NNMinePraisedVC.m in Sources */,
@@ -1455,10 +1547,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DDSZZTF2EY;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Pods/UMengUShare/UShareSDK\"/**",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -1466,13 +1555,12 @@
 				);
 				INFOPLIST_FILE = NuanNuan_OC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/UMengUShare/UShareSDK/SocialLibraries/QQ",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nuannuan.NuanNuanTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -1483,11 +1571,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DDSZZTF2EY;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Pods/UMengUShare/UShareSDK\"/**",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Result\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -1495,13 +1579,12 @@
 				);
 				INFOPLIST_FILE = NuanNuan_OC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/UMengUShare/UShareSDK/SocialLibraries/QQ",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nuannuan.NuanNuanTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};

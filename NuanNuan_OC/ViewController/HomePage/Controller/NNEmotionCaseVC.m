@@ -196,6 +196,8 @@
     NNArticleDetailVC *articleVC = [[NNArticleDetailVC alloc] init];
     NNSuccessCaseModel *model = [caseArray objectAtIndex:indexPath.section];
     articleVC.articleID = model.caseAdID;
+    articleVC.artileTitle = model.caseTitle;
+    articleVC.imageUrl = model.caseImageUrl;
     articleVC.defaultType = _defaultType;
     [self.navigationController pushViewController:articleVC animated:YES];
 }

@@ -10,6 +10,8 @@
 #import "NNQuestionAndAnswerModel.h"
 #import "NNTreeHoelModel.h"
 #import "NNTimeUtil.h"
+#import "NNSuccessCaseModel.h"
+
 @implementation NNMinePraisedViewModel {
     NSString *defaultType;
 }
@@ -42,7 +44,6 @@
         
         NSString *baseTeacherHeadUrl = [dic objectForKey:@"t_head_path"];
         
-       
         for (int i  = 0; i < arrays.count; i++) {
             NSDictionary *questionAndAnswerDic = [arrays objectAtIndex:i];
             NNQuestionAndAnswerModel *model = [[NNQuestionAndAnswerModel alloc] init];
@@ -60,7 +61,21 @@
             model.questionAnswer = [questionAndAnswerDic objectForKey:@"q_answer"];
             [praisedArrays addObject:model];
         }
-    }else{
+    }else if ([defaultType isEqualToString:@"3"]){
+        NSString *basebgUrl = [dic objectForKey:@"a_bg_pic_path"];
+        for (int i  = 0; i < arrays.count; i++) {
+            NNSuccessCaseModel *model = [[NNSuccessCaseModel alloc] init];
+            model.caseTitle = [arrays[i] objectForKey:@"a_title"];
+            model.caseName = [arrays[i] objectForKey:@"ac_name"];
+            model.caseImageUrl = [NSString stringWithFormat:@"%@/%@",basebgUrl,[arrays[i] objectForKey:@"a_bg_pic"]] ;
+            model.caseAdID = [[arrays[i] objectForKey:@"a_id"] integerValue];
+            model.caseGoodsNum = [[arrays[i] objectForKey:@"a_goods_num"] integerValue];
+            model.caseClickNum = [[arrays[i] objectForKey:@"a_click_num"] integerValue];
+            model.caseCreateTime = [[arrays[i] objectForKey:@"create_time"] integerValue];
+            [praisedArrays addObject:model];
+        }
+    }
+    else{
         NSString *basePathUrl = [dic objectForKey:@"th_pic_path"];
         for (int i  = 0; i < arrays.count; i++) {
             NSDictionary *treeHoelDic = [arrays objectAtIndex:i];
@@ -75,20 +90,13 @@
             NSMutableArray *picMutableArrays = [NSMutableArray array];
             for (int j= 0; j < picArrays.count; j++) {
                 [picMutableArrays addObject:[NSString stringWithFormat:@"%@/%@",basePathUrl,[picArrays objectAtIndex:j]]];
-                
             }
-            
-    
-            
             model.picArrays = picMutableArrays;
-     
             model.thCommentNum =[treeHoelDic objectForKey:@"th_comment_num"];
             model.thGoodsNum =[treeHoelDic objectForKey:@"th_goods_num"];
-          
             model.userHeadUrl = [treeHoelDic objectForKey:@"user_head"];
             model.userNikeName = [treeHoelDic objectForKey:@"user_nickname"];
             model.createTime = [[treeHoelDic objectForKey:@"create_time"] integerValue];
-         
             [praisedArrays addObject:model];
         }
     }

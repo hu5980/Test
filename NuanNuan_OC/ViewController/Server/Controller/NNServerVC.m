@@ -137,7 +137,9 @@
     NNArticleDetailVC *articleVC = [[NNArticleDetailVC alloc] init];
     NNSuccessCaseModel *model = [serverArray objectAtIndex:indexPath.section];
     articleVC.articleID = model.caseAdID;
-    articleVC.defaultType = defaultType;
+    articleVC.artileTitle = model.caseTitle;
+    articleVC.imageUrl = model.caseImageUrl;
+    articleVC.defaultType = 3;
     articleVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:articleVC animated:YES];
 }

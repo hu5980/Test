@@ -72,8 +72,12 @@
     headerView.ringBlock = ^(NNRingImageModel *model){
         NNLog(@"点击滚动图片  %@",model);
         NNArticleDetailVC *articleVC = [[NNArticleDetailVC alloc] init];
+        articleVC.defaultType = 3;
         articleVC.articleID = model.ringId;
+        articleVC.artileTitle = model.title;
+        articleVC.imageUrl = model.imageUrl;
         articleVC.hidesBottomBarWhenPushed = YES;
+        articleVC.isShowAppointment = [model.isShowAppointment isEqualToString:@"1"] ? YES : NO ;
         [weakSelf.navigationController pushViewController:articleVC animated:YES];
     };
     _homePageTableView.tableHeaderView = headerView;
@@ -168,7 +172,9 @@
             
             NNArticleDetailVC *articleVC = [[NNArticleDetailVC alloc] init];
             articleVC.articleID = model.caseAdID;
-            
+            articleVC.defaultType = 3;
+            articleVC.artileTitle = model.caseTitle;
+            articleVC.imageUrl = model.caseImageUrl;
             articleVC.hidesBottomBarWhenPushed = YES;
             [weakSelf.navigationController pushViewController:articleVC animated:YES];
 
