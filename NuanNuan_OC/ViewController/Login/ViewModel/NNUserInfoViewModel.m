@@ -15,7 +15,8 @@
     NSDictionary *parames = @{@"token":token};
     
     [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_member&a=getUserInfo",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
-        [self fetchValueSuccessWithDic:returnValue];
+      //  [self fetchValueSuccessWithDic:returnValue];
+        self.returnBlock(returnValue);
     } withErrorCodeBlock:^(id errorCode) {
         self.errorBlock(errorCode);
     } withFailureBlock:^(id failureBlock) {

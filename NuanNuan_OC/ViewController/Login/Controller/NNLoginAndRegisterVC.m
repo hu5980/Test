@@ -12,6 +12,7 @@
 #import "NNUserInfoModel.h"
 #import "NNForgetPasswordVC.h"
 #import <UMSocialCore/UMSocialCore.h>
+#import "NNThirdLoginViewModel.h"
 @interface NNLoginAndRegisterVC (){
     UIButton *defaultButton;
 }
@@ -191,6 +192,8 @@
             
             // 第三方平台SDK源数据
             NSLog(@"Wechat originalResponse: %@", resp.originalResponse);
+            
+            [self loginWithLoginType:@"wx" andAccessToken:resp.accessToken andOpenId:resp.openid];
         }
     }];
 }
@@ -216,6 +219,8 @@
             
             // 第三方平台SDK源数据
             NSLog(@"Sina originalResponse: %@", resp.originalResponse);
+            
+            [self loginWithLoginType:@"wb" andAccessToken:resp.accessToken andOpenId:nil];
         }
     }];
 }
@@ -241,8 +246,28 @@
             
             // 第三方平台SDK源数据
             NSLog(@"QQ originalResponse: %@", resp.originalResponse);
+            [self loginWithLoginType:@"qq" andAccessToken:resp.accessToken andOpenId:nil];
         }
     }];
+}
+
+
+- (void)loginWithLoginType:(NSString *)type andAccessToken:(NSString *)accessToken andOpenId:(NSString *)openid {
+      __weak  NNLoginAndRegisterVC *weakSelf = self;
+    NNThirdLoginViewModel *viewModel = [[NNThirdLoginViewModel alloc] init];
+    [viewModel setBlockWithReturnBlock:^(id returnValue) {
+        [[NSUserDefaults standardUserDefaults] setObject:returnValue forKey:@"userInfo"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [weakSelf.navigationController popViewControllerAnimated:YES];
+
+    } WithErrorBlock:^(id errorCode) {
+        
+    } WithFailureBlock:^(id failureBlock) {
+        
+    }];
+    [viewModel loginWithLoginType:type andAccessToken:accessToken andOpenId:openid];
+
+    
 }
 
 - (void)didReceiveMemoryWarning {

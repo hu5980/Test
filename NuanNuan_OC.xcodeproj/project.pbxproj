@@ -73,6 +73,12 @@
 		0DBB2A651DE9AD14008A0F32 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2A641DE9AD13008A0F32 /* ImageIO.framework */; };
 		0DBB2A661DE9AD1D008A0F32 /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEDDC0B1DE8287B00187317 /* libz.1.1.3.tbd */; };
 		0DBB2A681DE9AD2B008A0F32 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2A671DE9AD2B008A0F32 /* libc++.1.tbd */; };
+		0DBB2A6B1DE9B22F008A0F32 /* NNThirdLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB2A6A1DE9B22F008A0F32 /* NNThirdLoginViewModel.m */; };
+		0DBB2AE81DE9B3BC008A0F32 /* libUMessage_Sdk_1.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2AE61DE9B3BC008A0F32 /* libUMessage_Sdk_1.4.0.a */; };
+		0DBB2AEA1DE9B3D5008A0F32 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2AE91DE9B3D5008A0F32 /* UserNotifications.framework */; };
+		0DBB2AF11DE9B647008A0F32 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB2AEE1DE9B647008A0F32 /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0DBB2AF21DE9B647008A0F32 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB2AEF1DE9B647008A0F32 /* README.md */; };
+		0DBB2AF31DE9B647008A0F32 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0DBB2AF01DE9B647008A0F32 /* README.txt */; };
 		0DDAEE791DBB9F87008478DC /* NNImageBroswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAEE781DBB9F87008478DC /* NNImageBroswerView.m */; };
 		0DDAEE7D1DBBB030008478DC /* NNSpitslotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAEE7B1DBBB030008478DC /* NNSpitslotCell.m */; };
 		0DDAEE7E1DBBB030008478DC /* NNSpitslotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DDAEE7C1DBBB030008478DC /* NNSpitslotCell.xib */; };
@@ -345,6 +351,16 @@
 		0DBB2A621DE9AD0D008A0F32 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		0DBB2A641DE9AD13008A0F32 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		0DBB2A671DE9AD2B008A0F32 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		0DBB2A691DE9B22F008A0F32 /* NNThirdLoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNThirdLoginViewModel.h; sourceTree = "<group>"; };
+		0DBB2A6A1DE9B22F008A0F32 /* NNThirdLoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNThirdLoginViewModel.m; sourceTree = "<group>"; };
+		0DBB2AE61DE9B3BC008A0F32 /* libUMessage_Sdk_1.4.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.4.0.a; sourceTree = "<group>"; };
+		0DBB2AE71DE9B3BC008A0F32 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
+		0DBB2AE91DE9B3D5008A0F32 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		0DBB2AEB1DE9B3F9008A0F32 /* NuanNuan_OC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NuanNuan_OC.entitlements; sourceTree = "<group>"; };
+		0DBB2AED1DE9B647008A0F32 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		0DBB2AEE1DE9B647008A0F32 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		0DBB2AEF1DE9B647008A0F32 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0DBB2AF01DE9B647008A0F32 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		0DDAEE771DBB9F87008478DC /* NNImageBroswerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNImageBroswerView.h; sourceTree = "<group>"; };
 		0DDAEE781DBB9F87008478DC /* NNImageBroswerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNImageBroswerView.m; sourceTree = "<group>"; };
 		0DDAEE7A1DBBB030008478DC /* NNSpitslotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSpitslotCell.h; sourceTree = "<group>"; };
@@ -606,6 +622,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DBB2AEA1DE9B3D5008A0F32 /* UserNotifications.framework in Frameworks */,
 				0DBB2A661DE9AD1D008A0F32 /* libz.1.1.3.tbd in Frameworks */,
 				0DBB2A681DE9AD2B008A0F32 /* libc++.1.tbd in Frameworks */,
 				0DBB2A651DE9AD14008A0F32 /* ImageIO.framework in Frameworks */,
@@ -646,6 +663,7 @@
 				0DBB2A311DE9ABD5008A0F32 /* libAPOpenSdk.a in Frameworks */,
 				0DBB2A391DE9ABD5008A0F32 /* libSocialFacebook.a in Frameworks */,
 				0DBB2A3D1DE9ABD5008A0F32 /* libSocialKakao.a in Frameworks */,
+				0DBB2AE81DE9B3BC008A0F32 /* libUMessage_Sdk_1.4.0.a in Frameworks */,
 				5157E0A13BD1F3B2CCF4B3A1 /* Pods_NuanNuan_OC.framework in Frameworks */,
 				0DBB2A501DE9ABD5008A0F32 /* TwitterCore.framework in Frameworks */,
 				0DBB2A361DE9ABD5008A0F32 /* FBSDKCoreKit.framework in Frameworks */,
@@ -964,6 +982,26 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		0DBB2AE51DE9B3BC008A0F32 /* UMessage_Sdk_1.4.0 */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB2AE61DE9B3BC008A0F32 /* libUMessage_Sdk_1.4.0.a */,
+				0DBB2AE71DE9B3BC008A0F32 /* UMessage.h */,
+			);
+			path = UMessage_Sdk_1.4.0;
+			sourceTree = "<group>";
+		};
+		0DBB2AEC1DE9B647008A0F32 /* OpenUDID */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB2AED1DE9B647008A0F32 /* OpenUDID.h */,
+				0DBB2AEE1DE9B647008A0F32 /* OpenUDID.m */,
+				0DBB2AEF1DE9B647008A0F32 /* README.md */,
+				0DBB2AF01DE9B647008A0F32 /* README.txt */,
+			);
+			path = OpenUDID;
+			sourceTree = "<group>";
+		};
 		BC328EE21DBF2F0F000AF40B /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -1009,6 +1047,8 @@
 			children = (
 				BCA60E231DC8912500DB84A0 /* NNUserInfoViewModel.h */,
 				BCA60E241DC8912500DB84A0 /* NNUserInfoViewModel.m */,
+				0DBB2A691DE9B22F008A0F32 /* NNThirdLoginViewModel.h */,
+				0DBB2A6A1DE9B22F008A0F32 /* NNThirdLoginViewModel.m */,
 				BC8CF9D51DC9DFEF00DFF6EA /* NNLoginViewModel.h */,
 				BC8CF9D61DC9DFEF00DFF6EA /* NNLoginViewModel.m */,
 				BC8CF9D81DC9E00700DFF6EA /* NNRegistionViewModel.h */,
@@ -1095,6 +1135,8 @@
 		BCBAD82F1DCC805700BEDF18 /* Libiary */ = {
 			isa = PBXGroup;
 			children = (
+				0DBB2AEC1DE9B647008A0F32 /* OpenUDID */,
+				0DBB2AE51DE9B3BC008A0F32 /* UMessage_Sdk_1.4.0 */,
 				0DBB29B31DE9ABD5008A0F32 /* UMSocial */,
 				BCEDDBBD1DE52C5A00187317 /* MLSelectPhoto */,
 			);
@@ -1122,6 +1164,7 @@
 		BCD505F71D921F8C000FB2C0 /* NuanNuan_OC */ = {
 			isa = PBXGroup;
 			children = (
+				0DBB2AEB1DE9B3F9008A0F32 /* NuanNuan_OC.entitlements */,
 				BCD505FB1D921F8C000FB2C0 /* AppDelegate.h */,
 				BCD505FC1D921F8C000FB2C0 /* AppDelegate.m */,
 				BCBAD82F1DCC805700BEDF18 /* Libiary */,
@@ -1568,6 +1611,7 @@
 		C8B1F2727F206124CA4830FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0DBB2AE91DE9B3D5008A0F32 /* UserNotifications.framework */,
 				0DBB2A671DE9AD2B008A0F32 /* libc++.1.tbd */,
 				0DBB2A641DE9AD13008A0F32 /* ImageIO.framework */,
 				0DBB2A621DE9AD0D008A0F32 /* CoreTelephony.framework */,
@@ -1627,6 +1671,11 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = DDSZZTF2EY;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1659,6 +1708,7 @@
 				BC8627711DD9A03400162082 /* NNQuestionerChooseCell.xib in Resources */,
 				0DBB2A551DE9ABD5008A0F32 /* README.txt in Resources */,
 				BCD9AE6A1DACBCB6008DB98E /* NNEmotionCaseVC.xib in Resources */,
+				0DBB2AF31DE9B647008A0F32 /* README.txt in Resources */,
 				BCD9AE9C1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.xib in Resources */,
 				BC09AFEB1DB8AC9400BC4D1B /* NNServerListCell.xib in Resources */,
 				0DBB2A5B1DE9ABD5008A0F32 /* UMSocialSDKResources.bundle in Resources */,
@@ -1786,6 +1836,7 @@
 				BCD9AE801DACED54008DB98E /* NNCustomNavigationView.m in Sources */,
 				BCD505FD1D921F8C000FB2C0 /* AppDelegate.m in Sources */,
 				BC8627791DD9A0C500162082 /* NNChooseButton.m in Sources */,
+				0DBB2A6B1DE9B22F008A0F32 /* NNThirdLoginViewModel.m in Sources */,
 				BCD505FA1D921F8C000FB2C0 /* main.m in Sources */,
 				BCEDDBEF1DE52C5A00187317 /* MLSelectPhotoPickerBrowserPhoto.m in Sources */,
 				BCEDDBEE1DE52C5A00187317 /* MLSelectPhotoAssets.m in Sources */,
@@ -1793,6 +1844,7 @@
 				BC8627701DD9A03400162082 /* NNQuestionerChooseCell.m in Sources */,
 				BCE6A05E1DDC3A9000A02E50 /* NNMinePraisedViewModel.m in Sources */,
 				BCD9AE691DACBCB6008DB98E /* NNEmotionCaseVC.m in Sources */,
+				0DBB2AF11DE9B647008A0F32 /* OpenUDID.m in Sources */,
 				BCD506571D9231D0000FB2C0 /* NNServerVC.m in Sources */,
 				BC58BA7B1DBDEF9300F3BF0D /* NNMineNoticeVC.m in Sources */,
 				BC328EEA1DBF2F5E000AF40B /* NNLoginAndRegisterVC.m in Sources */,
@@ -1856,6 +1908,7 @@
 				BCBAD87C1DCC8B9300BEDF18 /* NNAskingViewModel.m in Sources */,
 				BCEDDBFB1DE52C5A00187317 /* MLSelectPhotoPickerCollectionView.m in Sources */,
 				BC852E811DCB16C900ADE5C9 /* NNuploadUserHeadImageViewModel.m in Sources */,
+				0DBB2AF21DE9B647008A0F32 /* README.md in Sources */,
 				BC4C8E461DD308DB00544A83 /* NNQuestionAndAnswerModel.m in Sources */,
 				BC247EA51DAA316200AB5C84 /* NNMineEmotionalMangmentCell.m in Sources */,
 				BCD9AEA01DAE21D1008DB98E /* NNNeterReplyCell.m in Sources */,
@@ -1986,6 +2039,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NuanNuan_OC/NuanNuan_OC.entitlements;
 				DEVELOPMENT_TEAM = DDSZZTF2EY;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2027,6 +2081,9 @@
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/WhatsApp",
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/YiXin",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMessage_Sdk_All_1.4.0(idfa)/UMessage_Sdk_1.4.0",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMessage_Sdk_All_1.4.0(idfa)/UMessage_Sdk_Demo/UMessage_Sdk_Demo/UMessage_Sdk_1.4.0",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMessage_Sdk_1.4.0",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nuannuan.NuanNuanTest;
@@ -2042,6 +2099,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NuanNuan_OC/NuanNuan_OC.entitlements;
 				DEVELOPMENT_TEAM = DDSZZTF2EY;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2083,6 +2141,9 @@
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/WhatsApp",
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/YiXin",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMessage_Sdk_All_1.4.0(idfa)/UMessage_Sdk_1.4.0",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMessage_Sdk_All_1.4.0(idfa)/UMessage_Sdk_Demo/UMessage_Sdk_Demo/UMessage_Sdk_1.4.0",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMessage_Sdk_1.4.0",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nuannuan.NuanNuanTest;
