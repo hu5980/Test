@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <UMSocialCore/UMSocialCore.h>
+
 #import "Define.h"
 
 @interface AppDelegate ()

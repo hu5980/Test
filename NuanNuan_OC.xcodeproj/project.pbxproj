@@ -21,6 +21,58 @@
 		0DBB28FF1DE5DED0008A0F32 /* NNMineCommentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB28FE1DE5DED0008A0F32 /* NNMineCommentViewModel.m */; };
 		0DBB29021DE5E5CB008A0F32 /* NNQuestionAndAnswerCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB29011DE5E5CB008A0F32 /* NNQuestionAndAnswerCommentModel.m */; };
 		0DBB29051DE5E5F8008A0F32 /* NNSpitslotCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB29041DE5E5F8008A0F32 /* NNSpitslotCommentModel.m */; };
+		0DBB2A311DE9ABD5008A0F32 /* libAPOpenSdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29B81DE9ABD5008A0F32 /* libAPOpenSdk.a */; };
+		0DBB2A321DE9ABD5008A0F32 /* libSocialAlipayShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29B91DE9ABD5008A0F32 /* libSocialAlipayShare.a */; };
+		0DBB2A331DE9ABD5008A0F32 /* libSocialDouban.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29BC1DE9ABD5008A0F32 /* libSocialDouban.a */; };
+		0DBB2A341DE9ABD5008A0F32 /* libSocialEmail.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29BF1DE9ABD5008A0F32 /* libSocialEmail.a */; };
+		0DBB2A351DE9ABD5008A0F32 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29C21DE9ABD5008A0F32 /* Bolts.framework */; };
+		0DBB2A361DE9ABD5008A0F32 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29C41DE9ABD5008A0F32 /* FBSDKCoreKit.framework */; };
+		0DBB2A371DE9ABD5008A0F32 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29C51DE9ABD5008A0F32 /* FBSDKLoginKit.framework */; };
+		0DBB2A381DE9ABD5008A0F32 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29C61DE9ABD5008A0F32 /* FBSDKShareKit.framework */; };
+		0DBB2A391DE9ABD5008A0F32 /* libSocialFacebook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29C71DE9ABD5008A0F32 /* libSocialFacebook.a */; };
+		0DBB2A3A1DE9ABD5008A0F32 /* libSocialFlickr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29CA1DE9ABD5008A0F32 /* libSocialFlickr.a */; };
+		0DBB2A3B1DE9ABD5008A0F32 /* libSocialInstagram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29CD1DE9ABD5008A0F32 /* libSocialInstagram.a */; };
+		0DBB2A3C1DE9ABD5008A0F32 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29D01DE9ABD5008A0F32 /* KakaoOpenSDK.framework */; };
+		0DBB2A3D1DE9ABD5008A0F32 /* libSocialKakao.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29D11DE9ABD5008A0F32 /* libSocialKakao.a */; };
+		0DBB2A3E1DE9ABD5008A0F32 /* libLWApiSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29D41DE9ABD5008A0F32 /* libLWApiSDK.a */; };
+		0DBB2A3F1DE9ABD5008A0F32 /* libSocialLaiWang.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29D51DE9ABD5008A0F32 /* libSocialLaiWang.a */; };
+		0DBB2A401DE9ABD5008A0F32 /* libSocialLine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29E11DE9ABD5008A0F32 /* libSocialLine.a */; };
+		0DBB2A411DE9ABD5008A0F32 /* libSocialLinkedin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29E41DE9ABD5008A0F32 /* libSocialLinkedin.a */; };
+		0DBB2A421DE9ABD5008A0F32 /* linkedin-sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29E51DE9ABD5008A0F32 /* linkedin-sdk.framework */; };
+		0DBB2A431DE9ABD5008A0F32 /* libSocialPinterest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29E81DE9ABD5008A0F32 /* libSocialPinterest.a */; };
+		0DBB2A441DE9ABD5008A0F32 /* libSocialQQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29EB1DE9ABD5008A0F32 /* libSocialQQ.a */; };
+		0DBB2A451DE9ABD5008A0F32 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29EC1DE9ABD5008A0F32 /* TencentOpenAPI.framework */; };
+		0DBB2A461DE9ABD5008A0F32 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0DBB29ED1DE9ABD5008A0F32 /* TencentOpenApi_IOS_Bundle.bundle */; };
+		0DBB2A471DE9ABD5008A0F32 /* libSocialRenren.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29F01DE9ABD5008A0F32 /* libSocialRenren.a */; };
+		0DBB2A481DE9ABD5008A0F32 /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29F31DE9ABD5008A0F32 /* libSocialSina.a */; };
+		0DBB2A491DE9ABD5008A0F32 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB29F41DE9ABD5008A0F32 /* libWeiboSDK.a */; };
+		0DBB2A4A1DE9ABD5008A0F32 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0DBB29FF1DE9ABD5008A0F32 /* WeiboSDK.bundle */; };
+		0DBB2A4B1DE9ABD5008A0F32 /* libSocialSMS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2A031DE9ABD5008A0F32 /* libSocialSMS.a */; };
+		0DBB2A4C1DE9ABD5008A0F32 /* libSocialTencentWeibo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2A061DE9ABD5008A0F32 /* libSocialTencentWeibo.a */; };
+		0DBB2A4D1DE9ABD5008A0F32 /* libSocialTumblr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2A091DE9ABD5008A0F32 /* libSocialTumblr.a */; };
+		0DBB2A4E1DE9ABD5008A0F32 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2A0C1DE9ABD5008A0F32 /* Fabric.framework */; };
+		0DBB2A4F1DE9ABD5008A0F32 /* libSocialTwitter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2A0D1DE9ABD5008A0F32 /* libSocialTwitter.a */; };
+		0DBB2A501DE9ABD5008A0F32 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2A0E1DE9ABD5008A0F32 /* TwitterCore.framework */; };
+		0DBB2A511DE9ABD5008A0F32 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2A0F1DE9ABD5008A0F32 /* TwitterKit.framework */; };
+		0DBB2A521DE9ABD5008A0F32 /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2A121DE9ABD5008A0F32 /* libSocialWeChat.a */; };
+		0DBB2A531DE9ABD5008A0F32 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2A131DE9ABD5008A0F32 /* libWeChatSDK.a */; };
+		0DBB2A541DE9ABD5008A0F32 /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0DBB2A141DE9ABD5008A0F32 /* read_me.txt */; };
+		0DBB2A551DE9ABD5008A0F32 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0DBB2A151DE9ABD5008A0F32 /* README.txt */; };
+		0DBB2A561DE9ABD5008A0F32 /* libSocialWhatsApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2A1B1DE9ABD5008A0F32 /* libSocialWhatsApp.a */; };
+		0DBB2A571DE9ABD5008A0F32 /* libSocialYiXin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2A1E1DE9ABD5008A0F32 /* libSocialYiXin.a */; };
+		0DBB2A581DE9ABD5008A0F32 /* libYixinSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2A1F1DE9ABD5008A0F32 /* libYixinSDK.a */; };
+		0DBB2A591DE9ABD5008A0F32 /* UMSocialCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2A241DE9ABD5008A0F32 /* UMSocialCore.framework */; };
+		0DBB2A5A1DE9ABD5008A0F32 /* UMSocialNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2A251DE9ABD5008A0F32 /* UMSocialNetwork.framework */; };
+		0DBB2A5B1DE9ABD5008A0F32 /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0DBB2A281DE9ABD5008A0F32 /* UMSocialSDKResources.bundle */; };
+		0DBB2A5C1DE9ABD5008A0F32 /* UMShareMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB2A2A1DE9ABD5008A0F32 /* UMShareMenuItem.m */; };
+		0DBB2A5D1DE9ABD5008A0F32 /* UMShareMenuSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB2A2C1DE9ABD5008A0F32 /* UMShareMenuSelectionView.m */; };
+		0DBB2A5E1DE9ABD5008A0F32 /* UMSocialShareScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB2A2E1DE9ABD5008A0F32 /* UMSocialShareScrollView.m */; };
+		0DBB2A5F1DE9ABD5008A0F32 /* UMSocialUIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB2A301DE9ABD5008A0F32 /* UMSocialUIManager.m */; };
+		0DBB2A611DE9AD04008A0F32 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2A601DE9AD04008A0F32 /* SystemConfiguration.framework */; };
+		0DBB2A631DE9AD0D008A0F32 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2A621DE9AD0D008A0F32 /* CoreTelephony.framework */; };
+		0DBB2A651DE9AD14008A0F32 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2A641DE9AD13008A0F32 /* ImageIO.framework */; };
+		0DBB2A661DE9AD1D008A0F32 /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEDDC0B1DE8287B00187317 /* libz.1.1.3.tbd */; };
+		0DBB2A681DE9AD2B008A0F32 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2A671DE9AD2B008A0F32 /* libc++.1.tbd */; };
 		0DDAEE791DBB9F87008478DC /* NNImageBroswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAEE781DBB9F87008478DC /* NNImageBroswerView.m */; };
 		0DDAEE7D1DBBB030008478DC /* NNSpitslotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAEE7B1DBBB030008478DC /* NNSpitslotCell.m */; };
 		0DDAEE7E1DBBB030008478DC /* NNSpitslotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DDAEE7C1DBBB030008478DC /* NNSpitslotCell.xib */; };
@@ -189,6 +241,110 @@
 		0DBB29011DE5E5CB008A0F32 /* NNQuestionAndAnswerCommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNQuestionAndAnswerCommentModel.m; sourceTree = "<group>"; };
 		0DBB29031DE5E5F8008A0F32 /* NNSpitslotCommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSpitslotCommentModel.h; sourceTree = "<group>"; };
 		0DBB29041DE5E5F8008A0F32 /* NNSpitslotCommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNSpitslotCommentModel.m; sourceTree = "<group>"; };
+		0DBB29B61DE9ABD5008A0F32 /* APOpenAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APOpenAPI.h; sourceTree = "<group>"; };
+		0DBB29B71DE9ABD5008A0F32 /* APOpenAPIObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APOpenAPIObject.h; sourceTree = "<group>"; };
+		0DBB29B81DE9ABD5008A0F32 /* libAPOpenSdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAPOpenSdk.a; sourceTree = "<group>"; };
+		0DBB29B91DE9ABD5008A0F32 /* libSocialAlipayShare.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialAlipayShare.a; sourceTree = "<group>"; };
+		0DBB29BA1DE9ABD5008A0F32 /* UMSocialAlipayHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialAlipayHandler.h; sourceTree = "<group>"; };
+		0DBB29BC1DE9ABD5008A0F32 /* libSocialDouban.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialDouban.a; sourceTree = "<group>"; };
+		0DBB29BD1DE9ABD5008A0F32 /* UMSocialDoubanHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialDoubanHandler.h; sourceTree = "<group>"; };
+		0DBB29BF1DE9ABD5008A0F32 /* libSocialEmail.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialEmail.a; sourceTree = "<group>"; };
+		0DBB29C01DE9ABD5008A0F32 /* UMSocialEmailHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialEmailHandler.h; sourceTree = "<group>"; };
+		0DBB29C21DE9ABD5008A0F32 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		0DBB29C31DE9ABD5008A0F32 /* facebook_ios_sdk_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = facebook_ios_sdk_Prefix.pch; sourceTree = "<group>"; };
+		0DBB29C41DE9ABD5008A0F32 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		0DBB29C51DE9ABD5008A0F32 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		0DBB29C61DE9ABD5008A0F32 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		0DBB29C71DE9ABD5008A0F32 /* libSocialFacebook.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialFacebook.a; sourceTree = "<group>"; };
+		0DBB29C81DE9ABD5008A0F32 /* UMSocialFaceBookHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialFaceBookHandler.h; sourceTree = "<group>"; };
+		0DBB29CA1DE9ABD5008A0F32 /* libSocialFlickr.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialFlickr.a; sourceTree = "<group>"; };
+		0DBB29CB1DE9ABD5008A0F32 /* UMSocialFlickrHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialFlickrHandler.h; sourceTree = "<group>"; };
+		0DBB29CD1DE9ABD5008A0F32 /* libSocialInstagram.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialInstagram.a; sourceTree = "<group>"; };
+		0DBB29CE1DE9ABD5008A0F32 /* UMSocialInstagramHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialInstagramHandler.h; sourceTree = "<group>"; };
+		0DBB29D01DE9ABD5008A0F32 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		0DBB29D11DE9ABD5008A0F32 /* libSocialKakao.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialKakao.a; sourceTree = "<group>"; };
+		0DBB29D21DE9ABD5008A0F32 /* UMSocialKakaoHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialKakaoHandler.h; sourceTree = "<group>"; };
+		0DBB29D41DE9ABD5008A0F32 /* libLWApiSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLWApiSDK.a; sourceTree = "<group>"; };
+		0DBB29D51DE9ABD5008A0F32 /* libSocialLaiWang.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialLaiWang.a; sourceTree = "<group>"; };
+		0DBB29D61DE9ABD5008A0F32 /* LWApiConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWApiConfig.h; sourceTree = "<group>"; };
+		0DBB29D71DE9ABD5008A0F32 /* LWApiConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWApiConnection.h; sourceTree = "<group>"; };
+		0DBB29D81DE9ABD5008A0F32 /* LWApiImageObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWApiImageObject.h; sourceTree = "<group>"; };
+		0DBB29D91DE9ABD5008A0F32 /* LWApiMediaObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWApiMediaObject.h; sourceTree = "<group>"; };
+		0DBB29DA1DE9ABD5008A0F32 /* LWApiMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWApiMessage.h; sourceTree = "<group>"; };
+		0DBB29DB1DE9ABD5008A0F32 /* LWApiRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWApiRequest.h; sourceTree = "<group>"; };
+		0DBB29DC1DE9ABD5008A0F32 /* LWApiResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWApiResponse.h; sourceTree = "<group>"; };
+		0DBB29DD1DE9ABD5008A0F32 /* LWApiSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWApiSDK.h; sourceTree = "<group>"; };
+		0DBB29DE1DE9ABD5008A0F32 /* LWApiUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWApiUtils.h; sourceTree = "<group>"; };
+		0DBB29DF1DE9ABD5008A0F32 /* UMSocialLaiWangHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialLaiWangHandler.h; sourceTree = "<group>"; };
+		0DBB29E11DE9ABD5008A0F32 /* libSocialLine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialLine.a; sourceTree = "<group>"; };
+		0DBB29E21DE9ABD5008A0F32 /* UMSocialLinehandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialLinehandler.h; sourceTree = "<group>"; };
+		0DBB29E41DE9ABD5008A0F32 /* libSocialLinkedin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialLinkedin.a; sourceTree = "<group>"; };
+		0DBB29E51DE9ABD5008A0F32 /* linkedin-sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "linkedin-sdk.framework"; sourceTree = "<group>"; };
+		0DBB29E61DE9ABD5008A0F32 /* UMSocialLinkedinHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialLinkedinHandler.h; sourceTree = "<group>"; };
+		0DBB29E81DE9ABD5008A0F32 /* libSocialPinterest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialPinterest.a; sourceTree = "<group>"; };
+		0DBB29E91DE9ABD5008A0F32 /* UMSocialPinterestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialPinterestHandler.h; sourceTree = "<group>"; };
+		0DBB29EB1DE9ABD5008A0F32 /* libSocialQQ.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialQQ.a; sourceTree = "<group>"; };
+		0DBB29EC1DE9ABD5008A0F32 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		0DBB29ED1DE9ABD5008A0F32 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
+		0DBB29EE1DE9ABD5008A0F32 /* UMSocialQQHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialQQHandler.h; sourceTree = "<group>"; };
+		0DBB29F01DE9ABD5008A0F32 /* libSocialRenren.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialRenren.a; sourceTree = "<group>"; };
+		0DBB29F11DE9ABD5008A0F32 /* UMSocialRenrenHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialRenrenHandler.h; sourceTree = "<group>"; };
+		0DBB29F31DE9ABD5008A0F32 /* libSocialSina.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSina.a; sourceTree = "<group>"; };
+		0DBB29F41DE9ABD5008A0F32 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
+		0DBB29F51DE9ABD5008A0F32 /* UMSocialSinaHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaHandler.h; sourceTree = "<group>"; };
+		0DBB29F61DE9ABD5008A0F32 /* WBHttpRequest+WeiboGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboGame.h"; sourceTree = "<group>"; };
+		0DBB29F71DE9ABD5008A0F32 /* WBHttpRequest+WeiboShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboShare.h"; sourceTree = "<group>"; };
+		0DBB29F81DE9ABD5008A0F32 /* WBHttpRequest+WeiboToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboToken.h"; sourceTree = "<group>"; };
+		0DBB29F91DE9ABD5008A0F32 /* WBHttpRequest+WeiboUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboUser.h"; sourceTree = "<group>"; };
+		0DBB29FA1DE9ABD5008A0F32 /* WBHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBHttpRequest.h; sourceTree = "<group>"; };
+		0DBB29FB1DE9ABD5008A0F32 /* WBSDKBasicButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKBasicButton.h; sourceTree = "<group>"; };
+		0DBB29FC1DE9ABD5008A0F32 /* WBSDKCommentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKCommentButton.h; sourceTree = "<group>"; };
+		0DBB29FD1DE9ABD5008A0F32 /* WBSDKRelationshipButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKRelationshipButton.h; sourceTree = "<group>"; };
+		0DBB29FE1DE9ABD5008A0F32 /* WeiboSDK+Statistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WeiboSDK+Statistics.h"; sourceTree = "<group>"; };
+		0DBB29FF1DE9ABD5008A0F32 /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
+		0DBB2A001DE9ABD5008A0F32 /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
+		0DBB2A011DE9ABD5008A0F32 /* WeiboUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboUser.h; sourceTree = "<group>"; };
+		0DBB2A031DE9ABD5008A0F32 /* libSocialSMS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSMS.a; sourceTree = "<group>"; };
+		0DBB2A041DE9ABD5008A0F32 /* UMSocialSmsHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSmsHandler.h; sourceTree = "<group>"; };
+		0DBB2A061DE9ABD5008A0F32 /* libSocialTencentWeibo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialTencentWeibo.a; sourceTree = "<group>"; };
+		0DBB2A071DE9ABD5008A0F32 /* UMSocialTCWeiboHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialTCWeiboHandler.h; sourceTree = "<group>"; };
+		0DBB2A091DE9ABD5008A0F32 /* libSocialTumblr.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialTumblr.a; sourceTree = "<group>"; };
+		0DBB2A0A1DE9ABD5008A0F32 /* UMSocialTumblrHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialTumblrHandler.h; sourceTree = "<group>"; };
+		0DBB2A0C1DE9ABD5008A0F32 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		0DBB2A0D1DE9ABD5008A0F32 /* libSocialTwitter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialTwitter.a; sourceTree = "<group>"; };
+		0DBB2A0E1DE9ABD5008A0F32 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		0DBB2A0F1DE9ABD5008A0F32 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		0DBB2A101DE9ABD5008A0F32 /* UMSocialTwitterHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialTwitterHandler.h; sourceTree = "<group>"; };
+		0DBB2A121DE9ABD5008A0F32 /* libSocialWeChat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialWeChat.a; sourceTree = "<group>"; };
+		0DBB2A131DE9ABD5008A0F32 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		0DBB2A141DE9ABD5008A0F32 /* read_me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = read_me.txt; sourceTree = "<group>"; };
+		0DBB2A151DE9ABD5008A0F32 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		0DBB2A161DE9ABD5008A0F32 /* UMSocialWechatHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialWechatHandler.h; sourceTree = "<group>"; };
+		0DBB2A171DE9ABD5008A0F32 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		0DBB2A181DE9ABD5008A0F32 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		0DBB2A191DE9ABD5008A0F32 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		0DBB2A1B1DE9ABD5008A0F32 /* libSocialWhatsApp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialWhatsApp.a; sourceTree = "<group>"; };
+		0DBB2A1C1DE9ABD5008A0F32 /* UMSocialWhatsappHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialWhatsappHandler.h; sourceTree = "<group>"; };
+		0DBB2A1E1DE9ABD5008A0F32 /* libSocialYiXin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialYiXin.a; sourceTree = "<group>"; };
+		0DBB2A1F1DE9ABD5008A0F32 /* libYixinSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYixinSDK.a; sourceTree = "<group>"; };
+		0DBB2A201DE9ABD5008A0F32 /* UMSocialYiXinHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialYiXinHandler.h; sourceTree = "<group>"; };
+		0DBB2A211DE9ABD5008A0F32 /* YXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXApi.h; sourceTree = "<group>"; };
+		0DBB2A221DE9ABD5008A0F32 /* YXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXApiObject.h; sourceTree = "<group>"; };
+		0DBB2A241DE9ABD5008A0F32 /* UMSocialCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMSocialCore.framework; sourceTree = "<group>"; };
+		0DBB2A251DE9ABD5008A0F32 /* UMSocialNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMSocialNetwork.framework; sourceTree = "<group>"; };
+		0DBB2A281DE9ABD5008A0F32 /* UMSocialSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResources.bundle; sourceTree = "<group>"; };
+		0DBB2A291DE9ABD5008A0F32 /* UMShareMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMShareMenuItem.h; sourceTree = "<group>"; };
+		0DBB2A2A1DE9ABD5008A0F32 /* UMShareMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMShareMenuItem.m; sourceTree = "<group>"; };
+		0DBB2A2B1DE9ABD5008A0F32 /* UMShareMenuSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMShareMenuSelectionView.h; sourceTree = "<group>"; };
+		0DBB2A2C1DE9ABD5008A0F32 /* UMShareMenuSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMShareMenuSelectionView.m; sourceTree = "<group>"; };
+		0DBB2A2D1DE9ABD5008A0F32 /* UMSocialShareScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialShareScrollView.h; sourceTree = "<group>"; };
+		0DBB2A2E1DE9ABD5008A0F32 /* UMSocialShareScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMSocialShareScrollView.m; sourceTree = "<group>"; };
+		0DBB2A2F1DE9ABD5008A0F32 /* UMSocialUIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialUIManager.h; sourceTree = "<group>"; };
+		0DBB2A301DE9ABD5008A0F32 /* UMSocialUIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMSocialUIManager.m; sourceTree = "<group>"; };
+		0DBB2A601DE9AD04008A0F32 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0DBB2A621DE9AD0D008A0F32 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		0DBB2A641DE9AD13008A0F32 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		0DBB2A671DE9AD2B008A0F32 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
 		0DDAEE771DBB9F87008478DC /* NNImageBroswerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNImageBroswerView.h; sourceTree = "<group>"; };
 		0DDAEE781DBB9F87008478DC /* NNImageBroswerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNImageBroswerView.m; sourceTree = "<group>"; };
 		0DDAEE7A1DBBB030008478DC /* NNSpitslotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSpitslotCell.h; sourceTree = "<group>"; };
@@ -450,14 +606,364 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DBB2A661DE9AD1D008A0F32 /* libz.1.1.3.tbd in Frameworks */,
+				0DBB2A681DE9AD2B008A0F32 /* libc++.1.tbd in Frameworks */,
+				0DBB2A651DE9AD14008A0F32 /* ImageIO.framework in Frameworks */,
+				0DBB2A631DE9AD0D008A0F32 /* CoreTelephony.framework in Frameworks */,
+				0DBB2A611DE9AD04008A0F32 /* SystemConfiguration.framework in Frameworks */,
 				BCEDDC181DE83DD900187317 /* libsqlite3.tbd in Frameworks */,
+				0DBB2A441DE9ABD5008A0F32 /* libSocialQQ.a in Frameworks */,
+				0DBB2A401DE9ABD5008A0F32 /* libSocialLine.a in Frameworks */,
+				0DBB2A571DE9ABD5008A0F32 /* libSocialYiXin.a in Frameworks */,
+				0DBB2A411DE9ABD5008A0F32 /* libSocialLinkedin.a in Frameworks */,
+				0DBB2A331DE9ABD5008A0F32 /* libSocialDouban.a in Frameworks */,
+				0DBB2A4C1DE9ABD5008A0F32 /* libSocialTencentWeibo.a in Frameworks */,
+				0DBB2A561DE9ABD5008A0F32 /* libSocialWhatsApp.a in Frameworks */,
+				0DBB2A5A1DE9ABD5008A0F32 /* UMSocialNetwork.framework in Frameworks */,
+				0DBB2A381DE9ABD5008A0F32 /* FBSDKShareKit.framework in Frameworks */,
+				0DBB2A4B1DE9ABD5008A0F32 /* libSocialSMS.a in Frameworks */,
+				0DBB2A4E1DE9ABD5008A0F32 /* Fabric.framework in Frameworks */,
+				0DBB2A3A1DE9ABD5008A0F32 /* libSocialFlickr.a in Frameworks */,
+				0DBB2A321DE9ABD5008A0F32 /* libSocialAlipayShare.a in Frameworks */,
+				0DBB2A3E1DE9ABD5008A0F32 /* libLWApiSDK.a in Frameworks */,
+				0DBB2A341DE9ABD5008A0F32 /* libSocialEmail.a in Frameworks */,
+				0DBB2A351DE9ABD5008A0F32 /* Bolts.framework in Frameworks */,
+				0DBB2A371DE9ABD5008A0F32 /* FBSDKLoginKit.framework in Frameworks */,
+				0DBB2A591DE9ABD5008A0F32 /* UMSocialCore.framework in Frameworks */,
+				0DBB2A3B1DE9ABD5008A0F32 /* libSocialInstagram.a in Frameworks */,
+				0DBB2A531DE9ABD5008A0F32 /* libWeChatSDK.a in Frameworks */,
+				0DBB2A511DE9ABD5008A0F32 /* TwitterKit.framework in Frameworks */,
+				0DBB2A421DE9ABD5008A0F32 /* linkedin-sdk.framework in Frameworks */,
+				0DBB2A471DE9ABD5008A0F32 /* libSocialRenren.a in Frameworks */,
+				0DBB2A451DE9ABD5008A0F32 /* TencentOpenAPI.framework in Frameworks */,
+				0DBB2A3C1DE9ABD5008A0F32 /* KakaoOpenSDK.framework in Frameworks */,
+				0DBB2A481DE9ABD5008A0F32 /* libSocialSina.a in Frameworks */,
+				0DBB2A4F1DE9ABD5008A0F32 /* libSocialTwitter.a in Frameworks */,
+				0DBB2A491DE9ABD5008A0F32 /* libWeiboSDK.a in Frameworks */,
+				0DBB2A431DE9ABD5008A0F32 /* libSocialPinterest.a in Frameworks */,
+				0DBB2A3F1DE9ABD5008A0F32 /* libSocialLaiWang.a in Frameworks */,
+				0DBB2A4D1DE9ABD5008A0F32 /* libSocialTumblr.a in Frameworks */,
+				0DBB2A311DE9ABD5008A0F32 /* libAPOpenSdk.a in Frameworks */,
+				0DBB2A391DE9ABD5008A0F32 /* libSocialFacebook.a in Frameworks */,
+				0DBB2A3D1DE9ABD5008A0F32 /* libSocialKakao.a in Frameworks */,
 				5157E0A13BD1F3B2CCF4B3A1 /* Pods_NuanNuan_OC.framework in Frameworks */,
+				0DBB2A501DE9ABD5008A0F32 /* TwitterCore.framework in Frameworks */,
+				0DBB2A361DE9ABD5008A0F32 /* FBSDKCoreKit.framework in Frameworks */,
+				0DBB2A521DE9ABD5008A0F32 /* libSocialWeChat.a in Frameworks */,
+				0DBB2A581DE9ABD5008A0F32 /* libYixinSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DBB29B31DE9ABD5008A0F32 /* UMSocial */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB29B41DE9ABD5008A0F32 /* SocialLibraries */,
+				0DBB2A231DE9ABD5008A0F32 /* UMSocialSDK */,
+				0DBB2A261DE9ABD5008A0F32 /* UMSocialUI */,
+			);
+			path = UMSocial;
+			sourceTree = "<group>";
+		};
+		0DBB29B41DE9ABD5008A0F32 /* SocialLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB29B51DE9ABD5008A0F32 /* AlipayShare */,
+				0DBB29BB1DE9ABD5008A0F32 /* Douban */,
+				0DBB29BE1DE9ABD5008A0F32 /* Email */,
+				0DBB29C11DE9ABD5008A0F32 /* Facebook */,
+				0DBB29C91DE9ABD5008A0F32 /* Flickr */,
+				0DBB29CC1DE9ABD5008A0F32 /* Instagram */,
+				0DBB29CF1DE9ABD5008A0F32 /* Kakao */,
+				0DBB29D31DE9ABD5008A0F32 /* LaiWang */,
+				0DBB29E01DE9ABD5008A0F32 /* Line */,
+				0DBB29E31DE9ABD5008A0F32 /* Linkedin */,
+				0DBB29E71DE9ABD5008A0F32 /* Pinterest */,
+				0DBB29EA1DE9ABD5008A0F32 /* QQ */,
+				0DBB29EF1DE9ABD5008A0F32 /* Renren */,
+				0DBB29F21DE9ABD5008A0F32 /* Sina */,
+				0DBB2A021DE9ABD5008A0F32 /* SMS */,
+				0DBB2A051DE9ABD5008A0F32 /* TencentWeibo */,
+				0DBB2A081DE9ABD5008A0F32 /* Tumblr */,
+				0DBB2A0B1DE9ABD5008A0F32 /* Twitter */,
+				0DBB2A111DE9ABD5008A0F32 /* WeChat */,
+				0DBB2A1A1DE9ABD5008A0F32 /* WhatsApp */,
+				0DBB2A1D1DE9ABD5008A0F32 /* YiXin */,
+			);
+			path = SocialLibraries;
+			sourceTree = "<group>";
+		};
+		0DBB29B51DE9ABD5008A0F32 /* AlipayShare */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB29B61DE9ABD5008A0F32 /* APOpenAPI.h */,
+				0DBB29B71DE9ABD5008A0F32 /* APOpenAPIObject.h */,
+				0DBB29B81DE9ABD5008A0F32 /* libAPOpenSdk.a */,
+				0DBB29B91DE9ABD5008A0F32 /* libSocialAlipayShare.a */,
+				0DBB29BA1DE9ABD5008A0F32 /* UMSocialAlipayHandler.h */,
+			);
+			path = AlipayShare;
+			sourceTree = "<group>";
+		};
+		0DBB29BB1DE9ABD5008A0F32 /* Douban */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB29BC1DE9ABD5008A0F32 /* libSocialDouban.a */,
+				0DBB29BD1DE9ABD5008A0F32 /* UMSocialDoubanHandler.h */,
+			);
+			path = Douban;
+			sourceTree = "<group>";
+		};
+		0DBB29BE1DE9ABD5008A0F32 /* Email */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB29BF1DE9ABD5008A0F32 /* libSocialEmail.a */,
+				0DBB29C01DE9ABD5008A0F32 /* UMSocialEmailHandler.h */,
+			);
+			path = Email;
+			sourceTree = "<group>";
+		};
+		0DBB29C11DE9ABD5008A0F32 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB29C21DE9ABD5008A0F32 /* Bolts.framework */,
+				0DBB29C31DE9ABD5008A0F32 /* facebook_ios_sdk_Prefix.pch */,
+				0DBB29C41DE9ABD5008A0F32 /* FBSDKCoreKit.framework */,
+				0DBB29C51DE9ABD5008A0F32 /* FBSDKLoginKit.framework */,
+				0DBB29C61DE9ABD5008A0F32 /* FBSDKShareKit.framework */,
+				0DBB29C71DE9ABD5008A0F32 /* libSocialFacebook.a */,
+				0DBB29C81DE9ABD5008A0F32 /* UMSocialFaceBookHandler.h */,
+			);
+			path = Facebook;
+			sourceTree = "<group>";
+		};
+		0DBB29C91DE9ABD5008A0F32 /* Flickr */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB29CA1DE9ABD5008A0F32 /* libSocialFlickr.a */,
+				0DBB29CB1DE9ABD5008A0F32 /* UMSocialFlickrHandler.h */,
+			);
+			path = Flickr;
+			sourceTree = "<group>";
+		};
+		0DBB29CC1DE9ABD5008A0F32 /* Instagram */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB29CD1DE9ABD5008A0F32 /* libSocialInstagram.a */,
+				0DBB29CE1DE9ABD5008A0F32 /* UMSocialInstagramHandler.h */,
+			);
+			path = Instagram;
+			sourceTree = "<group>";
+		};
+		0DBB29CF1DE9ABD5008A0F32 /* Kakao */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB29D01DE9ABD5008A0F32 /* KakaoOpenSDK.framework */,
+				0DBB29D11DE9ABD5008A0F32 /* libSocialKakao.a */,
+				0DBB29D21DE9ABD5008A0F32 /* UMSocialKakaoHandler.h */,
+			);
+			path = Kakao;
+			sourceTree = "<group>";
+		};
+		0DBB29D31DE9ABD5008A0F32 /* LaiWang */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB29D41DE9ABD5008A0F32 /* libLWApiSDK.a */,
+				0DBB29D51DE9ABD5008A0F32 /* libSocialLaiWang.a */,
+				0DBB29D61DE9ABD5008A0F32 /* LWApiConfig.h */,
+				0DBB29D71DE9ABD5008A0F32 /* LWApiConnection.h */,
+				0DBB29D81DE9ABD5008A0F32 /* LWApiImageObject.h */,
+				0DBB29D91DE9ABD5008A0F32 /* LWApiMediaObject.h */,
+				0DBB29DA1DE9ABD5008A0F32 /* LWApiMessage.h */,
+				0DBB29DB1DE9ABD5008A0F32 /* LWApiRequest.h */,
+				0DBB29DC1DE9ABD5008A0F32 /* LWApiResponse.h */,
+				0DBB29DD1DE9ABD5008A0F32 /* LWApiSDK.h */,
+				0DBB29DE1DE9ABD5008A0F32 /* LWApiUtils.h */,
+				0DBB29DF1DE9ABD5008A0F32 /* UMSocialLaiWangHandler.h */,
+			);
+			path = LaiWang;
+			sourceTree = "<group>";
+		};
+		0DBB29E01DE9ABD5008A0F32 /* Line */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB29E11DE9ABD5008A0F32 /* libSocialLine.a */,
+				0DBB29E21DE9ABD5008A0F32 /* UMSocialLinehandler.h */,
+			);
+			path = Line;
+			sourceTree = "<group>";
+		};
+		0DBB29E31DE9ABD5008A0F32 /* Linkedin */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB29E41DE9ABD5008A0F32 /* libSocialLinkedin.a */,
+				0DBB29E51DE9ABD5008A0F32 /* linkedin-sdk.framework */,
+				0DBB29E61DE9ABD5008A0F32 /* UMSocialLinkedinHandler.h */,
+			);
+			path = Linkedin;
+			sourceTree = "<group>";
+		};
+		0DBB29E71DE9ABD5008A0F32 /* Pinterest */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB29E81DE9ABD5008A0F32 /* libSocialPinterest.a */,
+				0DBB29E91DE9ABD5008A0F32 /* UMSocialPinterestHandler.h */,
+			);
+			path = Pinterest;
+			sourceTree = "<group>";
+		};
+		0DBB29EA1DE9ABD5008A0F32 /* QQ */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB29EB1DE9ABD5008A0F32 /* libSocialQQ.a */,
+				0DBB29EC1DE9ABD5008A0F32 /* TencentOpenAPI.framework */,
+				0DBB29ED1DE9ABD5008A0F32 /* TencentOpenApi_IOS_Bundle.bundle */,
+				0DBB29EE1DE9ABD5008A0F32 /* UMSocialQQHandler.h */,
+			);
+			path = QQ;
+			sourceTree = "<group>";
+		};
+		0DBB29EF1DE9ABD5008A0F32 /* Renren */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB29F01DE9ABD5008A0F32 /* libSocialRenren.a */,
+				0DBB29F11DE9ABD5008A0F32 /* UMSocialRenrenHandler.h */,
+			);
+			path = Renren;
+			sourceTree = "<group>";
+		};
+		0DBB29F21DE9ABD5008A0F32 /* Sina */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB29F31DE9ABD5008A0F32 /* libSocialSina.a */,
+				0DBB29F41DE9ABD5008A0F32 /* libWeiboSDK.a */,
+				0DBB29F51DE9ABD5008A0F32 /* UMSocialSinaHandler.h */,
+				0DBB29F61DE9ABD5008A0F32 /* WBHttpRequest+WeiboGame.h */,
+				0DBB29F71DE9ABD5008A0F32 /* WBHttpRequest+WeiboShare.h */,
+				0DBB29F81DE9ABD5008A0F32 /* WBHttpRequest+WeiboToken.h */,
+				0DBB29F91DE9ABD5008A0F32 /* WBHttpRequest+WeiboUser.h */,
+				0DBB29FA1DE9ABD5008A0F32 /* WBHttpRequest.h */,
+				0DBB29FB1DE9ABD5008A0F32 /* WBSDKBasicButton.h */,
+				0DBB29FC1DE9ABD5008A0F32 /* WBSDKCommentButton.h */,
+				0DBB29FD1DE9ABD5008A0F32 /* WBSDKRelationshipButton.h */,
+				0DBB29FE1DE9ABD5008A0F32 /* WeiboSDK+Statistics.h */,
+				0DBB29FF1DE9ABD5008A0F32 /* WeiboSDK.bundle */,
+				0DBB2A001DE9ABD5008A0F32 /* WeiboSDK.h */,
+				0DBB2A011DE9ABD5008A0F32 /* WeiboUser.h */,
+			);
+			path = Sina;
+			sourceTree = "<group>";
+		};
+		0DBB2A021DE9ABD5008A0F32 /* SMS */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB2A031DE9ABD5008A0F32 /* libSocialSMS.a */,
+				0DBB2A041DE9ABD5008A0F32 /* UMSocialSmsHandler.h */,
+			);
+			path = SMS;
+			sourceTree = "<group>";
+		};
+		0DBB2A051DE9ABD5008A0F32 /* TencentWeibo */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB2A061DE9ABD5008A0F32 /* libSocialTencentWeibo.a */,
+				0DBB2A071DE9ABD5008A0F32 /* UMSocialTCWeiboHandler.h */,
+			);
+			path = TencentWeibo;
+			sourceTree = "<group>";
+		};
+		0DBB2A081DE9ABD5008A0F32 /* Tumblr */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB2A091DE9ABD5008A0F32 /* libSocialTumblr.a */,
+				0DBB2A0A1DE9ABD5008A0F32 /* UMSocialTumblrHandler.h */,
+			);
+			path = Tumblr;
+			sourceTree = "<group>";
+		};
+		0DBB2A0B1DE9ABD5008A0F32 /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB2A0C1DE9ABD5008A0F32 /* Fabric.framework */,
+				0DBB2A0D1DE9ABD5008A0F32 /* libSocialTwitter.a */,
+				0DBB2A0E1DE9ABD5008A0F32 /* TwitterCore.framework */,
+				0DBB2A0F1DE9ABD5008A0F32 /* TwitterKit.framework */,
+				0DBB2A101DE9ABD5008A0F32 /* UMSocialTwitterHandler.h */,
+			);
+			path = Twitter;
+			sourceTree = "<group>";
+		};
+		0DBB2A111DE9ABD5008A0F32 /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB2A121DE9ABD5008A0F32 /* libSocialWeChat.a */,
+				0DBB2A131DE9ABD5008A0F32 /* libWeChatSDK.a */,
+				0DBB2A141DE9ABD5008A0F32 /* read_me.txt */,
+				0DBB2A151DE9ABD5008A0F32 /* README.txt */,
+				0DBB2A161DE9ABD5008A0F32 /* UMSocialWechatHandler.h */,
+				0DBB2A171DE9ABD5008A0F32 /* WechatAuthSDK.h */,
+				0DBB2A181DE9ABD5008A0F32 /* WXApi.h */,
+				0DBB2A191DE9ABD5008A0F32 /* WXApiObject.h */,
+			);
+			path = WeChat;
+			sourceTree = "<group>";
+		};
+		0DBB2A1A1DE9ABD5008A0F32 /* WhatsApp */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB2A1B1DE9ABD5008A0F32 /* libSocialWhatsApp.a */,
+				0DBB2A1C1DE9ABD5008A0F32 /* UMSocialWhatsappHandler.h */,
+			);
+			path = WhatsApp;
+			sourceTree = "<group>";
+		};
+		0DBB2A1D1DE9ABD5008A0F32 /* YiXin */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB2A1E1DE9ABD5008A0F32 /* libSocialYiXin.a */,
+				0DBB2A1F1DE9ABD5008A0F32 /* libYixinSDK.a */,
+				0DBB2A201DE9ABD5008A0F32 /* UMSocialYiXinHandler.h */,
+				0DBB2A211DE9ABD5008A0F32 /* YXApi.h */,
+				0DBB2A221DE9ABD5008A0F32 /* YXApiObject.h */,
+			);
+			path = YiXin;
+			sourceTree = "<group>";
+		};
+		0DBB2A231DE9ABD5008A0F32 /* UMSocialSDK */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB2A241DE9ABD5008A0F32 /* UMSocialCore.framework */,
+				0DBB2A251DE9ABD5008A0F32 /* UMSocialNetwork.framework */,
+			);
+			path = UMSocialSDK;
+			sourceTree = "<group>";
+		};
+		0DBB2A261DE9ABD5008A0F32 /* UMSocialUI */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB2A271DE9ABD5008A0F32 /* Resource */,
+				0DBB2A291DE9ABD5008A0F32 /* UMShareMenuItem.h */,
+				0DBB2A2A1DE9ABD5008A0F32 /* UMShareMenuItem.m */,
+				0DBB2A2B1DE9ABD5008A0F32 /* UMShareMenuSelectionView.h */,
+				0DBB2A2C1DE9ABD5008A0F32 /* UMShareMenuSelectionView.m */,
+				0DBB2A2D1DE9ABD5008A0F32 /* UMSocialShareScrollView.h */,
+				0DBB2A2E1DE9ABD5008A0F32 /* UMSocialShareScrollView.m */,
+				0DBB2A2F1DE9ABD5008A0F32 /* UMSocialUIManager.h */,
+				0DBB2A301DE9ABD5008A0F32 /* UMSocialUIManager.m */,
+			);
+			path = UMSocialUI;
+			sourceTree = "<group>";
+		};
+		0DBB2A271DE9ABD5008A0F32 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB2A281DE9ABD5008A0F32 /* UMSocialSDKResources.bundle */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		BC328EE21DBF2F0F000AF40B /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,7 +1095,7 @@
 		BCBAD82F1DCC805700BEDF18 /* Libiary */ = {
 			isa = PBXGroup;
 			children = (
-				BCEDDC0D1DE83D7700187317 /* UMSocial */,
+				0DBB29B31DE9ABD5008A0F32 /* UMSocial */,
 				BCEDDBBD1DE52C5A00187317 /* MLSelectPhoto */,
 			);
 			path = Libiary;
@@ -1017,85 +1523,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		BCEDDC0D1DE83D7700187317 /* UMSocial */ = {
-			isa = PBXGroup;
-			children = (
-				BCEDDC0E1DE83D7700187317 /* SocialLibraries */,
-				BCEDDC141DE83D7700187317 /* UMSocialSDK */,
-				BCEDDC151DE83D7700187317 /* UMSocialUI */,
-			);
-			path = UMSocial;
-			sourceTree = "<group>";
-		};
-		BCEDDC0E1DE83D7700187317 /* SocialLibraries */ = {
-			isa = PBXGroup;
-			children = (
-				BCEDDC0F1DE83D7700187317 /* Douban */,
-				BCEDDC101DE83D7700187317 /* QQ */,
-				BCEDDC111DE83D7700187317 /* Renren */,
-				BCEDDC121DE83D7700187317 /* Sina */,
-				BCEDDC131DE83D7700187317 /* WeChat */,
-			);
-			path = SocialLibraries;
-			sourceTree = "<group>";
-		};
-		BCEDDC0F1DE83D7700187317 /* Douban */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Douban;
-			sourceTree = "<group>";
-		};
-		BCEDDC101DE83D7700187317 /* QQ */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = QQ;
-			sourceTree = "<group>";
-		};
-		BCEDDC111DE83D7700187317 /* Renren */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Renren;
-			sourceTree = "<group>";
-		};
-		BCEDDC121DE83D7700187317 /* Sina */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sina;
-			sourceTree = "<group>";
-		};
-		BCEDDC131DE83D7700187317 /* WeChat */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = WeChat;
-			sourceTree = "<group>";
-		};
-		BCEDDC141DE83D7700187317 /* UMSocialSDK */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UMSocialSDK;
-			sourceTree = "<group>";
-		};
-		BCEDDC151DE83D7700187317 /* UMSocialUI */ = {
-			isa = PBXGroup;
-			children = (
-				BCEDDC161DE83D7700187317 /* Resource */,
-			);
-			path = UMSocialUI;
-			sourceTree = "<group>";
-		};
-		BCEDDC161DE83D7700187317 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resource;
-			sourceTree = "<group>";
-		};
 		BCF178B71DC0AA2E00A6DC4B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1141,6 +1568,10 @@
 		C8B1F2727F206124CA4830FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0DBB2A671DE9AD2B008A0F32 /* libc++.1.tbd */,
+				0DBB2A641DE9AD13008A0F32 /* ImageIO.framework */,
+				0DBB2A621DE9AD0D008A0F32 /* CoreTelephony.framework */,
+				0DBB2A601DE9AD04008A0F32 /* SystemConfiguration.framework */,
 				BCEDDC171DE83DD900187317 /* libsqlite3.tbd */,
 				BCEDDC0B1DE8287B00187317 /* libz.1.1.3.tbd */,
 				BCEDDC091DE8286E00187317 /* libstdc++.6.0.9.tbd */,
@@ -1226,19 +1657,24 @@
 				0D331E0F1DBBCA87002B0DCD /* NNSpitslotDetailVC.xib in Resources */,
 				BCD9AE7D1DACE424008DB98E /* NNEmotionalItemCell.xib in Resources */,
 				BC8627711DD9A03400162082 /* NNQuestionerChooseCell.xib in Resources */,
+				0DBB2A551DE9ABD5008A0F32 /* README.txt in Resources */,
 				BCD9AE6A1DACBCB6008DB98E /* NNEmotionCaseVC.xib in Resources */,
 				BCD9AE9C1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.xib in Resources */,
 				BC09AFEB1DB8AC9400BC4D1B /* NNServerListCell.xib in Resources */,
+				0DBB2A5B1DE9ABD5008A0F32 /* UMSocialSDKResources.bundle in Resources */,
 				BCEDDBFF1DE52C5A00187317 /* MLSelectPhoto.bundle in Resources */,
 				BCD506111D92202D000FB2C0 /* Main.storyboard in Resources */,
 				0DDAEE7E1DBBB030008478DC /* NNSpitslotCell.xib in Resources */,
 				BC86276C1DD99EE100162082 /* NNQuestionerInfoCell.xib in Resources */,
+				0DBB2A461DE9ABD5008A0F32 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				0DBB2A4A1DE9ABD5008A0F32 /* WeiboSDK.bundle in Resources */,
 				BC328EEB1DBF2F5E000AF40B /* NNLoginAndRegisterVC.xib in Resources */,
 				BC58BA7C1DBDEF9300F3BF0D /* NNMineNoticeVC.xib in Resources */,
 				BC58BA721DBDEDFA00F3BF0D /* NNMineLikeVC.xib in Resources */,
 				BCD9AE911DADE5F6008DB98E /* NNPsychologicalTeacherHeaderView.xib in Resources */,
 				BC3BFA391DDAA96400F73DEF /* NNOrderCell.xib in Resources */,
 				BCD9AE8C1DADE582008DB98E /* NNPsychologicalTeacherVC.xib in Resources */,
+				0DBB2A541DE9ABD5008A0F32 /* read_me.txt in Resources */,
 				BCD9AE821DACED5F008DB98E /* NNCustomNavigationView.xib in Resources */,
 				BCD506081D921F8C000FB2C0 /* LaunchScreen.storyboard in Resources */,
 				0DA029941DE08C8C00862E7C /* NNTreeHoelSendVC.xib in Resources */,
@@ -1369,9 +1805,11 @@
 				0DDAEE791DBB9F87008478DC /* NNImageBroswerView.m in Sources */,
 				BCEDDBFE1DE52C5A00187317 /* MLSelectPhotoPickerGroupTableViewCell.m in Sources */,
 				BC58BA8A1DBDF29000F3BF0D /* NNSetCell.m in Sources */,
+				0DBB2A5F1DE9ABD5008A0F32 /* UMSocialUIManager.m in Sources */,
 				BCEDDBF81DE52C5A00187317 /* MLSelectPhotoPickerBrowserPhotoImageView.m in Sources */,
 				BC7A672A1DB4C3C000C3B3D9 /* NNNetRequestClass.m in Sources */,
 				BC17E9361DD598AA0054FBE2 /* NNCommentViewModel.m in Sources */,
+				0DBB2A5E1DE9ABD5008A0F32 /* UMSocialShareScrollView.m in Sources */,
 				BCE6A06D1DDED76F00A02E50 /* NNAppointmentQuestionViewModel.m in Sources */,
 				BC4C8E431DD3056800544A83 /* NNQuestionAndAnswerViewModel.m in Sources */,
 				BC4C8E3D1DD0713F00544A83 /* NNTreeHoelModel.m in Sources */,
@@ -1382,11 +1820,13 @@
 				BCEDDBF51DE52C5A00187317 /* MLSelectPhotoPickerGroupViewController.m in Sources */,
 				BCEDDBF01DE52C5A00187317 /* MLSelectPhotoPickerDatas.m in Sources */,
 				BCD506561D9231D0000FB2C0 /* NNMeVC.m in Sources */,
+				0DBB2A5D1DE9ABD5008A0F32 /* UMShareMenuSelectionView.m in Sources */,
 				BC247EAA1DAA35D600AB5C84 /* NNMineCell.m in Sources */,
 				BCEDDBF31DE52C5A00187317 /* MLSelectPhotoNavigationViewController.m in Sources */,
 				BCB6EFE01DB62B0000BEFD37 /* NNSuccessCaseModel.m in Sources */,
 				BCEDDBF11DE52C5A00187317 /* MLSelectPhotoPickerGroup.m in Sources */,
 				BCD506581D9231D0000FB2C0 /* NNTreeHoleVC.m in Sources */,
+				0DBB2A5C1DE9ABD5008A0F32 /* UMShareMenuItem.m in Sources */,
 				BCE6A0641DDD7C7C00A02E50 /* NNUserHeaderViewModel.m in Sources */,
 				BCEDDBFA1DE52C5A00187317 /* MLSelectPhotoPickerBrowserPhotoView.m in Sources */,
 				BC4C8E3A1DD06F3900544A83 /* NNTreeHoelViewModel.m in Sources */,
@@ -1547,7 +1987,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DDSZZTF2EY;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Facebook",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Kakao",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Linkedin",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/QQ",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Twitter",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/UMSocialSDK",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -1555,7 +2004,30 @@
 				);
 				INFOPLIST_FILE = NuanNuan_OC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/AlipayShare",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Douban",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Email",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Facebook",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Flickr",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Instagram",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Kakao",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/LaiWang",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Line",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Linkedin",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Pinterest",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/QQ",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Renren",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Sina",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/SMS",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/TencentWeibo",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Tumblr",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Twitter",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/WeChat",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/WhatsApp",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/YiXin",
+				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nuannuan.NuanNuanTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1571,7 +2043,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DDSZZTF2EY;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Facebook",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Kakao",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Linkedin",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/QQ",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Twitter",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/UMSocialSDK",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -1579,7 +2060,30 @@
 				);
 				INFOPLIST_FILE = NuanNuan_OC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/AlipayShare",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Douban",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Email",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Facebook",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Flickr",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Instagram",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Kakao",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/LaiWang",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Line",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Linkedin",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Pinterest",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/QQ",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Renren",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Sina",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/SMS",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/TencentWeibo",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Tumblr",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/Twitter",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/WeChat",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/WhatsApp",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMSocial/SocialLibraries/YiXin",
+				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nuannuan.NuanNuanTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";

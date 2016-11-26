@@ -32,17 +32,6 @@ PODS:
   - UIActivityIndicator-for-SDWebImage (1.2):
     - SDWebImage (~> 3.7)
   - UITableView+FDTemplateLayoutCell (1.4)
-  - UMengUShare/Core (6.0.3):
-    - UMengUShare/Network
-  - UMengUShare/Network (6.0.3)
-  - UMengUShare/Social/QQ (6.0.3):
-    - UMengUShare/Core
-  - UMengUShare/Social/Sina (6.0.3):
-    - UMengUShare/Core
-  - UMengUShare/Social/WeChat (6.0.3):
-    - UMengUShare/Core
-  - UMengUShare/UI (6.0.3):
-    - UMengUShare/Core
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -58,10 +47,6 @@ DEPENDENCIES:
   - SDWebImage (~> 3.7.1)
   - UIActivityIndicator-for-SDWebImage
   - UITableView+FDTemplateLayoutCell (~> 1.4)
-  - UMengUShare/Social/QQ
-  - UMengUShare/Social/Sina
-  - UMengUShare/Social/WeChat
-  - UMengUShare/UI
   - YYKit
   - YZHeaderScaleImage (~> 1.0.1)
 
@@ -82,10 +67,9 @@ SPEC CHECKSUMS:
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   UIActivityIndicator-for-SDWebImage: 7bf7ebbf0ed1747dedc0d6e949c4603a6d0f9e0c
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
-  UMengUShare: f231fc086d789d4e560a5090dcc13a2db15c686d
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   YZHeaderScaleImage: 1ca4ed11644a4ccad7c4370de2fcbc8f6e145793
 
-PODFILE CHECKSUM: 6aadc8bc4e756af7ee3341540adf8fbcea478c4d
+PODFILE CHECKSUM: ed99a020e79bc0f1a5a4f77991bceb754d184c18
 
 COCOAPODS: 1.0.0
