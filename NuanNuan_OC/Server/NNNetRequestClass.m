@@ -73,7 +73,7 @@
     NSMutableDictionary *mutableParameter  = [NSMutableDictionary dictionaryWithDictionary:parameter];
     NSString *ver = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     [mutableParameter setObject:ver forKey:@"ver"];
-    [mutableParameter setObject:@"appstore" forKey:@"channel"];
+    [mutableParameter setObject:@"appstore" forKey:@"device_channel"];
     AFHTTPSessionManager *sessionManager = [[AFHTTPSessionManager alloc] init];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
   

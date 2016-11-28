@@ -121,7 +121,7 @@
             [self shareWebPageToPlatformType:UMSocialPlatformType_WechatTimeLine];
             break;
         case 1002:
-            [self shareWebPageToPlatformType:UMSocialPlatformType_QQ];
+            [self shareWebPageToPlatformType:UMSocialPlatformType_Qzone];
             break;
         case 1003:
             [self shareWebPageToPlatformType:UMSocialPlatformType_Sina];
