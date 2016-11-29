@@ -13,7 +13,7 @@
 #import "NNQuestionCell.h"
 #import "NNAppointmentTypeViewModel.h"
 #import "NNAppointmentQuestionViewModel.h"
-@interface NNAppointmentVC ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UITextViewDelegate> {
+@interface NNAppointmentVC ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UITextViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource> {
     NSArray *sexArray;
     NSArray *consultTypeArray;
     NSString *name;
@@ -22,8 +22,13 @@
     NSString *phone;
     NSString *questionType;
     NSString *question;
-    NSInteger row;
+   // NSInteger lineRow;
     NNQuestionCell *questionCell;
+    UIPickerView *pickView;
+    NSDictionary *cityDic;
+    NSArray *provinceArrays;
+    NSArray *cityArrays;
+    NSInteger defaultRow;
 }
 @property (weak, nonatomic) IBOutlet UITableView *appointmentTableView;
 
@@ -55,12 +60,17 @@
     [_appointmentTableView registerNib:[UINib nibWithNibName:@"NNQuestionerInfoCell" bundle:nil] forCellReuseIdentifier:@"NNQuestionerInfoCell"];
     [_appointmentTableView registerNib:[UINib nibWithNibName:@"NNQuestionerChooseCell" bundle:nil] forCellReuseIdentifier:@"NNQuestionerChooseCell"];
     [_appointmentTableView registerNib:[UINib nibWithNibName:@"NNQuestionCell" bundle:nil] forCellReuseIdentifier:@"NNQuestionCell"];
+    
+    pickView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, NNAppHeight - 200 - 64, NNAppWidth, 200)];
+    pickView.backgroundColor = [UIColor whiteColor];
+    pickView.delegate = self;
+    pickView.dataSource = self;
+    [_appointmentTableView addSubview:pickView];
 }
 
 - (void)initData {
+    defaultRow = 0;
     sexArray = @[@"男",@"女" ];
-
-    
     NNAppointmentTypeViewModel *viewModel = [[NNAppointmentTypeViewModel alloc] init];
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
         consultTypeArray = returnValue;
@@ -72,6 +82,16 @@
     }];
     
     [viewModel getAllAppointTypeWithToken:TEST_TOKEN];
+    
+    [self readCityInfoFromFile:@"cityData"];
+}
+
+- (void)readCityInfoFromFile:(NSString *)plistname {
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:plistname ofType:@"plist"];
+    cityDic = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    
+    provinceArrays = [cityDic allKeys];
+    cityArrays = [cityDic allValues];
 }
 
 #pragma --mark UItableViewDelagate UITableViewDatasource
@@ -241,6 +261,43 @@
     }
     return YES;
 }
+
+#pragma UIPickViewDelegate UIPickViewdatasource
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
+    return NNAppWidth / 2.0;
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
+    return 44.0;
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 2;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    if (component == 0) {
+        return provinceArrays.count;
+    }else {
+        return [[cityArrays objectAtIndex:defaultRow] count];
+    }
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    if(component == 0){
+        return [provinceArrays objectAtIndex:row];
+    }else{
+        return [[cityArrays objectAtIndex:defaultRow] objectAtIndex:row];
+    }
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    if (component == 0) {
+        defaultRow = row;
+        [pickerView reloadComponent:1];
+    }
+}
+
 
 #pragma --mark keyboard
 - (void)keyboardWillHide:(NSNotification *)notification {

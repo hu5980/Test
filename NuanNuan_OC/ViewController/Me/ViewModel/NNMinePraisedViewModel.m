@@ -68,7 +68,7 @@
             model.caseTitle = [arrays[i] objectForKey:@"a_title"];
             model.caseName = [arrays[i] objectForKey:@"ac_name"];
             model.caseImageUrl = [NSString stringWithFormat:@"%@/%@",basebgUrl,[arrays[i] objectForKey:@"a_bg_pic"]] ;
-            model.caseAdID = [[arrays[i] objectForKey:@"a_id"] integerValue];
+            model.caseAdID = [[arrays[i] objectForKey:@"o_id"] integerValue];
             model.caseGoodsNum = [[arrays[i] objectForKey:@"a_goods_num"] integerValue];
             model.caseClickNum = [[arrays[i] objectForKey:@"a_click_num"] integerValue];
             model.caseCreateTime = [[arrays[i] objectForKey:@"create_time"] integerValue];

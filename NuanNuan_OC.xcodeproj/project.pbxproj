@@ -93,6 +93,7 @@
 		0DDAEE7D1DBBB030008478DC /* NNSpitslotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAEE7B1DBBB030008478DC /* NNSpitslotCell.m */; };
 		0DDAEE7E1DBBB030008478DC /* NNSpitslotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DDAEE7C1DBBB030008478DC /* NNSpitslotCell.xib */; };
 		5157E0A13BD1F3B2CCF4B3A1 /* Pods_NuanNuan_OC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12B5080D9CD53F9220CB3548 /* Pods_NuanNuan_OC.framework */; };
+		BC0274C21DED82C500D61F12 /* cityData.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC0274C11DED82C500D61F12 /* cityData.plist */; };
 		BC09AFEA1DB8AC9400BC4D1B /* NNServerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC09AFE81DB8AC9400BC4D1B /* NNServerListCell.m */; };
 		BC09AFEB1DB8AC9400BC4D1B /* NNServerListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC09AFE91DB8AC9400BC4D1B /* NNServerListCell.xib */; };
 		BC17E9361DD598AA0054FBE2 /* NNCommentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC17E9351DD598AA0054FBE2 /* NNCommentViewModel.m */; };
@@ -388,6 +389,7 @@
 		0DDAEE7C1DBBB030008478DC /* NNSpitslotCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNSpitslotCell.xib; sourceTree = "<group>"; };
 		12B5080D9CD53F9220CB3548 /* Pods_NuanNuan_OC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NuanNuan_OC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A6556F41A95872CB574CB7 /* Pods-NuanNuan_OC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NuanNuan_OC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NuanNuan_OC/Pods-NuanNuan_OC.debug.xcconfig"; sourceTree = "<group>"; };
+		BC0274C11DED82C500D61F12 /* cityData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityData.plist; sourceTree = "<group>"; };
 		BC09AFE71DB8AC9400BC4D1B /* NNServerListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNServerListCell.h; sourceTree = "<group>"; };
 		BC09AFE81DB8AC9400BC4D1B /* NNServerListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNServerListCell.m; sourceTree = "<group>"; };
 		BC09AFE91DB8AC9400BC4D1B /* NNServerListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNServerListCell.xib; sourceTree = "<group>"; };
@@ -1222,6 +1224,7 @@
 				BCD506041D921F8C000FB2C0 /* Assets.xcassets */,
 				BCD506061D921F8C000FB2C0 /* LaunchScreen.storyboard */,
 				BCD506091D921F8C000FB2C0 /* Info.plist */,
+				BC0274C11DED82C500D61F12 /* cityData.plist */,
 				BCD505F81D921F8C000FB2C0 /* Supporting Files */,
 			);
 			path = NuanNuan_OC;
@@ -1785,6 +1788,7 @@
 				BC8627671DD99D3F00162082 /* NNAppointmentVC.xib in Resources */,
 				0D331E191DBD09FB002B0DCD /* NNReplyView.xib in Resources */,
 				BC58BA811DBDEFB400F3BF0D /* NNMineFeedbackVC.xib in Resources */,
+				BC0274C21DED82C500D61F12 /* cityData.plist in Resources */,
 				BCD9AE961DAE0941008DB98E /* NNQuestionAndAnswerCell.xib in Resources */,
 				0DBB28FC1DE1A3C0008A0F32 /* NNForgetPasswordVC.xib in Resources */,
 				BC3BFA341DD9B73300F73DEF /* NNQuestionCell.xib in Resources */,

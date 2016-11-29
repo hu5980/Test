@@ -16,5 +16,6 @@
 @property (nonatomic,assign) NSInteger caseClickNum;
 @property (nonatomic,assign) NSInteger caseGoodsNum;
 @property (nonatomic,assign) NSInteger caseCreateTime;
+@property (nonatomic,assign) BOOL hasGood;
 @property (nonatomic,assign) BOOL isShowAppointment;
 @end

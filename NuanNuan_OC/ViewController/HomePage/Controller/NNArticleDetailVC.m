@@ -65,7 +65,7 @@
     [shareButton setBackgroundImage:[UIImage imageNamed:@"103_05_p"] forState:UIControlStateHighlighted];
     [shareButton addTarget:self action:@selector(shareAction:) forControlEvents:UIControlEventTouchUpInside];
     [customView addSubview:shareButton];
-    
+    _isShowAppointment = YES;
     if (_isShowAppointment) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.backgroundColor = NN_MAIN_COLOR;

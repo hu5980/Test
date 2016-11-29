@@ -42,7 +42,7 @@
     view.backgroundColor = [UIColor clearColor];
     defaultSelectButton = view.index1Button;
     [view.index1Button setTitle:@"私人定制" forState:UIControlStateNormal];
-    [view.index2Button setTitle:@"夏日特惠" forState:UIControlStateNormal];
+    [view.index2Button setTitle:@"服务介绍" forState:UIControlStateNormal];
     
     view.selectBlock = ^(UIButton *button) {
         if (defaultSelectButton.tag != button.tag ) {
