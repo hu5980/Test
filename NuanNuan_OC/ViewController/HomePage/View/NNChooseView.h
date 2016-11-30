@@ -15,6 +15,9 @@ typedef void(^chooseButtonBlock)(NNChooseButton *button);
 
 - (instancetype) initWithFrame:(CGRect)frame;
 
+
+@property (nonatomic,assign) NSInteger defaultSelect;
+
 @property (nonatomic,strong) NSArray *chooseArray;
 
 @property (nonatomic,copy) chooseButtonBlock chooseBlock;

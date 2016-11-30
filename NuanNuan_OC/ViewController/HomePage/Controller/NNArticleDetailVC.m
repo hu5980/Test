@@ -65,7 +65,7 @@
     [shareButton setBackgroundImage:[UIImage imageNamed:@"103_05_p"] forState:UIControlStateHighlighted];
     [shareButton addTarget:self action:@selector(shareAction:) forControlEvents:UIControlEventTouchUpInside];
     [customView addSubview:shareButton];
-    _isShowAppointment = YES;
+
     if (_isShowAppointment) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.backgroundColor = NN_MAIN_COLOR;
@@ -78,7 +78,7 @@
     
     shareBgButton = [UIButton buttonWithType:UIButtonTypeCustom];
     shareBgButton.frame = CGRectMake(0, 0, NNAppWidth, NNAppHeight);
-    shareBgButton.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.6];
+    shareBgButton.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.8];
     shareBgButton.hidden = YES;
     [shareBgButton addTarget:self action:@selector(hideShareButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:shareBgButton];

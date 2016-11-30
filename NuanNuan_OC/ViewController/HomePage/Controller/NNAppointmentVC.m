@@ -22,13 +22,20 @@
     NSString *phone;
     NSString *questionType;
     NSString *question;
-   // NSInteger lineRow;
+    NSString *address;
+    
     NNQuestionCell *questionCell;
-    UIPickerView *pickView;
+
     NSDictionary *cityDic;
     NSArray *provinceArrays;
     NSArray *cityArrays;
     NSInteger defaultRow;
+    UITextField *addressTextField;
+    
+    NSString *province;
+    NSString *city;
+    
+    UIView *pickView;
 }
 @property (weak, nonatomic) IBOutlet UITableView *appointmentTableView;
 
@@ -53,6 +60,9 @@
 - (void)initUI {
     self.navTitle = @"免费咨询";
     [self setNavigationBackButton:YES];
+    
+    [self setNavigationRightItem:@"提交"];
+    
     _appointmentTableView.delegate = self;
     _appointmentTableView.dataSource = self;
     _appointmentTableView.backgroundColor = NN_BACKGROUND_COLOR;
@@ -61,10 +71,31 @@
     [_appointmentTableView registerNib:[UINib nibWithNibName:@"NNQuestionerChooseCell" bundle:nil] forCellReuseIdentifier:@"NNQuestionerChooseCell"];
     [_appointmentTableView registerNib:[UINib nibWithNibName:@"NNQuestionCell" bundle:nil] forCellReuseIdentifier:@"NNQuestionCell"];
     
-    pickView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, NNAppHeight - 200 - 64, NNAppWidth, 200)];
-    pickView.backgroundColor = [UIColor whiteColor];
-    pickView.delegate = self;
-    pickView.dataSource = self;
+    pickView = [[UIView alloc] initWithFrame:CGRectMake(0, NNAppHeight - 200 - 64, NNAppWidth, 200)];
+    pickView.backgroundColor = NN_BACKGROUND_COLOR;
+    pickView.hidden = YES;
+    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    cancelButton.frame = CGRectMake(0, 0, 60, 40);
+    [cancelButton.titleLabel setFont:[UIFont systemFontOfSize:14.f]];
+    [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+    [cancelButton setTitleColor:NN_MAIN_COLOR forState:UIControlStateNormal];
+    [cancelButton addTarget:self action:@selector(cancelAction:) forControlEvents:UIControlEventTouchUpInside];
+    [pickView addSubview:cancelButton];
+    
+    UIButton *sureButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    sureButton.frame = CGRectMake(NNAppWidth - 60, 0, 60, 40);
+    [sureButton.titleLabel setFont:[UIFont systemFontOfSize:14.f]];
+    [sureButton setTitle:@"确定" forState:UIControlStateNormal];
+    [sureButton setTitleColor:NN_MAIN_COLOR forState:UIControlStateNormal];
+    [sureButton addTarget:self action:@selector(sureAction:) forControlEvents:UIControlEventTouchUpInside];
+    [pickView addSubview:sureButton];
+
+    
+    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 40, NNAppWidth, 160)];
+    pickerView.delegate = self;
+    pickerView.dataSource = self;
+    
+    [pickView addSubview:pickerView];
     [_appointmentTableView addSubview:pickView];
 }
 
@@ -84,14 +115,46 @@
     [viewModel getAllAppointTypeWithToken:TEST_TOKEN];
     
     [self readCityInfoFromFile:@"cityData"];
+    
+    province = [provinceArrays objectAtIndex:0];
+    city = [[cityArrays objectAtIndex:0] objectAtIndex:0];
 }
 
 - (void)readCityInfoFromFile:(NSString *)plistname {
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:plistname ofType:@"plist"];
     cityDic = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
-    
     provinceArrays = [cityDic allKeys];
     cityArrays = [cityDic allValues];
+}
+
+- (void)cancelAction :(UIButton *)button {
+    pickView.hidden = YES;
+}
+
+- (void)sureAction:(UIButton *)button {
+    address = [NSString stringWithFormat:@"%@ %@",province,city];
+    addressTextField.text = address;
+    pickView.hidden = YES;
+}
+
+- (void)rightItemAction:(UIBarButtonItem *)item {
+    __weak NNAppointmentVC *weakSelf = self;
+    
+    NNAppointmentQuestionViewModel *viewModel = [[NNAppointmentQuestionViewModel alloc] init];
+    [viewModel setBlockWithReturnBlock:^(id returnValue) {
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"预约成功"];
+        [weakSelf.navigationController popViewControllerAnimated:YES];
+    } WithErrorBlock:^(id errorCode) {
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
+    } WithFailureBlock:^(id failureBlock) {
+        
+    }];
+    if (name.length > 0 && phone.length> 0 && sex.length > 0 && question.length> 0 && questionType.length > 0 &&address.length > 0) {
+        [viewModel consultQuestionWithToken:TEST_TOKEN andUseName:name andTelphone:phone andSex:sex andQuestion:question andQuestionType:questionType andAddress:address];
+    }else{
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"请输入完整信息"];
+    }
+
 }
 
 #pragma --mark UItableViewDelagate UITableViewDatasource
@@ -105,9 +168,9 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row < 4) {
+    if (indexPath.row < 5) {
         return 44;
-    }else if(indexPath.row == 4){
+    }else if(indexPath.row == 5){
         return 44 * 5;
     }else{
         return 80;
@@ -118,7 +181,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 1 || indexPath.row == 4) {
+    if (indexPath.row == 1 || indexPath.row == 5) {
         NNQuestionerChooseCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNQuestionerChooseCell"];
         if (indexPath.row == 1) {
             cell.chooseTitleLabel.text = @"性别";
@@ -144,31 +207,15 @@
                 }
                 questionType = [NSString stringWithFormat:@"%ld",button.tag];
             };
-            
-         
-
         }
-        
-       
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
-    }else if (  indexPath.row == 5){
+    }else if (  indexPath.row == 6){
         questionCell = [tableView dequeueReusableCellWithIdentifier:@"NNQuestionCell"];
         questionCell.selectionStyle = UITableViewCellSelectionStyleNone;
         questionCell.questionTextView.delegate = self;
         return questionCell;
-    }else if (indexPath.row == 6){
-        
-        UITableViewCell *cell = [[UITableViewCell alloc] init];
-        
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, 44)];
-        label.textColor = NN_MAIN_COLOR;
-        label.font = [UIFont systemFontOfSize:16];
-        label.text = @"提交资询";
-        label.textAlignment = NSTextAlignmentCenter;
-        [cell.contentView addSubview:label];
-        return cell;
     }
     else{
         NNQuestionerInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNQuestionerInfoCell"];
@@ -184,6 +231,9 @@
                 cell.titleLabel.text = @"年龄";
                 break;
             case 3:
+                cell.titleLabel.text = @"地址";
+                break;
+            case 4:
                 cell.titleLabel.text = @"手机";
                 break;
                 
@@ -194,28 +244,12 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 6) {
-        
-        __weak NNAppointmentVC *weakSelf = self;
-        
-        NNAppointmentQuestionViewModel *viewModel = [[NNAppointmentQuestionViewModel alloc] init];
-        [viewModel setBlockWithReturnBlock:^(id returnValue) {
-            [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"预约成功"];
-            [weakSelf.navigationController popViewControllerAnimated:YES];
-        } WithErrorBlock:^(id errorCode) {
-            
-        } WithFailureBlock:^(id failureBlock) {
-            
-        }];
-        if (name.length > 0 && phone.length> 0 && sex.length > 0 && question.length> 0 && questionType.length > 0) {
-               [viewModel consultQuestionWithToken:TEST_TOKEN andUseName:name andTelphone:phone andSex:sex andQuestion:question andQuestionType:questionType];
-        }else{
-            [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"请输入完整信息"];
-        }
-     
-    }
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    if (indexPath.row == 7) {
+//        
+//        
+//    }
+//}
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     switch (textField.tag) {
@@ -225,7 +259,7 @@
         case 2:
             age = textField.text;
             break;
-        case 3:
+        case 4:
             phone = textField.text;
             break;
         default:
@@ -234,7 +268,20 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [textField resignFirstResponder];
+    if(textField.tag != 3){
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
+
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if(textField.tag == 3){
+        [textField resignFirstResponder];
+        addressTextField = textField;
+        pickView.hidden = NO;
+        return NO;
+    }
     return YES;
 }
 
@@ -293,8 +340,15 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     if (component == 0) {
+        province = [provinceArrays objectAtIndex:row];
         defaultRow = row;
+        NSInteger cityIndex = [pickerView selectedRowInComponent:1];
+        city = [[cityArrays objectAtIndex:defaultRow] objectAtIndex:cityIndex];
         [pickerView reloadComponent:1];
+    }else{
+        city = [[cityArrays objectAtIndex:defaultRow] objectAtIndex:row];
+        NSInteger provinceIndex = [pickerView selectedRowInComponent:0];
+        province = [provinceArrays objectAtIndex:provinceIndex];
     }
 }
 

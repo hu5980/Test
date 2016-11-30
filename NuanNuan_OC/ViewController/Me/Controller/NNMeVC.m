@@ -19,6 +19,7 @@
 #import "NNMineNoticeVC.h"
 #import "NNUserHeaderViewModel.h"
 #import "NNUserInfoModel.h"
+#import "NNUserInfoVC.h"
 @interface NNMeVC ()<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate> {
     NSArray *imageArray;
     NSArray *titleArray;
@@ -106,8 +107,8 @@
 }
 
 - (void)initdata {
-    titleArray = @[@"我的预约",@"我的问吧",@"我的消息",@"意见反馈",@"设置"];
-    imageArray = @[@"400_16",@"400_23",@"400_27",@"400_29",@"400_31"];
+    titleArray = @[@"我的预约",@"我的问吧",@"我的消息",@"意见反馈",@"个人资料",@"设置"];
+    imageArray = @[@"400_16",@"400_23",@"400_27",@"400_29",@"400_30",@"400_31"];
     NSDictionary *returnValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
     [self dealUserInfo:returnValue];
 }
@@ -206,7 +207,7 @@
     else if(section == 1) {
         return 3;
     }else{
-        return 2;
+        return 3;
     }
         
 }
@@ -311,7 +312,14 @@
             feedbackVC.hidesBottomBarWhenPushed = YES;
 
             [self.navigationController pushViewController:feedbackVC animated:YES];
-        }else if (indexPath.row == 1){
+        }else if (indexPath.row ==1){
+        
+            NNUserInfoVC *infoVC = [[NNUserInfoVC alloc] initWithNibName:@"NNUserInfoVC" bundle:nil];
+            infoVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:infoVC animated:YES];
+
+        }
+        else if (indexPath.row == 2){
             NNMineSetVC *setVC = [[NNMineSetVC alloc] initWithNibName:@"NNMineSetVC" bundle:nil];
             setVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:setVC animated:YES];

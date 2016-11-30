@@ -9,5 +9,5 @@
 #import "NNBaseViewModel.h"
 
 @interface NNAppointmentQuestionViewModel : NNBaseViewModel
-- (void)consultQuestionWithToken:(NSString *)token andUseName:(NSString *)userName andTelphone:(NSString *) tel andSex:(NSString *)sex andQuestion:(NSString *)question andQuestionType:(NSString *)type;
+- (void)consultQuestionWithToken:(NSString *)token andUseName:(NSString *)userName andTelphone:(NSString *) tel andSex:(NSString *)sex andQuestion:(NSString *)question andQuestionType:(NSString *)type andAddress:(NSString *)address;
 @end

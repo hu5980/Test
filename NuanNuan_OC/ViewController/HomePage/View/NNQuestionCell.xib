@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="80"/>
+                <frame key="frameInset" width="320" height="79"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="问题描述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxd-hE-pWx">
@@ -26,21 +26,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVC-re-49o">
                         <attributedString key="attributedText">
-                            <fragment content="请尽可能详细地描述您的问题，心理状态，以便得到专家正确的指导和建议。描述只能">
-                                <attributes>
-                                    <color key="NSColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
-                                </attributes>
-                            </fragment>
-                            <fragment content="30">
-                                <attributes>
-                                    <color key="NSColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <font key="NSFont" metaFont="system" size="14"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
-                                </attributes>
-                            </fragment>
-                            <fragment content="个字内">
+                            <fragment content="请尽可能详细地描述您的问题，心理状态，以便得到专家正确的指导和建议。">
                                 <attributes>
                                     <color key="NSColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
@@ -74,7 +60,7 @@
                     <constraint firstItem="XDS-ph-P7w" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hgS-HN-whm"/>
                     <constraint firstItem="PVC-re-49o" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tqt-Hf-urp"/>
                     <constraint firstAttribute="bottom" secondItem="XDS-ph-P7w" secondAttribute="bottom" id="uKu-uE-fao"/>
-                    <constraint firstAttribute="bottom" secondItem="PVC-re-49o" secondAttribute="bottom" id="uUp-nW-FBY"/>
+                    <constraint firstAttribute="bottom" secondItem="PVC-re-49o" secondAttribute="bottom" constant="9.5" id="uUp-nW-FBY"/>
                     <constraint firstItem="XDS-ph-P7w" firstAttribute="leading" secondItem="fxd-hE-pWx" secondAttribute="trailing" id="utE-eJ-Lyl"/>
                 </constraints>
             </tableViewCellContentView>

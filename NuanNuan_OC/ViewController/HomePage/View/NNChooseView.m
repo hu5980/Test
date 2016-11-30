@@ -44,6 +44,11 @@
             chooseButton.chooseTitleLabel.text = [_chooseArray objectAtIndex:i];
             chooseButton.tag = i + 1;
         }
+        
+        if (_defaultSelect == i) {
+            chooseButton.selected = YES;
+             [chooseButton.chooseImageView  setImage:[UIImage imageNamed:@"303_05"]];
+        }
       
         [chooseButton addTarget:self action:@selector(chooseAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:chooseButton];

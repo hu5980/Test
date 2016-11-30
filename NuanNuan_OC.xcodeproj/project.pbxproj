@@ -94,6 +94,10 @@
 		0DDAEE7E1DBBB030008478DC /* NNSpitslotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DDAEE7C1DBBB030008478DC /* NNSpitslotCell.xib */; };
 		5157E0A13BD1F3B2CCF4B3A1 /* Pods_NuanNuan_OC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12B5080D9CD53F9220CB3548 /* Pods_NuanNuan_OC.framework */; };
 		BC0274C21DED82C500D61F12 /* cityData.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC0274C11DED82C500D61F12 /* cityData.plist */; };
+		BC0274C61DEEB55C00D61F12 /* NNUserInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0274C41DEEB55C00D61F12 /* NNUserInfoVC.m */; };
+		BC0274C71DEEB55C00D61F12 /* NNUserInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0274C51DEEB55C00D61F12 /* NNUserInfoVC.xib */; };
+		BC0274CB1DEEBCC100D61F12 /* NNHeadImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0274C91DEEBCC100D61F12 /* NNHeadImageCell.m */; };
+		BC0274CC1DEEBCC100D61F12 /* NNHeadImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0274CA1DEEBCC100D61F12 /* NNHeadImageCell.xib */; };
 		BC09AFEA1DB8AC9400BC4D1B /* NNServerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC09AFE81DB8AC9400BC4D1B /* NNServerListCell.m */; };
 		BC09AFEB1DB8AC9400BC4D1B /* NNServerListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC09AFE91DB8AC9400BC4D1B /* NNServerListCell.xib */; };
 		BC17E9361DD598AA0054FBE2 /* NNCommentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC17E9351DD598AA0054FBE2 /* NNCommentViewModel.m */; };
@@ -390,6 +394,12 @@
 		12B5080D9CD53F9220CB3548 /* Pods_NuanNuan_OC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NuanNuan_OC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A6556F41A95872CB574CB7 /* Pods-NuanNuan_OC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NuanNuan_OC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NuanNuan_OC/Pods-NuanNuan_OC.debug.xcconfig"; sourceTree = "<group>"; };
 		BC0274C11DED82C500D61F12 /* cityData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityData.plist; sourceTree = "<group>"; };
+		BC0274C31DEEB55C00D61F12 /* NNUserInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNUserInfoVC.h; sourceTree = "<group>"; };
+		BC0274C41DEEB55C00D61F12 /* NNUserInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNUserInfoVC.m; sourceTree = "<group>"; };
+		BC0274C51DEEB55C00D61F12 /* NNUserInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNUserInfoVC.xib; sourceTree = "<group>"; };
+		BC0274C81DEEBCC100D61F12 /* NNHeadImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNHeadImageCell.h; sourceTree = "<group>"; };
+		BC0274C91DEEBCC100D61F12 /* NNHeadImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNHeadImageCell.m; sourceTree = "<group>"; };
+		BC0274CA1DEEBCC100D61F12 /* NNHeadImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNHeadImageCell.xib; sourceTree = "<group>"; };
 		BC09AFE71DB8AC9400BC4D1B /* NNServerListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNServerListCell.h; sourceTree = "<group>"; };
 		BC09AFE81DB8AC9400BC4D1B /* NNServerListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNServerListCell.m; sourceTree = "<group>"; };
 		BC09AFE91DB8AC9400BC4D1B /* NNServerListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNServerListCell.xib; sourceTree = "<group>"; };
@@ -1400,6 +1410,9 @@
 				BC81695F1DC1D4B000949273 /* NNUserAgreementVC.h */,
 				BC8169601DC1D4B000949273 /* NNUserAgreementVC.m */,
 				BC8169611DC1D4B000949273 /* NNUserAgreementVC.xib */,
+				BC0274C31DEEB55C00D61F12 /* NNUserInfoVC.h */,
+				BC0274C41DEEB55C00D61F12 /* NNUserInfoVC.m */,
+				BC0274C51DEEB55C00D61F12 /* NNUserInfoVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1419,6 +1432,9 @@
 				BC3BFA351DDAA96400F73DEF /* NNOrderCell.h */,
 				BC3BFA361DDAA96400F73DEF /* NNOrderCell.m */,
 				BC3BFA371DDAA96400F73DEF /* NNOrderCell.xib */,
+				BC0274C81DEEBCC100D61F12 /* NNHeadImageCell.h */,
+				BC0274C91DEEBCC100D61F12 /* NNHeadImageCell.m */,
+				BC0274CA1DEEBCC100D61F12 /* NNHeadImageCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1759,6 +1775,7 @@
 				0DBB2A551DE9ABD5008A0F32 /* README.txt in Resources */,
 				BCD9AE6A1DACBCB6008DB98E /* NNEmotionCaseVC.xib in Resources */,
 				0DBB2AF31DE9B647008A0F32 /* README.txt in Resources */,
+				BC0274CC1DEEBCC100D61F12 /* NNHeadImageCell.xib in Resources */,
 				BCD9AE9C1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.xib in Resources */,
 				BC09AFEB1DB8AC9400BC4D1B /* NNServerListCell.xib in Resources */,
 				0DBB2A5B1DE9ABD5008A0F32 /* UMSocialSDKResources.bundle in Resources */,
@@ -1789,6 +1806,7 @@
 				0D331E191DBD09FB002B0DCD /* NNReplyView.xib in Resources */,
 				BC58BA811DBDEFB400F3BF0D /* NNMineFeedbackVC.xib in Resources */,
 				BC0274C21DED82C500D61F12 /* cityData.plist in Resources */,
+				BC0274C71DEEB55C00D61F12 /* NNUserInfoVC.xib in Resources */,
 				BCD9AE961DAE0941008DB98E /* NNQuestionAndAnswerCell.xib in Resources */,
 				0DBB28FC1DE1A3C0008A0F32 /* NNForgetPasswordVC.xib in Resources */,
 				BC3BFA341DD9B73300F73DEF /* NNQuestionCell.xib in Resources */,
@@ -1925,6 +1943,7 @@
 				BCEDDBF01DE52C5A00187317 /* MLSelectPhotoPickerDatas.m in Sources */,
 				BCD506561D9231D0000FB2C0 /* NNMeVC.m in Sources */,
 				0DBB2A5D1DE9ABD5008A0F32 /* UMShareMenuSelectionView.m in Sources */,
+				BC0274C61DEEB55C00D61F12 /* NNUserInfoVC.m in Sources */,
 				BC247EAA1DAA35D600AB5C84 /* NNMineCell.m in Sources */,
 				BCEDDBF31DE52C5A00187317 /* MLSelectPhotoNavigationViewController.m in Sources */,
 				BCB6EFE01DB62B0000BEFD37 /* NNSuccessCaseModel.m in Sources */,
@@ -1942,6 +1961,7 @@
 				BC86276B1DD99EE100162082 /* NNQuestionerInfoCell.m in Sources */,
 				BC58BA671DBDE99500F3BF0D /* NNMinePraisedVC.m in Sources */,
 				BC8C61DB1DC049ED00094F94 /* NNBaseModel.m in Sources */,
+				BC0274CB1DEEBCC100D61F12 /* NNHeadImageCell.m in Sources */,
 				BCD9AE951DAE0941008DB98E /* NNQuestionAndAnswerCell.m in Sources */,
 				0DBB29021DE5E5CB008A0F32 /* NNQuestionAndAnswerCommentModel.m in Sources */,
 				BCE6A0671DDEA87A00A02E50 /* NNAppointmentTypeViewModel.m in Sources */,

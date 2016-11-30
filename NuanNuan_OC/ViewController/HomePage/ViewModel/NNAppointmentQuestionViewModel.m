@@ -10,9 +10,9 @@
 
 @implementation NNAppointmentQuestionViewModel
 
-- (void)consultQuestionWithToken:(NSString *)token andUseName:(NSString *)userName andTelphone:(NSString *) tel andSex:(NSString *)sex andQuestion:(NSString *)question andQuestionType:(NSString *)type
+- (void)consultQuestionWithToken:(NSString *)token andUseName:(NSString *)userName andTelphone:(NSString *) tel andSex:(NSString *)sex andQuestion:(NSString *)question andQuestionType:(NSString *)type andAddress:(NSString *)address
 {
-    NSDictionary *parames = @{@"token":token,@"b_name":userName,@"b_tel":tel,@"b_sex":sex,@"b_description":question,@"bc_id":type};
+    NSDictionary *parames = @{@"token":token,@"b_name":userName,@"b_tel":tel,@"b_sex":sex,@"b_description":question,@"bc_id":type,@"b_address":address};
     
     [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_booking&a=addBooking",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
         return self.returnBlock([returnValue objectForKey:@"result"]);
