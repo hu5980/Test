@@ -9,6 +9,7 @@
 #import "NNEmotionallCell.h"
 #import "NNSuccessCaseModel.h"
 #import "UIButton+AFNetworking.h"
+#import "UIButton+WebCache.h"
 @implementation NNEmotionallCell
 
 - (void)awakeFromNib {
@@ -35,7 +36,9 @@
     {
         _successCaseModelArray = successCaseModelArray;
         _titleLabel1.text = ((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:0]).caseTitle;
-        [_bgButton1  setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:0]).caseImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+//        [_bgButton1  setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:0]).caseImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+        
+          [_bgButton1 sd_setImageWithURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:0]).caseImageUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
         
      //   _titleLabel2.text = ((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:1]).caseTitle;
     //    [_bgButton2  setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:1]).caseImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];

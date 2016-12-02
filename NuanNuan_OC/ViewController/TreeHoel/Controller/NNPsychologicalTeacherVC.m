@@ -55,8 +55,8 @@
 - (void)initUI {
     
     headerView = LOAD_VIEW_FROM_BUNDLE(@"NNPsychologicalTeacherHeaderView");
-    [headerView.backgroundImageView setImageWithURL:[NSURL URLWithString:_model.backgroundImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
-    [headerView.headimageView setImageWithURL:[NSURL URLWithString:_model.teacherHeadUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+    [headerView.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:_model.backgroundImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
+    [headerView.headimageView sd_setImageWithURL:[NSURL URLWithString:_model.teacherHeadUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
     headerView.nickNamelabel.text = _model.teacherNickName;
     headerView.studyTypeLabel.text = _model.teacherTypeName;
     headerView.teacherDescribeLabel.text = _model.teacherDescription;

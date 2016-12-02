@@ -9,7 +9,8 @@
 #import "NNRingImageView.h"
 #import "Define.h"
 #import "Masonry.h"
-#import "UIButton+AFNetworking.h"
+//#import "UIButton+AFNetworking.h"
+#import "UIButton+WebCache.h"
 //#import "ReactiveCocoa.h"
 
 @implementation NNRingImageView {
@@ -30,7 +31,10 @@
         button.tag = 100+i;
         [button addTarget:self action:@selector(selectRingImage:) forControlEvents:UIControlEventTouchUpInside];
         button.frame = CGRectMake(NNAppWidth * i, 0, NNAppWidth, NNAppWidth * 164 / 375);
-        [button setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:model.imageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+//        [button setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:model.imageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] ];
+        
+        [button sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
+        
         [_ringScrollView addSubview:button];
     }
     _ringScrollView.contentSize = CGSizeMake(array.count * NNAppWidth, NNAppWidth * 164 / 375);

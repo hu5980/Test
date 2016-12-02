@@ -137,8 +137,9 @@
 
 - (void)reflashDataToHeadview {
 
-     [headerButton setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:userInfoModel.headImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
-      ninkNameLabel.text = userInfoModel.nickName;
+
+    ninkNameLabel.text = userInfoModel.nickName;
+    [headerButton sd_setImageWithURL:[NSURL URLWithString:userInfoModel.headImageUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
 }
 
 - (void)changeHeadAction:(UIButton *)button {
@@ -188,7 +189,8 @@
         NNUserHeaderViewModel *viewModel = [[NNUserHeaderViewModel alloc] init];
         
         [viewModel setBlockWithReturnBlock:^(id returnValue) {
-            [headerButton setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:returnValue] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+//            [headerButton setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:returnValue] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+             [headerButton sd_setImageWithURL:[NSURL URLWithString:returnValue] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
         } WithErrorBlock:^(id errorCode) {
             
         } WithFailureBlock:^(id failureBlock) {

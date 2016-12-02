@@ -47,7 +47,18 @@
     NSString *ver = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     [mutableParameter setObject:ver forKey:@"ver"];
     [mutableParameter setObject:@"appstore" forKey:@"channel"];
+    NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"server" ofType:@"cer"];
+    NSData * certData =[NSData dataWithContentsOfFile:cerPath];
+    NSSet * certSet = [[NSSet alloc] initWithObjects:certData, nil];
+    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+    // 是否允许,NO-- 不允许无效的证书
+    [securityPolicy setAllowInvalidCertificates:YES];
+     securityPolicy.validatesDomainName = NO;
+    // 设置证书
+    [securityPolicy setPinnedCertificates:certSet];
+    
     AFHTTPSessionManager *sessionManager = [[AFHTTPSessionManager alloc] init];
+    sessionManager.securityPolicy = securityPolicy;
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [sessionManager GET:requestURLString parameters:mutableParameter progress:^(NSProgress * _Nonnull downloadProgress) {
          progressBlock(downloadProgress);
@@ -74,7 +85,20 @@
     NSString *ver = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     [mutableParameter setObject:ver forKey:@"ver"];
     [mutableParameter setObject:@"appstore" forKey:@"device_channel"];
+    
+    NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"server" ofType:@"cer"];
+    NSData * certData =[NSData dataWithContentsOfFile:cerPath];
+    NSSet * certSet = [[NSSet alloc] initWithObjects:certData, nil];
+    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+    // 是否允许,NO-- 不允许无效的证书
+    [securityPolicy setAllowInvalidCertificates:YES];
+    securityPolicy.validatesDomainName = NO;
+    // 设置证书
+    [securityPolicy setPinnedCertificates:certSet];
+
+    
     AFHTTPSessionManager *sessionManager = [[AFHTTPSessionManager alloc] init];
+    sessionManager.securityPolicy = securityPolicy;
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
   
     [sessionManager POST:requestURLString parameters:mutableParameter progress:^(NSProgress * _Nonnull uploadProgress) {
@@ -86,7 +110,7 @@
             returnBlock(responseObject);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        failureBlock(error);
+        failureBlock(error.description);
     }];
 }
 
@@ -99,7 +123,19 @@
                    withErrorCodeBlock:(ErrorCodeBlock) errorBlock
                      withFailureBlock:(FailureBlock)failureBlock
                              withProgress:(ProgressBlock) progressBlock {
+    
+    NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"server" ofType:@"cer"];
+    NSData * certData =[NSData dataWithContentsOfFile:cerPath];
+    NSSet * certSet = [[NSSet alloc] initWithObjects:certData, nil];
+    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+    // 是否允许,NO-- 不允许无效的证书
+    [securityPolicy setAllowInvalidCertificates:YES];
+     securityPolicy.validatesDomainName = NO;
+    // 设置证书
+    [securityPolicy setPinnedCertificates:certSet];
+    
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init];
+    manager.securityPolicy = securityPolicy;
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [manager POST:requestURLString parameters:parameter constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         [formData appendPartWithFileData:data name:name fileName:fileName mimeType:@"image/jpg"];

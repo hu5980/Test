@@ -24,7 +24,7 @@
 
 - (void)setModel:(NNCommentModel *)model {
     _model = model;
-    [self.userHeadImageView sd_setImageWithURL:[NSURL URLWithString:model.commentHeaderUrl] placeholderImage:[UIImage imageNamed:@""]];
+    [self.userHeadImageView sd_setImageWithURL:[NSURL URLWithString:model.commentHeaderUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
     self.nickNameLabel.text = model.commentNickName;
     self.commentContentLabel.text = model.commentContent;
     self.commentTImeLabel.text = [NNTimeUtil timeDealWithFormat:@"yyyy-MM-dd HH:mm:ss" andTime:model.commentCreateTime];

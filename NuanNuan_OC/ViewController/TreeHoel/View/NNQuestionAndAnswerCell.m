@@ -32,9 +32,9 @@
 - (void)setModel:(NNQuestionAndAnswerModel *)model {
     _model = model;
     
-    [self.teacherHeadImageView   sd_setImageWithURL:[NSURL URLWithString:model.teacherModel.teacherHeadUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];;
+    [self.teacherHeadImageView   sd_setImageWithURL:[NSURL URLWithString:model.teacherModel.teacherHeadUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]options:SDWebImageAllowInvalidSSLCertificates];;
     
-    [self.questionerHeadImageView sd_setImageWithURL:[NSURL URLWithString:model.questionHeadUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+    [self.questionerHeadImageView sd_setImageWithURL:[NSURL URLWithString:model.questionHeadUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]options:SDWebImageAllowInvalidSSLCertificates];
     self.questionerNameLabel.text = model.questionNickName;
     self.questLabel.text = model.questionContent;
     self.teacherNameLabel.text = model.teacherModel.teacherNickName;

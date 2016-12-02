@@ -26,7 +26,7 @@
     self.nickNameLabel.text = _model.userNikeName;
     self.commentNumLabel.text = _model.thCommentNum;
     self.bePraisedLabel.text = _model.thGoodsNum;
-    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:model.userHeadUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageRefreshCached];
+    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:model.userHeadUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageRefreshCached |SDWebImageAllowInvalidSSLCertificates];
     self.contentLabel.text = model.thContent;
     NNImageBroswerView *broswerImageView = [[NNImageBroswerView alloc] initWithFrame:CGRectMake(0, 0,NNAppWidth, 0) ImageUrls:model.picArrays SpaceWithImage:10 SpaceWithSideOfSuperView:15 NumberImageOfLine:3];
     self.broswerViewConstraint.constant = broswerImageView.broswerViewHeight;

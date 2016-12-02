@@ -100,6 +100,7 @@
 		BC0274CC1DEEBCC100D61F12 /* NNHeadImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0274CA1DEEBCC100D61F12 /* NNHeadImageCell.xib */; };
 		BC09AFEA1DB8AC9400BC4D1B /* NNServerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC09AFE81DB8AC9400BC4D1B /* NNServerListCell.m */; };
 		BC09AFEB1DB8AC9400BC4D1B /* NNServerListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC09AFE91DB8AC9400BC4D1B /* NNServerListCell.xib */; };
+		BC14215E1DF15BEA005889E8 /* server.cer in Resources */ = {isa = PBXBuildFile; fileRef = BC14215D1DF15BEA005889E8 /* server.cer */; };
 		BC17E9361DD598AA0054FBE2 /* NNCommentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC17E9351DD598AA0054FBE2 /* NNCommentViewModel.m */; };
 		BC17E9391DD599B60054FBE2 /* NNCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC17E9381DD599B60054FBE2 /* NNCommentModel.m */; };
 		BC247E9B1DAA19B100AB5C84 /* NNEmotionallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC247E991DAA19B100AB5C84 /* NNEmotionallCell.m */; };
@@ -403,6 +404,7 @@
 		BC09AFE71DB8AC9400BC4D1B /* NNServerListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNServerListCell.h; sourceTree = "<group>"; };
 		BC09AFE81DB8AC9400BC4D1B /* NNServerListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNServerListCell.m; sourceTree = "<group>"; };
 		BC09AFE91DB8AC9400BC4D1B /* NNServerListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNServerListCell.xib; sourceTree = "<group>"; };
+		BC14215D1DF15BEA005889E8 /* server.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = server.cer; sourceTree = "<group>"; };
 		BC17E9341DD598AA0054FBE2 /* NNCommentViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNCommentViewModel.h; sourceTree = "<group>"; };
 		BC17E9351DD598AA0054FBE2 /* NNCommentViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNCommentViewModel.m; sourceTree = "<group>"; };
 		BC17E9371DD599B60054FBE2 /* NNCommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNCommentModel.h; sourceTree = "<group>"; };
@@ -1244,6 +1246,7 @@
 			isa = PBXGroup;
 			children = (
 				BCD505F91D921F8C000FB2C0 /* main.m */,
+				BC14215D1DF15BEA005889E8 /* server.cer */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1707,12 +1710,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCD5060C1D921F8C000FB2C0 /* Build configuration list for PBXNativeTarget "NuanNuan_OC" */;
 			buildPhases = (
-				69BE6BAFD4D6DA6F0DB50897 /* 📦 Check Pods Manifest.lock */,
+				69BE6BAFD4D6DA6F0DB50897 /* [CP] Check Pods Manifest.lock */,
 				BCD505F11D921F8C000FB2C0 /* Sources */,
 				BCD505F21D921F8C000FB2C0 /* Frameworks */,
 				BCD505F31D921F8C000FB2C0 /* Resources */,
-				6AB30FBE205E73DD0E9D44E9 /* 📦 Embed Pods Frameworks */,
-				F9BD72B051CFA2C07A4967B1 /* 📦 Copy Pods Resources */,
+				6AB30FBE205E73DD0E9D44E9 /* [CP] Embed Pods Frameworks */,
+				F9BD72B051CFA2C07A4967B1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1735,8 +1738,9 @@
 				TargetAttributes = {
 					BCD505F41D921F8C000FB2C0 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = DDSZZTF2EY;
+						DevelopmentTeam = 7MUEF9EK2J;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -1788,6 +1792,7 @@
 				BC328EEB1DBF2F5E000AF40B /* NNLoginAndRegisterVC.xib in Resources */,
 				BC58BA7C1DBDEF9300F3BF0D /* NNMineNoticeVC.xib in Resources */,
 				BC58BA721DBDEDFA00F3BF0D /* NNMineLikeVC.xib in Resources */,
+				BC14215E1DF15BEA005889E8 /* server.cer in Resources */,
 				BCD9AE911DADE5F6008DB98E /* NNPsychologicalTeacherHeaderView.xib in Resources */,
 				BC3BFA391DDAA96400F73DEF /* NNOrderCell.xib in Resources */,
 				BCD9AE8C1DADE582008DB98E /* NNPsychologicalTeacherVC.xib in Resources */,
@@ -1824,29 +1829,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		69BE6BAFD4D6DA6F0DB50897 /* 📦 Check Pods Manifest.lock */ = {
+		69BE6BAFD4D6DA6F0DB50897 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		6AB30FBE205E73DD0E9D44E9 /* 📦 Embed Pods Frameworks */ = {
+		6AB30FBE205E73DD0E9D44E9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1854,14 +1859,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NuanNuan_OC/Pods-NuanNuan_OC-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F9BD72B051CFA2C07A4967B1 /* 📦 Copy Pods Resources */ = {
+		F9BD72B051CFA2C07A4967B1 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2112,7 +2117,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NuanNuan_OC/NuanNuan_OC.entitlements;
-				DEVELOPMENT_TEAM = DDSZZTF2EY;
+				DEVELOPMENT_TEAM = 7MUEF9EK2J;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2159,8 +2164,10 @@
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMessage_Sdk_1.4.0",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nuannuan.NuanNuanTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NNXL.nuannuan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "119917e7-20b9-44ce-b52c-f27aa4c4c056";
+				PROVISIONING_PROFILE_SPECIFIER = NNXL;
 				SWIFT_VERSION = 2.3;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
@@ -2173,7 +2180,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NuanNuan_OC/NuanNuan_OC.entitlements;
-				DEVELOPMENT_TEAM = DDSZZTF2EY;
+				DEVELOPMENT_TEAM = 7MUEF9EK2J;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2220,8 +2227,10 @@
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMessage_Sdk_1.4.0",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nuannuan.NuanNuanTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NNXL.nuannuan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "119917e7-20b9-44ce-b52c-f27aa4c4c056";
+				PROVISIONING_PROFILE_SPECIFIER = NNXL;
 				SWIFT_VERSION = 2.3;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};

@@ -14,7 +14,7 @@
 #import "NNArticleIsLikeViewModel.h"
 #import <UMSocialCore/UMSocialCore.h>
 
-@interface NNArticleDetailVC () {
+@interface NNArticleDetailVC ()<WKNavigationDelegate> {
     UIView *customView;
     UIButton *likeButton;
     UIButton  *shareBgButton;
@@ -35,6 +35,7 @@
 - (void)createUI {
     self.view.backgroundColor = [UIColor orangeColor];
     WKWebView *webView =  [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, NNAppHeight)];
+    webView.navigationDelegate = self;
     url = [NSString stringWithFormat:@"%@/?c=static_article&a=index&id=%ld",NNBaseUrl,_articleID];
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
     [self.view addSubview:webView];
@@ -110,6 +111,18 @@
     }];
     [isLikeViewModel getUserIsLikeTheArticleWithToken:TEST_TOKEN andType:@"3" andArticleID:[NSString stringWithFormat:@"%ld",_articleID]];
 }
+
+- (void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler{
+    
+    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
+        
+        NSURLCredential *card = [[NSURLCredential alloc]initWithTrust:challenge.protectionSpace.serverTrust];
+        
+        completionHandler(NSURLSessionAuthChallengeUseCredential,card);
+        
+    }}
+
+
 
 #pragma --mark Action
 - (void)share:(UIButton *)button {

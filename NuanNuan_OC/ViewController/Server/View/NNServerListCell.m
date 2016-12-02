@@ -25,7 +25,7 @@
 
 - (void)setCaseMode:(NNSuccessCaseModel *)caseMode {
     _caseMode = caseMode;
-    [_backgroundImageView sd_setImageWithURL:[NSURL URLWithString:caseMode.caseImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+    [_backgroundImageView sd_setImageWithURL:[NSURL URLWithString:caseMode.caseImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
     _packageNameLabel.text = [NSString stringWithFormat:@"-%@-",caseMode.caseName];
     _packageDescributeLabel.text = caseMode.caseTitle;
 }

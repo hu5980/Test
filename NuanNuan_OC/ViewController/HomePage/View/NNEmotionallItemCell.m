@@ -27,7 +27,7 @@
     if (_model == nil) {
          _model = model;
     }
-    [_backgroundImageView sd_setImageWithURL:[NSURL URLWithString:model.caseImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageRefreshCached | SDWebImageContinueInBackground];
+    [_backgroundImageView sd_setImageWithURL:[NSURL URLWithString:model.caseImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageRefreshCached | SDWebImageContinueInBackground |SDWebImageAllowInvalidSSLCertificates];
     
     _emotionTitleLabel.text = model.caseTitle;
     _readNumLabel.text = [NSString stringWithFormat:@"%ld",model.caseClickNum];

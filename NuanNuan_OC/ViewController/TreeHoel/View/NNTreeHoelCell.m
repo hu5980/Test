@@ -8,8 +8,7 @@
 
 #import "NNTreeHoelCell.h"
 #import "UIImageView+AFNetworking.h"
-#import "UIButton+AFNetworking.h"
-#import "UIImage+AFNetworking.h"
+#import "UIImageView+WebCache.h"
 
 @implementation NNTreeHoelCell
 
@@ -22,8 +21,8 @@
 }
 
 - (void)setModel:(NNEmotionTeacherModel *)model{
-    [self.backgroundImageView setImageWithURL:[NSURL URLWithString:model.backgroundImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
-    [self.iconImageView setImageWithURL:[NSURL URLWithString:model.teacherHeadUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+    [self.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:model.backgroundImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
+    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:model.teacherHeadUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
     self.ninkNameLabel.text = model.teacherNickName;
     self.specialityLabel.text = model.teacherTypeName;
     self.questionNumLabel.text = [NSString stringWithFormat:@"%@提问",model.teacherQuestionNum];
