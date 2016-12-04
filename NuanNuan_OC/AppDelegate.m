@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <UMSocialCore/UMSocialCore.h>
+#import <SMS_SDK/SMSSDK.h>
 #import "Define.h"
 #import "UMessage.h"
 //#import "UserNotifications.h"
@@ -29,6 +30,8 @@
 
 
 - (void)registerTirdlyAppKey {
+    [SMSSDK registerApp:msgAppKey
+             withSecret:msgAppSecret];
     [[UMSocialManager defaultManager] openLog:YES];
     [[UMSocialManager defaultManager] setUmSocialAppkey:UMKEY];
     

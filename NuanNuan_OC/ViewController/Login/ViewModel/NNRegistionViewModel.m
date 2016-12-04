@@ -7,12 +7,27 @@
 //
 
 #import "NNRegistionViewModel.h"
-
+#import "OpenUDID.h"
 @implementation NNRegistionViewModel
 
 - (void)registerUserWithUsername:(NSString *)userName andverify:(NSString *)verify andPassword:(NSString *)password {
     
-  //  NSDictionary *parames = @{};
+    NSDictionary *parames = @{@"tel":userName,
+                              @"zone":@"86",
+                              @"code":verify,
+                              @"password":password,
+                              @"channel":@"ios",
+                              @"device": [OpenUDID value]};
+    
+    [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_user&a=SDKSMSRegist",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
+        
+    } withErrorCodeBlock:^(id errorCode) {
+        
+    } withFailureBlock:^(id failureBlock) {
+        
+    } withProgress:^(id Progress) {
+        
+    }];
     
 }
 

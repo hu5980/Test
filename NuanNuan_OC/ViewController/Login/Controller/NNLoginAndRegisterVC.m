@@ -13,6 +13,8 @@
 #import "NNForgetPasswordVC.h"
 #import <UMSocialCore/UMSocialCore.h>
 #import "NNThirdLoginViewModel.h"
+#import <SMS_SDK/SMSSDK.h>
+
 @interface NNLoginAndRegisterVC (){
     UIButton *defaultButton;
 }
@@ -78,7 +80,17 @@
 }
 
 - (IBAction)sendCaptchAction:(id)sender {
-   
+    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:@"18684599240"
+                                   zone:@"86"
+                       customIdentifier:nil
+                                 result:^(NSError *error){
+                                     if (!error) {
+                                         NSLog(@"获取验证码成功");
+                                     } else {
+                                         NSLog(@"错误信息：%@",error);
+                                        }
+                                     }];
+    
     
 }
 - (IBAction)loginOrRegisterSelectAction:(UIButton *)sender {
