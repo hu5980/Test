@@ -7,16 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Realm/Realm.h>
 
-@interface NNUserInfoModel : NSObject
+@interface NNUserInfoModel : RLMObject
 @property (nonatomic,strong) NSString *uid;
 @property (nonatomic,strong) NSString *headImageUrl;
 @property (nonatomic,strong) NSString *nickName;
 @property (nonatomic,strong) NSString *sex;
 @property (nonatomic,strong) NSString *telphone;
-@property (nonatomic,strong) NSString * usable;
+@property (nonatomic,strong) NSString *usable;
 @property (nonatomic,strong) NSString *userDescription;
-@property (nonatomic,assign) NSInteger channel;
+@property (nonatomic,assign) NSString *channel;
 @property (nonatomic,assign) NSInteger creatTime;
 @property (nonatomic,assign) NSInteger modifyTime;
 @end

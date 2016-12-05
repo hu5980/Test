@@ -134,8 +134,6 @@
         NNLoginViewModel *loginViewModel = [[NNLoginViewModel alloc] init];
         [loginViewModel setBlockWithReturnBlock:^(id returnValue) {
             [[NNProgressHUD instance] hideHud];
-            [[NSUserDefaults standardUserDefaults] setObject:returnValue forKey:@"userInfo"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
             [weakSelf.navigationController popViewControllerAnimated:YES];
         } WithErrorBlock:^(id errorCode) {
             [NNProgressHUD  showHudAotoHideAddToView:self.view withMessage:errorCode];
@@ -189,22 +187,7 @@
             NSLog(@"WeChat Error = %@",error);
         } else {
             UMSocialUserInfoResponse *resp = result;
-            
-            // 授权信息
-            NSLog(@"Wechat uid: %@", resp.uid);
-            NSLog(@"Wechat openid: %@", resp.openid);
-            NSLog(@"Wechat accessToken: %@", resp.accessToken);
-            NSLog(@"Wechat refreshToken: %@", resp.refreshToken);
-            NSLog(@"Wechat expiration: %@", resp.expiration);
-            
-            // 用户信息
-            NSLog(@"Wechat name: %@", resp.name);
-            NSLog(@"Wechat iconurl: %@", resp.iconurl);
-            NSLog(@"Wechat gender: %@", resp.gender);
-            
-            // 第三方平台SDK源数据
-            NSLog(@"Wechat originalResponse: %@", resp.originalResponse);
-            
+
             [self loginWithLoginType:@"wx" andAccessToken:resp.accessToken andOpenId:resp.openid];
         }
     }];
@@ -217,21 +200,6 @@
             NSLog(@"sina Error = %@",error.description);
         } else {
             UMSocialUserInfoResponse *resp = result;
-            
-            // 授权信息
-            NSLog(@"Sina uid: %@", resp.uid);
-            NSLog(@"Sina accessToken: %@", resp.accessToken);
-            NSLog(@"Sina refreshToken: %@", resp.refreshToken);
-            NSLog(@"Sina expiration: %@", resp.expiration);
-            
-            // 用户信息
-            NSLog(@"Sina name: %@", resp.name);
-            NSLog(@"Sina iconurl: %@", resp.iconurl);
-            NSLog(@"Sina gender: %@", resp.gender);
-            
-            // 第三方平台SDK源数据
-            NSLog(@"Sina originalResponse: %@", resp.originalResponse);
-            
             [self loginWithLoginType:@"wb" andAccessToken:resp.accessToken andOpenId:nil];
         }
     }];
@@ -244,20 +212,6 @@
             NSLog(@"QQ Error = %@",error);
         } else {
             UMSocialUserInfoResponse *resp = result;
-            
-            // 授权信息
-            NSLog(@"QQ uid: %@", resp.uid);
-            NSLog(@"QQ openid: %@", resp.openid);
-            NSLog(@"QQ accessToken: %@", resp.accessToken);
-            NSLog(@"QQ expiration: %@", resp.expiration);
-            
-            // 用户信息
-            NSLog(@"QQ name: %@", resp.name);
-            NSLog(@"QQ iconurl: %@", resp.iconurl);
-            NSLog(@"QQ gender: %@", resp.gender);
-            
-            // 第三方平台SDK源数据
-            NSLog(@"QQ originalResponse: %@", resp.originalResponse);
             [self loginWithLoginType:@"qq" andAccessToken:resp.accessToken andOpenId:nil];
         }
     }];
@@ -266,20 +220,20 @@
 
 - (void)loginWithLoginType:(NSString *)type andAccessToken:(NSString *)accessToken andOpenId:(NSString *)openid {
       __weak  NNLoginAndRegisterVC *weakSelf = self;
+    [[NNProgressHUD instance] showHudToView:self.view withMessage:@"登录中..."];
     NNThirdLoginViewModel *viewModel = [[NNThirdLoginViewModel alloc] init];
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
-        [[NSUserDefaults standardUserDefaults] setObject:returnValue forKey:@"userInfo"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        [[NNProgressHUD instance] hideHud];
         [weakSelf.navigationController popViewControllerAnimated:YES];
 
     } WithErrorBlock:^(id errorCode) {
         
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
+         [[NNProgressHUD instance] hideHud];
     } WithFailureBlock:^(id failureBlock) {
         
     }];
     [viewModel loginWithLoginType:type andAccessToken:accessToken andOpenId:openid];
-
-    
 }
 
 - (void)didReceiveMemoryWarning {

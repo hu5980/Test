@@ -47,20 +47,21 @@ typedef void (^ProgressBlock)(id Progress);
 #define NN_TEXT999999_COLOR [UIColor colorFromHexString:@"#999999"]
 #define NN_ASSIST_LINE_COLOR [UIColor colorFromHexString:@"#E0E0E0"]
 
+#define USERID  [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserID"]
 
-#define NNHOMEPAGEURL  @"http://mobile.umeng.com/social"
+#define NNHOMEPAGEURL  @"http://www.mynuannuan.com"
 
 //用的 熙康的数据  到时候再换
-#define UMKEY @"57b432afe0f55a9832001a0a"      //583827c15312dd68090014c7
+#define UMKEY @"583827c15312dd68090014c7"
 
-#define WEIXIN_APPKEY @"wxdc1e388c3822c80b"
-#define WEIXIN_SECRET @"3baf1193c85774b3fd9d18447d76cab0"
+#define WEIXIN_APPKEY @"wx4011a699aa70dc35"
+#define WEIXIN_SECRET @"3351830c4abf3b0925870edd08e1ad2f"
 
-#define QQ_APPKEY @"100735359"               //1105840662
-#define QQ_APPSECRET  @"1a0b23a764c82f6add6a77347e1d39ba"  //KEY9kvpsRSw9tAga4xN
+#define QQ_APPKEY @"1105840662"
+#define QQ_APPSECRET  @"KEY9kvpsRSw9tAga4xN"
 
-#define WEIBO_APPKEY @"3921700954"            //3807471758
-#define WEIBO_APPSECRET @"04b48b094faeb16683c32669824ebdad"  //cf8e95a52dfc1c1921b4abab6c1c368e
+#define WEIBO_APPKEY @"3807471758"
+#define WEIBO_APPSECRET @"cf8e95a52dfc1c1921b4abab6c1c368e"
 
 #define msgAppKey   @"19979a0c7b7d0"
 #define msgAppSecret    @"5cffdc3e72435bda648f78ffa8df3856"

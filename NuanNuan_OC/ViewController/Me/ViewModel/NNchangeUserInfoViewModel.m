@@ -7,12 +7,21 @@
 //
 
 #import "NNchangeUserInfoViewModel.h"
+#import "NNUserInfoModel.h"
 
 @implementation NNchangeUserInfoViewModel
 
 - (void)changeUserInfoWithNewUserInfo:(NSDictionary *)parames {
     [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_member&a=changeUserInfo",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
         self.returnBlock([returnValue objectForKey:@"result"]);
+        RLMRealm *realm = [RLMRealm defaultRealm];
+        [realm transactionWithBlock:^{
+            RLMResults *results = [NNUserInfoModel objectsWhere:@"uid = %@",USERID];
+            NNUserInfoModel *userInfoModel = [results lastObject];
+            userInfoModel.nickName = [parames objectForKey:@"nickname"];
+            userInfoModel.sex = [[parames objectForKey:@"sex"] isEqualToString:@"1"] ?@"男":@"女";
+            [realm commitWriteTransaction];
+        }];
     } withErrorCodeBlock:^(id errorCode) {
         self.errorBlock(errorCode);
     } withFailureBlock:^(id failureBlock) {

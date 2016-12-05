@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Define.h"
 #import "NNNetRequestClass.h"
+#import <Realm/Realm.h>
 @interface NNBaseViewModel : NSObject
 
 @property (strong, nonatomic) ReturnValueBlock returnBlock;

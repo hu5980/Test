@@ -12,12 +12,17 @@
 #import "NNHeadImageCell.h"
 #import "NNUserInfoModel.h"
 #import "NNUserHeaderViewModel.h"
+#import "NNchangeUserInfoViewModel.h"
+
 
 @interface NNUserInfoVC () <UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate> {
     NNUserInfoModel *userInfoModel;
     NNHeadImageCell *headerCell;
     NNQuestionerInfoCell *userNameCell;
     NNQuestionerChooseCell *sexCell;
+    
+    NSString *nickName;
+    NSString *sex;
 }
 @property (weak, nonatomic) IBOutlet UITableView *infoTableView;
 
@@ -41,7 +46,7 @@
 - (void)initUI {
     [self setNavigationBackButton:YES];
     self.navTitle = @"个人信息";
-    
+    [self setNavigationRightItem:@"保存"];
     _infoTableView.delegate = self;
     _infoTableView.dataSource = self;
     _infoTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -51,32 +56,30 @@
 }
 
 - (void)initData {
-    NSDictionary *returnValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
-    [self dealUserInfo:returnValue];
+    userInfoModel = (NNUserInfoModel *)[[NNUserInfoModel objectsWhere:@"uid = %@",USERID] lastObject];
+    nickName = userInfoModel.nickName;
+    sex = [userInfoModel.sex isEqualToString:@"男"] ? @"1" :@"2" ;
 }
 
-- (void)dealUserInfo:(NSDictionary *)returnValue {
+- (void)rightItemAction:(UIBarButtonItem *)item {
+    [[NNProgressHUD instance]showHudToView:self.view withMessage:@"修改中..."];
+    NNchangeUserInfoViewModel *viewModel = [[NNchangeUserInfoViewModel alloc] init];
     
-    NSDictionary *info = [[returnValue objectForKey:@"data"] objectForKey:@"info"];
+    [viewModel setBlockWithReturnBlock:^(id returnValue) {
+        if ([returnValue isEqualToString:@"success"]) {
+            [[NNProgressHUD instance] hideHud];
+            [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"修改成功"];
+        }
+    } WithErrorBlock:^(id errorCode) {
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
+    } WithFailureBlock:^(id failureBlock) {
+        
+    }];
     
-    NSString *token = [[returnValue objectForKey:@"data"] objectForKey:@"token"];
-    [[NSUserDefaults standardUserDefaults] setObject:token forKey:@"token"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSDictionary *parames = @{@"token":TEST_TOKEN ,@"nickname":userNameCell.titleTextField.text,@"sex":sex};
     
-    userInfoModel = [[NNUserInfoModel alloc ] init];
-    userInfoModel.channel = [[info objectForKey:@"channel"] integerValue];
-    userInfoModel.creatTime = [[info objectForKey:@"create_time"] integerValue];
-    userInfoModel.userDescription = [info objectForKey:@"description"];
-    userInfoModel.headImageUrl = [info objectForKey:@"head"];
-    userInfoModel.modifyTime = [[info objectForKey:@"modify_time"] integerValue];
-    userInfoModel.nickName = [info objectForKey:@"nickname"];
-    userInfoModel.sex = [[info objectForKey:@"sex"] integerValue] == 1 ? @"男":@"女" ;
-    userInfoModel.telphone = [info objectForKey:@"tel"];
-    userInfoModel.uid = [info objectForKey:@"uid"] ;
-    userInfoModel.usable = [info objectForKey:@"usable"];
-    
+    [viewModel changeUserInfoWithNewUserInfo:parames];
 }
-
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -93,7 +96,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row ==0) {
         headerCell = [tableView dequeueReusableCellWithIdentifier:@"NNHeadImageCell" ];
-        [headerCell.headImageView setImageWithURL:[NSURL URLWithString:userInfoModel.headImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+        [headerCell.headImageView sd_setImageWithURL:[NSURL URLWithString:userInfoModel.headImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
         return headerCell;
     }else if (indexPath.row == 1){
         userNameCell = [tableView dequeueReusableCellWithIdentifier:@"NNQuestionerInfoCell"];
@@ -111,6 +114,7 @@
             }else{
                 [button.chooseImageView setImage:[UIImage imageNamed:@"303_03"]];
             }
+            sex = [NSString stringWithFormat:@"%ld",button.tag];
         };
 
         return sexCell;
@@ -144,7 +148,10 @@
         }]];
         [self presentViewController:alertController animated:YES completion:nil];
 
-    }else if (indexPath.row == 2){
+    }else if (indexPath.row ==1){
+        
+    }
+    else if (indexPath.row == 2){
     
     }
     
@@ -157,13 +164,9 @@
         UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
         UIImage *temp = [self makeImageWithImage:image scaledToSize:CGSizeMake(720, 720)];
         
-        
         NNUserHeaderViewModel *viewModel = [[NNUserHeaderViewModel alloc] init];
-        
         [viewModel setBlockWithReturnBlock:^(id returnValue) {
-           
-        [headerCell.headImageView setImageWithURL:[NSURL URLWithString:returnValue] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
-        
+        [headerCell.headImageView sd_setImageWithURL:[NSURL URLWithString:returnValue] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
         } WithErrorBlock:^(id errorCode) {
             
         } WithFailureBlock:^(id failureBlock) {

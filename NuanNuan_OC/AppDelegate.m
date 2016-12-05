@@ -11,6 +11,7 @@
 #import <SMS_SDK/SMSSDK.h>
 #import "Define.h"
 #import "UMessage.h"
+#import <Realm/Realm.h>
 //#import "UserNotifications.h"
 
 
@@ -25,6 +26,9 @@
     // Override point for customization after application launch.
     [self registerTirdlyAppKey];
     [self dealNotificationWithOptions:launchOptions];
+    
+//    [self creatDataBaseWithName:@"NuanNuan"];
+    
     return YES;
 }
 
@@ -40,6 +44,27 @@
     
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:WEIBO_APPKEY appSecret:WEIBO_APPSECRET redirectURL:NNHOMEPAGEURL];
 }
+
+//- (void)creatDataBaseWithName:(NSString *)databaseName
+//{
+//    NSArray *docPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);    NSString *path = [docPath objectAtIndex:0];
+//    NSString *filePath = [path stringByAppendingPathComponent:databaseName];
+//    NSLog(@"数据库目录 = %@",filePath);
+//    
+//    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
+//    config.fileURL = [NSURL URLWithString:filePath];
+//    config.objectClasses = @[MyClass.class, MyOtherClass.class];
+//    config.readOnly = NO;    int currentVersion = 1.0;
+//    config.schemaVersion = currentVersion;
+//    
+//    config.migrationBlock = ^(RLMMigration *migration , uint64_t oldSchemaVersion) {       // 这里是设置数据迁移的block
+//        if (oldSchemaVersion < currentVersion) {
+//        }
+//    };
+//    
+//    [RLMRealmConfiguration setDefaultConfiguration:config];
+//    
+//}
 
 - (void)dealNotificationWithOptions:(NSDictionary *)launchOptions {
     [UMessage startWithAppkey:UMKEY launchOptions:launchOptions];

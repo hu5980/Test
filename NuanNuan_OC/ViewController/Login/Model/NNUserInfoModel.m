@@ -9,5 +9,7 @@
 #import "NNUserInfoModel.h"
 
 @implementation NNUserInfoModel
-
++ (NSString *)primaryKey {
+    return @"uid";
+}
 @end
