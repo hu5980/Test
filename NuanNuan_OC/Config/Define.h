@@ -66,6 +66,9 @@ typedef void (^ProgressBlock)(id Progress);
 #define msgAppKey   @"19979a0c7b7d0"
 #define msgAppSecret    @"5cffdc3e72435bda648f78ffa8df3856"
 
+#define ALIFEEDBACK_APPKEY @"23542027"
+#define ALIFEEDBACK_APPSECRET @"075c5d32aa682d7f57c65e2382badf9b"
+
 
 
 #define TEST_TOKEN  [[NSUserDefaults standardUserDefaults] objectForKey:@"token"]

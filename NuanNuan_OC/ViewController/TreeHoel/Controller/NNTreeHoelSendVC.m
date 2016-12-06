@@ -10,8 +10,10 @@
 #import "MLSelectPhoto.h"
 #import "NNSendTreeHoelViewModel.h"
 #import "NNAddTreeHoelImageViewModel.h"
+
 @interface NNTreeHoelSendVC ()<UITextViewDelegate> {
     UIButton *addImageButton ;
+    NSString *picsJsonStr;
 }
 
 @property (nonatomic,assign) BOOL isModified;
@@ -120,29 +122,71 @@
 }
 
 - (void)rightItemAction:(UIBarButtonItem *)item {
-
-    NNAddTreeHoelImageViewModel *addImageViewModel = [[NNAddTreeHoelImageViewModel alloc] init];
     
+    if([_contentTextView isFirstResponder]){
+        [_contentTextView resignFirstResponder];
+    }
+    
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_group_enter(group);
+
+
+    [[NNProgressHUD instance] showHudToView:self.view withMessage:@"图片上传中..."];
+    NNAddTreeHoelImageViewModel *addImageViewModel = [[NNAddTreeHoelImageViewModel alloc] init];
     [addImageViewModel setBlockWithReturnBlock:^(id returnValue) {
+        [[NNProgressHUD instance] hideHud];
         
+        if(returnValue == nil){
+            picsJsonStr = @"";
+        }else{
+            NSError *error;
+            NSData *jsonData = [NSJSONSerialization dataWithJSONObject:returnValue
+                                                               options:NSJSONWritingPrettyPrinted
+                                                                 error:&error];
+            
+            picsJsonStr = [[NSString alloc] initWithData:jsonData
+                                                         encoding:NSUTF8StringEncoding];
+        }
+        dispatch_group_leave(group);
     } WithErrorBlock:^(id errorCode) {
-        
+         [[NNProgressHUD instance] hideHud];
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
+         dispatch_group_leave(group);
     } WithFailureBlock:^(id failureBlock) {
-        
+        [[NNProgressHUD instance] hideHud];
+         dispatch_group_leave(group);
     }];
     
+    if (_imageArray.count > 0) {
+        [addImageViewModel addTreeImageWithToken:TEST_TOKEN andImages:_imageArray];
+    }
     
-    [addImageViewModel addTreeImageWithToken:TEST_TOKEN andImages:_imageArray];
-    
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^(){
+        [[NNProgressHUD instance] showHudToView:self.view withMessage:@"发布中..."];
+         NNSendTreeHoelViewModel *sendViewModel = [[NNSendTreeHoelViewModel alloc] init];
+        [sendViewModel setBlockWithReturnBlock:^(id returnValue) {
+            [[NNProgressHUD instance] hideHud];
+            if ([returnValue isEqualToString:@"success"]) {
+                [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"发布成功"];
+                
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        } WithErrorBlock:^(id errorCode) {
+            [[NNProgressHUD instance] hideHud];
+        } WithFailureBlock:^(id failureBlock) {
+            [[NNProgressHUD instance] hideHud];
+        }];
+        [sendViewModel sendTreeHoelWithToken:TEST_TOKEN andContent:_contentTextView.text andPics:picsJsonStr andanonymity:@"2"];
+    });
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
-    _placeLabel.hidden = NO;
+    _placeLabel.hidden = YES;
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
     if (textView.text.length == 0) {
-        _placeLabel.hidden = YES;
+        _placeLabel.hidden = NO;
     }
 }
 

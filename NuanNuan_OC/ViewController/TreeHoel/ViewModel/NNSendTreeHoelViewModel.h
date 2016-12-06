@@ -10,4 +10,6 @@
 
 @interface NNSendTreeHoelViewModel : NNBaseViewModel
 
+- (void)sendTreeHoelWithToken:(NSString *)token andContent:(NSString *)content andPics:(NSString *)pics andanonymity:(NSString *) anonymity ;
+
 @end

@@ -20,6 +20,7 @@
 #import "NNUserHeaderViewModel.h"
 #import "NNUserInfoModel.h"
 #import "NNUserInfoVC.h"
+#import <YWFeedbackFMWK/YWFeedbackKit.h>
 @interface NNMeVC ()<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate> {
     NSArray *imageArray;
     NSArray *titleArray;
@@ -29,6 +30,8 @@
     UIButton *backgroundButton;
     
     NNUserInfoModel *userInfoModel;
+    
+    YWFeedbackKit *feedbackKit;
 }
 @property (weak, nonatomic) IBOutlet UITableView *meTableView;
 
@@ -40,11 +43,17 @@
     [super viewWillAppear:animated];
     [self initdata];
     [self reflashDataToHeadview];
-   
+    
+    [feedbackKit getUnreadCountWithCompletionBlock:^(NSNumber *unreadCount, NSError *error) {
+        
+    }];
+    
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self initView];
     // Do any additional setup after loading the view.
 }
@@ -79,7 +88,7 @@
     headerButton = [UIButton buttonWithType:UIButtonTypeCustom];
     headerButton.layer.masksToBounds = YES;
     headerButton.layer.cornerRadius = 30;
-   
+    
     [headerButton addTarget:self action:@selector(changeHeadAction:) forControlEvents:UIControlEventTouchUpInside];
     [backgroundButton addSubview:headerButton];
     [headerButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -116,8 +125,8 @@
 
 
 - (void)reflashDataToHeadview {
-
-
+    
+    
     ninkNameLabel.text = userInfoModel.nickName;
     [headerButton sd_setImageWithURL:[NSURL URLWithString:userInfoModel.headImageUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
 }
@@ -164,12 +173,12 @@
     [picker dismissViewControllerAnimated:YES completion:^{
         UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
         UIImage *temp = [self makeImageWithImage:image scaledToSize:CGSizeMake(720, 720)];
-      
+        
         
         NNUserHeaderViewModel *viewModel = [[NNUserHeaderViewModel alloc] init];
         
         [viewModel setBlockWithReturnBlock:^(id returnValue) {
-             [headerButton sd_setImageWithURL:[NSURL URLWithString:returnValue] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
+            [headerButton sd_setImageWithURL:[NSURL URLWithString:returnValue] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
         } WithErrorBlock:^(id errorCode) {
             
         } WithFailureBlock:^(id failureBlock) {
@@ -190,7 +199,7 @@
     }else{
         return 3;
     }
-        
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -225,7 +234,7 @@
                 case 101:
                 {
                     NNMineCommentVC *commentVC = [[NNMineCommentVC alloc] initWithNibName:@"NNMineCommentVC" bundle:nil];
-                     commentVC.hidesBottomBarWhenPushed = YES;
+                    commentVC.hidesBottomBarWhenPushed = YES;
                     [self.navigationController pushViewController:commentVC animated:YES];
                 }
                     
@@ -253,7 +262,7 @@
     }else {
         cell.iconImageView.image = [UIImage imageNamed:[imageArray objectAtIndex:indexPath.row + 3]];
         cell.mineTitleLabel.text = [titleArray objectAtIndex:indexPath.row + 3];
-
+        
     }
     
     return cell;
@@ -276,29 +285,26 @@
         if (indexPath.row == 0) {
             NNMineOrderVC *orderVC = [[NNMineOrderVC alloc] initWithNibName:@"NNMineOrderVC" bundle:nil];
             orderVC.hidesBottomBarWhenPushed = YES;
-
+            
             [self.navigationController pushViewController:orderVC animated:YES];
         }else if (indexPath.row == 1){
-           
+            
         }else if (indexPath.row == 2){
             NNMineNoticeVC *noticeVC = [[NNMineNoticeVC alloc] initWithNibName:@"NNMineNoticeVC" bundle:nil];
             noticeVC.hidesBottomBarWhenPushed = YES;
-
+            
             [self.navigationController pushViewController:noticeVC animated:YES];
-
+            
         }
     }else if (indexPath.section == 2){
         if (indexPath.row == 0) {
-            NNMineFeedbackVC *feedbackVC = [[NNMineFeedbackVC alloc] initWithNibName:@"NNMineFeedbackVC" bundle:nil];
-            feedbackVC.hidesBottomBarWhenPushed = YES;
-
-            [self.navigationController pushViewController:feedbackVC animated:YES];
+            [self entryFeedBack];
         }else if (indexPath.row ==1){
-        
+            
             NNUserInfoVC *infoVC = [[NNUserInfoVC alloc] initWithNibName:@"NNUserInfoVC" bundle:nil];
             infoVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:infoVC animated:YES];
-
+            
         }
         else if (indexPath.row == 2){
             NNMineSetVC *setVC = [[NNMineSetVC alloc] initWithNibName:@"NNMineSetVC" bundle:nil];
@@ -308,19 +314,76 @@
     }
 }
 
+
+- (void)entryFeedBack {
+    
+    __weak typeof(self) weakSelf = self;
+    feedbackKit = [[YWFeedbackKit alloc] initWithAppKey:ALIFEEDBACK_APPKEY];
+    feedbackKit.contactInfo = TEST_TOKEN;
+    feedbackKit.hideContactInfoView = YES;
+    
+    feedbackKit.extInfo = @{@"用户名：": userInfoModel.nickName ,@"用户token:":TEST_TOKEN};
+    feedbackKit.customUIPlist = @{@"sendBtnText":@"发送",
+                                  @"sendBtnTextColor":@"#ffffff",
+                                  @"sendBtnBgColor":@"#FF8833",
+                                  @"hideLoginSuccess":@"1",
+                                  @"chatInputPlaceholder":@"",
+                                  @"avatar":userInfoModel.headImageUrl,
+                                  @"toAvatar":@"http://slimup.oss.aliyuncs.com/indexpic/2016-06-24/33d9b6dc38c19fdbe45d1142a9ef1147.png"};
+    
+    [feedbackKit makeFeedbackViewControllerWithCompletionBlock:^(YWLightFeedbackViewController *viewController, NSError *error) {
+        
+        if ( viewController != nil ) {
+            viewController.title = @"反馈界面";
+            
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
+            [weakSelf presentViewController:nav animated:YES completion:nil];
+            
+            viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:weakSelf action:@selector(actionQuitFeedback)];
+            
+            viewController.navigationItem.rightBarButtonItem.tintColor =  NN_MAIN_COLOR;
+            
+            
+            
+            __weak typeof(nav) weakNav = nav;
+            
+            [viewController setOpenURLBlock:^(NSString *aURLString, UIViewController *aParentController) {
+                UIViewController *webVC = [[UIViewController alloc] initWithNibName:nil bundle:nil];
+                UIWebView *webView = [[UIWebView alloc] initWithFrame:webVC.view.bounds];
+                webView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+                
+                [webVC.view addSubview:webView];
+                [weakNav pushViewController:webVC animated:YES];
+                [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:aURLString]]];
+            }];
+        } else {
+            
+        };
+    }];
+}
+
+- (void)actionQuitFeedback {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

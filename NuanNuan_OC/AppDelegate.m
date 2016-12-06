@@ -12,6 +12,8 @@
 #import "Define.h"
 #import "UMessage.h"
 #import <Realm/Realm.h>
+#import <YWFeedbackFMWK/YWFeedbackKit.h>
+
 //#import "UserNotifications.h"
 
 
@@ -43,6 +45,8 @@
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:QQ_APPKEY appSecret:QQ_APPSECRET redirectURL:NNHOMEPAGEURL];
     
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:WEIBO_APPKEY appSecret:WEIBO_APPSECRET redirectURL:NNHOMEPAGEURL];
+    
+   
 }
 
 //- (void)creatDataBaseWithName:(NSString *)databaseName

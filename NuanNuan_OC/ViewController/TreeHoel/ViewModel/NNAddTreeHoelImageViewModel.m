@@ -9,38 +9,49 @@
 #import "NNAddTreeHoelImageViewModel.h"
 
 
-@implementation NNAddTreeHoelImageViewModel
+@implementation NNAddTreeHoelImageViewModel {
+
+    NSMutableArray *imageArrays;
+}
 
 
 - (void)addTreeImageWithToken:(NSString *)token andImages:(NSArray *)images {
-    dispatch_queue_t queue = dispatch_queue_create("ted.queue.next", DISPATCH_QUEUE_CONCURRENT);;
+//    dispatch_queue_t queue = dispatch_queue_create("ted.queue.next", DISPATCH_QUEUE_CONCURRENT);
     dispatch_group_t group = dispatch_group_create();
     
     for (NSInteger i  = 0; i < images.count; i++) {
-        dispatch_group_async(group, queue, ^{
-            UIImage *image = [images objectAtIndex:i];
-            NSDictionary *parames = @{@"token":token,@"order":[NSNumber numberWithInteger:i]};
-            NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
+        
+        dispatch_group_enter(group);
+       
+        UIImage *image = [images objectAtIndex:i];
+        NSDictionary *parames = @{@"token":token,@"order":[NSNumber numberWithInteger:i]};
+        NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
+        
+        [NNNetRequestClass NetRequestPOSTFileWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_treehole&a=uploadTreeholePic",NNBaseUrl] withParameter:parames withName:@"th_pic" withFileData:imageData withFileName:@"pic.png" withReturnValueBlock:^(id returnValue) {
+            NSLog(@"%@",returnValue);
+            if (imageArrays == nil) {
+                imageArrays = [NSMutableArray arrayWithCapacity:images.count];
+            }
+            [imageArrays addObject:[[returnValue objectForKey:@"data"] objectForKey:@"url"]];
+            dispatch_group_leave(group);
+        } withErrorCodeBlock:^(id errorCode) {
+            NSLog(@"%@",errorCode);
+            dispatch_group_leave(group);
             
-            [NNNetRequestClass NetRequestPOSTFileWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_treehole&a=uploadTreeholePic",NNBaseUrl] withParameter:parames withName:@"th_pic" withFileData:imageData withFileName:@"pic.png" withReturnValueBlock:^(id returnValue) {
-                NSLog(@"%@",returnValue);
-            } withErrorCodeBlock:^(id errorCode) {
-                NSLog(@"%@",errorCode);
-                
-            } withFailureBlock:^(id failureBlock) {
-                NSLog(@"%@",failureBlock);
-                
-            } withProgress:^(id Progress) {
-                
-            }];
-        });
+        } withFailureBlock:^(id failureBlock) {
+            NSLog(@"%@",failureBlock);
+            dispatch_group_leave(group);
+            
+        } withProgress:^(id Progress) {
+        }];
+     
     }
     
-    //dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
-    
-//    dispatch_group_notify(group, dispatch_get_main_queue(), ^(){
-//        NSLog(@"end");
-//    });
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^(){
+        NSLog(@"end");
+        
+        self.returnBlock(imageArrays);
+    });
     
     
 }

@@ -10,4 +10,20 @@
 
 @implementation NNSendTreeHoelViewModel
 
+- (void)sendTreeHoelWithToken:(NSString *)token andContent:(NSString *)content andPics:(NSString *)pics andanonymity:(NSString *) anonymity {
+    NSDictionary *parames = @{@"token":token,
+                              @"th_content":content,
+                              @"th_pics":pics,
+                              @"th_anonymity":anonymity};
+    [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_treehole&a=addTreehole",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
+        self.returnBlock([returnValue objectForKey:@"result"]);
+    } withErrorCodeBlock:^(id errorCode) {
+        self.returnBlock(errorCode);
+    } withFailureBlock:^(id failureBlock) {
+        self.returnBlock(failureBlock);
+    } withProgress:^(id Progress) {
+        
+    }];
+}
+
 @end

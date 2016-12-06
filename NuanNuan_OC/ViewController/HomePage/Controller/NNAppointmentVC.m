@@ -171,7 +171,7 @@
     if (indexPath.row < 5) {
         return 44;
     }else if(indexPath.row == 5){
-        return 44 * 5;
+        return 44 * (consultTypeArray.count%2 == 0 ? consultTypeArray.count/2 :consultTypeArray.count/2 +1);
     }else{
         return 80;
     }

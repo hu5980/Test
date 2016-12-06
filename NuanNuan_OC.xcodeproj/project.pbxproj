@@ -89,14 +89,6 @@
 		0DBB2AF11DE9B647008A0F32 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB2AEE1DE9B647008A0F32 /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0DBB2AF21DE9B647008A0F32 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB2AEF1DE9B647008A0F32 /* README.md */; };
 		0DBB2AF31DE9B647008A0F32 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0DBB2AF01DE9B647008A0F32 /* README.txt */; };
-		0DBB2AFD1DE9D7EE008A0F32 /* AmrCodecFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2AF51DE9D7EE008A0F32 /* AmrCodecFMWK.framework */; };
-		0DBB2AFE1DE9D7EE008A0F32 /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2AF61DE9D7EE008A0F32 /* UTDID.framework */; };
-		0DBB2AFF1DE9D7EE008A0F32 /* UTMini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2AF71DE9D7EE008A0F32 /* UTMini.framework */; };
-		0DBB2B001DE9D7EE008A0F32 /* WQConnectorBundle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2AF81DE9D7EE008A0F32 /* WQConnectorBundle.framework */; };
-		0DBB2B011DE9D7EE008A0F32 /* yw_1222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DBB2AF91DE9D7EE008A0F32 /* yw_1222.jpg */; };
-		0DBB2B021DE9D7EE008A0F32 /* YWFeedbackAudioExtentionFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2AFA1DE9D7EE008A0F32 /* YWFeedbackAudioExtentionFMWK.framework */; };
-		0DBB2B031DE9D7EE008A0F32 /* YWFeedbackFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2AFB1DE9D7EE008A0F32 /* YWFeedbackFMWK.framework */; };
-		0DBB2B041DE9D7EE008A0F32 /* YWHybridWebViewFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2AFC1DE9D7EE008A0F32 /* YWHybridWebViewFMWK.framework */; };
 		0DBB2B061DE9D81B008A0F32 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2B051DE9D81B008A0F32 /* AVFoundation.framework */; };
 		0DBB2B081DE9D825008A0F32 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBB2B071DE9D825008A0F32 /* AudioToolbox.framework */; };
 		0DDAEE791DBB9F87008478DC /* NNImageBroswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAEE781DBB9F87008478DC /* NNImageBroswerView.m */; };
@@ -111,6 +103,15 @@
 		BC09AFEA1DB8AC9400BC4D1B /* NNServerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC09AFE81DB8AC9400BC4D1B /* NNServerListCell.m */; };
 		BC09AFEB1DB8AC9400BC4D1B /* NNServerListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC09AFE91DB8AC9400BC4D1B /* NNServerListCell.xib */; };
 		BC14215E1DF15BEA005889E8 /* server.cer in Resources */ = {isa = PBXBuildFile; fileRef = BC14215D1DF15BEA005889E8 /* server.cer */; };
+		BC1421711DF6963A005889E8 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1421701DF6963A005889E8 /* CoreMotion.framework */; };
+		BC14217B1DF69AF4005889E8 /* AmrCodecFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1421731DF69AF4005889E8 /* AmrCodecFMWK.framework */; };
+		BC14217C1DF69AF4005889E8 /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1421741DF69AF4005889E8 /* UTDID.framework */; };
+		BC14217D1DF69AF4005889E8 /* UTMini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1421751DF69AF4005889E8 /* UTMini.framework */; };
+		BC14217E1DF69AF4005889E8 /* WQConnectorBundle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1421761DF69AF4005889E8 /* WQConnectorBundle.framework */; };
+		BC14217F1DF69AF4005889E8 /* yw_1222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC1421771DF69AF4005889E8 /* yw_1222.jpg */; };
+		BC1421801DF69AF4005889E8 /* YWFeedbackAudioExtentionFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1421781DF69AF4005889E8 /* YWFeedbackAudioExtentionFMWK.framework */; };
+		BC1421811DF69AF4005889E8 /* YWFeedbackFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1421791DF69AF4005889E8 /* YWFeedbackFMWK.framework */; };
+		BC1421821DF69AF4005889E8 /* YWHybridWebViewFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC14217A1DF69AF4005889E8 /* YWHybridWebViewFMWK.framework */; };
 		BC17E9361DD598AA0054FBE2 /* NNCommentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC17E9351DD598AA0054FBE2 /* NNCommentViewModel.m */; };
 		BC17E9391DD599B60054FBE2 /* NNCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC17E9381DD599B60054FBE2 /* NNCommentModel.m */; };
 		BC247E9B1DAA19B100AB5C84 /* NNEmotionallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC247E991DAA19B100AB5C84 /* NNEmotionallCell.m */; };
@@ -398,14 +399,6 @@
 		0DBB2AEE1DE9B647008A0F32 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		0DBB2AEF1DE9B647008A0F32 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0DBB2AF01DE9B647008A0F32 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
-		0DBB2AF51DE9D7EE008A0F32 /* AmrCodecFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AmrCodecFMWK.framework; sourceTree = "<group>"; };
-		0DBB2AF61DE9D7EE008A0F32 /* UTDID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTDID.framework; sourceTree = "<group>"; };
-		0DBB2AF71DE9D7EE008A0F32 /* UTMini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTMini.framework; sourceTree = "<group>"; };
-		0DBB2AF81DE9D7EE008A0F32 /* WQConnectorBundle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WQConnectorBundle.framework; sourceTree = "<group>"; };
-		0DBB2AF91DE9D7EE008A0F32 /* yw_1222.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yw_1222.jpg; sourceTree = "<group>"; };
-		0DBB2AFA1DE9D7EE008A0F32 /* YWFeedbackAudioExtentionFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YWFeedbackAudioExtentionFMWK.framework; sourceTree = "<group>"; };
-		0DBB2AFB1DE9D7EE008A0F32 /* YWFeedbackFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YWFeedbackFMWK.framework; sourceTree = "<group>"; };
-		0DBB2AFC1DE9D7EE008A0F32 /* YWHybridWebViewFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YWHybridWebViewFMWK.framework; sourceTree = "<group>"; };
 		0DBB2B051DE9D81B008A0F32 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0DBB2B071DE9D825008A0F32 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		0DDAEE771DBB9F87008478DC /* NNImageBroswerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNImageBroswerView.h; sourceTree = "<group>"; };
@@ -426,6 +419,15 @@
 		BC09AFE81DB8AC9400BC4D1B /* NNServerListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNServerListCell.m; sourceTree = "<group>"; };
 		BC09AFE91DB8AC9400BC4D1B /* NNServerListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNServerListCell.xib; sourceTree = "<group>"; };
 		BC14215D1DF15BEA005889E8 /* server.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = server.cer; sourceTree = "<group>"; };
+		BC1421701DF6963A005889E8 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		BC1421731DF69AF4005889E8 /* AmrCodecFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AmrCodecFMWK.framework; sourceTree = "<group>"; };
+		BC1421741DF69AF4005889E8 /* UTDID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTDID.framework; sourceTree = "<group>"; };
+		BC1421751DF69AF4005889E8 /* UTMini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTMini.framework; sourceTree = "<group>"; };
+		BC1421761DF69AF4005889E8 /* WQConnectorBundle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WQConnectorBundle.framework; sourceTree = "<group>"; };
+		BC1421771DF69AF4005889E8 /* yw_1222.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yw_1222.jpg; sourceTree = "<group>"; };
+		BC1421781DF69AF4005889E8 /* YWFeedbackAudioExtentionFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YWFeedbackAudioExtentionFMWK.framework; sourceTree = "<group>"; };
+		BC1421791DF69AF4005889E8 /* YWFeedbackFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YWFeedbackFMWK.framework; sourceTree = "<group>"; };
+		BC14217A1DF69AF4005889E8 /* YWHybridWebViewFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YWHybridWebViewFMWK.framework; sourceTree = "<group>"; };
 		BC17E9341DD598AA0054FBE2 /* NNCommentViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNCommentViewModel.h; sourceTree = "<group>"; };
 		BC17E9351DD598AA0054FBE2 /* NNCommentViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNCommentViewModel.m; sourceTree = "<group>"; };
 		BC17E9371DD599B60054FBE2 /* NNCommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNCommentModel.h; sourceTree = "<group>"; };
@@ -677,8 +679,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC1421711DF6963A005889E8 /* CoreMotion.framework in Frameworks */,
 				0D74C70C1DF3F98C003E4ED7 /* libc++.tbd in Frameworks */,
+				BC14217D1DF69AF4005889E8 /* UTMini.framework in Frameworks */,
 				0D74C7061DF3BE7A003E4ED7 /* AddressBookUI.framework in Frameworks */,
+				BC1421801DF69AF4005889E8 /* YWFeedbackAudioExtentionFMWK.framework in Frameworks */,
+				BC14217E1DF69AF4005889E8 /* WQConnectorBundle.framework in Frameworks */,
 				0D74C7041DF3BE73003E4ED7 /* AddressBook.framework in Frameworks */,
 				0D74C7021DF3BE63003E4ED7 /* libstdc++.tbd in Frameworks */,
 				0D74C7001DF3BE5A003E4ED7 /* JavaScriptCore.framework in Frameworks */,
@@ -690,20 +696,16 @@
 				0DBB2AEA1DE9B3D5008A0F32 /* UserNotifications.framework in Frameworks */,
 				0DBB2A661DE9AD1D008A0F32 /* libz.1.1.3.tbd in Frameworks */,
 				0DBB2A651DE9AD14008A0F32 /* ImageIO.framework in Frameworks */,
-				0DBB2B021DE9D7EE008A0F32 /* YWFeedbackAudioExtentionFMWK.framework in Frameworks */,
-				0DBB2AFD1DE9D7EE008A0F32 /* AmrCodecFMWK.framework in Frameworks */,
 				0DBB2A611DE9AD04008A0F32 /* SystemConfiguration.framework in Frameworks */,
 				BCEDDC181DE83DD900187317 /* libsqlite3.tbd in Frameworks */,
 				0DBB2A441DE9ABD5008A0F32 /* libSocialQQ.a in Frameworks */,
 				0DBB2A401DE9ABD5008A0F32 /* libSocialLine.a in Frameworks */,
 				0DBB2A571DE9ABD5008A0F32 /* libSocialYiXin.a in Frameworks */,
 				0DBB2A411DE9ABD5008A0F32 /* libSocialLinkedin.a in Frameworks */,
-				0DBB2AFE1DE9D7EE008A0F32 /* UTDID.framework in Frameworks */,
 				0DBB2A331DE9ABD5008A0F32 /* libSocialDouban.a in Frameworks */,
-				0DBB2AFF1DE9D7EE008A0F32 /* UTMini.framework in Frameworks */,
 				0DBB2A4C1DE9ABD5008A0F32 /* libSocialTencentWeibo.a in Frameworks */,
 				0DBB2A561DE9ABD5008A0F32 /* libSocialWhatsApp.a in Frameworks */,
-				0DBB2B031DE9D7EE008A0F32 /* YWFeedbackFMWK.framework in Frameworks */,
+				BC1421811DF69AF4005889E8 /* YWFeedbackFMWK.framework in Frameworks */,
 				0DBB2A5A1DE9ABD5008A0F32 /* UMSocialNetwork.framework in Frameworks */,
 				0DBB2A381DE9ABD5008A0F32 /* FBSDKShareKit.framework in Frameworks */,
 				0DBB2A4B1DE9ABD5008A0F32 /* libSocialSMS.a in Frameworks */,
@@ -721,6 +723,7 @@
 				0DBB2A531DE9ABD5008A0F32 /* libWeChatSDK.a in Frameworks */,
 				0DBB2A511DE9ABD5008A0F32 /* TwitterKit.framework in Frameworks */,
 				0DBB2A421DE9ABD5008A0F32 /* linkedin-sdk.framework in Frameworks */,
+				BC14217B1DF69AF4005889E8 /* AmrCodecFMWK.framework in Frameworks */,
 				0D74C6F91DF3BE03003E4ED7 /* MOBFoundationEx.framework in Frameworks */,
 				0DBB2A471DE9ABD5008A0F32 /* libSocialRenren.a in Frameworks */,
 				0DBB2A451DE9ABD5008A0F32 /* TencentOpenAPI.framework in Frameworks */,
@@ -733,12 +736,12 @@
 				0DBB2A4D1DE9ABD5008A0F32 /* libSocialTumblr.a in Frameworks */,
 				0D74C70A1DF3F93C003E4ED7 /* Realm.framework in Frameworks */,
 				0DBB2A311DE9ABD5008A0F32 /* libAPOpenSdk.a in Frameworks */,
+				BC14217C1DF69AF4005889E8 /* UTDID.framework in Frameworks */,
 				0DBB2A391DE9ABD5008A0F32 /* libSocialFacebook.a in Frameworks */,
+				BC1421821DF69AF4005889E8 /* YWHybridWebViewFMWK.framework in Frameworks */,
 				0DBB2A3D1DE9ABD5008A0F32 /* libSocialKakao.a in Frameworks */,
 				0DBB2AE81DE9B3BC008A0F32 /* libUMessage_Sdk_1.4.0.a in Frameworks */,
-				0DBB2B041DE9D7EE008A0F32 /* YWHybridWebViewFMWK.framework in Frameworks */,
 				5157E0A13BD1F3B2CCF4B3A1 /* Pods_NuanNuan_OC.framework in Frameworks */,
-				0DBB2B001DE9D7EE008A0F32 /* WQConnectorBundle.framework in Frameworks */,
 				0DBB2A501DE9ABD5008A0F32 /* TwitterCore.framework in Frameworks */,
 				0DBB2A361DE9ABD5008A0F32 /* FBSDKCoreKit.framework in Frameworks */,
 				0DBB2A521DE9ABD5008A0F32 /* libSocialWeChat.a in Frameworks */,
@@ -1086,17 +1089,17 @@
 			path = OpenUDID;
 			sourceTree = "<group>";
 		};
-		0DBB2AF41DE9D7EE008A0F32 /* BCFeedback */ = {
+		BC1421721DF69AF4005889E8 /* BCFeedback */ = {
 			isa = PBXGroup;
 			children = (
-				0DBB2AF51DE9D7EE008A0F32 /* AmrCodecFMWK.framework */,
-				0DBB2AF61DE9D7EE008A0F32 /* UTDID.framework */,
-				0DBB2AF71DE9D7EE008A0F32 /* UTMini.framework */,
-				0DBB2AF81DE9D7EE008A0F32 /* WQConnectorBundle.framework */,
-				0DBB2AF91DE9D7EE008A0F32 /* yw_1222.jpg */,
-				0DBB2AFA1DE9D7EE008A0F32 /* YWFeedbackAudioExtentionFMWK.framework */,
-				0DBB2AFB1DE9D7EE008A0F32 /* YWFeedbackFMWK.framework */,
-				0DBB2AFC1DE9D7EE008A0F32 /* YWHybridWebViewFMWK.framework */,
+				BC1421731DF69AF4005889E8 /* AmrCodecFMWK.framework */,
+				BC1421741DF69AF4005889E8 /* UTDID.framework */,
+				BC1421751DF69AF4005889E8 /* UTMini.framework */,
+				BC1421761DF69AF4005889E8 /* WQConnectorBundle.framework */,
+				BC1421771DF69AF4005889E8 /* yw_1222.jpg */,
+				BC1421781DF69AF4005889E8 /* YWFeedbackAudioExtentionFMWK.framework */,
+				BC1421791DF69AF4005889E8 /* YWFeedbackFMWK.framework */,
+				BC14217A1DF69AF4005889E8 /* YWHybridWebViewFMWK.framework */,
 			);
 			path = BCFeedback;
 			sourceTree = "<group>";
@@ -1234,8 +1237,8 @@
 		BCBAD82F1DCC805700BEDF18 /* Libiary */ = {
 			isa = PBXGroup;
 			children = (
+				BC1421721DF69AF4005889E8 /* BCFeedback */,
 				0D74C6F41DF3BE03003E4ED7 /* SMS_SDK */,
-				0DBB2AF41DE9D7EE008A0F32 /* BCFeedback */,
 				0DBB2AEC1DE9B647008A0F32 /* OpenUDID */,
 				0DBB2AE51DE9B3BC008A0F32 /* UMessage_Sdk_1.4.0 */,
 				0DBB29B31DE9ABD5008A0F32 /* UMSocial */,
@@ -1720,6 +1723,7 @@
 		C8B1F2727F206124CA4830FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BC1421701DF6963A005889E8 /* CoreMotion.framework */,
 				0D74C70B1DF3F98C003E4ED7 /* libc++.tbd */,
 				0D74C7091DF3F93C003E4ED7 /* Realm.framework */,
 				0D74C7051DF3BE7A003E4ED7 /* AddressBookUI.framework */,
@@ -1829,6 +1833,7 @@
 				0DBB2A551DE9ABD5008A0F32 /* README.txt in Resources */,
 				BCD9AE6A1DACBCB6008DB98E /* NNEmotionCaseVC.xib in Resources */,
 				0DBB2AF31DE9B647008A0F32 /* README.txt in Resources */,
+				BC14217F1DF69AF4005889E8 /* yw_1222.jpg in Resources */,
 				BC0274CC1DEEBCC100D61F12 /* NNHeadImageCell.xib in Resources */,
 				BCD9AE9C1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.xib in Resources */,
 				BC09AFEB1DB8AC9400BC4D1B /* NNServerListCell.xib in Resources */,
@@ -1852,7 +1857,6 @@
 				0DA029941DE08C8C00862E7C /* NNTreeHoelSendVC.xib in Resources */,
 				BC58BA681DBDE99500F3BF0D /* NNMinePraisedVC.xib in Resources */,
 				BCD9AE781DACD323008DB98E /* NNRingImageView.xib in Resources */,
-				0DBB2B011DE9D7EE008A0F32 /* yw_1222.jpg in Resources */,
 				BCD9AE6F1DACC668008DB98E /* NNEmotionallItemCell.xib in Resources */,
 				BC8169631DC1D4B000949273 /* NNUserAgreementVC.xib in Resources */,
 				BC58BA861DBDEFC300F3BF0D /* NNMineSetVC.xib in Resources */,
