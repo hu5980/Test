@@ -84,7 +84,7 @@
     NSMutableDictionary *mutableParameter  = [NSMutableDictionary dictionaryWithDictionary:parameter];
     NSString *ver = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     [mutableParameter setObject:ver forKey:@"ver"];
-    [mutableParameter setObject:@"appstore" forKey:@"device_channel"];
+    [mutableParameter setObject:@"ios" forKey:@"device_channel"];
     
     NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"server" ofType:@"cer"];
     NSData * certData =[NSData dataWithContentsOfFile:cerPath];

@@ -32,7 +32,9 @@
             if (imageArrays == nil) {
                 imageArrays = [NSMutableArray arrayWithCapacity:images.count];
             }
-            [imageArrays addObject:[[returnValue objectForKey:@"data"] objectForKey:@"url"]];
+            NSString *imageUrl = [[returnValue objectForKey:@"data"] objectForKey:@"url"];
+            NSString *imageName = [[imageUrl componentsSeparatedByString:@"/"] lastObject];
+            [imageArrays addObject:imageName];
             dispatch_group_leave(group);
         } withErrorCodeBlock:^(id errorCode) {
             NSLog(@"%@",errorCode);

@@ -45,30 +45,9 @@
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:QQ_APPKEY appSecret:QQ_APPSECRET redirectURL:NNHOMEPAGEURL];
     
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:WEIBO_APPKEY appSecret:WEIBO_APPSECRET redirectURL:NNHOMEPAGEURL];
-    
-   
 }
 
-//- (void)creatDataBaseWithName:(NSString *)databaseName
-//{
-//    NSArray *docPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);    NSString *path = [docPath objectAtIndex:0];
-//    NSString *filePath = [path stringByAppendingPathComponent:databaseName];
-//    NSLog(@"数据库目录 = %@",filePath);
-//    
-//    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
-//    config.fileURL = [NSURL URLWithString:filePath];
-//    config.objectClasses = @[MyClass.class, MyOtherClass.class];
-//    config.readOnly = NO;    int currentVersion = 1.0;
-//    config.schemaVersion = currentVersion;
-//    
-//    config.migrationBlock = ^(RLMMigration *migration , uint64_t oldSchemaVersion) {       // 这里是设置数据迁移的block
-//        if (oldSchemaVersion < currentVersion) {
-//        }
-//    };
-//    
-//    [RLMRealmConfiguration setDefaultConfiguration:config];
-//    
-//}
+
 
 - (void)dealNotificationWithOptions:(NSDictionary *)launchOptions {
     [UMessage startWithAppkey:UMKEY launchOptions:launchOptions];
@@ -103,7 +82,7 @@
                                stringByReplacingOccurrencesOfString: @">" withString: @""]
                               stringByReplacingOccurrencesOfString: @" " withString: @""];
     
-    NNLog(@"%@",device_Token);
+    NSLog(@"device_Token = %@",device_Token);
     [[NSUserDefaults standardUserDefaults] setValue:device_Token forKey:@"DEVICETOKEN"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }

@@ -394,7 +394,6 @@
 		0DBB2AE61DE9B3BC008A0F32 /* libUMessage_Sdk_1.4.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.4.0.a; sourceTree = "<group>"; };
 		0DBB2AE71DE9B3BC008A0F32 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		0DBB2AE91DE9B3D5008A0F32 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		0DBB2AEB1DE9B3F9008A0F32 /* NuanNuan_OC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NuanNuan_OC.entitlements; sourceTree = "<group>"; };
 		0DBB2AED1DE9B647008A0F32 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		0DBB2AEE1DE9B647008A0F32 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		0DBB2AEF1DE9B647008A0F32 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -454,6 +453,7 @@
 		BC3BFA3B1DDADE7300F73DEF /* NNOrderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNOrderViewModel.m; sourceTree = "<group>"; };
 		BC3BFA3D1DDAE47000F73DEF /* NNOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNOrderModel.h; sourceTree = "<group>"; };
 		BC3BFA3E1DDAE47000F73DEF /* NNOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNOrderModel.m; sourceTree = "<group>"; };
+		BC3FBE7F1DF7F07B009D7648 /* 暖暖.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "暖暖.entitlements"; sourceTree = "<group>"; };
 		BC4C8E381DD06F3900544A83 /* NNTreeHoelViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNTreeHoelViewModel.h; sourceTree = "<group>"; };
 		BC4C8E391DD06F3900544A83 /* NNTreeHoelViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNTreeHoelViewModel.m; sourceTree = "<group>"; };
 		BC4C8E3B1DD0713F00544A83 /* NNTreeHoelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNTreeHoelModel.h; sourceTree = "<group>"; };
@@ -552,7 +552,7 @@
 		BCBAD8781DCC881A00BEDF18 /* NNReplyViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNReplyViewModel.m; sourceTree = "<group>"; };
 		BCBAD87A1DCC8B9300BEDF18 /* NNAskingViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNAskingViewModel.h; sourceTree = "<group>"; };
 		BCBAD87B1DCC8B9300BEDF18 /* NNAskingViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNAskingViewModel.m; sourceTree = "<group>"; };
-		BCD505F51D921F8C000FB2C0 /* NuanNuan_OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NuanNuan_OC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCD505F51D921F8C000FB2C0 /* 暖暖.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "暖暖.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD505F91D921F8C000FB2C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCD505FB1D921F8C000FB2C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BCD505FC1D921F8C000FB2C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1260,7 +1260,7 @@
 		BCD505F61D921F8C000FB2C0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BCD505F51D921F8C000FB2C0 /* NuanNuan_OC.app */,
+				BCD505F51D921F8C000FB2C0 /* 暖暖.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1268,7 +1268,7 @@
 		BCD505F71D921F8C000FB2C0 /* NuanNuan_OC */ = {
 			isa = PBXGroup;
 			children = (
-				0DBB2AEB1DE9B3F9008A0F32 /* NuanNuan_OC.entitlements */,
+				BC3FBE7F1DF7F07B009D7648 /* 暖暖.entitlements */,
 				BCD505FB1D921F8C000FB2C0 /* AppDelegate.h */,
 				BCD505FC1D921F8C000FB2C0 /* AppDelegate.m */,
 				BCBAD82F1DCC805700BEDF18 /* Libiary */,
@@ -1777,7 +1777,7 @@
 			);
 			name = NuanNuan_OC;
 			productName = NuanNuan_OC;
-			productReference = BCD505F51D921F8C000FB2C0 /* NuanNuan_OC.app */;
+			productReference = BCD505F51D921F8C000FB2C0 /* 暖暖.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1798,6 +1798,9 @@
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
 							};
 						};
 					};
@@ -2170,7 +2173,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = NuanNuan_OC/NuanNuan_OC.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "NuanNuan_OC/暖暖.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 7MUEF9EK2J;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2191,6 +2195,7 @@
 					"\"${PODS_ROOT}/Headers/Public/Reveal-iOS-SDK\"",
 				);
 				INFOPLIST_FILE = NuanNuan_OC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2221,9 +2226,9 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NNXL.nuannuan;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "119917e7-20b9-44ce-b52c-f27aa4c4c056";
-				PROVISIONING_PROFILE_SPECIFIER = NNXL;
+				PRODUCT_NAME = "暖暖";
+				PROVISIONING_PROFILE = "07a92a56-a55d-4d5d-88be-668554d3764c";
+				PROVISIONING_PROFILE_SPECIFIER = NuanNuanDistribution;
 				SWIFT_VERSION = 2.3;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
@@ -2235,7 +2240,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = NuanNuan_OC/NuanNuan_OC.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "NuanNuan_OC/暖暖.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 7MUEF9EK2J;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2256,6 +2262,7 @@
 					"\"${PODS_ROOT}/Headers/Public/Reveal-iOS-SDK\"",
 				);
 				INFOPLIST_FILE = NuanNuan_OC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2286,9 +2293,9 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NNXL.nuannuan;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "119917e7-20b9-44ce-b52c-f27aa4c4c056";
-				PROVISIONING_PROFILE_SPECIFIER = NNXL;
+				PRODUCT_NAME = "暖暖";
+				PROVISIONING_PROFILE = "07a92a56-a55d-4d5d-88be-668554d3764c";
+				PROVISIONING_PROFILE_SPECIFIER = NuanNuanDistribution;
 				SWIFT_VERSION = 2.3;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};

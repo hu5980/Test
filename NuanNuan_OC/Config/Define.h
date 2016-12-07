@@ -53,6 +53,7 @@ typedef void (^ProgressBlock)(id Progress);
 
 //用的 熙康的数据  到时候再换
 #define UMKEY @"583827c15312dd68090014c7"
+#define UM_SECRET @"l6ulybdiix7muiirxw5hzdctzcocnwio"
 
 #define WEIXIN_APPKEY @"wx4011a699aa70dc35"
 #define WEIXIN_SECRET @"3351830c4abf3b0925870edd08e1ad2f"
