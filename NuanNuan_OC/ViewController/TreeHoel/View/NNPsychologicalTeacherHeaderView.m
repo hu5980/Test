@@ -28,4 +28,7 @@
     _popblock();
 }
 
+- (IBAction)showDetail:(UIButton *)sender {
+    _showDetail();
+}
 @end

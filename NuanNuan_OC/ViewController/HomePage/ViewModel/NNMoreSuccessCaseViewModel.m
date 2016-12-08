@@ -41,6 +41,7 @@
         model.caseGoodsNum = [[listArray[i] objectForKey:@"a_goods_num"] integerValue];
         model.caseClickNum = [[listArray[i] objectForKey:@"a_click_num"] integerValue];
         model.caseCreateTime = [[listArray[i] objectForKey:@"create_time"] integerValue];
+        model.hasGood = [[listArray[i] objectForKey:@"has_good"] boolValue];
         [caseMutableArray addObject:model];
     }
     return self.returnBlock(caseMutableArray);

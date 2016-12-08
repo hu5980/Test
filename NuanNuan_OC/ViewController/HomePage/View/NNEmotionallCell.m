@@ -36,18 +36,26 @@
     {
         _successCaseModelArray = successCaseModelArray;
         _titleLabel1.text = ((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:0]).caseTitle;
-//        [_bgButton1  setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:0]).caseImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+        _titleLabel1.hidden = NO;
         
-          [_bgButton1 sd_setImageWithURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:0]).caseImageUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
+       [_bgButton1 sd_setImageWithURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:0]).caseImageUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
         
-     //   _titleLabel2.text = ((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:1]).caseTitle;
-    //    [_bgButton2  setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:1]).caseImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
-        
-    //    _titleLabel3.text = ((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:2])./caseTitle;
-    //    [_bgButton3  setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:2]).caseImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
-        
-   //     _titleLabel4.text = ((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:3]).caseTitle;
-    //    [_bgButton4  setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:3]).caseImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+        if ([successCaseModelArray objectAtIndex:1]) {
+            _titleLabel2.text = ((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:1]).caseTitle;
+            _titleLabel2.hidden = NO;
+            [_bgButton2 sd_setImageWithURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:1]).caseImageUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
+        }
+       
+        if ([successCaseModelArray objectAtIndex:2]) {
+            _titleLabel3.text = ((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:2]).caseTitle;
+            _titleLabel3.hidden = NO;
+            [_bgButton3 sd_setImageWithURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:2]).caseImageUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
+        }
+        if ([successCaseModelArray objectAtIndex:3]) {
+            _titleLabel4.text = ((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:3]).caseTitle;
+            _titleLabel4.hidden = NO;
+            [_bgButton4 sd_setImageWithURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:3]).caseImageUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
+        }
     }
 
 }

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,26 +23,25 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwG-HF-WY1">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="32"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="gt5-ZE-Rl4"/>
                     </constraints>
                 </scrollView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VRK-3R-fV7">
+                    <rect key="frame" x="0.0" y="32" width="375" height="635"/>
                     <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="625" id="6K4-jT-N8g"/>
-                    </constraints>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="zwG-HF-WY1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9ce-01-bjp"/>
-                <constraint firstAttribute="bottom" secondItem="VRK-3R-fV7" secondAttribute="bottom" id="CHL-eG-rGy"/>
-                <constraint firstAttribute="trailing" secondItem="VRK-3R-fV7" secondAttribute="trailing" id="TpX-LI-9wv"/>
+                <constraint firstItem="VRK-3R-fV7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MlC-1v-DSO"/>
+                <constraint firstAttribute="trailing" secondItem="VRK-3R-fV7" secondAttribute="trailing" id="TTj-ys-HCN"/>
                 <constraint firstAttribute="trailing" secondItem="zwG-HF-WY1" secondAttribute="trailing" id="XSP-3v-iCV"/>
-                <constraint firstItem="VRK-3R-fV7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jps-Hg-JER"/>
-                <constraint firstItem="VRK-3R-fV7" firstAttribute="top" secondItem="zwG-HF-WY1" secondAttribute="bottom" constant="10" id="n9I-WW-GHZ"/>
+                <constraint firstAttribute="bottom" secondItem="VRK-3R-fV7" secondAttribute="bottom" id="Y7I-67-Na8"/>
+                <constraint firstItem="VRK-3R-fV7" firstAttribute="top" secondItem="zwG-HF-WY1" secondAttribute="bottom" id="kuR-uT-eWq"/>
                 <constraint firstItem="zwG-HF-WY1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="x7f-ZK-Ho7"/>
             </constraints>
             <point key="canvasLocation" x="-488.5" y="-60.5"/>

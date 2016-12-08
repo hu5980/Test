@@ -66,6 +66,21 @@
     _psychologicalTeacherTableView.delegate = self;
     _psychologicalTeacherTableView.dataSource = self;
     _psychologicalTeacherTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    __weak NNPsychologicalTeacherHeaderView *weakHeaderView = headerView;
+    
+    __weak NSString *descriptionStr = _model.teacherDescription;
+    
+    headerView.showDetail = ^(){
+        
+        CGFloat height = [descriptionStr boundingRectWithSize:CGSizeMake(NNAppWidth - 30, CGFLOAT_MAX)
+                                                 options:NSStringDrawingUsesLineFragmentOrigin
+                                              attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14.f]}
+                                                 context:nil].size.height;
+        
+        weakHeaderView.describelLabelConstraint.constant = height;
+        [weakHeaderView updateConstraints];
+    };
     [_psychologicalTeacherTableView registerNib:[UINib nibWithNibName:@"NNQuestionAndAnswerCell" bundle:nil] forCellReuseIdentifier:@"NNQuestionAndAnswerCell"];
     footer =  [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [self reflashQuestionAndAnswerData];

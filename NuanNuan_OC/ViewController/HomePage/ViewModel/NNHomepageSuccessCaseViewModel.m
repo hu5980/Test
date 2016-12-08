@@ -47,6 +47,7 @@
         model.caseClickNum = [[loveStoryArray[i] objectForKey:@"a_click_num"] integerValue];
         model.caseCreateTime = [[loveStoryArray[i] objectForKey:@"create_time"] integerValue];
         model.isShowAppointment = [[loveStoryArray[i] objectForKey:@"a_can_booking"] isEqualToString:@"1"]  ? YES : NO ;
+        model.hasGood = [[loveStoryArray[i] objectForKey:@"has_good"] boolValue];
         [loveStoryMutableArray addObject:model];
     }
     
@@ -60,6 +61,7 @@
         model.caseClickNum = [[loveStoryArray[i] objectForKey:@"a_click_num"] integerValue];
         model.caseCreateTime = [[loveStoryArray[i] objectForKey:@"create_time"] integerValue];
         model.isShowAppointment = [[loveStoryArray[i] objectForKey:@"a_can_booking"] isEqualToString:@"1"]  ? YES : NO ;
+          model.hasGood = [[loveStoryArray[i] objectForKey:@"has_good"] boolValue];
         [improvementMutableArray addObject:model];
     }
     
@@ -73,6 +75,7 @@
         model.caseClickNum = [[loveStoryArray[i] objectForKey:@"a_click_num"] integerValue];
         model.caseCreateTime = [[loveStoryArray[i] objectForKey:@"create_time"] integerValue];
         model.isShowAppointment = [[loveStoryArray[i] objectForKey:@"a_can_booking"] isEqualToString:@"1"]  ? YES : NO ;
+          model.hasGood = [[loveStoryArray[i] objectForKey:@"has_good"] boolValue];
         [redeemStoryMutableArray addObject:model];
     }
     

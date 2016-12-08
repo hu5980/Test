@@ -38,10 +38,8 @@
     [super viewDidLoad];
     [self setNavigationBackButton:YES];
    
-    
     self.navTitle = _navigationTitle;
- 
-    self.view.backgroundColor = NN_BACKGROUND_COLOR;
+    self.view.backgroundColor = [UIColor whiteColor];
     footer =  [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [self refreshData];
     }];
@@ -64,6 +62,7 @@
 
 - (void)createEmotionalTypeUI {
     _emotionalTypeScrollView.contentSize = CGSizeMake((NNAppWidth/3)*_caseTypeArray.count, 32);
+
     for (UIView *view in _emotionalTypeScrollView.subviews) {
         [view removeFromSuperview];
     }
@@ -142,7 +141,7 @@
     CGFloat height = [tableView fd_heightForCellWithIdentifier:@"NNEmotionallItemCell" cacheByIndexPath:indexPath configuration:^(id cell) {
       
     }];
-    return height   ;
+    return height;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -154,8 +153,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NNEmotionallItemCell *cell =  [tableView dequeueReusableCellWithIdentifier:@"NNEmotionallItemCell"];
     __weak NNEmotionallItemCell *weakCell = cell;
-    cell.likeButton.selected = YES;
+    
     cell.block = ^(NNSuccessCaseModel *model) {
+        
+        if (TEST_TOKEN == nil) {
+            [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"请登录再试..."];
+            return ;
+        }
+        
         NNPariseViewModel  *viewModel = [[NNPariseViewModel alloc] init];
         [viewModel setBlockWithReturnBlock:^(id returnValue) {
             if([returnValue isEqualToString:@"success"]){
@@ -187,6 +192,7 @@
             [viewModel parisdArticleWithToken:TEST_TOKEN andArticleType:[NSString stringWithFormat:@"%ld",_defaultType] andArticleID:[NSString stringWithFormat:@"%ld",model.caseAdID]];
         }
     };
+    
     cell.model = [caseArray objectAtIndex:indexPath.section];
     return cell;
 }

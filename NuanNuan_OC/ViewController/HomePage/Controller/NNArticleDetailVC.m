@@ -109,6 +109,7 @@
     } WithFailureBlock:^(id failureBlock) {
         
     }];
+
     [isLikeViewModel getUserIsLikeTheArticleWithToken:TEST_TOKEN andType:@"3" andArticleID:[NSString stringWithFormat:@"%ld",_articleID]];
 }
 

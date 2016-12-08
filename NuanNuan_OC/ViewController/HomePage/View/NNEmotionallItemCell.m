@@ -32,7 +32,7 @@
     _emotionTitleLabel.text = model.caseTitle;
     _readNumLabel.text = [NSString stringWithFormat:@"%ld",model.caseClickNum];
     _likeNumLabel.text = [NSString stringWithFormat:@"%ld",model.caseGoodsNum];
-    
+    _likeButton.selected = model.hasGood;
 
 }
 

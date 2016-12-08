@@ -29,9 +29,7 @@
     NSMutableArray *treeHoelModelArrays;
     NSArray *array;
     MJRefreshFooter *footer;
-    
     NSMutableArray *phonoArrays;
-    
     UIButton *treeHoleButton;
 }
 @property (weak, nonatomic) IBOutlet UITableView *treeHoelTableView;
@@ -54,12 +52,16 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    
 }
 
 - (void)initUI {
     [self.navigationController setNavigationBarHidden:NO];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"msg_ic"] style:UIBarButtonItemStylePlain target:self action:@selector(entryNotice)];
+    self.navigationItem.rightBarButtonItem.tintColor = NN_MAIN_COLOR;
+    
     NNCustomNavigationView *view = LOAD_VIEW_FROM_BUNDLE(@"NNCustomNavigationView");
+    
     view.backgroundColor = [UIColor clearColor];
     __weak NNTreeHoleVC *weakSelf = self;
     defaultSelectButton = view.index1Button;
@@ -76,11 +78,14 @@
                treeHoleButton.hidden = NO;
                 [weakSelf reflashTreeHoelData];
             }
-            
             [_treeHoelTableView reloadData];
         }
     };
     self.navigationItem.titleView = view;
+    
+   
+    [self.navigationItem.titleView layoutIfNeeded];
+    
   
     footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         if (defaultSelectButton.tag == 200) {
@@ -100,7 +105,7 @@
     
     treeHoleButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [treeHoleButton setBackgroundImage:[UIImage imageNamed:@"210_01"] forState:UIControlStateNormal];
-    treeHoleButton .frame = CGRectMake(NNAppWidth - 15 - 54, NNAppHeight - 49 - 15 - 54 - 64, 54, 54);
+    treeHoleButton.frame = CGRectMake(NNAppWidth - 15 - 54, NNAppHeight - 49 - 15 - 54 - 64, 54, 54);
     [treeHoleButton addTarget:self action:@selector(sendTreeHoleAction:) forControlEvents:UIControlEventTouchUpInside];
     treeHoleButton.hidden = YES;
     [self.view addSubview:treeHoleButton];
@@ -150,6 +155,10 @@
     NNTreeHoelSendVC *sendVC = [[NNTreeHoelSendVC alloc] init];
     sendVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:sendVC animated:YES];
+}
+
+- (void)entryNotice {
+
 }
 
 #pragma --mark  UItableViewDelegate UItableViewDatasource
@@ -259,7 +268,9 @@
     CGFloat height;
     if (defaultSelectButton.tag == 200) {
         height = [tableView fd_heightForCellWithIdentifier:@"NNTreeHoelCell" cacheByIndexPath:indexPath configuration:^(id cell) {
-            
+            NNTreeHoelCell *teacherCell = cell;
+            NNEmotionTeacherModel *model = [teacherModelArrays objectAtIndex:indexPath.section];
+            teacherCell.model = model;
         }];
     }else{
         height = [tableView fd_heightForCellWithIdentifier:@"NNSpitslotCell" cacheByIndexPath:indexPath configuration:^(id cell) {
