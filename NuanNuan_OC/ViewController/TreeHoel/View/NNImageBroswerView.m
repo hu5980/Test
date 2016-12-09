@@ -42,9 +42,11 @@
         CGFloat imageWidth = (NNAppWidth - (number - 1) * imageSpace - 30  ) / number;
         for (int i = 0; i < arrays.count; i++) {
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-//            [button setImageForState:UIControlStateNormal withURL:[NSURL URLWithString:[arrays objectAtIndex:i]] placeholderImage:[UIImage imageNamed:@"detail_defalut"]];
+
             [button sd_setImageWithURL:[NSURL URLWithString:[arrays objectAtIndex:i]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
             [button addTarget:self action:@selector(clickImageButton:) forControlEvents:UIControlEventTouchUpInside];
+            button.imageView.contentMode = UIViewContentModeScaleAspectFill;
+            button.imageView.clipsToBounds = YES;
             button.frame = CGRectMake(i%number*(imageSpace + imageWidth) + 15 , i/number *(imageWidth + imageSpace) + 10, imageWidth, imageWidth);
             button.tag = 1000 + i;
           //  button.backgroundColor = [UIColor redColor];

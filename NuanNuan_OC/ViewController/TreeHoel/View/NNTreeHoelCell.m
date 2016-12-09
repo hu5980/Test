@@ -16,6 +16,8 @@
     [super awakeFromNib];
     _iconImageView.layer.masksToBounds = YES;
     _iconImageView.layer.cornerRadius = 20;
+    _backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+    _backgroundImageView.clipsToBounds = YES;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     // Initialization code
 }

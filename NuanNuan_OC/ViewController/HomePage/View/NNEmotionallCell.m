@@ -13,7 +13,17 @@
 @implementation NNEmotionallCell
 
 - (void)awakeFromNib {
+    
     [super awakeFromNib];
+    
+    _bgButton1.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    _bgButton2.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    _bgButton3.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    _bgButton4.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    _bgButton1.clipsToBounds = YES;
+    _bgButton2.clipsToBounds = YES;
+    _bgButton3.clipsToBounds = YES;
+    _bgButton4.clipsToBounds = YES;
     // Initialization code
 }
 

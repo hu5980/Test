@@ -24,7 +24,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="148"/>
                         <color key="backgroundColor" red="0.16078431369999999" green="0.80000000000000004" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="3s2-bI-Z8k" secondAttribute="height" multiplier="375:148" id="qSc-Yq-WPr"/>
+                            <constraint firstAttribute="width" secondItem="3s2-bI-Z8k" secondAttribute="height" multiplier="375:148" id="8Va-UM-Uqu"/>
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="guC-y2-8wR">

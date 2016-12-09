@@ -110,7 +110,11 @@
         
     }];
 
-    [isLikeViewModel getUserIsLikeTheArticleWithToken:TEST_TOKEN andType:@"3" andArticleID:[NSString stringWithFormat:@"%ld",_articleID]];
+    if (TEST_TOKEN != nil) {
+         [isLikeViewModel getUserIsLikeTheArticleWithToken:TEST_TOKEN andType:@"3" andArticleID:[NSString stringWithFormat:@"%ld",_articleID]];
+    }
+    
+   
 }
 
 - (void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler{
@@ -199,6 +203,12 @@
 }
 
 - (void)likeAction:(UIButton *)button {
+    
+    if (TEST_TOKEN == nil) {
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"请登录再试..."];
+        return ;
+    }
+    
     NNPariseViewModel  *viewModel = [[NNPariseViewModel alloc] init];
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
         if([returnValue isEqualToString:@"success"]){

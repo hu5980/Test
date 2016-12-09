@@ -31,10 +31,10 @@
         button.tag = 100+i;
         [button addTarget:self action:@selector(selectRingImage:) forControlEvents:UIControlEventTouchUpInside];
         button.frame = CGRectMake(NNAppWidth * i, 0, NNAppWidth, NNAppWidth * 164 / 375);
-//        [button setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:model.imageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] ];
-        
+
         [button sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
-        
+        button.imageView.contentMode = UIViewContentModeScaleAspectFill;
+        button.imageView.clipsToBounds = YES;
         [_ringScrollView addSubview:button];
     }
     _ringScrollView.contentSize = CGSizeMake(array.count * NNAppWidth, NNAppWidth * 164 / 375);
@@ -44,7 +44,6 @@
 //    [RACObserve(_ringScrollView, contentSize) subscribeNext:^(id x) {
 //         _pageControl.currentPage =  _ringScrollView.contentOffset.x / NNAppWidth ;
 //    }];
-    
     _pageControl.numberOfPages = array.count;
     [_pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
 }
