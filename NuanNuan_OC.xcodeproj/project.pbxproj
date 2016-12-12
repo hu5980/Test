@@ -194,6 +194,9 @@
 		BCD506561D9231D0000FB2C0 /* NNMeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD506441D9231D0000FB2C0 /* NNMeVC.m */; };
 		BCD506571D9231D0000FB2C0 /* NNServerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5064A1D9231D0000FB2C0 /* NNServerVC.m */; };
 		BCD506581D9231D0000FB2C0 /* NNTreeHoleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD506501D9231D0000FB2C0 /* NNTreeHoleVC.m */; };
+		BCD7E63F1DFE9ED200991F86 /* NNNoticeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E63E1DFE9ED200991F86 /* NNNoticeViewModel.m */; };
+		BCD7E6431DFEA12200991F86 /* NNAboutNuanNuan.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E6411DFEA12200991F86 /* NNAboutNuanNuan.m */; };
+		BCD7E6441DFEA12200991F86 /* NNAboutNuanNuan.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD7E6421DFEA12200991F86 /* NNAboutNuanNuan.xib */; };
 		BCD9AE691DACBCB6008DB98E /* NNEmotionCaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE671DACBCB6008DB98E /* NNEmotionCaseVC.m */; };
 		BCD9AE6A1DACBCB6008DB98E /* NNEmotionCaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE681DACBCB6008DB98E /* NNEmotionCaseVC.xib */; };
 		BCD9AE6E1DACC668008DB98E /* NNEmotionallItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE6C1DACC668008DB98E /* NNEmotionallItemCell.m */; };
@@ -574,6 +577,11 @@
 		BCD5064A1D9231D0000FB2C0 /* NNServerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNServerVC.m; sourceTree = "<group>"; };
 		BCD5064F1D9231D0000FB2C0 /* NNTreeHoleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNTreeHoleVC.h; sourceTree = "<group>"; };
 		BCD506501D9231D0000FB2C0 /* NNTreeHoleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNTreeHoleVC.m; sourceTree = "<group>"; };
+		BCD7E63D1DFE9ED200991F86 /* NNNoticeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNoticeViewModel.h; sourceTree = "<group>"; };
+		BCD7E63E1DFE9ED200991F86 /* NNNoticeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNoticeViewModel.m; sourceTree = "<group>"; };
+		BCD7E6401DFEA12200991F86 /* NNAboutNuanNuan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNAboutNuanNuan.h; sourceTree = "<group>"; };
+		BCD7E6411DFEA12200991F86 /* NNAboutNuanNuan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNAboutNuanNuan.m; sourceTree = "<group>"; };
+		BCD7E6421DFEA12200991F86 /* NNAboutNuanNuan.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNAboutNuanNuan.xib; sourceTree = "<group>"; };
 		BCD9AE661DACBCB6008DB98E /* NNEmotionCaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEmotionCaseVC.h; sourceTree = "<group>"; };
 		BCD9AE671DACBCB6008DB98E /* NNEmotionCaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNEmotionCaseVC.m; sourceTree = "<group>"; };
 		BCD9AE681DACBCB6008DB98E /* NNEmotionCaseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNEmotionCaseVC.xib; sourceTree = "<group>"; };
@@ -1186,6 +1194,8 @@
 			children = (
 				BC852E7F1DCB16C900ADE5C9 /* NNuploadUserHeadImageViewModel.h */,
 				BC852E801DCB16C900ADE5C9 /* NNuploadUserHeadImageViewModel.m */,
+				BCD7E63D1DFE9ED200991F86 /* NNNoticeViewModel.h */,
+				BCD7E63E1DFE9ED200991F86 /* NNNoticeViewModel.m */,
 				BC852E821DCB185800ADE5C9 /* NNChangePasswordViewModel.h */,
 				BC852E831DCB185800ADE5C9 /* NNChangePasswordViewModel.m */,
 				BC852E851DCB19B500ADE5C9 /* NNchangeUserInfoViewModel.h */,
@@ -1461,6 +1471,9 @@
 				BC0274C31DEEB55C00D61F12 /* NNUserInfoVC.h */,
 				BC0274C41DEEB55C00D61F12 /* NNUserInfoVC.m */,
 				BC0274C51DEEB55C00D61F12 /* NNUserInfoVC.xib */,
+				BCD7E6401DFEA12200991F86 /* NNAboutNuanNuan.h */,
+				BCD7E6411DFEA12200991F86 /* NNAboutNuanNuan.m */,
+				BCD7E6421DFEA12200991F86 /* NNAboutNuanNuan.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1792,7 +1805,7 @@
 				TargetAttributes = {
 					BCD505F41D921F8C000FB2C0 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = WJR5NAA722;
+						DevelopmentTeam = 7MUEF9EK2J;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
@@ -1840,6 +1853,7 @@
 				BC0274CC1DEEBCC100D61F12 /* NNHeadImageCell.xib in Resources */,
 				BCD9AE9C1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.xib in Resources */,
 				BC09AFEB1DB8AC9400BC4D1B /* NNServerListCell.xib in Resources */,
+				BCD7E6441DFEA12200991F86 /* NNAboutNuanNuan.xib in Resources */,
 				0DBB2A5B1DE9ABD5008A0F32 /* UMSocialSDKResources.bundle in Resources */,
 				BCEDDBFF1DE52C5A00187317 /* MLSelectPhoto.bundle in Resources */,
 				BCD506111D92202D000FB2C0 /* Main.storyboard in Resources */,
@@ -2010,6 +2024,7 @@
 				BCEDDBF31DE52C5A00187317 /* MLSelectPhotoNavigationViewController.m in Sources */,
 				BCB6EFE01DB62B0000BEFD37 /* NNSuccessCaseModel.m in Sources */,
 				BCEDDBF11DE52C5A00187317 /* MLSelectPhotoPickerGroup.m in Sources */,
+				BCD7E63F1DFE9ED200991F86 /* NNNoticeViewModel.m in Sources */,
 				BCD506581D9231D0000FB2C0 /* NNTreeHoleVC.m in Sources */,
 				0DBB2A5C1DE9ABD5008A0F32 /* UMShareMenuItem.m in Sources */,
 				BCE6A0641DDD7C7C00A02E50 /* NNUserHeaderViewModel.m in Sources */,
@@ -2028,6 +2043,7 @@
 				0DBB29021DE5E5CB008A0F32 /* NNQuestionAndAnswerCommentModel.m in Sources */,
 				BCE6A0671DDEA87A00A02E50 /* NNAppointmentTypeViewModel.m in Sources */,
 				BC17E9391DD599B60054FBE2 /* NNCommentModel.m in Sources */,
+				BCD7E6431DFEA12200991F86 /* NNAboutNuanNuan.m in Sources */,
 				0DBB28FB1DE1A3C0008A0F32 /* NNForgetPasswordVC.m in Sources */,
 				BCEDDBF21DE52C5A00187317 /* MLSelectPhotoBrowserViewController.m in Sources */,
 				BCEDDBF91DE52C5A00187317 /* MLSelectPhotoPickerBrowserPhotoScrollView.m in Sources */,
@@ -2174,8 +2190,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "NuanNuan_OC/暖暖.entitlements";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = WJR5NAA722;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7MUEF9EK2J;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2225,10 +2241,10 @@
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMessage_Sdk_1.4.0",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xikang.ss;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NNXL.nuannuan;
 				PRODUCT_NAME = "暖暖";
-				PROVISIONING_PROFILE = "d141fb3b-0573-4bf9-bb19-c7519b0cd21d";
-				PROVISIONING_PROFILE_SPECIFIER = ss_EnterpriseCertificate;
+				PROVISIONING_PROFILE = "8dbc312f-1a22-4e39-9d33-7143b768a77f";
+				PROVISIONING_PROFILE_SPECIFIER = NuanNuanDevelopment;
 				SWIFT_VERSION = 2.3;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
@@ -2241,8 +2257,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "NuanNuan_OC/暖暖.entitlements";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = WJR5NAA722;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7MUEF9EK2J;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2292,10 +2308,10 @@
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMessage_Sdk_1.4.0",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xikang.ss;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NNXL.nuannuan;
 				PRODUCT_NAME = "暖暖";
-				PROVISIONING_PROFILE = "d141fb3b-0573-4bf9-bb19-c7519b0cd21d";
-				PROVISIONING_PROFILE_SPECIFIER = ss_EnterpriseCertificate;
+				PROVISIONING_PROFILE = "8dbc312f-1a22-4e39-9d33-7143b768a77f";
+				PROVISIONING_PROFILE_SPECIFIER = NuanNuanDevelopment;
 				SWIFT_VERSION = 2.3;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};

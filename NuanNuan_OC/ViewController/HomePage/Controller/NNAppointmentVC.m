@@ -58,7 +58,7 @@
 }
 
 - (void)initUI {
-    self.navTitle = @"免费咨询";
+    self.navTitle = @"免费预约";
     [self setNavigationBackButton:YES];
     
     [self setNavigationRightItem:@"提交"];
@@ -138,12 +138,12 @@
 }
 
 - (void)rightItemAction:(UIBarButtonItem *)item {
-    __weak NNAppointmentVC *weakSelf = self;
+   // __weak NNAppointmentVC *weakSelf = self;
     
     NNAppointmentQuestionViewModel *viewModel = [[NNAppointmentQuestionViewModel alloc] init];
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
-        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"预约成功"];
-        [weakSelf.navigationController popViewControllerAnimated:YES];
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"恭喜预约成功，我们会在三个工作日内联系您，请保持手机畅通"];
+      
     } WithErrorBlock:^(id errorCode) {
         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
     } WithFailureBlock:^(id failureBlock) {

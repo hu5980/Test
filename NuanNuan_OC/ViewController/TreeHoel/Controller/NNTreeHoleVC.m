@@ -22,6 +22,7 @@
 #import "NNPariseViewModel.h"
 #import "NNUnPariseViewModel.h"
 #import "NNTreeHoelSendVC.h"
+#import "NNLoginAndRegisterVC.h"
 
 @interface NNTreeHoleVC ()<UITableViewDelegate,UITableViewDataSource,MWPhotoBrowserDelegate> {
     UIButton *defaultSelectButton;
@@ -41,10 +42,24 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
+    [teacherModelArrays removeAllObjects];
+    if (treeHoleButton.hidden == NO) {
+        [self reflashTreeHoelData];
+    }
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (TEST_TOKEN == nil) {
+        NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] init];
+        loginVC.isPresent = YES;
+        [self presentViewController:loginVC animated:YES completion:^{
+            
+        }];
+    }
+    
     [self initUI];
     [self initData];
     // Do any additional setup after loading the view.

@@ -21,6 +21,9 @@
 #import "NNUserInfoModel.h"
 #import "NNUserInfoVC.h"
 #import <YWFeedbackFMWK/YWFeedbackKit.h>
+#import "NNLoginAndRegisterVC.h"
+#import "NNAboutNuanNuan.h"
+
 @interface NNMeVC ()<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate> {
     NSArray *imageArray;
     NSArray *titleArray;
@@ -220,22 +223,34 @@
     if (cell == nil) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"NNMineCell" owner:self options:nil][0];
     }
+    
+    __weak NNMeVC *weakself = self;
+    
     if (indexPath.section == 0) {
         NNMineEmotionalMangmentCell *emotionalMangmentCell = [tableView dequeueReusableCellWithIdentifier:@"NNMineEmotionalMangmentCell"];
         emotionalMangmentCell.block = ^(NSInteger tag){
+            
+            if (TEST_TOKEN == nil) {
+                NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] init];
+                loginVC.isPresent = YES;
+                [weakself presentViewController:loginVC animated:YES completion:^{
+                    
+                }];
+            }
+            
             switch (tag) {
                 case 100:
                 {
                     NNMinePraisedVC *praisedVC = [[NNMinePraisedVC alloc] initWithNibName:@"NNMinePraisedVC" bundle:nil];
                     praisedVC.hidesBottomBarWhenPushed = YES;
-                    [self.navigationController pushViewController:praisedVC animated:YES];
+                    [weakself.navigationController pushViewController:praisedVC animated:YES];
                 }
                     break;
                 case 101:
                 {
                     NNMineCommentVC *commentVC = [[NNMineCommentVC alloc] initWithNibName:@"NNMineCommentVC" bundle:nil];
                     commentVC.hidesBottomBarWhenPushed = YES;
-                    [self.navigationController pushViewController:commentVC animated:YES];
+                    [weakself.navigationController pushViewController:commentVC animated:YES];
                 }
                     
                     break;
@@ -243,7 +258,7 @@
                 {
                     NNMineLikeVC *likeVC = [[NNMineLikeVC alloc] initWithNibName:@"NNMineLikeVC" bundle:nil];
                     likeVC.hidesBottomBarWhenPushed = YES;
-                    [self.navigationController pushViewController:likeVC animated:YES];
+                    [weakself.navigationController pushViewController:likeVC animated:YES];
                 }
                     
                     break;
@@ -281,6 +296,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (TEST_TOKEN == nil) {
+        NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] init];
+        loginVC.isPresent = YES;
+        [self presentViewController:loginVC animated:YES completion:^{
+            
+        }];
+    }
+    
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
             NNMineOrderVC *orderVC = [[NNMineOrderVC alloc] initWithNibName:@"NNMineOrderVC" bundle:nil];

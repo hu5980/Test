@@ -53,7 +53,7 @@
         model.thCommentNum =[treeHoelDic objectForKey:@"th_comment_num"];
         model.thGoodsNum =[treeHoelDic objectForKey:@"th_goods_num"];
         model.thIsdel = [treeHoelDic objectForKey:@"th_isdel"];
-        model.userHeadUrl = [NSString stringWithFormat:@"%@/%@",basePathUrl,[treeHoelDic objectForKey:@"user_head"]];
+        model.userHeadUrl = [treeHoelDic objectForKey:@"user_head"];
         model.userNikeName = [treeHoelDic objectForKey:@"user_nickname"];
         model.createTime = [[treeHoelDic objectForKey:@"create_time"] integerValue];
         model.modifyTime =[[treeHoelDic objectForKey:@"modify_time"] integerValue];

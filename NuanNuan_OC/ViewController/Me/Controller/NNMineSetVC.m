@@ -10,8 +10,10 @@
 #import "NNSetCell.h"
 #import "NNLoginAndRegisterVC.h"
 #import "NNUserAgreementVC.h"
+#import "NNAboutNuanNuan.h"
 @interface NNMineSetVC ()<UITableViewDelegate,UITableViewDataSource> {
     NSArray *titleArray;
+    NSString *cacheText;
 }
 @property (weak, nonatomic) IBOutlet UITableView *setTableView;
 
@@ -45,6 +47,17 @@
 
 - (void)initData {
     titleArray = @[@"关于暖暖",@"用户协议",@"清除缓存"];
+    [self getCache];
+}
+
+
+- (void)getCache {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        SDImageCache *cache = [SDImageCache sharedImageCache];
+        NSUInteger cacheSize = cache.getSize;
+        cacheText = [NSString stringWithFormat:@"%.2f M",cacheSize/1024.0/1024.0];
+        [_setTableView reloadData];
+    });
 }
 
 
@@ -76,6 +89,20 @@
     if (indexPath.section == 0) {
         NNSetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNSetCell"];
         cell.setTltleLabel.text = [titleArray objectAtIndex:indexPath.row];
+        if (indexPath.row == 2) {
+            UILabel *cacheLabel = [[UILabel alloc] init];
+            [cell.contentView addSubview:cacheLabel];
+            [cacheLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.right.equalTo(@-25);
+                make.top.equalTo(@0);
+                make.bottom.equalTo(@0);
+                make.left.equalTo(cell.setTltleLabel.mas_right).with.offset(10.0f);
+            }];
+            cacheLabel.textAlignment = NSTextAlignmentRight;
+            cacheLabel.font = [UIFont systemFontOfSize:14.f];
+            cacheLabel.textColor = NN_TEXT666666_COLOR;
+            cacheLabel.text = cacheText;
+        }
         return cell;
     }else{
         UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
@@ -94,12 +121,15 @@
     
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
+            NNAboutNuanNuan *aboutVC = [[NNAboutNuanNuan alloc] init];
             
+            [self.navigationController pushViewController:aboutVC animated:YES];
         }else if (indexPath.row == 1){
             NNUserAgreementVC *agreementVC = [[NNUserAgreementVC alloc] initWithNibName:@"NNUserAgreementVC" bundle:nil];
             [self.navigationController pushViewController:agreementVC animated:YES];
         }else if (indexPath.row == 2){
-        
+            [[SDImageCache sharedImageCache] clearDisk];
+            [self getCache];
         }
     }else{
         NNLoginAndRegisterVC *loginOrRegisterVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];

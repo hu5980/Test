@@ -14,6 +14,7 @@
 @interface NNTreeHoelSendVC ()<UITextViewDelegate> {
     UIButton *addImageButton ;
     NSString *picsJsonStr;
+    NSString *showname;
 }
 
 @property (nonatomic,assign) BOOL isModified;
@@ -54,6 +55,7 @@
 
 - (void)initData {
     _imageArray = [NSMutableArray array];
+    showname = @"2";
 }
 
 
@@ -120,6 +122,14 @@
 - (void)handleClickAction:(UIButton *)button {
 
 }
+- (IBAction)hideNameAction:(UIButton *)sender {
+    sender.selected =  !sender.selected;
+    if (sender.selected) {
+        showname = @"1";
+    }else{
+        showname = @"2";
+    }
+}
 
 - (void)rightItemAction:(UIBarButtonItem *)item {
     
@@ -131,7 +141,7 @@
     dispatch_group_enter(group);
 
 
-    [[NNProgressHUD instance] showHudToView:self.view withMessage:@"图片上传中..."];
+    [[NNProgressHUD instance] showHudToView:self.view ];
     NNAddTreeHoelImageViewModel *addImageViewModel = [[NNAddTreeHoelImageViewModel alloc] init];
     [addImageViewModel setBlockWithReturnBlock:^(id returnValue) {
         [[NNProgressHUD instance] hideHud];
@@ -162,21 +172,20 @@
     }
     
     dispatch_group_notify(group, dispatch_get_main_queue(), ^(){
-        [[NNProgressHUD instance] showHudToView:self.view withMessage:@"发布中..."];
+        [[NNProgressHUD instance] showHudToView:self.view ];
          NNSendTreeHoelViewModel *sendViewModel = [[NNSendTreeHoelViewModel alloc] init];
         [sendViewModel setBlockWithReturnBlock:^(id returnValue) {
             [[NNProgressHUD instance] hideHud];
             if ([returnValue isEqualToString:@"success"]) {
                 [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"发布成功"];
-                
-                [self.navigationController popViewControllerAnimated:YES];
             }
         } WithErrorBlock:^(id errorCode) {
             [[NNProgressHUD instance] hideHud];
+            [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
         } WithFailureBlock:^(id failureBlock) {
             [[NNProgressHUD instance] hideHud];
         }];
-        [sendViewModel sendTreeHoelWithToken:TEST_TOKEN andContent:_contentTextView.text andPics:picsJsonStr andanonymity:@"2"];
+        [sendViewModel sendTreeHoelWithToken:TEST_TOKEN andContent:_contentTextView.text andPics:picsJsonStr andanonymity:showname];
     });
 }
 
@@ -188,6 +197,18 @@
     if (textView.text.length == 0) {
         _placeLabel.hidden = NO;
     }
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    if ([text isEqualToString:@"\n"]){ //判断输入的字是否是回车，即按下return
+        //在这里做你响应return键的代码
+        
+        [textView resignFirstResponder];
+        
+        return NO; //这里返回NO，就代表return键值失效，即页面上按下return，不会出现换行，如果为yes，则输入页面会换行
+    }
+    
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {

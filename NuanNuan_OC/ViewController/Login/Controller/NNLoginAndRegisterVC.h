@@ -10,4 +10,6 @@
 
 @interface NNLoginAndRegisterVC : NNBaseVC
 
+@property (nonatomic,assign) BOOL isPresent;
+
 @end

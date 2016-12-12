@@ -126,7 +126,7 @@
             [askingViewModel setBlockWithReturnBlock:^(id returnValue) {
                 if ([returnValue  isEqualToString:@"success"]) {
                     [weakSelf registKeyboard];
-                    [NNProgressHUD showHudAotoHideAddToView:weakSelf.view withMessage:@"提问成功，将在回复后显示"];
+                    [NNProgressHUD showHudAotoHideAddToView:weakSelf.view withMessage:@"老师已经收到你的提问，回复之后可展示在问吧内"];
                 }else{
                     [NNProgressHUD showHudAotoHideAddToView:weakSelf.view withMessage:@"提问失败"];
                 }

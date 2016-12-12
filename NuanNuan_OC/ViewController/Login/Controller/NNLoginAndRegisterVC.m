@@ -120,7 +120,8 @@
     __weak  NNLoginAndRegisterVC *weakSelf = self;
     if (defaultButton.tag == 100) {
         NNLog(@"登录");
-        [[NNProgressHUD instance] showHudToView:self.view withMessage:@"登录中...."];
+        [[NNProgressHUD instance] showHudToView:self.view ];
+        
         if (_loginUserNameTextField.text.length == 0) {
            [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"请输入用户名"];
             return;
@@ -134,7 +135,11 @@
         NNLoginViewModel *loginViewModel = [[NNLoginViewModel alloc] init];
         [loginViewModel setBlockWithReturnBlock:^(id returnValue) {
             [[NNProgressHUD instance] hideHud];
-            [weakSelf.navigationController popViewControllerAnimated:YES];
+            if (_isPresent) {
+                [weakSelf dismissViewControllerAnimated:YES completion:nil];
+            }else{
+                [weakSelf.navigationController popViewControllerAnimated:YES];
+            }
         } WithErrorBlock:^(id errorCode) {
             [NNProgressHUD  showHudAotoHideAddToView:self.view withMessage:errorCode];
         } WithFailureBlock:^(id failureBlock) {
@@ -224,7 +229,11 @@
     NNThirdLoginViewModel *viewModel = [[NNThirdLoginViewModel alloc] init];
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
         [[NNProgressHUD instance] hideHud];
-        [weakSelf.navigationController popViewControllerAnimated:YES];
+        if (_isPresent) {
+            [weakSelf dismissViewControllerAnimated:YES completion:nil];
+        }else{
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        };
 
     } WithErrorBlock:^(id errorCode) {
         

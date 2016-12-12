@@ -46,9 +46,9 @@
         model.backgroundImageUrl =  [NSString stringWithFormat:@"%@/%@",backgroundBaseUrl,[listArray[i] objectForKey:@"t_bg_pic"]] ;
         model.teacherDescription = [listArray[i] objectForKey:@"t_description"] ;
         model.teacherQuestionNum = [listArray[i] objectForKey:@"t_question_num"] ;
-        model.teacherTypeName = [listArray[i] objectForKey:@"qc_name"] ;
+        model.teacherTypeName = [listArray[i] objectForKey:@"t_good_at"] ;
         model.teacherNickName =  [listArray[i] objectForKey:@"t_nickname"] ;
-        model.teacherQualifications =  [listArray[i] objectForKey:@"t_qualifications"] ;
+        model.teacherQualifications =  [listArray[i] objectForKey:@"t_qualifications"];
         model.teacherAnswerNum = [listArray[i] objectForKey:@"q_answer_num"];
         [mutableArrays addObject:model];
     }

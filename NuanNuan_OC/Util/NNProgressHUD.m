@@ -37,7 +37,6 @@ static NNProgressHUD *instance;
 
 - (void)showHudToView:(UIView *)view{
     _progressHud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-
     _progressHud.mode = MBProgressHUDModeIndeterminate;
     [_progressHud show:YES];
 }
