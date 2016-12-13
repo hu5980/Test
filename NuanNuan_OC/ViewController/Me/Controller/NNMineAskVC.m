@@ -10,6 +10,7 @@
 #import "NNAskingListViewModel.h"
 #import "NNQuestionAndAnswerCell.h"
 #import "NNQuestionAndAnswerDetailVC.h"
+#import "NNUnAnswerQuestionCell.h"
 
 @interface NNMineAskVC ()<UITableViewDelegate,UITableViewDataSource> {
     UIButton *defaultButton;
@@ -44,11 +45,13 @@
     _askingTableView.delegate = self;
     _askingTableView.dataSource = self;
     _askingTableView.backgroundColor = NN_BACKGROUND_COLOR;
+    _askingTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     footer =  [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [self refreshData];
     }];
     _askingTableView.mj_footer = footer;
     [_askingTableView registerNib:[UINib nibWithNibName:@"NNQuestionAndAnswerCell" bundle:nil] forCellReuseIdentifier:@"NNQuestionAndAnswerCell"];
+    [_askingTableView registerNib:[UINib nibWithNibName:@"NNUnAnswerQuestionCell" bundle:nil] forCellReuseIdentifier:@"NNUnAnswerQuestionCell"];
   }
 
 - (void)initData {
@@ -61,8 +64,7 @@
 - (void)refreshData {
     NNAskingListViewModel *viewModel = [[NNAskingListViewModel alloc] init];
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
-        askArray = returnValue;
-        
+        [askArray addObjectsFromArray:returnValue];
         [_askingTableView reloadData];
     } WithErrorBlock:^(id errorCode) {
         
@@ -74,14 +76,19 @@
 }
 
 - (IBAction)hadAnswerOrUnAnswerAction:(UIButton *)sender {
-    defaultButton.selected = NO;
-    defaultButton = sender;
-    defaultButton.selected = YES;
-    if (sender.tag == 100) {
-        
-    }else{
-    
+    if (defaultButton.tag != sender.tag) {
+        defaultButton.selected = NO;
+        defaultButton = sender;
+        defaultButton.selected = YES;
+        [askArray removeAllObjects];
+        if (sender.tag == 100) {
+            hadAnswer = @"1";
+        }else{
+            hadAnswer = @"0";
+        }
+        [self refreshData];
     }
+    
     
 }
 
@@ -104,10 +111,14 @@
         height = [tableView fd_heightForCellWithIdentifier:@"NNQuestionAndAnswerCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             NNQuestionAndAnswerCell *questionAndAnswerCell =  cell;
             questionAndAnswerCell.commentConstraint.constant = 0;
+            questionAndAnswerCell.model = [askArray objectAtIndex:indexPath.section];
         }];
         
     }else{
-      
+        height = [tableView fd_heightForCellWithIdentifier:@"NNUnAnswerQuestionCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+            NNUnAnswerQuestionCell *unAnswerQuestionCell =  cell;
+            unAnswerQuestionCell.model = [askArray objectAtIndex:indexPath.section];
+        }];
         
     }
     
@@ -135,7 +146,10 @@
         };
         return cell;
     }else{
-        return nil;
+        NNUnAnswerQuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNUnAnswerQuestionCell"];
+         cell.model = [askArray objectAtIndex:indexPath.section];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
     }
 }
 

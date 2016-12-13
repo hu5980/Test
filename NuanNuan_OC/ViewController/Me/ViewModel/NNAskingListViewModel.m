@@ -17,9 +17,9 @@
         NSLog(@"%@",returnValue);
         [self fetchValueSuccessWithDic:returnValue];
     } withErrorCodeBlock:^(id errorCode) {
-        
+        self.errorBlock(errorCode);
     } withFailureBlock:^(id failureBlock) {
-        
+        self.failureBlock(failureBlock);
     } withProgress:^(id Progress) {
         
     }];

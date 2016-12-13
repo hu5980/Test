@@ -243,13 +243,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NuanNuan_OC/ViewController/TreeHoel/View/NNQuestionAndAnswerCell.m"
-            timestampString = "503308480.106775"
+            filePath = "NuanNuan_OC/ViewController/Me/Controller/NNMineNoticeVC.m"
+            timestampString = "503316147.274352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "-setModel:"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "-dictionaryWithJsonString:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

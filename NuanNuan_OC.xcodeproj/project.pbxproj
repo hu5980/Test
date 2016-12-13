@@ -203,6 +203,8 @@
 		BCD7E6501DFFD16800991F86 /* NNMineAskVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E64E1DFFD16800991F86 /* NNMineAskVC.m */; };
 		BCD7E6511DFFD16800991F86 /* NNMineAskVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD7E64F1DFFD16800991F86 /* NNMineAskVC.xib */; };
 		BCD7E6541DFFD5BC00991F86 /* NNAskingListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E6531DFFD5BC00991F86 /* NNAskingListViewModel.m */; };
+		BCD7E6581DFFEA1200991F86 /* NNUnAnswerQuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E6561DFFEA1200991F86 /* NNUnAnswerQuestionCell.m */; };
+		BCD7E6591DFFEA1200991F86 /* NNUnAnswerQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD7E6571DFFEA1200991F86 /* NNUnAnswerQuestionCell.xib */; };
 		BCD9AE691DACBCB6008DB98E /* NNEmotionCaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE671DACBCB6008DB98E /* NNEmotionCaseVC.m */; };
 		BCD9AE6A1DACBCB6008DB98E /* NNEmotionCaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE681DACBCB6008DB98E /* NNEmotionCaseVC.xib */; };
 		BCD9AE6E1DACC668008DB98E /* NNEmotionallItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE6C1DACC668008DB98E /* NNEmotionallItemCell.m */; };
@@ -598,6 +600,9 @@
 		BCD7E64F1DFFD16800991F86 /* NNMineAskVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNMineAskVC.xib; sourceTree = "<group>"; };
 		BCD7E6521DFFD5BC00991F86 /* NNAskingListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNAskingListViewModel.h; sourceTree = "<group>"; };
 		BCD7E6531DFFD5BC00991F86 /* NNAskingListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNAskingListViewModel.m; sourceTree = "<group>"; };
+		BCD7E6551DFFEA1200991F86 /* NNUnAnswerQuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNUnAnswerQuestionCell.h; sourceTree = "<group>"; };
+		BCD7E6561DFFEA1200991F86 /* NNUnAnswerQuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNUnAnswerQuestionCell.m; sourceTree = "<group>"; };
+		BCD7E6571DFFEA1200991F86 /* NNUnAnswerQuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNUnAnswerQuestionCell.xib; sourceTree = "<group>"; };
 		BCD9AE661DACBCB6008DB98E /* NNEmotionCaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEmotionCaseVC.h; sourceTree = "<group>"; };
 		BCD9AE671DACBCB6008DB98E /* NNEmotionCaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNEmotionCaseVC.m; sourceTree = "<group>"; };
 		BCD9AE681DACBCB6008DB98E /* NNEmotionCaseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNEmotionCaseVC.xib; sourceTree = "<group>"; };
@@ -1625,6 +1630,9 @@
 				0D331E151DBD09EF002B0DCD /* NNReplyView.h */,
 				0D331E161DBD09EF002B0DCD /* NNReplyView.m */,
 				0D331E181DBD09FB002B0DCD /* NNReplyView.xib */,
+				BCD7E6551DFFEA1200991F86 /* NNUnAnswerQuestionCell.h */,
+				BCD7E6561DFFEA1200991F86 /* NNUnAnswerQuestionCell.m */,
+				BCD7E6571DFFEA1200991F86 /* NNUnAnswerQuestionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1872,6 +1880,7 @@
 				0D331E0F1DBBCA87002B0DCD /* NNSpitslotDetailVC.xib in Resources */,
 				BCD9AE7D1DACE424008DB98E /* NNEmotionalItemCell.xib in Resources */,
 				BC8627711DD9A03400162082 /* NNQuestionerChooseCell.xib in Resources */,
+				BCD7E6591DFFEA1200991F86 /* NNUnAnswerQuestionCell.xib in Resources */,
 				0DBB2A551DE9ABD5008A0F32 /* README.txt in Resources */,
 				BCD9AE6A1DACBCB6008DB98E /* NNEmotionCaseVC.xib in Resources */,
 				0DBB2AF31DE9B647008A0F32 /* README.txt in Resources */,
@@ -1993,6 +2002,7 @@
 				BC4C8E401DD1A15D00544A83 /* NNTimeUtil.m in Sources */,
 				BC8627661DD99D3F00162082 /* NNAppointmentVC.m in Sources */,
 				BC3BFA3C1DDADE7300F73DEF /* NNOrderViewModel.m in Sources */,
+				BCD7E6581DFFEA1200991F86 /* NNUnAnswerQuestionCell.m in Sources */,
 				BCD7E64B1DFFCCEC00991F86 /* NNNoticeCell.m in Sources */,
 				BC852E871DCB19B500ADE5C9 /* NNchangeUserInfoViewModel.m in Sources */,
 				BCD9AE8B1DADE582008DB98E /* NNPsychologicalTeacherVC.m in Sources */,

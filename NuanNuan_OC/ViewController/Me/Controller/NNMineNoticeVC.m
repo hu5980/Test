@@ -10,6 +10,10 @@
 #import "NNNoticeViewModel.h"
 #import "NNNoticeCell.h"
 #import "NNNoticeModel.h"
+#import "NNCommentModel.h"
+#import "NNTreeHoelModel.h"
+#import "NNUserInfoModel.h"
+
 @interface NNMineNoticeVC ()<UITableViewDelegate,UITableViewDataSource>{
     RLMResults *results;
 }
@@ -92,7 +96,91 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NNNoticeModel *model = [results objectAtIndex:indexPath.section];
+    
+    NSDictionary *dic =  [self dictionaryWithJsonString:model.noticeData];
+    
+}
 
+- (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
+    if (jsonString == nil) {
+        return nil;
+    }
+    
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                        options:NSJSONReadingMutableContainers
+                                                          error:&err];
+    if(err) {
+        NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    return dic;
+}
+
+- (id *)modelWithDictionary:(NSDictionary *)dicInfo andNoticeType:(NSString *)noticeType {
+    if ([noticeType isEqualToString:@"3"]) {
+        NSDictionary *commentInfo = [dicInfo  objectForKey:@"comment_info"];
+        NSDictionary *treeHoleInfo = [dicInfo objectForKey:@"treehole_info"];
+        NSDictionary *userInfo = [dicInfo objectForKey:@"user_info"];
+        NNTreeHoelModel *treeHoelModel  = [self analysisTreeHoelDictoModelwithDic:treeHoleInfo];
+        NNCommentModel *commentModel = [self analysisTreeHoelDictoModelwithDic:commentInfo];
+        commentModel.commentHeaderUrl = [userInfo objectForKey:@"head"];
+        
+    }
+    return nil;
+}
+
+
+- (NNTreeHoelModel *)analysisTreeHoelDictoModelwithDic :(NSDictionary  *)treeHoleInfo {
+    NNTreeHoelModel *treeHoelModel = [[NNTreeHoelModel alloc] init];
+    
+    treeHoelModel.thID = [treeHoleInfo objectForKey:@"o_id"];
+    treeHoelModel.isGood = [[treeHoleInfo objectForKey:@"has_good"] boolValue];
+    treeHoelModel.uid = [treeHoleInfo objectForKey:@"uid"];
+    treeHoelModel.thContent = [treeHoleInfo objectForKey:@"th_content"];
+    NSString *basePathUrl = [treeHoleInfo objectForKey:@"th_pic_path"];
+    NSString  *picString =  [treeHoleInfo objectForKey:@"th_pics"];
+    NSData *jsonData = [picString dataUsingEncoding:NSUTF8StringEncoding];
+    NSArray *picArrays = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:nil];
+    NSMutableArray *picMutableArrays = [NSMutableArray array];
+    for (int j= 0; j < picArrays.count; j++) {
+        [picMutableArrays addObject:[NSString stringWithFormat:@"%@/%@",basePathUrl,[picArrays objectAtIndex:j]]];
+    }
+    
+    treeHoelModel.picArrays = picMutableArrays;
+    treeHoelModel.thAnonymity = [treeHoleInfo objectForKey:@"th_anonymity"];
+    treeHoelModel.thCommentNum =[treeHoleInfo objectForKey:@"th_comment_num"];
+    treeHoelModel.thGoodsNum =[treeHoleInfo objectForKey:@"th_goods_num"];
+    treeHoelModel.userHeadUrl = [NSString stringWithFormat:@"%@/%@",basePathUrl,[treeHoleInfo objectForKey:@"user_head"]];
+    treeHoelModel.userNikeName = [treeHoleInfo objectForKey:@"user_nickname"];
+    treeHoelModel.createTime = [[treeHoleInfo objectForKey:@"create_time"] integerValue];
+    treeHoelModel.modifyTime =[[treeHoleInfo objectForKey:@"modify_time"] integerValue];
+
+    return treeHoelModel;
+}
+
+- (NNCommentModel *)analysiscommentModelwithDic :(NSDictionary  *)commentInfo {
+
+    NNCommentModel *commentModel = [[NNCommentModel alloc] init];
+    commentModel.commentID = [commentInfo objectForKey:@"c_id"];
+    commentModel.commentUID = [commentInfo objectForKey:@"uid"];
+    commentModel.commentOID = [commentInfo objectForKey:@"o_id"];
+    commentModel.commentType = [commentInfo objectForKey:@"c_type"];
+    commentModel.commentContent = [commentInfo objectForKey:@"c_content"];
+    commentModel.commentGoodsNum = [commentInfo objectForKey:@"c_goods_num"];
+    commentModel.commentIsdel = [commentInfo objectForKey:@"c_isdel"];
+  //
+    commentModel.commentNickName = [commentInfo objectForKey:@"user_nickname"];
+    commentModel.commentCreateTime = [[commentInfo objectForKey:@"create_time"] integerValue];
+    commentModel.commentModifyTime = [[commentInfo objectForKey:@"modify_time"] integerValue];
+
+    return commentModel;
+    
+}
 
 
 - (void)didReceiveMemoryWarning {

@@ -56,6 +56,9 @@
                     <state key="highlighted">
                         <color key="titleColor" red="1" green="0.53333333329999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="hadAnswerOrUnAnswerAction:" destination="-1" eventType="touchUpInside" id="QcE-7i-hHX"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
