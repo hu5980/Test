@@ -46,8 +46,6 @@
     }];
     [[NSUserDefaults standardUserDefaults] setObject:model.uid forKey:@"currentUserID"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    
     self.returnBlock(model);
 }
 

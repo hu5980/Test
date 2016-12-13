@@ -12,4 +12,10 @@
 
 - (void) getNoticeWithToken:(NSString *)token andLastID:(NSString *)lastID andPageNum:(NSString *)pageNum;
 
+
++ (NSInteger) getUnreadNoticeWithUserID:(NSString *)uid;
+
+
++ (RLMResults *) getNoticeListWithUserID:(NSString *)uid;
+
 @end

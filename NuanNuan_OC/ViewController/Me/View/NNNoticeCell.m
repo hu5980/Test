@@ -1,19 +1,17 @@
 //
-//  NNHeadImageCell.m
+//  NNNoticeCell.m
 //  NuanNuan_OC
 //
-//  Created by 忘、 on 16/11/30.
+//  Created by 忘、 on 16/12/13.
 //  Copyright © 2016年 NuanNuan. All rights reserved.
 //
 
-#import "NNHeadImageCell.h"
+#import "NNNoticeCell.h"
 
-@implementation NNHeadImageCell
+@implementation NNNoticeCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.headImageView.layer.masksToBounds = YES;
-    self.headImageView.layer.cornerRadius = 30;
     // Initialization code
 }
 

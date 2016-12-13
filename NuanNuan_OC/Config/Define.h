@@ -73,4 +73,6 @@ typedef void (^ProgressBlock)(id Progress);
 
 
 #define TEST_TOKEN  [[NSUserDefaults standardUserDefaults] objectForKey:@"token"]
+
+#define USERID  [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserID"]
 #endif /* Define_h */

@@ -20,6 +20,7 @@
 #import "MJRefresh.h"
 #import "NNProgressHUD.h"
 #import "NNTimeUtil.h"
+#import <Realm/Realm.h>
 @interface NNBaseVC : UIViewController
 
 @property (nonatomic,strong) NSString *navTitle;

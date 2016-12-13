@@ -11,4 +11,7 @@
 @interface NNLoginViewModel : NNBaseViewModel
 - (void)loginWithUserName:(NSString *)userName andpassword:(NSString *)password andLoginType:(NSInteger)type;
 
+
+
+
 @end

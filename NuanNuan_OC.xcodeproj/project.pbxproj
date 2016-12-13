@@ -197,6 +197,12 @@
 		BCD7E63F1DFE9ED200991F86 /* NNNoticeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E63E1DFE9ED200991F86 /* NNNoticeViewModel.m */; };
 		BCD7E6431DFEA12200991F86 /* NNAboutNuanNuan.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E6411DFEA12200991F86 /* NNAboutNuanNuan.m */; };
 		BCD7E6441DFEA12200991F86 /* NNAboutNuanNuan.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD7E6421DFEA12200991F86 /* NNAboutNuanNuan.xib */; };
+		BCD7E6471DFF914100991F86 /* NNNoticeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E6461DFF914100991F86 /* NNNoticeModel.m */; };
+		BCD7E64B1DFFCCEC00991F86 /* NNNoticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E6491DFFCCEC00991F86 /* NNNoticeCell.m */; };
+		BCD7E64C1DFFCCEC00991F86 /* NNNoticeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD7E64A1DFFCCEC00991F86 /* NNNoticeCell.xib */; };
+		BCD7E6501DFFD16800991F86 /* NNMineAskVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E64E1DFFD16800991F86 /* NNMineAskVC.m */; };
+		BCD7E6511DFFD16800991F86 /* NNMineAskVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD7E64F1DFFD16800991F86 /* NNMineAskVC.xib */; };
+		BCD7E6541DFFD5BC00991F86 /* NNAskingListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E6531DFFD5BC00991F86 /* NNAskingListViewModel.m */; };
 		BCD9AE691DACBCB6008DB98E /* NNEmotionCaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE671DACBCB6008DB98E /* NNEmotionCaseVC.m */; };
 		BCD9AE6A1DACBCB6008DB98E /* NNEmotionCaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE681DACBCB6008DB98E /* NNEmotionCaseVC.xib */; };
 		BCD9AE6E1DACC668008DB98E /* NNEmotionallItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE6C1DACC668008DB98E /* NNEmotionallItemCell.m */; };
@@ -582,6 +588,16 @@
 		BCD7E6401DFEA12200991F86 /* NNAboutNuanNuan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNAboutNuanNuan.h; sourceTree = "<group>"; };
 		BCD7E6411DFEA12200991F86 /* NNAboutNuanNuan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNAboutNuanNuan.m; sourceTree = "<group>"; };
 		BCD7E6421DFEA12200991F86 /* NNAboutNuanNuan.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNAboutNuanNuan.xib; sourceTree = "<group>"; };
+		BCD7E6451DFF914100991F86 /* NNNoticeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNoticeModel.h; sourceTree = "<group>"; };
+		BCD7E6461DFF914100991F86 /* NNNoticeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNoticeModel.m; sourceTree = "<group>"; };
+		BCD7E6481DFFCCEC00991F86 /* NNNoticeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNoticeCell.h; sourceTree = "<group>"; };
+		BCD7E6491DFFCCEC00991F86 /* NNNoticeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNoticeCell.m; sourceTree = "<group>"; };
+		BCD7E64A1DFFCCEC00991F86 /* NNNoticeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNNoticeCell.xib; sourceTree = "<group>"; };
+		BCD7E64D1DFFD16800991F86 /* NNMineAskVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNMineAskVC.h; sourceTree = "<group>"; };
+		BCD7E64E1DFFD16800991F86 /* NNMineAskVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMineAskVC.m; sourceTree = "<group>"; };
+		BCD7E64F1DFFD16800991F86 /* NNMineAskVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNMineAskVC.xib; sourceTree = "<group>"; };
+		BCD7E6521DFFD5BC00991F86 /* NNAskingListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNAskingListViewModel.h; sourceTree = "<group>"; };
+		BCD7E6531DFFD5BC00991F86 /* NNAskingListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNAskingListViewModel.m; sourceTree = "<group>"; };
 		BCD9AE661DACBCB6008DB98E /* NNEmotionCaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEmotionCaseVC.h; sourceTree = "<group>"; };
 		BCD9AE671DACBCB6008DB98E /* NNEmotionCaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNEmotionCaseVC.m; sourceTree = "<group>"; };
 		BCD9AE681DACBCB6008DB98E /* NNEmotionCaseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNEmotionCaseVC.xib; sourceTree = "<group>"; };
@@ -1185,6 +1201,8 @@
 				0DBB29011DE5E5CB008A0F32 /* NNQuestionAndAnswerCommentModel.m */,
 				0DBB29031DE5E5F8008A0F32 /* NNSpitslotCommentModel.h */,
 				0DBB29041DE5E5F8008A0F32 /* NNSpitslotCommentModel.m */,
+				BCD7E6451DFF914100991F86 /* NNNoticeModel.h */,
+				BCD7E6461DFF914100991F86 /* NNNoticeModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1208,6 +1226,8 @@
 				BCE6A0631DDD7C7C00A02E50 /* NNUserHeaderViewModel.m */,
 				0DBB28FD1DE5DED0008A0F32 /* NNMineCommentViewModel.h */,
 				0DBB28FE1DE5DED0008A0F32 /* NNMineCommentViewModel.m */,
+				BCD7E6521DFFD5BC00991F86 /* NNAskingListViewModel.h */,
+				BCD7E6531DFFD5BC00991F86 /* NNAskingListViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1474,6 +1494,9 @@
 				BCD7E6401DFEA12200991F86 /* NNAboutNuanNuan.h */,
 				BCD7E6411DFEA12200991F86 /* NNAboutNuanNuan.m */,
 				BCD7E6421DFEA12200991F86 /* NNAboutNuanNuan.xib */,
+				BCD7E64D1DFFD16800991F86 /* NNMineAskVC.h */,
+				BCD7E64E1DFFD16800991F86 /* NNMineAskVC.m */,
+				BCD7E64F1DFFD16800991F86 /* NNMineAskVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1496,6 +1519,9 @@
 				BC0274C81DEEBCC100D61F12 /* NNHeadImageCell.h */,
 				BC0274C91DEEBCC100D61F12 /* NNHeadImageCell.m */,
 				BC0274CA1DEEBCC100D61F12 /* NNHeadImageCell.xib */,
+				BCD7E6481DFFCCEC00991F86 /* NNNoticeCell.h */,
+				BCD7E6491DFFCCEC00991F86 /* NNNoticeCell.m */,
+				BCD7E64A1DFFCCEC00991F86 /* NNNoticeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1885,10 +1911,12 @@
 				BC0274C71DEEB55C00D61F12 /* NNUserInfoVC.xib in Resources */,
 				BCD9AE961DAE0941008DB98E /* NNQuestionAndAnswerCell.xib in Resources */,
 				0DBB28FC1DE1A3C0008A0F32 /* NNForgetPasswordVC.xib in Resources */,
+				BCD7E6511DFFD16800991F86 /* NNMineAskVC.xib in Resources */,
 				BC3BFA341DD9B73300F73DEF /* NNQuestionCell.xib in Resources */,
 				BCD506051D921F8C000FB2C0 /* Assets.xcassets in Resources */,
 				BC247E9C1DAA19B100AB5C84 /* NNEmotionallCell.xib in Resources */,
 				BCD9AE871DACF16D008DB98E /* NNTreeHoelCell.xib in Resources */,
+				BCD7E64C1DFFCCEC00991F86 /* NNNoticeCell.xib in Resources */,
 				BC58BA6D1DBDE9A800F3BF0D /* NNMineCommentVC.xib in Resources */,
 				BCD9AEA11DAE21D1008DB98E /* NNNeterReplyCell.xib in Resources */,
 				BC58BA771DBDEF7C00F3BF0D /* NNMineOrderVC.xib in Resources */,
@@ -1965,10 +1993,12 @@
 				BC4C8E401DD1A15D00544A83 /* NNTimeUtil.m in Sources */,
 				BC8627661DD99D3F00162082 /* NNAppointmentVC.m in Sources */,
 				BC3BFA3C1DDADE7300F73DEF /* NNOrderViewModel.m in Sources */,
+				BCD7E64B1DFFCCEC00991F86 /* NNNoticeCell.m in Sources */,
 				BC852E871DCB19B500ADE5C9 /* NNchangeUserInfoViewModel.m in Sources */,
 				BCD9AE8B1DADE582008DB98E /* NNPsychologicalTeacherVC.m in Sources */,
 				BC8CF9DA1DC9E00700DFF6EA /* NNRegistionViewModel.m in Sources */,
 				BCEDDBFD1DE52C5A00187317 /* MLSelectPhotoPickerFooterCollectionReusableView.m in Sources */,
+				BCD7E6471DFF914100991F86 /* NNNoticeModel.m in Sources */,
 				BCEDDBFC1DE52C5A00187317 /* MLSelectPhotoPickerCollectionViewCell.m in Sources */,
 				BC58BA711DBDEDFA00F3BF0D /* NNMineLikeVC.m in Sources */,
 				0DBB28FF1DE5DED0008A0F32 /* NNMineCommentViewModel.m in Sources */,
@@ -2001,9 +2031,11 @@
 				BCD506371D923003000FB2C0 /* UIViewExt.m in Sources */,
 				BCD9AE7C1DACE424008DB98E /* NNEmotionalItemCell.m in Sources */,
 				0DDAEE791DBB9F87008478DC /* NNImageBroswerView.m in Sources */,
+				BCD7E6541DFFD5BC00991F86 /* NNAskingListViewModel.m in Sources */,
 				BCEDDBFE1DE52C5A00187317 /* MLSelectPhotoPickerGroupTableViewCell.m in Sources */,
 				BC58BA8A1DBDF29000F3BF0D /* NNSetCell.m in Sources */,
 				0DBB2A5F1DE9ABD5008A0F32 /* UMSocialUIManager.m in Sources */,
+				BCD7E6501DFFD16800991F86 /* NNMineAskVC.m in Sources */,
 				BCEDDBF81DE52C5A00187317 /* MLSelectPhotoPickerBrowserPhotoImageView.m in Sources */,
 				BC7A672A1DB4C3C000C3B3D9 /* NNNetRequestClass.m in Sources */,
 				BC17E9361DD598AA0054FBE2 /* NNCommentViewModel.m in Sources */,

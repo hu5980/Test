@@ -23,6 +23,8 @@
 #import <YWFeedbackFMWK/YWFeedbackKit.h>
 #import "NNLoginAndRegisterVC.h"
 #import "NNAboutNuanNuan.h"
+#import "NNMineAskVC.h"
+
 
 @interface NNMeVC ()<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate> {
     NSArray *imageArray;
@@ -312,7 +314,10 @@
             
             [self.navigationController pushViewController:orderVC animated:YES];
         }else if (indexPath.row == 1){
+            NNMineAskVC *askingVC = [[NNMineAskVC alloc] init];
+            askingVC.hidesBottomBarWhenPushed = YES;
             
+            [self.navigationController pushViewController:askingVC animated:YES];
         }else if (indexPath.row == 2){
             NNMineNoticeVC *noticeVC = [[NNMineNoticeVC alloc] initWithNibName:@"NNMineNoticeVC" bundle:nil];
             noticeVC.hidesBottomBarWhenPushed = YES;

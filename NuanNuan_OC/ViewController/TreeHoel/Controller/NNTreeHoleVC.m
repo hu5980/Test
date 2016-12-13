@@ -23,6 +23,8 @@
 #import "NNUnPariseViewModel.h"
 #import "NNTreeHoelSendVC.h"
 #import "NNLoginAndRegisterVC.h"
+#import "NNNoticeViewModel.h"
+#import "NNMineNoticeVC.h"
 
 @interface NNTreeHoleVC ()<UITableViewDelegate,UITableViewDataSource,MWPhotoBrowserDelegate> {
     UIButton *defaultSelectButton;
@@ -32,6 +34,9 @@
     MJRefreshFooter *footer;
     NSMutableArray *phonoArrays;
     UIButton *treeHoleButton;
+    UIBarButtonItem *rightItem;
+
+    UILabel *noticeLabel;
 }
 @property (weak, nonatomic) IBOutlet UITableView *treeHoelTableView;
 
@@ -42,10 +47,13 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
-    [teacherModelArrays removeAllObjects];
+  
     if (treeHoleButton.hidden == NO) {
+        [teacherModelArrays removeAllObjects];
         [self reflashTreeHoelData];
     }
+    
+    [self initNoticeData];
     
 }
 
@@ -72,7 +80,22 @@
 - (void)initUI {
     [self.navigationController setNavigationBarHidden:NO];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"msg_ic"] style:UIBarButtonItemStylePlain target:self action:@selector(entryNotice)];
+    UIButton *rightButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
+    [rightButton setBackgroundImage:[UIImage imageNamed:@"msg_ic"] forState:UIControlStateNormal];
+    [rightButton addTarget:self action:@selector(entryNotice) forControlEvents:UIControlEventTouchUpInside];
+    rightItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
+    self.navigationItem.rightBarButtonItem = rightItem;
+    
+    noticeLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, -7.5, 15, 15)];
+    noticeLabel.backgroundColor = [UIColor redColor];
+    noticeLabel.font = [UIFont systemFontOfSize:12.f];
+    noticeLabel.layer.masksToBounds = YES;
+    noticeLabel.layer.cornerRadius = 7.5;
+    noticeLabel.hidden = YES;
+    noticeLabel.textAlignment = NSTextAlignmentCenter;
+    noticeLabel.textColor = [UIColor whiteColor];
+    [rightButton addSubview:noticeLabel];
+    
     self.navigationItem.rightBarButtonItem.tintColor = NN_MAIN_COLOR;
     
     NNCustomNavigationView *view = LOAD_VIEW_FROM_BUNDLE(@"NNCustomNavigationView");
@@ -133,6 +156,32 @@
     [self reflashTeachData];
   }
 
+
+- (void)initNoticeData {
+    NNNoticeViewModel *viewModel = [[NNNoticeViewModel alloc] init];
+    [viewModel setBlockWithReturnBlock:^(id returnValue) {
+       NSInteger unReadNotice =  [NNNoticeViewModel getUnreadNoticeWithUserID:USERID];
+        if (unReadNotice > 0) {
+            NSArray *tabBarItems = self.navigationController.tabBarController.tabBar.items;
+            UITabBarItem *treeHoelItem = [tabBarItems objectAtIndex:1];
+            UITabBarItem *MeHoelItem = [tabBarItems objectAtIndex:3];
+            treeHoelItem.badgeValue = [NSString stringWithFormat:@"%ld",(long)unReadNotice];
+            MeHoelItem.badgeValue = [NSString stringWithFormat:@"%ld",(long)unReadNotice];
+            noticeLabel.text = [NSString stringWithFormat:@"%ld",(long)unReadNotice];
+            noticeLabel.hidden = NO;
+        }else{
+            noticeLabel.hidden = YES;
+        }
+       
+    } WithErrorBlock:^(id errorCode) {
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
+    } WithFailureBlock:^(id failureBlock) {
+            
+    }];
+    
+    [viewModel getNoticeWithToken:TEST_TOKEN andLastID:@"" andPageNum:@"10"];
+}
+
 - (void)reflashTeachData {
     NNEmotionTeacherViewModel  *emotionTeacherViewModel =  [[NNEmotionTeacherViewModel alloc] init];
     [emotionTeacherViewModel setBlockWithReturnBlock:^(id returnValue) {
@@ -173,7 +222,9 @@
 }
 
 - (void)entryNotice {
-
+    NNMineNoticeVC *noticeVC = [[NNMineNoticeVC alloc] init];
+    noticeVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:noticeVC animated:YES];
 }
 
 #pragma --mark  UItableViewDelegate UItableViewDatasource
