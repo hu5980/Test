@@ -12,6 +12,6 @@
 - (void)loginWithUserName:(NSString *)userName andpassword:(NSString *)password andLoginType:(NSInteger)type;
 
 
-
+- (void)loginWithAccount:(NSString *)account password:(NSString *)password needLong:(BOOL)needLong;
 
 @end

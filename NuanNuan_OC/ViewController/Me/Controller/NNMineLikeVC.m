@@ -37,7 +37,7 @@
 }
 
 - (void)createUI {
-    self.navTitle = @"我的喜欢";
+    self.navTitle = @"我喜欢的";
     [self setNavigationBackButton:YES];
     
     _likeTableView.delegate = self;

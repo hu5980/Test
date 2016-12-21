@@ -20,14 +20,16 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
+    _backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+    _backgroundImageView.clipsToBounds = YES;
     // Configure the view for the selected state
 }
 
 - (void)setCaseMode:(NNSuccessCaseModel *)caseMode {
     _caseMode = caseMode;
     [_backgroundImageView sd_setImageWithURL:[NSURL URLWithString:caseMode.caseImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
-    _packageNameLabel.text = [NSString stringWithFormat:@"-%@-",caseMode.caseName];
-    _packageDescributeLabel.text = caseMode.caseTitle;
+    _packageNameLabel.text = caseMode.caseTitle;
+    _packageDescributeLabel.text =  [NSString stringWithFormat:@"-%@-",caseMode.caseName];
 }
 
 @end

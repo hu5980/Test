@@ -13,6 +13,10 @@
 #import "NNCommentModel.h"
 #import "NNTreeHoelModel.h"
 #import "NNUserInfoModel.h"
+#import "NNSpitslotDetailVC.h"
+#import "NNQuestionAndAnswerModel.h"
+#import "NNEmotionTeacherModel.h"
+#import "NNQuestionAndAnswerDetailVC.h"
 
 @interface NNMineNoticeVC ()<UITableViewDelegate,UITableViewDataSource>{
     RLMResults *results;
@@ -102,6 +106,8 @@
     
     NSDictionary *dic =  [self dictionaryWithJsonString:model.noticeData];
     
+    [self dealWithDictionary:dic andNoticeType:model.noticeType];
+    
 }
 
 - (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
@@ -121,24 +127,52 @@
     return dic;
 }
 
-- (id *)modelWithDictionary:(NSDictionary *)dicInfo andNoticeType:(NSString *)noticeType {
+- (void)dealWithDictionary:(NSDictionary *)dicInfo andNoticeType:(NSString *)noticeType {
     if ([noticeType isEqualToString:@"3"]) {
         NSDictionary *commentInfo = [dicInfo  objectForKey:@"comment_info"];
         NSDictionary *treeHoleInfo = [dicInfo objectForKey:@"treehole_info"];
         NSDictionary *userInfo = [dicInfo objectForKey:@"user_info"];
         NNTreeHoelModel *treeHoelModel  = [self analysisTreeHoelDictoModelwithDic:treeHoleInfo];
-        NNCommentModel *commentModel = [self analysisTreeHoelDictoModelwithDic:commentInfo];
+        NNCommentModel *commentModel = [self analysiscommentModelwithDic:commentInfo];
         commentModel.commentHeaderUrl = [userInfo objectForKey:@"head"];
         
+        NNSpitslotDetailVC *spitslotDetailVC = [[NNSpitslotDetailVC alloc] init];
+        spitslotDetailVC.model = treeHoelModel;
+        spitslotDetailVC.isFromNotice = YES;
+        spitslotDetailVC.commentMutableArray = [NSMutableArray arrayWithObject:commentModel];
+        [self.navigationController pushViewController:spitslotDetailVC animated:YES];
+    }else if ([noticeType isEqualToString:@"5"]){
+    
+        NSDictionary *treeHoleInfo = [dicInfo objectForKey:@"treehole_info"];
+        NNTreeHoelModel *treeHoelModel  = [self analysisTreeHoelDictoModelwithDic:treeHoleInfo];
+        NNSpitslotDetailVC *spitslotDetailVC = [[NNSpitslotDetailVC alloc] init];
+        spitslotDetailVC.model = treeHoelModel;
+        spitslotDetailVC.isFromNotice = YES;
+        spitslotDetailVC.commentMutableArray = nil;
+        [self.navigationController pushViewController:spitslotDetailVC animated:YES];
+    }else if ([noticeType isEqualToString:@"1"]){
+        NNQuestionAndAnswerDetailVC *questionAndAnswerVC = [[NNQuestionAndAnswerDetailVC alloc] init];
+        questionAndAnswerVC.isFromNotice = YES;
+        questionAndAnswerVC.signModel = [self analysisQuestionAndAnswerModelwithDic:dicInfo];
+        [self.navigationController pushViewController:questionAndAnswerVC animated:YES];
+    }else if ([noticeType isEqualToString:@"2"]){
+        NSDictionary *commentInfo = [dicInfo  objectForKey:@"comment_info"];
+        NNCommentModel *commentModel = [self analysiscommentModelwithDic:commentInfo];
+        NNQuestionAndAnswerDetailVC *questionAndAnswerVC = [[NNQuestionAndAnswerDetailVC alloc] init];
+        questionAndAnswerVC.isFromNotice = YES;
+        questionAndAnswerVC.commentMutableArray = [NSMutableArray arrayWithObject:commentModel];
+        questionAndAnswerVC.signModel = [self analysisQuestionAndAnswerModelwithDic:dicInfo];
+        [self.navigationController pushViewController:questionAndAnswerVC animated:YES];
+        
     }
-    return nil;
+ 
 }
 
 
 - (NNTreeHoelModel *)analysisTreeHoelDictoModelwithDic :(NSDictionary  *)treeHoleInfo {
     NNTreeHoelModel *treeHoelModel = [[NNTreeHoelModel alloc] init];
     
-    treeHoelModel.thID = [treeHoleInfo objectForKey:@"o_id"];
+    treeHoelModel.thID = [treeHoleInfo objectForKey:@"th_id"];
     treeHoelModel.isGood = [[treeHoleInfo objectForKey:@"has_good"] boolValue];
     treeHoelModel.uid = [treeHoleInfo objectForKey:@"uid"];
     treeHoelModel.thContent = [treeHoleInfo objectForKey:@"th_content"];
@@ -158,7 +192,7 @@
     treeHoelModel.userHeadUrl = [NSString stringWithFormat:@"%@/%@",basePathUrl,[treeHoleInfo objectForKey:@"user_head"]];
     treeHoelModel.userNikeName = [treeHoleInfo objectForKey:@"user_nickname"];
     treeHoelModel.createTime = [[treeHoleInfo objectForKey:@"create_time"] integerValue];
-    treeHoelModel.modifyTime =[[treeHoleInfo objectForKey:@"modify_time"] integerValue];
+    treeHoelModel.modifyTime = [[treeHoleInfo objectForKey:@"modify_time"] integerValue];
 
     return treeHoelModel;
 }
@@ -173,7 +207,6 @@
     commentModel.commentContent = [commentInfo objectForKey:@"c_content"];
     commentModel.commentGoodsNum = [commentInfo objectForKey:@"c_goods_num"];
     commentModel.commentIsdel = [commentInfo objectForKey:@"c_isdel"];
-  //
     commentModel.commentNickName = [commentInfo objectForKey:@"user_nickname"];
     commentModel.commentCreateTime = [[commentInfo objectForKey:@"create_time"] integerValue];
     commentModel.commentModifyTime = [[commentInfo objectForKey:@"modify_time"] integerValue];
@@ -181,6 +214,38 @@
     return commentModel;
     
 }
+
+
+- (NNQuestionAndAnswerModel *)analysisQuestionAndAnswerModelwithDic:(NSDictionary  *)dic{
+    NNQuestionAndAnswerModel *signalModel = [[NNQuestionAndAnswerModel alloc] init];
+    NSDictionary *teacherInfo = [dic objectForKey:@"teacher_info"];
+    NNEmotionTeacherModel *teacherModel = [self analysisteacherModelwithDic:teacherInfo];
+    NSDictionary *questionInfo = [dic objectForKey:@"question_info"];
+    signalModel.teacherModel = teacherModel;
+    signalModel.questionId = [questionInfo objectForKey:@"q_id"];
+    signalModel.questionContent = [questionInfo objectForKey:@"q_content"];
+    signalModel.questionCommentNum = [questionInfo objectForKey:@"q_comment_num"];
+    signalModel.questionGoodsNum = [questionInfo objectForKey:@"q_goods_num"];
+    signalModel.questionAnswer = [questionInfo objectForKey:@"q_answer"];
+    signalModel.questionCreateTime = [[questionInfo objectForKey:@"create_time"] integerValue];
+    signalModel.questionHeadUrl = [questionInfo objectForKey:@"user_head"];
+    signalModel.questionNickName = [questionInfo objectForKey:@"user_nickname"];
+    signalModel.isGood = [[questionInfo objectForKey:@"has_good"] boolValue];
+ 
+    return signalModel;
+}
+
+- (NNEmotionTeacherModel *)analysisteacherModelwithDic :(NSDictionary *)teacherInfo {
+    NNEmotionTeacherModel *teacherModel = [[NNEmotionTeacherModel alloc] init];
+    teacherModel.teacherHeadUrl = [NSString stringWithFormat:@"%@/%@",[teacherInfo objectForKey:@"t_head_path"],[teacherInfo objectForKey:@"t_head"]];
+    teacherModel.backgroundImageUrl = [NSString stringWithFormat:@"%@/%@",[teacherInfo objectForKey:@"t_bg_pic_path"],[teacherInfo objectForKey:@"t_bg_pic"]];
+    teacherModel.teacherTypeName = [teacherInfo objectForKey:@"t_good_at"];
+    teacherModel.teacherNickName = [teacherInfo objectForKey:@"t_nickname"];
+    return teacherModel;
+}
+
+
+
 
 
 - (void)didReceiveMemoryWarning {

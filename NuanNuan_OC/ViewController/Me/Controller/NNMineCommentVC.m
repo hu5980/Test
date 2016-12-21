@@ -43,7 +43,7 @@
 }
 
 - (void)createUI {
-    self.navTitle = @"我的评论";
+    self.navTitle = @"我评论的";
     [self setNavigationBackButton:YES];
     
     _commentTableView.delegate = self;

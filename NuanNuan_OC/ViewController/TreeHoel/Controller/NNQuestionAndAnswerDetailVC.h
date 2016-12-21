@@ -11,6 +11,8 @@
 @interface NNQuestionAndAnswerDetailVC : NNBaseVC
 
 @property (nonatomic,strong) NNQuestionAndAnswerModel *signModel;
+@property (nonatomic,strong) NSMutableArray *commentMutableArray;
+@property (nonatomic,assign) BOOL isFromNotice;
 
 @property (nonatomic,assign) BOOL isComment;
 

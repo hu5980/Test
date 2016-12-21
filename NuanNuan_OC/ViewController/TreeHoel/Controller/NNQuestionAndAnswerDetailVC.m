@@ -22,7 +22,7 @@
     UIButton *backgroundButton;
     NNReplyView *replyView ;
     MJRefreshBackNormalFooter *footer;
-    NSMutableArray *commentMutableArray;
+    //NSMutableArray *commentMutableArray;
 }
 
 
@@ -41,9 +41,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self initUI];
-    
     [self initData];
     // Do any additional setup after loading the view from its nib.
 }
@@ -52,18 +50,14 @@
     self.navTitle = @"问答详情";
     _questionAndAnswerTableView.delegate = self;
     _questionAndAnswerTableView.dataSource = self;
+    _questionAndAnswerTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _questionAndAnswerTableView.backgroundColor = NN_BACKGROUND_COLOR;
     [_questionAndAnswerTableView registerNib:[UINib nibWithNibName:@"NNNeterReplyCell" bundle:nil] forCellReuseIdentifier:@"NNNeterReplyCell"];
     [_questionAndAnswerTableView registerNib:[UINib nibWithNibName:@"NNQuestionAndAnswerCell" bundle:nil] forCellReuseIdentifier:@"NNQuestionAndAnswerCell"];
     
-    footer =  [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        [self reflashCommentData:NO];
-    }];
-    
-    _questionAndAnswerTableView.mj_footer =  footer;
-    
     replyView = LOAD_VIEW_FROM_BUNDLE(@"NNReplyView");
     [self.view addSubview:replyView];
+    replyView.hidden = YES;
     replyView.replytextField.placeholder = @"我也说两句";
     [replyView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@0);
@@ -99,12 +93,26 @@
     if (_isComment) {
         [replyView.replytextField becomeFirstResponder];
     }
+    
+    if (!_isFromNotice) {
+        replyView.hidden = NO;
+        footer =  [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+            [self reflashCommentData:NO];
+        }];
+        
+        _questionAndAnswerTableView.mj_footer =  footer;
+    }
 
 }
 
 - (void)initData {
-    commentMutableArray = [NSMutableArray array] ;
-    [self reflashCommentData:NO];
+    if(_commentMutableArray == nil){
+        _commentMutableArray = [NSMutableArray array] ;
+    }
+    if (!_isFromNotice) {
+         [self reflashCommentData:NO];
+    }
+   
 }
 
 - (void)reflashCommentData:(BOOL) isDowm {
@@ -113,10 +121,10 @@
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
         if (isDowm) {
             NSMutableArray *array = [NSMutableArray arrayWithArray:returnValue];
-            [array addObjectsFromArray:commentMutableArray];
-            commentMutableArray = array;
+            [array addObjectsFromArray:_commentMutableArray];
+            _commentMutableArray = array;
         }else{
-            [commentMutableArray addObjectsFromArray:returnValue];
+            [_commentMutableArray addObjectsFromArray:returnValue];
         }
         [footer endRefreshing];
         [_questionAndAnswerTableView reloadData];
@@ -126,8 +134,8 @@
         
     }];
     
-    NNCommentModel *lastModel = [commentMutableArray lastObject];
-    NNCommentModel *firstModel = [commentMutableArray firstObject];
+    NNCommentModel *lastModel = [_commentMutableArray lastObject];
+    NNCommentModel *firstModel = [_commentMutableArray firstObject];
     if (isDowm) {
          [viewModel getCommentWithToken:TEST_TOKEN andCommentType:@"1" andID:_signModel.questionId andLastID:firstModel.commentID andPageNum:@"10" andIsDownReflash:@"1" ];
     }else{
@@ -215,7 +223,7 @@
     if (section == 0) {
         return 1;
     }
-    return commentMutableArray.count;
+    return _commentMutableArray.count;
 }
 
 
@@ -236,6 +244,8 @@
         }];
     }else{
          height = [tableView fd_heightForCellWithIdentifier:@"NNNeterReplyCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+             NNNeterReplyCell *replyCell = cell;
+             replyCell.model = [_commentMutableArray objectAtIndex:indexPath.row];
         }];
     }
     return height;
@@ -302,7 +312,7 @@
         NNNeterReplyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNNeterReplyCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
          __weak NNNeterReplyCell*weakCell = cell;
-        cell.model = [commentMutableArray objectAtIndex:indexPath.row];
+        cell.model = [_commentMutableArray objectAtIndex:indexPath.row];
         cell.likeCommentBlock = ^(UIButton * button ){
             NNPariseViewModel  *viewModel = [[NNPariseViewModel alloc] init];
             [viewModel setBlockWithReturnBlock:^(id returnValue) {
@@ -325,7 +335,6 @@
             } WithErrorBlock:^(id errorCode) {
             } WithFailureBlock:^(id failureBlock) {
             }];
-            
             
             
             if (button.selected) {

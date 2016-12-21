@@ -10,5 +10,8 @@
 
 @interface NNSetCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *setTltleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *arrowImageView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentConstraint;
 
 @end

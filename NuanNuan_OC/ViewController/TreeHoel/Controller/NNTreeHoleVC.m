@@ -47,11 +47,22 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
+    
+    if (TEST_TOKEN == nil) {
+        NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] init];
+        loginVC.isPresent = YES;
+        [self presentViewController:loginVC animated:YES completion:^{
+            
+        }];
+        
+        return ;
+    }
   
     if (treeHoleButton.hidden == NO) {
         [teacherModelArrays removeAllObjects];
         [self reflashTreeHoelData];
     }
+
     
     [self initNoticeData];
     
@@ -60,13 +71,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if (TEST_TOKEN == nil) {
-        NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] init];
-        loginVC.isPresent = YES;
-        [self presentViewController:loginVC animated:YES completion:^{
-            
-        }];
-    }
+
     
     [self initUI];
     [self initData];
@@ -178,7 +183,7 @@
     } WithFailureBlock:^(id failureBlock) {
             
     }];
-    
+
     [viewModel getNoticeWithToken:TEST_TOKEN andLastID:@"" andPageNum:@"10"];
 }
 

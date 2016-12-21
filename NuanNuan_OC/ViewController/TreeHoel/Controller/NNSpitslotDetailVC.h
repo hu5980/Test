@@ -10,6 +10,9 @@
 #import "NNTreeHoelModel.h"
 @interface NNSpitslotDetailVC : NNBaseVC
 @property (nonatomic,strong) NNTreeHoelModel *model;
+@property (nonatomic,strong) NSMutableArray *commentMutableArray;
+
+@property (nonatomic,assign) BOOL isFromNotice;
 @property (assign,nonatomic) BOOL isComment;
 
 @end

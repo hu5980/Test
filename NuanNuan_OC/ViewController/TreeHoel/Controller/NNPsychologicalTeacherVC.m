@@ -411,6 +411,7 @@
     CGFloat height = [tableView fd_heightForCellWithIdentifier:@"NNQuestionAndAnswerCell" cacheByIndexPath:indexPath configuration:^(id cell) {
         NNQuestionAndAnswerCell *questionAndAnswerCell =  cell;
         questionAndAnswerCell.commentConstraint.constant = 0;
+        questionAndAnswerCell.model = [questionAndAnswerMutableArray objectAtIndex:indexPath.section];
 
     }];
     return height;

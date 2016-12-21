@@ -12,4 +12,6 @@
 
 - (void)loginWithLoginType:(NSString *)loginType andAccessToken:(NSString *)accessToken andOpenId:(NSString *)openid;
 
+
+
 @end

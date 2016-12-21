@@ -141,9 +141,10 @@
                 [weakSelf.navigationController popViewControllerAnimated:YES];
             }
         } WithErrorBlock:^(id errorCode) {
+           [[NNProgressHUD instance] hideHud];
             [NNProgressHUD  showHudAotoHideAddToView:self.view withMessage:errorCode];
         } WithFailureBlock:^(id failureBlock) {
-            
+            [[NNProgressHUD instance] hideHud];
         }];
         [loginViewModel loginWithUserName:_loginUserNameTextField.text andpassword:_loginPassWordTextField.text andLoginType:1];
         

@@ -23,8 +23,8 @@
     NNAskingView *askingView;
     UIButton *backgroundButton;
     NNReplyView *replyView ;
-    NSMutableArray *commentMutableArray;
-     MJRefreshBackNormalFooter *footer;
+    
+    MJRefreshBackNormalFooter *footer;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *spitslotTableView;
@@ -47,7 +47,7 @@
 - (void)createUI {
     self.navTitle = @"树洞详情";
     [self setNavigationBackButton:YES];
-    
+    self.view.backgroundColor = NN_BACKGROUND_COLOR;
     _spitslotTableView.delegate = self;
     _spitslotTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _spitslotTableView.dataSource = self;
@@ -55,13 +55,8 @@
     [_spitslotTableView registerNib:[UINib nibWithNibName:@"NNNeterReplyCell" bundle:nil] forCellReuseIdentifier:@"NNNeterReplyCell"];
     [_spitslotTableView registerNib:[UINib nibWithNibName:@"NNSpitslotCell" bundle:nil] forCellReuseIdentifier:@"NNSpitslotCell"];
     
-    footer =  [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        [self reflashCommentData:NO];
-    }];
-    
-    _spitslotTableView.mj_footer =  footer;
-    
     replyView = LOAD_VIEW_FROM_BUNDLE(@"NNReplyView");
+    replyView.hidden = YES;
     [self.view addSubview:replyView];
     replyView.replytextField.placeholder = @"我也说两句";
     [replyView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -98,11 +93,23 @@
     if (_isComment) {
         [replyView.replytextField becomeFirstResponder];
     }
+    
+    if (!_isFromNotice) {
+        footer =  [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+            [self reflashCommentData:NO];
+        }];
+        replyView.hidden = NO;
+        _spitslotTableView.mj_footer =  footer;
+    }
 }
 
 - (void)initData {
-    commentMutableArray = [NSMutableArray array] ;
-    [self reflashCommentData:NO];
+    if (_commentMutableArray == nil) {
+         _commentMutableArray = [NSMutableArray array] ;
+    }
+    if (!_isFromNotice) {
+        [self reflashCommentData:NO];
+    }
 }
 
 - (void)reflashCommentData:(BOOL) isDowm {
@@ -113,10 +120,10 @@
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
         if (isDowm) {
             NSMutableArray *array = [NSMutableArray arrayWithArray:returnValue];
-            [array addObjectsFromArray:commentMutableArray];
-            commentMutableArray = array;
+            [array addObjectsFromArray:_commentMutableArray];
+            _commentMutableArray = array;
         }else{
-            [commentMutableArray addObjectsFromArray:returnValue];
+            [_commentMutableArray addObjectsFromArray:returnValue];
         }
         
         [footer endRefreshing];
@@ -127,8 +134,8 @@
         
     }];
     
-    NNCommentModel *lastModel = [commentMutableArray lastObject];
-    NNCommentModel *firstModel = [commentMutableArray firstObject];
+    NNCommentModel *lastModel = [_commentMutableArray lastObject];
+    NNCommentModel *firstModel = [_commentMutableArray firstObject];
     if (isDowm) {
         [viewModel getCommentWithToken:TEST_TOKEN andCommentType:@"2" andID:_model.thID andLastID:firstModel.commentID andPageNum:@"10" andIsDownReflash:@"1" ];
     }else{
@@ -211,7 +218,7 @@
     if (section == 0) {
         return 1;
     }else{
-        return commentMutableArray.count;
+        return _commentMutableArray.count;
     }
 }
 
@@ -226,6 +233,8 @@
         
     }else{
         height = [tableView fd_heightForCellWithIdentifier:@"NNNeterReplyCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+            NNNeterReplyCell *replyCell = cell;
+             replyCell.model = [_commentMutableArray objectAtIndex:indexPath.row];
         }];
     }
     return height ;
@@ -330,7 +339,7 @@
         return cell;
     }else{
         NNNeterReplyCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"NNNeterReplyCell"];
-        cell.model = [commentMutableArray objectAtIndex:indexPath.row];
+        cell.model = [_commentMutableArray objectAtIndex:indexPath.row];
         __weak NNNeterReplyCell*weakCell = cell;
         cell.likeCommentBlock = ^(UIButton * button ){
             NNPariseViewModel  *viewModel = [[NNPariseViewModel alloc] init];

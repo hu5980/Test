@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NNAboutNuanNuan">
             <connections>
+                <outlet property="aboutTableView" destination="Ue7-Ml-8gX" id="R6d-o5-n9n"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,32 +20,21 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Cw-SN-rO1">
-                    <rect key="frame" x="86" y="29" width="203" height="132"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oaf-2y-oi2">
-                    <rect key="frame" x="0.0" y="163" width="375" height="309"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <attributedString key="attributedText">
-                        <fragment>
-                            <mutableString key="content">功能介绍：
-“暖暖情感心理”是暖暖（深圳）健康心理咨询有限公司旗下开发的一款专注于心理健康的免费咨询APP，为广大用户提供最贴心的情感和心理咨询服务。
-专注于婚姻家庭（婆媳关系／夫妻心事／家庭琐事／婚外恋），恋爱困扰（失恋／暗恋／复杂恋情），心灵提升（爱情探索／人际关系／人生信念）等方向。
-您可以在暖暖APP免费咨询情感以及心理问题，我们将为您量身制定解决方案，预约成功后将由专业的导师为您提供指导以及服务，从根本上解决您的困扰。
-联系我们：
-暖暖微信公众号：NuanNanqg
-邮箱：nuannuan@vip.126.com
-电话:0755-26917174</mutableString>
-                            <attributes>
-                                <font key="NSFont" size="14" name="STHeitiSC-Light"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ue7-Ml-8gX">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="667" id="Yvb-XI-yye"/>
+                    </constraints>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Ue7-Ml-8gX" secondAttribute="trailing" id="BIu-d7-0NX"/>
+                <constraint firstItem="Ue7-Ml-8gX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FxW-ZJ-tH0"/>
+                <constraint firstAttribute="bottom" secondItem="Ue7-Ml-8gX" secondAttribute="bottom" id="MvY-yI-dgN"/>
+                <constraint firstItem="Ue7-Ml-8gX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="S2b-gS-2jy"/>
+            </constraints>
             <point key="canvasLocation" x="32.5" y="63.5"/>
         </view>
     </objects>

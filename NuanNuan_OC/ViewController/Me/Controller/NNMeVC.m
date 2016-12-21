@@ -238,6 +238,7 @@
                 [weakself presentViewController:loginVC animated:YES completion:^{
                     
                 }];
+                return ;
             }
             
             switch (tag) {
@@ -305,6 +306,7 @@
         [self presentViewController:loginVC animated:YES completion:^{
             
         }];
+        return;
     }
     
     if (indexPath.section == 1) {
@@ -386,7 +388,7 @@
                 [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:aURLString]]];
             }];
         } else {
-            
+            NSLog(@"用户反馈错误信息%@",error.description);
         };
     }];
 }
