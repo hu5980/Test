@@ -26,12 +26,13 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [self initData];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavigationBackButton:YES];
-    [self initData];
+ 
     [self createUI];
     // Do any additional setup after loading the view from its nib.
 }
@@ -42,6 +43,7 @@
     
     _likeTableView.delegate = self;
     _likeTableView.dataSource = self;
+    _likeTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _likeTableView.backgroundColor = NN_BACKGROUND_COLOR;
     [_likeTableView registerNib:[UINib nibWithNibName:@"NNEmotionallItemCell" bundle:nil] forCellReuseIdentifier:@"NNEmotionallItemCell"];
     
@@ -53,7 +55,6 @@
 }
 
 - (void)initData {
-
     praisedArray = [NSMutableArray array];
     [[NNProgressHUD instance] showHudToView:self.view withMessage:@"加载中..."];
     [self refreshData];
@@ -73,12 +74,8 @@
         [[NNProgressHUD instance] hideHud];
     }];
     
-
     NNSuccessCaseModel *model = [praisedArray lastObject];
     [viewModel getMinePraisedContentWithToken:TEST_TOKEN andPraisedType:@"3" andPraisedId:[NSString stringWithFormat:@"%ld",(long)model.caseAdID] andpageNum:@"10"];
-    
-    
-    
 }
 
 #pragma --mark Delegate

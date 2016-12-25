@@ -46,7 +46,7 @@
 }
 
 - (void)createUI {
-    self.navTitle = @"我的赞";
+    self.navTitle = @"我赞过的";
     _praisedTableView.delegate = self;
     _praisedTableView.dataSource = self;
     _praisedTableView.backgroundColor = NN_BACKGROUND_COLOR;

@@ -29,6 +29,11 @@
     self.commentContentLabel.text = model.commentContent;
     self.commentTImeLabel.text = [NNTimeUtil timeDealWithFormat:@"yyyy-MM-dd HH:mm:ss" andTime:model.commentCreateTime];
     self.likeNumLabel.text = model.commentGoodsNum;
+    if (model.commentHasGood) {
+        self.commentLikeButton.selected = YES;
+    }else{
+        self.commentLikeButton.selected = NO;
+    }
 }
 
 - (IBAction)likeButtonAction:(UIButton *)sender {

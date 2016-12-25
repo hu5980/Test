@@ -22,5 +22,5 @@
 @property (nonatomic,assign) NSInteger commentCreateTime;
 @property (nonatomic,assign) NSInteger commentModifyTime;
 
-
+@property (nonatomic,assign) BOOL  commentHasGood;
 @end

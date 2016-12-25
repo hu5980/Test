@@ -37,6 +37,7 @@
     [self setNavigationBackButton:YES];
     _orderTableView.delegate = self;
     _orderTableView.dataSource = self;
+    _orderTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _orderTableView.backgroundColor = NN_BACKGROUND_COLOR;
     footer =  [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [self refreshData];

@@ -245,7 +245,8 @@
     }else{
          height = [tableView fd_heightForCellWithIdentifier:@"NNNeterReplyCell" cacheByIndexPath:indexPath configuration:^(id cell) {
              NNNeterReplyCell *replyCell = cell;
-             replyCell.model = [_commentMutableArray objectAtIndex:indexPath.row];
+             NNCommentModel *model = [_commentMutableArray objectAtIndex:indexPath.row];
+             replyCell.model = model;
         }];
     }
     return height;

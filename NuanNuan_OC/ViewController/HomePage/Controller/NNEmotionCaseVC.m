@@ -89,7 +89,9 @@
 - (void)initData {
     selectType = _defaultType;
     caseArray = [NSMutableArray array];
+    
     [self refreshData];
+    [[NNProgressHUD instance] showHudToView:self.view];
 }
 
 
@@ -97,13 +99,16 @@
     NNMoreSuccessCaseViewModel *caseModel = [[NNMoreSuccessCaseViewModel alloc] init];
     NNSuccessCaseModel *model = [caseArray lastObject];
     [caseModel setBlockWithReturnBlock:^(id returnValue) {
+        [[NNProgressHUD instance] hideHud];
         [caseArray addObjectsFromArray:returnValue];
         [_emotionalTableView reloadData];
         [footer endRefreshing];
     } WithErrorBlock:^(id errorCode) {
         NSLog(@"%@",errorCode);
+        [[NNProgressHUD instance] hideHud];
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
     } WithFailureBlock:^(id failureBlock) {
-        
+        NSLog(@"%@",failureBlock);
     }];
     [caseModel getMoreSuccessCaseWithPageNum:10 andCaseType:selectType andCaseID:model.caseAdID];
 }
@@ -117,7 +122,6 @@
     defaultSelectButton = button;
     defaultSelectButton.selected = YES;
     selectType = button.tag - 100 + _defaultType;
-    
     [self refreshData];
 }
 

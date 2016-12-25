@@ -26,9 +26,9 @@
     [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_good&a=myGoodList",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
         [self fetchValueSuccessWithDic:returnValue];
     } withErrorCodeBlock:^(id errorCode) {
-        
+        self.errorBlock(errorCode);
     } withFailureBlock:^(id failureBlock) {
-        
+        self.failureBlock(failureBlock);
     } withProgress:^(id Progress) {
         
     }];
@@ -47,9 +47,11 @@
         for (int i  = 0; i < arrays.count; i++) {
             NSDictionary *questionAndAnswerDic = [arrays objectAtIndex:i];
             NNQuestionAndAnswerModel *model = [[NNQuestionAndAnswerModel alloc] init];
-            model.teacherModel.teacherID = [[questionAndAnswerDic objectForKey:@"teacher"] objectForKey:@"t_id"];
-            model.teacherModel.teacherHeadUrl = [NSString stringWithFormat:@"%@/%@",baseTeacherHeadUrl,[[questionAndAnswerDic objectForKey:@"teacher"] objectForKey:@"t_head"]];
-            model.teacherModel.teacherNickName = [[questionAndAnswerDic objectForKey:@"teacher"] objectForKey:@"t_nickname"];
+            NNEmotionTeacherModel *teacherModel = [[NNEmotionTeacherModel alloc] init];
+            teacherModel.teacherID = [questionAndAnswerDic  objectForKey:@"t_id"];
+            teacherModel.teacherHeadUrl = [NSString stringWithFormat:@"%@/%@",baseTeacherHeadUrl,[questionAndAnswerDic objectForKey:@"t_head"]];
+            teacherModel.teacherNickName = [questionAndAnswerDic  objectForKey:@"t_nickname"];
+            model.teacherModel = teacherModel;
             model.questionId = [questionAndAnswerDic objectForKey:@"o_id"];
             model.isGood = YES;
             model.questionHeadUrl = [questionAndAnswerDic objectForKey:@"user_head"];
@@ -69,6 +71,7 @@
             model.caseName = [arrays[i] objectForKey:@"ac_name"];
             model.caseImageUrl = [NSString stringWithFormat:@"%@/%@",basebgUrl,[arrays[i] objectForKey:@"a_bg_pic"]] ;
             model.caseAdID = [[arrays[i] objectForKey:@"o_id"] integerValue];
+            model.hasGood = YES;
             model.caseGoodsNum = [[arrays[i] objectForKey:@"a_goods_num"] integerValue];
             model.caseClickNum = [[arrays[i] objectForKey:@"a_click_num"] integerValue];
             model.caseCreateTime = [[arrays[i] objectForKey:@"create_time"] integerValue];

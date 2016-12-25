@@ -22,9 +22,9 @@
             [self fetchValueSuccessWithDic:returnValue];
         }
     } withErrorCodeBlock:^(id errorCode) {
-        
+        self.errorBlock(errorCode);
     } withFailureBlock:^(id failureBlock) {
-        
+        self.failureBlock(failureBlock);
     } withProgress:^(id Progress) {
         
     }];
@@ -46,6 +46,7 @@
         model.commentNickName = [listArray[i] objectForKey:@"user_nickname"];
         model.commentCreateTime = [[listArray[i] objectForKey:@"create_time"] integerValue];
         model.commentModifyTime = [[listArray[i] objectForKey:@"modify_time"] integerValue];
+        model.commentHasGood = [[listArray[i] objectForKey:@"has_good"] boolValue];
         [commentModelArray addObject:model];
     }
     self.returnBlock(commentModelArray);

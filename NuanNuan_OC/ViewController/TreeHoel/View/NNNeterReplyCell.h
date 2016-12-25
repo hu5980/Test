@@ -19,4 +19,5 @@ typedef void(^likeCommentBlock)(UIButton *button);
 @property (weak, nonatomic) IBOutlet UILabel *commentContentLabel;
 @property (weak, nonatomic) IBOutlet UILabel *likeNumLabel;
 @property (copy, nonatomic) likeCommentBlock likeCommentBlock;
+@property (strong, nonatomic) IBOutlet UIButton *commentLikeButton;
 @end

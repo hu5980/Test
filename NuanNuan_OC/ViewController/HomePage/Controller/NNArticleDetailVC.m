@@ -98,6 +98,7 @@
 
 
 - (void)initData {
+    [[NNProgressHUD instance] showHudToView:self.view];
     NNArticleIsLikeViewModel *isLikeViewModel = [[NNArticleIsLikeViewModel alloc] init];
     [isLikeViewModel setBlockWithReturnBlock:^(id returnValue) {
         NSLog(@"%@",[[returnValue objectForKey:@"data"] objectForKey:@"good"]);
@@ -115,6 +116,15 @@
     }
     
    
+}
+
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+    [[NNProgressHUD instance] hideHud];
+}
+
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error{
+     [[NNProgressHUD instance] hideHud];
+    [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"网页加载失败"];
 }
 
 - (void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler{
