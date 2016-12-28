@@ -12,15 +12,15 @@
 
 - (void)getMoreSuccessCaseWithPageNum:(NSInteger) pageNum andCaseType:(NSInteger) type andCaseID:(NSInteger) caseID {
     
-    NSDictionary *parames = @{@"type":[NSNumber numberWithInteger:type],@"pnum":[NSNumber numberWithInteger:pageNum],@"last_id":[NSNumber numberWithInteger:caseID]};
+    NSDictionary *parames = @{@"type":[NSNumber numberWithInteger:type],@"pnum":[NSNumber numberWithInteger:pageNum],@"last_id":[NSNumber numberWithInteger:caseID],@"token":TEST_TOKEN};
     
     [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_article&a=getArticleList",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
     
         [self fetchValueSuccessWithDic:returnValue];
     } withErrorCodeBlock:^(id errorCode) {
-        
+        self.errorBlock(errorCode);
     } withFailureBlock:^(id failureBlock) {
-        
+        self.failureBlock(failureBlock);
     } withProgress:^(id Progress) {
         
     }];
@@ -47,7 +47,7 @@
     return self.returnBlock(caseMutableArray);
 }
 
-- (void)likeTheArticleWithUser:(NSString *)token andType:(NSInteger) type andCaseID:(NSInteger) caseID{
+- (void)likeTheArticleWithUser:(NSString *)token andType:(NSInteger) type andCaseID:(NSInteger) caseID {
     NSDictionary *params = @{@"token":token,@"type":[NSNumber numberWithInteger:type],@"id":[NSNumber numberWithInteger:caseID]};
     [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_good&a=addGood",NNBaseUrl] withParameter:params withReturnValueBlock:^(id returnValue) {
         

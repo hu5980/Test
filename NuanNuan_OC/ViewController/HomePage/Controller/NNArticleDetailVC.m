@@ -218,11 +218,11 @@
         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"请登录再试..."];
         return ;
     }
-    
+    __weak UIButton * weaklikeButton = likeButton;
     NNPariseViewModel  *viewModel = [[NNPariseViewModel alloc] init];
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
         if([returnValue isEqualToString:@"success"]){
-            button.selected = YES;
+            weaklikeButton.selected = YES;
         }
     } WithErrorBlock:^(id errorCode) {
         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
@@ -233,17 +233,18 @@
     NNUnPariseViewModel *unViewModel = [[NNUnPariseViewModel alloc] init];
     [unViewModel setBlockWithReturnBlock:^(id returnValue) {
         if([returnValue isEqualToString:@"success"]){
-            button.selected = NO;
+            weaklikeButton.selected = NO;
         }
     } WithErrorBlock:^(id errorCode) {
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
     } WithFailureBlock:^(id failureBlock) {
     }];
     
     
     if (button.selected) {
-        [unViewModel unParisdArticleWithToken:TEST_TOKEN andArticleType:[NSString stringWithFormat:@"%ld",_defaultType] andArticleID:[NSString stringWithFormat:@"%ld",_articleID]];
+        [unViewModel unParisdArticleWithToken:TEST_TOKEN andArticleType:@"3" andArticleID:[NSString stringWithFormat:@"%ld",_articleID]];
     }else{
-        [viewModel parisdArticleWithToken:TEST_TOKEN andArticleType:[NSString stringWithFormat:@"%ld",_defaultType] andArticleID:[NSString stringWithFormat:@"%ld",_articleID]];
+        [viewModel parisdArticleWithToken:TEST_TOKEN andArticleType:@"3" andArticleID:[NSString stringWithFormat:@"%ld",_articleID]];
     }
 }
 

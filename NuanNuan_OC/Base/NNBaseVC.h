@@ -12,8 +12,6 @@
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "Masonry.h"
 #import "UIImageView+AFNetworking.h"
-//#import "UIButton+AFNetworking.h"
-//#import "UIImage+AFNetworking.h"
 #import "ReactiveCocoa.h"
 #import "UIButton+WebCache.h"
 #import "UIImageView+WebCache.h"
@@ -24,6 +22,8 @@
 @interface NNBaseVC : UIViewController
 
 @property (nonatomic,strong) NSString *navTitle;
+
+@property (nonatomic,assign) BOOL isPresent;
 
 - (void)setNavigationBackButton:(BOOL ) showOrHidden;
 

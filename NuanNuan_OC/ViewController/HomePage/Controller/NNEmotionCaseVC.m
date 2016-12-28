@@ -32,6 +32,7 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
     [self createEmotionalTypeUI];
+   
 }
 
 - (void)viewDidLoad {

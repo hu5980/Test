@@ -135,7 +135,7 @@
         NNLoginViewModel *loginViewModel = [[NNLoginViewModel alloc] init];
         [loginViewModel setBlockWithReturnBlock:^(id returnValue) {
             [[NNProgressHUD instance] hideHud];
-            if (_isPresent) {
+            if (self.isPresent) {
                 [weakSelf dismissViewControllerAnimated:YES completion:nil];
             }else{
                 [weakSelf.navigationController popViewControllerAnimated:YES];
@@ -161,10 +161,7 @@
         if (_registerPassWordTextField.text.length ==0) {
              [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"请输入注册密码"];
         }
-        
         NNRegistionViewModel *registerViewModel = [[NNRegistionViewModel alloc] init];
-        
-        
         [registerViewModel setBlockWithReturnBlock:^(id returnValue) {
             [weakSelf dismissViewControllerAnimated:YES completion:nil];
         } WithErrorBlock:^(id errorCode) {
@@ -230,7 +227,7 @@
     NNThirdLoginViewModel *viewModel = [[NNThirdLoginViewModel alloc] init];
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
         [[NNProgressHUD instance] hideHud];
-        if (_isPresent) {
+        if (self.isPresent) {
             [weakSelf dismissViewControllerAnimated:YES completion:nil];
         }else{
             [weakSelf.navigationController popViewControllerAnimated:YES];

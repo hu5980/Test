@@ -95,6 +95,8 @@
 		0DDAEE7D1DBBB030008478DC /* NNSpitslotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAEE7B1DBBB030008478DC /* NNSpitslotCell.m */; };
 		0DDAEE7E1DBBB030008478DC /* NNSpitslotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DDAEE7C1DBBB030008478DC /* NNSpitslotCell.xib */; };
 		5157E0A13BD1F3B2CCF4B3A1 /* Pods_NuanNuan_OC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12B5080D9CD53F9220CB3548 /* Pods_NuanNuan_OC.framework */; };
+		BC022BD61E13C28E00D83381 /* NNNoticeServer.m in Sources */ = {isa = PBXBuildFile; fileRef = BC022BD51E13C28E00D83381 /* NNNoticeServer.m */; };
+		BC022BD91E13D81C00D83381 /* NNNoticeHadReadViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC022BD81E13D81C00D83381 /* NNNoticeHadReadViewModel.m */; };
 		BC0274C21DED82C500D61F12 /* cityData.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC0274C11DED82C500D61F12 /* cityData.plist */; };
 		BC0274C61DEEB55C00D61F12 /* NNUserInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0274C41DEEB55C00D61F12 /* NNUserInfoVC.m */; };
 		BC0274C71DEEB55C00D61F12 /* NNUserInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0274C51DEEB55C00D61F12 /* NNUserInfoVC.xib */; };
@@ -422,6 +424,10 @@
 		0DDAEE7C1DBBB030008478DC /* NNSpitslotCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNSpitslotCell.xib; sourceTree = "<group>"; };
 		12B5080D9CD53F9220CB3548 /* Pods_NuanNuan_OC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NuanNuan_OC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A6556F41A95872CB574CB7 /* Pods-NuanNuan_OC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NuanNuan_OC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NuanNuan_OC/Pods-NuanNuan_OC.debug.xcconfig"; sourceTree = "<group>"; };
+		BC022BD41E13C28E00D83381 /* NNNoticeServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNoticeServer.h; sourceTree = "<group>"; };
+		BC022BD51E13C28E00D83381 /* NNNoticeServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNoticeServer.m; sourceTree = "<group>"; };
+		BC022BD71E13D81C00D83381 /* NNNoticeHadReadViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNoticeHadReadViewModel.h; sourceTree = "<group>"; };
+		BC022BD81E13D81C00D83381 /* NNNoticeHadReadViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNoticeHadReadViewModel.m; sourceTree = "<group>"; };
 		BC0274C11DED82C500D61F12 /* cityData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityData.plist; sourceTree = "<group>"; };
 		BC0274C31DEEB55C00D61F12 /* NNUserInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNUserInfoVC.h; sourceTree = "<group>"; };
 		BC0274C41DEEB55C00D61F12 /* NNUserInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNUserInfoVC.m; sourceTree = "<group>"; };
@@ -1243,6 +1249,8 @@
 				0DBB28FE1DE5DED0008A0F32 /* NNMineCommentViewModel.m */,
 				BCD7E6521DFFD5BC00991F86 /* NNAskingListViewModel.h */,
 				BCD7E6531DFFD5BC00991F86 /* NNAskingListViewModel.m */,
+				BC022BD71E13D81C00D83381 /* NNNoticeHadReadViewModel.h */,
+				BC022BD81E13D81C00D83381 /* NNNoticeHadReadViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1375,6 +1383,8 @@
 				BCD5064D1D9231D0000FB2C0 /* TreeHoel */,
 				BCD5061C1D92241A000FB2C0 /* NNTabbarVC.h */,
 				BCD5061D1D92241A000FB2C0 /* NNTabbarVC.m */,
+				BC022BD41E13C28E00D83381 /* NNNoticeServer.h */,
+				BC022BD51E13C28E00D83381 /* NNNoticeServer.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -2034,6 +2044,7 @@
 				BCD9AE861DACF16D008DB98E /* NNTreeHoelCell.m in Sources */,
 				0DDAEE7D1DBBB030008478DC /* NNSpitslotCell.m in Sources */,
 				BCD9AE6E1DACC668008DB98E /* NNEmotionallItemCell.m in Sources */,
+				BC022BD91E13D81C00D83381 /* NNNoticeHadReadViewModel.m in Sources */,
 				BCD506531D9231D0000FB2C0 /* NNHomePageVC.m in Sources */,
 				0D331E121DBD071F002B0DCD /* NNAskingView.m in Sources */,
 				BCEDDBF71DE52C5A00187317 /* MLPhotoPickerImageView.m in Sources */,
@@ -2135,6 +2146,7 @@
 				0D2A8AD01DE1568300122F0C /* NNAddImageView.m in Sources */,
 				0D331E171DBD09EF002B0DCD /* NNReplyView.m in Sources */,
 				BCEDDBEC1DE52C5A00187317 /* UIImage+MLTint.m in Sources */,
+				BC022BD61E13C28E00D83381 /* NNNoticeServer.m in Sources */,
 				BCF178BE1DC0ABED00A6DC4B /* NNEmotionTeacherModel.m in Sources */,
 				BC3BFA381DDAA96400F73DEF /* NNOrderCell.m in Sources */,
 				BC8C61E21DC081CD00094F94 /* NNArticleDetailVC.m in Sources */,

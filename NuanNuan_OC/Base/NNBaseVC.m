@@ -98,7 +98,11 @@
 }
 
 - (void)popVC {
-    [self.navigationController popViewControllerAnimated:YES];
+    if (_isPresent) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }else{
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)dealloc {

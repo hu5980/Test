@@ -16,6 +16,8 @@
 #import "NNArticleDetailVC.h"
 #import "NNHomepageSuccessCaseViewModel.h"
 #import "NNHomepageSuccessCaseModel.h"
+#import "AppDelegate.h"
+#import "NNNoticeServer.h"
 
 @interface NNHomePageVC () <UITableViewDelegate,UITableViewDataSource>
 {
@@ -34,7 +36,21 @@
     
     [self initUI];
     [self initData];
-    // Do any additional setup after loading the view.
+    
+    AppDelegate * app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    //pushName 是我给后天约定的通知必传值，所以我可以根据他是否为空来判断是否有通知
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 10.0) {
+        NSString *  pushName = [[app.remoteNotification objectForKey:@"aps"] objectForKey:@"alert"];
+        if (pushName !=nil) {
+            NSString *noticeType = [NSString stringWithFormat:@"%@",[app.remoteNotification objectForKey:@"n_type"]];
+            NSDictionary *dicInfo = [app.remoteNotification objectForKey:@"n_data"];
+            [NNNoticeServer dealWithDictionary:dicInfo andNoticeType:noticeType andisPresent:YES andViewController:self];
+        }
+    }
+    
+    
+       // Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated{

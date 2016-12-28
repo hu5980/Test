@@ -18,7 +18,6 @@
     NSString *devicetoken = [[NSUserDefaults standardUserDefaults] objectForKey:@"DEVICETOKEN"];
     NSMutableDictionary * parames =  [NSMutableDictionary dictionaryWithDictionary:@{ @"access_token":accessToken,
                                                                                      @"login_type":loginType,
-                                                                                      @"channel":@"ios",
                                                                                       @"device": [OpenUDID value]}];
     
     if (openid != nil) {
@@ -38,8 +37,6 @@
     } withProgress:^(id Progress) {
         
     }];
-
-   
 }
 
 

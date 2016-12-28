@@ -26,7 +26,7 @@
     self.nickNameLabel.text = _model.userNikeName;
     self.commentNumLabel.text = _model.thCommentNum;
     self.bePraisedLabel.text = _model.thGoodsNum;
-    if ([model.userNikeName isEqualToString:@"匿名用户"] && model.userHeadUrl.length == 0) {
+    if ([model.userNikeName isEqualToString:@"匿名用户"] ) {
         [self.headImageView setImage:[UIImage imageNamed:@"400_05"]];
     }else{
         [self.headImageView sd_setImageWithURL:[NSURL URLWithString:model.userHeadUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageRefreshCached |SDWebImageAllowInvalidSSLCertificates];

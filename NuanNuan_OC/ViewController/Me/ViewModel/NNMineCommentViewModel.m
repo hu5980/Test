@@ -85,7 +85,7 @@
             treeHoelModel.thAnonymity = [dic objectForKey:@"th_anonymity"];
             treeHoelModel.thCommentNum =[dic objectForKey:@"th_comment_num"];
             treeHoelModel.thGoodsNum =[dic objectForKey:@"th_goods_num"];
-            treeHoelModel.userHeadUrl = [NSString stringWithFormat:@"%@/%@",basePathUrl,[dic objectForKey:@"user_head"]];
+            treeHoelModel.userHeadUrl = [dic objectForKey:@"user_head"];
             treeHoelModel.userNikeName = [dic objectForKey:@"user_nickname"];
             treeHoelModel.createTime = [[dic objectForKey:@"create_time"] integerValue];
             treeHoelModel.modifyTime =[[dic objectForKey:@"modify_time"] integerValue];

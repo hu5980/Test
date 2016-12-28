@@ -11,9 +11,17 @@
 @implementation NNLoginViewModel
 
 - (void)loginWithUserName:(NSString *)userName andpassword:(NSString *)password andLoginType:(NSInteger)type{
+    NSString *devicetoken = [[NSUserDefaults standardUserDefaults] objectForKey:@"DEVICETOKEN"];
     NSDictionary *parames = @{@"username":userName,@"password":password,@"type":[NSNumber numberWithInteger:type]};
     
-    [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_user&a=login",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
+    NSMutableDictionary *mutableParames = [NSMutableDictionary dictionaryWithDictionary:parames];
+    
+ 
+    if(devicetoken != nil){
+        [mutableParames setValue:devicetoken forKey:@"device_token"];
+    }
+
+    [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_user&a=login",NNBaseUrl] withParameter:mutableParames withReturnValueBlock:^(id returnValue) {
         [self fetchValueSuccessWithDic:returnValue];
     } withErrorCodeBlock:^(id errorCode) {
         self.errorBlock(errorCode);

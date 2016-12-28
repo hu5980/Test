@@ -13,6 +13,12 @@
 #import "UMessage.h"
 #import <Realm/Realm.h>
 #import <YWFeedbackFMWK/YWFeedbackKit.h>
+#import "NNTreeHoelModel.h"
+#import "NNCommentModel.h"
+#import "NNNoticeServer.h"
+#import "NNSpitslotDetailVC.h"
+#import "NNQuestionAndAnswerDetailVC.h"
+#import "NNNoticeServer.h"
 
 //#import "UserNotifications.h"
 
@@ -50,7 +56,7 @@
 
 
 - (void)dealNotificationWithOptions:(NSDictionary *)launchOptions {
-    [UMessage startWithAppkey:UMKEY launchOptions:launchOptions];
+    [UMessage startWithAppkey:UMKEY launchOptions:launchOptions httpsenable:NO];
     
     //注册通知，如果要使用category的自定义策略，可以参考demo中的代码。
     [UMessage registerForRemoteNotifications];
@@ -69,6 +75,8 @@
         }
     }];
     
+  
+    _remoteNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
     //打开日志，方便调试
     [UMessage setLogEnabled:YES];
 }
@@ -92,22 +100,16 @@
 {
     //关闭友盟自带的弹出框
     [UMessage setAutoAlert:NO];
-    [UMessage didReceiveRemoteNotification:userInfo];
     
-    //    self.userInfo = userInfo;
-    //    //定制自定的的弹出框
-    //    if([UIApplication sharedApplication].applicationState == UIApplicationStateActive)
-    //    {
-    //        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"标题"
-    //                                                            message:@"Test On ApplicationStateActive"
-    //                                                           delegate:self
-    //                                                  cancelButtonTitle:@"确定"
-    //                                                  otherButtonTitles:nil];
-    //
-    //        [alertView show];
-    //
-    //    }
+    NSLog(@"%@",userInfo);
+
+    NSString *noticeType = [NSString stringWithFormat:@"%@",[userInfo objectForKey:@"n_type"]];
+    NSDictionary *dicInfo = [userInfo objectForKey:@"n_data"];
+
+    [NNNoticeServer dealWithDictionary:dicInfo andNoticeType:noticeType andisPresent:YES andViewController:self.window.rootViewController];
 }
+
+
 
 
 //iOS10新增：处理前台收到通知的代理方法
@@ -119,6 +121,11 @@
         [UMessage setAutoAlert:NO];
         //必须加这句代码
         [UMessage didReceiveRemoteNotification:userInfo];
+        NSString *noticeType = [NSString stringWithFormat:@"%@",[userInfo objectForKey:@"n_type"]];
+        NSDictionary *dicInfo = [userInfo objectForKey:@"n_data"];
+        
+        [NNNoticeServer dealWithDictionary:dicInfo andNoticeType:noticeType andisPresent:YES andViewController:self.window.rootViewController];
+
         
     }else{
         //应用处于前台时的本地推送接受
@@ -134,6 +141,11 @@
         //应用处于后台时的远程推送接受
         //必须加这句代码
         [UMessage didReceiveRemoteNotification:userInfo];
+        NSString *noticeType = [NSString stringWithFormat:@"%@",[userInfo objectForKey:@"n_type"]];
+        NSDictionary *dicInfo = [userInfo objectForKey:@"n_data"];
+        
+        [NNNoticeServer dealWithDictionary:dicInfo andNoticeType:noticeType andisPresent:YES andViewController:self.window.rootViewController];
+
         
     }else{
         //应用处于后台时的本地推送接受
