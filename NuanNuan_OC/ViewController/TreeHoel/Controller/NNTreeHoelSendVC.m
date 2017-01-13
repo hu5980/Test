@@ -43,6 +43,8 @@
     [self setNavigationBackButton:YES];
     self.navTitle = @"发表树洞";
     [self setNavigationRightItem:@"发送"];
+    self.contentTextView.font = [UIFont systemFontOfSize:14.f];
+    self.contentTextView.textColor = NN_TEXT666666_COLOR;
     addImageButton = [UIButton buttonWithType:UIButtonTypeCustom];
     addImageButton.frame = CGRectMake(15, 10, (NNAppWidth - 30 - 10 * 3) / 4, (NNAppWidth - 30 - 10 * 3) / 4);
     addImageButton.backgroundColor = [UIColor clearColor];
@@ -146,17 +148,15 @@
     [addImageViewModel setBlockWithReturnBlock:^(id returnValue) {
         [[NNProgressHUD instance] hideHud];
         
-        if(returnValue == nil){
-            picsJsonStr = @"";
-        }else{
-            NSError *error;
-            NSData *jsonData = [NSJSONSerialization dataWithJSONObject:returnValue
-                                                               options:NSJSONWritingPrettyPrinted
-                                                                 error:&error];
-            
-            picsJsonStr = [[NSString alloc] initWithData:jsonData
-                                                         encoding:NSUTF8StringEncoding];
-        }
+     
+        NSError *error;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:returnValue
+                                                           options:NSJSONWritingPrettyPrinted
+                                                             error:&error];
+        
+        picsJsonStr = [[NSString alloc] initWithData:jsonData
+                                                     encoding:NSUTF8StringEncoding];
+        
         dispatch_group_leave(group);
     } WithErrorBlock:^(id errorCode) {
          [[NNProgressHUD instance] hideHud];
@@ -167,10 +167,7 @@
          dispatch_group_leave(group);
     }];
     
-    if (_imageArray.count > 0) {
-        [addImageViewModel addTreeImageWithToken:TEST_TOKEN andImages:_imageArray];
-    }
-    
+    [addImageViewModel addTreeImageWithToken:TEST_TOKEN andImages:_imageArray];
     dispatch_group_notify(group, dispatch_get_main_queue(), ^(){
         [[NNProgressHUD instance] showHudToView:self.view ];
          NNSendTreeHoelViewModel *sendViewModel = [[NNSendTreeHoelViewModel alloc] init];

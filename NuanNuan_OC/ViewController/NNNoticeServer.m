@@ -15,7 +15,6 @@
 
 + (NNTreeHoelModel *)analysisTreeHoelDictoModelwithDic :(NSDictionary  *)treeHoleInfo {
     NNTreeHoelModel *treeHoelModel = [[NNTreeHoelModel alloc] init];
-    
     treeHoelModel.thID = [treeHoleInfo objectForKey:@"th_id"];
     treeHoelModel.isGood = [[treeHoleInfo objectForKey:@"has_good"] boolValue];
     treeHoelModel.uid = [treeHoleInfo objectForKey:@"uid"];
@@ -28,12 +27,11 @@
     for (int j= 0; j < picArrays.count; j++) {
         [picMutableArrays addObject:[NSString stringWithFormat:@"%@/%@",basePathUrl,[picArrays objectAtIndex:j]]];
     }
-    
     treeHoelModel.picArrays = picMutableArrays;
     treeHoelModel.thAnonymity = [treeHoleInfo objectForKey:@"th_anonymity"];
     treeHoelModel.thCommentNum =[treeHoleInfo objectForKey:@"th_comment_num"];
     treeHoelModel.thGoodsNum =[treeHoleInfo objectForKey:@"th_goods_num"];
-    treeHoelModel.userHeadUrl = [NSString stringWithFormat:@"%@/%@",basePathUrl,[treeHoleInfo objectForKey:@"user_head"]];
+    treeHoelModel.userHeadUrl = [treeHoleInfo objectForKey:@"user_head"];
     treeHoelModel.userNikeName = [treeHoleInfo objectForKey:@"user_nickname"];
     treeHoelModel.createTime = [[treeHoleInfo objectForKey:@"create_time"] integerValue];
     treeHoelModel.modifyTime = [[treeHoleInfo objectForKey:@"modify_time"] integerValue];

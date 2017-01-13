@@ -61,6 +61,10 @@
     _loginOrRegisterButton.layer.cornerRadius = 5;
 
     defaultButton = _loginButton;
+    
+    if(_showHudText){
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:_showHudText];
+    }
 }
 
 - (IBAction)thirdlyLoginAction:(UIButton *)sender {
@@ -80,7 +84,7 @@
 }
 
 - (IBAction)sendCaptchAction:(id)sender {
-    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:@"18684599240"
+    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:_registerUserNameTextField.text
                                    zone:@"86"
                        customIdentifier:nil
                                  result:^(NSError *error){
@@ -116,6 +120,7 @@
         [_loginOrRegisterButton setTitle:@"注册" forState:UIControlStateNormal];
     }
 }
+
 - (IBAction)loginOrRegisterAction:(UIButton *)sender {
     __weak  NNLoginAndRegisterVC *weakSelf = self;
     if (defaultButton.tag == 100) {
@@ -165,9 +170,9 @@
         [registerViewModel setBlockWithReturnBlock:^(id returnValue) {
             [weakSelf dismissViewControllerAnimated:YES completion:nil];
         } WithErrorBlock:^(id errorCode) {
-            
+            [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
         } WithFailureBlock:^(id failureBlock) {
-            
+            [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"注册失败"];
         }];
         [registerViewModel registerUserWithUsername:_registerUserNameTextField.text andverify:_registerCaptchatextField.text andPassword:_registerPassWordTextField.text];
     }

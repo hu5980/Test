@@ -60,6 +60,15 @@
     [super viewDidLoad];
     
     [self initView];
+    
+    if (TEST_TOKEN == nil) {
+        NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];;
+        loginVC.isPresent = YES;
+        [self presentViewController:loginVC animated:YES completion:^{
+            
+        }];
+        return ;
+    }
     // Do any additional setup after loading the view.
 }
 
@@ -94,7 +103,7 @@
     headerButton.layer.masksToBounds = YES;
     headerButton.layer.cornerRadius = 30;
     
-    [headerButton addTarget:self action:@selector(changeHeadAction:) forControlEvents:UIControlEventTouchUpInside];
+  //  [headerButton addTarget:self action:@selector(changeHeadAction:) forControlEvents:UIControlEventTouchUpInside];
     [backgroundButton addSubview:headerButton];
     [headerButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(@60);
@@ -136,32 +145,32 @@
     [headerButton sd_setImageWithURL:[NSURL URLWithString:userInfoModel.headImageUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
 }
 
-- (void)changeHeadAction:(UIButton *)button {
-    
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"选取照片" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        picker.delegate = self;
-        picker.allowsEditing = YES;
-        
-        [self presentViewController:picker animated:YES completion:nil];
-    }]];
-    
-    [alertController addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        picker.delegate = self;
-        picker.allowsEditing = YES;
-        [self presentViewController:picker animated:YES completion:nil];
-        
-    }]];
-    
-    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
-    }]];
-    [self presentViewController:alertController animated:YES completion:nil];
-}
+//- (void)changeHeadAction:(UIButton *)button {
+//    
+//    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+//    [alertController addAction:[UIAlertAction actionWithTitle:@"选取照片" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+//        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//        picker.delegate = self;
+//        picker.allowsEditing = YES;
+//        
+//        [self presentViewController:picker animated:YES completion:nil];
+//    }]];
+//    
+//    [alertController addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+//        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+//        picker.delegate = self;
+//        picker.allowsEditing = YES;
+//        [self presentViewController:picker animated:YES completion:nil];
+//        
+//    }]];
+//    
+//    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//        
+//    }]];
+//    [self presentViewController:alertController animated:YES completion:nil];
+//}
 
 - (UIImage *)makeImageWithImage:(UIImage *)imageOld scaledToSize:(CGSize)newSize
 {
@@ -232,15 +241,7 @@
         NNMineEmotionalMangmentCell *emotionalMangmentCell = [tableView dequeueReusableCellWithIdentifier:@"NNMineEmotionalMangmentCell"];
         emotionalMangmentCell.block = ^(NSInteger tag){
             
-            if (TEST_TOKEN == nil) {
-                NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] init];
-                loginVC.isPresent = YES;
-                [weakself presentViewController:loginVC animated:YES completion:^{
-                    
-                }];
-                return ;
-            }
-            
+        
             switch (tag) {
                 case 100:
                 {
@@ -299,15 +300,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    if (TEST_TOKEN == nil) {
-        NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] init];
-        loginVC.isPresent = YES;
-        [self presentViewController:loginVC animated:YES completion:^{
-            
-        }];
-        return;
-    }
     
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {

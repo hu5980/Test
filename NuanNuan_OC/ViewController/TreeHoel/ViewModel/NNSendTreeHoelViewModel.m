@@ -18,9 +18,9 @@
     [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_treehole&a=addTreehole",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
         self.returnBlock([returnValue objectForKey:@"result"]);
     } withErrorCodeBlock:^(id errorCode) {
-        self.returnBlock(errorCode);
+        self.errorBlock(errorCode);
     } withFailureBlock:^(id failureBlock) {
-        self.returnBlock(failureBlock);
+        self.failureBlock(failureBlock);
     } withProgress:^(id Progress) {
         
     }];

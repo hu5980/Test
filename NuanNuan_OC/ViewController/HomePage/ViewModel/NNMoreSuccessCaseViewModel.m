@@ -10,10 +10,13 @@
 #import "NNSuccessCaseModel.h"
 @implementation NNMoreSuccessCaseViewModel
 
-- (void)getMoreSuccessCaseWithPageNum:(NSInteger) pageNum andCaseType:(NSInteger) type andCaseID:(NSInteger) caseID {
-    
-    NSDictionary *parames = @{@"type":[NSNumber numberWithInteger:type],@"pnum":[NSNumber numberWithInteger:pageNum],@"last_id":[NSNumber numberWithInteger:caseID],@"token":TEST_TOKEN};
-    
+- (void)getMoreSuccessCaseWithPageNum:(NSInteger) pageNum andCaseType:(NSInteger) type andCaseID:(NSInteger) caseID andToken:(NSString *)token{
+    NSDictionary *parames;
+    if (token == nil) {
+        parames = @{@"type":[NSNumber numberWithInteger:type],@"pnum":[NSNumber numberWithInteger:pageNum],@"last_id":[NSNumber numberWithInteger:caseID]};
+    }else{
+         parames = @{@"type":[NSNumber numberWithInteger:type],@"pnum":[NSNumber numberWithInteger:pageNum],@"last_id":[NSNumber numberWithInteger:caseID],@"token":token};
+    }
     [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_article&a=getArticleList",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
     
         [self fetchValueSuccessWithDic:returnValue];
@@ -41,6 +44,7 @@
         model.caseGoodsNum = [[listArray[i] objectForKey:@"a_goods_num"] integerValue];
         model.caseClickNum = [[listArray[i] objectForKey:@"a_click_num"] integerValue];
         model.caseCreateTime = [[listArray[i] objectForKey:@"create_time"] integerValue];
+        model.isShowAppointment = [[listArray[i] objectForKey:@"a_can_booking"] isEqualToString:@"1"]  ? YES : NO ;
         model.hasGood = [[listArray[i] objectForKey:@"has_good"] boolValue];
         [caseMutableArray addObject:model];
     }

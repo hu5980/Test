@@ -13,6 +13,7 @@
 #import "NNAppointmentVC.h"
 #import "NNArticleIsLikeViewModel.h"
 #import <UMSocialCore/UMSocialCore.h>
+#import "NNLoginAndRegisterVC.h"
 
 @interface NNArticleDetailVC ()<WKNavigationDelegate> {
     UIView *customView;
@@ -143,10 +144,10 @@
 - (void)share:(UIButton *)button {
     switch (button.tag) {
         case 1000:
-            [self shareWebPageToPlatformType:UMSocialPlatformType_WechatSession];
+            [self shareWebPageToPlatformType:UMSocialPlatformType_WechatTimeLine];
             break;
         case 1001:
-            [self shareWebPageToPlatformType:UMSocialPlatformType_WechatTimeLine];
+            [self shareWebPageToPlatformType:UMSocialPlatformType_WechatSession];
             break;
         case 1002:
             [self shareWebPageToPlatformType:UMSocialPlatformType_Qzone];
@@ -215,7 +216,10 @@
 - (void)likeAction:(UIButton *)button {
     
     if (TEST_TOKEN == nil) {
-        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"请登录再试..."];
+        NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];
+        loginVC.isPresent = YES;
+        [self presentViewController:loginVC animated:YES completion:^{
+        }];
         return ;
     }
     __weak UIButton * weaklikeButton = likeButton;
@@ -223,6 +227,7 @@
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
         if([returnValue isEqualToString:@"success"]){
             weaklikeButton.selected = YES;
+            [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"点赞成功"];
         }
     } WithErrorBlock:^(id errorCode) {
         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
@@ -234,6 +239,8 @@
     [unViewModel setBlockWithReturnBlock:^(id returnValue) {
         if([returnValue isEqualToString:@"success"]){
             weaklikeButton.selected = NO;
+            [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"取消点赞成功"];
+
         }
     } WithErrorBlock:^(id errorCode) {
         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];

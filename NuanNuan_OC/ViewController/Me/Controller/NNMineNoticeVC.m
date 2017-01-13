@@ -21,6 +21,7 @@
 #import "NNNoticeHadReadViewModel.h"
 @interface NNMineNoticeVC ()<UITableViewDelegate,UITableViewDataSource>{
     RLMResults *results;
+    NNNoticeModel *selectNoticeModel;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *noticeTableView;
@@ -48,6 +49,12 @@
     _noticeTableView.dataSource = self;
     _noticeTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [_noticeTableView registerNib:[UINib nibWithNibName:@"NNNoticeCell" bundle:nil] forCellReuseIdentifier:@"NNNoticeCell"];
+    
+    if(results.count == 0){
+        [self showBackgroundViewImageName:@"back_ic" andTitle:@"暂时没有消息"];
+    }else{
+        [self hideBackgroundViewImage];
+    }
     
 }
 
@@ -93,31 +100,40 @@
     }else if  ([model.noticeType isEqualToString:@"4"] || [model.noticeType isEqualToString:@"5"]){
         cell.noticeTypeLabel.text = @"收到赞";
     }
-    
-    cell.noticeTimeLabel.text = [NNTimeUtil timeDealWithFormat:@"yyyy-MM-dd hh:mm:ss" andTime:[model.time integerValue]];
-    
+    if([model.isRead isEqualToString:@"1"]){
+        cell.noticeContentLabel.textColor =  NN_TEXT666666_COLOR;
+        cell.noticeTimeLabel.textColor = NN_TEXT666666_COLOR;
+        cell.noticeTypeLabel.textColor =  NN_TEXT666666_COLOR;
+    }else{
+        cell.noticeContentLabel.textColor =  NN_TEXT333333_COLOR;
+        cell.noticeTimeLabel.textColor = NN_TEXT333333_COLOR;
+        cell.noticeTypeLabel.textColor =  NN_TEXT333333_COLOR;
+    }
+    cell.noticeTimeLabel.text = [NNTimeUtil timeDealWithFormat:@"yyyy-MM-dd hh:mm" andTime:[model.time integerValue]];
     cell.noticeContentLabel.text = model.noticeMsg;
-    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NNNoticeModel *model = [results objectAtIndex:indexPath.section];
-    
-    NSDictionary *dic =  [self dictionaryWithJsonString:model.noticeData];
+    selectNoticeModel = [results objectAtIndex:indexPath.section];
+    NSLog(@"%@",selectNoticeModel.noticeId);
+    NSDictionary *dic =  [self dictionaryWithJsonString:selectNoticeModel.noticeData];
     
     NNNoticeHadReadViewModel *viewModel = [[NNNoticeHadReadViewModel alloc] init];
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
-        
+        if([returnValue isEqualToString:@"success"]){
+             NSLog(@"%@",selectNoticeModel.noticeId);
+            [NNNoticeViewModel changeNoticeReadState:selectNoticeModel.noticeId];
+        }
     } WithErrorBlock:^(id errorCode) {
-        
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
     } WithFailureBlock:^(id failureBlock) {
         
     }];
-    [viewModel hadReadNoticeWithToken:TEST_TOKEN andNoticeID:model.noticeId];
+    [viewModel hadReadNoticeWithToken:TEST_TOKEN andNoticeID:selectNoticeModel.noticeId];
     
-    [NNNoticeServer dealWithDictionary:dic andNoticeType:model.noticeType andisPresent:NO andViewController:self];
+    [NNNoticeServer dealWithDictionary:dic andNoticeType:selectNoticeModel.noticeType andisPresent:NO andViewController:self];
     
 }
 

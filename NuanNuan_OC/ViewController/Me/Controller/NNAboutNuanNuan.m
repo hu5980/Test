@@ -13,6 +13,7 @@
 @interface NNAboutNuanNuan () <UITableViewDelegate,UITableViewDataSource> {
     NSArray *titleArrays ;
     NSArray *contentArrays;
+    
 }
 @property (weak, nonatomic) IBOutlet UITableView *aboutTableView;
 
@@ -31,29 +32,31 @@
     self.navTitle = @"关于暖暖";
     [self setNavigationBackButton:YES];
     
-    _aboutTableView.tableHeaderView.frame = CGRectMake(0, 0, NNAppWidth, 200);
     UIView *headView = LOAD_VIEW_FROM_BUNDLE(@"NNAboutHeadView");
+    [headView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(@(NNAppWidth));
+        make.height.mas_equalTo(@(170));
+
+    }];
     _aboutTableView.backgroundColor = NN_BACKGROUND_COLOR;
     _aboutTableView.tableHeaderView = headView;
-    
     _aboutTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
     [_aboutTableView registerNib:[UINib nibWithNibName:@"NNAboutCell" bundle:nil] forCellReuseIdentifier:@"NNAboutCell"];
     [_aboutTableView registerNib:[UINib nibWithNibName:@"NNSetCell" bundle:nil] forCellReuseIdentifier:@"NNSetCell"];
     _aboutTableView.delegate = self;
     _aboutTableView.dataSource = self;
     titleArrays = @[@"微信公众号",@"邮箱",@"电话"];
     contentArrays = @[@"Nuannuanqg",@"nuannuan@vip.126.com",@"0755-26917174"];
-    
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        NNAboutCell *ablutCell = [tableView dequeueReusableCellWithIdentifier:@"NNAboutCell"];
-        return ablutCell;
+        NNAboutCell *aboutCell = [tableView dequeueReusableCellWithIdentifier:@"NNAboutCell"];
+        aboutCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return aboutCell;
     }else{
         NNSetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNSetCell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.setTltleLabel.text = [titleArrays objectAtIndex:indexPath.row];
         cell.contentLabel.text = [contentArrays objectAtIndex:indexPath.row];
         cell.arrowImageView.hidden = YES;
@@ -81,14 +84,24 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return  100;
+        CGFloat height = [tableView fd_heightForCellWithIdentifier:@"NNAboutCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+        }];
+        if(NNAppWidth == 320){
+            return height + 80;
+        }else{
+            return height;
+        }
+        
     }else {
         return 44;
     }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return  44;
+    if(section == 0){
+        return 0;
+    }
+    return  10;
 }
 
 - (void)didReceiveMemoryWarning {

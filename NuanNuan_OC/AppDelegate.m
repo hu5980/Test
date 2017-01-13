@@ -75,7 +75,6 @@
         }
     }];
     
-  
     _remoteNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
     //打开日志，方便调试
     [UMessage setLogEnabled:YES];
@@ -108,9 +107,6 @@
 
     [NNNoticeServer dealWithDictionary:dicInfo andNoticeType:noticeType andisPresent:YES andViewController:self.window.rootViewController];
 }
-
-
-
 
 //iOS10新增：处理前台收到通知的代理方法
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler{
@@ -145,8 +141,6 @@
         NSDictionary *dicInfo = [userInfo objectForKey:@"n_data"];
         
         [NNNoticeServer dealWithDictionary:dicInfo andNoticeType:noticeType andisPresent:YES andViewController:self.window.rootViewController];
-
-        
     }else{
         //应用处于后台时的本地推送接受
     }

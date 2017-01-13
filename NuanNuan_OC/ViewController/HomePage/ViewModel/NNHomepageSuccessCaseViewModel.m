@@ -53,29 +53,29 @@
     
     for (int i  = 0; i < improvementArray.count; i++) {
         NNSuccessCaseModel *model = [[NNSuccessCaseModel alloc] init];
-        model.caseTitle = [loveStoryArray[i] objectForKey:@"a_title"];
-        model.caseName = [loveStoryArray[i] objectForKey:@"ac_name"];
-        model.caseImageUrl = [NSString stringWithFormat:@"%@/%@",basebgUrl,[loveStoryArray[i] objectForKey:@"a_bg_pic"]] ;
-        model.caseAdID = [[loveStoryArray[i] objectForKey:@"a_id"] integerValue];
-        model.caseGoodsNum = [[loveStoryArray[i] objectForKey:@"a_goods_num"] integerValue];
-        model.caseClickNum = [[loveStoryArray[i] objectForKey:@"a_click_num"] integerValue];
-        model.caseCreateTime = [[loveStoryArray[i] objectForKey:@"create_time"] integerValue];
-        model.isShowAppointment = [[loveStoryArray[i] objectForKey:@"a_can_booking"] isEqualToString:@"1"]  ? YES : NO ;
-          model.hasGood = [[loveStoryArray[i] objectForKey:@"has_good"] boolValue];
+        model.caseTitle = [improvementArray[i] objectForKey:@"a_title"];
+        model.caseName = [improvementArray[i] objectForKey:@"ac_name"];
+        model.caseImageUrl = [NSString stringWithFormat:@"%@/%@",basebgUrl,[improvementArray[i] objectForKey:@"a_bg_pic"]] ;
+        model.caseAdID = [[improvementArray[i] objectForKey:@"a_id"] integerValue];
+        model.caseGoodsNum = [[improvementArray[i] objectForKey:@"a_goods_num"] integerValue];
+        model.caseClickNum = [[improvementArray[i] objectForKey:@"a_click_num"] integerValue];
+        model.caseCreateTime = [[improvementArray[i] objectForKey:@"create_time"] integerValue];
+        model.isShowAppointment = [[improvementArray[i] objectForKey:@"a_can_booking"] isEqualToString:@"1"]  ? YES : NO ;
+          model.hasGood = [[improvementArray[i] objectForKey:@"has_good"] boolValue];
         [improvementMutableArray addObject:model];
     }
     
     for (int i  = 0; i < redeemStoryArray.count; i++) {
         NNSuccessCaseModel *model = [[NNSuccessCaseModel alloc] init];
-        model.caseTitle = [loveStoryArray[i] objectForKey:@"a_title"];
-        model.caseName = [loveStoryArray[i] objectForKey:@"ac_name"];
-        model.caseImageUrl = [NSString stringWithFormat:@"%@/%@",basebgUrl,[loveStoryArray[i] objectForKey:@"a_bg_pic"]] ;
-        model.caseAdID = [[loveStoryArray[i] objectForKey:@"a_id"] integerValue];
-        model.caseGoodsNum = [[loveStoryArray[i] objectForKey:@"a_goods_num"] integerValue];
-        model.caseClickNum = [[loveStoryArray[i] objectForKey:@"a_click_num"] integerValue];
-        model.caseCreateTime = [[loveStoryArray[i] objectForKey:@"create_time"] integerValue];
-        model.isShowAppointment = [[loveStoryArray[i] objectForKey:@"a_can_booking"] isEqualToString:@"1"]  ? YES : NO ;
-          model.hasGood = [[loveStoryArray[i] objectForKey:@"has_good"] boolValue];
+        model.caseTitle = [redeemStoryArray[i] objectForKey:@"a_title"];
+        model.caseName = [redeemStoryArray[i] objectForKey:@"ac_name"];
+        model.caseImageUrl = [NSString stringWithFormat:@"%@/%@",basebgUrl,[redeemStoryArray[i] objectForKey:@"a_bg_pic"]] ;
+        model.caseAdID = [[redeemStoryArray[i] objectForKey:@"a_id"] integerValue];
+        model.caseGoodsNum = [[redeemStoryArray[i] objectForKey:@"a_goods_num"] integerValue];
+        model.caseClickNum = [[redeemStoryArray[i] objectForKey:@"a_click_num"] integerValue];
+        model.caseCreateTime = [[redeemStoryArray[i] objectForKey:@"create_time"] integerValue];
+        model.isShowAppointment = [[redeemStoryArray[i] objectForKey:@"a_can_booking"] isEqualToString:@"1"]  ? YES : NO ;
+          model.hasGood = [[redeemStoryArray[i] objectForKey:@"has_good"] boolValue];
         [redeemStoryMutableArray addObject:model];
     }
     

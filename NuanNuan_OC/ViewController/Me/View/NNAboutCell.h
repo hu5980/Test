@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface NNAboutCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *aboutContentLabel;
 
 @end

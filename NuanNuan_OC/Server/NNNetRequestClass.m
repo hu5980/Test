@@ -106,6 +106,9 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([[responseObject objectForKey:@"result"] isEqualToString:@"fail"]) {
             errorBlock([responseObject objectForKey:@"msg"]);
+            if ([[responseObject objectForKey:@"msg"] isEqualToString:@"token已过期，请重新登陆！"]) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"loginAgain" object:[responseObject objectForKey:@"msg"]];
+            }
         }else{
             returnBlock(responseObject);
         }

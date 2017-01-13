@@ -11,7 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NNEmotionCaseVC">
             <connections>
-                <outlet property="emotionalTableView" destination="VRK-3R-fV7" id="XO6-7e-fXg"/>
+                <outlet property="emotionCollectionView" destination="meV-uy-0nG" id="oZg-jy-0bg"/>
+                <outlet property="emotionFlow" destination="Cv3-vQ-qfv" id="zDv-gf-Uw0"/>
                 <outlet property="emotionalTypeScrollView" destination="zwG-HF-WY1" id="0OP-cn-UGy"/>
                 <outlet property="scrollViewConstraint" destination="gt5-ZE-Rl4" id="3JA-zM-xWn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -28,20 +29,26 @@
                         <constraint firstAttribute="height" constant="32" id="gt5-ZE-Rl4"/>
                     </constraints>
                 </scrollView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VRK-3R-fV7">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="meV-uy-0nG">
                     <rect key="frame" x="0.0" y="32" width="375" height="635"/>
-                    <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
-                </tableView>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Cv3-vQ-qfv">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <cells/>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <gestureRecognizers/>
             <constraints>
+                <constraint firstItem="meV-uy-0nG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0PU-So-jsT"/>
                 <constraint firstItem="zwG-HF-WY1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9ce-01-bjp"/>
-                <constraint firstItem="VRK-3R-fV7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MlC-1v-DSO"/>
-                <constraint firstAttribute="trailing" secondItem="VRK-3R-fV7" secondAttribute="trailing" id="TTj-ys-HCN"/>
+                <constraint firstAttribute="trailing" secondItem="meV-uy-0nG" secondAttribute="trailing" id="P0i-bR-PvJ"/>
                 <constraint firstAttribute="trailing" secondItem="zwG-HF-WY1" secondAttribute="trailing" id="XSP-3v-iCV"/>
-                <constraint firstAttribute="bottom" secondItem="VRK-3R-fV7" secondAttribute="bottom" id="Y7I-67-Na8"/>
-                <constraint firstItem="VRK-3R-fV7" firstAttribute="top" secondItem="zwG-HF-WY1" secondAttribute="bottom" id="kuR-uT-eWq"/>
+                <constraint firstAttribute="bottom" secondItem="meV-uy-0nG" secondAttribute="bottom" id="lmP-v1-Hh3"/>
+                <constraint firstItem="meV-uy-0nG" firstAttribute="top" secondItem="zwG-HF-WY1" secondAttribute="bottom" id="wG7-Zf-Oox"/>
                 <constraint firstItem="zwG-HF-WY1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="x7f-ZK-Ho7"/>
             </constraints>
             <point key="canvasLocation" x="-488.5" y="-60.5"/>

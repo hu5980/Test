@@ -18,15 +18,14 @@
 #import "NNSpitslotDetailVC.h"
 
 @interface NNMinePraisedVC ()<UITableViewDataSource,UITableViewDelegate>{
-
     MJRefreshFooter *footer;
     NSArray *imageArrays;
     NSString *defaultType;
-    NSMutableArray *praisedArray;
+    NSMutableArray *praisedQuestionArray;
+    NSMutableArray *praisedTreeHoelArray;
     NSMutableArray *phonoArrays;
 }
 @property (weak, nonatomic) IBOutlet UIButton *defaultButton;
-
 @property (weak, nonatomic) IBOutlet UITableView *praisedTableView;
 @end
 
@@ -49,6 +48,7 @@
     self.navTitle = @"我赞过的";
     _praisedTableView.delegate = self;
     _praisedTableView.dataSource = self;
+    _praisedTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _praisedTableView.backgroundColor = NN_BACKGROUND_COLOR;
     footer =  [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [self refreshData];
@@ -61,7 +61,8 @@
 - (void)initData {
     imageArrays = @[@"1",@"2"];
     defaultType = @"1";
-    praisedArray = [NSMutableArray array];
+    praisedQuestionArray = [NSMutableArray array];
+    praisedTreeHoelArray = [NSMutableArray array];
     [[NNProgressHUD instance] showHudToView:self.view withMessage:@"加载中..."];
     [self refreshData];
 }
@@ -70,25 +71,41 @@
     NNMinePraisedViewModel *viewModel = [[NNMinePraisedViewModel alloc] init];
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
         [[NNProgressHUD instance] hideHud];
-        [praisedArray addObjectsFromArray:returnValue];
+        if ([defaultType isEqualToString:@"1"]) {
+            [praisedQuestionArray addObjectsFromArray:returnValue];
+            [self showBackgroundImageViewArrays:praisedQuestionArray];
+        }else{
+            [praisedTreeHoelArray addObjectsFromArray:returnValue];
+            [self showBackgroundImageViewArrays:praisedTreeHoelArray];
+        }
         [footer endRefreshing];
         [_praisedTableView reloadData];
     } WithErrorBlock:^(id errorCode) {
-         [[NNProgressHUD instance] hideHud];
-         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
+        [[NNProgressHUD instance] hideHud];
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
     } WithFailureBlock:^(id failureBlock) {
-         [[NNProgressHUD instance] hideHud];
+        [[NNProgressHUD instance] hideHud];
     }];
-   
+    
     if ([defaultType isEqualToString:@"1"]) {
-        NNQuestionAndAnswerModel *model = [praisedArray lastObject];
-         [viewModel getMinePraisedContentWithToken:TEST_TOKEN andPraisedType:defaultType andPraisedId:model.questionId andpageNum:@"10"];
+        NNQuestionAndAnswerModel *model = [praisedQuestionArray lastObject];
+        [viewModel getMinePraisedContentWithToken:TEST_TOKEN andPraisedType:defaultType andPraisedId:model.questionId andpageNum:@"10"];
     }else{
-        NNTreeHoelModel *model = [praisedArray lastObject];
+        NNTreeHoelModel *model = [praisedTreeHoelArray lastObject];
         [viewModel getMinePraisedContentWithToken:TEST_TOKEN andPraisedType:defaultType andPraisedId:model.thID andpageNum:@"10"];
     }
-    
-   
+}
+
+- (void)showBackgroundImageViewArrays:(NSMutableArray *)array {
+    if (array.count == 0) {
+        if([defaultType isEqualToString:@"1"]){
+            [self showBackgroundViewImageName:@"back_ic" andTitle:@"还没有赞过的问题，快去问吧看看吧"];
+        }else{
+            [self showBackgroundViewImageName:@"back_ic" andTitle:@"还没有赞过的吐槽，快去树洞看看吧"];
+        }
+    }else{
+        [self hideBackgroundViewImage];
+    }
 }
 
 #pragma --mark Action
@@ -96,13 +113,11 @@
     _defaultButton.selected = NO;
     _defaultButton = sender;
     _defaultButton.selected = YES;
-    [praisedArray removeAllObjects];
     if (sender.tag == 100) {
         defaultType = @"1";
     }else{
         defaultType = @"2";
     }
-    [[NNProgressHUD instance] showHudToView:self.view withMessage:@"加载中..."];
     [self refreshData];
     
     //[_praisedTableView reloadData];
@@ -112,7 +127,11 @@
 #pragma --mark Delegate
 #pragma --mark UITableViewDelegate UItableViewDatasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return praisedArray.count;
+    if ([defaultType  isEqualToString:@"1"]) {
+        return praisedQuestionArray.count;
+    }else{
+        return praisedTreeHoelArray.count;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -125,20 +144,21 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     CGFloat height;
-    if (_defaultButton.tag == 100) {
+    if ([defaultType  isEqualToString:@"1"]) {
         height = [tableView fd_heightForCellWithIdentifier:@"NNQuestionAndAnswerCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             NNQuestionAndAnswerCell *questionAndAnswerCell =  cell;
             questionAndAnswerCell.commentConstraint.constant = 0;
+             questionAndAnswerCell.model = [praisedQuestionArray objectAtIndex:indexPath.section];
         }];
         
     }else{
         height = [tableView fd_heightForCellWithIdentifier:@"NNSpitslotCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             NNSpitslotCell *spitslotCell = cell;
             spitslotCell.commentConstraint.constant = 0;
-            spitslotCell.model = [praisedArray objectAtIndex:indexPath.section];
-           
+            spitslotCell.model = [praisedTreeHoelArray objectAtIndex:indexPath.section];
+            
         }];
-
+        
     }
     
     return height;
@@ -151,23 +171,23 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-  
-    if (_defaultButton.tag == 100) {
+    
+    if ([defaultType  isEqualToString:@"1"]) {
         NNQuestionAndAnswerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNQuestionAndAnswerCell"];
-        cell.model = [praisedArray objectAtIndex:indexPath.section];
+        cell.model = [praisedQuestionArray objectAtIndex:indexPath.section];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.likeBlock = ^(UIButton *button) {
-        
+            
         };
         
         cell.commentBlock = ^{
-        
+            
         };
         return cell;
     }else{
         NNSpitslotCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNSpitslotCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        NNTreeHoelModel *model =  [praisedArray objectAtIndex:indexPath.section];
+        NNTreeHoelModel *model =  [praisedTreeHoelArray objectAtIndex:indexPath.section];
         __weak NNMinePraisedVC *weakSelf = self;
         cell.selectImageBlock = ^(NSInteger selectIndex){
             
@@ -203,41 +223,37 @@
         };
         
         return cell;
-
+        
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (_defaultButton.tag == 100) {
+    if ([defaultType  isEqualToString:@"1"]) {
         NNQuestionAndAnswerDetailVC *detailVC = [[NNQuestionAndAnswerDetailVC alloc] initWithNibName:@"NNQuestionAndAnswerDetailVC" bundle:nil];
-        detailVC.signModel = [praisedArray objectAtIndex:indexPath.section];
+        detailVC.signModel = [praisedQuestionArray objectAtIndex:indexPath.section];
         [self.navigationController pushViewController:detailVC animated:YES];
     }else{
         NNSpitslotDetailVC *spitslotDetailVC = [[NNSpitslotDetailVC alloc] initWithNibName:@"NNSpitslotDetailVC" bundle:nil];
-        spitslotDetailVC.model = [praisedArray objectAtIndex:indexPath.section];
+        spitslotDetailVC.model = [praisedTreeHoelArray objectAtIndex:indexPath.section];
         [self.navigationController pushViewController:spitslotDetailVC animated:YES];
     }
- 
-
-    
 }
 
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

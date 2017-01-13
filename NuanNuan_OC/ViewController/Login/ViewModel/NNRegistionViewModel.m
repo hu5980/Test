@@ -19,14 +19,18 @@
                               @"code":verify,
                               @"password":password,
                               @"channel":@"ios",
-                              @"appkey":@"19979a0c7b7d0",
-                              @"device_token": devicetoken};
+                              @"appkey":@"19979a0c7b7d0"};
+    NSMutableDictionary *mutableParames = [NSMutableDictionary dictionaryWithDictionary:parames];
+    if(devicetoken == nil){
+        [mutableParames setValue:devicetoken forKey:@"device_token"];
+    }
+   
     
     [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_user&a=SDKSMSRegist",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
       
         [self fetchValueSuccessWithDic:returnValue];
     } withErrorCodeBlock:^(id errorCode) {
-        self.returnBlock(errorCode);
+        self.errorBlock(errorCode);
     } withFailureBlock:^(id failureBlock) {
          NSLog(@"%@",failureBlock);
     } withProgress:^(id Progress) {
@@ -56,9 +60,7 @@
     [[NSUserDefaults standardUserDefaults] setObject:model.uid forKey:@"currentUserID"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    
     self.returnBlock(model);
-
 }
 
 @end

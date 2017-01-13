@@ -9,7 +9,7 @@
 #import "NNBaseVC.h"
 
 @interface NNLoginAndRegisterVC : NNBaseVC
-
+@property (nonatomic,strong) NSString *showHudText;
 
 
 @end

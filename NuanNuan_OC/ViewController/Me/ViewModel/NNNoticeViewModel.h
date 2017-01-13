@@ -16,4 +16,6 @@
 
 + (RLMResults *) getNoticeListWithUserID:(NSString *)uid;
 
++ (void) changeNoticeReadState:(NSString *)noticeId;
+
 @end

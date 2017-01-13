@@ -10,11 +10,10 @@
 
 typedef void(^popBlock)();
 
-typedef void (^showDetailBlock)();
 
 @interface NNPsychologicalTeacherHeaderView : UIView
 @property (copy, nonatomic) popBlock popblock;
-@property (copy, nonatomic) showDetailBlock showDetail;
+
 @property (weak, nonatomic) IBOutlet UIButton *popButton;
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
@@ -24,5 +23,5 @@ typedef void (^showDetailBlock)();
 @property (weak, nonatomic) IBOutlet UILabel *nickNamelabel;
 @property (weak, nonatomic) IBOutlet UILabel *studyTypeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *teacherDescribeLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *describelLabelConstraint;
+
 @end

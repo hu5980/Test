@@ -61,6 +61,11 @@
         [[NNProgressHUD instance] hideHud];
         [footer endRefreshing];
         [orderArray addObjectsFromArray:returnValue];
+        if(orderArray.count == 0){
+            [self showBackgroundViewImageName:@"back_ic" andTitle:@"全国最棒的心理导师等你来约哦"];
+        }else{
+            [self hideBackgroundViewImage];
+        }
         [_orderTableView reloadData];
     } WithErrorBlock:^(id errorCode) {
          [[NNProgressHUD instance] hideHud];

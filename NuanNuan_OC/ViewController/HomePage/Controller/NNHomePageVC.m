@@ -23,6 +23,7 @@
 {
     NNRingImageView *headerView;
     NSArray *titleArray ;
+    NSArray *typeArray;
     NNHomepageSuccessCaseModel *successCasemodel;
 }
 
@@ -48,8 +49,6 @@
             [NNNoticeServer dealWithDictionary:dicInfo andNoticeType:noticeType andisPresent:YES andViewController:self];
         }
     }
-    
-    
        // Do any additional setup after loading the view.
 }
 
@@ -88,7 +87,7 @@
     headerView.ringBlock = ^(NNRingImageModel *model){
         NNLog(@"点击滚动图片  %@",model);
         NNArticleDetailVC *articleVC = [[NNArticleDetailVC alloc] init];
-        articleVC.defaultType = 3;
+      
         articleVC.articleID = model.ringId;
         articleVC.artileTitle = model.title;
         articleVC.imageUrl = model.imageUrl;
@@ -109,6 +108,7 @@
 
 - (void)initData {
     titleArray = @[@"成功故事・婚恋",@"成功故事・挽回",@"成功故事・提升"];
+    typeArray = @[@"11",@"12",@"13"];
     NNHomepageSuccessCaseViewModel *successCaseViewModel = [[NNHomepageSuccessCaseViewModel alloc] init];
     [successCaseViewModel setBlockWithReturnBlock:^(id returnValue) {
         successCasemodel = returnValue;
@@ -145,28 +145,30 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *  cell;
+    
     if (indexPath.section == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"emotionalItemCell"];
         NNEmotionalItemCell *emotionItemCell = (NNEmotionalItemCell *)cell;
-        NNEmotionCaseVC *emotionCaseVC = [[NNEmotionCaseVC alloc] initWithNibName:@"NNEmotionCaseVC" bundle:nil];
-        emotionCaseVC.hidesBottomBarWhenPushed = YES;
-        
         emotionItemCell.eblock = ^(EmotionType type){
+            NNEmotionCaseVC *emotionCaseVC = [[NNEmotionCaseVC alloc] initWithNibName:@"NNEmotionCaseVC" bundle:nil];
+            emotionCaseVC.hidesBottomBarWhenPushed = YES;
             switch (type) {
                 case marriageAndFamily:
                     emotionCaseVC.navigationTitle = @"婚姻家庭";
-                    emotionCaseVC.defaultType = 1;
-                    emotionCaseVC.caseTypeArray = @[@"婆媳关系",@"夫妻心事",@"家庭琐事",@"婚外恋"];
+   
+                    emotionCaseVC.caseTitleArrsy = @[@"婆媳关系",@"夫妻心事",@"家庭琐事",@"婚外恋"];
+                    emotionCaseVC.caseTypeArray = @[@"1",@"2",@"3",@"4"];
                     break;
                 case emotionalSave:
                     emotionCaseVC.navigationTitle = @"情感挽回";
-                    emotionCaseVC.defaultType = 5;
-                    emotionCaseVC.caseTypeArray = @[@"暗恋",@"失恋",@"复杂恋情"];
+                    emotionCaseVC.caseTitleArrsy = @[@"暗恋",@"失恋",@"复杂恋情"];
+                    emotionCaseVC.caseTypeArray = @[@"5",@"6",@"7"];
                     break;
                 case selfImprovement:
                     emotionCaseVC.navigationTitle = @"自我提升";
-                     emotionCaseVC.defaultType = 8;
-                    emotionCaseVC.caseTypeArray = @[@"爱情探索",@"人际关系",@"人生信念"];
+
+                    emotionCaseVC.caseTitleArrsy = @[@"爱情探索",@"人际关系",@"人生信念"];
+                     emotionCaseVC.caseTypeArray = @[@"8",@"9",@"10"];
                     break;
                 default:
                     break;
@@ -178,21 +180,19 @@
         emotionAllcell.successCasemoreBlock = ^(NSInteger type){
             NNEmotionCaseVC *emotionCaseVC = [[NNEmotionCaseVC alloc] initWithNibName:@"NNEmotionCaseVC" bundle:nil];
             emotionCaseVC.hidesBottomBarWhenPushed = YES;
-            emotionCaseVC.defaultType = type;
+            emotionCaseVC.caseTypeArray = [NSArray arrayWithObject:[typeArray objectAtIndex:indexPath.row]];
             emotionCaseVC.navigationTitle = [titleArray objectAtIndex:indexPath.row];
             [self.navigationController pushViewController:emotionCaseVC animated:YES];
         };
-        __weak NNHomePageVC *weakSelf = self;
+      
         emotionAllcell.successCaseBlock = ^(NNSuccessCaseModel *model){
-            NNLog(@"成功故事");
-            
             NNArticleDetailVC *articleVC = [[NNArticleDetailVC alloc] init];
             articleVC.articleID = model.caseAdID;
-            articleVC.defaultType = 3;
+         
             articleVC.artileTitle = model.caseTitle;
             articleVC.imageUrl = model.caseImageUrl;
             articleVC.hidesBottomBarWhenPushed = YES;
-            [weakSelf.navigationController pushViewController:articleVC animated:YES];
+            [self.navigationController pushViewController:articleVC animated:YES];
 
         };
         emotionAllcell.emotionTitleLabel.text = [titleArray objectAtIndex:indexPath.row];

@@ -35,4 +35,9 @@
 
 - (void)keyboardWillHide:(NSNotification*)notification;
 
+
+
+- (void)showBackgroundViewImageName:(NSString *)imageName andTitle:(NSString *)title ;
+
+- (void)hideBackgroundViewImage;
 @end

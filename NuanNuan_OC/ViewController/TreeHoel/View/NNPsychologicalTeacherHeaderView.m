@@ -22,13 +22,13 @@
     [super awakeFromNib];
     _headimageView.layer.masksToBounds = YES;
     _headimageView.layer.cornerRadius = 20;
+    _backgroundImageView.clipsToBounds = YES;
+    _backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
 }
 
 - (IBAction)popAction:(UIButton *)sender {
     _popblock();
 }
 
-- (IBAction)showDetail:(UIButton *)sender {
-    _showDetail();
-}
+
 @end

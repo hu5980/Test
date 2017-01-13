@@ -16,6 +16,7 @@
     UIButton *defaultButton;
     NSString *hadAnswer;
     NSMutableArray *askArray;
+    NSMutableArray *unAskArray;
     MJRefreshFooter *footer;
 }
 @property (weak, nonatomic) IBOutlet UIButton *hadAnswerButton;
@@ -52,11 +53,12 @@
     _askingTableView.mj_footer = footer;
     [_askingTableView registerNib:[UINib nibWithNibName:@"NNQuestionAndAnswerCell" bundle:nil] forCellReuseIdentifier:@"NNQuestionAndAnswerCell"];
     [_askingTableView registerNib:[UINib nibWithNibName:@"NNUnAnswerQuestionCell" bundle:nil] forCellReuseIdentifier:@"NNUnAnswerQuestionCell"];
-  }
+}
 
 - (void)initData {
     hadAnswer = @"1";
     askArray = [NSMutableArray array];
+    unAskArray = [NSMutableArray array];
     [self refreshData];
 }
 
@@ -64,10 +66,16 @@
 - (void)refreshData {
     NNAskingListViewModel *viewModel = [[NNAskingListViewModel alloc] init];
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
-        [askArray addObjectsFromArray:returnValue];
+        if ([hadAnswer isEqualToString:@"1"]) {
+            [askArray addObjectsFromArray:returnValue];
+            [self showBackgroundImageViewArrays:askArray];
+        }else{
+            [unAskArray addObjectsFromArray:returnValue];
+            [self showBackgroundImageViewArrays:unAskArray];
+        }
         [_askingTableView reloadData];
     } WithErrorBlock:^(id errorCode) {
-        
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
     } WithFailureBlock:^(id failureBlock) {
         
     }];
@@ -80,7 +88,6 @@
         defaultButton.selected = NO;
         defaultButton = sender;
         defaultButton.selected = YES;
-        [askArray removeAllObjects];
         if (sender.tag == 100) {
             hadAnswer = @"1";
         }else{
@@ -94,7 +101,25 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return askArray.count;
+    if ([hadAnswer isEqualToString:@"1"]) {
+        return askArray.count;
+    }else{
+        return unAskArray.count;
+    }
+    
+}
+
+
+- (void)showBackgroundImageViewArrays:(NSMutableArray *)array {
+    if (array.count == 0) {
+        if([hadAnswer isEqualToString:@"1"]){
+            [self showBackgroundViewImageName:@"back_ic" andTitle:@"还没有已回答的提问，暖暖的老师随时等你咨询哦"];
+        }else{
+            [self showBackgroundViewImageName:@"back_ic" andTitle:@"还没有未回答的提问，暖暖的老师随时等你咨询哦"];
+        }
+    }else{
+        [self hideBackgroundViewImage];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -107,7 +132,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     CGFloat height;
-    if (defaultButton.tag == 100) {
+    if ([hadAnswer isEqualToString:@"1"]) {
         height = [tableView fd_heightForCellWithIdentifier:@"NNQuestionAndAnswerCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             NNQuestionAndAnswerCell *questionAndAnswerCell =  cell;
             questionAndAnswerCell.commentConstraint.constant = 0;
@@ -117,7 +142,7 @@
     }else{
         height = [tableView fd_heightForCellWithIdentifier:@"NNUnAnswerQuestionCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             NNUnAnswerQuestionCell *unAnswerQuestionCell =  cell;
-            unAnswerQuestionCell.model = [askArray objectAtIndex:indexPath.section];
+            unAnswerQuestionCell.model = [unAskArray objectAtIndex:indexPath.section];
         }];
         
     }
@@ -133,7 +158,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (defaultButton.tag == 100) {
+    if ([hadAnswer isEqualToString:@"1"]) {
         NNQuestionAndAnswerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNQuestionAndAnswerCell"];
         cell.model = [askArray objectAtIndex:indexPath.section];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -147,7 +172,7 @@
         return cell;
     }else{
         NNUnAnswerQuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNUnAnswerQuestionCell"];
-         cell.model = [askArray objectAtIndex:indexPath.section];
+        cell.model = [unAskArray objectAtIndex:indexPath.section];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
@@ -155,16 +180,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (defaultButton.tag == 100) {
+    if ([hadAnswer isEqualToString:@"1"]) {
         NNQuestionAndAnswerDetailVC *detailVC = [[NNQuestionAndAnswerDetailVC alloc] initWithNibName:@"NNQuestionAndAnswerDetailVC" bundle:nil];
         detailVC.signModel = [askArray objectAtIndex:indexPath.section];
         [self.navigationController pushViewController:detailVC animated:YES];
     }else{
- 
+        
     }
-    
-    
-    
 }
 
 
@@ -175,13 +197,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

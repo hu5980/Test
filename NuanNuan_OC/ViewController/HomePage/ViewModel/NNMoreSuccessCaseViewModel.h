@@ -10,7 +10,7 @@
 
 @interface NNMoreSuccessCaseViewModel : NNBaseViewModel
 
-- (void)getMoreSuccessCaseWithPageNum:(NSInteger) pageNum andCaseType:(NSInteger) type andCaseID:(NSInteger) caseID;
+- (void)getMoreSuccessCaseWithPageNum:(NSInteger) pageNum andCaseType:(NSInteger) type andCaseID:(NSInteger) caseID andToken:(NSString *)token;
 
 - (void)likeTheArticleWithUser:(NSString *)token andType:(NSInteger) type andCaseID:(NSInteger) caseID;
 

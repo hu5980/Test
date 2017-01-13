@@ -25,10 +25,7 @@
 }
 
 - (void)fetchValueSuccessWithDic:(NSDictionary *)returnValue {
-
-    
     NSArray *list = [[returnValue objectForKey:@"data"] objectForKey:@"list"];
-    
     for (int i  =0; i < list.count; i++) {
         NSDictionary *notice = [list objectAtIndex:i];
         NNNoticeModel *model = [[NNNoticeModel alloc] init];
@@ -57,9 +54,25 @@
 }
 
 + (RLMResults *) getNoticeListWithUserID:(NSString *)uid {
-    RLMResults *noticeResult = [NNNoticeModel objectsWhere:@"uid = %@ AND isRead = '0'  ",uid];
+    RLMResults *noticeResult = [NNNoticeModel objectsWhere:@"uid = %@ ",uid];
    
+    for (int i = 0; i <noticeResult.count ; i++) {
+        NNNoticeModel *noticeModel = [noticeResult objectAtIndex:i];
+         NSLog(@"数据库中是否已读 %@  ID %@",noticeModel.isRead,noticeModel.noticeId);
+    }
     return noticeResult;
+}
+
++ (void) changeNoticeReadState:(NSString *)noticeId {
+    
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm transactionWithBlock:^{
+        RLMResults *results = [NNNoticeModel objectsWhere:@"noticeId = %@",noticeId];
+        NNNoticeModel *noticeModel = [results lastObject];
+        NSLog(@"%@  %@",noticeModel.isRead,noticeModel.noticeId);
+        noticeModel.isRead =@"1";
+        [realm commitWriteTransaction];
+    }];
 }
 
 @end

@@ -7,11 +7,14 @@
 //
 
 #import "NNBaseVC.h"
-
+#import "NNLoginAndRegisterVC.h"
 @interface NNBaseVC ()
 {
     UIBarButtonItem *leftItem;
     UIBarButtonItem *rightItem;
+    
+    UIImageView *backgroundImageView;
+    UILabel   *describeLabel;
 }
 @end
 
@@ -46,6 +49,9 @@
                                              selector:@selector(keyboardWillHide:)
      
                                                  name:UIKeyboardWillHideNotification object:nil];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginAgein:) name:@"loginAgain" object:nil];
    
     // Do any additional setup after loading the view.
 }
@@ -88,6 +94,16 @@
     
 }
 
+- (void)loginAgein:(NSNotification *)nitification {
+     NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];
+    loginVC.isPresent = YES;
+    loginVC.showHudText = [nitification object];
+    [self presentViewController:loginVC animated:YES completion:^{
+        
+    }];
+
+}
+
 - (void)setNavTitle:(NSString *)navTitle{
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     titleLabel.textColor = [UIColor colorFromHexString:@"#ff9933"];
@@ -107,6 +123,33 @@
 
 - (void)dealloc {
      [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)showBackgroundViewImageName:(NSString *)imageName andTitle:(NSString *)title {
+    if(backgroundImageView == nil){
+        backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake((NNAppWidth - 60)/2, (NNAppHeight - 60) / 2 - 94, 60, 60)];
+        [self.view addSubview:backgroundImageView];
+    }
+    backgroundImageView.image = [UIImage imageNamed:imageName];
+    backgroundImageView.hidden = NO;
+    if (describeLabel == nil) {
+        describeLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, backgroundImageView.bottom + 5, NNAppWidth - 60, 40)];
+        describeLabel.backgroundColor = [UIColor clearColor];
+        describeLabel.font = [UIFont systemFontOfSize:14.f];
+        describeLabel.textAlignment = NSTextAlignmentCenter;
+        describeLabel.textColor = NN_TEXT666666_COLOR;
+        describeLabel.numberOfLines = 0;
+        [self.view addSubview:describeLabel];
+    }
+    describeLabel.text = title;
+    describeLabel.hidden = NO;
+}
+
+- (void)hideBackgroundViewImage{
+    if (backgroundImageView != nil && describeLabel!= nil) {
+        backgroundImageView.hidden = YES;
+        describeLabel.hidden = YES;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -12,8 +12,6 @@
 
 @property (assign) NSInteger articleID;
 
-@property (assign) NSInteger defaultType;
-
 @property (strong,nonatomic) NSString *artileTitle;
 
 @property (strong,nonatomic) NSString *imageUrl;

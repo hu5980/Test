@@ -12,12 +12,15 @@
 #import "NNMoreSuccessCaseViewModel.h"
 #import "NNSuccessCaseModel.h"
 #import "NNArticleDetailVC.h"
+#import "NNLoginAndRegisterVC.h"
 
 @interface NNServerVC () <UITableViewDelegate,UITableViewDataSource> {
     UIButton *defaultSelectButton;
     MJRefreshFooter *footer;
+    MJRefreshHeader *header;
     NSInteger defaultType;
-    NSMutableArray *serverArray;
+    NSMutableArray *customizationArrays;  //私人定制
+    NSMutableArray *serverArray;      //服务介绍
 }
 @property (weak, nonatomic) IBOutlet UITableView *serverListTableView;
 
@@ -25,13 +28,24 @@
 
 @implementation NNServerVC
 
-- (void)viewWillAppear:(BOOL)animated{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
+   
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if (TEST_TOKEN == nil) {
+         NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];;
+        loginVC.isPresent = YES;
+        [self presentViewController:loginVC animated:YES completion:^{
+            
+        }];
+        
+        return ;
+    }
+
     [self initData];
     [self initUI];
     // Do any additional setup after loading the view.
@@ -54,7 +68,7 @@
             }else{
                 defaultType = 15;
             }
-            [serverArray removeAllObjects];
+          
             [self refreshData];
         }
         [_serverListTableView reloadData];
@@ -63,7 +77,17 @@
     footer =  [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [self refreshData];
     }];
+    header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        if (defaultType == 14) {
+            [customizationArrays removeAllObjects];
+        }else{
+            [serverArray removeAllObjects];
+
+        }
+        [self refreshData];
+    }];
     _serverListTableView.mj_footer = footer;
+    _serverListTableView.mj_header = header;
     _serverListTableView.dataSource = self;
     _serverListTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _serverListTableView.delegate = self;
@@ -73,29 +97,56 @@
 
 - (void)initData {
     defaultType = 14;
+    customizationArrays = [NSMutableArray array];
     serverArray = [NSMutableArray array];
     [self refreshData];
+}
+
+
+- (void) endRefreshing {
+    if ([footer isRefreshing]) {
+        [footer endRefreshing];
+    }
+    if ([header isRefreshing]) {
+        [header endRefreshing];
+    }
 }
 
 - (void)refreshData {
     NNMoreSuccessCaseViewModel *viewModel = [[NNMoreSuccessCaseViewModel alloc] init];
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
-        [serverArray addObjectsFromArray:returnValue];
+        if(defaultType == 14){
+            [customizationArrays addObjectsFromArray:returnValue];
+        }else{
+            [serverArray addObjectsFromArray:returnValue];
+        }
         [_serverListTableView reloadData];
-        [footer endRefreshing];
+        [self endRefreshing];
     } WithErrorBlock:^(id errorCode) {
-        
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
+        [self endRefreshing];
     } WithFailureBlock:^(id failureBlock) {
-        
+        [self endRefreshing];
+
     }];
-    NNSuccessCaseModel *model = [serverArray lastObject];
-    [viewModel getMoreSuccessCaseWithPageNum:10 andCaseType:defaultType andCaseID:model.caseAdID];
+    NNSuccessCaseModel *model;
+    if (defaultType == 14) {
+        model = [customizationArrays lastObject];
+    }else{
+        model = [serverArray lastObject];
+    }
+   
+    [viewModel getMoreSuccessCaseWithPageNum:10 andCaseType:defaultType andCaseID:model.caseAdID andToken:TEST_TOKEN];
 }
 
 #pragma --mark UITableViewdelegate UItableViewdatasource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return serverArray.count;
+    if(defaultType == 14){
+         return customizationArrays.count;
+    }else{
+        return serverArray.count;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -121,8 +172,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NNServerListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNServerListCell"];
-    cell.caseMode = [serverArray objectAtIndex:indexPath.section];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    if (defaultType == 14) {
+        cell.caseMode = [customizationArrays objectAtIndex:indexPath.section];
+    }else{
+        cell.caseMode = [serverArray objectAtIndex:indexPath.section];
+    }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (defaultSelectButton.tag == 200) {
         cell.apaleView.hidden = YES;
     }else{
@@ -135,11 +190,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NNArticleDetailVC *articleVC = [[NNArticleDetailVC alloc] init];
-    NNSuccessCaseModel *model = [serverArray objectAtIndex:indexPath.section];
+    NNSuccessCaseModel *model;
+    if (defaultType == 14) {
+        model = [customizationArrays objectAtIndex:indexPath.section];
+    }else{
+        model = [serverArray objectAtIndex:indexPath.section];
+    }
+  
     articleVC.articleID = model.caseAdID;
     articleVC.artileTitle = model.caseTitle;
     articleVC.imageUrl = model.caseImageUrl;
-    articleVC.defaultType = 3;
+    articleVC.isShowAppointment = model.isShowAppointment;
     articleVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:articleVC animated:YES];
 }

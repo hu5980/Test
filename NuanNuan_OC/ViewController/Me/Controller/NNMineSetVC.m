@@ -47,16 +47,23 @@
 
 - (void)initData {
     titleArray = @[@"关于暖暖",@"用户协议",@"清除缓存"];
-    [self getCache];
+    [self getCacheisDisk:NO];
 }
 
-
-- (void)getCache {
+- (void)getCacheisDisk:(BOOL)isDesk {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         SDImageCache *cache = [SDImageCache sharedImageCache];
         NSUInteger cacheSize = cache.getSize;
         cacheText = [NSString stringWithFormat:@"%.2f M",cacheSize/1024.0/1024.0];
-        [_setTableView reloadData];
+        
+        if (isDesk) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                 [_setTableView reloadData];
+                [[NNProgressHUD instance] hideHud];
+                [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"缓存清除成功"];
+            });
+            
+        }
     });
 }
 
@@ -88,30 +95,24 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         NNSetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNSetCell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.setTltleLabel.text = [titleArray objectAtIndex:indexPath.row];
         if (indexPath.row == 2) {
-            UILabel *cacheLabel = [[UILabel alloc] init];
-            [cell.contentView addSubview:cacheLabel];
-            [cacheLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.right.equalTo(@-25);
-                make.top.equalTo(@0);
-                make.bottom.equalTo(@0);
-                make.left.equalTo(cell.setTltleLabel.mas_right).with.offset(10.0f);
-            }];
-            cacheLabel.textAlignment = NSTextAlignmentRight;
-            cacheLabel.font = [UIFont systemFontOfSize:14.f];
-            cacheLabel.textColor = NN_TEXT666666_COLOR;
-            cacheLabel.text = cacheText;
+           cell.contentLabel.text = cacheText;
         }
         return cell;
     }else{
-        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"loginOut"];
+       
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((NNAppWidth - 100)/2 , 0, 100, 44)];
         label.textColor = [UIColor colorFromHexString:@"#ff9933"];
+        
         label.font = [UIFont systemFontOfSize:14.f];
         label.text = @"退出帐号";
         label.textAlignment = NSTextAlignmentCenter;
         [cell.contentView addSubview:label];
+        
         return cell;
     }
 }
@@ -128,12 +129,14 @@
             NNUserAgreementVC *agreementVC = [[NNUserAgreementVC alloc] initWithNibName:@"NNUserAgreementVC" bundle:nil];
             [self.navigationController pushViewController:agreementVC animated:YES];
         }else if (indexPath.row == 2){
+            [[NNProgressHUD instance] showHudToView:self.view withMessage:@"缓存清除中"];
             [[SDImageCache sharedImageCache] clearDisk];
-            [self getCache];
+           
+            [self getCacheisDisk:YES];
         }
     }else{
         NNLoginAndRegisterVC *loginOrRegisterVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];
-        
+        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"token"];
         [self.navigationController pushViewController:loginOrRegisterVC animated:YES];
       
     }

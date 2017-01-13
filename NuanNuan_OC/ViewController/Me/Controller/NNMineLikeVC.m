@@ -67,6 +67,13 @@
         [praisedArray addObjectsFromArray:returnValue];
         [footer endRefreshing];
         [_likeTableView reloadData];
+        
+        if(praisedArray.count == 0){
+            [self showBackgroundViewImageName:@"back_ic" andTitle:@"空空的哦，快去寻找你喜欢的文章吧"];
+        }else{
+            [self hideBackgroundViewImage];
+        }
+        
     } WithErrorBlock:^(id errorCode) {
         [[NNProgressHUD instance] hideHud];
         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
@@ -108,7 +115,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NNEmotionallItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNEmotionallItemCell"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.model = [praisedArray objectAtIndex:indexPath.section];
+    cell.block = ^(NNSuccessCaseModel *model){
+        NSLog(@"我的喜欢里面什么都不做");
+    };
     return cell;
 }
 
@@ -120,11 +131,8 @@
     articleVC.artileTitle = model.caseTitle;
     articleVC.imageUrl = model.caseImageUrl;
     articleVC.articleID = model.caseAdID;
-    articleVC.defaultType = 3;
     articleVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:articleVC animated:YES];
-
-
 }
 
 - (void)didReceiveMemoryWarning {

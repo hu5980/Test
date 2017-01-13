@@ -26,6 +26,7 @@
     NSString  *defaultType;
     NSMutableArray *questionAndAnswerMutableArray;
     MJRefreshBackNormalFooter *footer;
+    BOOL isShowDetail;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *psychologicalTeacherTableView;
@@ -51,9 +52,7 @@
     // Do any additional setup after loading the view from its nib.
 }
 
-
 - (void)initUI {
-    
     headerView = LOAD_VIEW_FROM_BUNDLE(@"NNPsychologicalTeacherHeaderView");
     [headerView.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:_model.backgroundImageUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
     [headerView.headimageView sd_setImageWithURL:[NSURL URLWithString:_model.teacherHeadUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
@@ -66,28 +65,11 @@
     _psychologicalTeacherTableView.delegate = self;
     _psychologicalTeacherTableView.dataSource = self;
     _psychologicalTeacherTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
-    __weak NNPsychologicalTeacherHeaderView *weakHeaderView = headerView;
-    
-    __weak NSString *descriptionStr = _model.teacherDescription;
-    
-    headerView.showDetail = ^(){
-        
-        CGFloat height = [descriptionStr boundingRectWithSize:CGSizeMake(NNAppWidth - 30, CGFLOAT_MAX)
-                                                 options:NSStringDrawingUsesLineFragmentOrigin
-                                              attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14.f]}
-                                                 context:nil].size.height;
-        
-        weakHeaderView.describelLabelConstraint.constant = height;
-        [weakHeaderView updateConstraints];
-    };
     [_psychologicalTeacherTableView registerNib:[UINib nibWithNibName:@"NNQuestionAndAnswerCell" bundle:nil] forCellReuseIdentifier:@"NNQuestionAndAnswerCell"];
     footer =  [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [self reflashQuestionAndAnswerData];
     }];
-    
     _psychologicalTeacherTableView.mj_footer =  footer;
-  
     __weak NNPsychologicalTeacherVC *weakSelf = self;
     headerView.popblock = ^(){
         [weakSelf.navigationController popViewControllerAnimated:YES];

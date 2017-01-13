@@ -18,7 +18,8 @@
 #import "NNSpitslotDetailVC.h"
 
 @interface NNMineCommentVC ()<UITableViewDelegate,UITableViewDataSource>{
-    NSMutableArray *commentArrays;
+    NSMutableArray *commentQuestionArrays;
+    NSMutableArray *commentTreeHoelArrays;
     MJRefreshFooter *footer;
     NSMutableArray *phonoArrays;
     NSString *defaultType;
@@ -49,6 +50,7 @@
     _commentTableView.delegate = self;
     _commentTableView.dataSource = self;
     _commentTableView.backgroundColor = NN_BACKGROUND_COLOR;
+    _commentTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     footer =  [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [self refreshData];
     }];
@@ -59,7 +61,8 @@
 }
 
 - (void)initData {
-    commentArrays = [NSMutableArray array];
+    commentQuestionArrays = [NSMutableArray array];
+    commentTreeHoelArrays = [NSMutableArray array];
     defaultType = @"1";
     [[NNProgressHUD instance] showHudToView:self.view withMessage:@"加载中..."];
     [self refreshData];
@@ -70,7 +73,14 @@
    NNMineCommentViewModel *commentViewModel = [[NNMineCommentViewModel alloc] init];
     [commentViewModel setBlockWithReturnBlock:^(id returnValue) {
         [[NNProgressHUD instance] hideHud];
-        [commentArrays addObjectsFromArray:returnValue];
+        if([defaultType isEqualToString:@"1"]){
+            [commentQuestionArrays addObjectsFromArray:returnValue];
+            [self showBackgroundImageViewArrays:commentQuestionArrays];
+        }else{
+            [commentTreeHoelArrays addObjectsFromArray:returnValue];
+            [self showBackgroundImageViewArrays:commentTreeHoelArrays];
+        }
+        
         [_commentTableView reloadData];
     } WithErrorBlock:^(id errorCode) {
          [[NNProgressHUD instance] hideHud];
@@ -80,16 +90,28 @@
     }];
     NSString *lastID;
     if ([defaultType isEqualToString:@"1"]) {
-        NNQuestionAndAnswerCommentModel *model = [commentArrays lastObject];
+        NNQuestionAndAnswerCommentModel *model = [commentQuestionArrays lastObject];
         lastID = model.commentID;
     }else{
-        NNSpitslotCommentModel *model = [commentArrays lastObject];
+        NNSpitslotCommentModel *model = [commentTreeHoelArrays lastObject];
         lastID = model.commentID;
     }
     
     [commentViewModel getMineCommentWithToken:TEST_TOKEN andCommentType:defaultType andLastComentID:lastID andDown:@"0" andPageNum:@"10"];
 }
 
+
+- (void)showBackgroundImageViewArrays:(NSMutableArray *)array {
+    if (array.count == 0) {
+        if([defaultType isEqualToString:@"1"]){
+            [self showBackgroundViewImageName:@"back_ic" andTitle:@"还没有评论的问题，快去问吧看看吧"];
+        }else{
+            [self showBackgroundViewImageName:@"back_ic" andTitle:@"还没有评论的吐槽，快去树洞看看吧"];
+        }
+    }else{
+        [self hideBackgroundViewImage];
+    }
+}
 
 
 
@@ -98,13 +120,13 @@
     _defaultButton.selected = NO;
     _defaultButton = sender;
     _defaultButton.selected = YES;
-    [commentArrays removeAllObjects];
+
     if (sender.tag == 100) {
         defaultType = @"1";
     }else{
         defaultType = @"2";
     }
-    [[NNProgressHUD instance] showHudToView:self.view withMessage:@"加载中..."];
+   // [[NNProgressHUD instance] showHudToView:self.view withMessage:@"加载中..."];
     [self refreshData];
 
 }
@@ -112,7 +134,12 @@
 #pragma --mark  UITableViewDatasource  UItableViewDelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return commentArrays.count;
+    if([defaultType isEqualToString:@"1"]){
+        return commentQuestionArrays.count;
+    }else{
+        return commentTreeHoelArrays.count;
+    }
+   
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -121,10 +148,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height;
-    if (_defaultButton.tag == 100) {
+    if ([defaultType isEqualToString:@"1"]) {
         height = [tableView fd_heightForCellWithIdentifier:@"NNQuestionAndAnswerCell" cacheByIndexPath:indexPath configuration:^(id cell) {
-            NNQuestionAndAnswerCommentModel *model = [commentArrays objectAtIndex:indexPath.section];
-
+            NNQuestionAndAnswerCommentModel *model = [commentQuestionArrays objectAtIndex:indexPath.section];
             NNQuestionAndAnswerCell *questionAndAnswerCell = cell;
             questionAndAnswerCell.commentLabel.text = model.comment;
         }];
@@ -132,12 +158,12 @@
     }else{
         height = [tableView fd_heightForCellWithIdentifier:@"NNSpitslotCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             NNSpitslotCell *spitslotCell = cell;
-            NNSpitslotCommentModel *model =  [commentArrays objectAtIndex:indexPath.section];
+            NNSpitslotCommentModel *model =  [commentTreeHoelArrays objectAtIndex:indexPath.section];
             spitslotCell.model = model.treeHoelModel;
             spitslotCell.commentLabel.text = model.comment;
         }];
     }
-    return height;
+    return height + 5;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -151,9 +177,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (_defaultButton.tag == 100) {
+    if ([defaultType isEqualToString:@"1"]) {
         NNQuestionAndAnswerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNQuestionAndAnswerCell"];
-        NNQuestionAndAnswerCommentModel *model = [commentArrays objectAtIndex:indexPath.section];
+        NNQuestionAndAnswerCommentModel *model = [commentQuestionArrays objectAtIndex:indexPath.section];
         cell.model = model.questionAndAnswerModelmodel;
         cell.commentLabel.text = model.comment;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -169,7 +195,7 @@
         NNSpitslotCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNSpitslotCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        NNSpitslotCommentModel *model =  [commentArrays objectAtIndex:indexPath.section];
+        NNSpitslotCommentModel *model =  [commentTreeHoelArrays objectAtIndex:indexPath.section];
         cell.commentLabel.text = model.comment;
  
         __weak NNMineCommentVC *weakSelf = self;
@@ -214,15 +240,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (_defaultButton.tag == 100) {
+    if ([defaultType isEqualToString:@"1"]) {
         NNQuestionAndAnswerDetailVC *detailVC = [[NNQuestionAndAnswerDetailVC alloc] initWithNibName:@"NNQuestionAndAnswerDetailVC" bundle:nil];
-        NNQuestionAndAnswerCommentModel *model = [commentArrays objectAtIndex:indexPath.section];
+        NNQuestionAndAnswerCommentModel *model = [commentQuestionArrays objectAtIndex:indexPath.section];
      
         detailVC.signModel =  model.questionAndAnswerModelmodel;
         [self.navigationController pushViewController:detailVC animated:YES];
     }else{
         NNSpitslotDetailVC *spitslotDetailVC = [[NNSpitslotDetailVC alloc] initWithNibName:@"NNSpitslotDetailVC" bundle:nil];
-        NNSpitslotCommentModel *model =  [commentArrays objectAtIndex:indexPath.section];
+        NNSpitslotCommentModel *model =  [commentTreeHoelArrays objectAtIndex:indexPath.section];
         spitslotDetailVC.model = model.treeHoelModel;
         [self.navigationController pushViewController:spitslotDetailVC animated:YES];
     }

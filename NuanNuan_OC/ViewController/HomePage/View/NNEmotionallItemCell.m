@@ -14,6 +14,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    _backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+    _backgroundImageView.clipsToBounds = YES;
     // Initialization code
 }
 
@@ -33,9 +35,6 @@
     _readNumLabel.text = [NSString stringWithFormat:@"%ld",model.caseClickNum];
     _likeNumLabel.text = [NSString stringWithFormat:@"%ld",model.caseGoodsNum];
     _likeButton.selected = model.hasGood;
-    _backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
-    _backgroundImageView.clipsToBounds = YES;
-
 }
 
 - (IBAction)likeAction:(UIButton *)sender {

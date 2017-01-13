@@ -50,18 +50,18 @@
         
        [_bgButton1 sd_setImageWithURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:0]).caseImageUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
         
-        if ([successCaseModelArray objectAtIndex:1]) {
+        if (successCaseModelArray.count >= 2) {
             _titleLabel2.text = ((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:1]).caseTitle;
             _titleLabel2.hidden = NO;
             [_bgButton2 sd_setImageWithURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:1]).caseImageUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
         }
        
-        if ([successCaseModelArray objectAtIndex:2]) {
+        if (successCaseModelArray.count >= 3) {
             _titleLabel3.text = ((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:2]).caseTitle;
             _titleLabel3.hidden = NO;
             [_bgButton3 sd_setImageWithURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:2]).caseImageUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
         }
-        if ([successCaseModelArray objectAtIndex:3]) {
+        if (successCaseModelArray.count >= 4) {
             _titleLabel4.text = ((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:3]).caseTitle;
             _titleLabel4.hidden = NO;
             [_bgButton4 sd_setImageWithURL:[NSURL URLWithString:((NNSuccessCaseModel *)[successCaseModelArray objectAtIndex:3]).caseImageUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];

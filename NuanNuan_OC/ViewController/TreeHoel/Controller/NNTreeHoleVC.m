@@ -26,12 +26,12 @@
 #import "NNNoticeViewModel.h"
 #import "NNMineNoticeVC.h"
 
-@interface NNTreeHoleVC ()<UITableViewDelegate,UITableViewDataSource,MWPhotoBrowserDelegate> {
+@interface NNTreeHoleVC ()<UITableViewDelegate,UITableViewDataSource> {
     UIButton *defaultSelectButton;
     NSMutableArray *teacherModelArrays;
     NSMutableArray *treeHoelModelArrays;
-    NSArray *array;
     MJRefreshFooter *footer;
+    MJRefreshHeader *header;
     NSMutableArray *phonoArrays;
     UIButton *treeHoleButton;
     UIBarButtonItem *rightItem;
@@ -47,32 +47,23 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
-    
     if (TEST_TOKEN == nil) {
-        NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] init];
+        NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];;
         loginVC.isPresent = YES;
         [self presentViewController:loginVC animated:YES completion:^{
             
         }];
-        
         return ;
     }
-  
     if (treeHoleButton.hidden == NO) {
-        [teacherModelArrays removeAllObjects];
         [self reflashTreeHoelData];
     }
-
-    
     [self initNoticeData];
-    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-
-    
+   
     [self initUI];
     [self initData];
     // Do any additional setup after loading the view.
@@ -113,7 +104,7 @@
             defaultSelectButton.selected = NO;
             defaultSelectButton = button;
             defaultSelectButton.selected = YES;
-            [teacherModelArrays removeAllObjects];
+      
             if (button.tag == 200) {
                treeHoleButton.hidden = YES;
                 [weakSelf reflashTeachData];
@@ -125,11 +116,7 @@
         }
     };
     self.navigationItem.titleView = view;
-    
-   
     [self.navigationItem.titleView layoutIfNeeded];
-    
-  
     footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         if (defaultSelectButton.tag == 200) {
             [weakSelf reflashTeachData];
@@ -138,6 +125,17 @@
         }
     }];
 
+    header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        if (defaultSelectButton.tag == 200) {
+            [teacherModelArrays removeAllObjects];
+            [weakSelf reflashTeachData];
+        }else{
+            [treeHoelModelArrays removeAllObjects];
+            [weakSelf reflashTreeHoelData];
+        }
+    } ];
+    
+    _treeHoelTableView.mj_header = header;
     _treeHoelTableView.mj_footer = footer;
     _treeHoelTableView.backgroundColor = NN_BACKGROUND_COLOR;
     _treeHoelTableView.delegate = self;
@@ -155,7 +153,6 @@
 }
 
 - (void)initData {
-    array = @[@"图片地址"];
     teacherModelArrays= [NSMutableArray array];
     treeHoelModelArrays =[NSMutableArray array];
     [self reflashTeachData];
@@ -166,16 +163,19 @@
     NNNoticeViewModel *viewModel = [[NNNoticeViewModel alloc] init];
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
        NSInteger unReadNotice =  [NNNoticeViewModel getUnreadNoticeWithUserID:USERID];
+        NSArray *tabBarItems = self.navigationController.tabBarController.tabBar.items;
+        UITabBarItem *treeHoelItem = [tabBarItems objectAtIndex:1];
+        UITabBarItem *MeHoelItem = [tabBarItems objectAtIndex:3];
         if (unReadNotice > 0) {
-            NSArray *tabBarItems = self.navigationController.tabBarController.tabBar.items;
-            UITabBarItem *treeHoelItem = [tabBarItems objectAtIndex:1];
-            UITabBarItem *MeHoelItem = [tabBarItems objectAtIndex:3];
+          
             treeHoelItem.badgeValue = [NSString stringWithFormat:@"%ld",(long)unReadNotice];
             MeHoelItem.badgeValue = [NSString stringWithFormat:@"%ld",(long)unReadNotice];
             noticeLabel.text = [NSString stringWithFormat:@"%ld",(long)unReadNotice];
             noticeLabel.hidden = NO;
         }else{
             noticeLabel.hidden = YES;
+            treeHoelItem.badgeValue = nil;
+            MeHoelItem.badgeValue = nil;
         }
        
     } WithErrorBlock:^(id errorCode) {
@@ -184,7 +184,7 @@
             
     }];
 
-    [viewModel getNoticeWithToken:TEST_TOKEN andLastID:@"" andPageNum:@"10"];
+    [viewModel getNoticeWithToken:TEST_TOKEN andLastID:@"" andPageNum:@"10000"];
 }
 
 - (void)reflashTeachData {
@@ -192,14 +192,15 @@
     [emotionTeacherViewModel setBlockWithReturnBlock:^(id returnValue) {
         [teacherModelArrays addObjectsFromArray:returnValue];
         [_treeHoelTableView reloadData];
-        [footer endRefreshing];
+        [self endRefreshing];
     } WithErrorBlock:^(id errorCode) {
-        
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
+        [self endRefreshing];
     } WithFailureBlock:^(id failureBlock) {
-        
+        [self endRefreshing];
     }];
     NNEmotionTeacherModel *lastModel = [teacherModelArrays lastObject];
-    [emotionTeacherViewModel getEmotionTeacherListContentWithLastTeacherID:lastModel.teacherID andUpdatePageNum:@"10"];
+    [emotionTeacherViewModel getEmotionTeacherListContentWithLastTeacherID:lastModel.teacherID andUpdatePageNum:@"5"];
 
 }
 
@@ -208,16 +209,17 @@
     [modelView setBlockWithReturnBlock:^(id returnValue) {
         [treeHoelModelArrays addObjectsFromArray:returnValue];
         [_treeHoelTableView reloadData];
-        [footer endRefreshing];
+        [self endRefreshing];
 
     } WithErrorBlock:^(id errorCode) {
-        
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
+        [self endRefreshing];
     } WithFailureBlock:^(id failureBlock) {
-        
+        [self endRefreshing];
     }];
     NNTreeHoelModel *model = [treeHoelModelArrays lastObject];
     [modelView getTreeHoelListContentWithToken:TEST_TOKEN andLastTreeHoelId:model.thID
-                          andUpdatePageNum:@"10"];
+                          andUpdatePageNum:@"5"];
 }
 
 - (void)sendTreeHoleAction:(UIButton *)button {
@@ -231,6 +233,17 @@
     noticeVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:noticeVC animated:YES];
 }
+
+
+- (void) endRefreshing {
+    if ([footer isRefreshing]) {
+        [footer endRefreshing];
+    }
+    if ([header isRefreshing]) {
+        [header endRefreshing];
+    }
+}
+
 
 #pragma --mark  UItableViewDelegate UItableViewDatasource
 
