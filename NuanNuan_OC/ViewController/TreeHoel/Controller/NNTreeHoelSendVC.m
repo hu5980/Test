@@ -174,7 +174,8 @@
         [sendViewModel setBlockWithReturnBlock:^(id returnValue) {
             [[NNProgressHUD instance] hideHud];
             if ([returnValue isEqualToString:@"success"]) {
-                [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"发布成功"];
+               // [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"发布成功"];
+                [self.navigationController popViewControllerAnimated:YES];
             }
         } WithErrorBlock:^(id errorCode) {
             [[NNProgressHUD instance] hideHud];

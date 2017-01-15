@@ -20,7 +20,6 @@
 }
 
 - (void)setModel:(NNTreeHoelModel *)model {
-
     _model = model;
     self.timelabel.text = [NNTimeUtil timeDealWithFormat:@"yyyy-MM-dd dd:mm" andTime:model.createTime];
     self.nickNameLabel.text = _model.userNikeName;

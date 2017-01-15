@@ -56,6 +56,7 @@
         return ;
     }
     if (treeHoleButton.hidden == NO) {
+        [treeHoelModelArrays removeAllObjects];
         [self reflashTreeHoelData];
     }
     [self initNoticeData];

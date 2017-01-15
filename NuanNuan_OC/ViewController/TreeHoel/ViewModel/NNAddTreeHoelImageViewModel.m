@@ -18,12 +18,14 @@
 - (void)addTreeImageWithToken:(NSString *)token andImages:(NSArray *)images {
 
     if (images.count == 0) {
-        self.returnBlock([NSArray array]);
+        self.returnBlock(nil);
     }else{
+        
+        dispatch_group_t group = dispatch_group_create();
+        
+        
         for (NSInteger i  = 0; i < images.count; i++) {
-            dispatch_group_t group = dispatch_group_create();
-            dispatch_group_enter(group);
-            
+           dispatch_group_enter(group);
             UIImage *image = [images objectAtIndex:i];
             NSDictionary *parames = @{@"token":token,@"order":[NSNumber numberWithInteger:i]};
             NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
@@ -47,14 +49,13 @@
                 
             } withProgress:^(id Progress) {
             }];
-            
-            dispatch_group_notify(group, dispatch_get_main_queue(), ^(){
-                NSLog(@"end");
-                
-                self.returnBlock(imageArrays);
-            });
-
         }
+        
+        dispatch_group_notify(group, dispatch_get_main_queue(), ^(){
+            NSLog(@"end");
+            
+            self.returnBlock(imageArrays);
+        });
     }
     
     
