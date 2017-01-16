@@ -9,14 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "NNChooseButton.h"
 
-typedef void(^chooseButtonBlock)(NNChooseButton *button);
+typedef void(^chooseButtonBlock)(NSString *selectType);
 
 @interface NNChooseView : UIView
 
-- (instancetype) initWithFrame:(CGRect)frame;
 
 
 @property (nonatomic,assign) NSInteger defaultSelect;
+
+@property (nonatomic,assign) BOOL ismultiSelect;
 
 @property (nonatomic,strong) NSArray *chooseArray;
 

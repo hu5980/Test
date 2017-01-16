@@ -89,7 +89,7 @@
         }
     };
     [self.view addSubview:askingView];
-
+    
     if (_isComment) {
         [replyView.replytextField becomeFirstResponder];
     }
@@ -105,7 +105,7 @@
 
 - (void)initData {
     if (_commentMutableArray == nil) {
-         _commentMutableArray = [NSMutableArray array] ;
+        _commentMutableArray = [NSMutableArray array] ;
     }
     if (!_isFromNotice) {
         [self reflashCommentData:NO];
@@ -113,10 +113,7 @@
 }
 
 - (void)reflashCommentData:(BOOL) isDowm {
-    
-    
     NNCommentViewModel *viewModel = [[NNCommentViewModel alloc] init];
-    
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
         if (isDowm) {
             NSMutableArray *array = [NSMutableArray arrayWithArray:returnValue];
@@ -129,7 +126,7 @@
         [footer endRefreshing];
         [_spitslotTableView reloadData];
     } WithErrorBlock:^(id errorCode) {
-        
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
     } WithFailureBlock:^(id failureBlock) {
         
     }];
@@ -228,13 +225,12 @@
         height = [tableView fd_heightForCellWithIdentifier:@"NNSpitslotCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             NNSpitslotCell *spitslotCell = cell;
             spitslotCell.model = _model;
-            spitslotCell.commentConstraint.constant = 0;
         }];
         
     }else{
         height = [tableView fd_heightForCellWithIdentifier:@"NNNeterReplyCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             NNNeterReplyCell *replyCell = cell;
-             replyCell.model = [_commentMutableArray objectAtIndex:indexPath.row];
+            replyCell.model = [_commentMutableArray objectAtIndex:indexPath.row];
         }];
     }
     return height ;
@@ -269,7 +265,7 @@
         NNSpitslotCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNSpitslotCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         __weak NNSpitslotDetailVC *weakSelf = self;
-         __weak NNSpitslotCell *weakCell = cell;
+        __weak NNSpitslotCell *weakCell = cell;
         cell.selectImageBlock = ^(NSInteger selectIndex){
             
             NSMutableArray *phonoArrays = [NSMutableArray arrayWithCapacity:_model.picArrays.count];
@@ -303,9 +299,10 @@
                         if([returnValue isEqualToString:@"success"]){
                             button.selected = YES;
                             weakCell.bePraisedLabel.text = [NSString stringWithFormat:@"%ld",[cell.bePraisedLabel.text integerValue] + 1];
+                            [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"点赞成功"];
                         }
                     } WithErrorBlock:^(id errorCode) {
-                        
+                        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
                     } WithFailureBlock:^(id failureBlock) {
                         
                     }];
@@ -315,20 +312,18 @@
                         if([returnValue isEqualToString:@"success"]){
                             button.selected = NO;
                             weakCell.bePraisedLabel.text = [NSString stringWithFormat:@"%ld",[cell.bePraisedLabel.text integerValue] - 1];
+                            [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"取消点赞"];
                         }
                     } WithErrorBlock:^(id errorCode) {
                     } WithFailureBlock:^(id failureBlock) {
                     }];
-                    
-                    
-                    
                     if (button.selected) {
                         [unViewModel unParisdArticleWithToken:TEST_TOKEN andArticleType:@"2" andArticleID:_model.thID];
                     }else{
                         [viewModel parisdArticleWithToken:TEST_TOKEN andArticleType:@"2" andArticleID:_model.thID];
                     }
                     
-
+                    
                 }
                     break;
                 default:
@@ -347,9 +342,10 @@
                 if([returnValue isEqualToString:@"success"]){
                     button.selected = YES;
                     weakCell.likeNumLabel.text = [NSString stringWithFormat:@"%ld",[cell.likeNumLabel.text integerValue] + 1];
+                    [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"点赞成功"];
                 }
             } WithErrorBlock:^(id errorCode) {
-                
+                [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
             } WithFailureBlock:^(id failureBlock) {
                 
             }];
@@ -359,6 +355,7 @@
                 if([returnValue isEqualToString:@"success"]){
                     button.selected = NO;
                     weakCell.likeNumLabel.text = [NSString stringWithFormat:@"%ld",[cell.likeNumLabel.text integerValue] - 1];
+                    [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"取消点赞"];
                 }
             } WithErrorBlock:^(id errorCode) {
             } WithFailureBlock:^(id failureBlock) {
@@ -368,7 +365,7 @@
             }else{
                 [viewModel parisdArticleWithToken:TEST_TOKEN andArticleType:@"4" andArticleID:_model.thID];
             }
-
+            
         };
         return cell;
     }
@@ -382,13 +379,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

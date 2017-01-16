@@ -65,6 +65,10 @@
     if(_showHudText){
         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:_showHudText];
     }
+    
+    if (!self.isPresent) {
+        _closeLoginButton.hidden = YES;
+    }
 }
 
 - (IBAction)thirdlyLoginAction:(UIButton *)sender {
@@ -187,6 +191,9 @@
     
 }
 
+- (IBAction)closeLoginAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)getUserInfoFromWechat
 {

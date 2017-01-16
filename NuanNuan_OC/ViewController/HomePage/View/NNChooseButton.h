@@ -10,7 +10,7 @@
 
 @interface NNChooseButton : UIButton
 
-- (instancetype)initChooseButtonWithFrame:(CGRect )rect;
+- (instancetype)initChooseButtonWithFrame:(CGRect )rect andIsmultiSelect:(BOOL)ismultiSelect;
 
 @property (nonatomic,strong) UILabel *chooseTitleLabel;
 @property (nonatomic,strong) UIImageView *chooseImageView;

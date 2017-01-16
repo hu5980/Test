@@ -18,7 +18,7 @@
 - (void)addTreeImageWithToken:(NSString *)token andImages:(NSArray *)images {
 
     if (images.count == 0) {
-        self.returnBlock(nil);
+        self.returnBlock([NSArray array]);
     }else{
         
         dispatch_group_t group = dispatch_group_create();

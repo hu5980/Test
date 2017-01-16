@@ -25,7 +25,12 @@
 - (void)setModel:(NNCommentModel *)model {
     _model = model;
     [self.userHeadImageView sd_setImageWithURL:[NSURL URLWithString:model.commentHeaderUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
-    self.nickNameLabel.text = model.commentNickName;
+    if(model.commentNickName.length == 0 || model.commentNickName == nil){
+        self.nickNameLabel.text = [NSString stringWithFormat:@"暖暖用户%@",model.commentUID];
+    }else{
+        self.nickNameLabel.text = model.commentNickName;
+    }
+    
     self.commentContentLabel.text = model.commentContent;
     self.commentTImeLabel.text = [NNTimeUtil timeDealWithFormat:@"yyyy-MM-dd HH:mm:ss" andTime:model.commentCreateTime];
     self.likeNumLabel.text = model.commentGoodsNum;

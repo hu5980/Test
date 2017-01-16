@@ -11,5 +11,6 @@
 @interface NNLoginAndRegisterVC : NNBaseVC
 @property (nonatomic,strong) NSString *showHudText;
 
+@property (weak, nonatomic) IBOutlet UIButton *closeLoginButton;
 
 @end

@@ -154,7 +154,7 @@
             if([returnValue isEqualToString:@"success"]){
                 weakCell.likeButton.selected = NO;
                 weakCell.likeNumLabel.text = [NSString stringWithFormat:@"%ld",[weakCell.likeNumLabel.text integerValue] - 1];
-                [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"取消点赞成功"];
+                [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"取消点赞"];
             }
         } WithErrorBlock:^(id errorCode) {
             

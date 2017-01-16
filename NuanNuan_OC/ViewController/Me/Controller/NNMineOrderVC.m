@@ -108,6 +108,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NNOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNOrderCell"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.model = [orderArray objectAtIndex:indexPath.section];
     return cell;
 }

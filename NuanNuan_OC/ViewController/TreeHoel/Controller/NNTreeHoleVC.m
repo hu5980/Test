@@ -35,7 +35,6 @@
     NSMutableArray *phonoArrays;
     UIButton *treeHoleButton;
     UIBarButtonItem *rightItem;
-
     UILabel *noticeLabel;
 }
 @property (weak, nonatomic) IBOutlet UITableView *treeHoelTableView;
@@ -55,10 +54,12 @@
         }];
         return ;
     }
+    
     if (treeHoleButton.hidden == NO) {
         [treeHoelModelArrays removeAllObjects];
         [self reflashTreeHoelData];
     }
+    
     [self initNoticeData];
 }
 
@@ -201,7 +202,7 @@
         [self endRefreshing];
     }];
     NNEmotionTeacherModel *lastModel = [teacherModelArrays lastObject];
-    [emotionTeacherViewModel getEmotionTeacherListContentWithLastTeacherID:lastModel.teacherID andUpdatePageNum:@"5"];
+    [emotionTeacherViewModel getEmotionTeacherListContentWithLastTeacherID:lastModel.teacherID andUpdatePageNum:@"10"];
 
 }
 
@@ -220,12 +221,16 @@
     }];
     NNTreeHoelModel *model = [treeHoelModelArrays lastObject];
     [modelView getTreeHoelListContentWithToken:TEST_TOKEN andLastTreeHoelId:model.thID
-                          andUpdatePageNum:@"5"];
+                          andUpdatePageNum:@"10"];
 }
 
 - (void)sendTreeHoleAction:(UIButton *)button {
     NNTreeHoelSendVC *sendVC = [[NNTreeHoelSendVC alloc] init];
     sendVC.hidesBottomBarWhenPushed = YES;
+//    sendVC.block = ^(){
+//        [treeHoelModelArrays removeAllObjects];
+//        [self reflashTreeHoelData];
+//    };
     [self.navigationController pushViewController:sendVC animated:YES];
 }
 
@@ -342,12 +347,9 @@
                     break;
             }
         };
-
         return cell;
     }
 }
-
-
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height;
@@ -360,9 +362,8 @@
     }else{
         height = [tableView fd_heightForCellWithIdentifier:@"NNSpitslotCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             NNSpitslotCell *spitslotCell = cell;
-            NSLog(@"section = %ld",indexPath.section);
+  
              spitslotCell.model = [treeHoelModelArrays objectAtIndex:indexPath.section];
-            spitslotCell.commentConstraint.constant = 0;
         }];
     }
     

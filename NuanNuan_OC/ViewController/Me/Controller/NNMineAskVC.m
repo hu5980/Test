@@ -80,7 +80,21 @@
         
     }];
     
-    [viewModel getAnswerListWithToken:TEST_TOKEN andHasAnswer:hadAnswer andLastId:@"" andpageNum:@"10"];
+    
+    NNQuestionAndAnswerModel *model ;
+    
+    if ([hadAnswer isEqualToString:@"1"]) {
+        model = [askArray lastObject];
+    }else{
+        model = [unAskArray lastObject];
+    }
+    
+    NSString *lastID = model.questionId ;
+    if (lastID == nil) {
+        lastID = @"";
+    }
+    
+    [viewModel getAnswerListWithToken:TEST_TOKEN andHasAnswer:hadAnswer andLastId:lastID andpageNum:@"10"];
 }
 
 - (IBAction)hadAnswerOrUnAnswerAction:(UIButton *)sender {
@@ -95,8 +109,6 @@
         }
         [self refreshData];
     }
-    
-    
 }
 
 

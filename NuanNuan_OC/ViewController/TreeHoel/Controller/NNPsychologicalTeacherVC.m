@@ -43,6 +43,13 @@
     CGSize size = [headerView systemLayoutSizeFittingSize:UILayoutFittingExpandedSize];
     NNLog(@"%f,%f",size.width,size.height);
     headerView.size = size;
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [questionAndAnswerMutableArray removeAllObjects];
+    [self reflashQuestionAndAnswerData];
 }
 
 - (void)viewDidLoad {
@@ -128,7 +135,7 @@
 - (void)initData {
     defaultType = @"new";
     questionAndAnswerMutableArray = [NSMutableArray array];
-    [self reflashQuestionAndAnswerData];
+   
 }
 
 - (void)reflashQuestionAndAnswerData {
@@ -351,6 +358,7 @@
             if([returnValue isEqualToString:@"success"]){
                 button.selected = YES;
                 weakCell.likeNumLabel.text = [NSString stringWithFormat:@"%ld",[cell.likeNumLabel.text integerValue] + 1];
+                [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"点赞成功"];
             }
         } WithErrorBlock:^(id errorCode) {
             
@@ -363,6 +371,7 @@
             if([returnValue isEqualToString:@"success"]){
                 button.selected = NO;
                 weakCell.likeNumLabel.text = [NSString stringWithFormat:@"%ld",[cell.likeNumLabel.text integerValue] - 1];
+                [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"取消点赞"];
             }
         } WithErrorBlock:^(id errorCode) {
         } WithFailureBlock:^(id failureBlock) {

@@ -22,7 +22,8 @@ static NNProgressHUD *instance;
 
 + (void) showHudAotoHideAddToView:(UIView *)view withMessage:(NSString *)meaasge {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    hud.labelText = meaasge;
+    hud.detailsLabelText = meaasge;
+    hud.detailsLabelFont = [UIFont systemFontOfSize:14.f];
     hud.mode = MBProgressHUDModeText;
     [hud hide:YES afterDelay:2];
 }
@@ -30,7 +31,8 @@ static NNProgressHUD *instance;
 
 - (void)showHudToView:(UIView *)view withMessage:(NSString *)meaasge{
     _progressHud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    _progressHud.labelText = meaasge;
+    _progressHud.detailsLabelText = meaasge;
+    _progressHud.detailsLabelFont = [UIFont systemFontOfSize:14.f];
     _progressHud.mode = MBProgressHUDModeText;
     [_progressHud show:YES];
 }

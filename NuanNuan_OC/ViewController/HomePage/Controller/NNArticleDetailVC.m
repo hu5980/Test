@@ -239,7 +239,7 @@
     [unViewModel setBlockWithReturnBlock:^(id returnValue) {
         if([returnValue isEqualToString:@"success"]){
             weaklikeButton.selected = NO;
-            [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"取消点赞成功"];
+            [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"取消点赞"];
 
         }
     } WithErrorBlock:^(id errorCode) {

@@ -17,12 +17,12 @@
 #import "NNReplyViewModel.h"
 #import "NNUnPariseViewModel.h"
 #import "NNPariseViewModel.h"
+
 @interface NNQuestionAndAnswerDetailVC ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UITextViewDelegate> {
     NNAskingView *askingView;
     UIButton *backgroundButton;
     NNReplyView *replyView ;
     MJRefreshBackNormalFooter *footer;
-    //NSMutableArray *commentMutableArray;
 }
 
 
@@ -280,9 +280,10 @@
                 if([returnValue isEqualToString:@"success"]){
                     button.selected = YES;
                     weakCell.likeNumLabel.text = [NSString stringWithFormat:@"%ld",[cell.likeNumLabel.text integerValue] + 1];
+                    [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"点赞成功"];
                 }
             } WithErrorBlock:^(id errorCode) {
-                
+                [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
             } WithFailureBlock:^(id failureBlock) {
                 
             }];
@@ -292,6 +293,7 @@
                 if([returnValue isEqualToString:@"success"]){
                     button.selected = NO;
                     weakCell.likeNumLabel.text = [NSString stringWithFormat:@"%ld",[cell.likeNumLabel.text integerValue] - 1];
+                    [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"取消点赞"];
                 }
             } WithErrorBlock:^(id errorCode) {
             } WithFailureBlock:^(id failureBlock) {
@@ -321,6 +323,7 @@
                 if([returnValue isEqualToString:@"success"]){
                     button.selected = YES;
                     weakCell.likeNumLabel.text = [NSString stringWithFormat:@"%ld",[cell.likeNumLabel.text integerValue] + 1];
+                    [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"点赞成功"];
                 }
             } WithErrorBlock:^(id errorCode) {
                 NSLog(@"%@",errorCode);
@@ -333,8 +336,10 @@
                 if([returnValue isEqualToString:@"success"]){
                     button.selected = NO;
                     weakCell.likeNumLabel.text = [NSString stringWithFormat:@"%ld",[cell.likeNumLabel.text integerValue] - 1];
+                    [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"取消点赞"];
                 }
             } WithErrorBlock:^(id errorCode) {
+                [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
             } WithFailureBlock:^(id failureBlock) {
             }];
             

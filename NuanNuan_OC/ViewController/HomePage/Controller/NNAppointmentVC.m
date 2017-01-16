@@ -17,10 +17,10 @@
     NSArray *sexArray;
     NSArray *consultTypeArray;
     NSString *name;
-    NSString *sex;
+    __block NSString *sex;
     NSString *age;
     NSString *phone;
-    NSString *questionType;
+    __block NSString *questionType;
     NSString *question;
     NSString *address;
     
@@ -102,9 +102,14 @@
 - (void)initData {
     defaultRow = 0;
     sexArray = @[@"男",@"女" ];
+    sex = @"1";
     NNAppointmentTypeViewModel *viewModel = [[NNAppointmentTypeViewModel alloc] init];
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
         consultTypeArray = returnValue;
+        if (consultTypeArray.count > 0) {
+            NNAppointmentModel *model = [consultTypeArray objectAtIndex:0];
+            questionType = [NSString stringWithFormat:@"%@",model.appointmentID];
+        }
         [_appointmentTableView reloadData];
     } WithErrorBlock:^(id errorCode) {
         
@@ -143,6 +148,9 @@
     NNAppointmentQuestionViewModel *viewModel = [[NNAppointmentQuestionViewModel alloc] init];
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"恭喜预约成功，我们会在三个工作日内联系您，请保持手机畅通"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.navigationController popViewControllerAnimated:YES];
+        });
       
     } WithErrorBlock:^(id errorCode) {
         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
@@ -186,26 +194,17 @@
         if (indexPath.row == 1) {
             cell.chooseTitleLabel.text = @"性别";
             cell.chooseView.chooseArray = sexArray;
-            cell.chooseView.chooseBlock = ^(NNChooseButton *button){
-                if (button.selected) {
-                    [button.chooseImageView setImage:[UIImage imageNamed:@"303_05"]];
-                }else{
-                    [button.chooseImageView setImage:[UIImage imageNamed:@"303_03"]];
-                }
+            cell.chooseView.chooseBlock = ^(NSString *selectType){
                 
-                sex = [NSString stringWithFormat:@"%ld",button.tag];
+                sex = selectType;
             };
            
         }else{
             cell.chooseTitleLabel.text = @"问题类型";
+            cell.chooseView.ismultiSelect = YES;
             cell.chooseView.chooseArray = consultTypeArray;
-            cell.chooseView.chooseBlock = ^(NNChooseButton *button){
-                if (button.selected) {
-                    [button.chooseImageView setImage:[UIImage imageNamed:@"303_05"]];
-                }else{
-                    [button.chooseImageView setImage:[UIImage imageNamed:@"303_03"]];
-                }
-                questionType = [NSString stringWithFormat:@"%ld",button.tag];
+            cell.chooseView.chooseBlock = ^(NSString *selectType){
+                questionType = selectType;
             };
         }
         
@@ -244,13 +243,6 @@
     }
 }
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if (indexPath.row == 7) {
-//        
-//        
-//    }
-//}
-
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     switch (textField.tag) {
         case 0:
@@ -276,12 +268,12 @@
 
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    if(textField.tag == 3){
-        [textField resignFirstResponder];
-        addressTextField = textField;
-        pickView.hidden = NO;
-        return NO;
-    }
+//    if(textField.tag == 3){
+//        [textField resignFirstResponder];
+//        addressTextField = textField;
+//        pickView.hidden = NO;
+//        return NO;
+//    }
     return YES;
 }
 
@@ -355,8 +347,6 @@
 
 #pragma --mark keyboard
 - (void)keyboardWillHide:(NSNotification *)notification {
-
-
     CGFloat animationDuration =  [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
     
     if (_appointmentTableView.frame.origin.y < 0 ) {
@@ -375,7 +365,7 @@
     
     if ([questionCell.questionTextView isFirstResponder]) {
         [UIView animateWithDuration:animationDuration animations:^{
-            _appointmentTableView.frame = CGRectMake(0, -keyBoardFrame.size.height, NNAppWidth, NNAppHeight);
+            _appointmentTableView.frame = CGRectMake(0, -keyBoardFrame.size.height -64, NNAppWidth, NNAppHeight);
         }];
     }
 }

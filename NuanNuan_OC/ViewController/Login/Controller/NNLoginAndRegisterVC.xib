@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NNLoginAndRegisterVC">
             <connections>
                 <outlet property="captchButton" destination="APc-Md-O0p" id="chx-uV-bD5"/>
+                <outlet property="closeLoginButton" destination="KId-Pa-UJX" id="ETD-Sw-iiL"/>
                 <outlet property="forgetPasswordButton" destination="bgM-HY-Fao" id="QGB-7b-L9U"/>
                 <outlet property="loginButton" destination="NAh-zw-LyL" id="0YE-n2-Tvm"/>
                 <outlet property="loginOrRegisterButton" destination="iz5-zs-Fgv" id="nbQ-tG-EYn"/>
@@ -354,6 +355,17 @@
                         <action selector="thirdlyLoginAction:" destination="-1" eventType="touchUpInside" id="GCN-ko-y4L"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KId-Pa-UJX">
+                    <rect key="frame" x="311" y="50" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="dvW-QB-8pA"/>
+                        <constraint firstAttribute="width" constant="32" id="hFD-5i-5oL"/>
+                    </constraints>
+                    <state key="normal" image="500_01"/>
+                    <connections>
+                        <action selector="closeLoginAction:" destination="-1" eventType="touchUpInside" id="F0R-Si-bXu"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -361,6 +373,7 @@
                 <constraint firstItem="CFj-0E-IjS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2eB-YA-cNu"/>
                 <constraint firstItem="iz5-zs-Fgv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="5Iy-J0-Bi9"/>
                 <constraint firstItem="cAR-oi-Av0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6cy-sy-ckK"/>
+                <constraint firstItem="KId-Pa-UJX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="An0-zR-Qsl"/>
                 <constraint firstItem="bgM-HY-Fao" firstAttribute="top" secondItem="iz5-zs-Fgv" secondAttribute="bottom" id="F9y-fM-cir"/>
                 <constraint firstItem="z2O-Uk-pRb" firstAttribute="leading" secondItem="0DI-IN-n1v" secondAttribute="trailing" constant="1" id="G7Q-kU-uk9"/>
                 <constraint firstItem="xnY-5z-dch" firstAttribute="top" secondItem="0DI-IN-n1v" secondAttribute="bottom" constant="-10" id="HKr-RA-4Ff"/>
@@ -377,6 +390,7 @@
                 <constraint firstAttribute="trailing" secondItem="CFj-0E-IjS" secondAttribute="trailing" id="adG-ZE-xml"/>
                 <constraint firstAttribute="trailing" secondItem="4BM-4N-9hZ" secondAttribute="trailing" constant="33" id="bCJ-GO-7yH"/>
                 <constraint firstAttribute="trailing" secondItem="iz5-zs-Fgv" secondAttribute="trailing" constant="33" id="dv1-Yi-llR"/>
+                <constraint firstAttribute="trailing" secondItem="KId-Pa-UJX" secondAttribute="trailing" constant="32" id="fXc-SE-2LO"/>
                 <constraint firstItem="0DI-IN-n1v" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fdz-fV-gnm"/>
                 <constraint firstAttribute="trailing" secondItem="cJY-uA-IRP" secondAttribute="trailing" constant="33" id="gJU-6t-wTn"/>
                 <constraint firstAttribute="bottom" secondItem="CFj-0E-IjS" secondAttribute="bottom" id="hzR-xo-lRO"/>
@@ -393,6 +407,7 @@
         </view>
     </objects>
     <resources>
+        <image name="500_01" width="48" height="48"/>
         <image name="500_03" width="20" height="20"/>
         <image name="500_04" width="20" height="20"/>
         <image name="500_06" width="20" height="20"/>

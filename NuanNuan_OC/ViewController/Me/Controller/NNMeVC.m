@@ -130,8 +130,8 @@
 }
 
 - (void)initdata {
-    titleArray = @[@"我的预约",@"我的问吧",@"我的消息",@"意见反馈",@"个人资料",@"设置"];
-    imageArray = @[@"400_16",@"400_23",@"400_27",@"400_29",@"400_30",@"400_31"];
+    titleArray = @[@"我的预约",@"我的问吧",@"我的消息",@"我的树洞",@"意见反馈",@"个人资料",@"设置"];
+    imageArray = @[@"400_16",@"400_23",@"400_27",@"400_28",@"400_29",@"400_30",@"400_31"];
     if (USERID) {
         userInfoModel = (NNUserInfoModel *)[[NNUserInfoModel objectsWhere:@"uid = %@",USERID] lastObject];
     }
@@ -209,7 +209,7 @@
         return 1;
     }
     else if(section == 1) {
-        return 3;
+        return 4;
     }else{
         return 3;
     }
@@ -279,8 +279,8 @@
         cell.iconImageView.image = [UIImage imageNamed:[imageArray objectAtIndex:indexPath.row]];
         cell.mineTitleLabel.text = [titleArray objectAtIndex:indexPath.row];
     }else {
-        cell.iconImageView.image = [UIImage imageNamed:[imageArray objectAtIndex:indexPath.row + 3]];
-        cell.mineTitleLabel.text = [titleArray objectAtIndex:indexPath.row + 3];
+        cell.iconImageView.image = [UIImage imageNamed:[imageArray objectAtIndex:indexPath.row + 4]];
+        cell.mineTitleLabel.text = [titleArray objectAtIndex:indexPath.row + 4];
         
     }
     
@@ -323,7 +323,6 @@
         if (indexPath.row == 0) {
             [self entryFeedBack];
         }else if (indexPath.row ==1){
-            
             NNUserInfoVC *infoVC = [[NNUserInfoVC alloc] initWithNibName:@"NNUserInfoVC" bundle:nil];
             infoVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:infoVC animated:YES];

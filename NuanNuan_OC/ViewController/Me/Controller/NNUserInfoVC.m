@@ -22,7 +22,7 @@
     NNQuestionerChooseCell *sexCell;
     
     NSString *nickName;
-    NSString *sex;
+    __block NSString *sex;
 }
 @property (weak, nonatomic) IBOutlet UITableView *infoTableView;
 
@@ -69,6 +69,9 @@
         if ([returnValue isEqualToString:@"success"]) {
             [[NNProgressHUD instance] hideHud];
             [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"修改成功"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self.navigationController popViewControllerAnimated:YES];
+            });
         }
     } WithErrorBlock:^(id errorCode) {
         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
@@ -111,13 +114,8 @@
         sexCell.chooseView.defaultSelect = [userInfoModel.sex isEqualToString:@"男"] ? 0 :1 ;
         sexCell.chooseTitleLabel.text = @"性别";
         sexCell.chooseView.chooseArray = @[@"男",@"女"];
-        sexCell.chooseView.chooseBlock = ^(NNChooseButton *button){
-            if (button.selected) {
-                [button.chooseImageView setImage:[UIImage imageNamed:@"303_05"]];
-            }else{
-                [button.chooseImageView setImage:[UIImage imageNamed:@"303_03"]];
-            }
-            sex = [NSString stringWithFormat:@"%ld",button.tag];
+        sexCell.chooseView.chooseBlock = ^(NSString *selectType){
+                       sex = selectType;
         };
 
         return sexCell;

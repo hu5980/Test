@@ -148,12 +148,10 @@
     [addImageViewModel setBlockWithReturnBlock:^(id returnValue) {
         [[NNProgressHUD instance] hideHud];
         
-     
         NSError *error;
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:returnValue
                                                            options:NSJSONWritingPrettyPrinted
                                                              error:&error];
-        
         picsJsonStr = [[NSString alloc] initWithData:jsonData
                                                      encoding:NSUTF8StringEncoding];
         
@@ -175,7 +173,9 @@
             [[NNProgressHUD instance] hideHud];
             if ([returnValue isEqualToString:@"success"]) {
                // [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"发布成功"];
+                _block();
                 [self.navigationController popViewControllerAnimated:YES];
+                
             }
         } WithErrorBlock:^(id errorCode) {
             [[NNProgressHUD instance] hideHud];

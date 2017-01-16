@@ -50,7 +50,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CjR-eW-w8Q">
-                    <rect key="frame" x="15" y="134" width="40" height="40"/>
+                    <rect key="frame" x="15" y="104" width="40" height="40"/>
                     <color key="backgroundColor" red="1" green="0.7725490196" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="7kc-na-dal"/>
@@ -58,7 +58,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小米" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uj7-g7-J8m">
-                    <rect key="frame" x="65" y="143.5" width="30" height="21"/>
+                    <rect key="frame" x="65" y="125.5" width="30" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="MKn-GY-Aya"/>
                         <constraint firstAttribute="height" constant="21" id="wNr-9W-r8w"/>
@@ -68,7 +68,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKB-ls-ylw">
-                    <rect key="frame" x="100" y="144" width="1" height="20"/>
+                    <rect key="frame" x="100" y="126" width="1" height="20"/>
                     <color key="backgroundColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="GQg-gd-HOi"/>
@@ -76,7 +76,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小米" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQ9-Hk-6cx">
-                    <rect key="frame" x="110" y="143.5" width="30" height="21"/>
+                    <rect key="frame" x="110" y="125.5" width="30" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="Nix-jY-vDp"/>
                         <constraint firstAttribute="height" constant="21" id="h5z-nI-V2L"/>
@@ -86,7 +86,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTT-ad-cbs">
-                    <rect key="frame" x="15" y="184" width="345" height="20"/>
+                    <rect key="frame" x="15" y="154" width="345" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -107,14 +107,14 @@
                 <constraint firstItem="n2K-kV-DVc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="agC-nm-vHy"/>
                 <constraint firstItem="n2K-kV-DVc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dX4-jf-B3z"/>
                 <constraint firstItem="CjR-eW-w8Q" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="en9-DJ-GZO"/>
-                <constraint firstItem="uj7-g7-J8m" firstAttribute="centerY" secondItem="CjR-eW-w8Q" secondAttribute="centerY" id="gjj-Zn-zuZ"/>
+                <constraint firstItem="uj7-g7-J8m" firstAttribute="centerY" secondItem="CjR-eW-w8Q" secondAttribute="centerY" constant="12" id="gjj-Zn-zuZ"/>
                 <constraint firstAttribute="trailing" secondItem="iTT-ad-cbs" secondAttribute="trailing" constant="15" id="hfV-bf-NKA"/>
                 <constraint firstAttribute="trailing" secondItem="6Ep-wG-1x7" secondAttribute="trailing" id="nwu-mU-DW9"/>
                 <constraint firstAttribute="bottom" secondItem="iTT-ad-cbs" secondAttribute="bottom" constant="10" id="r95-eI-ChQ"/>
                 <constraint firstItem="w7Z-EF-OX3" firstAttribute="top" secondItem="n2K-kV-DVc" secondAttribute="bottom" constant="4" id="s0t-hf-L3y"/>
                 <constraint firstItem="HZo-39-pdt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="uQB-Dk-vyT"/>
                 <constraint firstItem="uj7-g7-J8m" firstAttribute="leading" secondItem="CjR-eW-w8Q" secondAttribute="trailing" constant="10" id="vRb-pT-Fyu"/>
-                <constraint firstItem="CjR-eW-w8Q" firstAttribute="top" secondItem="6Ep-wG-1x7" secondAttribute="bottom" constant="10" id="vjo-uh-QIi"/>
+                <constraint firstItem="CjR-eW-w8Q" firstAttribute="top" secondItem="6Ep-wG-1x7" secondAttribute="bottom" constant="-20" id="vjo-uh-QIi"/>
                 <constraint firstItem="yQ9-Hk-6cx" firstAttribute="centerY" secondItem="PKB-ls-ylw" secondAttribute="centerY" id="xkW-Sf-pKs"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

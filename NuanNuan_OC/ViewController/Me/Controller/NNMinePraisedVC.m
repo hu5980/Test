@@ -154,7 +154,7 @@
     }else{
         height = [tableView fd_heightForCellWithIdentifier:@"NNSpitslotCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             NNSpitslotCell *spitslotCell = cell;
-            spitslotCell.commentConstraint.constant = 0;
+            
             spitslotCell.model = [praisedTreeHoelArray objectAtIndex:indexPath.section];
             
         }];

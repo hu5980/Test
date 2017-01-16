@@ -56,14 +56,16 @@
         NSUInteger cacheSize = cache.getSize;
         cacheText = [NSString stringWithFormat:@"%.2f M",cacheSize/1024.0/1024.0];
         
-        if (isDesk) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                 [_setTableView reloadData];
-                [[NNProgressHUD instance] hideHud];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_setTableView reloadData];
+            [[NNProgressHUD instance] hideHud];
+            if (isDesk) {
                 [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"缓存清除成功"];
-            });
-            
-        }
+            }
+        });
+        
+        
     });
 }
 
@@ -98,12 +100,12 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.setTltleLabel.text = [titleArray objectAtIndex:indexPath.row];
         if (indexPath.row == 2) {
-           cell.contentLabel.text = cacheText;
+            cell.contentLabel.text = cacheText;
         }
         return cell;
     }else{
         UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"loginOut"];
-       
+        
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((NNAppWidth - 100)/2 , 0, 100, 44)];
         label.textColor = [UIColor colorFromHexString:@"#ff9933"];
@@ -131,14 +133,14 @@
         }else if (indexPath.row == 2){
             [[NNProgressHUD instance] showHudToView:self.view withMessage:@"缓存清除中"];
             [[SDImageCache sharedImageCache] clearDisk];
-           
+            
             [self getCacheisDisk:YES];
         }
     }else{
         NNLoginAndRegisterVC *loginOrRegisterVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];
         [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"token"];
         [self.navigationController pushViewController:loginOrRegisterVC animated:YES];
-      
+        
     }
 }
 
@@ -149,13 +151,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

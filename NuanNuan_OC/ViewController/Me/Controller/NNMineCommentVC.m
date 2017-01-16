@@ -106,7 +106,7 @@
         if([defaultType isEqualToString:@"1"]){
             [self showBackgroundViewImageName:@"back_ic" andTitle:@"还没有评论的问题，快去问吧看看吧"];
         }else{
-            [self showBackgroundViewImageName:@"back_ic" andTitle:@"还没有评论的吐槽，快去树洞看看吧"];
+            [self showBackgroundViewImageName:@"back_ic" andTitle:@"还没有评论的树洞，快去树洞看看吧"];
         }
     }else{
         [self hideBackgroundViewImage];
@@ -160,7 +160,7 @@
             NNSpitslotCell *spitslotCell = cell;
             NNSpitslotCommentModel *model =  [commentTreeHoelArrays objectAtIndex:indexPath.section];
             spitslotCell.model = model.treeHoelModel;
-            spitslotCell.commentLabel.text = model.comment;
+          //  spitslotCell.commentLabel.text = model.comment;
         }];
     }
     return height + 5;
@@ -194,15 +194,10 @@
     }else{
         NNSpitslotCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNSpitslotCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
         NNSpitslotCommentModel *model =  [commentTreeHoelArrays objectAtIndex:indexPath.section];
-        cell.commentLabel.text = model.comment;
- 
         __weak NNMineCommentVC *weakSelf = self;
         cell.selectImageBlock = ^(NSInteger selectIndex){
-            
             phonoArrays = [NSMutableArray arrayWithCapacity:model.treeHoelModel.picArrays.count];
-            
             for (int i  = 0 ; i < model.treeHoelModel.picArrays.count; i++) {
                 [phonoArrays addObject:[MWPhoto photoWithURL:[NSURL URLWithString:[model.treeHoelModel.picArrays objectAtIndex:i]]]];
             }

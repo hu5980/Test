@@ -8,10 +8,13 @@
 
 #import "NNBaseVC.h"
 
+typedef void(^reflashTreeHoelBlock)();
+
 @interface NNTreeHoelSendVC : NNBaseVC
 @property (strong, nonatomic) IBOutlet UILabel *placeLabel;
 @property (strong, nonatomic) IBOutlet UITextView *contentTextView;
 
 @property (strong, nonatomic) IBOutlet UIView *imageView;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *imageViewConstraint;
+@property (copy, nonatomic) reflashTreeHoelBlock block;
 @end

@@ -12,6 +12,8 @@
 @implementation NNChooseButton {
     
     CGRect  frameRect;
+    
+    BOOL multiSelect;
 }
 
 /*
@@ -22,11 +24,12 @@
 }
 */
 
-- (instancetype)initChooseButtonWithFrame:(CGRect )rect {
+- (instancetype)initChooseButtonWithFrame:(CGRect )rect andIsmultiSelect:(BOOL)ismultiSelect{
     self = [super initWithFrame:rect];
    
     if (self) {
         frameRect = rect;
+        multiSelect = ismultiSelect;
         [self initUI];
     }
     return self;
@@ -34,7 +37,11 @@
 
 - (void)initUI {
     _chooseImageView = [[UIImageView alloc ] initWithFrame:CGRectMake(5, (frameRect.size.height - 18)/2, 18, 18)];
-    [_chooseImageView setImage:[UIImage imageNamed:@"303_03"]];
+    if (multiSelect) {
+        [_chooseImageView setImage:[UIImage imageNamed:@"303_02"]];
+    }else{
+        [_chooseImageView setImage:[UIImage imageNamed:@"303_03"]];
+    }
     [self addSubview:_chooseImageView];
     _chooseTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(5 + 15 + 18, 0, frameRect.size.width - 38, 43)];
     [_chooseTitleLabel setTextColor:NN_TEXT666666_COLOR];
@@ -42,7 +49,22 @@
     [self addSubview:_chooseTitleLabel];
 }
 
-
+- (void)setSelected:(BOOL)selected {
+    [super setSelected:selected];
+    if (selected) {
+        if (multiSelect) {
+            [_chooseImageView setImage:[UIImage imageNamed:@"303_04"]];
+        }else{
+            [_chooseImageView setImage:[UIImage imageNamed:@"303_05"]];
+        }
+    }else{
+        if (multiSelect) {
+            [_chooseImageView setImage:[UIImage imageNamed:@"303_02"]];
+        }else{
+            [_chooseImageView setImage:[UIImage imageNamed:@"303_03"]];
+        }
+    }
+}
 
 
 
