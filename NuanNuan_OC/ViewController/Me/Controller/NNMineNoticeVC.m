@@ -81,7 +81,7 @@
         NNNoticeModel *model = [results objectAtIndex:indexPath.section];
         noticeCell.noticeContentLabel.text = model.noticeMsg;
     }];
-    return height   ;
+    return height;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{

@@ -30,8 +30,6 @@
 }
 
 - (void)fetchValueSuccessWithDic:(NSDictionary *)returnValue {
-    
- 
     NSArray *questionAndAnswerArray = [returnValue objectForKey:@"data"];
     NSMutableArray *questionAndAnswerListArray = [NSMutableArray arrayWithCapacity:questionAndAnswerArray.count];
     for (int i  = 0; i < questionAndAnswerArray.count; i++) {

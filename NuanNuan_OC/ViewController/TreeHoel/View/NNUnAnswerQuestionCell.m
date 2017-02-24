@@ -16,6 +16,8 @@
     
     _headImageView.layer.masksToBounds = YES;
     _headImageView.layer.cornerRadius = 16;
+    self.headImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.headImageView.clipsToBounds  = YES;
     // Initialization code
 }
 

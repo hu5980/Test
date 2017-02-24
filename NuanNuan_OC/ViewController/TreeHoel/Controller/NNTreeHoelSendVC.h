@@ -2,13 +2,13 @@
 //  NNTreeHoelSendVC.h
 //  NuanNuan_OC
 //
-//  Created by 胡光耀 on 16/11/19.
+//  Created by hu5980 on 16/11/19.
 //  Copyright © 2016年 NuanNuan. All rights reserved.
 //
 
 #import "NNBaseVC.h"
 
-typedef void(^reflashTreeHoelBlock)();
+
 
 @interface NNTreeHoelSendVC : NNBaseVC
 @property (strong, nonatomic) IBOutlet UILabel *placeLabel;
@@ -16,5 +16,5 @@ typedef void(^reflashTreeHoelBlock)();
 
 @property (strong, nonatomic) IBOutlet UIView *imageView;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *imageViewConstraint;
-@property (copy, nonatomic) reflashTreeHoelBlock block;
+
 @end

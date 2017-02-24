@@ -22,6 +22,8 @@
     [super awakeFromNib];
     _headimageView.layer.masksToBounds = YES;
     _headimageView.layer.cornerRadius = 20;
+    _headimageView.clipsToBounds = YES;
+    _headimageView.contentMode = UIViewContentModeScaleAspectFill;
     _backgroundImageView.clipsToBounds = YES;
     _backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
 }

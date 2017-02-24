@@ -46,21 +46,14 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
-    if (TEST_TOKEN == nil) {
-        NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];;
-        loginVC.isPresent = YES;
-        [self presentViewController:loginVC animated:YES completion:^{
-            
-        }];
-        return ;
-    }
-    
+   
     if (treeHoleButton.hidden == NO) {
         [treeHoelModelArrays removeAllObjects];
+        [_treeHoelTableView reloadData];
+ 
         [self reflashTreeHoelData];
+        [self initNoticeData];
     }
-    
-    [self initNoticeData];
 }
 
 - (void)viewDidLoad {
@@ -227,10 +220,6 @@
 - (void)sendTreeHoleAction:(UIButton *)button {
     NNTreeHoelSendVC *sendVC = [[NNTreeHoelSendVC alloc] init];
     sendVC.hidesBottomBarWhenPushed = YES;
-//    sendVC.block = ^(){
-//        [treeHoelModelArrays removeAllObjects];
-//        [self reflashTreeHoelData];
-//    };
     [self.navigationController pushViewController:sendVC animated:YES];
 }
 
@@ -277,6 +266,7 @@
         NNTreeHoelModel *model = [treeHoelModelArrays objectAtIndex:indexPath.section];
         __weak NNSpitslotCell *weakCell = cell;
         __weak NNTreeHoleVC *weakSelf = self;
+        __block NNTreeHoelModel *changeModel = model;
         cell.selectImageBlock = ^(NSInteger selectIndex){
             
             phonoArrays = [NSMutableArray arrayWithCapacity:model.picArrays.count];
@@ -286,7 +276,7 @@
             }
             
             MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithPhotos:phonoArrays];
-            browser.displayActionButton = YES;
+            browser.displayActionButton = NO;
             browser.displayNavArrows = YES;
             browser.displaySelectionButtons = NO;
             browser.alwaysShowControls = NO;
@@ -296,7 +286,7 @@
             [weakSelf.navigationController pushViewController:browser animated:YES];
         };
         cell.model = model;
-
+      
         
         cell.block = ^(UIButton * button){
             switch (button.tag) {
@@ -306,6 +296,7 @@
                     spitslotDetailVC.hidesBottomBarWhenPushed = YES;
                     spitslotDetailVC.model = [treeHoelModelArrays objectAtIndex:indexPath.section];
                     spitslotDetailVC.isComment = YES;
+                   
                     [self.navigationController pushViewController:spitslotDetailVC animated:YES];
                 }
                     break;
@@ -315,7 +306,9 @@
                     [viewModel setBlockWithReturnBlock:^(id returnValue) {
                         if([returnValue isEqualToString:@"success"]){
                             button.selected = YES;
-                            weakCell.bePraisedLabel.text = [NSString stringWithFormat:@"%ld",[cell.bePraisedLabel.text integerValue] + 1];
+                            weakCell.bePraisedLabel.text = [NSString stringWithFormat:@"%ld",[weakCell.bePraisedLabel.text integerValue] + 1];
+                            changeModel.thGoodsNum = weakCell.bePraisedLabel.text;
+                            changeModel.isGood = YES;
                         }
                     } WithErrorBlock:^(id errorCode) {
                         
@@ -327,13 +320,13 @@
                     [unViewModel setBlockWithReturnBlock:^(id returnValue) {
                         if([returnValue isEqualToString:@"success"]){
                             button.selected = NO;
-                            weakCell.bePraisedLabel.text = [NSString stringWithFormat:@"%ld",[cell.bePraisedLabel.text integerValue] - 1];
+                            weakCell.bePraisedLabel.text = [NSString stringWithFormat:@"%ld",[weakCell.bePraisedLabel.text integerValue] - 1];
+                            changeModel.thGoodsNum = weakCell.bePraisedLabel.text;
+                            changeModel.isGood = NO;
                         }
                     } WithErrorBlock:^(id errorCode) {
                     } WithFailureBlock:^(id failureBlock) {
                     }];
-                    
-                   
                     
                     if (button.selected) {
                         [unViewModel unParisdArticleWithToken:TEST_TOKEN andArticleType:@"2" andArticleID:model.thID];
@@ -362,7 +355,6 @@
     }else{
         height = [tableView fd_heightForCellWithIdentifier:@"NNSpitslotCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             NNSpitslotCell *spitslotCell = cell;
-  
              spitslotCell.model = [treeHoelModelArrays objectAtIndex:indexPath.section];
         }];
     }
@@ -382,6 +374,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (TEST_TOKEN == nil) {
+        NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];;
+        loginVC.isPresent = YES;
+        [self presentViewController:loginVC animated:YES completion:nil];
+        return ;
+    }
     if (defaultSelectButton.tag == 200) {
         NNPsychologicalTeacherVC *teacherVC = [[NNPsychologicalTeacherVC alloc] initWithNibName:@"NNPsychologicalTeacherVC" bundle:nil];
         teacherVC.model = [teacherModelArrays objectAtIndex:indexPath.section];

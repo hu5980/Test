@@ -16,7 +16,8 @@
 #import "NNMinePraisedVC.h"
 #import "NNQuestionAndAnswerDetailVC.h"
 #import "NNSpitslotDetailVC.h"
-
+#import "NNMineCommentQuestionAndAnswerCell.h"
+#import "NNCommentSpitslotCell.h"
 @interface NNMineCommentVC ()<UITableViewDelegate,UITableViewDataSource>{
     NSMutableArray *commentQuestionArrays;
     NSMutableArray *commentTreeHoelArrays;
@@ -55,8 +56,8 @@
         [self refreshData];
     }];
     _commentTableView.mj_footer = footer;
-    [_commentTableView registerNib:[UINib nibWithNibName:@"NNQuestionAndAnswerCell" bundle:nil] forCellReuseIdentifier:@"NNQuestionAndAnswerCell"];
-    [_commentTableView registerNib:[UINib nibWithNibName:@"NNSpitslotCell" bundle:nil] forCellReuseIdentifier:@"NNSpitslotCell"];
+    [_commentTableView registerNib:[UINib nibWithNibName:@"NNMineCommentQuestionAndAnswerCell" bundle:nil] forCellReuseIdentifier:@"NNMineCommentQuestionAndAnswerCell"];
+    [_commentTableView registerNib:[UINib nibWithNibName:@"NNCommentSpitslotCell" bundle:nil] forCellReuseIdentifier:@"NNCommentSpitslotCell"];
 
 }
 
@@ -67,6 +68,7 @@
     [[NNProgressHUD instance] showHudToView:self.view withMessage:@"加载中..."];
     [self refreshData];
 }
+
 
 - (void)refreshData {
     
@@ -126,7 +128,6 @@
     }else{
         defaultType = @"2";
     }
-   // [[NNProgressHUD instance] showHudToView:self.view withMessage:@"加载中..."];
     [self refreshData];
 
 }
@@ -149,18 +150,17 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height;
     if ([defaultType isEqualToString:@"1"]) {
-        height = [tableView fd_heightForCellWithIdentifier:@"NNQuestionAndAnswerCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+        height = [tableView fd_heightForCellWithIdentifier:@"NNMineCommentQuestionAndAnswerCell" cacheByIndexPath:indexPath configuration:^(id cell) {
             NNQuestionAndAnswerCommentModel *model = [commentQuestionArrays objectAtIndex:indexPath.section];
-            NNQuestionAndAnswerCell *questionAndAnswerCell = cell;
-            questionAndAnswerCell.commentLabel.text = model.comment;
+            NNMineCommentQuestionAndAnswerCell *questionAndAnswerCell = cell;
+            questionAndAnswerCell.questionAndAnswerCommentMode = model;
         }];
         
     }else{
-        height = [tableView fd_heightForCellWithIdentifier:@"NNSpitslotCell" cacheByIndexPath:indexPath configuration:^(id cell) {
-            NNSpitslotCell *spitslotCell = cell;
+        height = [tableView fd_heightForCellWithIdentifier:@"NNCommentSpitslotCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+            NNCommentSpitslotCell *spitslotCommentCell = cell;
             NNSpitslotCommentModel *model =  [commentTreeHoelArrays objectAtIndex:indexPath.section];
-            spitslotCell.model = model.treeHoelModel;
-          //  spitslotCell.commentLabel.text = model.comment;
+            spitslotCommentCell.spitslotCommentModel = model;
         }];
     }
     return height + 5;
@@ -178,21 +178,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([defaultType isEqualToString:@"1"]) {
-        NNQuestionAndAnswerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNQuestionAndAnswerCell"];
+        NNMineCommentQuestionAndAnswerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNMineCommentQuestionAndAnswerCell"];
         NNQuestionAndAnswerCommentModel *model = [commentQuestionArrays objectAtIndex:indexPath.section];
-        cell.model = model.questionAndAnswerModelmodel;
-        cell.commentLabel.text = model.comment;
+        cell.questionAndAnswerCommentMode = model;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.likeBlock = ^(UIButton *button) {
-            
-        };
-        
-        cell.commentBlock = ^ {
-            
-        };
         return cell;
     }else{
-        NNSpitslotCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNSpitslotCell"];
+        NNCommentSpitslotCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNCommentSpitslotCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         NNSpitslotCommentModel *model =  [commentTreeHoelArrays objectAtIndex:indexPath.section];
         __weak NNMineCommentVC *weakSelf = self;
@@ -212,20 +204,7 @@
             [browser setCurrentPhotoIndex:selectIndex];
             [weakSelf.navigationController pushViewController:browser animated:YES];
         };
-        cell.model = model.treeHoelModel;
-        
-        cell.block = ^(UIButton *button){
-            switch (button.tag) {
-                case 100:
-                    NNLog(@"评论");
-                    break;
-                case 101:
-                    NNLog(@"点赞");
-                    break;
-                default:
-                    break;
-            }
-        };
+        cell.spitslotCommentModel = model;
         
         return cell;
         

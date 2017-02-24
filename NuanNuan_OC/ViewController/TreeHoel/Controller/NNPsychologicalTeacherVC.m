@@ -120,7 +120,7 @@
                     [NNProgressHUD showHudAotoHideAddToView:weakSelf.view withMessage:@"提问失败"];
                 }
             } WithErrorBlock:^(id errorCode) {
-                
+                [NNProgressHUD showHudAotoHideAddToView:weakSelf.view withMessage:errorCode];
             } WithFailureBlock:^(id failureBlock) {
                 
             }];
@@ -184,8 +184,7 @@
     [askingView.askingTextView resignFirstResponder];
 }
 
-- (void)keyboardWillShow:(NSNotification *)notification{
-    
+- (void)keyboardWillShow:(NSNotification *)notification {
     backgroundButton.hidden = NO;
 
     //键盘高度
@@ -208,7 +207,6 @@
     [UIView animateWithDuration:animationDuration animations:^{
         askingView.frame = CGRectMake(0, NNAppHeight, NNAppWidth, 130);
     }];
-    
     askingView.askingTextView.text = nil;
     replyView.replytextField.text = nil;
 }
@@ -350,18 +348,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NNQuestionAndAnswerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NNQuestionAndAnswerCell"];
-    cell.commentConstraint.constant = 0;
     __weak NNQuestionAndAnswerCell *weakCell = cell;
+    __block NNQuestionAndAnswerModel *changeModel = [questionAndAnswerMutableArray objectAtIndex:indexPath.section];
     cell.likeBlock = ^(UIButton *button){
         NNPariseViewModel  *viewModel = [[NNPariseViewModel alloc] init];
         [viewModel setBlockWithReturnBlock:^(id returnValue) {
             if([returnValue isEqualToString:@"success"]){
                 button.selected = YES;
-                weakCell.likeNumLabel.text = [NSString stringWithFormat:@"%ld",[cell.likeNumLabel.text integerValue] + 1];
+                weakCell.likeNumLabel.text = [NSString stringWithFormat:@"%ld",[weakCell.likeNumLabel.text integerValue] + 1];
                 [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"点赞成功"];
+                changeModel.questionGoodsNum = weakCell.likeNumLabel.text;
+                changeModel.isGood = YES;
             }
         } WithErrorBlock:^(id errorCode) {
-            
+            [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
         } WithFailureBlock:^(id failureBlock) {
             
         }];
@@ -370,8 +370,11 @@
         [unViewModel setBlockWithReturnBlock:^(id returnValue) {
             if([returnValue isEqualToString:@"success"]){
                 button.selected = NO;
-                weakCell.likeNumLabel.text = [NSString stringWithFormat:@"%ld",[cell.likeNumLabel.text integerValue] - 1];
+                weakCell.likeNumLabel.text = [NSString stringWithFormat:@"%ld",[weakCell.likeNumLabel.text integerValue] - 1];
+                changeModel.questionGoodsNum = weakCell.likeNumLabel.text;
+                changeModel.isGood = NO;
                 [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"取消点赞"];
+                
             }
         } WithErrorBlock:^(id errorCode) {
         } WithFailureBlock:^(id failureBlock) {
@@ -401,7 +404,6 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = [tableView fd_heightForCellWithIdentifier:@"NNQuestionAndAnswerCell" cacheByIndexPath:indexPath configuration:^(id cell) {
         NNQuestionAndAnswerCell *questionAndAnswerCell =  cell;
-        questionAndAnswerCell.commentConstraint.constant = 0;
         questionAndAnswerCell.model = [questionAndAnswerMutableArray objectAtIndex:indexPath.section];
 
     }];

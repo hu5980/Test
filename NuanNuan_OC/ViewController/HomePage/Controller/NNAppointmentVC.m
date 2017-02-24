@@ -251,6 +251,9 @@
         case 2:
             age = textField.text;
             break;
+        case 3:
+            address = textField.text;
+            break;
         case 4:
             phone = textField.text;
             break;

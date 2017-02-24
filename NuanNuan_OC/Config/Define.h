@@ -19,7 +19,7 @@ typedef void (^NetWorkBlock)(BOOL netConnetState);
 typedef void (^ProgressBlock)(id Progress);
 
 //BaseURL
-#define NNBaseUrl                       @"https://120.24.57.204"
+#define NNBaseUrl                       @"http://120.24.57.204"
 
 //定义屏幕尺寸
 #define NNScreenBounds                  [[UIScreen mainScreen] bounds]
@@ -70,7 +70,7 @@ typedef void (^ProgressBlock)(id Progress);
 #define ALIFEEDBACK_APPKEY @"23542027"
 #define ALIFEEDBACK_APPSECRET @"075c5d32aa682d7f57c65e2382badf9b"
 
-
+#define JSPATCHKEY  @"e7989a31d332357f"
 
 #define TEST_TOKEN  [[NSUserDefaults standardUserDefaults] objectForKey:@"token"]
 

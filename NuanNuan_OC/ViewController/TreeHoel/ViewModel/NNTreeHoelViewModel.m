@@ -14,6 +14,10 @@
     if (treeHoelId == nil) {
         treeHoelId = @"0";
     }
+    if (token == nil) {
+        token = @"";
+    }
+ 
     NSDictionary *parames = @{@"token":token,@"last_id":treeHoelId,@"pnum":pageNum};
     [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_treehole&a=getTreeholeList",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
         [self fetchValueSuccessWithDic:returnValue];

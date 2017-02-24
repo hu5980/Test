@@ -13,6 +13,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.userHeadImageView.layer.masksToBounds = YES;
+    self.userHeadImageView.layer.cornerRadius = 16.f;
+    self.userHeadImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.userHeadImageView.clipsToBounds  = YES;
     // Initialization code
 }
 

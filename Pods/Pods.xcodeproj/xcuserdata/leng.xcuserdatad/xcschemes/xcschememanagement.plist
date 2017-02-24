@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JSPatch.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -87,32 +92,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0BEAF111C76CDD603A49621508C9D666</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>17CEAD1B3EC4E80098DF5F8AA00BE966</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>187BF871CD9837DD9BE5F0882265F35C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>30CB039977A497957FA09B12BF57757B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>52376387BE4B765B081631572C484939</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5E9554155F6E640DAD4A5E901DCDF012</key>
+		<key>3CCD6CD8E36BF79DAB16923EC136655A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,12 +107,42 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>71EB281BDC6FECDF6ADB1C7A066B6C6D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7932640CBF29BBA7349858E8F8FA5CE0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7BAAEC1386420288825150BB5315CA52</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7E2BF8943EDB08FE10F88DCC60A9F34C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>923949EBE1F9313451F71BF25AFB9AAD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A3B3CA69641375F94D39F255650BF877</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A4E678F1763B684DECF36FD6930AF2A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ABC0A6A06DAF50CA7B3C913FB5E49CF6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,17 +157,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DCB3754BCF4CE5DE243DD35EC0F399A7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>E14A62900910444707A5504D25EC98DC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FD0FDFAAF5500B970755E120DB1A686C</key>
+		<key>EF9F262072921CE2FFC3F9ED62C6A50A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

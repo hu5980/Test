@@ -2,7 +2,7 @@
 //  NNSpitslotCell.h
 //  NuanNuan_OC
 //
-//  Created by 胡光耀 on 16/10/22.
+//  Created by hu5980 on 16/10/22.
 //  Copyright © 2016年 NuanNuan. All rights reserved.
 //
 
@@ -15,8 +15,6 @@ typedef void(^selectImageIndexPath)(NSInteger indexPath);
 
 @interface NNSpitslotCell : UITableViewCell
 
-
-
 @property (strong, nonatomic) NNTreeHoelModel *model;
 @property (strong, nonatomic) IBOutlet UIImageView *headImageView;
 @property (strong, nonatomic) IBOutlet UILabel *nickNameLabel;
@@ -27,11 +25,9 @@ typedef void(^selectImageIndexPath)(NSInteger indexPath);
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *broswerViewConstraint;
 
 @property (strong, nonatomic) IBOutlet UILabel *bePraisedLabel;
-
 @property (copy , nonatomic) spitslotActionBlock block;
-
 @property (copy , nonatomic) selectImageIndexPath selectImageBlock;
-
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
+
 
 @end

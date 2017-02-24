@@ -36,16 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (TEST_TOKEN == nil) {
-         NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];;
-        loginVC.isPresent = YES;
-        [self presentViewController:loginVC animated:YES completion:^{
-            
-        }];
-        
-        return ;
-    }
-
+   
     [self initData];
     [self initUI];
     // Do any additional setup after loading the view.
@@ -55,8 +46,8 @@
     NNCustomNavigationView *view = LOAD_VIEW_FROM_BUNDLE(@"NNCustomNavigationView");
     view.backgroundColor = [UIColor clearColor];
     defaultSelectButton = view.index1Button;
-    [view.index1Button setTitle:@"私人定制" forState:UIControlStateNormal];
-    [view.index2Button setTitle:@"服务介绍" forState:UIControlStateNormal];
+    [view.index1Button setTitle:@"专家预约" forState:UIControlStateNormal];
+    [view.index2Button setTitle:@"私人订制" forState:UIControlStateNormal];
     
     view.selectBlock = ^(UIButton *button) {
         if (defaultSelectButton.tag != button.tag ) {
@@ -183,6 +174,8 @@
     }else{
         cell.apaleView.hidden = NO;
     }
+    
+    NSLog(@"%f %f",cell.contentView.frame.size.width ,cell.contentView.frame.size.height);
     
     return cell;
 }

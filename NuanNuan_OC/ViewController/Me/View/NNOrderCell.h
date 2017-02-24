@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NNOrderModel.h"
-
+#import "Define.h"
 @interface NNOrderCell : UITableViewCell
 @property (strong,nonatomic ) NNOrderModel *model;
 @property (weak, nonatomic) IBOutlet UILabel *orderNumLabel;

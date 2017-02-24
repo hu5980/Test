@@ -37,8 +37,8 @@
     NSMutableArray *caseMutableArray = [NSMutableArray arrayWithCapacity:listArray.count];
     for (int i  = 0; i < listArray.count; i++) {
         NNSuccessCaseModel *model = [[NNSuccessCaseModel alloc] init];
-        model.caseTitle = [listArray[i] objectForKey:@"a_title"];
-        model.caseName = [listArray[i] objectForKey:@"ac_name"];
+        model.caseTitle = [listArray[i] objectForKey:@"a_attach_title"];
+        model.caseName = [listArray[i] objectForKey:@"a_title"];
         model.caseImageUrl = [NSString stringWithFormat:@"%@/%@",basebgUrl,[listArray[i] objectForKey:@"a_bg_pic"]] ;
         model.caseAdID = [[listArray[i] objectForKey:@"a_id"] integerValue];
         model.caseGoodsNum = [[listArray[i] objectForKey:@"a_goods_num"] integerValue];

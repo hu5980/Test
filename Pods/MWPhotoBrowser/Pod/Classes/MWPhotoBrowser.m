@@ -192,7 +192,22 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     
 	// Super
     [super viewDidLoad];
+    
+    UIButton *leftItemButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *back = [UIImage imageNamed:@"101_03"];
+    [leftItemButton setImage:back forState:UIControlStateNormal];
+    [leftItemButton setImage:[UIImage imageNamed:@"101_03_p"] forState:UIControlStateHighlighted];
+    leftItemButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    leftItemButton.frame = CGRectMake(0, 0, back.size.width, back.size.height);
+    
+    [leftItemButton setTitleColor:[UIColor colorWithRed:247/255.f green:106/255.f blue:8/255.f alpha:1.0] forState:UIControlStateNormal];
+    [leftItemButton addTarget:self action:@selector(popSelf) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:leftItemButton];
 	
+}
+
+-(void) popSelf{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)performLayout {

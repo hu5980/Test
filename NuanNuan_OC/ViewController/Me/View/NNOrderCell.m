@@ -27,8 +27,10 @@
     _orderSexLabel.text = model.orderSex;
     _orderTimeLabel.text = model.orderTime;
     _orderTypeLabel.text = model.orderType;
+    _orderTypeLabel.preferredMaxLayoutWidth = NNAppWidth - 150 ;
     _orderPhonoLabel.text = model.orderTelephone;
     _orderContentLabel.text = model.orderContent;
+    _orderContentLabel.preferredMaxLayoutWidth = NNAppWidth - 150 ;
     _orderNickNameLabel.text = model.orderUserName;
 }
 

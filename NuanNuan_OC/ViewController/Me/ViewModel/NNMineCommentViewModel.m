@@ -2,7 +2,7 @@
 //  NNMineCommentViewModel.m
 //  NuanNuan_OC
 //
-//  Created by 胡光耀 on 16/11/23.
+//  Created by hu5980 on 16/11/23.
 //  Copyright © 2016年 NuanNuan. All rights reserved.
 //
 
@@ -16,6 +16,7 @@
     if (lastID == nil) {
         lastID = @"";
     }
+    
     NSDictionary *parames = @{@"token":token,@"type":type,@"last_id":lastID,@"down":down,@"pnum":pageNum};
     [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_comment&a=getMyCommentList",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
         NNLog(@"%@",returnValue);
@@ -51,6 +52,7 @@
             teacherModel.backgroundImageUrl = [NSString stringWithFormat:@"%@/%@",teacherBgUrl,[dic objectForKey:@"t_bg_pic"]];
             questionAndAnswerModelmodel.teacherModel = teacherModel;
             questionAndAnswerModelmodel.questionId = [dic objectForKey:@"o_id"];
+            questionAndAnswerModelmodel.isGood = [[dic objectForKey:@"has_good"] boolValue];
             questionAndAnswerModelmodel.questionAnswer = [dic objectForKey:@"q_answer"];
             questionAndAnswerModelmodel.questionCommentNum = [dic objectForKey:@"q_comment_num"];
             questionAndAnswerModelmodel.questionContent = [dic objectForKey:@"q_content"];
@@ -84,6 +86,7 @@
             treeHoelModel.picArrays = picMutableArrays;
             treeHoelModel.thAnonymity = [dic objectForKey:@"th_anonymity"];
             treeHoelModel.thCommentNum =[dic objectForKey:@"th_comment_num"];
+            treeHoelModel.isGood = [[dic objectForKey:@"has_good"] boolValue];
             treeHoelModel.thGoodsNum =[dic objectForKey:@"th_goods_num"];
             treeHoelModel.userHeadUrl = [dic objectForKey:@"user_head"];
             treeHoelModel.userNikeName = [dic objectForKey:@"user_nickname"];

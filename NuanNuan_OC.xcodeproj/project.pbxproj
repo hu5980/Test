@@ -168,6 +168,10 @@
 		BC8627711DD9A03400162082 /* NNQuestionerChooseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC86276F1DD9A03400162082 /* NNQuestionerChooseCell.xib */; };
 		BC8627741DD9A07C00162082 /* NNChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8627731DD9A07C00162082 /* NNChooseView.m */; };
 		BC8627791DD9A0C500162082 /* NNChooseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8627781DD9A0C500162082 /* NNChooseButton.m */; };
+		BC8A00191E2F44F3004B4C95 /* NNMineCommentQuestionAndAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A00171E2F44F3004B4C95 /* NNMineCommentQuestionAndAnswerCell.m */; };
+		BC8A001A1E2F44F3004B4C95 /* NNMineCommentQuestionAndAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8A00181E2F44F3004B4C95 /* NNMineCommentQuestionAndAnswerCell.xib */; };
+		BC8A001E1E2F5509004B4C95 /* NNCommentSpitslotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A001C1E2F5509004B4C95 /* NNCommentSpitslotCell.m */; };
+		BC8A001F1E2F5509004B4C95 /* NNCommentSpitslotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8A001D1E2F5509004B4C95 /* NNCommentSpitslotCell.xib */; };
 		BC8C61D81DC045D500094F94 /* NNRingImageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8C61D71DC045D500094F94 /* NNRingImageViewModel.m */; };
 		BC8C61DB1DC049ED00094F94 /* NNBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8C61DA1DC049ED00094F94 /* NNBaseModel.m */; };
 		BC8C61DE1DC04A2C00094F94 /* NNRingImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8C61DD1DC04A2C00094F94 /* NNRingImageModel.m */; };
@@ -187,7 +191,6 @@
 		BCD505FA1D921F8C000FB2C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD505F91D921F8C000FB2C0 /* main.m */; };
 		BCD505FD1D921F8C000FB2C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD505FC1D921F8C000FB2C0 /* AppDelegate.m */; };
 		BCD506051D921F8C000FB2C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD506041D921F8C000FB2C0 /* Assets.xcassets */; };
-		BCD506081D921F8C000FB2C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD506061D921F8C000FB2C0 /* LaunchScreen.storyboard */; };
 		BCD506111D92202D000FB2C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD5060F1D92202D000FB2C0 /* Main.storyboard */; };
 		BCD5061E1D92241A000FB2C0 /* NNTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5061D1D92241A000FB2C0 /* NNTabbarVC.m */; };
 		BCD5062B1D92252A000FB2C0 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5062A1D92252A000FB2C0 /* UIColor+Helper.m */; };
@@ -229,6 +232,7 @@
 		BCD9AE9C1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE9A1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.xib */; };
 		BCD9AEA01DAE21D1008DB98E /* NNNeterReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9AE9E1DAE21D1008DB98E /* NNNeterReplyCell.m */; };
 		BCD9AEA11DAE21D1008DB98E /* NNNeterReplyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD9AE9F1DAE21D1008DB98E /* NNNeterReplyCell.xib */; };
+		BCD9C9071E2DFA3B004D6E99 /* NNMineTreeHoelViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9C9061E2DFA3B004D6E99 /* NNMineTreeHoelViewModel.m */; };
 		BCDEDCA51E261FF2005579E5 /* NNEmotionTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDEDCA31E261FF2005579E5 /* NNEmotionTableVC.m */; };
 		BCDEDCA61E261FF2005579E5 /* NNEmotionTableVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCDEDCA41E261FF2005579E5 /* NNEmotionTableVC.xib */; };
 		BCDEDCAD1E2629A0005579E5 /* NNEmotionCaseCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDEDCAB1E2629A0005579E5 /* NNEmotionCaseCollectionCell.m */; };
@@ -548,6 +552,12 @@
 		BC8627731DD9A07C00162082 /* NNChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNChooseView.m; sourceTree = "<group>"; };
 		BC8627771DD9A0C500162082 /* NNChooseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNChooseButton.h; sourceTree = "<group>"; };
 		BC8627781DD9A0C500162082 /* NNChooseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNChooseButton.m; sourceTree = "<group>"; };
+		BC8A00161E2F44F3004B4C95 /* NNMineCommentQuestionAndAnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNMineCommentQuestionAndAnswerCell.h; sourceTree = "<group>"; };
+		BC8A00171E2F44F3004B4C95 /* NNMineCommentQuestionAndAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMineCommentQuestionAndAnswerCell.m; sourceTree = "<group>"; };
+		BC8A00181E2F44F3004B4C95 /* NNMineCommentQuestionAndAnswerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNMineCommentQuestionAndAnswerCell.xib; sourceTree = "<group>"; };
+		BC8A001B1E2F5509004B4C95 /* NNCommentSpitslotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNCommentSpitslotCell.h; sourceTree = "<group>"; };
+		BC8A001C1E2F5509004B4C95 /* NNCommentSpitslotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNCommentSpitslotCell.m; sourceTree = "<group>"; };
+		BC8A001D1E2F5509004B4C95 /* NNCommentSpitslotCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNCommentSpitslotCell.xib; sourceTree = "<group>"; };
 		BC8C61D61DC045D500094F94 /* NNRingImageViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNRingImageViewModel.h; sourceTree = "<group>"; };
 		BC8C61D71DC045D500094F94 /* NNRingImageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNRingImageViewModel.m; sourceTree = "<group>"; };
 		BC8C61D91DC049ED00094F94 /* NNBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNBaseModel.h; sourceTree = "<group>"; };
@@ -584,7 +594,6 @@
 		BCD505FB1D921F8C000FB2C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BCD505FC1D921F8C000FB2C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BCD506041D921F8C000FB2C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BCD506071D921F8C000FB2C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCD506091D921F8C000FB2C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCD506101D92202D000FB2C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCD5061C1D92241A000FB2C0 /* NNTabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNTabbarVC.h; sourceTree = "<group>"; };
@@ -652,6 +661,8 @@
 		BCD9AE9D1DAE21D1008DB98E /* NNNeterReplyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNeterReplyCell.h; sourceTree = "<group>"; };
 		BCD9AE9E1DAE21D1008DB98E /* NNNeterReplyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNeterReplyCell.m; sourceTree = "<group>"; };
 		BCD9AE9F1DAE21D1008DB98E /* NNNeterReplyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNNeterReplyCell.xib; sourceTree = "<group>"; };
+		BCD9C9051E2DFA3B004D6E99 /* NNMineTreeHoelViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNMineTreeHoelViewModel.h; sourceTree = "<group>"; };
+		BCD9C9061E2DFA3B004D6E99 /* NNMineTreeHoelViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNMineTreeHoelViewModel.m; sourceTree = "<group>"; };
 		BCDEDCA21E261FF2005579E5 /* NNEmotionTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNEmotionTableVC.h; sourceTree = "<group>"; };
 		BCDEDCA31E261FF2005579E5 /* NNEmotionTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNEmotionTableVC.m; sourceTree = "<group>"; };
 		BCDEDCA41E261FF2005579E5 /* NNEmotionTableVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNEmotionTableVC.xib; sourceTree = "<group>"; };
@@ -1266,6 +1277,8 @@
 				BCD7E6531DFFD5BC00991F86 /* NNAskingListViewModel.m */,
 				BC022BD71E13D81C00D83381 /* NNNoticeHadReadViewModel.h */,
 				BC022BD81E13D81C00D83381 /* NNNoticeHadReadViewModel.m */,
+				BCD9C9051E2DFA3B004D6E99 /* NNMineTreeHoelViewModel.h */,
+				BCD9C9061E2DFA3B004D6E99 /* NNMineTreeHoelViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1347,7 +1360,6 @@
 				BCD506141D9222E5000FB2C0 /* ViewController */,
 				BCD5060F1D92202D000FB2C0 /* Main.storyboard */,
 				BCD506041D921F8C000FB2C0 /* Assets.xcassets */,
-				BCD506061D921F8C000FB2C0 /* LaunchScreen.storyboard */,
 				BCD506091D921F8C000FB2C0 /* Info.plist */,
 				BCA1AF851E0A84E800F326ED /* server.cer */,
 				BC0274C11DED82C500D61F12 /* cityData.plist */,
@@ -1577,6 +1589,12 @@
 				BCF660941E0AA25E003D2B02 /* NNAboutCell.h */,
 				BCF660951E0AA25E003D2B02 /* NNAboutCell.m */,
 				BCF660961E0AA25E003D2B02 /* NNAboutCell.xib */,
+				BC8A00161E2F44F3004B4C95 /* NNMineCommentQuestionAndAnswerCell.h */,
+				BC8A00171E2F44F3004B4C95 /* NNMineCommentQuestionAndAnswerCell.m */,
+				BC8A00181E2F44F3004B4C95 /* NNMineCommentQuestionAndAnswerCell.xib */,
+				BC8A001B1E2F5509004B4C95 /* NNCommentSpitslotCell.h */,
+				BC8A001C1E2F5509004B4C95 /* NNCommentSpitslotCell.m */,
+				BC8A001D1E2F5509004B4C95 /* NNCommentSpitslotCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1884,15 +1902,18 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = NN;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = NuanNuan;
 				TargetAttributes = {
 					BCD505F41D921F8C000FB2C0 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 7MUEF9EK2J;
+						DevelopmentTeam = WJR5NAA722;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -1959,7 +1980,6 @@
 				BCD9AE8C1DADE582008DB98E /* NNPsychologicalTeacherVC.xib in Resources */,
 				0DBB2A541DE9ABD5008A0F32 /* read_me.txt in Resources */,
 				BCD9AE821DACED5F008DB98E /* NNCustomNavigationView.xib in Resources */,
-				BCD506081D921F8C000FB2C0 /* LaunchScreen.storyboard in Resources */,
 				0DA029941DE08C8C00862E7C /* NNTreeHoelSendVC.xib in Resources */,
 				BC58BA681DBDE99500F3BF0D /* NNMinePraisedVC.xib in Resources */,
 				BCD9AE781DACD323008DB98E /* NNRingImageView.xib in Resources */,
@@ -1975,6 +1995,8 @@
 				BC0274C71DEEB55C00D61F12 /* NNUserInfoVC.xib in Resources */,
 				BCD9AE961DAE0941008DB98E /* NNQuestionAndAnswerCell.xib in Resources */,
 				0DBB28FC1DE1A3C0008A0F32 /* NNForgetPasswordVC.xib in Resources */,
+				BC8A001F1E2F5509004B4C95 /* NNCommentSpitslotCell.xib in Resources */,
+				BC8A001A1E2F44F3004B4C95 /* NNMineCommentQuestionAndAnswerCell.xib in Resources */,
 				BCD7E6511DFFD16800991F86 /* NNMineAskVC.xib in Resources */,
 				BC3BFA341DD9B73300F73DEF /* NNQuestionCell.xib in Resources */,
 				BCD506051D921F8C000FB2C0 /* Assets.xcassets in Resources */,
@@ -2091,6 +2113,7 @@
 				BCD506571D9231D0000FB2C0 /* NNServerVC.m in Sources */,
 				BC58BA7B1DBDEF9300F3BF0D /* NNMineNoticeVC.m in Sources */,
 				BC328EEA1DBF2F5E000AF40B /* NNLoginAndRegisterVC.m in Sources */,
+				BC8A001E1E2F5509004B4C95 /* NNCommentSpitslotCell.m in Sources */,
 				BC852E7C1DCB128300ADE5C9 /* NNUserInfoModel.m in Sources */,
 				BCB6EFD91DB60A6000BEFD37 /* NNBaseVC.m in Sources */,
 				BC8627741DD9A07C00162082 /* NNChooseView.m in Sources */,
@@ -2100,10 +2123,12 @@
 				0DDAEE791DBB9F87008478DC /* NNImageBroswerView.m in Sources */,
 				BCD7E6541DFFD5BC00991F86 /* NNAskingListViewModel.m in Sources */,
 				BCEDDBFE1DE52C5A00187317 /* MLSelectPhotoPickerGroupTableViewCell.m in Sources */,
+				BC8A00191E2F44F3004B4C95 /* NNMineCommentQuestionAndAnswerCell.m in Sources */,
 				BC58BA8A1DBDF29000F3BF0D /* NNSetCell.m in Sources */,
 				BCDEDCAD1E2629A0005579E5 /* NNEmotionCaseCollectionCell.m in Sources */,
 				0DBB2A5F1DE9ABD5008A0F32 /* UMSocialUIManager.m in Sources */,
 				BCD7E6501DFFD16800991F86 /* NNMineAskVC.m in Sources */,
+				BCD9C9071E2DFA3B004D6E99 /* NNMineTreeHoelViewModel.m in Sources */,
 				BCEDDBF81DE52C5A00187317 /* MLSelectPhotoPickerBrowserPhotoImageView.m in Sources */,
 				BC7A672A1DB4C3C000C3B3D9 /* NNNetRequestClass.m in Sources */,
 				BC17E9361DD598AA0054FBE2 /* NNCommentViewModel.m in Sources */,
@@ -2186,14 +2211,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BCD506061D921F8C000FB2C0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BCD506071D921F8C000FB2C0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		BCD5060F1D92202D000FB2C0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2219,8 +2236,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -2263,8 +2282,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -2295,8 +2316,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "NuanNuan_OC/暖暖.entitlements";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7MUEF9EK2J;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = WJR5NAA722;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2346,10 +2367,10 @@
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMessage_Sdk_1.4.0",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.NNXL.nuannuan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xikang.ss;
 				PRODUCT_NAME = "暖暖";
-				PROVISIONING_PROFILE = "277190bf-52ea-4912-821b-0695da91110f";
-				PROVISIONING_PROFILE_SPECIFIER = NuanNuanDevelopment;
+				PROVISIONING_PROFILE = "31227b2a-03b9-46bb-b7f0-cbc1c1b9997d";
+				PROVISIONING_PROFILE_SPECIFIER = ss_EnterpriseCertificate;
 				SWIFT_VERSION = 2.3;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
@@ -2363,8 +2384,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "NuanNuan_OC/暖暖.entitlements";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7MUEF9EK2J;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = WJR5NAA722;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2414,10 +2435,10 @@
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMessage_Sdk_1.4.0",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.NNXL.nuannuan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xikang.ss;
 				PRODUCT_NAME = "暖暖";
-				PROVISIONING_PROFILE = "277190bf-52ea-4912-821b-0695da91110f";
-				PROVISIONING_PROFILE_SPECIFIER = NuanNuanDevelopment;
+				PROVISIONING_PROFILE = "31227b2a-03b9-46bb-b7f0-cbc1c1b9997d";
+				PROVISIONING_PROFILE_SPECIFIER = ss_EnterpriseCertificate;
 				SWIFT_VERSION = 2.3;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};

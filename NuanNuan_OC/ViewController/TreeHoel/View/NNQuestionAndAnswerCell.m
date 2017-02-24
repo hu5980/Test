@@ -9,6 +9,7 @@
 #import "NNQuestionAndAnswerCell.h"
 #import "UIImageView+WebCache.h"
 #import "NNTimeUtil.h"
+#import "Define.h"
 @implementation NNQuestionAndAnswerCell
 
 - (void)awakeFromNib {
@@ -21,10 +22,12 @@
 
     self.teacherHeadImageView.layer.masksToBounds = YES;
     self.teacherHeadImageView.layer.cornerRadius = 16;
-    
+    self.teacherHeadImageView.clipsToBounds = YES;
+    self.teacherHeadImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.questionerHeadImageView.layer.masksToBounds = YES;
     self.questionerHeadImageView.layer.cornerRadius = 16;
-    
+    self.questionerHeadImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.questionerHeadImageView.clipsToBounds  = YES;
     
     // Configure the view for the selected state
 }
@@ -37,6 +40,8 @@
     [self.questionerHeadImageView sd_setImageWithURL:[NSURL URLWithString:model.questionHeadUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"]options:SDWebImageAllowInvalidSSLCertificates];
     self.questionerNameLabel.text = model.questionNickName;
     self.questLabel.text = model.questionContent;
+    self.questLabel.preferredMaxLayoutWidth = NNAppWidth -73;
+    self.answerLabel.preferredMaxLayoutWidth = NNAppWidth -73;
     self.teacherNameLabel.text = model.teacherModel.teacherNickName;
     self.answerLabel.text = model.questionAnswer;
     self.timeLabel.text = [NNTimeUtil timeDealWithTimeFromNow:model.questionCreateTime];
@@ -52,6 +57,11 @@
 
 - (IBAction)commentAction:(UIButton *)sender {
     _commentBlock();
+}
+
++ (CGFloat) getuestionAndAnswerCellHeight:(NNQuestionAndAnswerModel *)model {
+    
+    return 10.1;
 }
 
 

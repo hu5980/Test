@@ -2,7 +2,7 @@
 //  NNTreeHoelSendVC.m
 //  NuanNuan_OC
 //
-//  Created by 胡光耀 on 16/11/19.
+//  Created by hu5980 on 16/11/19.
 //  Copyright © 2016年 NuanNuan. All rights reserved.
 //
 
@@ -173,7 +173,7 @@
             [[NNProgressHUD instance] hideHud];
             if ([returnValue isEqualToString:@"success"]) {
                // [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"发布成功"];
-                _block();
+              
                 [self.navigationController popViewControllerAnimated:YES];
                 
             }

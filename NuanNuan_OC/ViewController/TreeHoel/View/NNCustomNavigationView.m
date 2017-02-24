@@ -7,7 +7,7 @@
 //
 
 #import "NNCustomNavigationView.h"
-
+#import "Define.h"
 @implementation NNCustomNavigationView
 
 /*
@@ -21,6 +21,13 @@
     _selectBlock(sender);
 }
 - (IBAction)teasingTreeHole:(UIButton *)sender {
+    
+    if([sender.titleLabel.text isEqualToString:@"吐槽树洞"]){
+        if (TEST_TOKEN == nil) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginAgain" object:@"需要登录"];
+            return;
+        }
+    }
     _selectBlock(sender);
 }
 

@@ -2,7 +2,7 @@
 //  NNSpitslotCell.m
 //  NuanNuan_OC
 //
-//  Created by 胡光耀 on 16/10/22.
+//  Created by hu5980 on 16/10/22.
 //  Copyright © 2016年 NuanNuan. All rights reserved.
 //
 
@@ -17,6 +17,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.headImageView.layer.masksToBounds = YES;
+    self.headImageView.layer.cornerRadius = 16.f;
+    self.headImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.headImageView.clipsToBounds  = YES;
 }
 
 - (void)setModel:(NNTreeHoelModel *)model {
@@ -35,6 +39,7 @@
         [self.headImageView sd_setImageWithURL:[NSURL URLWithString:model.userHeadUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageRefreshCached |SDWebImageAllowInvalidSSLCertificates];
     }
     self.contentLabel.text = model.thContent;
+    self.contentLabel.preferredMaxLayoutWidth = NNAppWidth - 30;
     NNImageBroswerView *broswerImageView = [[NNImageBroswerView alloc] initWithFrame:CGRectMake(0, 0,NNAppWidth, 0) ImageUrls:model.picArrays SpaceWithImage:10 SpaceWithSideOfSuperView:15 NumberImageOfLine:3];
     self.broswerViewConstraint.constant = broswerImageView.broswerViewHeight;
     
@@ -51,9 +56,9 @@
 }
 
 
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 - (IBAction)praiseSpitslotAction:(UIButton *)sender {

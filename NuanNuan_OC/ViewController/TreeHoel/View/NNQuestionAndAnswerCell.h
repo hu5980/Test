@@ -17,8 +17,8 @@ typedef void(^commentBlock)();
 
 @property (strong, nonatomic) NNQuestionAndAnswerModel *model;
 
-@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *commentConstraint;
+
+
 @property (weak, nonatomic) IBOutlet UIImageView *questionerHeadImageView;
 @property (weak, nonatomic) IBOutlet UILabel *questionerNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *questLabel;
@@ -33,4 +33,7 @@ typedef void(^commentBlock)();
 
 @property (copy ,nonatomic) likeTheAnswerBlock likeBlock;
 @property (copy, nonatomic) commentBlock commentBlock;
+
++ (CGFloat) getuestionAndAnswerCellHeight:(NNQuestionAndAnswerModel *)model;
+
 @end

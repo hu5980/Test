@@ -24,7 +24,7 @@
 #import "NNLoginAndRegisterVC.h"
 #import "NNAboutNuanNuan.h"
 #import "NNMineAskVC.h"
-
+#import "NNMineTreeHoelVC.h"
 
 @interface NNMeVC ()<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate> {
     NSArray *imageArray;
@@ -61,14 +61,7 @@
     
     [self initView];
     
-    if (TEST_TOKEN == nil) {
-        NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];;
-        loginVC.isPresent = YES;
-        [self presentViewController:loginVC animated:YES completion:^{
-            
-        }];
-        return ;
-    }
+   
     // Do any additional setup after loading the view.
 }
 
@@ -240,11 +233,18 @@
     if (indexPath.section == 0) {
         NNMineEmotionalMangmentCell *emotionalMangmentCell = [tableView dequeueReusableCellWithIdentifier:@"NNMineEmotionalMangmentCell"];
         emotionalMangmentCell.block = ^(NSInteger tag){
-            
+            if (TEST_TOKEN == nil) {
+                NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];;
+                loginVC.isPresent = YES;
+                [weakself presentViewController:loginVC animated:YES completion:nil];
+                return ;
+            }
+
         
             switch (tag) {
                 case 100:
                 {
+                   
                     NNMinePraisedVC *praisedVC = [[NNMinePraisedVC alloc] initWithNibName:@"NNMinePraisedVC" bundle:nil];
                     praisedVC.hidesBottomBarWhenPushed = YES;
                     [weakself.navigationController pushViewController:praisedVC animated:YES];
@@ -301,6 +301,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if (TEST_TOKEN == nil) {
+        NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];;
+        loginVC.isPresent = YES;
+        [self presentViewController:loginVC animated:YES completion:nil];
+        return ;
+    }
+
+    
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
             NNMineOrderVC *orderVC = [[NNMineOrderVC alloc] initWithNibName:@"NNMineOrderVC" bundle:nil];
@@ -318,6 +326,10 @@
             
             [self.navigationController pushViewController:noticeVC animated:YES];
             
+        }else if (indexPath.row == 3){
+            NNMineTreeHoelVC *treeHoelVC = [[NNMineTreeHoelVC alloc] initWithNibName:@"NNMineTreeHoelVC" bundle:nil];
+            treeHoelVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:treeHoelVC animated:YES];
         }
     }else if (indexPath.section == 2){
         if (indexPath.row == 0) {
@@ -390,7 +402,9 @@
 
 
 
-
+//- (void)logoutFromApp {
+//   
+//}
 
 
 - (void)didReceiveMemoryWarning {

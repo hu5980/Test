@@ -2,7 +2,7 @@
 //  NNSpitslotDetailVC.m
 //  NuanNuan_OC
 //
-//  Created by 胡光耀 on 16/10/23.
+//  Created by hu5980 on 16/10/23.
 //  Copyright © 2016年 NuanNuan. All rights reserved.
 //
 
@@ -47,7 +47,6 @@
 - (void)createUI {
     self.navTitle = @"树洞详情";
     [self setNavigationBackButton:YES];
-    self.view.backgroundColor = NN_BACKGROUND_COLOR;
     _spitslotTableView.delegate = self;
     _spitslotTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _spitslotTableView.dataSource = self;
@@ -252,7 +251,8 @@
     }else{
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, 30)];
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 100, 30)];
-        [view addSubview:label];                                              label.text = @"网友评论";
+        [view addSubview:label];
+        label.text = @"网友评论";
         label.font = [UIFont systemFontOfSize:14.f];
         label.textColor = [UIColor colorFromHexString:@"#ff8833"];
         view.backgroundColor = NN_BACKGROUND_COLOR;
@@ -284,7 +284,7 @@
             [browser setCurrentPhotoIndex:selectIndex];
             [weakSelf.navigationController pushViewController:browser animated:YES];
         };
-        cell.model = _model;
+        
         
         cell.block = ^(UIButton *button){
             switch (button.tag) {
@@ -298,7 +298,7 @@
                     [viewModel setBlockWithReturnBlock:^(id returnValue) {
                         if([returnValue isEqualToString:@"success"]){
                             button.selected = YES;
-                            weakCell.bePraisedLabel.text = [NSString stringWithFormat:@"%ld",[cell.bePraisedLabel.text integerValue] + 1];
+                            weakCell.bePraisedLabel.text = [NSString stringWithFormat:@"%ld",[weakCell.bePraisedLabel.text integerValue] + 1];
                             [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"点赞成功"];
                         }
                     } WithErrorBlock:^(id errorCode) {
@@ -311,7 +311,7 @@
                     [unViewModel setBlockWithReturnBlock:^(id returnValue) {
                         if([returnValue isEqualToString:@"success"]){
                             button.selected = NO;
-                            weakCell.bePraisedLabel.text = [NSString stringWithFormat:@"%ld",[cell.bePraisedLabel.text integerValue] - 1];
+                            weakCell.bePraisedLabel.text = [NSString stringWithFormat:@"%ld",[weakCell.bePraisedLabel.text integerValue] - 1];
                             [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"取消点赞"];
                         }
                     } WithErrorBlock:^(id errorCode) {
@@ -331,10 +331,13 @@
             }
         };
         
+        cell.model = _model;
         return cell;
     }else{
         NNNeterReplyCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"NNNeterReplyCell"];
-        cell.model = [_commentMutableArray objectAtIndex:indexPath.row];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        NNCommentModel *commentModel = [_commentMutableArray objectAtIndex:indexPath.row];
+        cell.model = commentModel;
         __weak NNNeterReplyCell*weakCell = cell;
         cell.likeCommentBlock = ^(UIButton * button ){
             NNPariseViewModel  *viewModel = [[NNPariseViewModel alloc] init];
@@ -361,16 +364,14 @@
             } WithFailureBlock:^(id failureBlock) {
             }];
             if (button.selected) {
-                [unViewModel unParisdArticleWithToken:TEST_TOKEN andArticleType:@"4" andArticleID:_model.thID];
+                [unViewModel unParisdArticleWithToken:TEST_TOKEN andArticleType:@"4" andArticleID:commentModel.commentID];
             }else{
-                [viewModel parisdArticleWithToken:TEST_TOKEN andArticleType:@"4" andArticleID:_model.thID];
+                [viewModel parisdArticleWithToken:TEST_TOKEN andArticleType:@"4" andArticleID:commentModel.commentID];
             }
-            
         };
         return cell;
     }
 }
-
 
 
 - (void)didReceiveMemoryWarning {

@@ -17,6 +17,7 @@
 
 @interface NNLoginAndRegisterVC (){
     UIButton *defaultButton;
+    NSTimer *timer;
 }
 @property (weak, nonatomic) IBOutlet UIView *registerView;
 @property (weak, nonatomic) IBOutlet UIView *loginView;
@@ -36,6 +37,13 @@
 @end
 
 @implementation NNLoginAndRegisterVC
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [timer invalidate];
+    timer = nil;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -88,17 +96,40 @@
 }
 
 - (IBAction)sendCaptchAction:(id)sender {
-    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:_registerUserNameTextField.text
-                                   zone:@"86"
-                       customIdentifier:nil
-                                 result:^(NSError *error){
-                                     if (!error) {
-                                         NSLog(@"获取验证码成功");
-                                     } else {
-                                         NSLog(@"错误信息：%@",error);
-                                        }
-                                     }];
     
+    if (_registerUserNameTextField.text == nil || _registerUserNameTextField.text.length != 11) {
+        [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"手机号码错误"];
+        return;
+    }
+    
+    if (!timer.valid) {
+         [timer setFireDate:[NSDate date]];
+    }
+   
+    if ([_captchButton.titleLabel.text isEqualToString:@"发送验证码"]) {
+        [_captchButton setTitle:@"59" forState:UIControlStateNormal];
+        NSLog(@"%@",_captchButton.titleLabel.text);
+        if (timer == nil) {
+            timer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                     target:self
+                                                   selector:@selector(timerSelector)
+                                                   userInfo:nil
+                                                    repeats:YES];
+        }
+       
+        [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS
+                                phoneNumber:_registerUserNameTextField.text
+                                       zone:@"86"
+                           customIdentifier:nil
+                                     result:^(NSError *error){
+                                        [_captchButton setTitle:@"发送验证码" forState:UIControlStateNormal];
+                                        [timer setFireDate:[NSDate distantFuture]];
+                                         if (!error) {
+                                         } else {
+                                             [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:[error.userInfo objectForKey:@"getVerificationCode"]];
+                                         }
+                                     }];
+    }
     
 }
 - (IBAction)loginOrRegisterSelectAction:(UIButton *)sender {
@@ -193,6 +224,18 @@
 
 - (IBAction)closeLoginAction:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+- (void)timerSelector {
+    if ([_captchButton.titleLabel.text isEqualToString:@"0"]) {
+        [timer setFireDate:[NSDate distantFuture]];
+        [_captchButton setTitle:@"发送验证码" forState:UIControlStateNormal];
+    }else{
+        NSLog(@"%@",_captchButton.titleLabel.text);
+   
+        [_captchButton setTitle:[NSString stringWithFormat:@"%ld",[_captchButton.titleLabel.text integerValue] -1] forState:UIControlStateNormal];
+    }
 }
 
 - (void)getUserInfoFromWechat

@@ -93,6 +93,7 @@
         NSDictionary *userInfo = [dicInfo objectForKey:@"user_info"];
         NNTreeHoelModel *treeHoelModel  = [NNNoticeServer analysisTreeHoelDictoModelwithDic:treeHoleInfo];
         NNCommentModel *commentModel = [NNNoticeServer analysiscommentModelwithDic:commentInfo];
+        commentModel.commentNickName = [userInfo objectForKey:@"nickname"];
         commentModel.commentHeaderUrl = [userInfo objectForKey:@"head"];
         
         NNSpitslotDetailVC *spitslotDetailVC = [[NNSpitslotDetailVC alloc] init];
@@ -148,10 +149,10 @@
         }else{
             [vc.navigationController pushViewController:questionAndAnswerVC animated:YES];
         }
+    }else if ([noticeType isEqualToString:@"4"]){
 
         
     }
-
 }
 
 
