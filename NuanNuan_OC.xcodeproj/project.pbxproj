@@ -2437,7 +2437,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xikang.ss;
 				PRODUCT_NAME = "暖暖";
-				PROVISIONING_PROFILE = "31227b2a-03b9-46bb-b7f0-cbc1c1b9997d";
+				PROVISIONING_PROFILE = "d141fb3b-0573-4bf9-bb19-c7519b0cd21d";
 				PROVISIONING_PROFILE_SPECIFIER = ss_EnterpriseCertificate;
 				SWIFT_VERSION = 2.3;
 				VALID_ARCHS = "armv7 armv7s arm64";

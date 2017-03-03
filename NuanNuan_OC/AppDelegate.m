@@ -33,6 +33,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    sleep(3);
     [self registerTirdlyAppKey];
     [self dealNotificationWithOptions:launchOptions];
     

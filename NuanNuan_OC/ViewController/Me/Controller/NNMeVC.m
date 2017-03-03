@@ -67,15 +67,12 @@
 
 
 - (void)initView {
-    
     _meTableView.tableHeaderView = [self createTableHeaderView];
-    
     _meTableView.delegate = self;
     _meTableView.dataSource = self;
     _meTableView.rowHeight = 44.f;
     _meTableView.backgroundColor = NN_BACKGROUND_COLOR;
     _meTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
     [_meTableView registerNib:[UINib nibWithNibName:@"NNMineEmotionalMangmentCell" bundle:nil] forCellReuseIdentifier:@"NNMineEmotionalMangmentCell"];
 }
 
@@ -84,7 +81,6 @@
     backgroundButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [backgroundButton setBackgroundImage:[UIImage imageNamed:@"400_01"] forState:UIControlStateNormal];
     [headerView addSubview:backgroundButton];
-    
     [backgroundButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@0);
         make.right.equalTo(@0);
@@ -95,8 +91,6 @@
     headerButton = [UIButton buttonWithType:UIButtonTypeCustom];
     headerButton.layer.masksToBounds = YES;
     headerButton.layer.cornerRadius = 30;
-    
-  //  [headerButton addTarget:self action:@selector(changeHeadAction:) forControlEvents:UIControlEventTouchUpInside];
     [backgroundButton addSubview:headerButton];
     [headerButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(@60);
@@ -125,45 +119,15 @@
 - (void)initdata {
     titleArray = @[@"我的预约",@"我的问吧",@"我的消息",@"我的树洞",@"意见反馈",@"个人资料",@"设置"];
     imageArray = @[@"400_16",@"400_23",@"400_27",@"400_28",@"400_29",@"400_30",@"400_31"];
-    if (USERID) {
+    if (USERID && TEST_TOKEN) {
         userInfoModel = (NNUserInfoModel *)[[NNUserInfoModel objectsWhere:@"uid = %@",USERID] lastObject];
     }
 }
 
-
 - (void)reflashDataToHeadview {
-    
-    
     ninkNameLabel.text = userInfoModel.nickName;
-    [headerButton sd_setImageWithURL:[NSURL URLWithString:userInfoModel.headImageUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
+    [headerButton sd_setImageWithURL:[NSURL URLWithString:userInfoModel.headImageUrl] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"400_05"] options:SDWebImageAllowInvalidSSLCertificates];
 }
-
-//- (void)changeHeadAction:(UIButton *)button {
-//    
-//    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-//    [alertController addAction:[UIAlertAction actionWithTitle:@"选取照片" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-//        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-//        picker.delegate = self;
-//        picker.allowsEditing = YES;
-//        
-//        [self presentViewController:picker animated:YES completion:nil];
-//    }]];
-//    
-//    [alertController addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-//        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-//        picker.delegate = self;
-//        picker.allowsEditing = YES;
-//        [self presentViewController:picker animated:YES completion:nil];
-//        
-//    }]];
-//    
-//    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-//        
-//    }]];
-//    [self presentViewController:alertController animated:YES completion:nil];
-//}
 
 - (UIImage *)makeImageWithImage:(UIImage *)imageOld scaledToSize:(CGSize)newSize
 {
@@ -180,8 +144,7 @@
     [picker dismissViewControllerAnimated:YES completion:^{
         UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
         UIImage *temp = [self makeImageWithImage:image scaledToSize:CGSizeMake(720, 720)];
-        
-        
+    
         NNUserHeaderViewModel *viewModel = [[NNUserHeaderViewModel alloc] init];
         
         [viewModel setBlockWithReturnBlock:^(id returnValue) {
