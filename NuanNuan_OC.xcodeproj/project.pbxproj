@@ -1907,7 +1907,7 @@
 				TargetAttributes = {
 					BCD505F41D921F8C000FB2C0 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = WJR5NAA722;
+						DevelopmentTeam = 7MUEF9EK2J;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
@@ -2317,7 +2317,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "NuanNuan_OC/暖暖.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = WJR5NAA722;
+				DEVELOPMENT_TEAM = 7MUEF9EK2J;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2367,10 +2367,10 @@
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMessage_Sdk_1.4.0",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xikang.ss;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NNXL.nuannuan;
 				PRODUCT_NAME = "暖暖";
-				PROVISIONING_PROFILE = "31227b2a-03b9-46bb-b7f0-cbc1c1b9997d";
-				PROVISIONING_PROFILE_SPECIFIER = ss_EnterpriseCertificate;
+				PROVISIONING_PROFILE = "bb2ef79d-6a60-42bd-9346-0659179ba9d0";
+				PROVISIONING_PROFILE_SPECIFIER = nuannuanDistribution;
 				SWIFT_VERSION = 2.3;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
@@ -2385,7 +2385,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "NuanNuan_OC/暖暖.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = WJR5NAA722;
+				DEVELOPMENT_TEAM = 7MUEF9EK2J;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2435,10 +2435,10 @@
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMessage_Sdk_1.4.0",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xikang.ss;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NNXL.nuannuan;
 				PRODUCT_NAME = "暖暖";
-				PROVISIONING_PROFILE = "d141fb3b-0573-4bf9-bb19-c7519b0cd21d";
-				PROVISIONING_PROFILE_SPECIFIER = ss_EnterpriseCertificate;
+				PROVISIONING_PROFILE = "bb2ef79d-6a60-42bd-9346-0659179ba9d0";
+				PROVISIONING_PROFILE_SPECIFIER = nuannuanDistribution;
 				SWIFT_VERSION = 2.3;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};

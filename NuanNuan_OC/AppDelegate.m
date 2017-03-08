@@ -19,7 +19,7 @@
 #import "NNSpitslotDetailVC.h"
 #import "NNQuestionAndAnswerDetailVC.h"
 #import "NNNoticeServer.h"
-#import <JSPatchPlatform/JSPatch.h>
+
 
 //#import "UserNotifications.h"
 
@@ -54,17 +54,7 @@
     
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:WEIBO_APPKEY appSecret:WEIBO_APPSECRET redirectURL:NNHOMEPAGEURL];
     
-  //  [JSPatch testScriptInBundle];
-    [JSPatch setupCallback:^(JPCallbackType type, NSDictionary *data, NSError *error) {
-        if (type == JPCallbackTypeUpdateFail) {
-            NSAssert(NO, data[@"msg"]);
-        }
-    }];
-    [JSPatch startWithAppKey:JSPATCHKEY];
-#ifdef DEBUG
-    [JSPatch setupDevelopment];
-#endif
-}
+ }
 
 
 
@@ -197,8 +187,7 @@
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     
    
-    
-    [JSPatch sync];
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
