@@ -27,6 +27,7 @@
 		0D74C70C1DF3F98C003E4ED7 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D74C70B1DF3F98C003E4ED7 /* libc++.tbd */; };
 		0DA029931DE08C8C00862E7C /* NNTreeHoelSendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA029911DE08C8C00862E7C /* NNTreeHoelSendVC.m */; };
 		0DA029941DE08C8C00862E7C /* NNTreeHoelSendVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA029921DE08C8C00862E7C /* NNTreeHoelSendVC.xib */; };
+		0DA847B91EA2E1ED0072576E /* NNTabbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA847B81EA2E1ED0072576E /* NNTabbarButton.m */; };
 		0DBB28FB1DE1A3C0008A0F32 /* NNForgetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB28F91DE1A3C0008A0F32 /* NNForgetPasswordVC.m */; };
 		0DBB28FC1DE1A3C0008A0F32 /* NNForgetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBB28FA1DE1A3C0008A0F32 /* NNForgetPasswordVC.xib */; };
 		0DBB28FF1DE5DED0008A0F32 /* NNMineCommentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB28FE1DE5DED0008A0F32 /* NNMineCommentViewModel.m */; };
@@ -302,6 +303,8 @@
 		0DA029901DE08C8C00862E7C /* NNTreeHoelSendVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNTreeHoelSendVC.h; sourceTree = "<group>"; };
 		0DA029911DE08C8C00862E7C /* NNTreeHoelSendVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNTreeHoelSendVC.m; sourceTree = "<group>"; };
 		0DA029921DE08C8C00862E7C /* NNTreeHoelSendVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNTreeHoelSendVC.xib; sourceTree = "<group>"; };
+		0DA847B71EA2E1ED0072576E /* NNTabbarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNTabbarButton.h; sourceTree = "<group>"; };
+		0DA847B81EA2E1ED0072576E /* NNTabbarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNTabbarButton.m; sourceTree = "<group>"; };
 		0DB68B1A1DE16D6E00FBD4B0 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "../../../Library/Developer/Xcode/DerivedData/NuanNuan_OC-efbaiqmbhwqxdqhavhghvzdgmimd/Build/Products/Debug-iphonesimulator/ReactiveCocoa/ReactiveCocoa.framework"; sourceTree = "<group>"; };
 		0DBB28F81DE1A3C0008A0F32 /* NNForgetPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNForgetPasswordVC.h; sourceTree = "<group>"; };
 		0DBB28F91DE1A3C0008A0F32 /* NNForgetPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNForgetPasswordVC.m; sourceTree = "<group>"; };
@@ -1410,6 +1413,8 @@
 				BCD5064D1D9231D0000FB2C0 /* TreeHoel */,
 				BCD5061C1D92241A000FB2C0 /* NNTabbarVC.h */,
 				BCD5061D1D92241A000FB2C0 /* NNTabbarVC.m */,
+				0DA847B71EA2E1ED0072576E /* NNTabbarButton.h */,
+				0DA847B81EA2E1ED0072576E /* NNTabbarButton.m */,
 				BC022BD41E13C28E00D83381 /* NNNoticeServer.h */,
 				BC022BD51E13C28E00D83381 /* NNNoticeServer.m */,
 			);
@@ -1879,12 +1884,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCD5060C1D921F8C000FB2C0 /* Build configuration list for PBXNativeTarget "NuanNuan_OC" */;
 			buildPhases = (
+				E87A69F782E11FA52969A32C /* 📦 Check Pods Manifest.lock */,
 				69BE6BAFD4D6DA6F0DB50897 /* [CP] Check Pods Manifest.lock */,
 				BCD505F11D921F8C000FB2C0 /* Sources */,
 				BCD505F21D921F8C000FB2C0 /* Frameworks */,
 				BCD505F31D921F8C000FB2C0 /* Resources */,
 				6AB30FBE205E73DD0E9D44E9 /* [CP] Embed Pods Frameworks */,
 				F9BD72B051CFA2C07A4967B1 /* [CP] Copy Pods Resources */,
+				487A160A8A228213D7A0384C /* 📦 Embed Pods Frameworks */,
+				C45CCAA9B1B97FFFF412C0F3 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2014,6 +2022,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		487A160A8A228213D7A0384C /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NuanNuan_OC/Pods-NuanNuan_OC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		69BE6BAFD4D6DA6F0DB50897 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2042,6 +2065,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NuanNuan_OC/Pods-NuanNuan_OC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C45CCAA9B1B97FFFF412C0F3 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NuanNuan_OC/Pods-NuanNuan_OC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E87A69F782E11FA52969A32C /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F9BD72B051CFA2C07A4967B1 /* [CP] Copy Pods Resources */ = {
@@ -2153,6 +2206,7 @@
 				BCD506581D9231D0000FB2C0 /* NNTreeHoleVC.m in Sources */,
 				0DBB2A5C1DE9ABD5008A0F32 /* UMShareMenuItem.m in Sources */,
 				BCF660911E0A9EDA003D2B02 /* NNAboutHeadView.m in Sources */,
+				0DA847B91EA2E1ED0072576E /* NNTabbarButton.m in Sources */,
 				BCE6A0641DDD7C7C00A02E50 /* NNUserHeaderViewModel.m in Sources */,
 				BCEDDBFA1DE52C5A00187317 /* MLSelectPhotoPickerBrowserPhotoView.m in Sources */,
 				BC4C8E3A1DD06F3900544A83 /* NNTreeHoelViewModel.m in Sources */,
@@ -2369,8 +2423,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NNXL.nuannuan;
 				PRODUCT_NAME = "暖暖";
-				PROVISIONING_PROFILE = "bb2ef79d-6a60-42bd-9346-0659179ba9d0";
-				PROVISIONING_PROFILE_SPECIFIER = nuannuanDistribution;
+				PROVISIONING_PROFILE = "c03a07e8-3a82-461f-bced-a7950d792839";
+				PROVISIONING_PROFILE_SPECIFIER = nuannuanDistribution2;
 				SWIFT_VERSION = 2.3;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
@@ -2437,8 +2491,8 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NNXL.nuannuan;
 				PRODUCT_NAME = "暖暖";
-				PROVISIONING_PROFILE = "bb2ef79d-6a60-42bd-9346-0659179ba9d0";
-				PROVISIONING_PROFILE_SPECIFIER = nuannuanDistribution;
+				PROVISIONING_PROFILE = "c03a07e8-3a82-461f-bced-a7950d792839";
+				PROVISIONING_PROFILE_SPECIFIER = nuannuanDistribution2;
 				SWIFT_VERSION = 2.3;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};

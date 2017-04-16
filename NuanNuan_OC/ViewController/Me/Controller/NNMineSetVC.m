@@ -124,19 +124,23 @@
     
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
+             [MobClick event:@"clk_about"];
             NNAboutNuanNuan *aboutVC = [[NNAboutNuanNuan alloc] init];
             
             [self.navigationController pushViewController:aboutVC animated:YES];
         }else if (indexPath.row == 1){
+              [MobClick event:@"clk_ agreement"];
             NNUserAgreementVC *agreementVC = [[NNUserAgreementVC alloc] initWithNibName:@"NNUserAgreementVC" bundle:nil];
             [self.navigationController pushViewController:agreementVC animated:YES];
         }else if (indexPath.row == 2){
+              [MobClick event:@"clk_CleanCache"];
             [[NNProgressHUD instance] showHudToView:self.view withMessage:@"缓存清除中"];
             [[SDImageCache sharedImageCache] clearDisk];
             
             [self getCacheisDisk:YES];
         }
     }else{
+          [MobClick event:@"clk_quit"];
         NNLoginAndRegisterVC *loginOrRegisterVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];
         [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"token"];
         [self.navigationController pushViewController:loginOrRegisterVC animated:YES];

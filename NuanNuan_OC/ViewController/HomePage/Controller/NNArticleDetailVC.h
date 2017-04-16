@@ -19,4 +19,7 @@
 
 @property (assign) BOOL isShowAppointment;
 
+
+@property (assign) BOOL isFromServe;
+
 @end

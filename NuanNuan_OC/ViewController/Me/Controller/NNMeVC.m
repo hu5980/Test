@@ -33,12 +33,11 @@
     UILabel *ninkNameLabel;
     UIButton *headerButton;
     UIButton *backgroundButton;
-    
+    UITableView *meTableView;
     NNUserInfoModel *userInfoModel;
     
     YWFeedbackKit *feedbackKit;
 }
-@property (weak, nonatomic) IBOutlet UITableView *meTableView;
 
 @end
 
@@ -58,7 +57,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [MobClick endEvent:@"in_Wo"];
     [self initView];
     
    
@@ -67,13 +66,15 @@
 
 
 - (void)initView {
-    _meTableView.tableHeaderView = [self createTableHeaderView];
-    _meTableView.delegate = self;
-    _meTableView.dataSource = self;
-    _meTableView.rowHeight = 44.f;
-    _meTableView.backgroundColor = NN_BACKGROUND_COLOR;
-    _meTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [_meTableView registerNib:[UINib nibWithNibName:@"NNMineEmotionalMangmentCell" bundle:nil] forCellReuseIdentifier:@"NNMineEmotionalMangmentCell"];
+    meTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, NNAppHeight - 49) style:UITableViewStylePlain];
+    [self.view addSubview:meTableView];
+    meTableView.tableHeaderView = [self createTableHeaderView];
+    meTableView.delegate = self;
+    meTableView.dataSource = self;
+    meTableView.rowHeight = 44.f;
+    meTableView.backgroundColor = NN_BACKGROUND_COLOR;
+    meTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [meTableView registerNib:[UINib nibWithNibName:@"NNMineEmotionalMangmentCell" bundle:nil] forCellReuseIdentifier:@"NNMineEmotionalMangmentCell"];
 }
 
 - (UIView *)createTableHeaderView {
@@ -207,7 +208,7 @@
             switch (tag) {
                 case 100:
                 {
-                   
+                    [MobClick endEvent:@"clk_IPraise"];
                     NNMinePraisedVC *praisedVC = [[NNMinePraisedVC alloc] initWithNibName:@"NNMinePraisedVC" bundle:nil];
                     praisedVC.hidesBottomBarWhenPushed = YES;
                     [weakself.navigationController pushViewController:praisedVC animated:YES];
@@ -215,6 +216,7 @@
                     break;
                 case 101:
                 {
+                     [MobClick endEvent:@"clk_IComment"];
                     NNMineCommentVC *commentVC = [[NNMineCommentVC alloc] initWithNibName:@"NNMineCommentVC" bundle:nil];
                     commentVC.hidesBottomBarWhenPushed = YES;
                     [weakself.navigationController pushViewController:commentVC animated:YES];
@@ -223,6 +225,7 @@
                     break;
                 case 102:
                 {
+                       [MobClick endEvent:@"clk_ILike"];
                     NNMineLikeVC *likeVC = [[NNMineLikeVC alloc] initWithNibName:@"NNMineLikeVC" bundle:nil];
                     likeVC.hidesBottomBarWhenPushed = YES;
                     [weakself.navigationController pushViewController:likeVC animated:YES];
@@ -274,36 +277,43 @@
     
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
+            [MobClick  event:@"clk_MyMeeting"];
             NNMineOrderVC *orderVC = [[NNMineOrderVC alloc] initWithNibName:@"NNMineOrderVC" bundle:nil];
             orderVC.hidesBottomBarWhenPushed = YES;
             
             [self.navigationController pushViewController:orderVC animated:YES];
         }else if (indexPath.row == 1){
+              [MobClick  event:@"clk_MyQuestion"];
             NNMineAskVC *askingVC = [[NNMineAskVC alloc] init];
             askingVC.hidesBottomBarWhenPushed = YES;
             
             [self.navigationController pushViewController:askingVC animated:YES];
         }else if (indexPath.row == 2){
+              [MobClick  event:@"clk_MyMessage"];
             NNMineNoticeVC *noticeVC = [[NNMineNoticeVC alloc] initWithNibName:@"NNMineNoticeVC" bundle:nil];
             noticeVC.hidesBottomBarWhenPushed = YES;
             
             [self.navigationController pushViewController:noticeVC animated:YES];
             
         }else if (indexPath.row == 3){
+              [MobClick  event:@"clk_MyTree"];
             NNMineTreeHoelVC *treeHoelVC = [[NNMineTreeHoelVC alloc] initWithNibName:@"NNMineTreeHoelVC" bundle:nil];
             treeHoelVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:treeHoelVC animated:YES];
         }
     }else if (indexPath.section == 2){
         if (indexPath.row == 0) {
+            [MobClick event:@"clk_suggest"];
             [self entryFeedBack];
         }else if (indexPath.row ==1){
+            [MobClick event:@"clk_information"];
             NNUserInfoVC *infoVC = [[NNUserInfoVC alloc] initWithNibName:@"NNUserInfoVC" bundle:nil];
             infoVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:infoVC animated:YES];
             
         }
         else if (indexPath.row == 2){
+             [MobClick event:@"clk_set"];
             NNMineSetVC *setVC = [[NNMineSetVC alloc] initWithNibName:@"NNMineSetVC" bundle:nil];
             setVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:setVC animated:YES];

@@ -29,6 +29,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if ([_navigationTitle isEqualToString:@"生活情感"]) {
+        [MobClick event:@"clk_mother"];
+    }else if ([_navigationTitle isEqualToString:@"爱情导航"]) {
+        [MobClick event:@"clk_CrushOn"];
+    }else if ([_navigationTitle isEqualToString:@"心灵蜕变"]) {
+        [MobClick event:@"clk_love"];
+    }else if ([_navigationTitle isEqualToString:@"深夜识堂・热门推荐"]) {
+        [MobClick event:@"in_StoryMarry"];
+    }else if ([_navigationTitle isEqualToString:@"深夜识堂・身边故事"]) {
+        [MobClick event:@"in_StoryMarry"];
+    }else if ([_navigationTitle isEqualToString:@"深夜识堂・暖暖私语"]) {
+        [MobClick event:@"in_StoryMarry"];
+    }
     [self setNavigationBackButton:YES];
     [self createEmotionalTypeUI];
     self.navTitle = _navigationTitle;
@@ -100,6 +113,31 @@
         defaultSelectButton = button;
         defaultSelectButton.selected = YES;
         [_emotionCollectionView setContentOffset:CGPointMake((button.tag-100) * NNAppWidth, 0) animated:YES];
+        
+        NSLog(@"%@",button.titleLabel.text);
+        
+        if ([button.titleLabel.text isEqualToString:@"婚姻调色"]) {
+            [MobClick event:@"clk_mother"];
+        }else if ([button.titleLabel.text isEqualToString:@"家有一老"]) {
+             [MobClick event:@"clk_HusbandWife"];
+        }else if ([button.titleLabel.text isEqualToString:@"七年之痒"]) {
+             [MobClick event:@"clk_family"];
+        }else if ([button.titleLabel.text isEqualToString:@"家长里短"]) {
+             [MobClick event:@"clk_ExtramaritalLove"];
+        }else if ([button.titleLabel.text isEqualToString:@"爱情修炼"]) {
+             [MobClick event:@"clk_CrushOn"];
+        }else if ([button.titleLabel.text isEqualToString:@"情感挽回"]) {
+             [MobClick event:@"clk_lovelorn"];
+        }else if ([button.titleLabel.text isEqualToString:@"多维爱情"]) {
+             [MobClick event:@"clk_complex"];
+        }else if ([button.titleLabel.text isEqualToString:@"爱情探索"]) {
+             [MobClick event:@"clk_love"];
+        }else if ([button.titleLabel.text isEqualToString:@"男生向左"]) {
+             [MobClick event:@"clk_relationship"];
+        }else if ([button.titleLabel.text isEqualToString:@"女生向右"]) {
+             [MobClick event:@"clk_LifeBelief"];
+        }
+        
     }
 }
 

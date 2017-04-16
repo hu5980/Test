@@ -25,7 +25,7 @@ static NNProgressHUD *instance;
     hud.detailsLabelText = meaasge;
     hud.detailsLabelFont = [UIFont systemFontOfSize:14.f];
     hud.mode = MBProgressHUDModeText;
-    [hud hide:YES afterDelay:2];
+    [hud hide:YES afterDelay:1];
 }
 
 

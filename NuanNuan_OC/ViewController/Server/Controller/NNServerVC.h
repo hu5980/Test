@@ -9,5 +9,5 @@
 #import "NNBaseVC.h"
 
 @interface NNServerVC : NNBaseVC
-
+@property (strong, nonatomic)  UITableView *serverListTableView;
 @end

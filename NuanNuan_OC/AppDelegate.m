@@ -19,8 +19,8 @@
 #import "NNSpitslotDetailVC.h"
 #import "NNQuestionAndAnswerDetailVC.h"
 #import "NNNoticeServer.h"
-
-
+#import "UMMobClick/MobClick.h"
+#import "UIImage+YYAdd.h"
 //#import "UserNotifications.h"
 
 
@@ -36,10 +36,18 @@
     sleep(3);
     [self registerTirdlyAppKey];
     [self dealNotificationWithOptions:launchOptions];
+    [self setNav];
     
 //    [self creatDataBaseWithName:@"NuanNuan"];
     
     return YES;
+}
+
+- (void)setNav
+{
+    UINavigationBar *bar = [UINavigationBar appearance];
+    //设置显示的颜色
+    [bar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
 }
 
 
@@ -54,8 +62,11 @@
     
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:WEIBO_APPKEY appSecret:WEIBO_APPSECRET redirectURL:NNHOMEPAGEURL];
     
- }
-
+    UMConfigInstance.appKey = UMKEY;
+    UMConfigInstance.channelId = @"App Store";
+    [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
+    
+}
 
 
 - (void)dealNotificationWithOptions:(NSDictionary *)launchOptions {

@@ -134,6 +134,7 @@
 
 - (void)initData {
     defaultType = @"new";
+    [MobClick endEvent:@"clk_new"];
     questionAndAnswerMutableArray = [NSMutableArray array];
    
 }
@@ -170,8 +171,10 @@
     [questionAndAnswerMutableArray removeAllObjects];
     if (button.tag == 200) {
         defaultType = @"new";
+        [MobClick endEvent:@"clk_new"];
     }else{
         defaultType = @"hot";
+        [MobClick endEvent:@"clk_hot"];
     }
     
     [self reflashQuestionAndAnswerData];

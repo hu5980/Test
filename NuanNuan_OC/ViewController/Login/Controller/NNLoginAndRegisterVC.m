@@ -83,12 +83,15 @@
     switch (sender.tag) {
         case 500:
             [self getUserInfoFromWechat];
+            [MobClick event:@"clk_RgstWX"];
             break;
         case 501:
             [self getUserInfoFromQQ];
+            [MobClick event:@"clk_RgstQQ"];
             break;
         case 502:
             [self getUserInfoFromSina];
+            [MobClick event:@"clk_RgstWb"];
             break;
         default:
             break;
@@ -277,6 +280,7 @@
 
 
 - (void)loginWithLoginType:(NSString *)type andAccessToken:(NSString *)accessToken andOpenId:(NSString *)openid {
+    [MobClick event:@"clk_RgstLogin"];
       __weak  NNLoginAndRegisterVC *weakSelf = self;
     [[NNProgressHUD instance] showHudToView:self.view withMessage:@"登录中..."];
     NNThirdLoginViewModel *viewModel = [[NNThirdLoginViewModel alloc] init];

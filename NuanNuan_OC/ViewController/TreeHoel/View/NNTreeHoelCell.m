@@ -9,7 +9,7 @@
 #import "NNTreeHoelCell.h"
 #import "UIImageView+AFNetworking.h"
 #import "UIImageView+WebCache.h"
-
+#import "Define.h"
 @implementation NNTreeHoelCell
 
 - (void)awakeFromNib {
@@ -21,6 +21,7 @@
     _backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
     _backgroundImageView.clipsToBounds = YES;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    _expertIntroductionLabel.preferredMaxLayoutWidth = NNAppWidth - 30;
     // Initialization code
 }
 
@@ -29,13 +30,12 @@
     [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:model.teacherHeadUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
     self.ninkNameLabel.text = model.teacherNickName;
     self.specialityLabel.text = model.teacherTypeName;
-    self.questionNumLabel.text = [NSString stringWithFormat:@"%@提问",model.teacherQuestionNum];
+    self.questionNumLabel.text = [NSString stringWithFormat:@"%@提问",model.teacherAnswerNum];
     self.expertIntroductionLabel.text = model.teacherDescription;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 

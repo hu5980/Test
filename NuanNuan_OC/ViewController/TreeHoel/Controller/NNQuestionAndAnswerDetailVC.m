@@ -41,6 +41,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [MobClick endEvent:@"in_AskReply"];
+
     [self initUI];
     [self initData];
     // Do any additional setup after loading the view from its nib.

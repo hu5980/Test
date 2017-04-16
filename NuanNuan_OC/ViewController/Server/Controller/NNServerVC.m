@@ -22,7 +22,7 @@
     NSMutableArray *customizationArrays;  //私人定制
     NSMutableArray *serverArray;      //服务介绍
 }
-@property (weak, nonatomic) IBOutlet UITableView *serverListTableView;
+
 
 @end
 
@@ -36,13 +36,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    [MobClick endEvent:@"in_ professor"];
     [self initData];
     [self initUI];
     // Do any additional setup after loading the view.
 }
 
 - (void) initUI {
+     _serverListTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, NNAppHeight - 49 - 64) style:UITableViewStylePlain];
+    [self.view addSubview:_serverListTableView];
     NNCustomNavigationView *view = LOAD_VIEW_FROM_BUNDLE(@"NNCustomNavigationView");
     view.backgroundColor = [UIColor clearColor];
     defaultSelectButton = view.index1Button;
@@ -56,8 +58,10 @@
             defaultSelectButton.selected = YES;
             if (button.tag == 200) {
                 defaultType = 14;
+                [MobClick endEvent:@"in_ professor"];
             }else{
                 defaultType = 15;
+                [MobClick endEvent:@"in_order"];
             }
           
             [self refreshData];

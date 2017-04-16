@@ -9,4 +9,7 @@
 #import "NNBaseVC.h"
 @interface NNHomePageVC : NNBaseVC
 
+@property(nonatomic,strong) UITableView *homePageTableView;
+
+
 @end

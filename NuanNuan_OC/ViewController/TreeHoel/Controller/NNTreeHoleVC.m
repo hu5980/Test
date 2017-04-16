@@ -37,7 +37,7 @@
     UIBarButtonItem *rightItem;
     UILabel *noticeLabel;
 }
-@property (weak, nonatomic) IBOutlet UITableView *treeHoelTableView;
+@property (strong, nonatomic)  UITableView *treeHoelTableView;
 
 @end
 
@@ -58,7 +58,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    [MobClick endEvent:@"in_TreeHole"];
     [self initUI];
     [self initData];
     // Do any additional setup after loading the view.
@@ -104,6 +104,7 @@
                treeHoleButton.hidden = YES;
                 [weakSelf reflashTeachData];
             }else{
+                [MobClick endEvent:@"in_TreeStory"];
                treeHoleButton.hidden = NO;
                 [weakSelf reflashTreeHoelData];
             }
@@ -129,7 +130,8 @@
             [weakSelf reflashTreeHoelData];
         }
     } ];
-    
+    _treeHoelTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, NNAppHeight - 49 - 64) style:UITableViewStylePlain];
+    [self.view addSubview:_treeHoelTableView];
     _treeHoelTableView.mj_header = header;
     _treeHoelTableView.mj_footer = footer;
     _treeHoelTableView.backgroundColor = NN_BACKGROUND_COLOR;
@@ -224,6 +226,7 @@
 }
 
 - (void)entryNotice {
+    [MobClick endEvent:@"clk_message"];
     NNMineNoticeVC *noticeVC = [[NNMineNoticeVC alloc] init];
     noticeVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:noticeVC animated:YES];

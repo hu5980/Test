@@ -27,14 +27,14 @@
     NNHomepageSuccessCaseModel *successCasemodel;
 }
 
-@property (weak, nonatomic) IBOutlet UITableView *homePageTableView;
+
 @end
 
 @implementation NNHomePageVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [MobClick endEvent:@"in_home"];
     [self initUI];
     [self initData];
     
@@ -81,11 +81,13 @@
 }
 
 - (void)initUI {
+   
     headerView = LOAD_VIEW_FROM_BUNDLE(@"NNRingImageView");
    
     __weak NNHomePageVC *weakSelf = self;
     headerView.ringBlock = ^(NNRingImageModel *model){
         NNLog(@"点击滚动图片  %@",model);
+        [MobClick endEvent:@"clk_focus"];
         NNArticleDetailVC *articleVC = [[NNArticleDetailVC alloc] init];
       
         articleVC.articleID = model.ringId;
@@ -95,6 +97,8 @@
         articleVC.isShowAppointment = [model.isShowAppointment isEqualToString:@"1"] ? YES : NO ;
         [weakSelf.navigationController pushViewController:articleVC animated:YES];
     };
+    _homePageTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, NNAppHeight - 49) style:UITableViewStylePlain];
+    [self.view addSubview:_homePageTableView];
     _homePageTableView.tableHeaderView = headerView;
     
     _homePageTableView.backgroundColor = NN_BACKGROUND_COLOR;
@@ -107,7 +111,7 @@
 }
 
 - (void)initData {
-    titleArray = @[@"成功故事・婚恋",@"成功故事・挽回",@"成功故事・提升"];
+    titleArray = @[@"深夜识堂・热门推荐",@"深夜识堂・身边故事",@"深夜识堂・暖暖私语"];
     typeArray = @[@"11",@"12",@"13"];
     NNHomepageSuccessCaseViewModel *successCaseViewModel = [[NNHomepageSuccessCaseViewModel alloc] init];
     [successCaseViewModel setBlockWithReturnBlock:^(id returnValue) {
@@ -143,6 +147,7 @@
     }
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *  cell;
     
@@ -154,21 +159,22 @@
             emotionCaseVC.hidesBottomBarWhenPushed = YES;
             switch (type) {
                 case marriageAndFamily:
-                    emotionCaseVC.navigationTitle = @"婚姻家庭";
-   
-                    emotionCaseVC.caseTitleArrsy = @[@"婆媳关系",@"夫妻心事",@"家庭琐事",@"婚外恋"];
+                    emotionCaseVC.navigationTitle = @"生活情感";
+                    emotionCaseVC.caseTitleArrsy = @[@"婚姻调色",@"家有一老",@"七年之痒",@"家长里短"];
                     emotionCaseVC.caseTypeArray = @[@"1",@"2",@"3",@"4"];
+                    [MobClick endEvent:@"in_marry"];
                     break;
                 case emotionalSave:
-                    emotionCaseVC.navigationTitle = @"情感挽回";
-                    emotionCaseVC.caseTitleArrsy = @[@"暗恋",@"失恋",@"复杂恋情"];
+                    emotionCaseVC.navigationTitle = @"爱情导航";
+                    emotionCaseVC.caseTitleArrsy = @[@"爱情修炼",@"情感挽回",@"多维爱情"];
                     emotionCaseVC.caseTypeArray = @[@"5",@"6",@"7"];
+                     [MobClick endEvent:@"in_restore"];
                     break;
                 case selfImprovement:
-                    emotionCaseVC.navigationTitle = @"自我提升";
-
-                    emotionCaseVC.caseTitleArrsy = @[@"爱情探索",@"人际关系",@"人生信念"];
-                     emotionCaseVC.caseTypeArray = @[@"8",@"9",@"10"];
+                    emotionCaseVC.navigationTitle = @"心灵蜕变";
+                    emotionCaseVC.caseTitleArrsy = @[@"爱情探索",@"男生向左",@"女生向右"];
+                    emotionCaseVC.caseTypeArray = @[@"8",@"9",@"10"];
+                    [MobClick endEvent:@"in_ascension"];
                     break;
                 default:
                     break;

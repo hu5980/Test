@@ -12,13 +12,14 @@
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "Masonry.h"
 #import "UIImageView+AFNetworking.h"
-#import "ReactiveCocoa.h"
+//#import "ReactiveCocoa.h"
 #import "UIButton+WebCache.h"
 #import "UIImageView+WebCache.h"
 #import "MJRefresh.h"
 #import "NNProgressHUD.h"
 #import "NNTimeUtil.h"
 #import <Realm/Realm.h>
+#import "UMMobClick/MobClick.h"
 @interface NNBaseVC : UIViewController
 
 @property (nonatomic,strong) NSString *navTitle;

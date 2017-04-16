@@ -8,7 +8,16 @@
 
 #import "NNTabbarVC.h"
 #import "UIColor+Helper.h"
-@interface NNTabbarVC ()
+
+#import "NNHomePageVC.h"
+#import "NNTreeHoleVC.h"
+#import "NNServerVC.h"
+#import "NNMeVC.h"
+#import "NNTabbarButton.h"
+
+@interface NNTabbarVC () {
+    NNTabbarButton *defaultButton;
+}
 
 @end
 
@@ -17,9 +26,52 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tabBar.tintColor = [UIColor colorFromHexString:@"#ff9933"];
+    UIView * tabbarBG = [[UIView alloc]initWithFrame:CGRectMake(0, 0, NNAppHeight, 49)];
+    tabbarBG.backgroundColor = [UIColor whiteColor];
+   
+    
+    NSArray *titleArray = @[@"主页",@"树洞",@"服务",@"我"];
+    NSArray *normalImageArray = @[@"100_17_p",@"100_19_p",@"100_22_p",@"100_24_p"];
+    NSArray *heightImageArray = @[@"100_17",@"100_19",@"100_22",@"100_24"];
+    
+    for (int i  = 0; i < titleArray.count; i++) {
+        
+        NNTabbarButton *button = [NNTabbarButton buttonWithType:UIButtonTypeCustom] ;
+        [tabbarBG addSubview:button];
+        button.frame = CGRectMake(i*NNAppWidth/4, 0, NNAppWidth/4, 49) ;
+        [button setNormalImage:[normalImageArray objectAtIndex:i] andHeightImage:[heightImageArray objectAtIndex:i] andTitle:[titleArray objectAtIndex:i]];
+        [button addTarget:self action:@selector(changeVC:) forControlEvents:UIControlEventTouchUpInside];
+        button.tag = 100 + i;
+        if (i == 0) {
+            button.selected = YES;
+            defaultButton = button;
+        }
+    }
+    
+    NNHomePageVC *homePageVC = [[NNHomePageVC alloc] init];
+    NNTreeHoleVC *treeVC = [[NNTreeHoleVC alloc] init];
+    NNServerVC *serverVC = [[NNServerVC alloc] init];
+    NNMeVC *meVC = [[NNMeVC alloc] init];
 
+    UINavigationController *homeNav = [[UINavigationController alloc] initWithRootViewController:homePageVC];
+    UINavigationController *treeNav = [[UINavigationController alloc] initWithRootViewController:treeVC];
+    UINavigationController *serverNav = [[UINavigationController alloc] initWithRootViewController:serverVC];
+    UINavigationController *meNav = [[UINavigationController alloc] initWithRootViewController:meVC];
+    
+    self.viewControllers = @[homeNav,treeNav,serverNav,meNav];
+    
+    self.selectedIndex = 0;
+    
+    [self.tabBar addSubview:tabbarBG];
+   
     // Do any additional setup after loading the view.
+}
+
+- (void)changeVC:(NNTabbarButton *)button {
+    defaultButton.selected = NO;
+    defaultButton = button;
+    defaultButton.selected = YES;
+    self.selectedIndex = button.tag - 100;
 }
 
 - (void)didReceiveMemoryWarning {

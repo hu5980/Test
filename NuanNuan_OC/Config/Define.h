@@ -58,8 +58,8 @@ typedef void (^ProgressBlock)(id Progress);
 #define WEIXIN_APPKEY @"wx4011a699aa70dc35"
 #define WEIXIN_SECRET @"3351830c4abf3b0925870edd08e1ad2f"
 
-#define QQ_APPKEY @"1105876417"
-#define QQ_APPSECRET  @"ISRgVG5J4NDu9uAC"
+#define QQ_APPKEY @"1105876553"
+#define QQ_APPSECRET  @"Pjj2IHnHSIZTyTRv"
 
 #define WEIBO_APPKEY @"3807471758"
 #define WEIBO_APPSECRET @"cf8e95a52dfc1c1921b4abab6c1c368e"

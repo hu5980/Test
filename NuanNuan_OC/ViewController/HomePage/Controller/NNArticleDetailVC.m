@@ -142,6 +142,11 @@
 
 #pragma --mark Action
 - (void)share:(UIButton *)button {
+    if (_isFromServe) {
+        [MobClick event:@"clk_share2"];
+    }else{
+        [MobClick event:@"clk_share1"];
+    }
     switch (button.tag) {
         case 1000:
             [self shareWebPageToPlatformType:UMSocialPlatformType_WechatTimeLine];
@@ -204,6 +209,7 @@
 }
 
 - (void)makeAnAppointment:(UIButton *)button {
+    [MobClick event:@"clk_meeting"];
     NNAppointmentVC *appointmentVC = [[NNAppointmentVC alloc] initWithNibName:@"NNAppointmentVC" bundle:nil];
     
     [self.navigationController pushViewController:appointmentVC animated:YES];
