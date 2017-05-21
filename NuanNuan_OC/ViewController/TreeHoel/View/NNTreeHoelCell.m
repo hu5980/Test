@@ -22,7 +22,8 @@
     _backgroundImageView.clipsToBounds = YES;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     _expertIntroductionLabel.preferredMaxLayoutWidth = NNAppWidth - 30;
-    // Initialization code
+    _questionNumLabel.layer.cornerRadius = 8;
+    _questionNumLabel.layer.masksToBounds = YES;
 }
 
 - (void)setModel:(NNEmotionTeacherModel *)model{

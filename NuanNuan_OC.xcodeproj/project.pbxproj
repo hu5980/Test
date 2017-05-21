@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D08BB321ED09B1B00BCC8A0 /* NNLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08BB301ED09B1B00BCC8A0 /* NNLoginVC.m */; };
+		0D08BB331ED09B1B00BCC8A0 /* NNLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D08BB311ED09B1B00BCC8A0 /* NNLoginVC.xib */; };
+		0D08BB371ED09B4100BCC8A0 /* NNRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08BB351ED09B4100BCC8A0 /* NNRegisterVC.m */; };
+		0D08BB381ED09B4100BCC8A0 /* NNRegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D08BB361ED09B4100BCC8A0 /* NNRegisterVC.xib */; };
 		0D2A8AD01DE1568300122F0C /* NNAddImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2A8ACF1DE1568300122F0C /* NNAddImageView.m */; };
 		0D331E0E1DBBCA87002B0DCD /* NNSpitslotDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D331E0C1DBBCA87002B0DCD /* NNSpitslotDetailVC.m */; };
 		0D331E0F1DBBCA87002B0DCD /* NNSpitslotDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D331E0D1DBBCA87002B0DCD /* NNSpitslotDetailVC.xib */; };
@@ -278,6 +282,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D08BB2F1ED09B1B00BCC8A0 /* NNLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNLoginVC.h; sourceTree = "<group>"; };
+		0D08BB301ED09B1B00BCC8A0 /* NNLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNLoginVC.m; sourceTree = "<group>"; };
+		0D08BB311ED09B1B00BCC8A0 /* NNLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNLoginVC.xib; sourceTree = "<group>"; };
+		0D08BB341ED09B4100BCC8A0 /* NNRegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNRegisterVC.h; sourceTree = "<group>"; };
+		0D08BB351ED09B4100BCC8A0 /* NNRegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNRegisterVC.m; sourceTree = "<group>"; };
+		0D08BB361ED09B4100BCC8A0 /* NNRegisterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNRegisterVC.xib; sourceTree = "<group>"; };
 		0D2A8ACE1DE1568300122F0C /* NNAddImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNAddImageView.h; sourceTree = "<group>"; };
 		0D2A8ACF1DE1568300122F0C /* NNAddImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNAddImageView.m; sourceTree = "<group>"; };
 		0D331E0B1DBBCA87002B0DCD /* NNSpitslotDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSpitslotDetailVC.h; sourceTree = "<group>"; };
@@ -1195,6 +1205,12 @@
 				BC328EE71DBF2F5E000AF40B /* NNLoginAndRegisterVC.h */,
 				BC328EE81DBF2F5E000AF40B /* NNLoginAndRegisterVC.m */,
 				BC328EE91DBF2F5E000AF40B /* NNLoginAndRegisterVC.xib */,
+				0D08BB2F1ED09B1B00BCC8A0 /* NNLoginVC.h */,
+				0D08BB301ED09B1B00BCC8A0 /* NNLoginVC.m */,
+				0D08BB311ED09B1B00BCC8A0 /* NNLoginVC.xib */,
+				0D08BB341ED09B4100BCC8A0 /* NNRegisterVC.h */,
+				0D08BB351ED09B4100BCC8A0 /* NNRegisterVC.m */,
+				0D08BB361ED09B4100BCC8A0 /* NNRegisterVC.xib */,
 				0DBB28F81DE1A3C0008A0F32 /* NNForgetPasswordVC.h */,
 				0DBB28F91DE1A3C0008A0F32 /* NNForgetPasswordVC.m */,
 				0DBB28FA1DE1A3C0008A0F32 /* NNForgetPasswordVC.xib */,
@@ -1959,10 +1975,12 @@
 				BCF660981E0AA25E003D2B02 /* NNAboutCell.xib in Resources */,
 				BC247EAB1DAA35D600AB5C84 /* NNMineCell.xib in Resources */,
 				0D331E0F1DBBCA87002B0DCD /* NNSpitslotDetailVC.xib in Resources */,
+				0D08BB381ED09B4100BCC8A0 /* NNRegisterVC.xib in Resources */,
 				BCD9AE7D1DACE424008DB98E /* NNEmotionalItemCell.xib in Resources */,
 				BC8627711DD9A03400162082 /* NNQuestionerChooseCell.xib in Resources */,
 				BCD7E6591DFFEA1200991F86 /* NNUnAnswerQuestionCell.xib in Resources */,
 				0DBB2A551DE9ABD5008A0F32 /* README.txt in Resources */,
+				0D08BB331ED09B1B00BCC8A0 /* NNLoginVC.xib in Resources */,
 				BCD9AE6A1DACBCB6008DB98E /* NNEmotionCaseVC.xib in Resources */,
 				0DBB2AF31DE9B647008A0F32 /* README.txt in Resources */,
 				BCA1AF861E0A84E800F326ED /* server.cer in Resources */,
@@ -2192,6 +2210,7 @@
 				BC852E791DCAE9FC00ADE5C9 /* NNProgressHUD.m in Sources */,
 				BCA60E221DC7439A00DB84A0 /* NNMoreSuccessCaseViewModel.m in Sources */,
 				BCBAD8791DCC881A00BEDF18 /* NNReplyViewModel.m in Sources */,
+				0D08BB321ED09B1B00BCC8A0 /* NNLoginVC.m in Sources */,
 				BCEDDC021DE5842400187317 /* NNAddTreeHoelImageViewModel.m in Sources */,
 				BCEDDBF51DE52C5A00187317 /* MLSelectPhotoPickerGroupViewController.m in Sources */,
 				BCEDDBF01DE52C5A00187317 /* MLSelectPhotoPickerDatas.m in Sources */,
@@ -2223,6 +2242,7 @@
 				0DBB29021DE5E5CB008A0F32 /* NNQuestionAndAnswerCommentModel.m in Sources */,
 				BCF660971E0AA25E003D2B02 /* NNAboutCell.m in Sources */,
 				BCDEDCA51E261FF2005579E5 /* NNEmotionTableVC.m in Sources */,
+				0D08BB371ED09B4100BCC8A0 /* NNRegisterVC.m in Sources */,
 				BCE6A0671DDEA87A00A02E50 /* NNAppointmentTypeViewModel.m in Sources */,
 				BC17E9391DD599B60054FBE2 /* NNCommentModel.m in Sources */,
 				BCD7E6431DFEA12200991F86 /* NNAboutNuanNuan.m in Sources */,
@@ -2370,7 +2390,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "NuanNuan_OC/暖暖.entitlements";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7MUEF9EK2J;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2423,8 +2443,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NNXL.nuannuan;
 				PRODUCT_NAME = "暖暖";
-				PROVISIONING_PROFILE = "c03a07e8-3a82-461f-bced-a7950d792839";
-				PROVISIONING_PROFILE_SPECIFIER = nuannuanDistribution2;
+				PROVISIONING_PROFILE = "11aa6cce-e0d3-4268-96fd-ce40bbccc57a";
+				PROVISIONING_PROFILE_SPECIFIER = nnTest;
 				SWIFT_VERSION = 2.3;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
@@ -2438,7 +2458,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "NuanNuan_OC/暖暖.entitlements";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7MUEF9EK2J;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2491,8 +2511,8 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NNXL.nuannuan;
 				PRODUCT_NAME = "暖暖";
-				PROVISIONING_PROFILE = "c03a07e8-3a82-461f-bced-a7950d792839";
-				PROVISIONING_PROFILE_SPECIFIER = nuannuanDistribution2;
+				PROVISIONING_PROFILE = "11aa6cce-e0d3-4268-96fd-ce40bbccc57a";
+				PROVISIONING_PROFILE_SPECIFIER = nnTest;
 				SWIFT_VERSION = 2.3;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};

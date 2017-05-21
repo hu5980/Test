@@ -13,7 +13,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    _apaleView.backgroundColor =  [[UIColor blackColor] colorWithAlphaComponent:0.3];;
+    _apaleView.backgroundColor =  [UIColor clearColor];
     // Initialization code
 }
 

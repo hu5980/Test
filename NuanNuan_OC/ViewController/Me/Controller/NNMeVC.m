@@ -21,7 +21,7 @@
 #import "NNUserInfoModel.h"
 #import "NNUserInfoVC.h"
 #import <YWFeedbackFMWK/YWFeedbackKit.h>
-#import "NNLoginAndRegisterVC.h"
+#import "NNLoginVC.h"
 #import "NNAboutNuanNuan.h"
 #import "NNMineAskVC.h"
 #import "NNMineTreeHoelVC.h"
@@ -80,7 +80,7 @@
 - (UIView *)createTableHeaderView {
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, NNAppWidth *164 / 375)];
     backgroundButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [backgroundButton setBackgroundImage:[UIImage imageNamed:@"400_01"] forState:UIControlStateNormal];
+    [backgroundButton setBackgroundImage:[UIImage imageNamed:@"ic_back_one"] forState:UIControlStateNormal];
     [headerView addSubview:backgroundButton];
     [backgroundButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@0);
@@ -119,7 +119,7 @@
 
 - (void)initdata {
     titleArray = @[@"我的预约",@"我的问吧",@"我的消息",@"我的树洞",@"意见反馈",@"个人资料",@"设置"];
-    imageArray = @[@"400_16",@"400_23",@"400_27",@"400_28",@"400_29",@"400_30",@"400_31"];
+    imageArray = @[@"ic_appintment",@"ic_MineQes",@"ic_MineMsg",@"ic_MineTreeHoel",@"ic_feedback",@"ic_Info",@"ic_setting"];
     if (USERID && TEST_TOKEN) {
         userInfoModel = (NNUserInfoModel *)[[NNUserInfoModel objectsWhere:@"uid = %@",USERID] lastObject];
     }
@@ -198,7 +198,7 @@
         NNMineEmotionalMangmentCell *emotionalMangmentCell = [tableView dequeueReusableCellWithIdentifier:@"NNMineEmotionalMangmentCell"];
         emotionalMangmentCell.block = ^(NSInteger tag){
             if (TEST_TOKEN == nil) {
-                NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];;
+                NNLoginVC *loginVC = [[NNLoginVC alloc] initWithNibName:@"NNLoginVC" bundle:nil];;
                 loginVC.isPresent = YES;
                 [weakself presentViewController:loginVC animated:YES completion:nil];
                 return ;
@@ -261,6 +261,9 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        return 0;
+    }
     return 10;
 }
 
@@ -268,7 +271,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (TEST_TOKEN == nil) {
-        NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];;
+        NNLoginVC *loginVC = [[NNLoginVC alloc] initWithNibName:@"NNLoginVC" bundle:nil];;
         loginVC.isPresent = YES;
         [self presentViewController:loginVC animated:YES completion:nil];
         return ;

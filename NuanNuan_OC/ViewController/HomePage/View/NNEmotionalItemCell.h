@@ -12,6 +12,9 @@
 typedef void(^emotionBlock)(EmotionType type);
 
 @interface NNEmotionalItemCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *rightConstraint;
+
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *leftConstraint;
 
 @property (nonatomic,copy) emotionBlock eblock;
 

@@ -22,7 +22,7 @@
 #import "NNPariseViewModel.h"
 #import "NNUnPariseViewModel.h"
 #import "NNTreeHoelSendVC.h"
-#import "NNLoginAndRegisterVC.h"
+#import "NNLoginVC.h"
 #import "NNNoticeViewModel.h"
 #import "NNMineNoticeVC.h"
 
@@ -72,7 +72,7 @@
     [self.navigationController setNavigationBarHidden:NO];
     
     UIButton *rightButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
-    [rightButton setBackgroundImage:[UIImage imageNamed:@"msg_ic"] forState:UIControlStateNormal];
+    [rightButton setBackgroundImage:[UIImage imageNamed:@"ic_msg"] forState:UIControlStateNormal];
     [rightButton addTarget:self action:@selector(entryNotice) forControlEvents:UIControlEventTouchUpInside];
     rightItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
     self.navigationItem.rightBarButtonItem = rightItem;
@@ -142,7 +142,7 @@
     [_treeHoelTableView registerNib:[UINib nibWithNibName:@"NNSpitslotCell" bundle:nil] forCellReuseIdentifier:@"NNSpitslotCell"];
     
     treeHoleButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [treeHoleButton setBackgroundImage:[UIImage imageNamed:@"210_01"] forState:UIControlStateNormal];
+    [treeHoleButton setBackgroundImage:[UIImage imageNamed:@"ic_write"] forState:UIControlStateNormal];
     treeHoleButton.frame = CGRectMake(NNAppWidth - 15 - 54, NNAppHeight - 49 - 15 - 54 - 64, 54, 54);
     [treeHoleButton addTarget:self action:@selector(sendTreeHoleAction:) forControlEvents:UIControlEventTouchUpInside];
     treeHoleButton.hidden = YES;
@@ -378,7 +378,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (TEST_TOKEN == nil) {
-        NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];;
+        NNLoginVC *loginVC = [[NNLoginVC alloc] initWithNibName:@"NNLoginVC" bundle:nil];;
         loginVC.isPresent = YES;
         [self presentViewController:loginVC animated:YES completion:nil];
         return ;

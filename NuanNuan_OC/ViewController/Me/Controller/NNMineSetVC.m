@@ -8,7 +8,7 @@
 
 #import "NNMineSetVC.h"
 #import "NNSetCell.h"
-#import "NNLoginAndRegisterVC.h"
+#import "NNLoginVC.h"
 #import "NNUserAgreementVC.h"
 #import "NNAboutNuanNuan.h"
 @interface NNMineSetVC ()<UITableViewDelegate,UITableViewDataSource> {
@@ -108,7 +108,7 @@
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((NNAppWidth - 100)/2 , 0, 100, 44)];
-        label.textColor = [UIColor colorFromHexString:@"#ff9933"];
+        label.textColor = [UIColor colorFromHexString:@"#333333"];
         
         label.font = [UIFont systemFontOfSize:14.f];
         label.text = @"退出帐号";
@@ -141,7 +141,7 @@
         }
     }else{
           [MobClick event:@"clk_quit"];
-        NNLoginAndRegisterVC *loginOrRegisterVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];
+        NNLoginVC *loginOrRegisterVC = [[NNLoginVC alloc] initWithNibName:@"NNLoginVC" bundle:nil];
         [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"token"];
         [self.navigationController pushViewController:loginOrRegisterVC animated:YES];
         

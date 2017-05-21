@@ -31,8 +31,8 @@
    
     
     NSArray *titleArray = @[@"主页",@"树洞",@"服务",@"我"];
-    NSArray *normalImageArray = @[@"100_17_p",@"100_19_p",@"100_22_p",@"100_24_p"];
-    NSArray *heightImageArray = @[@"100_17",@"100_19",@"100_22",@"100_24"];
+    NSArray *heightImageArray = @[@"ic_home_p",@"ic_TreeHoel_p",@"ic_server_p",@"ic_me_p"];
+    NSArray *normalImageArray = @[@"ic_home",@"ic_TreeHoel",@"ic_server",@"ic_me"];
     
     for (int i  = 0; i < titleArray.count; i++) {
         
@@ -54,6 +54,7 @@
     NNMeVC *meVC = [[NNMeVC alloc] init];
 
     UINavigationController *homeNav = [[UINavigationController alloc] initWithRootViewController:homePageVC];
+   
     UINavigationController *treeNav = [[UINavigationController alloc] initWithRootViewController:treeVC];
     UINavigationController *serverNav = [[UINavigationController alloc] initWithRootViewController:serverVC];
     UINavigationController *meNav = [[UINavigationController alloc] initWithRootViewController:meVC];

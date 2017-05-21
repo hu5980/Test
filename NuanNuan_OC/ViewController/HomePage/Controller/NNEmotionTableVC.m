@@ -16,7 +16,7 @@
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "NNEmotionallItemCell.h"
 #import "NNArticleDetailVC.h"
-#import "NNLoginAndRegisterVC.h"
+#import "NNLoginVC.h"
 
 @interface NNEmotionTableVC ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -129,7 +129,7 @@
     cell.block = ^(NNSuccessCaseModel *model) {
         
         if (TEST_TOKEN == nil) {
-            NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];
+            NNLoginVC *loginVC = [[NNLoginVC alloc] initWithNibName:@"NNLoginVC" bundle:nil];
             loginVC.isPresent = YES;
             [self presentViewController:loginVC animated:YES completion:^{
             }];

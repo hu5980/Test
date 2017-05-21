@@ -7,12 +7,17 @@
 //
 
 #import "NNEmotionalItemCell.h"
-
+#import "Define.h"
 @implementation NNEmotionalItemCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+    if (NNAppWidth > 375) {
+        _leftConstraint.constant = 80;
+        _rightConstraint.constant = 80;
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

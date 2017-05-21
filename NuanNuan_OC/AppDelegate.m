@@ -47,7 +47,9 @@
 {
     UINavigationBar *bar = [UINavigationBar appearance];
     //设置显示的颜色
-    [bar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
+    [bar setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRed:1.0 green:230 / 255.0 blue:240/250.0 alpha:1]] forBarMetrics:UIBarMetricsDefault];
+    
+  
 }
 
 

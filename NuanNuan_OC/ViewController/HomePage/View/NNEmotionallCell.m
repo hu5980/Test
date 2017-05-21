@@ -10,6 +10,7 @@
 #import "NNSuccessCaseModel.h"
 #import "UIButton+AFNetworking.h"
 #import "UIButton+WebCache.h"
+#import "Define.h"
 @implementation NNEmotionallCell
 
 - (void)awakeFromNib {
@@ -24,6 +25,26 @@
     _bgButton2.clipsToBounds = YES;
     _bgButton3.clipsToBounds = YES;
     _bgButton4.clipsToBounds = YES;
+    _bgButton1.layer.masksToBounds = YES;
+    _bgButton2.layer.masksToBounds = YES;
+    _bgButton3.layer.masksToBounds = YES;
+    _bgButton4.layer.masksToBounds = YES;
+    _bgButton1.layer.cornerRadius = 4;
+    _bgButton2.layer.cornerRadius = 4;
+    _bgButton3.layer.cornerRadius = 4;
+    _bgButton4.layer.cornerRadius = 4;
+    _bgButton1.layer.borderWidth = 1;
+    _bgButton2.layer.borderWidth = 1;
+    _bgButton3.layer.borderWidth = 1;
+    _bgButton4.layer.borderWidth = 1;
+    _bgButton1.layer.borderColor = NN_ASSIST_LINE_COLOR.CGColor;
+    _bgButton2.layer.borderColor = NN_ASSIST_LINE_COLOR.CGColor;
+    _bgButton3.layer.borderColor = NN_ASSIST_LINE_COLOR.CGColor;
+    _bgButton4.layer.borderColor = NN_ASSIST_LINE_COLOR.CGColor;
+    _titleLabel1.layer.cornerRadius = 4;
+    _titleLabel2.layer.cornerRadius = 4;
+    _titleLabel3.layer.cornerRadius = 4;
+    _titleLabel4.layer.cornerRadius = 4;
     // Initialization code
 }
 

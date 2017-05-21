@@ -7,7 +7,7 @@
 //
 
 #import "NNBaseVC.h"
-#import "NNLoginAndRegisterVC.h"
+#import "NNLoginVC.h"
 @interface NNBaseVC ()
 {
     UIBarButtonItem *leftItem;
@@ -27,6 +27,7 @@
     }else{
         [self.navigationController setNavigationBarHidden:NO];
     }
+   
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.automaticallyAdjustsScrollViewInsets = YES;
 }
@@ -58,8 +59,8 @@
 
 - (void)setNavigationBackButton:(BOOL ) showOrHidden; {
     if (leftItem == nil) {
-        leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"101_03"] style:UIBarButtonItemStylePlain target:self action:@selector(popVC)];
-        leftItem.tintColor = [UIColor colorFromHexString:@"#ff9933"];
+        leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_leftArrow"] style:UIBarButtonItemStylePlain target:self action:@selector(popVC)];
+        leftItem.tintColor = [UIColor colorFromHexString:@"#666666"];
     }
     if (showOrHidden) {
         self.navigationItem.leftBarButtonItem = leftItem;
@@ -73,7 +74,7 @@
     if (rightItem == nil) {
         rightItem = [[UIBarButtonItem alloc] initWithTitle: title style:UIBarButtonItemStylePlain target:self action:@selector(rightItemAction:)];
         [rightItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14],NSFontAttributeName, nil] forState:UIControlStateNormal ];
-        rightItem.tintColor = [UIColor colorFromHexString:@"#ff9933"];
+        rightItem.tintColor = [UIColor colorFromHexString:@"#666666"];
     }
 
     self.navigationItem.rightBarButtonItem = rightItem;
@@ -95,7 +96,7 @@
 }
 
 - (void)loginAgein:(NSNotification *)nitification {
-     NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];
+     NNLoginVC *loginVC = [[NNLoginVC alloc] initWithNibName:@"NNLoginVC" bundle:nil];
     loginVC.isPresent = YES;
     loginVC.showHudText = [nitification object];
     [self presentViewController:loginVC animated:YES completion:^{
@@ -106,8 +107,8 @@
 
 - (void)setNavTitle:(NSString *)navTitle{
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    titleLabel.textColor = [UIColor colorFromHexString:@"#ff9933"];
-    titleLabel.font = [UIFont systemFontOfSize:17.f];
+    titleLabel.textColor = [UIColor colorFromHexString:@"#666666"];
+    titleLabel.font = [UIFont systemFontOfSize:18.f];
     titleLabel.text =navTitle;
     [titleLabel sizeToFit];
     self.navigationItem.titleView = titleLabel;

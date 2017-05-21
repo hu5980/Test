@@ -13,7 +13,9 @@
 #import "NNAppointmentVC.h"
 #import "NNArticleIsLikeViewModel.h"
 #import <UMSocialCore/UMSocialCore.h>
-#import "NNLoginAndRegisterVC.h"
+//#import "NNLoginAndRegisterVC.h"
+
+#import "NNLoginVC.h"
 
 @interface NNArticleDetailVC ()<WKNavigationDelegate> {
     UIView *customView;
@@ -47,8 +49,8 @@
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     backButton.frame = CGRectMake(15, 26, 32, 32);
-    [backButton setBackgroundImage:[UIImage imageNamed:@"103_03"] forState:UIControlStateNormal];
-    [backButton setBackgroundImage:[UIImage imageNamed:@"103_03_p"] forState:UIControlStateHighlighted];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"ic_leftArrow_Grey"] forState:UIControlStateNormal];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"ic_leftArrow_Grey"] forState:UIControlStateHighlighted];
     [backButton addTarget:self action:@selector(popAction:) forControlEvents:UIControlEventTouchUpInside];
     [customView addSubview:backButton];
     
@@ -63,8 +65,8 @@
     
     UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
     shareButton.frame = CGRectMake(NNAppWidth - 15*2 - 32 * 2, 26, 32, 32);
-    [shareButton setBackgroundImage:[UIImage imageNamed:@"103_05"] forState:UIControlStateNormal];
-    [shareButton setBackgroundImage:[UIImage imageNamed:@"103_05_p"] forState:UIControlStateHighlighted];
+    [shareButton setBackgroundImage:[UIImage imageNamed:@"ic_share"] forState:UIControlStateNormal];
+    [shareButton setBackgroundImage:[UIImage imageNamed:@"ic_share"] forState:UIControlStateHighlighted];
     [shareButton addTarget:self action:@selector(shareAction:) forControlEvents:UIControlEventTouchUpInside];
     [customView addSubview:shareButton];
 
@@ -222,7 +224,7 @@
 - (void)likeAction:(UIButton *)button {
     
     if (TEST_TOKEN == nil) {
-        NNLoginAndRegisterVC *loginVC = [[NNLoginAndRegisterVC alloc] initWithNibName:@"NNLoginAndRegisterVC" bundle:nil];
+        NNLoginVC *loginVC = [[NNLoginVC alloc] initWithNibName:@"NNLoginVC" bundle:nil];
         loginVC.isPresent = YES;
         [self presentViewController:loginVC animated:YES completion:^{
         }];

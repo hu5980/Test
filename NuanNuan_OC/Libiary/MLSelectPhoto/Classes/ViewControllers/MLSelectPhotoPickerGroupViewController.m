@@ -63,9 +63,7 @@
     
     // 获取图片
     [self getImgs];
-    
     self.title = @"选择相册";
-    
 }
 
 - (void) setupButtons{

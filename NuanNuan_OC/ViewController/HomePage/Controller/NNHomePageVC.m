@@ -111,7 +111,7 @@
 }
 
 - (void)initData {
-    titleArray = @[@"深夜识堂・热门推荐",@"深夜识堂・身边故事",@"深夜识堂・暖暖私语"];
+    titleArray = @[@"热门推荐",@"身边故事",@"暖暖私语"];
     typeArray = @[@"11",@"12",@"13"];
     NNHomepageSuccessCaseViewModel *successCaseViewModel = [[NNHomepageSuccessCaseViewModel alloc] init];
     [successCaseViewModel setBlockWithReturnBlock:^(id returnValue) {
@@ -129,14 +129,11 @@
 #pragma --mark UItableViewDataSource UItableViewDelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section == 0) {
         return 1;
-    }
-    return titleArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -186,8 +183,8 @@
         emotionAllcell.successCasemoreBlock = ^(NSInteger type){
             NNEmotionCaseVC *emotionCaseVC = [[NNEmotionCaseVC alloc] initWithNibName:@"NNEmotionCaseVC" bundle:nil];
             emotionCaseVC.hidesBottomBarWhenPushed = YES;
-            emotionCaseVC.caseTypeArray = [NSArray arrayWithObject:[typeArray objectAtIndex:indexPath.row]];
-            emotionCaseVC.navigationTitle = [titleArray objectAtIndex:indexPath.row];
+            emotionCaseVC.caseTypeArray = [NSArray arrayWithObject:[typeArray objectAtIndex:indexPath.section - 1]];
+            emotionCaseVC.navigationTitle = [titleArray objectAtIndex:indexPath.section - 1];
             [self.navigationController pushViewController:emotionCaseVC animated:YES];
         };
       
@@ -201,18 +198,18 @@
             [self.navigationController pushViewController:articleVC animated:YES];
 
         };
-        emotionAllcell.emotionTitleLabel.text = [titleArray objectAtIndex:indexPath.row];
+        emotionAllcell.emotionTitleLabel.text = [titleArray objectAtIndex:indexPath.section - 1];
         
-        switch (indexPath.row) {
-            case 0:
+        switch (indexPath.section) {
+            case 1:
                 emotionAllcell.successCaseModelArray = successCasemodel.loveStoryArray ;
                 emotionAllcell.type = 11;
                 break;
-            case 1:
+            case 2:
                  emotionAllcell.successCaseModelArray = successCasemodel.redeemStoryArray ;
                 emotionAllcell.type = 12;
                 break;
-            case 2:
+            case 3:
                  emotionAllcell.successCaseModelArray = successCasemodel.improvementArray ;
                 emotionAllcell.type = 13;
                 break;
