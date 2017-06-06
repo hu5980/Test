@@ -12,6 +12,19 @@
 		0D08BB371ED09B4100BCC8A0 /* NNRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08BB351ED09B4100BCC8A0 /* NNRegisterVC.m */; };
 		0D08BB381ED09B4100BCC8A0 /* NNRegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D08BB361ED09B4100BCC8A0 /* NNRegisterVC.xib */; };
 		0D2A8AD01DE1568300122F0C /* NNAddImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2A8ACF1DE1568300122F0C /* NNAddImageView.m */; };
+		0D3283EE1EE25C6D00011DEE /* NNNeedAppointmentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3283EC1EE25C6D00011DEE /* NNNeedAppointmentVC.m */; };
+		0D3283EF1EE25C6E00011DEE /* NNNeedAppointmentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D3283ED1EE25C6D00011DEE /* NNNeedAppointmentVC.xib */; };
+		0D3283F31EE261EF00011DEE /* NNAddInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3283F11EE261EF00011DEE /* NNAddInfoCell.m */; };
+		0D3283F41EE261EF00011DEE /* NNAddInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D3283F21EE261EF00011DEE /* NNAddInfoCell.xib */; };
+		0D3283F71EE2A3F800011DEE /* NNpayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3283F61EE2A3F800011DEE /* NNpayView.m */; };
+		0D3283F91EE2A40900011DEE /* NNpayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D3283F81EE2A40900011DEE /* NNpayView.xib */; };
+		0D3283FD1EE2A5E200011DEE /* NNServerAppointmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3283FB1EE2A5E200011DEE /* NNServerAppointmentCell.m */; };
+		0D3283FE1EE2A5E200011DEE /* NNServerAppointmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D3283FC1EE2A5E200011DEE /* NNServerAppointmentCell.xib */; };
+		0D3284011EE3F8DC00011DEE /* NNFloorAppointView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3284001EE3F8DC00011DEE /* NNFloorAppointView.m */; };
+		0D3284031EE3F8E600011DEE /* NNFloorAppointView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D3284021EE3F8E600011DEE /* NNFloorAppointView.xib */; };
+		0D3284061EE4029500011DEE /* NNAppointmentOrderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3284051EE4029500011DEE /* NNAppointmentOrderViewModel.m */; };
+		0D3284091EE40A6A00011DEE /* NNAppointmentOrderTypeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3284081EE40A6A00011DEE /* NNAppointmentOrderTypeViewModel.m */; };
+		0D32840C1EE40B0D00011DEE /* NNOrderServerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D32840B1EE40B0D00011DEE /* NNOrderServerModel.m */; };
 		0D331E0E1DBBCA87002B0DCD /* NNSpitslotDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D331E0C1DBBCA87002B0DCD /* NNSpitslotDetailVC.m */; };
 		0D331E0F1DBBCA87002B0DCD /* NNSpitslotDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D331E0D1DBBCA87002B0DCD /* NNSpitslotDetailVC.xib */; };
 		0D331E121DBD071F002B0DCD /* NNAskingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D331E111DBD071F002B0DCD /* NNAskingView.m */; };
@@ -290,6 +303,27 @@
 		0D08BB361ED09B4100BCC8A0 /* NNRegisterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNRegisterVC.xib; sourceTree = "<group>"; };
 		0D2A8ACE1DE1568300122F0C /* NNAddImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNAddImageView.h; sourceTree = "<group>"; };
 		0D2A8ACF1DE1568300122F0C /* NNAddImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNAddImageView.m; sourceTree = "<group>"; };
+		0D3283EB1EE25C6D00011DEE /* NNNeedAppointmentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNeedAppointmentVC.h; sourceTree = "<group>"; };
+		0D3283EC1EE25C6D00011DEE /* NNNeedAppointmentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNeedAppointmentVC.m; sourceTree = "<group>"; };
+		0D3283ED1EE25C6D00011DEE /* NNNeedAppointmentVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNNeedAppointmentVC.xib; sourceTree = "<group>"; };
+		0D3283F01EE261EF00011DEE /* NNAddInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNAddInfoCell.h; sourceTree = "<group>"; };
+		0D3283F11EE261EF00011DEE /* NNAddInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNAddInfoCell.m; sourceTree = "<group>"; };
+		0D3283F21EE261EF00011DEE /* NNAddInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNAddInfoCell.xib; sourceTree = "<group>"; };
+		0D3283F51EE2A3F800011DEE /* NNpayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNpayView.h; sourceTree = "<group>"; };
+		0D3283F61EE2A3F800011DEE /* NNpayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNpayView.m; sourceTree = "<group>"; };
+		0D3283F81EE2A40900011DEE /* NNpayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNpayView.xib; sourceTree = "<group>"; };
+		0D3283FA1EE2A5E200011DEE /* NNServerAppointmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNServerAppointmentCell.h; sourceTree = "<group>"; };
+		0D3283FB1EE2A5E200011DEE /* NNServerAppointmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNServerAppointmentCell.m; sourceTree = "<group>"; };
+		0D3283FC1EE2A5E200011DEE /* NNServerAppointmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNServerAppointmentCell.xib; sourceTree = "<group>"; };
+		0D3283FF1EE3F8DC00011DEE /* NNFloorAppointView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNFloorAppointView.h; sourceTree = "<group>"; };
+		0D3284001EE3F8DC00011DEE /* NNFloorAppointView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNFloorAppointView.m; sourceTree = "<group>"; };
+		0D3284021EE3F8E600011DEE /* NNFloorAppointView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNFloorAppointView.xib; sourceTree = "<group>"; };
+		0D3284041EE4029500011DEE /* NNAppointmentOrderViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNAppointmentOrderViewModel.h; sourceTree = "<group>"; };
+		0D3284051EE4029500011DEE /* NNAppointmentOrderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNAppointmentOrderViewModel.m; sourceTree = "<group>"; };
+		0D3284071EE40A6A00011DEE /* NNAppointmentOrderTypeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNAppointmentOrderTypeViewModel.h; sourceTree = "<group>"; };
+		0D3284081EE40A6A00011DEE /* NNAppointmentOrderTypeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNAppointmentOrderTypeViewModel.m; sourceTree = "<group>"; };
+		0D32840A1EE40B0D00011DEE /* NNOrderServerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNOrderServerModel.h; sourceTree = "<group>"; };
+		0D32840B1EE40B0D00011DEE /* NNOrderServerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNOrderServerModel.m; sourceTree = "<group>"; };
 		0D331E0B1DBBCA87002B0DCD /* NNSpitslotDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSpitslotDetailVC.h; sourceTree = "<group>"; };
 		0D331E0C1DBBCA87002B0DCD /* NNSpitslotDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNSpitslotDetailVC.m; sourceTree = "<group>"; };
 		0D331E0D1DBBCA87002B0DCD /* NNSpitslotDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNSpitslotDetailVC.xib; sourceTree = "<group>"; };
@@ -1315,8 +1349,12 @@
 				BCE6A0661DDEA87A00A02E50 /* NNAppointmentTypeViewModel.m */,
 				BCE6A06B1DDED76F00A02E50 /* NNAppointmentQuestionViewModel.h */,
 				BCE6A06C1DDED76F00A02E50 /* NNAppointmentQuestionViewModel.m */,
+				0D3284071EE40A6A00011DEE /* NNAppointmentOrderTypeViewModel.h */,
+				0D3284081EE40A6A00011DEE /* NNAppointmentOrderTypeViewModel.m */,
 				BCEDDC061DE8062200187317 /* NNArticleIsLikeViewModel.h */,
 				BCEDDC071DE8062200187317 /* NNArticleIsLikeViewModel.m */,
+				0D3284041EE4029500011DEE /* NNAppointmentOrderViewModel.h */,
+				0D3284051EE4029500011DEE /* NNAppointmentOrderViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1473,6 +1511,9 @@
 				BC8627631DD99D3F00162082 /* NNAppointmentVC.h */,
 				BC8627641DD99D3F00162082 /* NNAppointmentVC.m */,
 				BC8627651DD99D3F00162082 /* NNAppointmentVC.xib */,
+				0D3283EB1EE25C6D00011DEE /* NNNeedAppointmentVC.h */,
+				0D3283EC1EE25C6D00011DEE /* NNNeedAppointmentVC.m */,
+				0D3283ED1EE25C6D00011DEE /* NNNeedAppointmentVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1488,6 +1529,8 @@
 				BC8C61DD1DC04A2C00094F94 /* NNRingImageModel.m */,
 				BCE6A0681DDEA89D00A02E50 /* NNAppointmentModel.h */,
 				BCE6A0691DDEA89D00A02E50 /* NNAppointmentModel.m */,
+				0D32840A1EE40B0D00011DEE /* NNOrderServerModel.h */,
+				0D32840B1EE40B0D00011DEE /* NNOrderServerModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1516,6 +1559,9 @@
 				BC86276D1DD9A03400162082 /* NNQuestionerChooseCell.h */,
 				BC86276E1DD9A03400162082 /* NNQuestionerChooseCell.m */,
 				BC86276F1DD9A03400162082 /* NNQuestionerChooseCell.xib */,
+				0D3283F01EE261EF00011DEE /* NNAddInfoCell.h */,
+				0D3283F11EE261EF00011DEE /* NNAddInfoCell.m */,
+				0D3283F21EE261EF00011DEE /* NNAddInfoCell.xib */,
 				BC8627721DD9A07C00162082 /* NNChooseView.h */,
 				BC8627731DD9A07C00162082 /* NNChooseView.m */,
 				BC8627771DD9A0C500162082 /* NNChooseButton.h */,
@@ -1523,6 +1569,15 @@
 				BC3BFA301DD9B73300F73DEF /* NNQuestionCell.h */,
 				BC3BFA311DD9B73300F73DEF /* NNQuestionCell.m */,
 				BC3BFA321DD9B73300F73DEF /* NNQuestionCell.xib */,
+				0D3283F51EE2A3F800011DEE /* NNpayView.h */,
+				0D3283F61EE2A3F800011DEE /* NNpayView.m */,
+				0D3283F81EE2A40900011DEE /* NNpayView.xib */,
+				0D3283FA1EE2A5E200011DEE /* NNServerAppointmentCell.h */,
+				0D3283FB1EE2A5E200011DEE /* NNServerAppointmentCell.m */,
+				0D3283FC1EE2A5E200011DEE /* NNServerAppointmentCell.xib */,
+				0D3283FF1EE3F8DC00011DEE /* NNFloorAppointView.h */,
+				0D3284001EE3F8DC00011DEE /* NNFloorAppointView.m */,
+				0D3284021EE3F8E600011DEE /* NNFloorAppointView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1979,6 +2034,7 @@
 				BCD9AE7D1DACE424008DB98E /* NNEmotionalItemCell.xib in Resources */,
 				BC8627711DD9A03400162082 /* NNQuestionerChooseCell.xib in Resources */,
 				BCD7E6591DFFEA1200991F86 /* NNUnAnswerQuestionCell.xib in Resources */,
+				0D3283EF1EE25C6E00011DEE /* NNNeedAppointmentVC.xib in Resources */,
 				0DBB2A551DE9ABD5008A0F32 /* README.txt in Resources */,
 				0D08BB331ED09B1B00BCC8A0 /* NNLoginVC.xib in Resources */,
 				BCD9AE6A1DACBCB6008DB98E /* NNEmotionCaseVC.xib in Resources */,
@@ -1990,12 +2046,14 @@
 				BC09AFEB1DB8AC9400BC4D1B /* NNServerListCell.xib in Resources */,
 				BCDEDCB31E2C67E9005579E5 /* NNMineTreeHoelVC.xib in Resources */,
 				BCD7E6441DFEA12200991F86 /* NNAboutNuanNuan.xib in Resources */,
+				0D3283F41EE261EF00011DEE /* NNAddInfoCell.xib in Resources */,
 				0DBB2A5B1DE9ABD5008A0F32 /* UMSocialSDKResources.bundle in Resources */,
 				BCEDDBFF1DE52C5A00187317 /* MLSelectPhoto.bundle in Resources */,
 				BCD506111D92202D000FB2C0 /* Main.storyboard in Resources */,
 				0DDAEE7E1DBBB030008478DC /* NNSpitslotCell.xib in Resources */,
 				BC86276C1DD99EE100162082 /* NNQuestionerInfoCell.xib in Resources */,
 				0DBB2A461DE9ABD5008A0F32 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				0D3284031EE3F8E600011DEE /* NNFloorAppointView.xib in Resources */,
 				0DBB2A4A1DE9ABD5008A0F32 /* WeiboSDK.bundle in Resources */,
 				BC328EEB1DBF2F5E000AF40B /* NNLoginAndRegisterVC.xib in Resources */,
 				BC58BA7C1DBDEF9300F3BF0D /* NNMineNoticeVC.xib in Resources */,
@@ -2012,6 +2070,7 @@
 				BCD9AE6F1DACC668008DB98E /* NNEmotionallItemCell.xib in Resources */,
 				BC8169631DC1D4B000949273 /* NNUserAgreementVC.xib in Resources */,
 				BC58BA861DBDEFC300F3BF0D /* NNMineSetVC.xib in Resources */,
+				0D3283FE1EE2A5E200011DEE /* NNServerAppointmentCell.xib in Resources */,
 				BC247EA61DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib in Resources */,
 				BCDEDCAE1E2629A0005579E5 /* NNEmotionCaseCollectionCell.xib in Resources */,
 				BC8627671DD99D3F00162082 /* NNAppointmentVC.xib in Resources */,
@@ -2027,6 +2086,7 @@
 				BC3BFA341DD9B73300F73DEF /* NNQuestionCell.xib in Resources */,
 				BCD506051D921F8C000FB2C0 /* Assets.xcassets in Resources */,
 				BC247E9C1DAA19B100AB5C84 /* NNEmotionallCell.xib in Resources */,
+				0D3283F91EE2A40900011DEE /* NNpayView.xib in Resources */,
 				BCD9AE871DACF16D008DB98E /* NNTreeHoelCell.xib in Resources */,
 				BCD7E64C1DFFCCEC00991F86 /* NNNoticeCell.xib in Resources */,
 				BC58BA6D1DBDE9A800F3BF0D /* NNMineCommentVC.xib in Resources */,
@@ -2148,6 +2208,7 @@
 				BCD9AE9B1DAE2177008DB98E /* NNQuestionAndAnswerDetailVC.m in Sources */,
 				BC3BFA331DD9B73300F73DEF /* NNQuestionCell.m in Sources */,
 				BC4C8E401DD1A15D00544A83 /* NNTimeUtil.m in Sources */,
+				0D3283F31EE261EF00011DEE /* NNAddInfoCell.m in Sources */,
 				BCDEDCB21E2C67E9005579E5 /* NNMineTreeHoelVC.m in Sources */,
 				BC8627661DD99D3F00162082 /* NNAppointmentVC.m in Sources */,
 				BC3BFA3C1DDADE7300F73DEF /* NNOrderViewModel.m in Sources */,
@@ -2184,6 +2245,7 @@
 				BCD506571D9231D0000FB2C0 /* NNServerVC.m in Sources */,
 				BC58BA7B1DBDEF9300F3BF0D /* NNMineNoticeVC.m in Sources */,
 				BC328EEA1DBF2F5E000AF40B /* NNLoginAndRegisterVC.m in Sources */,
+				0D3283F71EE2A3F800011DEE /* NNpayView.m in Sources */,
 				BC8A001E1E2F5509004B4C95 /* NNCommentSpitslotCell.m in Sources */,
 				BC852E7C1DCB128300ADE5C9 /* NNUserInfoModel.m in Sources */,
 				BCB6EFD91DB60A6000BEFD37 /* NNBaseVC.m in Sources */,
@@ -2197,6 +2259,7 @@
 				BC8A00191E2F44F3004B4C95 /* NNMineCommentQuestionAndAnswerCell.m in Sources */,
 				BC58BA8A1DBDF29000F3BF0D /* NNSetCell.m in Sources */,
 				BCDEDCAD1E2629A0005579E5 /* NNEmotionCaseCollectionCell.m in Sources */,
+				0D32840C1EE40B0D00011DEE /* NNOrderServerModel.m in Sources */,
 				0DBB2A5F1DE9ABD5008A0F32 /* UMSocialUIManager.m in Sources */,
 				BCD7E6501DFFD16800991F86 /* NNMineAskVC.m in Sources */,
 				BCD9C9071E2DFA3B004D6E99 /* NNMineTreeHoelViewModel.m in Sources */,
@@ -2224,6 +2287,7 @@
 				BCD7E63F1DFE9ED200991F86 /* NNNoticeViewModel.m in Sources */,
 				BCD506581D9231D0000FB2C0 /* NNTreeHoleVC.m in Sources */,
 				0DBB2A5C1DE9ABD5008A0F32 /* UMShareMenuItem.m in Sources */,
+				0D3284011EE3F8DC00011DEE /* NNFloorAppointView.m in Sources */,
 				BCF660911E0A9EDA003D2B02 /* NNAboutHeadView.m in Sources */,
 				0DA847B91EA2E1ED0072576E /* NNTabbarButton.m in Sources */,
 				BCE6A0641DDD7C7C00A02E50 /* NNUserHeaderViewModel.m in Sources */,
@@ -2233,6 +2297,7 @@
 				BCD9AE8F1DADE5EB008DB98E /* NNPsychologicalTeacherHeaderView.m in Sources */,
 				BCEDDBED1DE52C5A00187317 /* UIView+MLExtension.m in Sources */,
 				BCEDDC081DE8062200187317 /* NNArticleIsLikeViewModel.m in Sources */,
+				0D3284061EE4029500011DEE /* NNAppointmentOrderViewModel.m in Sources */,
 				0D331E0E1DBBCA87002B0DCD /* NNSpitslotDetailVC.m in Sources */,
 				BC86276B1DD99EE100162082 /* NNQuestionerInfoCell.m in Sources */,
 				BC58BA671DBDE99500F3BF0D /* NNMinePraisedVC.m in Sources */,
@@ -2249,12 +2314,14 @@
 				0DBB28FB1DE1A3C0008A0F32 /* NNForgetPasswordVC.m in Sources */,
 				BCEDDBF21DE52C5A00187317 /* MLSelectPhotoBrowserViewController.m in Sources */,
 				BCEDDBF91DE52C5A00187317 /* MLSelectPhotoPickerBrowserPhotoScrollView.m in Sources */,
+				0D3283FD1EE2A5E200011DEE /* NNServerAppointmentCell.m in Sources */,
 				BC58BA6C1DBDE9A800F3BF0D /* NNMineCommentVC.m in Sources */,
 				BCB6EFE31DB62F3600BEFD37 /* NNHomepageSuccessCaseModel.m in Sources */,
 				0DA029931DE08C8C00862E7C /* NNTreeHoelSendVC.m in Sources */,
 				BC852E8D1DCB3DED00ADE5C9 /* NNUnPariseViewModel.m in Sources */,
 				BC58BA761DBDEF7C00F3BF0D /* NNMineOrderVC.m in Sources */,
 				BCA60E1F1DC714D800DB84A0 /* NNHomepageSuccessCaseViewModel.m in Sources */,
+				0D3283EE1EE25C6D00011DEE /* NNNeedAppointmentVC.m in Sources */,
 				BC8169621DC1D4B000949273 /* NNUserAgreementVC.m in Sources */,
 				BC852E8A1DCB1BBE00ADE5C9 /* NNPariseViewModel.m in Sources */,
 				BCBAD87C1DCC8B9300BEDF18 /* NNAskingViewModel.m in Sources */,
@@ -2276,6 +2343,7 @@
 				0D331E171DBD09EF002B0DCD /* NNReplyView.m in Sources */,
 				BCEDDBEC1DE52C5A00187317 /* UIImage+MLTint.m in Sources */,
 				BC022BD61E13C28E00D83381 /* NNNoticeServer.m in Sources */,
+				0D3284091EE40A6A00011DEE /* NNAppointmentOrderTypeViewModel.m in Sources */,
 				BCF178BE1DC0ABED00A6DC4B /* NNEmotionTeacherModel.m in Sources */,
 				BC3BFA381DDAA96400F73DEF /* NNOrderCell.m in Sources */,
 				BC8C61E21DC081CD00094F94 /* NNArticleDetailVC.m in Sources */,

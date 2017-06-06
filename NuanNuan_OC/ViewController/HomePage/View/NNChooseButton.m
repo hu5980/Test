@@ -38,9 +38,9 @@
 - (void)initUI {
     _chooseImageView = [[UIImageView alloc ] initWithFrame:CGRectMake(5, (frameRect.size.height - 18)/2, 18, 18)];
     if (multiSelect) {
-        [_chooseImageView setImage:[UIImage imageNamed:@"303_02"]];
+        [_chooseImageView setImage:[UIImage imageNamed:@"ic_noChoosed"]];
     }else{
-        [_chooseImageView setImage:[UIImage imageNamed:@"303_03"]];
+        [_chooseImageView setImage:[UIImage imageNamed:@"ic_noChoosed"]];
     }
     [self addSubview:_chooseImageView];
     _chooseTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(5 + 15 + 18, 0, frameRect.size.width - 38, 43)];
@@ -53,15 +53,15 @@
     [super setSelected:selected];
     if (selected) {
         if (multiSelect) {
-            [_chooseImageView setImage:[UIImage imageNamed:@"303_04"]];
+            [_chooseImageView setImage:[UIImage imageNamed:@"ic_choosed"]];
         }else{
-            [_chooseImageView setImage:[UIImage imageNamed:@"303_05"]];
+            [_chooseImageView setImage:[UIImage imageNamed:@"ic_choosed"]];
         }
     }else{
         if (multiSelect) {
-            [_chooseImageView setImage:[UIImage imageNamed:@"303_02"]];
+            [_chooseImageView setImage:[UIImage imageNamed:@"ic_noChoosed"]];
         }else{
-            [_chooseImageView setImage:[UIImage imageNamed:@"303_03"]];
+            [_chooseImageView setImage:[UIImage imageNamed:@"ic_noChoosed"]];
         }
     }
 }

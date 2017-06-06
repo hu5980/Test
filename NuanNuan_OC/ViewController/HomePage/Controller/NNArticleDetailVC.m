@@ -13,6 +13,7 @@
 #import "NNAppointmentVC.h"
 #import "NNArticleIsLikeViewModel.h"
 #import <UMSocialCore/UMSocialCore.h>
+#import "NNNeedAppointmentVC.h"
 //#import "NNLoginAndRegisterVC.h"
 
 #import "NNLoginVC.h"
@@ -212,7 +213,7 @@
 
 - (void)makeAnAppointment:(UIButton *)button {
     [MobClick event:@"clk_meeting"];
-    NNAppointmentVC *appointmentVC = [[NNAppointmentVC alloc] initWithNibName:@"NNAppointmentVC" bundle:nil];
+    NNNeedAppointmentVC *appointmentVC = [[NNNeedAppointmentVC alloc] initWithNibName:@"NNNeedAppointmentVC" bundle:nil];
     
     [self.navigationController pushViewController:appointmentVC animated:YES];
 }

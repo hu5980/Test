@@ -60,6 +60,7 @@
 - (void)initUI {
     self.navTitle = @"免费预约";
     [self setNavigationBackButton:YES];
+
     
     [self setNavigationRightItem:@"提交"];
     
