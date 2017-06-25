@@ -14,7 +14,7 @@
 #import "NNArticleIsLikeViewModel.h"
 #import <UMSocialCore/UMSocialCore.h>
 #import "NNNeedAppointmentVC.h"
-//#import "NNLoginAndRegisterVC.h"
+#import "NNLoginAndRegisterVC.h"
 
 #import "NNLoginVC.h"
 
@@ -23,6 +23,7 @@
     UIButton *likeButton;
     UIButton  *shareBgButton;
     NSString *url;
+    WKWebView *webView;
 }
 
 @end
@@ -38,11 +39,13 @@
 
 - (void)createUI {
     self.view.backgroundColor = [UIColor orangeColor];
-    WKWebView *webView =  [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, NNAppHeight)];
+    webView =  [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, NNAppHeight)];
     webView.navigationDelegate = self;
     url = [NSString stringWithFormat:@"%@/?c=static_article&a=index&id=%ld",NNBaseUrl,_articleID];
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
     [self.view addSubview:webView];
+    
+    [webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
     
     customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, NNAppWidth, 64)];
     customView.backgroundColor = [UIColor clearColor];
@@ -57,9 +60,9 @@
     
     likeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     likeButton.frame = CGRectMake(NNAppWidth - 15 - 32, 26, 32, 32);
-    [likeButton setBackgroundImage:[UIImage imageNamed:@"103_07"] forState:UIControlStateNormal];
-    [likeButton setBackgroundImage:[UIImage imageNamed:@"103_07_p"] forState:UIControlStateHighlighted];
-    [likeButton setBackgroundImage:[UIImage imageNamed:@"103_07_p"] forState:UIControlStateSelected];
+    [likeButton setBackgroundImage:[UIImage imageNamed:@"ic_unliked"] forState:UIControlStateNormal];
+    [likeButton setBackgroundImage:[UIImage imageNamed:@"ic_liked"] forState:UIControlStateHighlighted];
+    [likeButton setBackgroundImage:[UIImage imageNamed:@"ic_liked"] forState:UIControlStateSelected];
     [likeButton addTarget:self action:@selector(likeAction:) forControlEvents:UIControlEventTouchUpInside];
     [customView addSubview:likeButton];
     
@@ -73,7 +76,7 @@
 
     if (_isShowAppointment) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.backgroundColor = NN_MAIN_COLOR;
+        button.backgroundColor = NN_SECOND_COLOR;
         button.frame = CGRectMake(0, NNAppHeight - 40, NNAppWidth, 40);
         button.titleLabel.font = [UIFont systemFontOfSize:16.f];
         [button setTitle:@"我要预约" forState:UIControlStateNormal];
@@ -92,7 +95,7 @@
     
     for (int i = 0; i < imageArrays.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(70*i + (NNAppWidth - 70 * 4 ) / 2, NNAppHeight - 120, 70, 72.5);
+        button.frame = CGRectMake(70*i + (NNAppWidth - 70 * 4 ) / 5 * (i+1) , NNAppHeight - 120, 70, 72.5);
         button.tag = 1000 + i;
         [button addTarget:self action:@selector(share:) forControlEvents:UIControlEventTouchUpInside];
         [button setBackgroundImage:[UIImage imageNamed:[imageArrays objectAtIndex:i]] forState:UIControlStateNormal];
@@ -122,7 +125,24 @@
    
 }
 
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+ if ([keyPath isEqualToString:@"title"])
+    {
+        if (object == webView) {
+            self.title = webView.title;
+            
+        }
+        else
+        {
+            [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+            
+        }
+    }
+}
+
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+ 
     [[NNProgressHUD instance] hideHud];
 }
 
@@ -212,6 +232,17 @@
 }
 
 - (void)makeAnAppointment:(UIButton *)button {
+    
+    if (TEST_TOKEN == nil) {
+        NNLoginVC *loginVC = [[NNLoginVC alloc] initWithNibName:@"NNLoginVC" bundle:nil];
+        loginVC.isPresent = YES;
+        loginVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:loginVC animated:YES];
+//        [self presentViewController:loginVC animated:YES completion:^{
+//        }];
+        return ;
+    }
+    
     [MobClick event:@"clk_meeting"];
     NNNeedAppointmentVC *appointmentVC = [[NNNeedAppointmentVC alloc] initWithNibName:@"NNNeedAppointmentVC" bundle:nil];
     
@@ -227,8 +258,10 @@
     if (TEST_TOKEN == nil) {
         NNLoginVC *loginVC = [[NNLoginVC alloc] initWithNibName:@"NNLoginVC" bundle:nil];
         loginVC.isPresent = YES;
-        [self presentViewController:loginVC animated:YES completion:^{
-        }];
+  loginVC.hidesBottomBarWhenPushed = YES;
+//        [self presentViewController:loginVC animated:YES completion:^{
+//        }];
+         [self.navigationController pushViewController:loginVC animated:YES];
         return ;
     }
     __weak UIButton * weaklikeButton = likeButton;
@@ -262,6 +295,10 @@
     }else{
         [viewModel parisdArticleWithToken:TEST_TOKEN andArticleType:@"3" andArticleID:[NSString stringWithFormat:@"%ld",_articleID]];
     }
+}
+
+- (void)dealloc{
+     [webView removeObserver:self forKeyPath:@"title"];
 }
 
 - (void)shareAction:(UIButton *)button {

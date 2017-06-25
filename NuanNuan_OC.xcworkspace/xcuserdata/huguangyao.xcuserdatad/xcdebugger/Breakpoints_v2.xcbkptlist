@@ -15,164 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
             endingLineNumber = "111"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NuanNuan_OC/ViewController/HomePage/Controller/NNArticleDetailVC.m"
-            timestampString = "518192876.716785"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
-            landmarkName = "-likeAction:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NuanNuan_OC/ViewController/HomePage/Controller/NNArticleDetailVC.m"
-            timestampString = "518192876.716785"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
-            landmarkName = "-likeAction:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NuanNuan_OC/ViewController/HomePage/Controller/NNArticleDetailVC.m"
-            timestampString = "518192876.716785"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
-            landmarkName = "-likeAction:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NuanNuan_OC/ViewController/HomePage/Controller/NNArticleDetailVC.m"
-            timestampString = "518192876.716785"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
-            landmarkName = "-likeAction:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[NNArticleDetailVC likeAction:]"
-                  moduleName = "&#x6696;&#x6696;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/huguangyao/Desktop/GitHub/NuanNuan_OC/NuanNuan_OC/ViewController/HomePage/Controller/NNArticleDetailVC.m"
-                  timestampString = "518258965.396456"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "254"
-                  endingLineNumber = "254"
-                  offsetFromSymbolStart = "944">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__32-[NNArticleDetailVC likeAction:]_block_invoke_2.256"
-                  moduleName = "&#x6696;&#x6696;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/huguangyao/Desktop/GitHub/NuanNuan_OC/NuanNuan_OC/ViewController/HomePage/Controller/NNArticleDetailVC.m"
-                  timestampString = "518258965.398753"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "254"
-                  endingLineNumber = "254"
-                  offsetFromSymbolStart = "243">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_.259"
-                  moduleName = "&#x6696;&#x6696;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/huguangyao/Desktop/GitHub/NuanNuan_OC/NuanNuan_OC/ViewController/HomePage/Controller/NNArticleDetailVC.m"
-                  timestampString = "518258965.401129"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "254"
-                  endingLineNumber = "254"
-                  offsetFromSymbolStart = "111">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_.260"
-                  moduleName = "&#x6696;&#x6696;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/huguangyao/Desktop/GitHub/NuanNuan_OC/NuanNuan_OC/ViewController/HomePage/Controller/NNArticleDetailVC.m"
-                  timestampString = "518258965.403356"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "254"
-                  endingLineNumber = "254"
-                  offsetFromSymbolStart = "55">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__32-[NNArticleDetailVC likeAction:]_block_invoke.262"
-                  moduleName = "&#x6696;&#x6696;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/huguangyao/Desktop/GitHub/NuanNuan_OC/NuanNuan_OC/ViewController/HomePage/Controller/NNArticleDetailVC.m"
-                  timestampString = "518258965.405815"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "254"
-                  endingLineNumber = "254"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NuanNuan_OC/ViewController/HomePage/Controller/NNArticleDetailVC.m"
-            timestampString = "518192876.716785"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
-            landmarkName = "-likeAction:"
+            landmarkName = "-tableView:viewForHeaderInSection:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -189,22 +32,6 @@
             startingLineNumber = "86"
             endingLineNumber = "86"
             landmarkName = "-fetchValueSuccessWithDic:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NuanNuan_OC/ViewController/TreeHoel/View/NNQuestionAndAnswerCell.m"
-            timestampString = "504337056.935122"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "-setModel:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -247,12 +74,12 @@
                   moduleName = "&#x6696;&#x6696;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huguangyao/Desktop/GitHub/NuanNuan_OC/NuanNuan_OC/ViewController/TreeHoel/ViewModel/NNSendTreeHoelViewModel.m"
-                  timestampString = "518258965.431411"
+                  timestampString = "520096779.916382"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
                   endingLineNumber = "18"
-                  offsetFromSymbolStart = "339">
+                  offsetFromSymbolStart = "356">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -262,12 +89,12 @@
                   moduleName = "&#x6696;&#x6696;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huguangyao/Desktop/GitHub/NuanNuan_OC/NuanNuan_OC/ViewController/TreeHoel/ViewModel/NNSendTreeHoelViewModel.m"
-                  timestampString = "518258965.433922"
+                  timestampString = "520096779.918462"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
                   endingLineNumber = "18"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -295,12 +122,12 @@
                   moduleName = "&#x6696;&#x6696;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huguangyao/Desktop/GitHub/NuanNuan_OC/NuanNuan_OC/ViewController/TreeHoel/Controller/NNTreeHoelSendVC.m"
-                  timestampString = "518258965.43928"
+                  timestampString = "520096779.924263"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "180"
                   endingLineNumber = "180"
-                  offsetFromSymbolStart = "309">
+                  offsetFromSymbolStart = "340">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -310,12 +137,12 @@
                   moduleName = "&#x6696;&#x6696;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huguangyao/Desktop/GitHub/NuanNuan_OC/NuanNuan_OC/ViewController/TreeHoel/Controller/NNTreeHoelSendVC.m"
-                  timestampString = "518258965.441802"
+                  timestampString = "520096779.926421"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "180"
                   endingLineNumber = "180"
-                  offsetFromSymbolStart = "246">
+                  offsetFromSymbolStart = "256">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -325,12 +152,12 @@
                   moduleName = "&#x6696;&#x6696;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huguangyao/Desktop/GitHub/NuanNuan_OC/NuanNuan_OC/ViewController/TreeHoel/Controller/NNTreeHoelSendVC.m"
-                  timestampString = "518258965.443979"
+                  timestampString = "520096779.928404"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "180"
                   endingLineNumber = "180"
-                  offsetFromSymbolStart = "51">
+                  offsetFromSymbolStart = "64">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -340,12 +167,12 @@
                   moduleName = "&#x6696;&#x6696;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huguangyao/Desktop/GitHub/NuanNuan_OC/NuanNuan_OC/ViewController/TreeHoel/Controller/NNTreeHoelSendVC.m"
-                  timestampString = "518258965.446212"
+                  timestampString = "520096779.930377"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "180"
                   endingLineNumber = "180"
-                  offsetFromSymbolStart = "29">
+                  offsetFromSymbolStart = "36">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -355,12 +182,12 @@
                   moduleName = "&#x6696;&#x6696;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huguangyao/Desktop/GitHub/NuanNuan_OC/NuanNuan_OC/ViewController/TreeHoel/Controller/NNTreeHoelSendVC.m"
-                  timestampString = "518258965.448718"
+                  timestampString = "520096779.932359"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "180"
                   endingLineNumber = "180"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -429,13 +256,157 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NuanNuan_OC/ViewController/Login/Controller/NNRegisterVC.m"
-            timestampString = "516992345.855804"
+            filePath = "NuanNuan_OC/ViewController/HomePage/Controller/NNPayVC.m"
+            timestampString = "519578040.123224"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "-viewWillAppear:"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "-iPaynowPluginResult:errorCode:errorInfo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NuanNuan_OC/ViewController/HomePage/Controller/NNPayVC.m"
+            timestampString = "519578070.16168"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "-iPaynowPluginResult:errorCode:errorInfo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NuanNuan_OC/ViewController/HomePage/ViewModel/NNPayDataViewModel.m"
+            timestampString = "519578083.617915"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "-payResult:OrderId:mhtOrderNo:paystatus:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NuanNuan_OC/ViewController/HomePage/Controller/NNPayVC.m"
+            timestampString = "519578164.879827"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "-payByType:payChannelType:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NuanNuan_OC/ViewController/HomePage/Controller/NNNeedAppointmentVC.m"
+            timestampString = "520000135.995455"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "-tableView:numberOfRowsInSection:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NuanNuan_OC/Base/NNBaseVC.m"
+            timestampString = "520094047.5812"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "-loginAgein:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NNBaseVC loginAgein:]"
+                  moduleName = "&#x6696;&#x6696;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/huguangyao/Desktop/GitHub/NuanNuan_OC/NuanNuan_OC/Base/NNBaseVC.m"
+                  timestampString = "520096779.975709"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "256">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__23-[NNBaseVC loginAgein:]_block_invoke"
+                  moduleName = "&#x6696;&#x6696;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/huguangyao/Desktop/GitHub/NuanNuan_OC/NuanNuan_OC/Base/NNBaseVC.m"
+                  timestampString = "520096779.97781"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NuanNuan_OC/ViewController/Me/ViewModel/NNOrderViewModel.m"
+            timestampString = "520096163.094286"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "-fetchValueSuccessWithDic:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NuanNuan_OC/ViewController/Me/Controller/NNMineOrderVC.m"
+            timestampString = "520096409.201145"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "-tableView:heightForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

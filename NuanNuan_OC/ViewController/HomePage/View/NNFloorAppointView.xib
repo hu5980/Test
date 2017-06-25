@@ -29,13 +29,21 @@
                         <constraint firstAttribute="width" constant="267" id="SWm-jv-Ka8"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <state key="normal" title="我已阅读并同意《暖暖情感心理》服务咨询协议" image="ic_uncheck">
-                        <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="我已阅读并同意《暖暖情感心理》服务咨询协议">
+                        <color key="titleColor" red="0.94901960780000005" green="0.59999999999999998" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3g-E7-TyJ">
+                    <rect key="frame" x="0.0" y="16" width="63" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="4QI-C0-wB5"/>
+                        <constraint firstAttribute="width" constant="63" id="rMU-EE-UwC"/>
+                    </constraints>
+                    <state key="normal" image="ic_uncheck"/>
                     <state key="selected" image="ic_cheek"/>
                     <state key="highlighted" image="ic_cheek"/>
                     <connections>
-                        <action selector="chooseProtocolAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="UWc-aP-Hxm"/>
+                        <action selector="chooseProtocolAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="khJ-2m-ZC9"/>
                     </connections>
                 </button>
             </subviews>
@@ -43,15 +51,18 @@
             <constraints>
                 <constraint firstItem="kuP-zB-Xui" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Byz-Zn-8uh"/>
                 <constraint firstItem="K4W-ur-YjG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ICo-Kv-cOx"/>
+                <constraint firstItem="S3g-E7-TyJ" firstAttribute="centerY" secondItem="kuP-zB-Xui" secondAttribute="centerY" id="NbB-cK-Dv9"/>
                 <constraint firstAttribute="trailing" secondItem="K4W-ur-YjG" secondAttribute="trailing" id="ORr-fB-zRN"/>
                 <constraint firstAttribute="bottom" secondItem="K4W-ur-YjG" secondAttribute="bottom" id="OSK-yv-nHr"/>
                 <constraint firstItem="K4W-ur-YjG" firstAttribute="top" secondItem="kuP-zB-Xui" secondAttribute="bottom" constant="5" id="bvh-fI-Enl"/>
+                <constraint firstItem="kuP-zB-Xui" firstAttribute="leading" secondItem="S3g-E7-TyJ" secondAttribute="trailing" constant="-27" id="bwG-1x-Eax"/>
                 <constraint firstItem="kuP-zB-Xui" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="zmD-Yr-Aia"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="chooseProtocolButton" destination="kuP-zB-Xui" id="DSr-Z3-a9j"/>
+                <outlet property="chooseProtocolButton" destination="S3g-E7-TyJ" id="ZdT-uY-mz6"/>
                 <outlet property="createOrderButton" destination="K4W-ur-YjG" id="9Qx-eD-cMq"/>
+                <outlet property="entryProtocol" destination="kuP-zB-Xui" id="bBw-Qf-62C"/>
             </connections>
             <point key="canvasLocation" x="-65.5" y="34"/>
         </view>

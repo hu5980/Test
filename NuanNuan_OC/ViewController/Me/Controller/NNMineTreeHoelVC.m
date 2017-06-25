@@ -71,7 +71,7 @@
         [treeHoelArrays addObjectsFromArray:returnValue];
         [_treehoelTableView reloadData];
         if(treeHoelArrays.count == 0){
-            [self showBackgroundViewImageName:@"back_ic" andTitle:@"还没有发表树洞哦，快去树洞发布吧"];
+            [self showBackgroundViewImageName:@"Icon_default" andTitle:@"还没有发表树洞哦，快去树洞发布吧"];
         }else{
             [self hideBackgroundViewImage];
         }

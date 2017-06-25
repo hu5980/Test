@@ -21,6 +21,8 @@
 #import "NNNoticeServer.h"
 #import "UMMobClick/MobClick.h"
 #import "UIImage+YYAdd.h"
+#import "IpaynowPluginApi.h"
+#include <sys/sysctl.h>
 //#import "UserNotifications.h"
 
 
@@ -166,12 +168,24 @@
 // 支持所有iOS系统
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
-    if (!result) {
+    if ([url.absoluteString containsString:@"safepay"]) {
         // 其他如支付等SDK的回调
+        return  [IpaynowPluginApi application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+        
+    }else{
+        return [[UMSocialManager defaultManager] handleOpenURL:url];
     }
-    return result;
 }
+
+-(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options{
+     if ([url.absoluteString containsString:@"safepay"]) {
+        NSString *sourceApplication = options[@"UIApplicationOpenURLOptionSourceApplicationKey"];
+        return [IpaynowPluginApi application:app openURL:url sourceApplication:sourceApplication annotation: [[NSNull alloc]init]];
+     }else{
+         return [[UMSocialManager defaultManager] handleOpenURL:url];
+     }
+}
+
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
@@ -193,6 +207,7 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
+    [IpaynowPluginApi willEnterForeground];
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 

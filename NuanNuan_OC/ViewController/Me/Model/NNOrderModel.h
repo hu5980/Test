@@ -14,8 +14,10 @@
 @property (nonatomic,strong) NSString * orderSex;
 @property (nonatomic,strong) NSString *orderTelephone;
 @property (nonatomic,strong) NSString * orderTime;
-@property (nonatomic,strong) NSString *orderType;
+//@property (nonatomic,strong) NSString *orderType;
 @property (nonatomic,strong) NSString * orderContent;
-
+@property (nonatomic,strong) NSString *merry;
+@property (nonatomic,strong) NSString *age;
+@property (nonatomic,strong) NSString *wechat;
 
 @end

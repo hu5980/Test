@@ -25,13 +25,15 @@
     _model = model;
     _orderNumLabel.text = model.orderID;
     _orderSexLabel.text = model.orderSex;
-    _orderTimeLabel.text = model.orderTime;
-    _orderTypeLabel.text = model.orderType;
-    _orderTypeLabel.preferredMaxLayoutWidth = NNAppWidth - 150 ;
+
     _orderPhonoLabel.text = model.orderTelephone;
-    _orderContentLabel.text = model.orderContent;
-    _orderContentLabel.preferredMaxLayoutWidth = NNAppWidth - 150 ;
+ 
+    _merryLabel.text = model.merry;
     _orderNickNameLabel.text = model.orderUserName;
+    _weChatLabel.text = model.wechat;
+    _ageLabel.text = model.age;
+    _orderTypeLabel.text = model.orderContent;
+
 }
 
 @end

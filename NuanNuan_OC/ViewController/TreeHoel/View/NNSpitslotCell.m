@@ -27,7 +27,7 @@
     _model = model;
     self.timelabel.text = [NNTimeUtil timeDealWithFormat:@"yyyy-MM-dd dd:mm" andTime:model.createTime];
     if (_model.userNikeName.length == 0 || _model.userNikeName == nil ) {
-        self.nickNameLabel.text = [NSString stringWithFormat:@"暖暖用户%@",model.uid];
+        self.nickNameLabel.text = [NSString stringWithFormat:@"暖暖情感用户%@",model.uid];
     }else{
         self.nickNameLabel.text = _model.userNikeName;
     }

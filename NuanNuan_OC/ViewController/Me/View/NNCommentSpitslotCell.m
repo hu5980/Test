@@ -34,7 +34,7 @@
     NNTreeHoelModel *model = spitslotCommentModel.treeHoelModel;
     self.timelabel.text = [NNTimeUtil timeDealWithFormat:@"yyyy-MM-dd dd:mm" andTime:model.createTime];
     if (model.userNikeName.length == 0 || model.userNikeName == nil ) {
-        self.nickNameLabel.text = [NSString stringWithFormat:@"暖暖用户%@",model.uid];
+        self.nickNameLabel.text = [NSString stringWithFormat:@"暖暖情感用户%@",model.uid];
     }else{
         self.nickNameLabel.text = model.userNikeName;
     }

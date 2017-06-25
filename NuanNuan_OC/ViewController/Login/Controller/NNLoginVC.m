@@ -29,10 +29,18 @@
         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:_showHudText];
     }
     
-    if (!self.isPresent) {
-     //   _closeLoginButton.hidden = YES;
-    }
+  
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (self.isPresent) {
+         [self.navigationController setNavigationBarHidden:NO];
+        [self setNavigationBackButton:YES];
+        self.title = @"登录";
+    }
+   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,12 +49,8 @@
 }
 
 - (IBAction)loginAction:(UIButton *)sender {
-    
     __weak  NNLoginVC *weakSelf = self;
-    
     NNLog(@"登录");
-  
-    
     if (_userNameText.text.length == 0) {
         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"请输入用户名"];
         return;
@@ -57,7 +61,7 @@
         return;
     }
     
-      [[NNProgressHUD instance] showHudToView:self.view ];
+    [[NNProgressHUD instance] showHudToView:self.view ];
     NNLoginViewModel *loginViewModel = [[NNLoginViewModel alloc] init];
     [loginViewModel setBlockWithReturnBlock:^(id returnValue) {
         [[NNProgressHUD instance] hideHud];
@@ -94,6 +98,12 @@
             break;
     }
 }
+
+
+- (void)popVC {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (IBAction)gotoRegisterAction:(UIButton *)sender {
     NNRegisterVC *registerVC = [[NNRegisterVC alloc] initWithNibName:@"NNRegisterVC" bundle:nil];
     [self.navigationController pushViewController:registerVC animated:YES];
@@ -102,7 +112,7 @@
 - (IBAction)forgetAction:(UIButton *)sender {
     
     NNForgetPasswordVC *forgetVC = [[NNForgetPasswordVC alloc] init];
-    
+   
     [self.navigationController pushViewController:forgetVC animated:YES];
     
 }
@@ -155,11 +165,11 @@
     NNThirdLoginViewModel *viewModel = [[NNThirdLoginViewModel alloc] init];
     [viewModel setBlockWithReturnBlock:^(id returnValue) {
         [[NNProgressHUD instance] hideHud];
-        if (self.isPresent) {
-            [weakSelf dismissViewControllerAnimated:YES completion:nil];
-        }else{
+//        if (self.isPresent) {
+//            [weakSelf navigationController:YES completion:nil];
+//        }else{
             [weakSelf.navigationController popViewControllerAnimated:YES];
-        };
+//        };
         
     } WithErrorBlock:^(id errorCode) {
         

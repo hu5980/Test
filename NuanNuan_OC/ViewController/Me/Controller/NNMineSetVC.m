@@ -46,7 +46,7 @@
 }
 
 - (void)initData {
-    titleArray = @[@"关于暖暖",@"用户协议",@"清除缓存"];
+    titleArray = @[@"关于暖暖情感",@"用户协议",@"清除缓存"];
     [self getCacheisDisk:NO];
 }
 
@@ -142,6 +142,8 @@
     }else{
           [MobClick event:@"clk_quit"];
         NNLoginVC *loginOrRegisterVC = [[NNLoginVC alloc] initWithNibName:@"NNLoginVC" bundle:nil];
+        loginOrRegisterVC.isPresent = YES;
+        loginOrRegisterVC.hidesBottomBarWhenPushed = YES;
         [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"token"];
         [self.navigationController pushViewController:loginOrRegisterVC animated:YES];
         

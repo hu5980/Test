@@ -59,7 +59,7 @@
         [footer endRefreshing];
         [orderArray addObjectsFromArray:returnValue];
         if(orderArray.count == 0){
-            [self showBackgroundViewImageName:@"back_ic" andTitle:@"全国最棒的心理导师等你来约哦"];
+            [self showBackgroundViewImageName:@"Icon_default" andTitle:@"全国最棒的心理导师等你来约哦"];
         }else{
             [self hideBackgroundViewImage];
         }

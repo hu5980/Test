@@ -10,16 +10,31 @@
 
 @implementation NNAppointmentOrderViewModel
 
-- (void)submitOrderWithToken:(NSString *)token userName:(NSString *)name phono:(NSString *)phono sex:(NSString *)sex description:(NSString *)description married:(NSString *)married wechat:(NSString *)wechat age:(NSString *)age serviceId:(NSString *)g_id appointmentTypeId:(NSString *)appointmentId {
+- (void)submitOrderWithToken:(NSString *)token userName:(NSString *)name phone:(NSString *)phone sex:(NSString *)sex married:(NSString *)married wechat:(NSString *)wechat age:(NSString *)age serviceId:(NSString *)g_id {
      NSDictionary *parames = @{@"token":token,
                                @"b_name":name,
-                               @"b_tel":phono,
+                               @"b_tel":phone,
                                @"b_sex":sex,
                                @"b_weixin":wechat,
                                @"b_age":age,
                                @"g_id":g_id,
-                               @"b_description":description,
-                               @"bc_id":appointmentId,
+
                                @"b_married":married};
+    
+    [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_order&a=addorder",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
+        NSLog(@"%@",returnValue);
+        [self fetchValueSuccessWithDic:returnValue];
+    } withErrorCodeBlock:^(id errorCode) {
+        self.errorBlock(errorCode);
+    } withFailureBlock:^(id failureBlock) {
+        self.failureBlock(failureBlock);
+    } withProgress:^(id Progress) {
+        
+    } ];
 }
+
+- (void)fetchValueSuccessWithDic:(NSDictionary *)returnValue {
+    self.returnBlock(returnValue);
+}
+
 @end

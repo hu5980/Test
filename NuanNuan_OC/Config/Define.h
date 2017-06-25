@@ -47,6 +47,8 @@ typedef void (^ProgressBlock)(id Progress);
 #define NN_TEXT999999_COLOR [UIColor colorFromHexString:@"#999999"]
 #define NN_ASSIST_LINE_COLOR [UIColor colorFromHexString:@"#E0E0E0"]
 
+#define NN_SECOND_COLOR [UIColor colorWithRed:242 / 255.0 green:153/255.0 blue:158 / 255.0 alpha:1]
+
 #define USERID  [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserID"]
 
 #define NNHOMEPAGEURL  @"http://www.mynuannuan.com"

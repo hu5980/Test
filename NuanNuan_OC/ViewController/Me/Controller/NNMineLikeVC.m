@@ -69,7 +69,7 @@
         [_likeTableView reloadData];
         
         if(praisedArray.count == 0){
-            [self showBackgroundViewImageName:@"back_ic" andTitle:@"空空的哦，快去寻找你喜欢的文章吧"];
+            [self showBackgroundViewImageName:@"Icon_default" andTitle:@"空空的哦，快去寻找你喜欢的文章吧"];
         }else{
             [self hideBackgroundViewImage];
         }

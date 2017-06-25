@@ -19,11 +19,7 @@
 */
 - (IBAction)chooseProtocolAction:(UIButton *)sender {
     sender.selected = !sender.selected;
-//    if(sender.selected){
-//        _createOrderButton.enabled = YES;
-//    }else{
-//        _createOrderButton.enabled = NO;
-//    }
+   
 }
 
 @end

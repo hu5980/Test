@@ -125,9 +125,9 @@
 - (void)showBackgroundImageViewArrays:(NSMutableArray *)array {
     if (array.count == 0) {
         if([hadAnswer isEqualToString:@"1"]){
-            [self showBackgroundViewImageName:@"back_ic" andTitle:@"还没有已回答的提问，暖暖的老师随时等你咨询哦"];
+            [self showBackgroundViewImageName:@"Icon_default" andTitle:@"还没有已回答的提问，暖暖情感的老师随时等你咨询哦"];
         }else{
-            [self showBackgroundViewImageName:@"back_ic" andTitle:@"还没有未回答的提问，暖暖的老师随时等你咨询哦"];
+            [self showBackgroundViewImageName:@"Icon_default" andTitle:@"还没有未回答的提问，暖暖情感的老师随时等你咨询哦"];
         }
     }else{
         [self hideBackgroundViewImage];

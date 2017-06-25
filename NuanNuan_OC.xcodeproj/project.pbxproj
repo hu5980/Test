@@ -45,6 +45,10 @@
 		0DA029931DE08C8C00862E7C /* NNTreeHoelSendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA029911DE08C8C00862E7C /* NNTreeHoelSendVC.m */; };
 		0DA029941DE08C8C00862E7C /* NNTreeHoelSendVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA029921DE08C8C00862E7C /* NNTreeHoelSendVC.xib */; };
 		0DA847B91EA2E1ED0072576E /* NNTabbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA847B81EA2E1ED0072576E /* NNTabbarButton.m */; };
+		0DB7A4701EEEEC5C00AEB5DC /* NNPayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7A46E1EEEEC5C00AEB5DC /* NNPayCell.m */; };
+		0DB7A4711EEEEC5C00AEB5DC /* NNPayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB7A46F1EEEEC5C00AEB5DC /* NNPayCell.xib */; };
+		0DB7A4751EF02A3F00AEB5DC /* NNChoosePayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7A4731EF02A3F00AEB5DC /* NNChoosePayCell.m */; };
+		0DB7A4761EF02A3F00AEB5DC /* NNChoosePayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB7A4741EF02A3F00AEB5DC /* NNChoosePayCell.xib */; };
 		0DBB28FB1DE1A3C0008A0F32 /* NNForgetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB28F91DE1A3C0008A0F32 /* NNForgetPasswordVC.m */; };
 		0DBB28FC1DE1A3C0008A0F32 /* NNForgetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DBB28FA1DE1A3C0008A0F32 /* NNForgetPasswordVC.xib */; };
 		0DBB28FF1DE5DED0008A0F32 /* NNMineCommentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBB28FE1DE5DED0008A0F32 /* NNMineCommentViewModel.m */; };
@@ -112,6 +116,26 @@
 		0DDAEE791DBB9F87008478DC /* NNImageBroswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAEE781DBB9F87008478DC /* NNImageBroswerView.m */; };
 		0DDAEE7D1DBBB030008478DC /* NNSpitslotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDAEE7B1DBBB030008478DC /* NNSpitslotCell.m */; };
 		0DDAEE7E1DBBB030008478DC /* NNSpitslotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DDAEE7C1DBBB030008478DC /* NNSpitslotCell.xib */; };
+		0DDDF2DC1EECE58400692859 /* NNGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDDF2DA1EECE58400692859 /* NNGoodsCell.m */; };
+		0DDDF2DD1EECE58400692859 /* NNGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DDDF2DB1EECE58400692859 /* NNGoodsCell.xib */; };
+		0DDDF3BB1EED202200692859 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0DDDF2E01EED202100692859 /* AlipaySDK.bundle */; };
+		0DDDF3BC1EED202200692859 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDDF2E11EED202100692859 /* AlipaySDK.framework */; };
+		0DDDF4441EED202200692859 /* ipaynow.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0DDDF3A61EED202200692859 /* ipaynow.bundle */; };
+		0DDDF4451EED202200692859 /* libIPaynowPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDDF3AA1EED202200692859 /* libIPaynowPlugin.a */; };
+		0DDDF4461EED202200692859 /* libIPaynowPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDDF3AC1EED202200692859 /* libIPaynowPlugin.a */; };
+		0DDDF4471EED202200692859 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0DDDF3AF1EED202200692859 /* README.txt */; };
+		0DDDF44A1EED202200692859 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDDF3B81EED202200692859 /* libWeChatSDK.a */; };
+		0DDDF44E1EED228200692859 /* NNPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDDF44C1EED228200692859 /* NNPayVC.m */; };
+		0DDDF44F1EED228200692859 /* NNPayVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DDDF44D1EED228200692859 /* NNPayVC.xib */; };
+		0DDDF4511EED23A000692859 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDDF4501EED23A000692859 /* libz.tbd */; };
+		0DDDF4531EED23AB00692859 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDDF4521EED23AB00692859 /* libsqlite3.0.tbd */; };
+		0DDDF4551EED23B800692859 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDDF4541EED23B800692859 /* CoreGraphics.framework */; };
+		0DDDF4571EED23D400692859 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDDF4561EED23D400692859 /* QuartzCore.framework */; };
+		0DDDF4591EED23DF00692859 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDDF4581EED23DF00692859 /* Security.framework */; };
+		0DDDF45B1EED23E900692859 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDDF45A1EED23E900692859 /* Foundation.framework */; };
+		0DDDF45F1EED248B00692859 /* libPaymentControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDDF45D1EED248B00692859 /* libPaymentControl.a */; };
+		0DDDF4621EED28ED00692859 /* NNPayDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDDF4611EED28ED00692859 /* NNPayDataModel.m */; };
+		0DDDF4651EED29E500692859 /* NNPayDataViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDDF4641EED29E500692859 /* NNPayDataViewModel.m */; };
 		5157E0A13BD1F3B2CCF4B3A1 /* Pods_NuanNuan_OC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12B5080D9CD53F9220CB3548 /* Pods_NuanNuan_OC.framework */; };
 		BC022BD61E13C28E00D83381 /* NNNoticeServer.m in Sources */ = {isa = PBXBuildFile; fileRef = BC022BD51E13C28E00D83381 /* NNNoticeServer.m */; };
 		BC022BD91E13D81C00D83381 /* NNNoticeHadReadViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC022BD81E13D81C00D83381 /* NNNoticeHadReadViewModel.m */; };
@@ -124,7 +148,6 @@
 		BC09AFEB1DB8AC9400BC4D1B /* NNServerListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC09AFE91DB8AC9400BC4D1B /* NNServerListCell.xib */; };
 		BC1421711DF6963A005889E8 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1421701DF6963A005889E8 /* CoreMotion.framework */; };
 		BC14217B1DF69AF4005889E8 /* AmrCodecFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1421731DF69AF4005889E8 /* AmrCodecFMWK.framework */; };
-		BC14217C1DF69AF4005889E8 /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1421741DF69AF4005889E8 /* UTDID.framework */; };
 		BC14217D1DF69AF4005889E8 /* UTMini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1421751DF69AF4005889E8 /* UTMini.framework */; };
 		BC14217E1DF69AF4005889E8 /* WQConnectorBundle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1421761DF69AF4005889E8 /* WQConnectorBundle.framework */; };
 		BC14217F1DF69AF4005889E8 /* yw_1222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC1421771DF69AF4005889E8 /* yw_1222.jpg */; };
@@ -350,6 +373,12 @@
 		0DA847B71EA2E1ED0072576E /* NNTabbarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNTabbarButton.h; sourceTree = "<group>"; };
 		0DA847B81EA2E1ED0072576E /* NNTabbarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNTabbarButton.m; sourceTree = "<group>"; };
 		0DB68B1A1DE16D6E00FBD4B0 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "../../../Library/Developer/Xcode/DerivedData/NuanNuan_OC-efbaiqmbhwqxdqhavhghvzdgmimd/Build/Products/Debug-iphonesimulator/ReactiveCocoa/ReactiveCocoa.framework"; sourceTree = "<group>"; };
+		0DB7A46D1EEEEC5C00AEB5DC /* NNPayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNPayCell.h; sourceTree = "<group>"; };
+		0DB7A46E1EEEEC5C00AEB5DC /* NNPayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNPayCell.m; sourceTree = "<group>"; };
+		0DB7A46F1EEEEC5C00AEB5DC /* NNPayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNPayCell.xib; sourceTree = "<group>"; };
+		0DB7A4721EF02A3F00AEB5DC /* NNChoosePayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNChoosePayCell.h; sourceTree = "<group>"; };
+		0DB7A4731EF02A3F00AEB5DC /* NNChoosePayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNChoosePayCell.m; sourceTree = "<group>"; };
+		0DB7A4741EF02A3F00AEB5DC /* NNChoosePayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNChoosePayCell.xib; sourceTree = "<group>"; };
 		0DBB28F81DE1A3C0008A0F32 /* NNForgetPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNForgetPasswordVC.h; sourceTree = "<group>"; };
 		0DBB28F91DE1A3C0008A0F32 /* NNForgetPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNForgetPasswordVC.m; sourceTree = "<group>"; };
 		0DBB28FA1DE1A3C0008A0F32 /* NNForgetPasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNForgetPasswordVC.xib; sourceTree = "<group>"; };
@@ -479,6 +508,37 @@
 		0DDAEE7A1DBBB030008478DC /* NNSpitslotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSpitslotCell.h; sourceTree = "<group>"; };
 		0DDAEE7B1DBBB030008478DC /* NNSpitslotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNSpitslotCell.m; sourceTree = "<group>"; };
 		0DDAEE7C1DBBB030008478DC /* NNSpitslotCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNSpitslotCell.xib; sourceTree = "<group>"; };
+		0DDDF2D91EECE58400692859 /* NNGoodsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNGoodsCell.h; sourceTree = "<group>"; };
+		0DDDF2DA1EECE58400692859 /* NNGoodsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNGoodsCell.m; sourceTree = "<group>"; };
+		0DDDF2DB1EECE58400692859 /* NNGoodsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNGoodsCell.xib; sourceTree = "<group>"; };
+		0DDDF2E01EED202100692859 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		0DDDF2E11EED202100692859 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		0DDDF3A61EED202200692859 /* ipaynow.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ipaynow.bundle; sourceTree = "<group>"; };
+		0DDDF3A71EED202200692859 /* IpaynowPluginApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IpaynowPluginApi.h; sourceTree = "<group>"; };
+		0DDDF3A81EED202200692859 /* IpaynowPluginDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IpaynowPluginDelegate.h; sourceTree = "<group>"; };
+		0DDDF3AA1EED202200692859 /* libIPaynowPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libIPaynowPlugin.a; sourceTree = "<group>"; };
+		0DDDF3AC1EED202200692859 /* libIPaynowPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libIPaynowPlugin.a; sourceTree = "<group>"; };
+		0DDDF3AD1EED202200692859 /* IPNDESUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPNDESUtil.h; sourceTree = "<group>"; };
+		0DDDF3AE1EED202200692859 /* IPNPreSignMessageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPNPreSignMessageUtil.h; sourceTree = "<group>"; };
+		0DDDF3AF1EED202200692859 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		0DDDF3B81EED202200692859 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		0DDDF3B91EED202200692859 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		0DDDF3BA1EED202200692859 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		0DDDF44B1EED228200692859 /* NNPayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNPayVC.h; sourceTree = "<group>"; };
+		0DDDF44C1EED228200692859 /* NNPayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNPayVC.m; sourceTree = "<group>"; };
+		0DDDF44D1EED228200692859 /* NNPayVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNPayVC.xib; sourceTree = "<group>"; };
+		0DDDF4501EED23A000692859 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		0DDDF4521EED23AB00692859 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		0DDDF4541EED23B800692859 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0DDDF4561EED23D400692859 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0DDDF4581EED23DF00692859 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0DDDF45A1EED23E900692859 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0DDDF45D1EED248B00692859 /* libPaymentControl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPaymentControl.a; sourceTree = "<group>"; };
+		0DDDF45E1EED248B00692859 /* UPPaymentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPaymentControl.h; sourceTree = "<group>"; };
+		0DDDF4601EED28ED00692859 /* NNPayDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNPayDataModel.h; sourceTree = "<group>"; };
+		0DDDF4611EED28ED00692859 /* NNPayDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNPayDataModel.m; sourceTree = "<group>"; };
+		0DDDF4631EED29E500692859 /* NNPayDataViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNPayDataViewModel.h; sourceTree = "<group>"; };
+		0DDDF4641EED29E500692859 /* NNPayDataViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNPayDataViewModel.m; sourceTree = "<group>"; };
 		12B5080D9CD53F9220CB3548 /* Pods_NuanNuan_OC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NuanNuan_OC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A6556F41A95872CB574CB7 /* Pods-NuanNuan_OC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NuanNuan_OC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NuanNuan_OC/Pods-NuanNuan_OC.debug.xcconfig"; sourceTree = "<group>"; };
 		BC022BD41E13C28E00D83381 /* NNNoticeServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNoticeServer.h; sourceTree = "<group>"; };
@@ -497,7 +557,6 @@
 		BC09AFE91DB8AC9400BC4D1B /* NNServerListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NNServerListCell.xib; sourceTree = "<group>"; };
 		BC1421701DF6963A005889E8 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		BC1421731DF69AF4005889E8 /* AmrCodecFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AmrCodecFMWK.framework; sourceTree = "<group>"; };
-		BC1421741DF69AF4005889E8 /* UTDID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTDID.framework; sourceTree = "<group>"; };
 		BC1421751DF69AF4005889E8 /* UTMini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTMini.framework; sourceTree = "<group>"; };
 		BC1421761DF69AF4005889E8 /* WQConnectorBundle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WQConnectorBundle.framework; sourceTree = "<group>"; };
 		BC1421771DF69AF4005889E8 /* yw_1222.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yw_1222.jpg; sourceTree = "<group>"; };
@@ -797,8 +856,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DDDF45B1EED23E900692859 /* Foundation.framework in Frameworks */,
+				0DDDF4591EED23DF00692859 /* Security.framework in Frameworks */,
+				0DBB2A611DE9AD04008A0F32 /* SystemConfiguration.framework in Frameworks */,
+				0DDDF4571EED23D400692859 /* QuartzCore.framework in Frameworks */,
+				0DBB2A631DE9AD0D008A0F32 /* CoreTelephony.framework in Frameworks */,
+				0DDDF4551EED23B800692859 /* CoreGraphics.framework in Frameworks */,
+				0DDDF4531EED23AB00692859 /* libsqlite3.0.tbd in Frameworks */,
+				0DDDF4511EED23A000692859 /* libz.tbd in Frameworks */,
 				BC1421711DF6963A005889E8 /* CoreMotion.framework in Frameworks */,
 				0D74C70C1DF3F98C003E4ED7 /* libc++.tbd in Frameworks */,
+				0DDDF4451EED202200692859 /* libIPaynowPlugin.a in Frameworks */,
 				BC14217D1DF69AF4005889E8 /* UTMini.framework in Frameworks */,
 				0D74C7061DF3BE7A003E4ED7 /* AddressBookUI.framework in Frameworks */,
 				BC1421801DF69AF4005889E8 /* YWFeedbackAudioExtentionFMWK.framework in Frameworks */,
@@ -808,13 +876,12 @@
 				0D74C7001DF3BE5A003E4ED7 /* JavaScriptCore.framework in Frameworks */,
 				0D74C6FE1DF3BE53003E4ED7 /* libicucore.tbd in Frameworks */,
 				0D74C6FC1DF3BE49003E4ED7 /* MessageUI.framework in Frameworks */,
-				0DBB2A631DE9AD0D008A0F32 /* CoreTelephony.framework in Frameworks */,
+				0DDDF44A1EED202200692859 /* libWeChatSDK.a in Frameworks */,
 				0DBB2B081DE9D825008A0F32 /* AudioToolbox.framework in Frameworks */,
 				0DBB2B061DE9D81B008A0F32 /* AVFoundation.framework in Frameworks */,
 				0DBB2AEA1DE9B3D5008A0F32 /* UserNotifications.framework in Frameworks */,
 				0DBB2A661DE9AD1D008A0F32 /* libz.1.1.3.tbd in Frameworks */,
 				0DBB2A651DE9AD14008A0F32 /* ImageIO.framework in Frameworks */,
-				0DBB2A611DE9AD04008A0F32 /* SystemConfiguration.framework in Frameworks */,
 				BCEDDC181DE83DD900187317 /* libsqlite3.tbd in Frameworks */,
 				0DBB2A441DE9ABD5008A0F32 /* libSocialQQ.a in Frameworks */,
 				0DBB2A401DE9ABD5008A0F32 /* libSocialLine.a in Frameworks */,
@@ -827,6 +894,7 @@
 				0DBB2A5A1DE9ABD5008A0F32 /* UMSocialNetwork.framework in Frameworks */,
 				0DBB2A381DE9ABD5008A0F32 /* FBSDKShareKit.framework in Frameworks */,
 				0DBB2A4B1DE9ABD5008A0F32 /* libSocialSMS.a in Frameworks */,
+				0DDDF45F1EED248B00692859 /* libPaymentControl.a in Frameworks */,
 				0DBB2A4E1DE9ABD5008A0F32 /* Fabric.framework in Frameworks */,
 				0DBB2A3A1DE9ABD5008A0F32 /* libSocialFlickr.a in Frameworks */,
 				0D74C6FA1DF3BE03003E4ED7 /* SMS_SDK.framework in Frameworks */,
@@ -834,6 +902,7 @@
 				0DBB2A3E1DE9ABD5008A0F32 /* libLWApiSDK.a in Frameworks */,
 				0DBB2A341DE9ABD5008A0F32 /* libSocialEmail.a in Frameworks */,
 				0DBB2A351DE9ABD5008A0F32 /* Bolts.framework in Frameworks */,
+				0DDDF4461EED202200692859 /* libIPaynowPlugin.a in Frameworks */,
 				0DBB2A371DE9ABD5008A0F32 /* FBSDKLoginKit.framework in Frameworks */,
 				0DBB2A591DE9ABD5008A0F32 /* UMSocialCore.framework in Frameworks */,
 				0DBB2A3B1DE9ABD5008A0F32 /* libSocialInstagram.a in Frameworks */,
@@ -850,11 +919,11 @@
 				0DBB2A4F1DE9ABD5008A0F32 /* libSocialTwitter.a in Frameworks */,
 				0DBB2A491DE9ABD5008A0F32 /* libWeiboSDK.a in Frameworks */,
 				0DBB2A431DE9ABD5008A0F32 /* libSocialPinterest.a in Frameworks */,
+				0DDDF3BC1EED202200692859 /* AlipaySDK.framework in Frameworks */,
 				0DBB2A3F1DE9ABD5008A0F32 /* libSocialLaiWang.a in Frameworks */,
 				0DBB2A4D1DE9ABD5008A0F32 /* libSocialTumblr.a in Frameworks */,
 				0D74C70A1DF3F93C003E4ED7 /* Realm.framework in Frameworks */,
 				0DBB2A311DE9ABD5008A0F32 /* libAPOpenSdk.a in Frameworks */,
-				BC14217C1DF69AF4005889E8 /* UTDID.framework in Frameworks */,
 				0DBB2A391DE9ABD5008A0F32 /* libSocialFacebook.a in Frameworks */,
 				BC1421821DF69AF4005889E8 /* YWHybridWebViewFMWK.framework in Frameworks */,
 				0DBB2A3D1DE9ABD5008A0F32 /* libSocialKakao.a in Frameworks */,
@@ -1207,11 +1276,80 @@
 			path = OpenUDID;
 			sourceTree = "<group>";
 		};
+		0DDDF2DE1EED202100692859 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				0DDDF45C1EED248B00692859 /* UPPayPlugin */,
+				0DDDF2DF1EED202100692859 /* AliPayPlugin */,
+				0DDDF3A51EED202200692859 /* IpaynowPlugin */,
+				0DDDF3AF1EED202200692859 /* README.txt */,
+				0DDDF3B71EED202200692859 /* WechatPlugin */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		0DDDF2DF1EED202100692859 /* AliPayPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				0DDDF2E01EED202100692859 /* AlipaySDK.bundle */,
+				0DDDF2E11EED202100692859 /* AlipaySDK.framework */,
+			);
+			path = AliPayPlugin;
+			sourceTree = "<group>";
+		};
+		0DDDF3A51EED202200692859 /* IpaynowPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				0DDDF3A61EED202200692859 /* ipaynow.bundle */,
+				0DDDF3A71EED202200692859 /* IpaynowPluginApi.h */,
+				0DDDF3A81EED202200692859 /* IpaynowPluginDelegate.h */,
+				0DDDF3A91EED202200692859 /* iPhone */,
+				0DDDF3AB1EED202200692859 /* iPhone+Simulator */,
+				0DDDF3AD1EED202200692859 /* IPNDESUtil.h */,
+				0DDDF3AE1EED202200692859 /* IPNPreSignMessageUtil.h */,
+			);
+			path = IpaynowPlugin;
+			sourceTree = "<group>";
+		};
+		0DDDF3A91EED202200692859 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				0DDDF3AA1EED202200692859 /* libIPaynowPlugin.a */,
+			);
+			path = iPhone;
+			sourceTree = "<group>";
+		};
+		0DDDF3AB1EED202200692859 /* iPhone+Simulator */ = {
+			isa = PBXGroup;
+			children = (
+				0DDDF3AC1EED202200692859 /* libIPaynowPlugin.a */,
+			);
+			path = "iPhone+Simulator";
+			sourceTree = "<group>";
+		};
+		0DDDF3B71EED202200692859 /* WechatPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				0DDDF3B81EED202200692859 /* libWeChatSDK.a */,
+				0DDDF3B91EED202200692859 /* WXApi.h */,
+				0DDDF3BA1EED202200692859 /* WXApiObject.h */,
+			);
+			path = WechatPlugin;
+			sourceTree = "<group>";
+		};
+		0DDDF45C1EED248B00692859 /* UPPayPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				0DDDF45D1EED248B00692859 /* libPaymentControl.a */,
+				0DDDF45E1EED248B00692859 /* UPPaymentControl.h */,
+			);
+			path = UPPayPlugin;
+			sourceTree = "<group>";
+		};
 		BC1421721DF69AF4005889E8 /* BCFeedback */ = {
 			isa = PBXGroup;
 			children = (
 				BC1421731DF69AF4005889E8 /* AmrCodecFMWK.framework */,
-				BC1421741DF69AF4005889E8 /* UTDID.framework */,
 				BC1421751DF69AF4005889E8 /* UTMini.framework */,
 				BC1421761DF69AF4005889E8 /* WQConnectorBundle.framework */,
 				BC1421771DF69AF4005889E8 /* yw_1222.jpg */,
@@ -1355,6 +1493,8 @@
 				BCEDDC071DE8062200187317 /* NNArticleIsLikeViewModel.m */,
 				0D3284041EE4029500011DEE /* NNAppointmentOrderViewModel.h */,
 				0D3284051EE4029500011DEE /* NNAppointmentOrderViewModel.m */,
+				0DDDF4631EED29E500692859 /* NNPayDataViewModel.h */,
+				0DDDF4641EED29E500692859 /* NNPayDataViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1375,6 +1515,7 @@
 		BCBAD82F1DCC805700BEDF18 /* Libiary */ = {
 			isa = PBXGroup;
 			children = (
+				0DDDF2DE1EED202100692859 /* SDK */,
 				BC1421721DF69AF4005889E8 /* BCFeedback */,
 				0D74C6F41DF3BE03003E4ED7 /* SMS_SDK */,
 				0DBB2AEC1DE9B647008A0F32 /* OpenUDID */,
@@ -1514,6 +1655,9 @@
 				0D3283EB1EE25C6D00011DEE /* NNNeedAppointmentVC.h */,
 				0D3283EC1EE25C6D00011DEE /* NNNeedAppointmentVC.m */,
 				0D3283ED1EE25C6D00011DEE /* NNNeedAppointmentVC.xib */,
+				0DDDF44B1EED228200692859 /* NNPayVC.h */,
+				0DDDF44C1EED228200692859 /* NNPayVC.m */,
+				0DDDF44D1EED228200692859 /* NNPayVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1531,6 +1675,8 @@
 				BCE6A0691DDEA89D00A02E50 /* NNAppointmentModel.m */,
 				0D32840A1EE40B0D00011DEE /* NNOrderServerModel.h */,
 				0D32840B1EE40B0D00011DEE /* NNOrderServerModel.m */,
+				0DDDF4601EED28ED00692859 /* NNPayDataModel.h */,
+				0DDDF4611EED28ED00692859 /* NNPayDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1578,6 +1724,15 @@
 				0D3283FF1EE3F8DC00011DEE /* NNFloorAppointView.h */,
 				0D3284001EE3F8DC00011DEE /* NNFloorAppointView.m */,
 				0D3284021EE3F8E600011DEE /* NNFloorAppointView.xib */,
+				0DDDF2D91EECE58400692859 /* NNGoodsCell.h */,
+				0DDDF2DA1EECE58400692859 /* NNGoodsCell.m */,
+				0DDDF2DB1EECE58400692859 /* NNGoodsCell.xib */,
+				0DB7A46D1EEEEC5C00AEB5DC /* NNPayCell.h */,
+				0DB7A46E1EEEEC5C00AEB5DC /* NNPayCell.m */,
+				0DB7A46F1EEEEC5C00AEB5DC /* NNPayCell.xib */,
+				0DB7A4721EF02A3F00AEB5DC /* NNChoosePayCell.h */,
+				0DB7A4731EF02A3F00AEB5DC /* NNChoosePayCell.m */,
+				0DB7A4741EF02A3F00AEB5DC /* NNChoosePayCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1914,6 +2069,12 @@
 		C8B1F2727F206124CA4830FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0DDDF45A1EED23E900692859 /* Foundation.framework */,
+				0DDDF4581EED23DF00692859 /* Security.framework */,
+				0DDDF4561EED23D400692859 /* QuartzCore.framework */,
+				0DDDF4541EED23B800692859 /* CoreGraphics.framework */,
+				0DDDF4521EED23AB00692859 /* libsqlite3.0.tbd */,
+				0DDDF4501EED23A000692859 /* libz.tbd */,
 				BC1421701DF6963A005889E8 /* CoreMotion.framework */,
 				0D74C70B1DF3F98C003E4ED7 /* libc++.tbd */,
 				0D74C7091DF3F93C003E4ED7 /* Realm.framework */,
@@ -1986,7 +2147,7 @@
 				TargetAttributes = {
 					BCD505F41D921F8C000FB2C0 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 7MUEF9EK2J;
+						DevelopmentTeam = JQ2Z4N7TAC;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
@@ -2050,12 +2211,14 @@
 				0DBB2A5B1DE9ABD5008A0F32 /* UMSocialSDKResources.bundle in Resources */,
 				BCEDDBFF1DE52C5A00187317 /* MLSelectPhoto.bundle in Resources */,
 				BCD506111D92202D000FB2C0 /* Main.storyboard in Resources */,
+				0DDDF44F1EED228200692859 /* NNPayVC.xib in Resources */,
 				0DDAEE7E1DBBB030008478DC /* NNSpitslotCell.xib in Resources */,
 				BC86276C1DD99EE100162082 /* NNQuestionerInfoCell.xib in Resources */,
 				0DBB2A461DE9ABD5008A0F32 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				0D3284031EE3F8E600011DEE /* NNFloorAppointView.xib in Resources */,
 				0DBB2A4A1DE9ABD5008A0F32 /* WeiboSDK.bundle in Resources */,
 				BC328EEB1DBF2F5E000AF40B /* NNLoginAndRegisterVC.xib in Resources */,
+				0DDDF3BB1EED202200692859 /* AlipaySDK.bundle in Resources */,
 				BC58BA7C1DBDEF9300F3BF0D /* NNMineNoticeVC.xib in Resources */,
 				BCDEDCA61E261FF2005579E5 /* NNEmotionTableVC.xib in Resources */,
 				BC58BA721DBDEDFA00F3BF0D /* NNMineLikeVC.xib in Resources */,
@@ -2069,15 +2232,19 @@
 				BCD9AE781DACD323008DB98E /* NNRingImageView.xib in Resources */,
 				BCD9AE6F1DACC668008DB98E /* NNEmotionallItemCell.xib in Resources */,
 				BC8169631DC1D4B000949273 /* NNUserAgreementVC.xib in Resources */,
+				0DDDF2DD1EECE58400692859 /* NNGoodsCell.xib in Resources */,
+				0DDDF4441EED202200692859 /* ipaynow.bundle in Resources */,
 				BC58BA861DBDEFC300F3BF0D /* NNMineSetVC.xib in Resources */,
 				0D3283FE1EE2A5E200011DEE /* NNServerAppointmentCell.xib in Resources */,
 				BC247EA61DAA316200AB5C84 /* NNMineEmotionalMangmentCell.xib in Resources */,
+				0DB7A4761EF02A3F00AEB5DC /* NNChoosePayCell.xib in Resources */,
 				BCDEDCAE1E2629A0005579E5 /* NNEmotionCaseCollectionCell.xib in Resources */,
 				BC8627671DD99D3F00162082 /* NNAppointmentVC.xib in Resources */,
 				0D331E191DBD09FB002B0DCD /* NNReplyView.xib in Resources */,
 				BC58BA811DBDEFB400F3BF0D /* NNMineFeedbackVC.xib in Resources */,
 				BC0274C21DED82C500D61F12 /* cityData.plist in Resources */,
 				BC0274C71DEEB55C00D61F12 /* NNUserInfoVC.xib in Resources */,
+				0DDDF4471EED202200692859 /* README.txt in Resources */,
 				BCD9AE961DAE0941008DB98E /* NNQuestionAndAnswerCell.xib in Resources */,
 				0DBB28FC1DE1A3C0008A0F32 /* NNForgetPasswordVC.xib in Resources */,
 				BC8A001F1E2F5509004B4C95 /* NNCommentSpitslotCell.xib in Resources */,
@@ -2089,6 +2256,7 @@
 				0D3283F91EE2A40900011DEE /* NNpayView.xib in Resources */,
 				BCD9AE871DACF16D008DB98E /* NNTreeHoelCell.xib in Resources */,
 				BCD7E64C1DFFCCEC00991F86 /* NNNoticeCell.xib in Resources */,
+				0DB7A4711EEEEC5C00AEB5DC /* NNPayCell.xib in Resources */,
 				BC58BA6D1DBDE9A800F3BF0D /* NNMineCommentVC.xib in Resources */,
 				BCD9AEA11DAE21D1008DB98E /* NNNeterReplyCell.xib in Resources */,
 				BC58BA771DBDEF7C00F3BF0D /* NNMineOrderVC.xib in Resources */,
@@ -2221,6 +2389,7 @@
 				BCD7E6471DFF914100991F86 /* NNNoticeModel.m in Sources */,
 				BCEDDBFC1DE52C5A00187317 /* MLSelectPhotoPickerCollectionViewCell.m in Sources */,
 				BC58BA711DBDEDFA00F3BF0D /* NNMineLikeVC.m in Sources */,
+				0DB7A4701EEEEC5C00AEB5DC /* NNPayCell.m in Sources */,
 				0DBB28FF1DE5DED0008A0F32 /* NNMineCommentViewModel.m in Sources */,
 				0DBB29051DE5E5F8008A0F32 /* NNSpitslotCommentModel.m in Sources */,
 				BCD9AE861DACF16D008DB98E /* NNTreeHoelCell.m in Sources */,
@@ -2228,6 +2397,7 @@
 				BCD9AE6E1DACC668008DB98E /* NNEmotionallItemCell.m in Sources */,
 				BC022BD91E13D81C00D83381 /* NNNoticeHadReadViewModel.m in Sources */,
 				BCD506531D9231D0000FB2C0 /* NNHomePageVC.m in Sources */,
+				0DDDF4651EED29E500692859 /* NNPayDataViewModel.m in Sources */,
 				0D331E121DBD071F002B0DCD /* NNAskingView.m in Sources */,
 				BCEDDBF71DE52C5A00187317 /* MLPhotoPickerImageView.m in Sources */,
 				BCD9AE801DACED54008DB98E /* NNCustomNavigationView.m in Sources */,
@@ -2241,6 +2411,7 @@
 				BC8627701DD9A03400162082 /* NNQuestionerChooseCell.m in Sources */,
 				BCE6A05E1DDC3A9000A02E50 /* NNMinePraisedViewModel.m in Sources */,
 				BCD9AE691DACBCB6008DB98E /* NNEmotionCaseVC.m in Sources */,
+				0DDDF2DC1EECE58400692859 /* NNGoodsCell.m in Sources */,
 				0DBB2AF11DE9B647008A0F32 /* OpenUDID.m in Sources */,
 				BCD506571D9231D0000FB2C0 /* NNServerVC.m in Sources */,
 				BC58BA7B1DBDEF9300F3BF0D /* NNMineNoticeVC.m in Sources */,
@@ -2253,6 +2424,7 @@
 				BCF178BB1DC0ABD900A6DC4B /* NNEmotionTeacherViewModel.m in Sources */,
 				BCD506371D923003000FB2C0 /* UIViewExt.m in Sources */,
 				BCD9AE7C1DACE424008DB98E /* NNEmotionalItemCell.m in Sources */,
+				0DB7A4751EF02A3F00AEB5DC /* NNChoosePayCell.m in Sources */,
 				0DDAEE791DBB9F87008478DC /* NNImageBroswerView.m in Sources */,
 				BCD7E6541DFFD5BC00991F86 /* NNAskingListViewModel.m in Sources */,
 				BCEDDBFE1DE52C5A00187317 /* MLSelectPhotoPickerGroupTableViewCell.m in Sources */,
@@ -2269,6 +2441,7 @@
 				0DBB2A5E1DE9ABD5008A0F32 /* UMSocialShareScrollView.m in Sources */,
 				BCE6A06D1DDED76F00A02E50 /* NNAppointmentQuestionViewModel.m in Sources */,
 				BC4C8E431DD3056800544A83 /* NNQuestionAndAnswerViewModel.m in Sources */,
+				0DDDF44E1EED228200692859 /* NNPayVC.m in Sources */,
 				BC4C8E3D1DD0713F00544A83 /* NNTreeHoelModel.m in Sources */,
 				BC852E791DCAE9FC00ADE5C9 /* NNProgressHUD.m in Sources */,
 				BCA60E221DC7439A00DB84A0 /* NNMoreSuccessCaseViewModel.m in Sources */,
@@ -2333,6 +2506,7 @@
 				BCD9AEA01DAE21D1008DB98E /* NNNeterReplyCell.m in Sources */,
 				BCA60E251DC8912500DB84A0 /* NNUserInfoViewModel.m in Sources */,
 				BC8C61DE1DC04A2C00094F94 /* NNRingImageModel.m in Sources */,
+				0DDDF4621EED28ED00692859 /* NNPayDataModel.m in Sources */,
 				BCE6A06A1DDEA89D00A02E50 /* NNAppointmentModel.m in Sources */,
 				BC247E9B1DAA19B100AB5C84 /* NNEmotionallCell.m in Sources */,
 				BCEDDC051DE5843700187317 /* NNSendTreeHoelViewModel.m in Sources */,
@@ -2457,9 +2631,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = "NuanNuan_OC/暖暖.entitlements";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7MUEF9EK2J;
+				CODE_SIGN_ENTITLEMENTS = "NuanNuan_OC/暖暖.Entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = JQ2Z4N7TAC;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2472,6 +2646,8 @@
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/BCFeedback",
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/SMS_SDK",
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/ios",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/SDK/AliPayPlugin",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/SDK/BDWalletPlugin",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2507,12 +2683,17 @@
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMessage_Sdk_All_1.4.0(idfa)/UMessage_Sdk_1.4.0",
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMessage_Sdk_All_1.4.0(idfa)/UMessage_Sdk_Demo/UMessage_Sdk_Demo/UMessage_Sdk_1.4.0",
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMessage_Sdk_1.4.0",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/SDK/IpaynowPlugin/iPhone",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/SDK/IpaynowPlugin/iPhone+Simulator",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/SDK/UPApplePay",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/SDK/UPPayPlugin",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/SDK/WechatPlugin",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.NNXL.nuannuan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.500.coyote;
 				PRODUCT_NAME = "暖暖";
-				PROVISIONING_PROFILE = "11aa6cce-e0d3-4268-96fd-ce40bbccc57a";
-				PROVISIONING_PROFILE_SPECIFIER = nnTest;
+				PROVISIONING_PROFILE = "5ee1a061-5e05-4056-b642-0b7ec9bd6e31";
+				PROVISIONING_PROFILE_SPECIFIER = com500coyoteDistribution;
 				SWIFT_VERSION = 2.3;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
@@ -2525,9 +2706,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = "NuanNuan_OC/暖暖.entitlements";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7MUEF9EK2J;
+				CODE_SIGN_ENTITLEMENTS = "NuanNuan_OC/暖暖.Entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = JQ2Z4N7TAC;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2540,6 +2721,8 @@
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/BCFeedback",
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/SMS_SDK",
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/ios",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/SDK/AliPayPlugin",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/SDK/BDWalletPlugin",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2575,12 +2758,17 @@
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMessage_Sdk_All_1.4.0(idfa)/UMessage_Sdk_1.4.0",
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMessage_Sdk_All_1.4.0(idfa)/UMessage_Sdk_Demo/UMessage_Sdk_Demo/UMessage_Sdk_1.4.0",
 					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/UMessage_Sdk_1.4.0",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/SDK/IpaynowPlugin/iPhone",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/SDK/IpaynowPlugin/iPhone+Simulator",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/SDK/UPApplePay",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/SDK/UPPayPlugin",
+					"$(PROJECT_DIR)/NuanNuan_OC/Libiary/SDK/WechatPlugin",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.NNXL.nuannuan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.500.coyote;
 				PRODUCT_NAME = "暖暖";
-				PROVISIONING_PROFILE = "11aa6cce-e0d3-4268-96fd-ce40bbccc57a";
-				PROVISIONING_PROFILE_SPECIFIER = nnTest;
+				PROVISIONING_PROFILE = "5ee1a061-5e05-4056-b642-0b7ec9bd6e31";
+				PROVISIONING_PROFILE_SPECIFIER = com500coyoteDistribution;
 				SWIFT_VERSION = 2.3;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};

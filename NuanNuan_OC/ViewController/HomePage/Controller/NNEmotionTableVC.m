@@ -131,8 +131,10 @@
         if (TEST_TOKEN == nil) {
             NNLoginVC *loginVC = [[NNLoginVC alloc] initWithNibName:@"NNLoginVC" bundle:nil];
             loginVC.isPresent = YES;
-            [self presentViewController:loginVC animated:YES completion:^{
-            }];
+             loginVC.hidesBottomBarWhenPushed = YES;
+//            [self presentViewController:loginVC animated:YES completion:^{
+//            }];
+             [self.navigationController pushViewController:loginVC animated:YES];
             return ;
         }
         

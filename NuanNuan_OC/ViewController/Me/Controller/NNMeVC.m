@@ -200,7 +200,9 @@
             if (TEST_TOKEN == nil) {
                 NNLoginVC *loginVC = [[NNLoginVC alloc] initWithNibName:@"NNLoginVC" bundle:nil];;
                 loginVC.isPresent = YES;
-                [weakself presentViewController:loginVC animated:YES completion:nil];
+                  loginVC.hidesBottomBarWhenPushed = YES;
+//                [weakself presentViewController:loginVC animated:YES completion:nil];
+                 [weakself.navigationController pushViewController:loginVC animated:YES];
                 return ;
             }
 
@@ -273,7 +275,9 @@
     if (TEST_TOKEN == nil) {
         NNLoginVC *loginVC = [[NNLoginVC alloc] initWithNibName:@"NNLoginVC" bundle:nil];;
         loginVC.isPresent = YES;
-        [self presentViewController:loginVC animated:YES completion:nil];
+          loginVC.hidesBottomBarWhenPushed = YES;
+//        [self presentViewController:loginVC animated:YES completion:nil];
+          [self.navigationController pushViewController:loginVC animated:YES];
         return ;
     }
 

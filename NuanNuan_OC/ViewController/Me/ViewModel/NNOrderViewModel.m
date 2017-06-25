@@ -17,7 +17,7 @@
     
     NSDictionary *parames = @{@"token":token,@"last_id":orderID,@"pnum":pageNum};
     
-    [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_booking&a=getBookingList",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
+    [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_order&a=myOrderList",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
         [self fetchValueSuccessWithDic:returnValue];
     } withErrorCodeBlock:^(id errorCode) {
         
@@ -35,13 +35,27 @@
     for (int i  = 0; i < orderArray.count; i++) {
         NSDictionary *orderDic = [orderArray objectAtIndex:i];
         NNOrderModel *orderModel = [[NNOrderModel alloc] init];
-        orderModel.orderID = [orderDic objectForKey:@"b_id"];
-        orderModel.orderUserName = [orderDic objectForKey:@"b_name"];
+        orderModel.orderID = [orderDic objectForKey:@"o_code"];
+        if([[orderDic objectForKey:@"b_name"] isKindOfClass:[NSNull class]]){
+            orderModel.orderUserName = @"";
+        }else{
+            orderModel.orderUserName = [orderDic objectForKey:@"b_name"];
+        }
         orderModel.orderTelephone = [orderDic objectForKey:@"b_tel"];
         orderModel.orderSex = [[orderDic objectForKey:@"b_sex"] isEqualToString:@"1"] ? @"男":@"女" ;
+        orderModel.merry = [[orderDic objectForKey:@"b_married"] isEqualToString:@"1"] ? @"未婚":@"已婚";
+        orderModel.wechat = [orderDic objectForKey:@"b_weixin"] ;
+        orderModel.age = [orderDic objectForKey:@"b_age"];
         orderModel.orderTime = [NNTimeUtil timeDealWithFormat:@"yyyy-MM-dd hh:mm:ss" andTime:[[orderDic objectForKey:@"create_time"] integerValue]];
-        orderModel.orderType = [orderDic objectForKey:@"bc_name"];
-        orderModel.orderContent = [orderDic objectForKey:@"b_description"];
+//        if([[orderDic objectForKey:@"bc_name"] isKindOfClass:[NSNull class]]){
+//            orderModel.orderType = @"";
+//        }else{
+//            orderModel.orderType = [orderDic objectForKey:@"bc_name"];
+//        }
+        
+        NSDictionary *goodDic = [orderDic objectForKey:@"goodsList"][0];
+        
+        orderModel.orderContent = [goodDic objectForKey:@"g_name"];
         [orderMutableArray addObject:orderModel];
     }
     self.returnBlock(orderMutableArray);

@@ -8,16 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "NNChooseView.h"
+#import "NNGoodsCell.h"
+
 
 typedef void(^selectPayBlock)(NSString *payNums);
 
 @interface NNServerAppointmentCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIButton *defaultButton;
 
-@property (weak, nonatomic) IBOutlet NNChooseView *chooseView;
-@property (weak, nonatomic) IBOutlet UITextView *descributeTextView;
+
+
 @property (copy, nonatomic) selectPayBlock payBlock;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *chooseViewConstraint;
-@property (weak, nonatomic) IBOutlet UILabel *placeLabel;
-@property (weak, nonatomic) IBOutlet UIView *bgView;
+
+@property (nonatomic, nonatomic) IBOutlet UITableView *orderTableView;
+@property (nonatomic,strong) NSArray *goodsArrays;
 @end

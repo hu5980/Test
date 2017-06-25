@@ -11,5 +11,6 @@
 @interface NNFloorAppointView : UIView
 @property (weak, nonatomic) IBOutlet UIButton *chooseProtocolButton;
 @property (weak, nonatomic) IBOutlet UIButton *createOrderButton;
+@property (weak, nonatomic) IBOutlet UIButton *entryProtocol;
 
 @end

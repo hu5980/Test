@@ -29,7 +29,7 @@
     _model = model;
     [self.userHeadImageView sd_setImageWithURL:[NSURL URLWithString:model.commentHeaderUrl] placeholderImage:[UIImage imageNamed:@"detail_defalut"] options:SDWebImageAllowInvalidSSLCertificates];
     if(model.commentNickName.length == 0 || model.commentNickName == nil){
-        self.nickNameLabel.text = [NSString stringWithFormat:@"暖暖用户%@",model.commentUID];
+        self.nickNameLabel.text = [NSString stringWithFormat:@"暖暖情感用户%@",model.commentUID];
     }else{
         self.nickNameLabel.text = model.commentNickName;
     }

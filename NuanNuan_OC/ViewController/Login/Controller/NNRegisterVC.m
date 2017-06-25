@@ -34,7 +34,7 @@
     [super viewDidLoad];
     
     self.title = @"注册";
-    
+    [self setNavigationBackButton:YES];
     _sendAuthCodeButton.layer.cornerRadius = 8;
     _sendAuthCodeButton.layer.masksToBounds = YES;
     // Do any additional setup after loading the view from its nib.

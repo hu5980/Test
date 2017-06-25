@@ -106,9 +106,9 @@
 - (void)showBackgroundImageViewArrays:(NSMutableArray *)array {
     if (array.count == 0) {
         if([defaultType isEqualToString:@"1"]){
-            [self showBackgroundViewImageName:@"back_ic" andTitle:@"还没有评论的问题，快去问吧看看吧"];
+            [self showBackgroundViewImageName:@"Icon_default" andTitle:@"还没有评论的问题，快去问吧看看吧"];
         }else{
-            [self showBackgroundViewImageName:@"back_ic" andTitle:@"还没有评论的树洞，快去树洞看看吧"];
+            [self showBackgroundViewImageName:@"Icon_default" andTitle:@"还没有评论的树洞，快去树洞看看吧"];
         }
     }else{
         [self hideBackgroundViewImage];

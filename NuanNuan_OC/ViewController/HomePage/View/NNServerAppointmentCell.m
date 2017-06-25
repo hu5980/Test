@@ -12,24 +12,27 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    _bgView.layer.masksToBounds = YES;
-    _bgView.layer.cornerRadius = 10;
 
+    [_orderTableView registerNib:[UINib nibWithNibName:@"NNGoodsCell" bundle:nil] forCellReuseIdentifier:@"NNGoodsCell"];
+    _orderTableView.scrollEnabled = NO;
+    _orderTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
+    
     // Configure the view for the selected state
 }
 
+
+
+
+
 - (IBAction)chooseBuyAction:(UIButton *)sender {
     NSString *payNums;
-    _defaultButton.selected = NO;
-    _defaultButton= sender;
-    _defaultButton.selected = YES;
-    switch (sender.tag) {
+     switch (sender.tag) {
         case 100:
             payNums = @"36";
             break;
@@ -44,4 +47,8 @@
     }
     _payBlock(payNums);
 }
+
+
+
+
 @end

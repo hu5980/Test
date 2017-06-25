@@ -51,7 +51,7 @@
     [_noticeTableView registerNib:[UINib nibWithNibName:@"NNNoticeCell" bundle:nil] forCellReuseIdentifier:@"NNNoticeCell"];
     
     if(results.count == 0){
-        [self showBackgroundViewImageName:@"back_ic" andTitle:@"暂时没有消息"];
+        [self showBackgroundViewImageName:@"Icon_default" andTitle:@"暂时没有消息"];
     }else{
         [self hideBackgroundViewImage];
     }

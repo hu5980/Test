@@ -23,7 +23,7 @@
 }
 
 - (void)fetchValueSuccessWithDic:(NSDictionary *)returnValue {
-    NSArray *list = [returnValue objectForKey:@"data"];
+    NSArray *list = [[returnValue objectForKey:@"data"] objectForKey:@"list"];
     NSMutableArray *orderArray = [NSMutableArray arrayWithCapacity:[list count]];
     for (int i = 0; i < list.count; i++) {
         NSDictionary *dic = [list objectAtIndex:i];

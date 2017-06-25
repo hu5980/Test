@@ -29,7 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navTitle = @"关于暖暖";
+    self.navTitle = @"关于暖暖情感";
     [self setNavigationBackButton:YES];
     
     UIView *headView = LOAD_VIEW_FROM_BUNDLE(@"NNAboutHeadView");
