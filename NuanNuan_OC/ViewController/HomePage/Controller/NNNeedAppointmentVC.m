@@ -26,7 +26,7 @@
     NSString *name;
     NSString *age;
     NSString *weChat;
-    NSString *phone;
+//    NSString *phone;
     NSString *sex;
     NSString *merry;
     NSMutableArray *consultTypeArray;
@@ -91,8 +91,8 @@
 }
 
 - (void)initData {
-    infoArrays = @[@[@"姓名",@"年龄"],@[@"微信号",@"手机号"]];
-    placeArrays = @[@[@"输入姓名",@"输入年龄"],@[@"输入微信号",@"输入手机号"]];
+    infoArrays = @[@[@"姓名",@"年龄"],@[@"微信号/手机号"]];
+    placeArrays = @[@[@"输入姓名",@"输入年龄"],@[@"输入微信或手机号"]];
     sex = @"男";
     merry = @"已婚";
     chooseArrays =  @[@[@"男",@"女"],@[@"已婚",@"未婚"]];
@@ -150,7 +150,7 @@
     }
     
     
-    if (name.length > 0 && phone.length> 0 && sex.length > 0 && age.length > 0 &&merry.length > 0 && weChat.length > 0 && chooseGoodsId.length > 0) {
+    if (name.length > 0  && sex.length > 0 && age.length > 0 &&merry.length > 0 && weChat.length > 0 && chooseGoodsId.length > 0) {
         NNAppointmentOrderViewModel  *createOrderModel = [[NNAppointmentOrderViewModel alloc] init];
         [createOrderModel setBlockWithReturnBlock:^(id returnValue) {
             NSString *orderNo =  [[returnValue objectForKey:@"data"] objectForKey:@"o_code"];
@@ -162,7 +162,7 @@
             payVC.serverType = @"情感问题";
             payVC.name = name;
             payVC.wechat = weChat;
-            payVC.telphone = phone;
+
             payVC.serverName = serverName;
             [self.navigationController pushViewController:payVC animated:YES];
         } WithErrorBlock:^(id errorCode) {
@@ -170,7 +170,7 @@
         } WithFailureBlock:^(id failureBlock) {
             
         }];
-        [createOrderModel submitOrderWithToken:TEST_TOKEN userName:name phone:phone sex:sex  married:merry wechat:weChat age:age serviceId:chooseGoodsId ];
+        [createOrderModel submitOrderWithToken:TEST_TOKEN userName:name  sex:sex  married:merry wechat:weChat age:age serviceId:chooseGoodsId ];
         
     }else{
         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"请输入完整信息"];
@@ -209,7 +209,7 @@
         if (indexPath.row == 0) {
             defaultChooseGoodButton = goodesCell.chooseButton;
             defaultChooseGoodButton.selected = YES;
-            money = goodesCell.model.orderPrice;
+            money = goodesCell.model.g_discount_price;
             chooseGoodsId = model.orderServerId;
             serverName = model.orderTitle;
         }
@@ -237,11 +237,12 @@
                     addInfoCell.secondTextField.placeholder = [[placeArrays objectAtIndex:0] objectAtIndex:1];
                 }else{
                     addInfoCell.firstlabel.text = [[infoArrays objectAtIndex:1] objectAtIndex:0];
-                    addInfoCell.secondLabel.text = [[infoArrays objectAtIndex:1] objectAtIndex:1];
+                    addInfoCell.secondLabel.hidden = YES;
                     addInfoCell.firstTextField.tag = 2;
-                    addInfoCell.secondTextField.tag = 3;
+                    addInfoCell.imageView.hidden = YES;
+                    addInfoCell.centerxContraint.constant = 100;
                     addInfoCell.firstTextField.placeholder = [[placeArrays objectAtIndex:1] objectAtIndex:0];
-                    addInfoCell.secondTextField.placeholder = [[placeArrays objectAtIndex:1] objectAtIndex:1];
+                    addInfoCell.secondTextField.hidden = YES;
                 }
                 addInfoCell.firstTextField.delegate = self;
                 addInfoCell.secondTextField.delegate = self;
@@ -295,13 +296,13 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (tableView.tag == 100) {
-        return 30;
+        return 40;
     }else{
         
         if (indexPath.section == 0 ) {
             return 44;
         }else{
-            return 42 +  orderArrays.count * 30;
+            return 52 +  orderArrays.count * 40;
         }
     }
 }
@@ -318,9 +319,7 @@
         case 2:
             weChat = textField.text;
             break;
-        case 3:
-            phone = textField.text;
-            break;
+     
         default:
             break;
     }

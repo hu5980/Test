@@ -176,7 +176,7 @@
     if (defaultSelectButton.tag == 200) {
         cell.apaleView.hidden = YES;
     }else{
-        cell.apaleView.hidden = NO;
+        cell.apaleView.hidden = YES;
     }
     
     NSLog(@"%f %f",cell.contentView.frame.size.width ,cell.contentView.frame.size.height);

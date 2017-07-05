@@ -695,7 +695,7 @@
 		BCBAD8781DCC881A00BEDF18 /* NNReplyViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNReplyViewModel.m; sourceTree = "<group>"; };
 		BCBAD87A1DCC8B9300BEDF18 /* NNAskingViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNAskingViewModel.h; sourceTree = "<group>"; };
 		BCBAD87B1DCC8B9300BEDF18 /* NNAskingViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNAskingViewModel.m; sourceTree = "<group>"; };
-		BCD505F51D921F8C000FB2C0 /* 暖暖.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "暖暖.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCD505F51D921F8C000FB2C0 /* 暖暖情感.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "暖暖情感.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD505F91D921F8C000FB2C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCD505FB1D921F8C000FB2C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BCD505FC1D921F8C000FB2C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1539,7 +1539,7 @@
 		BCD505F61D921F8C000FB2C0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BCD505F51D921F8C000FB2C0 /* 暖暖.app */,
+				BCD505F51D921F8C000FB2C0 /* 暖暖情感.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2132,7 +2132,7 @@
 			);
 			name = NuanNuan_OC;
 			productName = NuanNuan_OC;
-			productReference = BCD505F51D921F8C000FB2C0 /* 暖暖.app */;
+			productReference = BCD505F51D921F8C000FB2C0 /* 暖暖情感.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -2691,7 +2691,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.500.coyote;
-				PRODUCT_NAME = "暖暖";
+				PRODUCT_NAME = "暖暖情感";
 				PROVISIONING_PROFILE = "5ee1a061-5e05-4056-b642-0b7ec9bd6e31";
 				PROVISIONING_PROFILE_SPECIFIER = com500coyoteDistribution;
 				SWIFT_VERSION = 2.3;
@@ -2766,7 +2766,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.500.coyote;
-				PRODUCT_NAME = "暖暖";
+				PRODUCT_NAME = "暖暖情感";
 				PROVISIONING_PROFILE = "5ee1a061-5e05-4056-b642-0b7ec9bd6e31";
 				PROVISIONING_PROFILE_SPECIFIER = com500coyoteDistribution;
 				SWIFT_VERSION = 2.3;

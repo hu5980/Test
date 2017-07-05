@@ -22,7 +22,7 @@
     
     if ((nowTime - time) / 3600 > 24 ) {
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"MM-dd hh:mm"];
+        [formatter setDateFormat:@"MM-dd HH:mm"];
         NSDate *date =   [NSDate dateWithTimeIntervalSince1970:time];
         return  [formatter stringFromDate:date];
     }else{

@@ -26,7 +26,7 @@
     _orderNumLabel.text = model.orderID;
     _orderSexLabel.text = model.orderSex;
 
-    _orderPhonoLabel.text = model.orderTelephone;
+
  
     _merryLabel.text = model.merry;
     _orderNickNameLabel.text = model.orderUserName;

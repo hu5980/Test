@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *firstTextField;
 @property (weak, nonatomic) IBOutlet UITextField *secondTextField;
 @property (weak, nonatomic) IBOutlet UILabel *secondLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *centerxContraint;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end

@@ -31,6 +31,7 @@
         model.orderServerId = [dic objectForKey:@"g_id"];
         model.orderTitle = [dic objectForKey:@"g_name"];
         model.orderAttach = [dic objectForKey:@"g_attach"];
+        model.g_discount_price = [dic objectForKey:@"g_discount_price"];
         model.orderUmon = [dic objectForKey:@"g_umon"];
         model.orderPrice = [dic objectForKey:@"g_price"];
         model.orderDiscountPrice = [dic objectForKey:@"g_discount_price"];

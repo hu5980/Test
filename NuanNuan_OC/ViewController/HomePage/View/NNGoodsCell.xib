@@ -12,14 +12,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="NNGoodsCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="29.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="图文、语音（微信形式，2小时）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4s-4g-nDB">
-                        <rect key="frame" x="15" y="0.0" width="179" height="30"/>
+                        <rect key="frame" x="15" y="5" width="179" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="mlP-gi-W2I"/>
                         </constraints>
@@ -28,7 +28,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUr-rS-H3m">
-                        <rect key="frame" x="185" y="4" width="14" height="22"/>
+                        <rect key="frame" x="189" y="4" width="14" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="C9h-Ai-QT0"/>
                             <constraint firstAttribute="width" constant="14" id="Twj-UU-Aah"/>
@@ -41,7 +41,7 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="36元/次" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WM-6g-Khe">
-                        <rect key="frame" x="205" y="0.0" width="100" height="30"/>
+                        <rect key="frame" x="205" y="5" width="100" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="pGw-tC-MH5"/>
                         </constraints>
@@ -49,13 +49,35 @@
                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20元/次" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWi-AN-fdM">
+                        <rect key="frame" x="205" y="25" width="43.5" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="Czb-d1-qqU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BHI-bb-Jyk">
+                        <rect key="frame" x="205" y="33" width="43.5" height="0.5"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="oVD-l3-mtr"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Z4s-4g-nDB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="42v-Cf-eVD"/>
-                    <constraint firstAttribute="bottom" secondItem="Z4s-4g-nDB" secondAttribute="bottom" id="Ldc-zJ-oOn"/>
-                    <constraint firstItem="3WM-6g-Khe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Mlo-Cc-4hp"/>
-                    <constraint firstItem="3WM-6g-Khe" firstAttribute="leading" secondItem="nUr-rS-H3m" secondAttribute="trailing" constant="6" id="VhL-x7-eKW"/>
-                    <constraint firstAttribute="bottom" secondItem="3WM-6g-Khe" secondAttribute="bottom" id="g2k-uD-uKt"/>
+                    <constraint firstItem="GWi-AN-fdM" firstAttribute="top" secondItem="3WM-6g-Khe" secondAttribute="bottom" id="3dl-Bl-NKl"/>
+                    <constraint firstItem="Z4s-4g-nDB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="42v-Cf-eVD"/>
+                    <constraint firstItem="GWi-AN-fdM" firstAttribute="leading" secondItem="3WM-6g-Khe" secondAttribute="trailing" constant="-100" id="5rH-hx-qWK"/>
+                    <constraint firstItem="BHI-bb-Jyk" firstAttribute="centerY" secondItem="GWi-AN-fdM" secondAttribute="centerY" id="9xs-Yh-jx0"/>
+                    <constraint firstAttribute="bottom" secondItem="GWi-AN-fdM" secondAttribute="bottom" constant="-0.5" id="Afm-P7-fKC"/>
+                    <constraint firstAttribute="bottom" secondItem="Z4s-4g-nDB" secondAttribute="bottom" constant="14.5" id="Ldc-zJ-oOn"/>
+                    <constraint firstItem="3WM-6g-Khe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Mlo-Cc-4hp"/>
+                    <constraint firstItem="BHI-bb-Jyk" firstAttribute="width" secondItem="GWi-AN-fdM" secondAttribute="width" id="SNz-Pl-5ZQ"/>
+                    <constraint firstItem="3WM-6g-Khe" firstAttribute="leading" secondItem="nUr-rS-H3m" secondAttribute="trailing" constant="2" id="VhL-x7-eKW"/>
+                    <constraint firstItem="BHI-bb-Jyk" firstAttribute="leading" secondItem="GWi-AN-fdM" secondAttribute="leading" id="fSN-EE-NXq"/>
+                    <constraint firstAttribute="bottom" secondItem="3WM-6g-Khe" secondAttribute="bottom" constant="14.5" id="g2k-uD-uKt"/>
                     <constraint firstItem="nUr-rS-H3m" firstAttribute="centerY" secondItem="3WM-6g-Khe" secondAttribute="centerY" id="rcG-ov-qGk"/>
                     <constraint firstItem="Z4s-4g-nDB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="saH-AJ-iAH"/>
                     <constraint firstAttribute="trailing" secondItem="3WM-6g-Khe" secondAttribute="trailing" constant="15" id="uLz-rG-akH"/>
@@ -65,6 +87,7 @@
                 <outlet property="chooseButton" destination="nUr-rS-H3m" id="esg-NM-QB6"/>
                 <outlet property="goodsNameLabel" destination="Z4s-4g-nDB" id="M82-RR-Otk"/>
                 <outlet property="goodsPricesLabel" destination="3WM-6g-Khe" id="TKg-zh-SFa"/>
+                <outlet property="lastPriceLabel" destination="GWi-AN-fdM" id="wEa-Kh-vIA"/>
             </connections>
         </tableViewCell>
     </objects>

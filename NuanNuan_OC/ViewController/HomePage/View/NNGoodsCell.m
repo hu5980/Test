@@ -21,13 +21,14 @@
     // Configure the view for the selected state
 }
 - (IBAction)chooseGoodsAction:(UIButton *)sender {
-    _chooseBlock(_model.orderServerId,sender,_model.orderPrice,_model.orderTitle);
+    _chooseBlock(_model.orderServerId,sender,_model.g_discount_price,_model.orderTitle);
 }
 
 - (void)setModel:(NNOrderServerModel *)model {
     _model = model;
     _goodsNameLabel.text = model.orderTitle;
-    _goodsPricesLabel.text = [NSString stringWithFormat:@"%@元每次",model.orderPrice];
+    _lastPriceLabel.text = [NSString stringWithFormat:@"%@元／次",model.orderPrice];
+    _goodsPricesLabel.text = [NSString stringWithFormat:@"%@元／次",model.g_discount_price];
 }
 
 @end

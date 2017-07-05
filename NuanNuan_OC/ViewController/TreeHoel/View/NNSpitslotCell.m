@@ -25,7 +25,7 @@
 
 - (void)setModel:(NNTreeHoelModel *)model {
     _model = model;
-    self.timelabel.text = [NNTimeUtil timeDealWithFormat:@"yyyy-MM-dd dd:mm" andTime:model.createTime];
+    self.timelabel.text = [NNTimeUtil timeDealWithFormat:@"yyyy-MM-dd HH:mm" andTime:model.createTime];
     if (_model.userNikeName.length == 0 || _model.userNikeName == nil ) {
         self.nickNameLabel.text = [NSString stringWithFormat:@"暖暖情感用户%@",model.uid];
     }else{

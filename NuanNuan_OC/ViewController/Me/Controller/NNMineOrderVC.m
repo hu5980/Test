@@ -86,12 +86,12 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    CGFloat height = [tableView fd_heightForCellWithIdentifier:@"NNOrderCell" cacheByIndexPath:indexPath configuration:^(id cell) {
-        NNOrderCell *orderCell = cell;
-        orderCell.model = [orderArray objectAtIndex:indexPath.section];
-    }];
+//    CGFloat height = [tableView fd_heightForCellWithIdentifier:@"NNOrderCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+//        NNOrderCell *orderCell = cell;
+//        orderCell.model = [orderArray objectAtIndex:indexPath.section];
+//    }];
     
-    return height;
+    return 160;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

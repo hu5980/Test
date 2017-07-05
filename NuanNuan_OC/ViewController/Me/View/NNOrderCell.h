@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *orderNumLabel;
 @property (weak, nonatomic) IBOutlet UILabel *orderNickNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *orderSexLabel;
-@property (weak, nonatomic) IBOutlet UILabel *orderPhonoLabel;
+
 ;
 
 @property (weak, nonatomic) IBOutlet UILabel *weChatLabel;

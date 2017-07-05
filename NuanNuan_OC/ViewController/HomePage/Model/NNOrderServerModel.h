@@ -11,6 +11,7 @@
 @interface NNOrderServerModel : NNBaseModel
 @property (nonatomic,strong) NSString *orderServerId;
 @property (nonatomic,strong) NSString *orderTitle;
+@property (nonatomic,strong) NSString *g_discount_price;
 @property (nonatomic,strong) NSString *orderAttach;
 @property (nonatomic,strong) NSString *orderUmon;
 @property (nonatomic,strong) NSString *orderPrice;

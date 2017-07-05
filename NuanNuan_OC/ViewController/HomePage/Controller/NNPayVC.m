@@ -238,7 +238,7 @@
         cell.totalPayLabel.text = _money;
         cell.userName.text = _name;
         cell.wechatLabel.text = _wechat;
-        cell.phoneLabel.text = _telphone;
+        cell.phoneLabel.text = _wechat;
         cell.orderLabel.text = _orderNO;
         
         NSMutableAttributedString *payMoney = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"应付金额：￥%@",_money]];

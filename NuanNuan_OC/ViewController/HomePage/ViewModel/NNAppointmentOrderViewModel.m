@@ -10,10 +10,10 @@
 
 @implementation NNAppointmentOrderViewModel
 
-- (void)submitOrderWithToken:(NSString *)token userName:(NSString *)name phone:(NSString *)phone sex:(NSString *)sex married:(NSString *)married wechat:(NSString *)wechat age:(NSString *)age serviceId:(NSString *)g_id {
+- (void)submitOrderWithToken:(NSString *)token userName:(NSString *)name  sex:(NSString *)sex married:(NSString *)married wechat:(NSString *)wechat age:(NSString *)age serviceId:(NSString *)g_id {
      NSDictionary *parames = @{@"token":token,
                                @"b_name":name,
-                               @"b_tel":phone,
+                             
                                @"b_sex":sex,
                                @"b_weixin":wechat,
                                @"b_age":age,

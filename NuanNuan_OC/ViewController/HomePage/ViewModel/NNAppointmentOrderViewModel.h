@@ -10,6 +10,6 @@
 
 @interface NNAppointmentOrderViewModel : NNBaseViewModel
 
-- (void)submitOrderWithToken:(NSString *)token userName:(NSString *)name phone:(NSString *)phone sex:(NSString *)sex married:(NSString *)married wechat:(NSString *)wechat age:(NSString *)age serviceId:(NSString *)g_id ;
+- (void)submitOrderWithToken:(NSString *)token userName:(NSString *)name  sex:(NSString *)sex married:(NSString *)married wechat:(NSString *)wechat age:(NSString *)age serviceId:(NSString *)g_id ;
 
 @end

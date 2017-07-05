@@ -15,6 +15,7 @@ typedef void(^chooseGoodsBlock)(NSString *goodsID ,UIButton *button,NSString *mo
 @property (weak, nonatomic) IBOutlet UIButton *chooseButton;
 @property (weak, nonatomic) IBOutlet UILabel *goodsNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *goodsPricesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lastPriceLabel;
 @property (copy, nonatomic) NNOrderServerModel *model;
 @property (copy, nonatomic) chooseGoodsBlock chooseBlock;
 
