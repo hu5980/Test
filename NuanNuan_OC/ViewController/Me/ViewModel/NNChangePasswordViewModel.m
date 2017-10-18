@@ -10,9 +10,9 @@
 
 @implementation NNChangePasswordViewModel
 
-- (void)changePasswordWithtToken:(NSString *)token andCode:(NSString *)code andPassword:(NSString *)newPassword andTel:(NSString *)tel {
-    NSDictionary *parames = @{@"token":token,@"tel":tel,@"code":code,@"password":newPassword};
-    [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_member&a=changePw",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
+- (void)changePasswordWithtTel:(NSString *)telphone andCode:(NSString *)code andPassword:(NSString *)password  {
+    NSDictionary *parames = @{@"tel":telphone,@"code":code,@"password":password,@"zone":@"+86",@"appkey":@"19979a0c7b7d0"};
+    [NNNetRequestClass NetRequestPOSTWithRequestURL:[NSString stringWithFormat:@"%@/?c=api_user&a=resetPw",NNBaseUrl] withParameter:parames withReturnValueBlock:^(id returnValue) {
         self.returnBlock([returnValue objectForKey:@"result"]);
     } withErrorCodeBlock:^(id errorCode) {
         self.errorBlock(errorCode);

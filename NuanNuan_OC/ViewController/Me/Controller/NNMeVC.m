@@ -168,7 +168,7 @@
     else if(section == 1) {
         return 4;
     }else{
-        return 3;
+        return 2;
     }
     
 }
@@ -247,8 +247,8 @@
         cell.iconImageView.image = [UIImage imageNamed:[imageArray objectAtIndex:indexPath.row]];
         cell.mineTitleLabel.text = [titleArray objectAtIndex:indexPath.row];
     }else {
-        cell.iconImageView.image = [UIImage imageNamed:[imageArray objectAtIndex:indexPath.row + 4]];
-        cell.mineTitleLabel.text = [titleArray objectAtIndex:indexPath.row + 4];
+        cell.iconImageView.image = [UIImage imageNamed:[imageArray objectAtIndex:indexPath.row + 5]];
+        cell.mineTitleLabel.text = [titleArray objectAtIndex:indexPath.row + 5];
         
     }
     
@@ -309,17 +309,14 @@
             [self.navigationController pushViewController:treeHoelVC animated:YES];
         }
     }else if (indexPath.section == 2){
-        if (indexPath.row == 0) {
-            [MobClick event:@"clk_suggest"];
-            [self entryFeedBack];
-        }else if (indexPath.row ==1){
+      if (indexPath.row == 0){
             [MobClick event:@"clk_information"];
             NNUserInfoVC *infoVC = [[NNUserInfoVC alloc] initWithNibName:@"NNUserInfoVC" bundle:nil];
             infoVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:infoVC animated:YES];
             
         }
-        else if (indexPath.row == 2){
+        else if (indexPath.row == 1){
              [MobClick event:@"clk_set"];
             NNMineSetVC *setVC = [[NNMineSetVC alloc] initWithNibName:@"NNMineSetVC" bundle:nil];
             setVC.hidesBottomBarWhenPushed = YES;
@@ -329,52 +326,6 @@
 }
 
 
-- (void)entryFeedBack {
-    
-    __weak typeof(self) weakSelf = self;
-    feedbackKit = [[YWFeedbackKit alloc] initWithAppKey:ALIFEEDBACK_APPKEY];
-    feedbackKit.contactInfo = TEST_TOKEN;
-    feedbackKit.hideContactInfoView = YES;
-    
-    feedbackKit.extInfo = @{@"用户名：": userInfoModel.nickName ,@"用户token:":TEST_TOKEN};
-    feedbackKit.customUIPlist = @{@"sendBtnText":@"发送",
-                                  @"sendBtnTextColor":@"#ffffff",
-                                  @"sendBtnBgColor":@"#FF8833",
-                                  @"hideLoginSuccess":@"1",
-                                  @"chatInputPlaceholder":@"",
-                                  @"avatar":userInfoModel.headImageUrl,
-                                  @"toAvatar":@"http://slimup.oss.aliyuncs.com/indexpic/2016-06-24/33d9b6dc38c19fdbe45d1142a9ef1147.png"};
-    
-    [feedbackKit makeFeedbackViewControllerWithCompletionBlock:^(YWLightFeedbackViewController *viewController, NSError *error) {
-        
-        if ( viewController != nil ) {
-            viewController.title = @"反馈界面";
-            
-            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
-            [weakSelf presentViewController:nav animated:YES completion:nil];
-            
-            viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:weakSelf action:@selector(actionQuitFeedback)];
-            
-            viewController.navigationItem.rightBarButtonItem.tintColor =  NN_MAIN_COLOR;
-            
-            
-            
-            __weak typeof(nav) weakNav = nav;
-            
-            [viewController setOpenURLBlock:^(NSString *aURLString, UIViewController *aParentController) {
-                UIViewController *webVC = [[UIViewController alloc] initWithNibName:nil bundle:nil];
-                UIWebView *webView = [[UIWebView alloc] initWithFrame:webVC.view.bounds];
-                webView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-                
-                [webVC.view addSubview:webView];
-                [weakNav pushViewController:webVC animated:YES];
-                [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:aURLString]]];
-            }];
-        } else {
-            NSLog(@"用户反馈错误信息%@",error.description);
-        };
-    }];
-}
 
 - (void)actionQuitFeedback {
     [self dismissViewControllerAnimated:YES completion:nil];

@@ -51,8 +51,12 @@
      
                                                  name:UIKeyboardWillHideNotification object:nil];
     
+    if (![self isKindOfClass:[NNLoginVC class]]) {
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginAgain:) name:@"loginAgain" object:nil];
+    }
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginAgein:) name:@"loginAgain" object:nil];
+    
    
     // Do any additional setup after loading the view.
 }
@@ -95,17 +99,20 @@
     
 }
 
-- (void)loginAgein:(NSNotification *)nitification {
-     NNLoginVC *loginVC = [[NNLoginVC alloc] initWithNibName:@"NNLoginVC" bundle:nil];
-    loginVC.isPresent = YES;
-    loginVC.showHudText = [nitification object];
-    [self presentViewController:loginVC animated:YES completion:^{
-        
-    }];
+- (void)loginAgain:(NSNotification *)nitification {
 
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"entryLogin"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"entryLogin"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        NNLoginVC *loginVC = [[NNLoginVC alloc] initWithNibName:@"NNLoginVC" bundle:nil];
+        loginVC.isPresent = YES;
+        loginVC.showHudText = [nitification object];
+      
+        [self.navigationController pushViewController:loginVC animated:YES];
+    }
 }
 
-- (void)setNavTitle:(NSString *)navTitle{
+- (void)setNavTitle:(NSString *)navTitle {
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     titleLabel.textColor = [UIColor colorFromHexString:@"#666666"];
     titleLabel.font = [UIFont systemFontOfSize:18.f];

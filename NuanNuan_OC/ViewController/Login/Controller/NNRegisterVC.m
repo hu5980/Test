@@ -9,6 +9,7 @@
 #import "NNRegisterVC.h"
 #import "NNRegistionViewModel.h"
 #import <SMS_SDK/SMSSDK.h>
+#import "NNUserAgreementVC.h"
 
 @interface NNRegisterVC (){
      NSTimer *timer;
@@ -37,42 +38,41 @@
     [self setNavigationBackButton:YES];
     _sendAuthCodeButton.layer.cornerRadius = 8;
     _sendAuthCodeButton.layer.masksToBounds = YES;
-    // Do any additional setup after loading the view from its nib.
+    _passWordTextField.secureTextEntry = YES;
+    
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeKeyboard)];
+    
+    [self.view addGestureRecognizer:tapGestureRecognizer];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)sendAuthCodeAction:(UIButton *)sender {
-    
     if (_userNameTextField.text == nil || _userNameTextField.text.length != 11) {
         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"手机号码错误"];
         return;
     }
-    
-    if (!timer.valid) {
+    if (timer != nil) {
         [timer setFireDate:[NSDate date]];
     }
     
-   
-        [sender setTitle:@"59" forState:UIControlStateNormal];
-
-        if (timer == nil) {
-            timer = [NSTimer scheduledTimerWithTimeInterval:1
-                                                     target:self
-                                                   selector:@selector(timerSelector)
-                                                   userInfo:nil
-                                                    repeats:YES];
-        }
+    
+    if (timer == nil) {
+        timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerSelector) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:timer forMode:UITrackingRunLoopMode];
         
+    }
+        [sender setTitle:@"59" forState:UIControlStateNormal];
         [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS
                                 phoneNumber:_userNameTextField.text
                                        zone:@"86"
                            customIdentifier:nil
                                      result:^(NSError *error){
-                                         [sender setTitle:@"发送验证码" forState:UIControlStateNormal];
-                                         [timer setFireDate:[NSDate distantFuture]];
+//                                         [sender setTitle:@"发送验证码" forState:UIControlStateNormal];
+//                                         [timer setFireDate:[NSDate distantFuture]];
                                          if (!error) {
                                          } else {
                                              [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:[error.userInfo objectForKey:@"getVerificationCode"]];
@@ -98,6 +98,8 @@
     }
     NNRegistionViewModel *registerViewModel = [[NNRegistionViewModel alloc] init];
     [registerViewModel setBlockWithReturnBlock:^(id returnValue) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"entryLogin"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         [weakSelf dismissViewControllerAnimated:YES completion:nil];
     } WithErrorBlock:^(id errorCode) {
         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
@@ -119,8 +121,32 @@
 }
 
 
-- (IBAction)priviteAction:(UIButton *)sender {
+- (IBAction)textFiledReturnEditing:(UITextField *)sender {
+    [sender resignFirstResponder];
+}
+
+
+
+
+
+
+- (void)closeKeyboard {
+    if ([_userNameTextField isFirstResponder]) {
+        [_userNameTextField resignFirstResponder];
+    }
     
+    if ([_authCodeTextField isFirstResponder]) {
+        [_authCodeTextField resignFirstResponder];
+    }
+    
+    if ([_passWordTextField isFirstResponder]) {
+        [_passWordTextField resignFirstResponder];
+    }
+}
+
+- (IBAction)priviteAction:(UIButton *)sender {
+    NNUserAgreementVC *agreementVC = [[NNUserAgreementVC alloc] initWithNibName:@"NNUserAgreementVC" bundle:nil];
+    [self.navigationController pushViewController:agreementVC animated:YES];
 }
 
 /*

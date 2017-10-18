@@ -24,7 +24,10 @@
     
     if([sender.titleLabel.text isEqualToString:@"吐槽树洞"]){
         if (TEST_TOKEN == nil) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginAgain" object:@"需要登录"];
+            if ([[NSUserDefaults standardUserDefaults] boolForKey:@"entryLogin"]) {
+               
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"loginAgain" object:@"需要登录"];
+            }
             return;
         }
     }

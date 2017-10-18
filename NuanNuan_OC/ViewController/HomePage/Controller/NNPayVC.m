@@ -60,6 +60,12 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear: animated];
+    [timer invalidate];
+    timer = nil;
+}
+
 
 - (void)initView {
     [self setNavigationBackButton:YES];
@@ -304,7 +310,7 @@
 
 
 - (void)dealloc {
-    timer = nil;
+  
 }
 
 - (void)didReceiveMemoryWarning {

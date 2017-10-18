@@ -30,23 +30,23 @@
 
 
 
-- (IBAction)chooseBuyAction:(UIButton *)sender {
-    NSString *payNums;
-     switch (sender.tag) {
-        case 100:
-            payNums = @"36";
-            break;
-        case 101:
-             payNums = @"800";
-            break;
-        case 102:
-             payNums = @"8000";
-            break;
-        default:
-            break;
-    }
-    _payBlock(payNums);
-}
+//- (IBAction)chooseBuyAction:(UIButton *)sender {
+//    NSString *payNums;
+//     switch (sender.tag) {
+//        case 100:
+//            payNums = @"36";
+//            break;
+//        case 101:
+//             payNums = @"800";
+//            break;
+//        case 102:
+//             payNums = @"8000";
+//            break;
+//        default:
+//            break;
+//    }
+//    _payBlock(payNums);
+//}
 
 
 

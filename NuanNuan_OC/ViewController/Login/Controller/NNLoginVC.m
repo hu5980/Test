@@ -29,6 +29,10 @@
         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:_showHudText];
     }
     
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeKeyboard)];
+    
+    [self.view addGestureRecognizer:tapGestureRecognizer];
+    
   
     // Do any additional setup after loading the view from its nib.
 }
@@ -65,11 +69,16 @@
     NNLoginViewModel *loginViewModel = [[NNLoginViewModel alloc] init];
     [loginViewModel setBlockWithReturnBlock:^(id returnValue) {
         [[NNProgressHUD instance] hideHud];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"entryLogin"];
+        
+        [[NSUserDefaults standardUserDefaults] synchronize];
         if (self.isPresent) {
-            [weakSelf dismissViewControllerAnimated:YES completion:nil];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
         }else{
             [weakSelf.navigationController popViewControllerAnimated:YES];
         }
+        
     } WithErrorBlock:^(id errorCode) {
         [[NNProgressHUD instance] hideHud];
         [NNProgressHUD  showHudAotoHideAddToView:self.view withMessage:errorCode];
@@ -180,6 +189,39 @@
     }];
     [viewModel loginWithLoginType:type andAccessToken:accessToken andOpenId:openid];
 }
+
+- (IBAction)textFiledReturnEditing:(UITextField *)sender {
+    [sender resignFirstResponder];
+}
+
+- (void)closeKeyboard {
+    if ([_userNameText isFirstResponder]) {
+        [_userNameText resignFirstResponder];
+    }
+    if ([_passWordTextField isFirstResponder]) {
+        [_passWordTextField resignFirstResponder];
+    }
+}
+
+
+#pragma --mark keyboard
+- (void)keyboardWillHide:(NSNotification *)notification {
+    CGFloat animationDuration =  [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    [UIView animateWithDuration:animationDuration animations:^{
+        self.view.frame = CGRectMake(0, 0, NNAppWidth, NNAppHeight);
+    }];
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    //键盘高度
+    CGRect keyBoardFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    CGFloat animationDuration =  [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    [UIView animateWithDuration:animationDuration animations:^{
+        self.view.frame  = CGRectMake(0, -keyBoardFrame.size.height + 100, NNAppWidth, NNAppHeight);
+    }];
+}
+
 
 /*
 #pragma mark - Navigation

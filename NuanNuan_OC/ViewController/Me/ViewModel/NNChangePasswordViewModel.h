@@ -9,7 +9,6 @@
 #import "NNBaseViewModel.h"
 
 @interface NNChangePasswordViewModel : NNBaseViewModel
-
-- (void)changePasswordWithtToken:(NSString *)token andCode:(NSString *)code andPassword:(NSString *)newPassword andTel:(NSString *)tel;
+- (void)changePasswordWithtTel:(NSString *)telphone andCode:(NSString *)code andPassword:(NSString *)password  ;
 
 @end

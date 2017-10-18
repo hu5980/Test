@@ -17,7 +17,7 @@ typedef void(^selectPayBlock)(NSString *payNums);
 
 
 
-@property (copy, nonatomic) selectPayBlock payBlock;
+//@property (copy, nonatomic) selectPayBlock payBlock;
 
 @property (nonatomic, nonatomic) IBOutlet UITableView *orderTableView;
 @property (nonatomic,strong) NSArray *goodsArrays;

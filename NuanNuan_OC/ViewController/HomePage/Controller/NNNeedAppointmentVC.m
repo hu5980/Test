@@ -21,27 +21,26 @@
 
 @interface NNNeedAppointmentVC ()<UITableViewDelegate ,UITableViewDataSource,UITextFieldDelegate,UITextViewDelegate> {
     NSArray *infoArrays;
-    NSArray *placeArrays;
     NSArray *chooseArrays;
     NSString *name;
     NSString *age;
     NSString *weChat;
-//    NSString *phone;
-    NSString *sex;
-    NSString *merry;
+    __block NSString *sex;
     NSMutableArray *consultTypeArray;
-//    __block NSString *questionType;
-    NNServerAppointmentCell *appointmentCell;
-//    NSString *question;
-    NSString *pay;
+
+    
+
+    __block NSString *pay;
     UIButton *protocolButton;
     __block NSString *money;
-    NSArray *orderArrays;
+    __block NSArray *orderArrays;
     NSString *serverName;
     NSString *chooseGoodsId;
-    UIButton *defaultChooseGoodButton;
+    
     NNFloorAppointView *floorView ;
 }
+@property (nonatomic,weak) UIButton *defaultChooseGoodButton;
+@property (nonatomic ,strong) NNServerAppointmentCell *appointmentCell;
 
 @property (weak, nonatomic) IBOutlet UITableView *appointmentTableView;
 
@@ -59,7 +58,6 @@
     [super viewDidLoad];
     
     [self initUI];
-    
     [self initData];
     
     // Do any additional setup after loading the view from its nib.
@@ -92,38 +90,15 @@
 
 - (void)initData {
     infoArrays = @[@[@"姓名",@"年龄"],@[@"微信号/手机号"]];
-    placeArrays = @[@[@"输入姓名",@"输入年龄"],@[@"输入微信或手机号"]];
     sex = @"男";
-    merry = @"已婚";
-    chooseArrays =  @[@[@"男",@"女"],@[@"已婚",@"未婚"]];
+    chooseArrays =  @[@[@"男",@"女"]];
     pay = @"36";
     consultTypeArray = [NSMutableArray array];
-    
-//    NNAppointmentTypeViewModel *viewModel = [[NNAppointmentTypeViewModel alloc] init];
-//    [viewModel setBlockWithReturnBlock:^(id returnValue) {
-//        consultTypeArray = returnValue;
-//        if (consultTypeArray.count > 0) {
-//            NNAppointmentModel *model = [consultTypeArray objectAtIndex:0];
-//            questionType = [NSString stringWithFormat:@"%@",model.appointmentID];
-//        }
-//        [_appointmentTableView reloadSections:[[NSIndexSet alloc] initWithIndex:1] withRowAnimation:UITableViewRowAnimationFade];
-//    } WithErrorBlock:^(id errorCode) {
-//        NSLog(@"%@",errorCode);
-//    } WithFailureBlock:^(id failureBlock) {
-//        NSLog(@"%@",failureBlock);
-//    }];
-//    
-//    
-//    
-//    [viewModel getAllAppointTypeWithToken:TEST_TOKEN];
-    
-    
-    
     NNAppointmentOrderTypeViewModel *orderViewModel = [[NNAppointmentOrderTypeViewModel alloc] init];
     [orderViewModel setBlockWithReturnBlock:^(id returnValue) {
         orderArrays = returnValue;
-        [appointmentCell.orderTableView reloadData];
-        [_appointmentTableView reloadSections:[[NSIndexSet alloc] initWithIndex:1] withRowAnimation:UITableViewRowAnimationFade];
+        [self.appointmentCell.orderTableView reloadData];
+        [self.appointmentTableView reloadData];
     } WithErrorBlock:^(id errorCode) {
         NSLog(@"%@",errorCode);
     } WithFailureBlock:^(id failureBlock) {
@@ -149,8 +124,9 @@
         return;
     }
     
+    __weak NNNeedAppointmentVC *weskSelf = self;
     
-    if (name.length > 0  && sex.length > 0 && age.length > 0 &&merry.length > 0 && weChat.length > 0 && chooseGoodsId.length > 0) {
+    if (name.length > 0  && sex.length > 0 && age.length > 0  && weChat.length > 0 && chooseGoodsId.length > 0) {
         NNAppointmentOrderViewModel  *createOrderModel = [[NNAppointmentOrderViewModel alloc] init];
         [createOrderModel setBlockWithReturnBlock:^(id returnValue) {
             NSString *orderNo =  [[returnValue objectForKey:@"data"] objectForKey:@"o_code"];
@@ -164,13 +140,13 @@
             payVC.wechat = weChat;
 
             payVC.serverName = serverName;
-            [self.navigationController pushViewController:payVC animated:YES];
+            [weskSelf.navigationController pushViewController:payVC animated:YES];
         } WithErrorBlock:^(id errorCode) {
             
         } WithFailureBlock:^(id failureBlock) {
             
         }];
-        [createOrderModel submitOrderWithToken:TEST_TOKEN userName:name  sex:sex  married:merry wechat:weChat age:age serviceId:chooseGoodsId ];
+        [createOrderModel submitOrderWithToken:TEST_TOKEN userName:name  sex:sex   wechat:weChat age:age serviceId:chooseGoodsId ];
         
     }else{
         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:@"请输入完整信息"];
@@ -191,7 +167,7 @@
         return orderArrays.count;
     }else{
         if (section == 0) {
-            return 4;
+            return 3;
         }else  {
             return 1;
         }
@@ -205,26 +181,19 @@
         goodesCell.selectionStyle = UITableViewCellSelectionStyleNone;
         NNOrderServerModel *model = [orderArrays objectAtIndex:indexPath.row];
         goodesCell.model = model;
-        
+      
         if (indexPath.row == 0) {
-            defaultChooseGoodButton = goodesCell.chooseButton;
-            defaultChooseGoodButton.selected = YES;
+            _defaultChooseGoodButton = goodesCell.chooseButton;
+            _defaultChooseGoodButton.selected = YES;
             money = goodesCell.model.g_discount_price;
             chooseGoodsId = model.orderServerId;
             serverName = model.orderTitle;
         }
-        goodesCell.chooseBlock = ^(NSString *goodsID,UIButton *button ,NSString *price,NSString *goodsName) {
-            defaultChooseGoodButton.selected = NO;
-            defaultChooseGoodButton = button;
-            defaultChooseGoodButton.selected = YES;
-            chooseGoodsId = goodsID;
-            money = price;
-            serverName = goodsName;
-        };
+
         return goodesCell;
     }else{
         if (indexPath.section == 0) {
-            if(indexPath.row == 0 || indexPath.row == 3){
+            if(indexPath.row == 0 || indexPath.row == 2){
                 NNAddInfoCell *addInfoCell = [tableView dequeueReusableCellWithIdentifier:@"NNAddInfoCell"];
                 addInfoCell.selectionStyle = UITableViewCellSelectionStyleNone;
                 if (indexPath.row == 0) {
@@ -233,15 +202,12 @@
                     addInfoCell.secondLabel.text = [[infoArrays objectAtIndex:0] objectAtIndex:1];
                     addInfoCell.firstTextField.tag = 0;
                     addInfoCell.secondTextField.tag = 1;
-                    addInfoCell.firstTextField.placeholder = [[placeArrays objectAtIndex:0] objectAtIndex:0];;
-                    addInfoCell.secondTextField.placeholder = [[placeArrays objectAtIndex:0] objectAtIndex:1];
                 }else{
                     addInfoCell.firstlabel.text = [[infoArrays objectAtIndex:1] objectAtIndex:0];
                     addInfoCell.secondLabel.hidden = YES;
                     addInfoCell.firstTextField.tag = 2;
                     addInfoCell.imageView.hidden = YES;
                     addInfoCell.centerxContraint.constant = 100;
-                    addInfoCell.firstTextField.placeholder = [[placeArrays objectAtIndex:1] objectAtIndex:0];
                     addInfoCell.secondTextField.hidden = YES;
                 }
                 addInfoCell.firstTextField.delegate = self;
@@ -256,29 +222,20 @@
                     questionChooseCell.chooseView.chooseBlock = ^(NSString *selectString){
                         sex = selectString;
                     };
-                }else{
-                    questionChooseCell.chooseTitleLabel.text = @"婚 姻:";
-                    questionChooseCell.chooseView.chooseArray = [chooseArrays objectAtIndex:1];
-                    questionChooseCell.chooseView.chooseBlock = ^(NSString *selectString){
-                        merry = selectString;
-                    };
                 }
+
                 return questionChooseCell;
             }
         }else {
-            appointmentCell.selectionStyle = UITableViewCellSelectionStyleNone;
-            appointmentCell = [tableView dequeueReusableCellWithIdentifier:@"NNServerAppointmentCell"];
-                    appointmentCell.payBlock = ^(NSString *payNums) {
-                pay = payNums;
-            };
-      
-            
-            appointmentCell.selectionStyle = UITableViewCellSelectionStyleNone;
-            appointmentCell.orderTableView.delegate = self;
-            appointmentCell.orderTableView.dataSource = self;
-            appointmentCell.orderTableView.tag = 100;
-            
-            return appointmentCell;
+            if (_appointmentCell == nil) {
+                _appointmentCell = [tableView dequeueReusableCellWithIdentifier:@"NNServerAppointmentCell"];
+                _appointmentCell.selectionStyle = UITableViewCellSelectionStyleNone;
+                _appointmentCell.orderTableView.delegate = self;
+                _appointmentCell.orderTableView.dataSource = self;
+                _appointmentCell.orderTableView.tag = 100;
+            }
+          
+            return _appointmentCell;
         }
     }
 }
@@ -303,6 +260,22 @@
             return 44;
         }else{
             return 52 +  orderArrays.count * 40;
+        }
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (tableView.tag == 100) {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        NNGoodsCell *goodesCell = [tableView cellForRowAtIndexPath:indexPath];
+        if (_defaultChooseGoodButton != goodesCell.chooseButton) {
+            NNOrderServerModel *model =  [orderArrays objectAtIndex:indexPath.row];
+            _defaultChooseGoodButton.selected = NO;
+            _defaultChooseGoodButton = goodesCell.chooseButton;;
+            _defaultChooseGoodButton.selected = YES;
+            chooseGoodsId = model.orderServerId;
+            money = model.g_discount_price;
+            serverName = model.orderTitle;
         }
     }
 }
@@ -336,7 +309,7 @@
 }
 
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
 }

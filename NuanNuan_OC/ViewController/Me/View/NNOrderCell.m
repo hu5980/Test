@@ -25,10 +25,6 @@
     _model = model;
     _orderNumLabel.text = model.orderID;
     _orderSexLabel.text = model.orderSex;
-
-
- 
-    _merryLabel.text = model.merry;
     _orderNickNameLabel.text = model.orderUserName;
     _weChatLabel.text = model.wechat;
     _ageLabel.text = model.age;
