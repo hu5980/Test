@@ -101,13 +101,13 @@
 
 - (void)loginAgain:(NSNotification *)nitification {
 
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"entryLogin"]) {
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"entryLogin"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+    NSLog(@"currentVC = %@ ,self = %@",NSStringFromClass([[self getCurrentVC] class]),NSStringFromClass([self class]));
+    
+    
+    if (![[self getCurrentVC] isKindOfClass:[NNLoginVC class]] && [self isKindOfClass:[[self getCurrentVC] class]]) {
         NNLoginVC *loginVC = [[NNLoginVC alloc] initWithNibName:@"NNLoginVC" bundle:nil];
         loginVC.isPresent = YES;
         loginVC.showHudText = [nitification object];
-      
         [self.navigationController pushViewController:loginVC animated:YES];
     }
 }
@@ -164,6 +164,29 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (UIViewController *)getCurrentVC
+{
+    UIViewController* vc = [UIApplication sharedApplication].keyWindow.rootViewController;
+    while (1)
+    {
+        //根据不同的页面切换方式，逐步取得最上层的viewController
+        if ([vc isKindOfClass:[UITabBarController class]]) {
+            vc = ((UITabBarController*)vc).selectedViewController;
+        }
+        if ([vc isKindOfClass:[UINavigationController class]]) {
+            vc = ((UINavigationController*)vc).visibleViewController;
+        }
+        if (vc.presentedViewController) {
+            vc = vc.presentedViewController;
+        }else{
+            break;
+        }
+    }
+    return vc;
+}
+
+
 
 /*
 #pragma mark - Navigation

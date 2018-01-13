@@ -21,7 +21,7 @@
         NNLog(@"%@",returnValue);
         [self fetchValueSuccessWithDic:returnValue];
     } withErrorCodeBlock:^(id errorCode) {
-        
+        self.errorBlock(errorCode);
     } withFailureBlock:^(id failureBlock) {
         
     } withProgress:^(id Progress) {

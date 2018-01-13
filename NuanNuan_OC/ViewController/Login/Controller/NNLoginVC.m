@@ -70,9 +70,7 @@
     [loginViewModel setBlockWithReturnBlock:^(id returnValue) {
         [[NNProgressHUD instance] hideHud];
         
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"entryLogin"];
-        
-        [[NSUserDefaults standardUserDefaults] synchronize];
+      
         if (self.isPresent) {
             [weakSelf.navigationController popViewControllerAnimated:YES];
         }else{

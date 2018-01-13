@@ -148,7 +148,7 @@
         [footer endRefreshing];
         [_psychologicalTeacherTableView reloadData];
     } WithErrorBlock:^(id errorCode) {
-        
+         [NNProgressHUD  showHudAotoHideAddToView:self.view withMessage:errorCode];
     } WithFailureBlock:^(id failureBlock) {
         
     }];

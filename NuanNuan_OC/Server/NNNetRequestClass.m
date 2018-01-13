@@ -104,13 +104,12 @@
     [sessionManager POST:requestURLString parameters:mutableParameter progress:^(NSProgress * _Nonnull uploadProgress) {
         progressBlock(uploadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
         if ([[responseObject objectForKey:@"result"] isEqualToString:@"fail"]) {
             errorBlock([responseObject objectForKey:@"msg"]);
-            if ([[responseObject objectForKey:@"msg"] isEqualToString:@"token已过期，请重新登陆！"]) {
-                if ([[NSUserDefaults standardUserDefaults] boolForKey:@"entryLogin"]) {
-                  
-                    [[NSNotificationCenter defaultCenter] postNotificationName:@"loginAgain" object:[responseObject objectForKey:@"msg"]];
-                }
+            NSString *str = [responseObject objectForKey:@"msg"];
+            if ([str containsString:@"token已过期"]) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"loginAgain" object:[responseObject objectForKey:@"msg"]];
             }
         }else{
             returnBlock(responseObject);

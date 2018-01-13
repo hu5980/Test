@@ -98,8 +98,7 @@
     }
     NNRegistionViewModel *registerViewModel = [[NNRegistionViewModel alloc] init];
     [registerViewModel setBlockWithReturnBlock:^(id returnValue) {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"entryLogin"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+     
         [weakSelf dismissViewControllerAnimated:YES completion:nil];
     } WithErrorBlock:^(id errorCode) {
         [NNProgressHUD showHudAotoHideAddToView:self.view withMessage:errorCode];
